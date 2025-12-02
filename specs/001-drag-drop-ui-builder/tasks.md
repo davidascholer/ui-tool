@@ -34,6 +34,8 @@ description: "Task list for Drag-and-Drop UI Builder"
 - [ ] T004 [P] Create analytics controller in `api/controllers/analytics.ts`
 - [ ] T005 Setup testing: Vitest + RTL config in `vitest.config.ts` and sample test command in `package.json`
 - [ ] T006 [P] Add accessibility reduced-motion styles in `src/styles/theme.css`
+ - [ ] T006a [P] Add keyboard operability for selection (focus/enter/delete) in `src/components/builder/ResultSide/Selectable.tsx`
+ - [ ] T006b [P] Add aria roles/labels audit checklist in `docs/accessibility.md`
 
 ---
 
@@ -48,6 +50,7 @@ description: "Task list for Drag-and-Drop UI Builder"
 - [ ] T011 [P] Define data types and zod schemas in `src/utils/types.ts` and `src/utils/schemas.ts`
 - [ ] T012 Setup responsive layout behavior (stack in portrait/mobile) in `src/components/builder/Layout.tsx`
 - [ ] T013 [P] Unit tests for layout shells in `tests/unit/builder-layout.test.tsx`
+ - [ ] T013a [P] Unit tests for keyboard selection operability in `tests/unit/keyboard-selection.test.tsx`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -63,6 +66,7 @@ description: "Task list for Drag-and-Drop UI Builder"
 
 - [ ] T014 [P] [US1] Unit tests for DnD validators in `tests/unit/dnd-validators.test.ts`
 - [ ] T015 [P] [US1] Integration test for drag Page/Container/Component in `tests/integration/dnd-flow.test.tsx`
+ - [ ] T015a [US1] Performance check: hover feedback latency ≤100ms (manual/automation) documented in `docs/perf-dnd-latency.md`
 
 ### Implementation for User Story 1
 
@@ -71,6 +75,7 @@ description: "Task list for Drag-and-Drop UI Builder"
 - [ ] T018 [US1] Enforce hierarchy rules in `src/utils/validators.ts`
 - [ ] T019 [US1] Wire UISide drag sources in `src/components/builder/UISide/DraggableItem.tsx`
 - [ ] T020 [US1] Render nested hierarchy in `src/components/builder/ResultSide/TreeRenderer.tsx`
+ - [ ] T020a [US1] Document deepest-valid-target rule and tests in `tests/integration/dnd-overlap.test.tsx`
 
 **Checkpoint**: US1 fully functional and testable independently
 
@@ -86,6 +91,7 @@ description: "Task list for Drag-and-Drop UI Builder"
 
 - [ ] T021 [P] [US2] Unit tests for selection state and blue glow in `tests/unit/selection.test.tsx`
 - [ ] T022 [P] [US2] Unit tests for Drawer forms with zod+RHF in `tests/unit/drawer-forms.test.tsx`
+ - [ ] T022a [US2] Unit tests for Tailwind option allowlists per component in `tests/unit/tailwind-options.test.ts`
 
 ### Implementation for User Story 2
 
@@ -93,6 +99,7 @@ description: "Task list for Drag-and-Drop UI Builder"
 - [ ] T024 [US2] Implement Drawer forms (per entity) in `src/components/builder/Drawer/Editor.tsx`
 - [ ] T025 [US2] Implement delete action with confirmation in `src/components/builder/ResultSide/DeleteAction.tsx`
 - [ ] T026 [US2] Persist Tailwind option edits to state in `src/utils/state.ts`
+ - [ ] T026a [US2] Add typed models for analytics events in `api/controllers/analytics.ts` and tests in `tests/contract/analytics.test.ts`
 
 **Checkpoint**: US1 and US2 both independently functional
 
@@ -108,12 +115,14 @@ description: "Task list for Drag-and-Drop UI Builder"
 
 - [ ] T027 [P] [US3] Unit tests for code serializers in `tests/unit/code-serializer.test.ts`
 - [ ] T028 [P] [US3] Integration test for view toggle and copy in `tests/integration/code-view.test.tsx`
+ - [ ] T028a [US3] RN serializer subset tests (spacing, color, typography basics) in `tests/unit/rn-subset.test.ts`
 
 ### Implementation for User Story 3
 
 - [ ] T029 [P] [US3] Implement React code serializer in `src/utils/serialize/reactSerializer.ts`
 - [ ] T030 [P] [US3] Implement React Native code serializer in `src/utils/serialize/reactNativeSerializer.ts`
 - [ ] T031 [US3] Implement code view toggle and copy UI in `src/components/builder/ResultSide/CodeView.tsx`
+ - [ ] T031a [US3] Add SEO test tasks: title/meta/OG/canonical verification in `tests/integration/seo-builder.test.tsx`
 
 **Checkpoint**: All user stories independently functional
 
@@ -126,6 +135,7 @@ description: "Task list for Drag-and-Drop UI Builder"
 - [ ] T034 Performance optimizations for DnD and rendering in `src/utils/*`
 - [ ] T035 [P] Additional unit tests for catalog components in `tests/unit/catalog/*.test.tsx`
 - [ ] T036 SEO enhancements: OG tags, canonical in `src/pages/BuilderPage.tsx`
+ - [ ] T036a [P] Specify analytics library in `package.json` and document config in `docs/analytics.md`
 - [ ] T037 Security and privacy review for analytics in `api/controllers/analytics.ts`
 - [ ] T038 Run quickstart.md validation steps
 
