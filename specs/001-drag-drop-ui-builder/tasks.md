@@ -28,14 +28,14 @@ description: "Task list for Drag-and-Drop UI Builder"
 
 **Purpose**: Project initialization and basic structure (React + Tailwind, TypeScript)
 
-- [ ] T001 Initialize Tailwind with CSS variables for light/dark in `src/styles/theme.css`
-- [ ] T002 Configure Tailwind and import in `src/main.tsx` and `src/index.css`
-- [ ] T003 [P] Add SEO base using `react-meta-tags` in `src/pages/BuilderPage.tsx`
-- [ ] T004 [P] Create analytics controller in `api/controllers/analytics.ts`
-- [ ] T005 Setup testing: Vitest + RTL config in `vitest.config.ts` and sample test command in `package.json`
-- [ ] T006 [P] Add accessibility reduced-motion styles in `src/styles/theme.css`
+- [X] T001 Initialize Tailwind with CSS variables for light/dark in `src/styles/theme.css`
+- [X] T002 Configure Tailwind and import in `src/main.tsx` and `src/index.css`
+- [X] T003 [P] Add SEO base using `react-meta-tags` in `src/pages/BuilderPage.tsx`
+- [X] T004 [P] Create analytics controller in `api/controllers/analytics.ts`
+- [X] T005 Setup testing: Vitest + RTL config in `vitest.config.ts` and sample test command in `package.json`
+- [X] T006 [P] Add accessibility reduced-motion styles in `src/styles/theme.css`
  - [ ] T006a [P] Add keyboard operability for selection (focus/enter/delete) in `src/components/builder/ResultSide/Selectable.tsx`
- - [ ] T006b [P] Add aria roles/labels audit checklist in `docs/accessibility.md`
+ - [X] T006b [P] Add aria roles/labels audit checklist in `docs/accessibility.md`
 
 ---
 
@@ -43,13 +43,13 @@ description: "Task list for Drag-and-Drop UI Builder"
 
 **Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
 
-- [ ] T007 Create builder layout scaffold in `src/components/builder/Layout.tsx`
-- [ ] T008 [P] Implement `UISide` sections (Pages, Containers, Components) in `src/components/builder/UISide/index.tsx`
-- [ ] T009 [P] Implement `ResultSide` shell with selection state in `src/components/builder/ResultSide/index.tsx`
-- [ ] T010 Implement `Drawer` shell with RHF+Zod form in `src/components/builder/Drawer/index.tsx`
-- [ ] T011 [P] Define data types and zod schemas in `src/utils/types.ts` and `src/utils/schemas.ts`
-- [ ] T012 Setup responsive layout behavior (stack in portrait/mobile) in `src/components/builder/Layout.tsx`
-- [ ] T013 [P] Unit tests for layout shells in `tests/unit/builder-layout.test.tsx`
+- [X] T007 Create builder layout scaffold in `src/components/builder/Layout.tsx`
+- [X] T008 [P] Implement `UISide` sections (Pages, Containers, Components) in `src/components/builder/UISide/index.tsx`
+- [X] T009 [P] Implement `ResultSide` shell with selection state in `src/components/builder/ResultSide/index.tsx`
+- [X] T010 Implement `Drawer` shell with RHF+Zod form in `src/components/builder/Drawer/index.tsx`
+- [X] T011 [P] Define data types and zod schemas in `src/utils/types.ts` and `src/utils/schemas.ts`
+- [X] T012 Setup responsive layout behavior (stack in portrait/mobile) in `src/components/builder/Layout.tsx`
+- [X] T013 [P] Unit tests for layout shells in `tests/unit/builder-layout.test.tsx`
  - [ ] T013a [P] Unit tests for keyboard selection operability in `tests/unit/keyboard-selection.test.tsx`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
@@ -64,17 +64,17 @@ description: "Task list for Drag-and-Drop UI Builder"
 
 ### Tests for User Story 1
 
-- [ ] T014 [P] [US1] Unit tests for DnD validators in `tests/unit/dnd-validators.test.ts`
-- [ ] T015 [P] [US1] Integration test for drag Page/Container/Component in `tests/integration/dnd-flow.test.tsx`
+- [X] T014 [P] [US1] Unit tests for DnD validators in `tests/unit/dnd-validators.test.ts`
+- [X] T015 [P] [US1] Integration test for drag Page/Container/Component in `tests/integration/dnd-flow.test.tsx`
  - [ ] T015a [US1] Performance check: hover feedback latency ≤100ms (manual/automation) documented in `docs/perf-dnd-latency.md`
 
 ### Implementation for User Story 1
 
-- [ ] T016 [P] [US1] Implement DnD helpers (mouse/touch) in `src/utils/dnd.ts`
-- [ ] T017 [P] [US1] Add valid/invalid hover glow (green/red) in `src/components/builder/ResultSide/DropZone.tsx`
-- [ ] T018 [US1] Enforce hierarchy rules in `src/utils/validators.ts`
-- [ ] T019 [US1] Wire UISide drag sources in `src/components/builder/UISide/DraggableItem.tsx`
-- [ ] T020 [US1] Render nested hierarchy in `src/components/builder/ResultSide/TreeRenderer.tsx`
+- [X] T016 [P] [US1] Implement DnD helpers (mouse/touch) in `src/utils/dnd.ts`
+- [X] T017 [P] [US1] Add valid/invalid hover glow (green/red) in `src/components/builder/ResultSide/DropZone.tsx`
+- [X] T018 [US1] Enforce hierarchy rules in `src/utils/validators.ts`
+- [X] T019 [US1] Wire UISide drag sources in `src/components/builder/UISide/DraggableItem.tsx`
+- [X] T020 [US1] Render nested hierarchy in `src/components/builder/ResultSide/TreeRenderer.tsx`
  - [ ] T020a [US1] Document deepest-valid-target rule and tests in `tests/integration/dnd-overlap.test.tsx`
 
 **Checkpoint**: US1 fully functional and testable independently

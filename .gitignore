@@ -22,3 +22,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Testing
+coverage/
+
+# Build artifacts
+build/
+*.tsbuildinfo
+
+# Temporary files
+*.tmp
+*.swp
