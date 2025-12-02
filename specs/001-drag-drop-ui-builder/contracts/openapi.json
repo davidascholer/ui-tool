@@ -1,0 +1,32 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "UI Builder API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/analytics/track": {
+      "post": {
+        "summary": "Track analytics event",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "properties": { "type": "object" }
+                },
+                "required": ["name"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "ok" }
+        }
+      }
+    }
+  }
+}
