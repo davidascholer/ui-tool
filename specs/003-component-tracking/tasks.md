@@ -7,7 +7,7 @@ description: "Detailed task breakdown for Component Tracking and Code Export fea
 **Input**: Design documents from `/specs/003-component-tracking/`  
 **Prerequisites**: plan.md, spec.md, research.md, data-model.md, quickstart.md
 
-**Tests**: NOT included - tests are optional and not requested in the feature specification.
+**Tests**: Included per Testing Discipline constitution requirement - unit tests for all reusable components and utilities, integration tests for user flows.
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 
@@ -70,6 +70,13 @@ Single project structure:
 - [ ] T016 [US1] Add accessor methods to retrieve entity metadata by ID in src/utils/code-metadata-manager.ts
 - [ ] T017 [US1] Verify metadata persists when editing component properties through Drawer forms
 
+### Tests for User Story 1
+
+- [ ] T017a [P] [US1] Create unit tests for code-metadata-manager in tests/unit/code-metadata-manager.test.ts
+- [ ] T017b [P] [US1] Create unit tests for metadata tracking state management in tests/unit/state-metadata.test.ts
+- [ ] T017c [P] [US1] Test metadata creation, updates, and retrieval operations in tests/unit/code-metadata-manager.test.ts
+- [ ] T017d [P] [US1] Test metadata persists across state changes in tests/unit/state-metadata.test.ts
+
 **Checkpoint**: At this point, User Story 1 should be fully functional - all entities have metadata tracking
 
 ---
@@ -106,6 +113,18 @@ Single project structure:
 - [ ] T039 [US2] Update globalCodeMetadata manager to call appropriate code generator and populate 'react-code', 'styles', 'element' properties in src/utils/code-metadata-manager.ts
 - [ ] T040 [US2] Verify generated code is syntactically valid React/React Native by manual inspection and paste testing
 
+### Tests for User Story 2
+
+- [ ] T040a [P] [US2] Create unit tests for all React code generators in tests/unit/code-generators/react.test.ts
+- [ ] T040b [P] [US2] Create unit tests for all React Native code generators in tests/unit/code-generators/react-native.test.ts
+- [ ] T040c [P] [US2] Test React code generation for all component types (Button, Input, Card, Text, Image, List, Container, Page) in tests/unit/code-generators/react.test.ts
+- [ ] T040d [P] [US2] Test React Native code generation with Tailwind to style object conversion in tests/unit/code-generators/react-native.test.ts
+- [ ] T040e [P] [US2] Test nested component code generation preserves hierarchy in tests/unit/code-generators/nesting.test.ts
+- [ ] T040f [P] [US2] Test code generation includes all user-edited properties and custom classes in tests/unit/code-generators/properties.test.ts
+- [ ] T040g [P] [US2] Verify generated code is syntactically valid JSX (can be parsed without errors) in tests/unit/code-generators/syntax-validation.test.ts
+- [ ] T040h [P] [US2] Test style converter utility for common Tailwind classes in tests/unit/tailwind-to-rn.test.ts
+- [ ] T040i [P] [US2] Test code generation helpers (indentation, formatting) in tests/unit/code-generation-helpers.test.ts
+
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work - code generation produces valid output for all component types
 
 ---
@@ -133,6 +152,18 @@ Single project structure:
 - [ ] T053 [US3] Verify clicking nested components copies correct code (most specific component in hierarchy)
 - [ ] T054 [US3] Test keyboard accessibility: focus component and press Enter to copy in src/components/builder/ResultSide/index.tsx
 
+### Tests for User Story 3
+
+- [ ] T054a [P] [US3] Create unit tests for clipboard service in tests/unit/clipboard.test.ts
+- [ ] T054b [P] [US3] Create unit tests for CopyNotification component in tests/unit/components/CopyNotification.test.tsx
+- [ ] T054c [P] [US3] Create unit tests for CodeModal component in tests/unit/components/CodeModal.test.tsx
+- [ ] T054d [US3] Create integration tests for click-to-copy workflow in tests/integration/click-to-copy.test.tsx
+- [ ] T054e [US3] Test clicking components triggers clipboard copy in tests/integration/click-to-copy.test.tsx
+- [ ] T054f [US3] Test CopyNotification appears on successful copy in tests/integration/click-to-copy.test.tsx
+- [ ] T054g [US3] Test CodeModal fallback appears on clipboard permission failure in tests/integration/click-to-copy.test.tsx
+- [ ] T054h [US3] Test rapid clicking updates clipboard correctly in tests/integration/click-to-copy.test.tsx
+- [ ] T054i [US3] Mock Clipboard API for test isolation in tests/integration/click-to-copy.test.tsx
+
 **Checkpoint**: All core user stories (1, 2, 3) should now be independently functional - full click-to-copy workflow works
 
 ---
@@ -155,6 +186,14 @@ Single project structure:
 - [ ] T062 [US4] Add visual indicator showing current selected format in CodeFormatToggle in src/components/builder/CodeFormatToggle.tsx
 - [ ] T063 [US4] Persist format selection to localStorage for session continuity in src/components/builder/CodeFormatToggle.tsx
 - [ ] T064 [US4] Verify toggling format and clicking component produces correct output for both React and React Native
+
+### Tests for User Story 4
+
+- [ ] T064a [P] [US4] Create unit tests for CodeFormatToggle component in tests/unit/components/CodeFormatToggle.test.tsx
+- [ ] T064b [US4] Create unit tests for format selection state management in tests/unit/state-format.test.ts
+- [ ] T064c [US4] Test toggling between React and React Native formats in tests/unit/components/CodeFormatToggle.test.tsx
+- [ ] T064d [US4] Test code generation respects selected format in tests/integration/format-selection.test.tsx
+- [ ] T064e [US4] Test format persistence to localStorage in tests/unit/components/CodeFormatToggle.test.tsx
 
 **Checkpoint**: All user stories (1-4) should now be independently functional - format toggle affects generated code
 
@@ -205,6 +244,7 @@ Single project structure:
 - T014-T015 are sequential (both modify state actions)
 - T016 [P] can run parallel with T014-T015 (separate file)
 - T017 is final verification
+- T017a-T017d [P] tests can all run in parallel after implementation
 
 **User Story 2** (Code Generation):
 - T018-T025 [P] can run in parallel (React generators, different files)
@@ -214,15 +254,19 @@ Single project structure:
 - T036 [P] can run parallel with any generator tasks (separate file)
 - T037-T039 are sequential (build on previous work)
 - T040 is final verification
+- T040a-T040i [P] tests can all run in parallel after implementation
 
 **User Story 3** (Click-to-Copy):
 - T041-T044 [P] can run in parallel (separate utilities/components)
 - T045-T054 are mostly sequential (integrated flow in ResultSide)
 - Exception: T043-T044 components can be built while T045-T052 are in progress
+- T054a-T054c [P] unit tests can run in parallel
+- T054d-T054i integration tests are mostly sequential
 
 **User Story 4** (Format Selection):
 - T055-T056 [P] can run in parallel (single component, separate concerns)
 - T057-T064 are mostly sequential (integrated state management flow)
+- T064a-T064e [P] tests can all run in parallel after implementation
 
 ### Parallel Opportunities
 
@@ -233,17 +277,21 @@ Single project structure:
 **Phase 3 (US1)**: 
 - T011, T012, T013 [P] can run together (3 developers)
 - T016 [P] can run parallel with T014-T015
+- T017a-T017d [P] tests can run together (4 developers)
 
 **Phase 4 (US2)**:
 - All React generators T018-T025 [P] can run together (8 developers!)
 - All React Native generators T027-T034 [P] can run together (8 developers!)
 - T036 [P] can run parallel with any generator work
+- T040a-T040i [P] tests can run together (9 developers!)
 
 **Phase 5 (US3)**:
 - T041, T042, T043, T044 [P] can run together (4 developers)
+- T054a-T054c [P] unit tests can run together (3 developers)
 
 **Phase 6 (US4)**:
 - T055, T056 [P] can run together (2 developers)
+- T064a-T064e [P] tests can run together (5 developers)
 
 **Phase 7 (Polish)**:
 - T065, T066, T067, T068, T069 [P] can run together (5 developers)
@@ -277,10 +325,10 @@ Task: "Create main React code generator dispatcher in src/utils/code-generators/
 
 1. Complete Phase 1: Setup ✅
 2. Complete Phase 2: Foundational (CRITICAL - blocks all stories) ✅
-3. Complete Phase 3: User Story 1 (Metadata Tracking) ✅
-4. Complete Phase 4: User Story 2 (Code Generation) ✅
-5. Complete Phase 5: User Story 3 (Click-to-Copy) ✅
-6. **STOP and VALIDATE**: Test all P1 user stories independently ✅
+3. Complete Phase 3: User Story 1 (Metadata Tracking + Tests) ✅
+4. Complete Phase 4: User Story 2 (Code Generation + Tests) ✅
+5. Complete Phase 5: User Story 3 (Click-to-Copy + Tests) ✅
+6. **STOP and VALIDATE**: Run test suites, verify all P1 user stories pass independently ✅
 7. Deploy/demo if ready 🚀
 
 ### Incremental Delivery
@@ -298,15 +346,18 @@ With multiple developers:
 1. **Week 1**: Team completes Setup + Foundational together
 2. **Week 2**: Once Foundational is done:
    - Developer A: User Story 1 (Metadata Tracking)
+   - Developer B: User Story 1 Tests (can start after implementation)
    - User Story 1 MUST complete before User Story 2 can start
 3. **Week 3**: User Story 1 complete, split team:
    - Developers A-D: User Story 2 (Code Generation - 8 React generators)
    - Developers E-H: User Story 2 (Code Generation - 8 React Native generators)
    - Developer I: User Story 3 prep (clipboard utility, notification component)
+   - Developer J: User Story 2 Tests (9 test tasks - can run parallel with implementation)
 4. **Week 4**: User Story 2 complete:
    - Developers A-C: User Story 3 (Click-to-Copy integration)
    - Developers D-E: User Story 4 (Format Selection)
-5. **Week 5**: Polish and validation
+   - Developer F: User Story 3 Tests (9 test tasks)
+5. **Week 5**: User Story 4 Tests + Polish and validation
 
 ---
 
@@ -321,6 +372,8 @@ With multiple developers:
 - [ ] No regression in existing Feature 001 tests
 - [ ] All 7 success criteria (SC-001 to SC-007) met per spec.md
 - [ ] Manual validation following quickstart.md scenarios completes successfully
+- [ ] All reusable components and utilities have unit test coverage per Testing Discipline constitution requirement
+- [ ] Integration tests cover complete user workflows (click-to-copy, format selection)
 
 ---
 
@@ -330,7 +383,7 @@ With multiple developers:
 - **[Story] label**: Maps task to specific user story for traceability
 - **Sequential dependencies**: US1 → US2 → US3 → US4 (each builds on previous)
 - **Global object structure**: Must use 'react-code', 'styles', 'element' as property names (per user requirement)
-- **No tests included**: Tests are optional and not requested in spec.md
+- **Testing included**: Per Testing Discipline constitution requirement - 22 test tasks covering all reusable utilities and components
 - **Commit strategy**: Commit after each task or logical group
 - **Stop at checkpoints**: Validate each story independently before proceeding
 - **Feature 001 dependency**: MUST be complete and functional before starting
