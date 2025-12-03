@@ -9,7 +9,7 @@ import { UISide } from '../components/builder/UISide';
 import { ResultSide } from '../components/builder/ResultSide';
 import { Drawer } from '../components/builder/Drawer';
 import { useBuilderState } from '../utils/state';
-import type { ComponentType } from '@/utils/types';
+import type { ComponentType, EntityType } from '@/utils/types';
 import { Layout } from '@/components/builder/Layout';
 
 export function BuilderPage() {
@@ -63,6 +63,10 @@ export function BuilderPage() {
     }
   };
 
+  const handleDelete = (entityType: EntityType, entityId: string) => {
+    actions.deleteEntity(entityId, entityType);
+  };
+
   return (
     <>
       <SEO
@@ -79,6 +83,7 @@ export function BuilderPage() {
             selection={state.selection}
             onSelect={handleSelect}
             onDrop={handleDrop}
+            onDelete={handleDelete}
           />
         }
         drawer={

@@ -9,17 +9,19 @@ import { useState } from 'react';
 import type { PageEntity, Selection, EntityType } from '@/utils/types';
 import { DropZone } from './DropZone';
 import { CodeView } from './CodeView';
+import { Selectable } from './Selectable';
 
 interface ResultSideProps {
   pages: PageEntity[];
   selection: Selection | null;
   onSelect?: (selection: Selection | null) => void;
   onDrop?: (targetId: string | undefined, targetType: EntityType | 'root') => void;
+  onDelete?: (entityType: EntityType, entityId: string) => void;
 }
 
 type ViewMode = 'hierarchy' | 'code';
 
-export function ResultSide({ pages, selection, onSelect, onDrop }: ResultSideProps) {
+export function ResultSide({ pages, selection, onSelect, onDrop, onDelete }: ResultSideProps) {
   const [viewMode, setViewMode] = useState<ViewMode>('hierarchy');
   
   const handleSelect = (entityType: Selection['entityType'], entityId: string) => {
@@ -82,21 +84,16 @@ export function ResultSide({ pages, selection, onSelect, onDrop }: ResultSidePro
                 <EmptyState />
               ) : (
                 pages.map((page) => (
-                  <div
+                  <Selectable
                     key={page.id}
-                    className={`
-                      rounded-lg border-2 p-4 transition-shadow
-                      ${
-                        selection?.entityId === page.id
-                          ? 'border-[rgb(var(--color-selected))] shadow-[0_0_0_3px_rgba(var(--color-selected),0.3)]'
-                          : 'border-[rgb(var(--color-border))]'
-                      }
-                      hover:shadow-md
-                    `}
-                    onClick={() => handleSelect('Page', page.id)}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`Page: ${page.name}`}
+                    entityType="Page"
+                    entityId={page.id}
+                    isSelected={selection?.entityId === page.id}
+                    onSelect={handleSelect}
+                    onDelete={onDelete}
+                    className="p-4"
+                    ariaLabel={`Page: ${page.name}`}
+                    size="large"
                   >
                     <div className="mb-4">
                       <h2 className="text-xl font-semibold text-[rgb(var(--color-foreground))]">
@@ -119,24 +116,16 @@ export function ResultSide({ pages, selection, onSelect, onDrop }: ResultSidePro
                       {page.children.length > 0 && (
                         <div className="space-y-4">
                           {page.children.map((container) => (
-                            <div
+                            <Selectable
                               key={container.id}
-                              className={`
-                                rounded border-2 p-4 transition-shadow
-                                ${
-                                  selection?.entityId === container.id
-                                    ? 'border-[rgb(var(--color-selected))] shadow-[0_0_0_3px_rgba(var(--color-selected),0.3)]'
-                                    : 'border-[rgb(var(--color-border))]'
-                                }
-                                hover:shadow-sm
-                              `}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleSelect('Container', container.id);
-                              }}
-                              role="button"
-                              tabIndex={0}
-                              aria-label={`Container: ${container.name}`}
+                              entityType="Container"
+                              entityId={container.id}
+                              isSelected={selection?.entityId === container.id}
+                              onSelect={handleSelect}
+                              onDelete={onDelete}
+                              className="p-4"
+                              ariaLabel={`Container: ${container.name}`}
+                              size="medium"
                             >
                               <h3 className="mb-2 font-medium text-[rgb(var(--color-foreground))]">
                                 {container.name}
@@ -152,39 +141,31 @@ export function ResultSide({ pages, selection, onSelect, onDrop }: ResultSidePro
                                 {container.children.length > 0 && (
                                   <div className="space-y-2">
                                     {container.children.map((component) => (
-                                      <div
+                                      <Selectable
                                         key={component.id}
-                                        className={`
-                                          rounded border p-2 transition-shadow
-                                          ${
-                                            selection?.entityId === component.id
-                                              ? 'border-[rgb(var(--color-selected))] shadow-[0_0_0_2px_rgba(var(--color-selected),0.3)]'
-                                              : 'border-[rgb(var(--color-border))]'
-                                          }
-                                          hover:shadow-sm
-                                        `}
-                                        onClick={(e) => {
-                                          e.stopPropagation();
-                                          handleSelect('Component', component.id);
-                                        }}
-                                        role="button"
-                                        tabIndex={0}
-                                        aria-label={`Component: ${component.type}`}
+                                        entityType="Component"
+                                        entityId={component.id}
+                                        isSelected={selection?.entityId === component.id}
+                                        onSelect={handleSelect}
+                                        onDelete={onDelete}
+                                        className="p-2"
+                                        ariaLabel={`Component: ${component.type}`}
+                                        size="small"
                                       >
                                         <span className="text-sm text-[rgb(var(--color-foreground))]">
                                           {component.type}
                                         </span>
-                                      </div>
+                                      </Selectable>
                                     ))}
                                   </div>
                                 )}
                               </DropZone>
-                            </div>
+                            </Selectable>
                           ))}
                         </div>
                       )}
                     </DropZone>
-                  </div>
+                  </Selectable>
                 ))
               )}
             </DropZone>
