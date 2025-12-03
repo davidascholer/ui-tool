@@ -6,7 +6,7 @@
 import { elementWithChildren, formatChildren } from '@/utils/code-generation-helpers';
 import type { PageEntity } from '@/utils/types';
 
-export function generatePageCode(page: PageEntity, childrenCode: string[] = []): string {
+export function generatePageCode(_page: PageEntity, childrenCode: string[] = []): string {
   const attributes: Record<string, unknown> = {};
   
   // Add className for page wrapper

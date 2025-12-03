@@ -6,7 +6,7 @@
 import { formatStyle, elementWithChildren, formatChildren } from '@/utils/code-generation-helpers';
 import type { PageEntity } from '@/utils/types';
 
-export function generatePageCodeRN(page: PageEntity, childrenCode: string[] = []): string {
+export function generatePageCodeRN(_page: PageEntity, childrenCode: string[] = []): string {
   const attributes: Record<string, unknown> = {};
   
   // Add basic style for SafeAreaView

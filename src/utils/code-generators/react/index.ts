@@ -23,7 +23,7 @@ import { addReactImport } from '@/utils/code-generation-helpers';
  */
 export function generateComponentCode(
   component: ComponentEntity,
-  pages: PageEntity[]
+  _pages: PageEntity[]
 ): string {
   const { type: componentType } = component;
   
