@@ -89,7 +89,20 @@ export function formatStyle(styleObject: Record<string, unknown>): string {
     return '';
   }
 
-  return `style={${JSON.stringify(styleObject)}}`;
+  // Convert to JSX object literal syntax for React Native
+  const entries = Object.entries(styleObject);
+  const styleStr = entries
+    .map(([key, value]) => {
+      if (typeof value === 'string') {
+        // Escape double quotes in string values
+        const escapedValue = value.replace(/"/g, '\\"');
+        return `${key}: "${escapedValue}"`;
+      }
+      return `${key}: ${value}`;
+    })
+    .join(', ');
+
+  return `{{ ${styleStr} }}`;
 }
 
 /**
