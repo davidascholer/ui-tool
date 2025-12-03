@@ -7,6 +7,17 @@ export type ComponentType = 'Button' | 'Input' | 'Card' | 'Text' | 'Image' | 'Li
 export type EntityType = 'Page' | 'Container' | 'Component';
 export type CodeMode = 'react' | 'react-native';
 
+// Feature 003: Component Code Metadata
+export type CodeFormat = 'react' | 'react-native';
+
+export interface ComponentCodeMetadata {
+  'react-code': string;
+  'styles': string;
+  'element': string;
+}
+
+export type GlobalCodeMetadata = Record<string, ComponentCodeMetadata>;
+
 export interface TailwindOptions {
   classList: string[];
   theme?: {
@@ -21,6 +32,7 @@ export interface ComponentEntity {
   type: ComponentType;
   props: Record<string, unknown>;
   tailwindOptions: TailwindOptions;
+  codeMetadata?: ComponentCodeMetadata;
 }
 
 export interface ContainerEntity {
@@ -28,6 +40,7 @@ export interface ContainerEntity {
   name: string;
   tailwindOptions: TailwindOptions;
   children: ComponentEntity[];
+  codeMetadata?: ComponentCodeMetadata;
 }
 
 export interface PageEntity {
@@ -38,6 +51,7 @@ export interface PageEntity {
     description?: string;
   };
   children: ContainerEntity[];
+  codeMetadata?: ComponentCodeMetadata;
 }
 
 export interface Selection {
@@ -49,6 +63,9 @@ export interface BuilderState {
   pages: PageEntity[];
   selection: Selection | null;
   codeMode: CodeMode;
+  // Feature 003: Component Tracking
+  globalCodeMetadata: GlobalCodeMetadata;
+  codeFormat: CodeFormat;
 }
 
 // Drag and drop types

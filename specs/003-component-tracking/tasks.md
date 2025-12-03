@@ -30,10 +30,10 @@ Single project structure:
 
 **Purpose**: Project initialization and verification that Feature 001 is complete
 
-- [ ] T001 Verify Feature 001 (Drag-and-drop UI builder) is fully functional by running existing tests
-- [ ] T002 [P] Review existing entity types (PageEntity, ContainerEntity, ComponentEntity) in src/utils/types.ts
-- [ ] T003 [P] Review existing useBuilderState hook in src/utils/state.ts to understand state management
-- [ ] T004 Verify component selection mechanism works in ResultSide by manual testing
+- [X] T001 Verify Feature 001 (Drag-and-drop UI builder) is fully functional by running existing tests
+- [X] T002 [P] Review existing entity types (PageEntity, ContainerEntity, ComponentEntity) in src/utils/types.ts
+- [X] T003 [P] Review existing useBuilderState hook in src/utils/state.ts to understand state management
+- [X] T004 Verify component selection mechanism works in ResultSide by manual testing
 
 ---
 
@@ -43,12 +43,12 @@ Single project structure:
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T005 [P] Create Tailwind to React Native conversion mapping table in src/utils/tailwind-to-rn.ts
-- [ ] T006 [P] Create shared code generation utilities (indentation, formatting helpers) in src/utils/code-generation-helpers.ts
-- [ ] T007 Create ComponentCodeMetadata type definition with properties 'react-code', 'styles', 'element' in src/utils/types.ts
-- [ ] T008 Create GlobalCodeMetadata type as Record<string, ComponentCodeMetadata> in src/utils/types.ts
-- [ ] T009 Create CodeFormat type ('react' | 'react-native') in src/utils/types.ts
-- [ ] T010 Add codeMetadata optional field to PageEntity, ContainerEntity, and ComponentEntity in src/utils/types.ts
+- [X] T005 [P] Create Tailwind to React Native conversion mapping table in src/utils/tailwind-to-rn.ts
+- [X] T006 [P] Create shared code generation utilities (indentation, formatting helpers) in src/utils/code-generation-helpers.ts
+- [X] T007 Create ComponentCodeMetadata type definition with properties 'react-code', 'styles', 'element' in src/utils/types.ts
+- [X] T008 Create GlobalCodeMetadata type as Record<string, ComponentCodeMetadata> in src/utils/types.ts
+- [X] T009 Create CodeFormat type ('react' | 'react-native') in src/utils/types.ts
+- [X] T010 Add codeMetadata optional field to PageEntity, ContainerEntity, and ComponentEntity in src/utils/types.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -62,20 +62,20 @@ Single project structure:
 
 ### Implementation for User Story 1
 
-- [ ] T011 [P] [US1] Extend BuilderState interface to include globalCodeMetadata field of type GlobalCodeMetadata in src/utils/state.ts
-- [ ] T012 [P] [US1] Extend BuilderState interface to include codeFormat field of type CodeFormat with default 'react' in src/utils/state.ts
-- [ ] T013 [US1] Create global code metadata manager utility with sync methods in src/utils/code-metadata-manager.ts
-- [ ] T014 [US1] Update entity creation actions in useBuilderState to initialize empty codeMetadata in src/utils/state.ts
-- [ ] T015 [US1] Update entity update actions in useBuilderState to preserve codeMetadata during property edits in src/utils/state.ts
-- [ ] T016 [US1] Add accessor methods to retrieve entity metadata by ID in src/utils/code-metadata-manager.ts
-- [ ] T017 [US1] Verify metadata persists when editing component properties through Drawer forms
+- [X] T011 [P] [US1] Extend BuilderState interface to include globalCodeMetadata field of type GlobalCodeMetadata in src/utils/state.ts
+- [X] T012 [P] [US1] Extend BuilderState interface to include codeFormat field of type CodeFormat with default 'react' in src/utils/state.ts
+- [X] T013 [US1] Create global code metadata manager utility with sync methods in src/utils/code-metadata-manager.ts
+- [X] T014 [US1] Update entity creation actions in useBuilderState to initialize empty codeMetadata in src/utils/state.ts
+- [X] T015 [US1] Update entity update actions in useBuilderState to preserve codeMetadata during property edits in src/utils/state.ts
+- [X] T016 [US1] Add accessor methods to retrieve entity metadata by ID in src/utils/code-metadata-manager.ts
+- [X] T017 [US1] Verify metadata persists when editing component properties through Drawer forms
 
 ### Tests for User Story 1
 
-- [ ] T017a [P] [US1] Create unit tests for code-metadata-manager in tests/unit/code-metadata-manager.test.ts
-- [ ] T017b [P] [US1] Create unit tests for metadata tracking state management in tests/unit/state-metadata.test.ts
-- [ ] T017c [P] [US1] Test metadata creation, updates, and retrieval operations in tests/unit/code-metadata-manager.test.ts
-- [ ] T017d [P] [US1] Test metadata persists across state changes in tests/unit/state-metadata.test.ts
+- [X] T017a [P] [US1] Create unit tests for code-metadata-manager in tests/unit/code-metadata-manager.test.ts
+- [X] T017b [P] [US1] Create unit tests for metadata tracking state management in tests/unit/state-metadata.test.ts
+- [X] T017c [P] [US1] Test metadata creation, updates, and retrieval operations in tests/unit/code-metadata-manager.test.ts
+- [X] T017d [P] [US1] Test metadata persists across state changes in tests/unit/state-metadata.test.ts
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - all entities have metadata tracking
 

@@ -11,6 +11,9 @@ export function useBuilderState() {
     pages: [],
     selection: null,
     codeMode: 'react',
+    // Feature 003: Component Tracking
+    globalCodeMetadata: {},
+    codeFormat: 'react',
   });
 
   const addPage = useCallback((name: string) => {
@@ -18,6 +21,11 @@ export function useBuilderState() {
       id: `page-${Date.now()}`,
       name,
       children: [],
+      codeMetadata: {
+        'react-code': '<div></div>',
+        'styles': '',
+        'element': 'div',
+      },
     };
     setState((prev) => ({
       ...prev,
@@ -31,6 +39,11 @@ export function useBuilderState() {
       name,
       tailwindOptions: { classList: [] },
       children: [],
+      codeMetadata: {
+        'react-code': '<div></div>',
+        'styles': '',
+        'element': 'div',
+      },
     };
     setState((prev) => ({
       ...prev,
@@ -43,11 +56,26 @@ export function useBuilderState() {
   }, []);
 
   const addComponent = useCallback((containerId: string, type: ComponentType) => {
+    // Map component type to HTML element
+    const elementMap: Record<ComponentType, string> = {
+      Button: 'button',
+      Input: 'input',
+      Card: 'div',
+      Text: 'p',
+      Image: 'img',
+      List: 'ul',
+    };
+
     const newComponent: ComponentEntity = {
       id: `component-${Date.now()}`,
       type,
       props: {},
       tailwindOptions: { classList: [] },
+      codeMetadata: {
+        'react-code': `<${elementMap[type]}></${elementMap[type]}>`,
+        'styles': '',
+        'element': elementMap[type],
+      },
     };
     setState((prev) => ({
       ...prev,
@@ -74,7 +102,9 @@ export function useBuilderState() {
     setState((prev) => ({
       ...prev,
       pages: prev.pages.map((page) =>
-        page.id === pageId ? { ...page, ...updates } : page
+        page.id === pageId
+          ? { ...page, ...updates, codeMetadata: page.codeMetadata }
+          : page
       ),
     }));
   }, []);
@@ -85,7 +115,9 @@ export function useBuilderState() {
       pages: prev.pages.map((page) => ({
         ...page,
         children: page.children.map((container) =>
-          container.id === containerId ? { ...container, ...updates } : container
+          container.id === containerId
+            ? { ...container, ...updates, codeMetadata: container.codeMetadata }
+            : container
         ),
       })),
     }));
@@ -99,7 +131,9 @@ export function useBuilderState() {
         children: page.children.map((container) => ({
           ...container,
           children: container.children.map((component) =>
-            component.id === componentId ? { ...component, ...updates } : component
+            component.id === componentId
+              ? { ...component, ...updates, codeMetadata: component.codeMetadata }
+              : component
           ),
         })),
       })),
