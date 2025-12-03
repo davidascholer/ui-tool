@@ -25,11 +25,11 @@ export function ResultSide({ pages, selection, onSelect, onDrop }: ResultSidePro
   };
 
   return (
-    <div className="min-h-full bg-[rgb(var(--color-background))] p-8">
+    <div className="min-h-full bg-[rgb(var(--color-background))] p-8 border-2 border-amber-400/30 rounded-lg cursor-pointer w-72 h-72">
       <DropZone
         targetType="root"
         onDrop={onDrop}
-        className={pages.length === 0 ? '' : 'space-y-6'}
+        className={pages.length === 0 ? '' : 'space-y-6 bg-blue-200'}
       >
         {pages.length === 0 ? (
           <EmptyState />

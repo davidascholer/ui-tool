@@ -5,12 +5,12 @@
 
 import { useState } from 'react';
 import { SEO } from '../components/common/SEO';
-import { Layout } from '../components/builder/Layout';
 import { UISide } from '../components/builder/UISide';
 import { ResultSide } from '../components/builder/ResultSide';
 import { Drawer } from '../components/builder/Drawer';
 import { useBuilderState } from '../utils/state';
 import type { ComponentType } from '@/utils/types';
+import { Layout } from '@/components/builder/Layout';
 
 export function BuilderPage() {
   const { state, actions } = useBuilderState();
@@ -22,7 +22,7 @@ export function BuilderPage() {
     setCurrentDragItem({ type, componentType });
   };
 
-  const handleDrop = (targetId: string | undefined, targetType: typeof state.pages[0] extends never ? never : 'Page' | 'Container' | 'root') => {
+  const handleDrop = (targetId: string | undefined, targetType: 'Page' | 'Container' | 'Component' | 'root') => {
     if (!currentDragItem) return;
 
     const { type, componentType } = currentDragItem;
