@@ -13,6 +13,9 @@ interface SEOProps {
   ogDescription?: string;
   ogImage?: string;
   ogType?: string;
+  keywords?: string;
+  author?: string;
+  robots?: string;
 }
 
 export function SEO({
@@ -23,6 +26,9 @@ export function SEO({
   ogDescription,
   ogImage,
   ogType = 'website',
+  keywords = 'react, react native, ui builder, drag and drop, component builder, tailwind css, code generator',
+  author = 'UI Builder Team',
+  robots = 'index, follow',
 }: SEOProps) {
   useEffect(() => {
     // Update title
@@ -44,6 +50,10 @@ export function SEO({
 
     // Standard meta tags
     updateMeta('description', description);
+    updateMeta('keywords', keywords);
+    updateMeta('author', author);
+    updateMeta('robots', robots);
+    updateMeta('viewport', 'width=device-width, initial-scale=1.0');
 
     // Open Graph tags
     updateMeta('og:title', ogTitle || title, true);
@@ -75,7 +85,7 @@ export function SEO({
       
       linkElement.setAttribute('href', canonical);
     }
-  }, [title, description, canonical, ogTitle, ogDescription, ogImage, ogType]);
+  }, [title, description, canonical, ogTitle, ogDescription, ogImage, ogType, keywords, author, robots]);
 
   return null;
 }

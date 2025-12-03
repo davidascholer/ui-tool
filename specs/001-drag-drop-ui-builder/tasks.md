@@ -130,14 +130,14 @@ description: "Task list for Drag-and-Drop UI Builder"
 
 ## Phase N: Polish & Cross-Cutting Concerns
 
-- [ ] T032 [P] Add theme toggle and persistence in `src/components/common/ThemeToggle.tsx`
-- [ ] T033 Code cleanup and component decomposition across `src/components/*`
-- [ ] T034 Performance optimizations for DnD and rendering in `src/utils/*`
-- [ ] T035 [P] Additional unit tests for catalog components in `tests/unit/catalog/*.test.tsx`
-- [ ] T036 SEO enhancements: OG tags, canonical in `src/pages/BuilderPage.tsx`
- - [ ] T036a [P] Specify analytics library in `package.json` and document config in `docs/analytics.md`
-- [ ] T037 Security and privacy review for analytics in `api/controllers/analytics.ts`
-- [ ] T038 Run quickstart.md validation steps
+- [X] T032 [P] Add theme toggle and persistence in `src/components/common/ThemeToggle.tsx`
+- [X] T033 Code cleanup and component decomposition across `src/components/*`
+- [X] T034 Performance optimizations for DnD and rendering in `src/utils/*`
+- [X] T035 [P] Additional unit tests for catalog components in `tests/unit/catalog/*.test.tsx`
+- [X] T036 SEO enhancements: OG tags, canonical in `src/pages/BuilderPage.tsx`
+ - [X] T036a [P] Specify analytics library in `package.json` and document config in `docs/analytics.md`
+- [X] T037 Security and privacy review for analytics in `api/controllers/analytics.ts`
+- [X] T038 Run quickstart.md validation steps
 
 ---
 

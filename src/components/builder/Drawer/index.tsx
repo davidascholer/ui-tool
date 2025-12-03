@@ -57,6 +57,3 @@ export function Drawer({ selection, entity, onSave, onClose }: DrawerProps) {
     </div>
   );
 }
-
-
-

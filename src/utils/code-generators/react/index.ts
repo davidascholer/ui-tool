@@ -23,7 +23,8 @@ import { addReactImport } from '@/utils/code-generation-helpers';
  */
 export function generateComponentCode(
   component: ComponentEntity,
-  _pages: PageEntity[]
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _pages: PageEntity[] // Reserved for future nested structure lookup
 ): string {
   const { type: componentType } = component;
   

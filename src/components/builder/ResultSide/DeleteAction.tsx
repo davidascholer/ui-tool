@@ -4,7 +4,7 @@
  * Supports keyboard shortcuts and accessibility
  */
 
-import { useState } from 'react';
+import { useState, memo, useCallback } from 'react';
 import type { EntityType } from '@/utils/types';
 
 interface DeleteActionProps {
@@ -18,7 +18,7 @@ interface DeleteActionProps {
   showText?: boolean;
 }
 
-export function DeleteAction({
+export const DeleteAction = memo(function DeleteAction({
   entityType,
   entityId,
   entityName,
@@ -30,21 +30,21 @@ export function DeleteAction({
 }: DeleteActionProps) {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const handleDeleteClick = (e: React.MouseEvent) => {
+  const handleDeleteClick = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
     setShowConfirmation(true);
-  };
+  }, []);
 
-  const handleConfirmDelete = (e: React.MouseEvent) => {
+  const handleConfirmDelete = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
     onDelete?.(entityType, entityId);
     setShowConfirmation(false);
-  };
+  }, [onDelete, entityType, entityId]);
 
-  const handleCancelDelete = (e: React.MouseEvent) => {
+  const handleCancelDelete = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
     setShowConfirmation(false);
-  };
+  }, []);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -159,6 +159,6 @@ export function DeleteAction({
       )}
     </button>
   );
-}
+});
 
 export default DeleteAction;

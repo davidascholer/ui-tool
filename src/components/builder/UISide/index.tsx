@@ -6,6 +6,25 @@
 import type { ComponentType } from '@/utils/types';
 import { createDragItem, setDragData } from '@/utils/dnd';
 
+// Component catalog configuration
+const COMPONENT_CATALOG = {
+  pages: [
+    { label: 'Page', icon: '📄' }
+  ],
+  containers: [
+    { label: 'Container', icon: '📦' },
+    { label: 'Section', icon: '📐' }
+  ],
+  components: [
+    { label: 'Button', icon: '🔘', type: 'Button' as ComponentType },
+    { label: 'Input', icon: '📝', type: 'Input' as ComponentType },
+    { label: 'Card', icon: '🃏', type: 'Card' as ComponentType },
+    { label: 'Text', icon: '📰', type: 'Text' as ComponentType },
+    { label: 'Image', icon: '🖼️', type: 'Image' as ComponentType },
+    { label: 'List', icon: '📋', type: 'List' as ComponentType }
+  ]
+} as const;
+
 interface UISideProps {
   onDragStart?: (type: 'page' | 'container' | 'component', componentType?: ComponentType) => void;
 }
@@ -26,77 +45,52 @@ export function UISide({ onDragStart }: UISideProps) {
       </h2>
 
       {/* Pages Section */}
-      <section className="mb-6">
-        <h3 className="mb-2 text-sm font-medium text-[rgb(var(--color-muted-foreground))]">
-          Pages
-        </h3>
-        <div className="space-y-2">
-          <DraggableItem
-            label="Page"
-            icon="📄"
-            onDragStart={handleDragStart('page')}
-          />
-        </div>
-      </section>
+      <ComponentSection
+        title="Pages"
+        items={COMPONENT_CATALOG.pages}
+        onDragStart={(item) => handleDragStart('page')}
+      />
 
       {/* Containers Section */}
-      <section className="mb-6">
-        <h3 className="mb-2 text-sm font-medium text-[rgb(var(--color-muted-foreground))]">
-          Containers
-        </h3>
-        <div className="space-y-2">
-          <DraggableItem
-            label="Container"
-            icon="📦"
-            onDragStart={handleDragStart('container')}
-          />
-          <DraggableItem
-            label="Section"
-            icon="📐"
-            onDragStart={handleDragStart('container')}
-          />
-        </div>
-      </section>
+      <ComponentSection
+        title="Containers"
+        items={COMPONENT_CATALOG.containers}
+        onDragStart={(item) => handleDragStart('container')}
+      />
 
       {/* Components Section */}
-      <section className="mb-6">
-        <h3 className="mb-2 text-sm font-medium text-[rgb(var(--color-muted-foreground))]">
-          Components
-        </h3>
-        <div className="space-y-2">
-          <DraggableItem
-            label="Button"
-            icon="🔘"
-            onDragStart={handleDragStart('component', 'Button')}
-          />
-          <DraggableItem
-            label="Input"
-            icon="📝"
-            onDragStart={handleDragStart('component', 'Input')}
-          />
-          <DraggableItem
-            label="Card"
-            icon="🃏"
-            onDragStart={handleDragStart('component', 'Card')}
-          />
-          <DraggableItem
-            label="Text"
-            icon="📰"
-            onDragStart={handleDragStart('component', 'Text')}
-          />
-          <DraggableItem
-            label="Image"
-            icon="🖼️"
-            onDragStart={handleDragStart('component', 'Image')}
-          />
-          <DraggableItem
-            label="List"
-            icon="📋"
-            onDragStart={handleDragStart('component', 'List')}
-          />
-        </div>
-      </section>
+      <ComponentSection
+        title="Components"
+        items={COMPONENT_CATALOG.components}
+        onDragStart={(item) => handleDragStart('component', 'type' in item ? item.type : undefined)}
+      />
     </div>
+  );
+}
+
+interface ComponentSectionProps {
+  title: string;
+  items: readonly { label: string; icon: string; type?: ComponentType }[];
+  onDragStart: (item: { label: string; icon: string; type?: ComponentType }) => (event: React.DragEvent) => void;
+}
+
+function ComponentSection({ title, items, onDragStart }: ComponentSectionProps) {
+  return (
+    <section className="mb-6">
+      <h3 className="mb-2 text-sm font-medium text-[rgb(var(--color-muted-foreground))]">
+        {title}
+      </h3>
+      <div className="space-y-2">
+        {items.map((item) => (
+          <DraggableItem
+            key={item.label}
+            label={item.label}
+            icon={item.icon}
+            onDragStart={onDragStart(item)}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 

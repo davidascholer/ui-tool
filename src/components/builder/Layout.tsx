@@ -2,9 +2,11 @@
  * Builder Layout Component
  * Three-column layout: UISide | ResultSide | Drawer
  * Responsive: Stacks in portrait/mobile view
+ * Includes header with theme toggle
  */
 
 import type { ReactNode } from 'react';
+import { ThemeToggle } from '../common/ThemeToggle';
 
 interface LayoutProps {
   uiSide: ReactNode;
@@ -16,8 +18,23 @@ interface LayoutProps {
 export function Layout({ uiSide, resultSide, drawer, drawerOpen }: LayoutProps) {
   return (
     <div className="flex h-screen w-screen flex-col overflow-hidden bg-[rgb(var(--color-background))]">
+      {/* Header Bar */}
+      <header className="flex items-center justify-between border-b border-[rgb(var(--color-border))] bg-[rgb(var(--color-background))] px-6 py-3">
+        <div className="flex items-center space-x-4">
+          <h1 className="text-xl font-semibold text-[rgb(var(--color-foreground))]">
+            UI Builder
+          </h1>
+          <span className="text-sm text-[rgb(var(--color-muted-foreground))]">
+            Drag & Drop React Components
+          </span>
+        </div>
+        <div className="flex items-center space-x-4">
+          <ThemeToggle />
+        </div>
+      </header>
+
       {/* Mobile/Portrait: Stack vertically */}
-      <div className="flex h-full flex-col lg:hidden">
+      <div className="flex flex-1 flex-col lg:hidden">
         {/* UI Side - collapsed on mobile */}
         <div className="border-b border-[rgb(var(--color-border))] bg-[rgb(var(--color-muted))]">
           {uiSide}
@@ -39,7 +56,7 @@ export function Layout({ uiSide, resultSide, drawer, drawerOpen }: LayoutProps) 
       </div>
 
       {/* Desktop/Landscape: Three columns */}
-      <div className="hidden h-full lg:flex">
+      <div className="hidden flex-1 lg:flex">
         {/* UI Side - fixed width */}
         <aside
           className="w-64 shrink-0 overflow-auto border-r border-[rgb(var(--color-border))] bg-[rgb(var(--color-muted))]"

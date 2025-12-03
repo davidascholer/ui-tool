@@ -8,8 +8,6 @@ import type {
   GlobalCodeMetadata, 
   ComponentCodeMetadata, 
   PageEntity,
-  ContainerEntity,
-  ComponentEntity,
   CodeFormat,
   EntityType
 } from '@/utils/types';

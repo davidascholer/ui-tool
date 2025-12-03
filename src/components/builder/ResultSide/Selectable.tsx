@@ -4,6 +4,7 @@
  * Handles keyboard operability (focus/enter/delete)
  */
 
+import { memo } from 'react';
 import type { ReactNode } from 'react';
 import type { EntityType } from '@/utils/types';
 import { DeleteAction } from './DeleteAction';
@@ -20,7 +21,7 @@ interface SelectableProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-export function Selectable({
+export const Selectable = memo(function Selectable({
   entityType,
   entityId,
   isSelected,
@@ -105,4 +106,4 @@ export function Selectable({
       )}
     </div>
   );
-}
+});

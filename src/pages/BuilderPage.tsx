@@ -73,6 +73,11 @@ export function BuilderPage() {
         title="UI Builder - Create React & React Native Components"
         description="Build beautiful, responsive UIs with drag-and-drop. Create Pages, Containers, and Components, then export clean React or React Native code."
         canonical={typeof window !== 'undefined' ? window.location.href : undefined}
+        ogTitle="UI Builder - Visual Component Designer"
+        ogDescription="Professional drag-and-drop interface for creating React and React Native components. Export production-ready code with Tailwind CSS styling."
+        ogImage="/og-image.png"
+        keywords="react builder, react native components, drag drop ui, tailwind css, code generator, component library, visual designer"
+        author="UI Builder Team"
       />
       
       <Layout
