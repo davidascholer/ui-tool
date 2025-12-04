@@ -1,15 +1,14 @@
-/** 
+/**
  * React Native:
- * This component is used inside a ScrollView or ListView to add pull to refresh functionality. When the ScrollView is at scrollY: 0, swiping down triggers an onRefresh event.
-
- * 
+ * This component will automatically adjust its height, position, or bottom padding based on the keyboard height to remain visible while the virtual keyboard is displayed.
+ *
  * Web:
- * Pull-to-refresh can be implemented using touch events, scroll position monitoring, and visual indicators. Modern browsers may support the overscroll-behavior CSS property.
+ * Virtual keyboard handling can be done with the Visual Viewport API or CSS environment variables. Modern browsers support keyboard-inset CSS properties for responsive layouts.
  */
 
-import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
+import type { TailwindDivInterface } from "../../../interface/tailwind-interfaces/TailwindDivInterface";
 
-export function UITRefreshControl({
+export function UITKeyboardAvoidingView({
   tailwindClasses,
   text = false,
   currentExport = "react",

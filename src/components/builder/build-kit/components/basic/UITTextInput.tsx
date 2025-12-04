@@ -7,7 +7,7 @@ The most basic use case is to plop down a TextInput and subscribe to the onChang
  * The HTML <input> element is used to create interactive controls for web-based forms to accept data from the user. It supports various types including text, password, email, number, date, and more.
  */
 
-import type { TailwindTextInterface } from "../tailwind-interfaces/TailwindTextInterface";
+import type { TailwindTextInterface } from "../../../interface/tailwind-interfaces/TailwindTextInterface";
 
 export function UITTextInput({
   tailwindClasses,

@@ -6,7 +6,7 @@
  * Loading spinners can be created with CSS animations, SVG animations, or the <progress> element for determinate progress. Commonly implemented with animated SVG or CSS keyframes.
  */
 
-import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
+import type { TailwindDivInterface } from "../../../interface/tailwind-interfaces/TailwindDivInterface";
 
 export function UITActivityIndicator({
   tailwindClasses,

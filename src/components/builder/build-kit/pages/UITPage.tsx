@@ -3,12 +3,12 @@
  */
 
 import { cn } from "@/utils/styles";
-import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
+import type { TailwindDivInterface } from "../../interface/tailwind-interfaces/TailwindDivInterface";
 
-const tailwindClassesLocal =
-  "flex flex-row flex-1 flex-wrap min-w-[320px] max-w-6xl mx-auto text-center justify-center items-center gap-4 bg-blue-300 p-4";
+const tailwindClassesStatic =
+  "flex flex-col min-w-[320px] max-w-6xl mx-auto justify-center items-center gap-4 bg-blue-800 p-4";
 
-export function UITContainer({
+export function UITPage({
   tailwindClasses,
   text = false,
   currentExport = "react",
@@ -19,12 +19,12 @@ export function UITContainer({
   currentExport?: "react" | "react-native";
   children?: React.ReactNode;
 }) {
-  const tailwindClassesProp = tailwindClasses?.join(" ");
+  const tailwindClassesDynamic = tailwindClasses?.join(" ");
 
   let componentText = ``;
   if (currentExport === "react") {
     componentText = `<div
-          className=${cn(tailwindClassesLocal, tailwindClassesProp)}
+          className=${cn(tailwindClassesStatic, tailwindClassesDynamic)}
         />`;
   } else if (currentExport === "react-native") {
     componentText = `<p>not implemented yet</p>`;
@@ -35,7 +35,7 @@ export function UITContainer({
       {text ? (
         <p>{componentText}</p>
       ) : (
-        <div className={cn(tailwindClassesLocal, tailwindClassesProp)}>
+        <div className={cn(tailwindClassesStatic, tailwindClassesDynamic)}>
           {children}
         </div>
       )}

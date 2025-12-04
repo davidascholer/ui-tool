@@ -1,14 +1,15 @@
 /**
  * React Native:
- * Component to control the app's status bar. The status bar is the zone, typically at the top of the screen, that displays the current time, Wi-Fi and cellular network information, battery level and/or other status icons.
- *
+ *  PixelRatio gives you access to the device's pixel density and font scale.
+
+ * 
  * Web:
- * Web doesn't have a native status bar component. Can be simulated with a fixed-position header. Meta tags control browser chrome appearance (theme-color, apple-mobile-web-app-status-bar-style).
+ * Web provides window.devicePixelRatio to access device pixel density. CSS uses relative units (rem, em, vw, vh) and media queries for responsive sizing.
  */
 
-import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
+import type { TailwindDivInterface } from "../../../interface/tailwind-interfaces/TailwindDivInterface";
 
-export function UITStatusBar({
+export function UITPixelRatio({
   tailwindClasses,
   text = false,
   currentExport = "react",

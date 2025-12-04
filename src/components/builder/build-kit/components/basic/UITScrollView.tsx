@@ -1,14 +1,14 @@
 /**
  * React Native:
- * This component will automatically adjust its height, position, or bottom padding based on the keyboard height to remain visible while the virtual keyboard is displayed.
+ * Component that wraps platform ScrollView while providing integration with touch locking "responder" system.
  *
  * Web:
- * Virtual keyboard handling can be done with the Visual Viewport API or CSS environment variables. Modern browsers support keyboard-inset CSS properties for responsive layouts.
+ * A scrollable container implemented using a <div> with overflow properties. CSS overflow (auto/scroll) enables scrolling behavior for content that exceeds the container dimensions.
  */
 
-import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
+import type { TailwindDivInterface } from "../../../interface/tailwind-interfaces/TailwindDivInterface";
 
-export function UITKeyboardAvoidingView({
+export function UITScrollView({
   tailwindClasses,
   text = false,
   currentExport = "react",

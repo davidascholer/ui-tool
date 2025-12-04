@@ -3,7 +3,7 @@
  * A React Native safe image component that loads images from different sources and adds useful features like caching, progressive loading, and more.
  */
 
-import type { TailwindImageInterface } from "../tailwind-interfaces/TailwindImageInterface";
+import type { TailwindImageInterface } from "../../../interface/tailwind-interfaces/TailwindImageInterface";
 
 export function UITImage({
   tailwindClasses,

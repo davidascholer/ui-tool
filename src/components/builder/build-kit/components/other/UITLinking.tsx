@@ -6,7 +6,7 @@
  * The HTML <a> (anchor) element creates hyperlinks to other pages, locations within the same page, email addresses, or any URL. Supports various protocols (http, https, mailto, tel).
  */
 
-import type { TailwindLinkInterface } from "../tailwind-interfaces/TailwindLinkInterface";
+import type { TailwindLinkInterface } from "../../../interface/tailwind-interfaces/TailwindLinkInterface";
 
 export function UITLinking({
   tailwindClasses,

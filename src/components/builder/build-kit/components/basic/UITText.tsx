@@ -8,7 +8,7 @@ In the following example, the nested title and body text will inherit the fontFa
  * Text elements like <p>, <span>, <h1>-<h6> are used to display text content. They support various styling and semantic meaning for accessibility and SEO.
  */
 
-import type { TailwindTextInterface } from "../tailwind-interfaces/TailwindTextInterface";
+import type { TailwindTextInterface } from "../../../interface/tailwind-interfaces/TailwindTextInterface";
 
 export function UITText({
   tailwindClasses,

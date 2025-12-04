@@ -1,15 +1,15 @@
-/**
+/** 
  * React Native:
- *  PixelRatio gives you access to the device's pixel density and font scale.
+ * This component is used inside a ScrollView or ListView to add pull to refresh functionality. When the ScrollView is at scrollY: 0, swiping down triggers an onRefresh event.
 
  * 
  * Web:
- * Web provides window.devicePixelRatio to access device pixel density. CSS uses relative units (rem, em, vw, vh) and media queries for responsive sizing.
+ * Pull-to-refresh can be implemented using touch events, scroll position monitoring, and visual indicators. Modern browsers may support the overscroll-behavior CSS property.
  */
 
-import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
+import type { TailwindDivInterface } from "../../../interface/tailwind-interfaces/TailwindDivInterface";
 
-export function UITPixelRatio({
+export function UITRefreshControl({
   tailwindClasses,
   text = false,
   currentExport = "react",

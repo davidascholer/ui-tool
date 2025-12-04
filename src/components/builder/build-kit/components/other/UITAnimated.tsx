@@ -6,7 +6,7 @@
  * CSS animations and transitions provide declarative animations. JavaScript Web Animations API offers programmatic control. Libraries like Framer Motion provide React-friendly animation primitives.
  */
 
-import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
+import type { TailwindDivInterface } from "../../../interface/tailwind-interfaces/TailwindDivInterface";
 
 export function UITAnimated({
   tailwindClasses,

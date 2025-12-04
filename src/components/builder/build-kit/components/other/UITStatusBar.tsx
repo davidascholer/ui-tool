@@ -1,15 +1,14 @@
 /**
  * React Native:
- * The most fundamental component for building a UI, View is a container that supports layout with flexbox, style, some touch handling, and accessibility controls. View maps directly to the native view equivalent on whatever platform React Native is running on, whether that is a UIView, <div>, android.view, etc.
-View is designed to be nested inside other views and can have 0 to many children of any type.
+ * Component to control the app's status bar. The status bar is the zone, typically at the top of the screen, that displays the current time, Wi-Fi and cellular network information, battery level and/or other status icons.
  *
  * Web:
- * The HTML <div> element is a generic container for flow content. It has no effect on content or layout until styled with CSS.
+ * Web doesn't have a native status bar component. Can be simulated with a fixed-position header. Meta tags control browser chrome appearance (theme-color, apple-mobile-web-app-status-bar-style).
  */
 
-import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
+import type { TailwindDivInterface } from "../../../interface/tailwind-interfaces/TailwindDivInterface";
 
-export function UITView({
+export function UITStatusBar({
   tailwindClasses,
   text = false,
   currentExport = "react",

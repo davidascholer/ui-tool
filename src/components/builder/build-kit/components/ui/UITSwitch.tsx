@@ -7,7 +7,7 @@ This is a controlled component that requires an onValueChange callback that upda
  * The HTML <input type="checkbox"> element represents a boolean toggle. Can be styled as a switch using CSS or custom components.
  */
 
-import type { TailwindButtonInterface } from "../tailwind-interfaces/TailwindButtonInterface";
+import type { TailwindButtonInterface } from "../../../interface/tailwind-interfaces/TailwindButtonInterface";
 
 export function UITSwitch({
   tailwindClasses,
