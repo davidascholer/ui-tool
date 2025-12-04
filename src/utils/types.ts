@@ -116,14 +116,17 @@ export interface VisualIndicator {
 
 export interface HierarchyViewItem {
   id: string;
-  type: EntityType;
-  displayName: string;
-  fullName: string;
+  type?: EntityType; // Optional for backwards compatibility
+  entityType?: EntityType; // Alternative name used in tests
+  displayName?: string; // Optional for backwards compatibility
+  fullName?: string; // Optional for backwards compatibility
   isExpanded: boolean;
-  isEditing: boolean;
-  level: number;
-  parentId?: string;
-  indicators: VisualIndicator[];
+  isEditing?: boolean; // Optional for backwards compatibility
+  level?: number; // Optional for backwards compatibility
+  depth?: number; // Alternative name used in tests and calculations
+  parentId?: string | null; // Allow null for root items
+  indicators?: VisualIndicator[]; // Optional for backwards compatibility
+  children?: string[]; // Child entity IDs for expansion logic
 }
 
 export interface PropertyChange {

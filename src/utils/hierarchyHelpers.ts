@@ -172,17 +172,140 @@ export function createTextContentIndicator(text: string): VisualIndicator {
 
 /**
  * Calculates expansion path for a given entity ID
+ * T031: Enhanced expansion path calculation utility for User Story 3
  */
 export function calculateExpansionPath(entityId: string, hierarchyItems: Map<string, HierarchyViewItem>): string[] {
   const path: string[] = [];
+  const visited = new Set<string>(); // Prevent infinite loops
   let currentItem = hierarchyItems.get(entityId);
   
-  while (currentItem?.parentId) {
-    path.unshift(currentItem.parentId);
-    currentItem = hierarchyItems.get(currentItem.parentId);
+  while (currentItem?.parentId && !visited.has(currentItem.id)) {
+    visited.add(currentItem.id);
+    
+    // Only add parent to path if it actually exists in the hierarchy
+    if (hierarchyItems.has(currentItem.parentId)) {
+      path.unshift(currentItem.parentId);
+      currentItem = hierarchyItems.get(currentItem.parentId);
+    } else {
+      // Parent doesn't exist, stop traversal
+      break;
+    }
   }
   
   return path;
+}
+
+/**
+ * T031: Additional expansion utilities for User Story 3
+ */
+
+/**
+ * Calculates the full hierarchy path from root to target (including target)
+ */
+export function getFullHierarchyPath(entityId: string, hierarchyItems: Map<string, HierarchyViewItem>): string[] {
+  const expansionPath = calculateExpansionPath(entityId, hierarchyItems);
+  return [...expansionPath, entityId];
+}
+
+/**
+ * Gets the depth level of an entity in the hierarchy
+ */
+export function getEntityDepth(entityId: string, hierarchyItems: Map<string, HierarchyViewItem>): number {
+  const item = hierarchyItems.get(entityId);
+  if (!item) return -1;
+  
+  return item.level || calculateExpansionPath(entityId, hierarchyItems).length;
+}
+
+/**
+ * Checks if an entity is an ancestor of another entity
+ */
+export function isAncestorOf(ancestorId: string, descendantId: string, hierarchyItems: Map<string, HierarchyViewItem>): boolean {
+  const path = calculateExpansionPath(descendantId, hierarchyItems);
+  return path.includes(ancestorId);
+}
+
+/**
+ * Gets all descendant entity IDs for a given parent (recursive)
+ */
+export function getAllDescendantIds(parentId: string, hierarchyItems: Map<string, HierarchyViewItem>): string[] {
+  const descendants: string[] = [];
+  const visited = new Set<string>(); // Prevent infinite loops
+  
+  const collectDescendants = (id: string) => {
+    if (visited.has(id)) return;
+    visited.add(id);
+    
+    const children = getChildEntityIds(id, hierarchyItems);
+    for (const childId of children) {
+      descendants.push(childId);
+      collectDescendants(childId);
+    }
+  };
+  
+  collectDescendants(parentId);
+  return descendants;
+}
+
+/**
+ * Gets sibling entity IDs (entities with same parent)
+ */
+export function getSiblingEntityIds(entityId: string, hierarchyItems: Map<string, HierarchyViewItem>): string[] {
+  const item = hierarchyItems.get(entityId);
+  if (!item?.parentId) return [];
+  
+  return getChildEntityIds(item.parentId, hierarchyItems).filter(id => id !== entityId);
+}
+
+/**
+ * Finds the common ancestor of two entities
+ */
+export function findCommonAncestor(entityId1: string, entityId2: string, hierarchyItems: Map<string, HierarchyViewItem>): string | null {
+  const path1 = getFullHierarchyPath(entityId1, hierarchyItems);
+  const path2 = getFullHierarchyPath(entityId2, hierarchyItems);
+  
+  // Find last common element
+  let commonAncestor: string | null = null;
+  const minLength = Math.min(path1.length, path2.length);
+  
+  for (let i = 0; i < minLength; i++) {
+    if (path1[i] === path2[i]) {
+      commonAncestor = path1[i];
+    } else {
+      break;
+    }
+  }
+  
+  return commonAncestor;
+}
+
+/**
+ * Gets optimal expansion set for viewing multiple entities efficiently
+ */
+export function getOptimalExpansionSet(targetIds: string[], hierarchyItems: Map<string, HierarchyViewItem>): Set<string> {
+  const expansionSet = new Set<string>();
+  
+  // Collect all expansion paths
+  const allPaths: string[] = [];
+  for (const targetId of targetIds) {
+    const path = calculateExpansionPath(targetId, hierarchyItems);
+    allPaths.push(...path);
+  }
+  
+  // Count frequency of each path element
+  const pathCounts = new Map<string, number>();
+  for (const pathId of allPaths) {
+    pathCounts.set(pathId, (pathCounts.get(pathId) || 0) + 1);
+  }
+  
+  // Include paths that appear multiple times (shared ancestors)
+  // and all paths for individual targets
+  for (const targetId of targetIds) {
+    const path = calculateExpansionPath(targetId, hierarchyItems);
+    path.forEach(pathId => expansionSet.add(pathId));
+  }
+  
+  return expansionSet;
 }
 
 /**

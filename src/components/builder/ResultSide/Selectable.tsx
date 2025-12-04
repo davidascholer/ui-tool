@@ -98,7 +98,7 @@ export const Selectable = memo(function Selectable({
         }
         ${
           isEditing 
-            ? 'bg-yellow-50 border-yellow-300 shadow-[0_0_0_2px_rgba(234,179,8,0.2)]'
+            ? 'bg-blue-50 border-blue-400 shadow-[0_0_0_2px_rgba(59,130,246,0.3)] ring-1 ring-blue-200'
             : ''
         }
         hover:shadow-md focus-visible:outline-none focus-visible:ring-2 
@@ -151,10 +151,13 @@ export const Selectable = memo(function Selectable({
           </div>
         ) : null}
         
-        {/* Editing indicator */}
+        {/* Editing indicator - T033: Enhanced editing state highlighting */}
         {isEditing && (
-          <div className="absolute top-1 left-1">
-            <span className="inline-flex items-center px-1.5 py-0.5 rounded-sm text-xs font-medium bg-yellow-200 text-yellow-800">
+          <div className="absolute top-1 left-1 z-10">
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-sm text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200 shadow-sm">
+              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+              </svg>
               Editing
             </span>
           </div>

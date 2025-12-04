@@ -109,17 +109,17 @@ Single React project structure:
 
 ### Tests for User Story 3
 
-- [ ] T028 [P] [US3] Unit test for expansion state management in `tests/unit/expansion-state.test.tsx`
-- [ ] T029 [P] [US3] Integration test for auto-expand behavior in `tests/integration/auto-expansion.test.tsx`
+- [x] T028 [P] [US3] Unit test for expansion state management in `tests/unit/expansion-state.test.tsx`
+- [x] T029 [P] [US3] Integration test for auto-expand behavior in `tests/integration/auto-expansion.test.tsx`
 
 ### Implementation for User Story 3
 
-- [ ] T030 [P] [US3] Create useHierarchyExpansion hook in `src/hooks/useHierarchyExpansion.tsx` for expansion management
-- [ ] T031 [P] [US3] Implement expansion path calculation utility in `src/utils/hierarchyHelpers.ts`
-- [ ] T032 [US3] Add auto-expand behavior when selecting nested components for editing
-- [ ] T033 [US3] Enhance Selectable component with editing state highlighting (colored border + subtle background)
-- [ ] T034 [US3] Implement expansion state persistence across property updates
-- [ ] T035 [US3] Add focus management to ensure edited components remain visible
+- [x] T030 [P] [US3] Create useHierarchyExpansion hook in `src/hooks/useHierarchyExpansion.tsx` for expansion management
+- [x] T031 [P] [US3] Implement expansion path calculation utility in `src/utils/hierarchyHelpers.ts`
+- [x] T032 [US3] Add auto-expand behavior when selecting nested components for editing
+- [x] T033 [US3] Enhance Selectable component with editing state highlighting (colored border + subtle background)
+- [x] T034 [US3] Implement expansion state persistence across property updates
+- [x] T035 [US3] Add focus management to ensure edited components remain visible
 
 **Checkpoint**: All P1 stories plus expansion management work together - smooth navigation during editing
 
