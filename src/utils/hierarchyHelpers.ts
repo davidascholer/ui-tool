@@ -72,9 +72,10 @@ export function parseTailwindColor(className: string): string | null {
 }
 
 /**
- * Parses Tailwind spacing classes and returns pixel value
+ * Parses individual Tailwind spacing class and returns descriptive label
+ * @deprecated Use parseTailwindSpacing and convertTailwindSpacingToPixels instead
  */
-export function parseTailwindSpacing(className: string): string | null {
+export function parseTailwindSpacingClass(className: string): string | null {
   // Match patterns: m-4, p-2, gap-6, mx-auto, py-8, mt-12
   const spacingMatch = className.match(/^(m|p|gap)([trblxy]?)-(.+)$/);
   if (!spacingMatch) return null;
@@ -117,7 +118,7 @@ export function createVisualIndicators(classList: string[]): VisualIndicator[] {
     }
     
     // Spacing indicators
-    const spacingValue = parseTailwindSpacing(className);
+    const spacingValue = parseTailwindSpacingClass(className);
     if (spacingValue) {
       indicators.push({
         type: 'spacing',
@@ -216,4 +217,107 @@ export function validateTailwindClasses(classes: string[]): { valid: string[]; i
   }
   
   return { valid, invalid };
+}
+
+/**
+ * T023: Extended Tailwind parser functions for User Story 2
+ */
+
+/**
+ * Parses all color classes from a Tailwind classes string
+ * @param classString - Space-separated Tailwind classes
+ * @returns Array of color class names
+ */
+export function parseTailwindColors(classString: string): string[] {
+  if (!classString) return [];
+  
+  const classes = classString.split(/\s+/);
+  const colorClasses: string[] = [];
+  
+  for (const className of classes) {
+    // Match color patterns: bg-*, text-*, border-*
+    if (/^(bg|text|border)-(.+)$/.test(className)) {
+      // Exclude utility classes that aren't colors
+      if (!className.match(/-(\d+|auto|current|transparent|inherit)$/)) {
+        colorClasses.push(className);
+      }
+    }
+  }
+  
+  return colorClasses;
+}
+
+/**
+ * Parses all spacing classes from a Tailwind classes string
+ * @param classString - Space-separated Tailwind classes
+ * @returns Array of spacing class names
+ */
+export function parseTailwindSpacing(classString: string): string[] {
+  if (!classString) return [];
+  
+  const classes = classString.split(/\s+/);
+  const spacingClasses: string[] = [];
+  
+  for (const className of classes) {
+    // Match spacing patterns: m-*, p-*, gap-*, space-*
+    if (/^(m|p|gap|space-[xy])([trblxy]?)-(.+)$/.test(className)) {
+      spacingClasses.push(className);
+    }
+  }
+  
+  return spacingClasses;
+}
+
+/**
+ * Converts a Tailwind color class to hex value
+ * @param colorClass - Tailwind color class (e.g., 'bg-red-500')
+ * @returns Hex color value or null if not found
+ */
+export function convertTailwindColorToHex(colorClass: string): string | null {
+  // Remove prefix to get color spec
+  const colorSpec = colorClass.replace(/^(bg|text|border)-/, '');
+  
+  // Handle special cases
+  if (colorSpec === 'white') return '#FFFFFF';
+  if (colorSpec === 'black') return '#000000';
+  if (colorSpec === 'transparent') return 'transparent';
+  if (colorSpec === 'current') return 'currentColor';
+  
+  // Try direct lookup with shade
+  if (TAILWIND_COLORS[colorSpec]) {
+    return TAILWIND_COLORS[colorSpec];
+  }
+  
+  // Try base color without shade (default to 500)
+  const baseColor = colorSpec.split('-')[0];
+  if (TAILWIND_COLORS[baseColor]) {
+    return TAILWIND_COLORS[baseColor];
+  }
+  
+  return null;
+}
+
+/**
+ * Converts a Tailwind spacing class to pixel value
+ * @param spacingClass - Tailwind spacing class (e.g., 'p-4', 'mx-2')
+ * @returns Pixel value as number, or 0 if not found
+ */
+export function convertTailwindSpacingToPixels(spacingClass: string): number {
+  // Extract the value part from classes like m-4, px-8, gap-6, space-x-4
+  const match = spacingClass.match(/^(m|p|gap|space-[xy])([trblxy]?)-(.+)$/);
+  if (!match) return 0;
+  
+  const [, , , value] = match;
+  
+  // Handle special cases
+  if (value === 'auto') return 0; // Can't convert auto to pixels
+  if (value === 'px') return 1; // Special case for 1px
+  
+  // Look up in spacing map
+  const pixelString = TAILWIND_SPACING[value];
+  if (!pixelString) return 0;
+  
+  // Extract number from pixel string (e.g., '16px' -> 16)
+  const pixels = parseInt(pixelString.replace('px', ''), 10);
+  return isNaN(pixels) ? 0 : pixels;
 }

@@ -89,13 +89,13 @@ Single React project structure:
 
 ### Implementation for User Story 2
 
-- [ ] T021 [P] [US2] Implement SpacingIndicator component in `src/components/builder/ResultSide/PropertyIndicators/SpacingIndicator.tsx`
-- [ ] T022 [P] [US2] Create usePropertyIndicators hook in `src/hooks/usePropertyIndicators.tsx` for indicator generation
-- [ ] T023 [P] [US2] Extend Tailwind parser in `src/utils/hierarchyHelpers.ts` for spacing and typography classes
-- [ ] T024 [US2] Implement hover tooltip system for indicators with 25-character truncation for both hierarchy display text and tooltip content
-- [ ] T025 [US2] Add indicator priority system (Color: 5, Text: 4, Spacing: 3) with highest priority first, ties broken alphabetically, limit to 5 indicators per entity
-- [ ] T026 [US2] Integrate visual indicators into enhanced ResultSide hierarchy display
-- [ ] T027 [US2] Add accessibility support with ARIA labels for indicators
+- [x] T021 [P] [US2] Implement SpacingIndicator component in `src/components/builder/ResultSide/PropertyIndicators/SpacingIndicator.tsx`
+- [x] T022 [P] [US2] Create usePropertyIndicators hook in `src/hooks/usePropertyIndicators.tsx` for indicator generation
+- [x] T023 [P] [US2] Extend Tailwind parser in `src/utils/hierarchyHelpers.ts` for spacing and typography classes
+- [x] T024 [US2] Implement hover tooltip system for indicators with 25-character truncation for both hierarchy display text and tooltip content
+- [x] T025 [US2] Add indicator priority system (Color: 5, Text: 4, Spacing: 3) with highest priority first, ties broken alphabetically, limit to 5 indicators per entity
+- [x] T026 [US2] Integrate visual indicators into enhanced ResultSide hierarchy display
+- [x] T027 [US2] Add accessibility support with ARIA labels for indicators
 
 **Checkpoint**: At this point, User Stories 1 AND 2 work independently - hierarchy shows property changes with visual indicators
 

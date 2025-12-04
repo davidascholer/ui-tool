@@ -11,6 +11,7 @@ import { DeleteAction } from './DeleteAction';
 import { ColorIndicator } from './PropertyIndicators/ColorIndicator';
 import { TextIndicator } from './PropertyIndicators/TextIndicator';
 import { LoadingIndicator } from './LoadingIndicator';
+import { IndicatorManager } from './PropertyIndicators/IndicatorManager';
 import { useLoadingIndicator } from '@/hooks/useLoadingIndicator';
 
 interface SelectableProps {
@@ -25,6 +26,8 @@ interface SelectableProps {
   size?: 'small' | 'medium' | 'large';
   // Feature 004: Real-Time Hierarchy Updates
   indicators?: VisualIndicator[];
+  component?: any; // ComponentEntity for IndicatorManager
+  tailwindClasses?: string; // Override classes for IndicatorManager
   isEditing?: boolean;
   getLoadingState?: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
 }
@@ -40,6 +43,8 @@ export const Selectable = memo(function Selectable({
   ariaLabel,
   size = 'medium',
   indicators = [],
+  component,
+  tailwindClasses,
   isEditing = false,
   getLoadingState,
 }: SelectableProps) {
@@ -113,7 +118,16 @@ export const Selectable = memo(function Selectable({
         {children}
         
         {/* Property indicators - Feature 004 */}
-        {indicators.length > 0 && (
+        {component ? (
+          <div className="flex items-center space-x-1 mt-1 px-2 pb-1">
+            <IndicatorManager
+              component={component}
+              classes={tailwindClasses}
+              size={size === 'large' ? 'md' : 'sm'}
+              maxIndicators={5}
+            />
+          </div>
+        ) : indicators.length > 0 ? (
           <div className="flex items-center space-x-1 mt-1 px-2 pb-1">
             {indicators.map((indicator, index) => {
               if (indicator.type === 'color') {
@@ -135,7 +149,7 @@ export const Selectable = memo(function Selectable({
               return null;
             })}
           </div>
-        )}
+        ) : null}
         
         {/* Editing indicator */}
         {isEditing && (
