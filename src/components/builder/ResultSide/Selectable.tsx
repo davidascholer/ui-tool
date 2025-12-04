@@ -32,6 +32,8 @@ interface SelectableProps {
   tailwindClasses?: string; // Override classes for IndicatorManager
   isEditing?: boolean;
   getLoadingState?: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
+  // Entity object for logging
+  entity?: any;
 }
 
 export const Selectable = memo(function Selectable({
@@ -49,6 +51,7 @@ export const Selectable = memo(function Selectable({
   tailwindClasses,
   isEditing = false,
   getLoadingState,
+  entity,
 }: SelectableProps) {
   // Loading indicator state
   const loadingIndicator = getLoadingState ? useLoadingIndicator(entityId, getLoadingState) : null;
@@ -68,6 +71,14 @@ export const Selectable = memo(function Selectable({
   
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    
+    // Log the entity object when clicking on hierarchy items
+    if (entity) {
+      console.log(`🎯 Clicked on ${entityType}:`, entity);
+    } else {
+      console.log(`🎯 Clicked on ${entityType} (${entityId}) - entity data not available`);
+    }
+    
     onSelect(entityType, entityId);
   };
 

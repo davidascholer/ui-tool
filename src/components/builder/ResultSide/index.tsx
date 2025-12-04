@@ -10,6 +10,7 @@ import type { PageEntity, Selection, EntityType } from '@/utils/types';
 import { DropZone } from './DropZone';
 import { CodeView } from './CodeView';
 import { Selectable } from './Selectable';
+import { LiveView } from '../LiveView';
 
 interface ResultSideProps {
   pages: PageEntity[];
@@ -21,7 +22,7 @@ interface ResultSideProps {
   getLoadingState?: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
 }
 
-type ViewMode = 'hierarchy' | 'code';
+type ViewMode = 'builder' | 'live' | 'code';
 
 interface ViewModeToggleProps {
   viewMode: ViewMode;
@@ -33,9 +34,9 @@ function ViewModeToggle({ viewMode, onViewModeChange }: ViewModeToggleProps) {
     <div className="flex border-b border-gray-200 bg-gray-50">
       <button
         type="button"
-        onClick={() => onViewModeChange('hierarchy')}
+        onClick={() => onViewModeChange('builder')}
         className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
-          viewMode === 'hierarchy'
+          viewMode === 'builder'
             ? 'bg-white text-blue-600 border-b-2 border-blue-600'
             : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
         }`}
@@ -44,7 +45,24 @@ function ViewModeToggle({ viewMode, onViewModeChange }: ViewModeToggleProps) {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14-4H5m8 12H5" />
           </svg>
-          <span>Hierarchy</span>
+          <span>Builder</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        onClick={() => onViewModeChange('live')}
+        className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+          viewMode === 'live'
+            ? 'bg-white text-blue-600 border-b-2 border-blue-600'
+            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+        }`}
+      >
+        <span className="flex items-center justify-center space-x-2">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+          <span>Live View</span>
         </span>
       </button>
       <button
@@ -68,7 +86,7 @@ function ViewModeToggle({ viewMode, onViewModeChange }: ViewModeToggleProps) {
 }
 
 export const ResultSide = memo(function ResultSide({ pages, selection, onSelect, onDrop, onDelete, getLoadingState }: ResultSideProps) {
-  const [viewMode, setViewMode] = useState<ViewMode>('hierarchy');
+  const [viewMode, setViewMode] = useState<ViewMode>('builder');
   
   const handleSelect = useCallback((entityType: Selection['entityType'], entityId: string) => {
     if (selection?.entityId === entityId) {
@@ -85,7 +103,7 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
 
       {/* Content Area */}
       <div className="flex-1 overflow-hidden">
-        {viewMode === 'hierarchy' ? (
+        {viewMode === 'builder' ? (
           <div className="h-full p-8 border-2 border-amber-400/30 rounded-lg cursor-pointer overflow-auto">
             <DropZone
               targetType="root"
@@ -107,6 +125,7 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
                     ariaLabel={`Page: ${page.name}`}
                     size="large"
                     getLoadingState={getLoadingState}
+                    entity={page}
                   >
                     <div className="mb-4">
                       <h2 className="text-xl font-semibold text-[rgb(var(--color-foreground))]">
@@ -140,6 +159,7 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
                               ariaLabel={`Container: ${container.name}`}
                               size="medium"
                               getLoadingState={getLoadingState}
+                              entity={container}
                             >
                               <h3 className="mb-2 font-medium text-[rgb(var(--color-foreground))]">
                                 {container.name}
@@ -166,6 +186,7 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
                                         ariaLabel={`Component: ${component.type}`}
                                         size="small"
                                         getLoadingState={getLoadingState}
+                                        entity={component}
                                       >
                                         <span className="text-sm text-[rgb(var(--color-foreground))]">
                                           {component.type}
@@ -185,6 +206,18 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
               )}
             </DropZone>
           </div>
+        ) : viewMode === 'live' ? (
+          <LiveView>
+            <div className="text-center text-[rgb(var(--color-muted-foreground))]">
+              <div className="mb-4 text-4xl" aria-hidden="true">
+                👁️
+              </div>
+              <h3 className="text-lg font-medium mb-2">Live Preview</h3>
+              <p className="text-sm">
+                Real-time preview of your components will appear here
+              </p>
+            </div>
+          </LiveView>
         ) : (
           <CodeView pages={pages} className="h-full" />
         )}

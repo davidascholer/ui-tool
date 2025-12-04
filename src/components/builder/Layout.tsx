@@ -1,21 +1,30 @@
 /**
  * Builder Layout Component
- * Three-column layout: UISide | ResultSide | Drawer
+ * Three-column layout: UISide | ResultSide/LiveView (with tabs) | Drawer
  * Responsive: Stacks in portrait/mobile view
  * Includes header with theme toggle
  */
 
-import type { ReactNode } from 'react';
-import { ThemeToggle } from '../common/ThemeToggle';
+import type { ReactNode } from "react";
+import { ThemeToggle } from "../common/ThemeToggle";
 
 interface LayoutProps {
   uiSide: ReactNode;
   resultSide: ReactNode;
   drawer: ReactNode;
+  liveView: ReactNode;
   drawerOpen: boolean;
 }
 
-export function Layout({ uiSide, resultSide, drawer, drawerOpen }: LayoutProps) {
+
+
+export function Layout({
+  uiSide,
+  resultSide,
+  drawer,
+  drawerOpen,
+}: Omit<LayoutProps, 'liveView'>) {
+  
   return (
     <div className="flex h-screen w-screen flex-col overflow-hidden bg-[rgb(var(--color-background))]">
       {/* Header Bar */}
@@ -39,12 +48,12 @@ export function Layout({ uiSide, resultSide, drawer, drawerOpen }: LayoutProps) 
         <div className="border-b border-[rgb(var(--color-border))] bg-[rgb(var(--color-muted))]">
           {uiSide}
         </div>
-        
-        {/* Result Side - main view on mobile */}
+
+        {/* Result Side - includes internal tabs */}
         <div className="flex-1 overflow-auto">
           {resultSide}
         </div>
-        
+
         {/* Drawer - overlay on mobile when open */}
         {drawerOpen && (
           <div className="fixed inset-0 z-50 bg-black/50" aria-hidden="true">
@@ -56,12 +65,13 @@ export function Layout({ uiSide, resultSide, drawer, drawerOpen }: LayoutProps) 
       </div>
 
       {/* Desktop/Landscape: Three columns with CSS Grid */}
-      <div 
+      <div
         className={`
           hidden flex-1 lg:grid transition-all duration-300
-          ${drawerOpen 
-            ? 'grid-cols-[256px_minmax(320px,1fr)_320px]' 
-            : 'grid-cols-[256px_minmax(320px,1fr)_0px]'
+          ${
+            drawerOpen
+              ? "grid-cols-[256px_minmax(320px,1fr)_320px]"
+              : "grid-cols-[256px_minmax(320px,1fr)_0px]"
           }
         `}
       >
@@ -73,11 +83,8 @@ export function Layout({ uiSide, resultSide, drawer, drawerOpen }: LayoutProps) 
           {uiSide}
         </aside>
 
-        {/* Result Side - minimum 320px width, flexible growth */}
-        <main
-          className="overflow-auto"
-          aria-label="Builder canvas"
-        >
+        {/* Result Side - includes internal tabs */}
+        <main className="overflow-auto" aria-label="Builder canvas">
           {resultSide}
         </main>
 
@@ -86,7 +93,7 @@ export function Layout({ uiSide, resultSide, drawer, drawerOpen }: LayoutProps) 
           className={`
             overflow-auto border-l border-[rgb(var(--color-border))] 
             bg-[rgb(var(--color-background))] transition-all duration-300
-            ${drawerOpen ? 'opacity-100' : 'opacity-0 overflow-hidden'}
+            ${drawerOpen ? "opacity-100" : "opacity-0 overflow-hidden"}
           `}
           aria-label="Property editor"
           aria-hidden={!drawerOpen}
