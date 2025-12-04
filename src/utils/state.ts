@@ -4,7 +4,7 @@
  */
 
 import { useState, useCallback } from 'react';
-import type { BuilderState, PageEntity, ContainerEntity, ComponentEntity, Selection, ComponentType } from '@/utils/types';
+import type { BuilderState, PageEntity, ContainerEntity, ComponentEntity, Selection, ComponentType, HierarchyViewItem, UpdateContext } from '@/utils/types';
 
 export function useBuilderState() {
   const [state, setState] = useState<BuilderState>({
@@ -14,6 +14,15 @@ export function useBuilderState() {
     // Feature 003: Component Tracking
     globalCodeMetadata: {},
     codeFormat: 'react',
+  });
+
+  // Feature 004: Real-Time Hierarchy Updates
+  const [hierarchyItems, setHierarchyItems] = useState<Map<string, HierarchyViewItem>>(new Map());
+  const [updateContext, setUpdateContext] = useState<UpdateContext>({
+    pendingChanges: new Map(),
+    lastUpdate: 0,
+    batchCount: 0,
+    isProcessing: false,
   });
 
   const addPage = useCallback((name: string) => {
@@ -209,8 +218,39 @@ export function useBuilderState() {
     return null;
   }, [state.pages, state.selection]);
 
+  // Feature 004: Hierarchy management methods
+  const updateHierarchyItems = useCallback((items: Map<string, HierarchyViewItem>) => {
+    setHierarchyItems(new Map(items));
+  }, []);
+
+  const updateHierarchyItem = useCallback((id: string, updates: Partial<HierarchyViewItem>) => {
+    setHierarchyItems((prev) => {
+      const newMap = new Map(prev);
+      const existing = newMap.get(id);
+      if (existing) {
+        newMap.set(id, { ...existing, ...updates });
+      }
+      return newMap;
+    });
+  }, []);
+
+  const setUpdateContextProcessing = useCallback((isProcessing: boolean) => {
+    setUpdateContext((prev) => ({ ...prev, isProcessing }));
+  }, []);
+
+  const incrementBatchCount = useCallback(() => {
+    setUpdateContext((prev) => ({ 
+      ...prev, 
+      batchCount: prev.batchCount + 1,
+      lastUpdate: Date.now(),
+    }));
+  }, []);
+
   return {
     state,
+    // Feature 004: Hierarchy state
+    hierarchyItems,
+    updateContext,
     actions: {
       addPage,
       addContainer,
@@ -222,6 +262,11 @@ export function useBuilderState() {
       updateComponent,
       deleteEntity,
       getSelectedEntity,
+      // Feature 004: Hierarchy actions
+      updateHierarchyItems,
+      updateHierarchyItem,
+      setUpdateContextProcessing,
+      incrementBatchCount,
     },
   };
 }

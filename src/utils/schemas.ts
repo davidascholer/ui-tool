@@ -158,3 +158,41 @@ export const tailwindAllowlists = {
     'p-4', 'p-6', 'p-8',
   ],
 };
+
+// Feature 004: Real-Time Hierarchy Updates - Validation Schemas
+
+export const visualIndicatorSchema = z.object({
+  type: z.enum(['color', 'spacing', 'text', 'image', 'size']),
+  value: z.string().min(1, 'Value is required'),
+  displayValue: z.string().min(1, 'Display value is required'),
+  tooltip: z.string().min(1, 'Tooltip is required'),
+  priority: z.number().int().min(1).max(5),
+  isValid: z.boolean(),
+});
+
+export const propertyChangeSchema = z.object({
+  entityId: z.string().min(1, 'Entity ID is required'),
+  entityType: z.enum(['Page', 'Container', 'Component']),
+  field: z.string().min(1, 'Field name is required'),
+  oldValue: z.unknown(),
+  newValue: z.unknown(),
+  timestamp: z.number().int().positive('Timestamp must be positive'),
+});
+
+export const hierarchyViewItemSchema = z.object({
+  id: z.string().min(1, 'ID is required'),
+  type: z.enum(['Page', 'Container', 'Component']),
+  displayName: z.string().max(25, 'Display name must be 25 characters or less'),
+  fullName: z.string().min(1, 'Full name is required'),
+  isExpanded: z.boolean(),
+  isEditing: z.boolean(),
+  level: z.number().int().min(0).max(2),
+  parentId: z.string().optional(),
+  indicators: z.array(visualIndicatorSchema).max(5, 'Maximum 5 indicators allowed'),
+});
+
+export const updateContextSchema = z.object({
+  lastUpdate: z.number().int().nonnegative('Last update timestamp must be non-negative'),
+  batchCount: z.number().int().nonnegative('Batch count must be non-negative'),
+  isProcessing: z.boolean(),
+});

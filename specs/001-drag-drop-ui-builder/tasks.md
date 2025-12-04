@@ -66,7 +66,7 @@ description: "Task list for Drag-and-Drop UI Builder"
 
 - [X] T014 [P] [US1] Unit tests for DnD validators in `tests/unit/dnd-validators.test.ts`
 - [X] T015 [P] [US1] Integration test for drag Page/Container/Component in `tests/integration/dnd-flow.test.tsx`
- - [ ] T015a [US1] Performance check: hover feedback latency ≤100ms (manual/automation) documented in `docs/perf-dnd-latency.md`
+ - [X] T015a [US1] Performance check: hover feedback latency ≤100ms (manual/automation) documented in `docs/perf-dnd-latency.md`
 
 ### Implementation for User Story 1
 

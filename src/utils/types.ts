@@ -101,3 +101,43 @@ export interface ComponentFormData {
   props: Record<string, unknown>;
   tailwindOptions: TailwindOptions;
 }
+
+// Feature 004: Real-Time Hierarchy Updates
+export type IndicatorType = 'color' | 'spacing' | 'text' | 'image' | 'size';
+
+export interface VisualIndicator {
+  type: IndicatorType;
+  value: string;
+  displayValue: string;
+  tooltip: string;
+  priority: number;
+  isValid: boolean;
+}
+
+export interface HierarchyViewItem {
+  id: string;
+  type: EntityType;
+  displayName: string;
+  fullName: string;
+  isExpanded: boolean;
+  isEditing: boolean;
+  level: number;
+  parentId?: string;
+  indicators: VisualIndicator[];
+}
+
+export interface PropertyChange {
+  entityId: string;
+  entityType: EntityType;
+  field: string;
+  oldValue: unknown;
+  newValue: unknown;
+  timestamp: number;
+}
+
+export interface UpdateContext {
+  pendingChanges: Map<string, PropertyChange[]>;
+  lastUpdate: number;
+  batchCount: number;
+  isProcessing: boolean;
+}

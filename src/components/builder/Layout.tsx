@@ -55,30 +55,38 @@ export function Layout({ uiSide, resultSide, drawer, drawerOpen }: LayoutProps) 
         )}
       </div>
 
-      {/* Desktop/Landscape: Three columns */}
-      <div className="hidden flex-1 lg:flex">
+      {/* Desktop/Landscape: Three columns with CSS Grid */}
+      <div 
+        className={`
+          hidden flex-1 lg:grid transition-all duration-300
+          ${drawerOpen 
+            ? 'grid-cols-[256px_minmax(320px,1fr)_320px]' 
+            : 'grid-cols-[256px_minmax(320px,1fr)_0px]'
+          }
+        `}
+      >
         {/* UI Side - fixed width */}
         <aside
-          className="w-64 shrink-0 overflow-auto border-r border-[rgb(var(--color-border))] bg-[rgb(var(--color-muted))]"
+          className="overflow-auto border-r border-[rgb(var(--color-border))] bg-[rgb(var(--color-muted))]"
           aria-label="Component palette"
         >
           {uiSide}
         </aside>
 
-        {/* Result Side - flexible center */}
+        {/* Result Side - minimum 320px width, flexible growth */}
         <main
-          className="flex-1 overflow-auto"
+          className="overflow-auto"
           aria-label="Builder canvas"
         >
           {resultSide}
         </main>
 
-        {/* Drawer - fixed width, slides in/out */}
+        {/* Drawer - slides in/out with grid column width */}
         <aside
           className={`
-            w-80 shrink-0 overflow-auto border-l border-[rgb(var(--color-border))] 
-            bg-[rgb(var(--color-background))] transition-transform duration-300
-            ${drawerOpen ? 'translate-x-0' : 'translate-x-full'}
+            overflow-auto border-l border-[rgb(var(--color-border))] 
+            bg-[rgb(var(--color-background))] transition-all duration-300
+            ${drawerOpen ? 'opacity-100' : 'opacity-0 overflow-hidden'}
           `}
           aria-label="Property editor"
           aria-hidden={!drawerOpen}

@@ -6,8 +6,10 @@
 
 import { memo } from 'react';
 import type { ReactNode } from 'react';
-import type { EntityType } from '@/utils/types';
+import type { EntityType, VisualIndicator } from '@/utils/types';
 import { DeleteAction } from './DeleteAction';
+import { ColorIndicator } from './PropertyIndicators/ColorIndicator';
+import { TextIndicator } from './PropertyIndicators/TextIndicator';
 
 interface SelectableProps {
   entityType: EntityType;
@@ -19,6 +21,9 @@ interface SelectableProps {
   className?: string;
   ariaLabel?: string;
   size?: 'small' | 'medium' | 'large';
+  // Feature 004: Real-Time Hierarchy Updates
+  indicators?: VisualIndicator[];
+  isEditing?: boolean;
 }
 
 export const Selectable = memo(function Selectable({
@@ -30,7 +35,9 @@ export const Selectable = memo(function Selectable({
   children,
   className = '',
   ariaLabel,
-  size = 'medium'
+  size = 'medium',
+  indicators = [],
+  isEditing = false
 }: SelectableProps) {
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -78,6 +85,11 @@ export const Selectable = memo(function Selectable({
             ? `border-[rgb(var(--color-selected))] ${getSizeClasses()}`
             : 'border-[rgb(var(--color-border))] hover:border-[rgb(var(--color-primary))]'
         }
+        ${
+          isEditing 
+            ? 'bg-yellow-50 border-yellow-300 shadow-[0_0_0_2px_rgba(234,179,8,0.2)]'
+            : ''
+        }
         hover:shadow-md focus-visible:outline-none focus-visible:ring-2 
         focus-visible:ring-[rgb(var(--color-primary))] focus-visible:ring-offset-2
         ${className}
@@ -91,7 +103,43 @@ export const Selectable = memo(function Selectable({
       data-entity-type={entityType}
       data-entity-id={entityId}
     >
-      {children}
+      <div className="relative">
+        {children}
+        
+        {/* Property indicators - Feature 004 */}
+        {indicators.length > 0 && (
+          <div className="flex items-center space-x-1 mt-1 px-2 pb-1">
+            {indicators.map((indicator, index) => {
+              if (indicator.type === 'color') {
+                return (
+                  <ColorIndicator
+                    key={`${indicator.type}-${index}`}
+                    indicator={indicator}
+                  />
+                );
+              }
+              if (indicator.type === 'text') {
+                return (
+                  <TextIndicator
+                    key={`${indicator.type}-${index}`}
+                    indicator={indicator}
+                  />
+                );
+              }
+              return null;
+            })}
+          </div>
+        )}
+        
+        {/* Editing indicator */}
+        {isEditing && (
+          <div className="absolute top-1 left-1">
+            <span className="inline-flex items-center px-1.5 py-0.5 rounded-sm text-xs font-medium bg-yellow-200 text-yellow-800">
+              Editing
+            </span>
+          </div>
+        )}
+      </div>
       
       {/* Delete action - only show when selected */}
       {isSelected && onDelete && (

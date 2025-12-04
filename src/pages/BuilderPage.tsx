@@ -1,21 +1,37 @@
 /**
  * BuilderPage - Main page for the drag-and-drop UI builder
  * Features: Drag-and-drop hierarchy, component editing, code export
+ * Feature 004: Real-time hierarchy updates with visual indicators
  */
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { SEO } from '../components/common/SEO';
 import { UISide } from '../components/builder/UISide';
 import { ResultSide } from '../components/builder/ResultSide';
 import { Drawer } from '../components/builder/Drawer';
 import { useBuilderState } from '../utils/state';
-import type { ComponentType, EntityType } from '@/utils/types';
+import { useHierarchyUpdates } from '@/hooks/useHierarchyUpdates';
+import { usePerformanceMonitoring } from '@/hooks/usePerformanceMonitoring';
+import type { ComponentType, EntityType, PropertyChange } from '@/utils/types';
 import { Layout } from '@/components/builder/Layout';
 
 export function BuilderPage() {
   const { state, actions } = useBuilderState();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [currentDragItem, setCurrentDragItem] = useState<{ type: 'page' | 'container' | 'component'; componentType?: ComponentType } | null>(null);
+
+  // Feature 004: Performance monitoring for 200ms requirement
+  const performanceMonitor = usePerformanceMonitoring();
+
+  // Feature 004: Hierarchy updates integration
+  const hierarchyUpdates = useHierarchyUpdates({
+    pages: state.pages,
+    selection: state.selection,
+    onUpdate: useCallback((entityId: string, changes: PropertyChange[]) => {
+      // Handle hierarchy visual updates - this will be called when changes are processed
+      console.log(`Hierarchy updates processed for ${entityId}:`, changes);
+    }, [])
+  });
 
   const handleDragStart = (type: 'page' | 'container' | 'component', componentType?: ComponentType) => {
     // Store what's being dragged for the drop handler
@@ -49,21 +65,141 @@ export function BuilderPage() {
     }
   };
 
-  const handleSave = (data: unknown) => {
-    console.log("something")
+  const handleSave = useCallback((data: unknown) => {
     console.log('Saving data from drawer:', data);
     if (!state.selection) return;
 
     const { entityType, entityId } = state.selection;
 
-    if (entityType === 'Page') {
-      actions.updatePage(entityId, data as Partial<typeof state.pages[0]>);
-    } else if (entityType === 'Container') {
-      actions.updateContainer(entityId, data as Partial<typeof state.pages[0]['children'][0]>);
-    } else if (entityType === 'Component') {
-      actions.updateComponent(entityId, data as Partial<typeof state.pages[0]['children'][0]['children'][0]>);
+    // Get current entity for comparison (to create PropertyChange objects)
+    const currentEntity = actions.getSelectedEntity();
+    if (!currentEntity) {
+      console.error('No current entity found for save operation');
+      return;
     }
-  };
+
+    // Store original state for potential reversion
+    const originalState = JSON.parse(JSON.stringify(currentEntity));
+    
+    // Start performance measurement for 200ms requirement
+    const measurementId = performanceMonitor.startMeasurement(
+      'hierarchySaveUpdate', 
+      entityId, 
+      typeof data === 'object' && data ? Object.keys(data).length : 1
+    );
+    
+    try {
+      // Validate the incoming data
+      if (!data || typeof data !== 'object') {
+        throw new Error('Invalid save data: must be a non-null object');
+      }
+
+      // Create and validate PropertyChange objects
+      const changes: PropertyChange[] = [];
+      const validationErrors: string[] = [];
+      
+      Object.entries(data).forEach(([field, newValue]) => {
+        const oldValue = (currentEntity as unknown as Record<string, unknown>)[field];
+        
+        // Validate specific field types based on common entity properties
+        if (field === 'name' && (typeof newValue !== 'string' || newValue.trim().length === 0)) {
+          validationErrors.push(`Name must be a non-empty string, got: ${typeof newValue}`);
+          return;
+        }
+        
+        if (field === 'className' && newValue !== null && typeof newValue !== 'string') {
+          validationErrors.push(`ClassName must be a string or null, got: ${typeof newValue}`);
+          return;
+        }
+
+        if (oldValue !== newValue) {
+          changes.push({
+            entityId,
+            entityType,
+            field,
+            oldValue,
+            newValue,
+            timestamp: Date.now()
+          });
+        }
+      });
+
+      // If validation failed, throw error with details
+      if (validationErrors.length > 0) {
+        throw new Error(`Validation failed: ${validationErrors.join(', ')}`);
+      }
+
+      // Apply state updates with error handling
+      let updateSuccess = false;
+      
+      if (entityType === 'Page') {
+        actions.updatePage(entityId, data as Partial<typeof state.pages[0]>);
+        updateSuccess = true;
+      } else if (entityType === 'Container') {
+        actions.updateContainer(entityId, data as Partial<typeof state.pages[0]['children'][0]>);
+        updateSuccess = true;
+      } else if (entityType === 'Component') {
+        actions.updateComponent(entityId, data as Partial<typeof state.pages[0]['children'][0]['children'][0]>);
+        updateSuccess = true;
+      } else {
+        throw new Error(`Unknown entity type: ${entityType}`);
+      }
+
+      // Only queue hierarchy changes after successful state update
+      if (updateSuccess && changes.length > 0) {
+        changes.forEach(change => hierarchyUpdates.queueChange(change));
+        console.log(`Successfully saved ${changes.length} property changes for ${entityType} ${entityId}`);
+      }
+
+      // End performance measurement on successful completion
+      const metrics = performanceMonitor.endMeasurement(measurementId);
+      
+      // Verify 200ms requirement
+      const requirement = performanceMonitor.checkPerformanceRequirement(metrics.duration);
+      if (!requirement.meetsRequirement) {
+        console.error(`Performance requirement violated! Save operation took ${metrics.duration.toFixed(2)}ms (max: ${requirement.threshold}ms)`);
+      }
+
+    } catch (error) {
+      console.error('Save operation failed:', error);
+      
+      // Auto-reversion: Attempt to restore original state
+      try {
+        console.log('Attempting auto-reversion to original state...');
+        
+        if (entityType === 'Page') {
+          actions.updatePage(entityId, originalState);
+        } else if (entityType === 'Container') {
+          actions.updateContainer(entityId, originalState);
+        } else if (entityType === 'Component') {
+          actions.updateComponent(entityId, originalState);
+        }
+        
+        // Clear any pending hierarchy changes for this entity
+        hierarchyUpdates.clearQueue(entityId);
+        
+        console.log('Auto-reversion completed successfully');
+        
+        // Could potentially show user notification here
+        // showNotification('Save failed, changes reverted', 'error');
+        
+      } catch (revertError) {
+        console.error('Auto-reversion failed:', revertError);
+        // In a real app, this would be a critical error requiring user intervention
+        // showNotification('Save failed and auto-reversion failed - please refresh', 'critical');
+      }
+      
+      // End performance measurement even on error
+      try {
+        performanceMonitor.endMeasurement(measurementId);
+      } catch (measurementError) {
+        console.warn('Failed to end performance measurement:', measurementError);
+      }
+      
+      // Re-throw the original error so calling code can handle it
+      throw error;
+    }
+  }, [state, actions, hierarchyUpdates, performanceMonitor]);
 
   const handleDelete = (entityType: EntityType, entityId: string) => {
     actions.deleteEntity(entityId, entityType);

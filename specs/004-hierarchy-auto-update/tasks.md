@@ -27,9 +27,9 @@ Single React project structure:
 
 **Purpose**: Project initialization and enhanced type definitions for hierarchy updates
 
-- [ ] T001 Enhance existing types in `src/utils/types.ts` with HierarchyViewItem, PropertyChange (for change tracking), UpdateContext, VisualIndicator interfaces
-- [ ] T002 [P] Create utility functions in `src/utils/hierarchyHelpers.ts` for Tailwind class parsing and truncation
-- [ ] T003 [P] Add validation schemas in `src/utils/schemas.ts` for PropertyChange and VisualIndicator using Zod
+- [x] T001 Enhance existing types in `src/utils/types.ts` with HierarchyViewItem, PropertyChange (for change tracking), UpdateContext, VisualIndicator interfaces
+- [x] T002 [P] Create utility functions in `src/utils/hierarchyHelpers.ts` for Tailwind class parsing and truncation
+- [x] T003 [P] Add validation schemas in `src/utils/schemas.ts` for PropertyChange and VisualIndicator using Zod
 
 ---
 
@@ -39,11 +39,11 @@ Single React project structure:
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Enhance Layout component in `src/components/builder/Layout.tsx` to enforce 320px minimum width using CSS Grid minmax(320px, 1fr)
-- [ ] T005 [P] Create WidthDisplay component in `src/components/builder/ResultSide/WidthDisplay.tsx` with ResizeObserver for pixel measurement display only
-- [ ] T006 [P] Create base PropertyIndicator components structure in `src/components/builder/ResultSide/PropertyIndicators/`
-- [ ] T007 Enhance BuilderState in `src/utils/state.ts` to support hierarchy view items and update context
-- [ ] T008 [P] Create useHierarchyUpdates hook scaffold in `src/hooks/useHierarchyUpdates.tsx`
+- [x] T004 Enhance Layout component in `src/components/builder/Layout.tsx` to enforce 320px minimum width using CSS Grid minmax(320px, 1fr)
+- [x] T005 [P] Create WidthDisplay component in `src/components/builder/ResultSide/WidthDisplay.tsx` with ResizeObserver for pixel measurement display only
+- [x] T006 [P] Create base PropertyIndicator components structure in `src/components/builder/ResultSide/PropertyIndicators/`
+- [x] T007 Enhance BuilderState in `src/utils/state.ts` to support hierarchy view items and update context
+- [x] T008 [P] Create useHierarchyUpdates hook scaffold in `src/hooks/useHierarchyUpdates.tsx`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -57,19 +57,19 @@ Single React project structure:
 
 ### Tests for User Story 1
 
-- [ ] T009 [P] [US1] Unit test for hierarchy update logic in `tests/unit/hierarchy-updates.test.tsx`
-- [ ] T010 [P] [US1] Integration test for save-to-hierarchy flow in `tests/integration/property-save-updates.test.tsx`
+- [x] T009 [P] [US1] Unit test for hierarchy update logic in `tests/unit/hierarchy-updates.test.tsx`
+- [x] T010 [P] [US1] Integration test for save-to-hierarchy flow in `tests/integration/property-save-updates.test.tsx`
 
 ### Implementation for User Story 1
 
-- [ ] T011 [P] [US1] Implement ColorIndicator component in `src/components/builder/ResultSide/PropertyIndicators/ColorIndicator.tsx`
-- [ ] T012 [P] [US1] Implement TextIndicator component in `src/components/builder/ResultSide/PropertyIndicators/TextIndicator.tsx`
-- [ ] T013 [P] [US1] Create Tailwind class parser utility in `src/utils/hierarchyHelpers.ts` for color extraction
-- [ ] T014 [US1] Implement core useHierarchyUpdates hook with save-triggered updates and PropertyChange tracking in `src/hooks/useHierarchyUpdates.tsx`
-- [ ] T015 [US1] Enhance Selectable component in `src/components/builder/ResultSide/Selectable.tsx` to display property indicators
-- [ ] T016 [US1] Integrate hierarchy updates with existing Drawer save actions in `src/components/builder/Drawer/index.tsx`
-- [ ] T017 [US1] Add error handling for invalid property values with auto-reversion logic
-- [ ] T018 [US1] Ensure 200ms response time requirement with performance measurement hooks
+- [x] T011 [P] [US1] Implement ColorIndicator component in `src/components/builder/ResultSide/PropertyIndicators/ColorIndicator.tsx`
+- [x] T012 [P] [US1] Implement TextIndicator component in `src/components/builder/ResultSide/PropertyIndicators/TextIndicator.tsx`
+- [x] T013 [P] [US1] Create Tailwind class parser utility in `src/utils/hierarchyHelpers.ts` for color extraction
+- [x] T014 [US1] Implement core useHierarchyUpdates hook with save-triggered updates and PropertyChange tracking in `src/hooks/useHierarchyUpdates.tsx`
+- [x] T015 [US1] Enhance Selectable component in `src/components/builder/ResultSide/Selectable.tsx` to display property indicators
+- [x] T016 [US1] Integrate hierarchy updates with existing Drawer save actions in `src/components/builder/Drawer/index.tsx`
+- [x] T017 [US1] Add error handling for invalid property values with auto-reversion logic
+- [x] T018 [US1] Ensure 200ms response time requirement with performance measurement hooks
 - [ ] T018a [P] [US1] Implement visual feedback for updates taking longer than 100ms (loading indicators, transitions) in hierarchy view
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - saving properties immediately updates hierarchy view
