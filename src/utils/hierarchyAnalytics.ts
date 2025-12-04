@@ -4,8 +4,8 @@
  * Tracks hierarchy update performance metrics and user interaction patterns
  */
 
-import type { AnalyticsEvent } from '../../api/controllers/analytics';
-import { trackEvent } from '../../api/controllers/analytics';
+import type { AnalyticsEvent } from '../api/controllers/analytics';
+import { trackEvent } from '../api/controllers/analytics';
 
 // Hierarchy-specific analytics events
 export interface HierarchyPerformanceEvent extends AnalyticsEvent {

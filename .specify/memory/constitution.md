@@ -53,7 +53,7 @@ components MUST have test coverage. Favor fast, deterministic tests. Write
 tests alongside implementation and keep them in sync with component contracts.
 
 ### API Controller Organization
-All server calls MUST reside in an `api/controllers/` folder with typed
+All server calls MUST reside in an `src/api/controllers/` folder with typed
 functions and clear request/response models. No direct fetch calls from UI
 components; components depend on controller functions.
 

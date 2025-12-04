@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Activity, BarChart3, Clock, Zap, CheckCircle, X } from 'lucide-react';
 import { hierarchyLogger } from '../../../utils/hierarchyLogger';
 import { useHierarchyLogger } from '../../../hooks/useHierarchyLogger';

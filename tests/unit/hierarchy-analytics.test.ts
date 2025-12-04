@@ -14,7 +14,7 @@ vi.mock('../../api/controllers/analytics', () => ({
   trackEvent: vi.fn().mockResolvedValue(undefined),
 }));
 
-import { trackEvent } from '../../api/controllers/analytics';
+import { trackEvent } from '../../src/api/controllers/analytics';
 const mockTrackEvent = trackEvent as ReturnType<typeof vi.fn>;
 
 // Mock performance.now for consistent testing
