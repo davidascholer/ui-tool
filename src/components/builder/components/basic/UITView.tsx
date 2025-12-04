@@ -4,14 +4,36 @@
 View is designed to be nested inside other views and can have 0 to many children of any type.
  *
  * Web:
+ * The HTML <div> element is a generic container for flow content. It has no effect on content or layout until styled with CSS.
  */
 
+import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
 
-/**
- * Tailwind Classes:
- 
- */
+export function UITView({
+  tailwindClasses,
+  text = false,
+  currentExport = "react",
+  children,
+}: {
+  tailwindClasses?: TailwindDivInterface[];
+  text?: boolean;
+  currentExport?: "react" | "react-native";
+  children?: React.ReactNode;
+}) {
+  let componentText = ``;
+  if (currentExport === "react") {
+    componentText = `<div className={${tailwindClasses?.join(" ")}}>{children}</div>`;
+  } else if (currentExport === "react-native") {
+    componentText = `<p>not implemented yet</p>`;
+  }
 
-export function UIT() {
-  return <image></image>;
+  return (
+    <>
+      {text ? (
+        <p>{componentText}</p>
+      ) : (
+        <div className={tailwindClasses?.join(" ")}>{children}</div>
+      )}
+    </>
+  );
 }

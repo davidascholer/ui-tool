@@ -1,17 +1,33 @@
 /**
  * React Native:
- * A React component for displaying different types of images, including network images, static resources, temporary local images, and images from local disk, such as the camera roll.
- *
- * Web:
- *
+ * A React Native safe image component that loads images from different sources and adds useful features like caching, progressive loading, and more.
  */
 
 import type { TailwindImageInterface } from "../tailwind-interfaces/TailwindImageInterface";
 
 export function UITImage({
   tailwindClasses,
+  text = false,
+  currentExport = "react",
 }: {
   tailwindClasses?: TailwindImageInterface[];
+  text?: boolean;
+  currentExport?: "react" | "react-native";
 }) {
-  return <image className={tailwindClasses?.join(" ")} />;
+  let componentText = ``;
+  if (currentExport === "react") {
+    componentText = `<image className={${tailwindClasses?.join(" ")}} />`;
+  } else if (currentExport === "react-native") {
+    componentText = `<p>not implemented yet</p>`;
+  }
+
+  return (
+    <>
+      {text ? (
+        <p>{componentText}</p>
+      ) : (
+        <image className={tailwindClasses?.join(" ")} />
+      )}
+    </>
+  );
 }

@@ -4,14 +4,36 @@
 
  * 
  * Web:
+ * Pull-to-refresh can be implemented using touch events, scroll position monitoring, and visual indicators. Modern browsers may support the overscroll-behavior CSS property.
  */
 
+import type { TailwindDivInterface } from "../tailwind-interfaces/TailwindDivInterface";
 
-/**
- * Tailwind Classes:
- 
- */
+export function UITRefreshControl({
+  tailwindClasses,
+  text = false,
+  currentExport = "react",
+  children,
+}: {
+  tailwindClasses?: TailwindDivInterface[];
+  text?: boolean;
+  currentExport?: "react" | "react-native";
+  children?: React.ReactNode;
+}) {
+  let componentText = ``;
+  if (currentExport === "react") {
+    componentText = `<div className={${tailwindClasses?.join(" ")}}>{children}</div>`;
+  } else if (currentExport === "react-native") {
+    componentText = `<p>not implemented yet</p>`;
+  }
 
-export function UIT() {
-  return <image></image>;
+  return (
+    <>
+      {text ? (
+        <p>{componentText}</p>
+      ) : (
+        <div className={tailwindClasses?.join(" ")}>{children}</div>
+      )}
+    </>
+  );
 }

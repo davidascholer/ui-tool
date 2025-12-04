@@ -4,14 +4,36 @@
 If this button doesn't look right for your app, you can build your own button using Pressable. For inspiration, look at the source code for the Button component.
  *
  * Web:
+ * The HTML <button> element represents a clickable button with enhanced styling capabilities. It's a semantic element for user interactions.
  */
 
+import type { TailwindButtonInterface } from "../tailwind-interfaces/TailwindButtonInterface";
 
-/**
- * Tailwind Classes:
- 
- */
+export function UITButton({
+  tailwindClasses,
+  text = false,
+  currentExport = "react",
+  children,
+}: {
+  tailwindClasses?: TailwindButtonInterface[];
+  text?: boolean;
+  currentExport?: "react" | "react-native";
+  children?: React.ReactNode;
+}) {
+  let componentText = ``;
+  if (currentExport === "react") {
+    componentText = `<button className={${tailwindClasses?.join(" ")}}>{children}</button>`;
+  } else if (currentExport === "react-native") {
+    componentText = `<p>not implemented yet</p>`;
+  }
 
-export function UIT() {
-  return <image></image>;
+  return (
+    <>
+      {text ? (
+        <p>{componentText}</p>
+      ) : (
+        <button className={tailwindClasses?.join(" ")}>{children}</button>
+      )}
+    </>
+  );
 }
