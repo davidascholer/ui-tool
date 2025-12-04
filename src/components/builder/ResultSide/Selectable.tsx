@@ -11,8 +11,10 @@ import { DeleteAction } from './DeleteAction';
 import { ColorIndicator } from './PropertyIndicators/ColorIndicator';
 import { TextIndicator } from './PropertyIndicators/TextIndicator';
 import { LoadingIndicator } from './LoadingIndicator';
-import { IndicatorManager } from './PropertyIndicators/IndicatorManager';
+import { LazyIndicatorManager } from './PropertyIndicators/LazyIndicatorManager';
 import { useLoadingIndicator } from '@/hooks/useLoadingIndicator';
+import { useIndicatorPreload } from '@/utils/lazyIndicatorUtils';
+import { useHierarchyItemKeyboard } from '@/hooks/useHierarchyKeyboardManager';
 
 interface SelectableProps {
   entityType: EntityType;
@@ -50,27 +52,54 @@ export const Selectable = memo(function Selectable({
 }: SelectableProps) {
   // Loading indicator state
   const loadingIndicator = getLoadingState ? useLoadingIndicator(entityId, getLoadingState) : null;
+  
+  // T048: Preload indicator components on user interaction
+  const { preloadIndicators } = useIndicatorPreload();
+  
+  // T049: Enhanced keyboard navigation with accessibility
+  const { handleKeyDown: handleKeyboardNav, getAriaAttributes } = useHierarchyItemKeyboard(
+    entityType,
+    entityId,
+    {
+      onSelect,
+      onDelete
+    }
+  );
+  
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     onSelect(entityType, entityId);
   };
 
+  const handleMouseEnter = () => {
+    // Preload indicator components when user shows interest
+    if (component || indicators.length > 0) {
+      preloadIndicators();
+    }
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    switch (e.key) {
-      case 'Enter':
-      case ' ':
-        e.preventDefault();
-        e.stopPropagation();
-        onSelect(entityType, entityId);
-        break;
-      case 'Delete':
-      case 'Backspace':
-        if (onDelete) {
+    // Use enhanced keyboard navigation
+    const handled = handleKeyboardNav(e);
+    
+    // Fallback to original behavior if not handled
+    if (!handled) {
+      switch (e.key) {
+        case 'Enter':
+        case ' ':
           e.preventDefault();
           e.stopPropagation();
-          onDelete(entityType, entityId);
-        }
-        break;
+          onSelect(entityType, entityId);
+          break;
+        case 'Delete':
+        case 'Backspace':
+          if (onDelete) {
+            e.preventDefault();
+            e.stopPropagation();
+            onDelete(entityType, entityId);
+          }
+          break;
+      }
     }
   };
 
@@ -106,11 +135,10 @@ export const Selectable = memo(function Selectable({
         ${className}
       `}
       onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
       onKeyDown={handleKeyDown}
-      role="button"
-      tabIndex={0}
+      {...getAriaAttributes(isSelected, false, false)}
       aria-label={ariaLabel || `Select ${entityType}: ${entityId}`}
-      aria-pressed={isSelected}
       data-entity-type={entityType}
       data-entity-id={entityId}
     >
@@ -120,7 +148,7 @@ export const Selectable = memo(function Selectable({
         {/* Property indicators - Feature 004 */}
         {component ? (
           <div className="flex items-center space-x-1 mt-1 px-2 pb-1">
-            <IndicatorManager
+            <LazyIndicatorManager
               component={component}
               classes={tailwindClasses}
               size={size === 'large' ? 'md' : 'sm'}
