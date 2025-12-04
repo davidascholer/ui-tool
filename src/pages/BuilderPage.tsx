@@ -12,7 +12,7 @@ import { Drawer } from '../components/builder/Drawer';
 import { useBuilderState } from '../utils/state';
 import { useHierarchyUpdates } from '@/hooks/useHierarchyUpdates';
 import { usePerformanceMonitoring } from '@/hooks/usePerformanceMonitoring';
-import type { ComponentType, EntityType, PropertyChange } from '@/utils/types';
+import type { ComponentType, EntityType, PropertyChange, PageEntity, ContainerEntity, ComponentEntity } from '@/utils/types';
 import { Layout } from '@/components/builder/Layout';
 
 export function BuilderPage() {
@@ -98,21 +98,9 @@ export function BuilderPage() {
       const changes: PropertyChange[] = [];
       const validationErrors: string[] = [];
       
-      Object.entries(data).forEach(([field, newValue]) => {
-        const oldValue = (currentEntity as unknown as Record<string, unknown>)[field];
-        
-        // Validate specific field types based on common entity properties
-        if (field === 'name' && (typeof newValue !== 'string' || newValue.trim().length === 0)) {
-          validationErrors.push(`Name must be a non-empty string, got: ${typeof newValue}`);
-          return;
-        }
-        
-        if (field === 'className' && newValue !== null && typeof newValue !== 'string') {
-          validationErrors.push(`ClassName must be a string or null, got: ${typeof newValue}`);
-          return;
-        }
-
-        if (oldValue !== newValue) {
+      // Helper function to deeply compare values and create change objects
+      const createChangeIfDifferent = (field: string, oldValue: unknown, newValue: unknown) => {
+        if (JSON.stringify(oldValue) !== JSON.stringify(newValue)) {
           changes.push({
             entityId,
             entityType,
@@ -122,7 +110,47 @@ export function BuilderPage() {
             timestamp: Date.now()
           });
         }
-      });
+      };
+      
+      // Process the structured data from Editor forms
+      const dataObj = data as Record<string, unknown>;
+      
+      // Handle name field validation
+      if ('name' in dataObj) {
+        if (typeof dataObj.name !== 'string' || dataObj.name.trim().length === 0) {
+          validationErrors.push(`Name must be a non-empty string, got: ${typeof dataObj.name}`);
+        } else {
+          const oldName = (currentEntity as { name: string }).name;
+          createChangeIfDifferent('name', oldName, dataObj.name);
+        }
+      }
+      
+      // Handle props field (for components)
+      if ('props' in dataObj && entityType === 'Component') {
+        const oldProps = (currentEntity as ComponentEntity).props || {};
+        createChangeIfDifferent('props', oldProps, dataObj.props);
+      }
+      
+      // Handle type field (for components)
+      if ('type' in dataObj && entityType === 'Component') {
+        const oldType = (currentEntity as ComponentEntity).type;
+        createChangeIfDifferent('type', oldType, dataObj.type);
+      }
+      
+      // Handle tailwindOptions
+      if ('tailwindOptions' in dataObj) {
+        const oldTailwindOptions = 
+          'tailwindOptions' in currentEntity 
+            ? (currentEntity as { tailwindOptions: unknown }).tailwindOptions 
+            : { classList: [] };
+        createChangeIfDifferent('tailwindOptions', oldTailwindOptions, dataObj.tailwindOptions);
+      }
+      
+      // Handle meta field (for pages)
+      if ('meta' in dataObj && entityType === 'Page') {
+        const oldMeta = (currentEntity as PageEntity).meta || {};
+        createChangeIfDifferent('meta', oldMeta, dataObj.meta);
+      }
 
       // If validation failed, throw error with details
       if (validationErrors.length > 0) {
@@ -133,13 +161,13 @@ export function BuilderPage() {
       let updateSuccess = false;
       
       if (entityType === 'Page') {
-        actions.updatePage(entityId, data as Partial<typeof state.pages[0]>);
+        actions.updatePage(entityId, dataObj as Partial<PageEntity>);
         updateSuccess = true;
       } else if (entityType === 'Container') {
-        actions.updateContainer(entityId, data as Partial<typeof state.pages[0]['children'][0]>);
+        actions.updateContainer(entityId, dataObj as Partial<ContainerEntity>);
         updateSuccess = true;
       } else if (entityType === 'Component') {
-        actions.updateComponent(entityId, data as Partial<typeof state.pages[0]['children'][0]['children'][0]>);
+        actions.updateComponent(entityId, dataObj as Partial<ComponentEntity>);
         updateSuccess = true;
       } else {
         throw new Error(`Unknown entity type: ${entityType}`);
@@ -148,6 +176,8 @@ export function BuilderPage() {
       // Only queue hierarchy changes after successful state update
       if (updateSuccess && changes.length > 0) {
         changes.forEach(change => hierarchyUpdates.queueChange(change));
+        // Process changes immediately for save operations to avoid UI hanging
+        hierarchyUpdates.processPending();
         console.log(`Successfully saved ${changes.length} property changes for ${entityType} ${entityId}`);
       }
 

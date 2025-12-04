@@ -98,7 +98,6 @@ function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: un
 
       <button
         type="submit"
-        onClick={() => console.log('PageEditor: Save button clicked')}
         className="w-full rounded-lg bg-[rgb(var(--color-primary))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:ring-offset-2"
       >
         Save Page
@@ -246,7 +245,6 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
 
       <button
         type="submit"
-        onClick={() => console.log('ContainerEditor: Save button clicked')}
         className="w-full rounded-lg bg-[rgb(var(--color-primary))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:ring-offset-2"
       >
         Save Container
@@ -467,7 +465,6 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
 
       <button
         type="submit"
-        onClick={() => console.log('ComponentEditor: Save button clicked')}
         className="w-full rounded-lg bg-[rgb(var(--color-primary))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:ring-offset-2"
       >
         Save Component
