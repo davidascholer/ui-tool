@@ -19,6 +19,7 @@ export interface UseHierarchyUpdatesReturn {
   queueChange: (change: PropertyChange) => void;
   processPending: () => void;
   clearQueue: (entityId?: string) => void;
+  getLoadingState: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
 }
 
 /**
@@ -36,6 +37,7 @@ export function useHierarchyUpdates({
     lastUpdate: 0,
     batchCount: 0,
     isProcessing: false,
+    loadingStates: new Map(),
   });
 
   // Debounce timer refs
@@ -46,7 +48,7 @@ export function useHierarchyUpdates({
    * Process all pending changes immediately
    */
   const processPending = useCallback(() => {
-    const { pendingChanges } = updateContextRef.current;
+    const { pendingChanges, loadingStates } = updateContextRef.current;
     
     if (pendingChanges.size === 0) return;
 
@@ -55,6 +57,26 @@ export function useHierarchyUpdates({
     try {
       // Process each entity's changes
       for (const [entityId, changes] of pendingChanges.entries()) {
+        // End loading state for this entity
+        const loadingState = loadingStates.get(entityId);
+        if (loadingState) {
+          const duration = Date.now() - loadingState.startTime;
+          // Mark as slow update if it took more than 100ms
+          if (duration > 100) {
+            loadingStates.set(entityId, {
+              ...loadingState,
+              isLoading: false,
+              isSlowUpdate: true
+            });
+            // Clear slow update indicator after 2 seconds
+            setTimeout(() => {
+              loadingStates.delete(entityId);
+            }, 2000);
+          } else {
+            loadingStates.delete(entityId);
+          }
+        }
+        
         // TODO: Apply changes to hierarchy items
         // TODO: Generate visual indicators
         // TODO: Update expansion states
@@ -76,10 +98,17 @@ export function useHierarchyUpdates({
    * Queue a property change for processing
    */
   const queueChange = useCallback((change: PropertyChange) => {
-    const { pendingChanges } = updateContextRef.current;
+    const { pendingChanges, loadingStates } = updateContextRef.current;
     const entityChanges = pendingChanges.get(change.entityId) || [];
     entityChanges.push(change);
     pendingChanges.set(change.entityId, entityChanges);
+
+    // Start loading state for this entity
+    loadingStates.set(change.entityId, {
+      isLoading: true,
+      startTime: Date.now(),
+      isSlowUpdate: false,
+    });
 
     // Update batch count for performance monitoring
     updateContextRef.current.batchCount += 1;
@@ -94,6 +123,17 @@ export function useHierarchyUpdates({
     debounceTimeoutRef.current = window.setTimeout(() => {
       processPending();
     }, 500);
+
+    // Set up 100ms timer to mark as slow update if needed
+    setTimeout(() => {
+      const currentLoadingState = loadingStates.get(change.entityId);
+      if (currentLoadingState?.isLoading) {
+        loadingStates.set(change.entityId, {
+          ...currentLoadingState,
+          isSlowUpdate: true,
+        });
+      }
+    }, 100);
 
     // Batch detection (3+ changes in 1 second)
     if (updateContextRef.current.batchCount >= 3) {
@@ -186,11 +226,25 @@ export function useHierarchyUpdates({
     };
   }, []);
 
+  /**
+   * Get loading state for a specific entity
+   */
+  const getLoadingState = useCallback((entityId: string) => {
+    const loadingState = updateContextRef.current.loadingStates.get(entityId);
+    if (!loadingState) return null;
+    
+    return {
+      isLoading: loadingState.isLoading,
+      isSlowUpdate: loadingState.isSlowUpdate,
+    };
+  }, []);
+
   return {
     hierarchyItems: hierarchyItemsRef.current,
     updateContext: updateContextRef.current,
     queueChange,
     processPending,
     clearQueue,
+    getLoadingState,
   };
 }

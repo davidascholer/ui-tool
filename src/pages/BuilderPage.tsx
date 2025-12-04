@@ -227,6 +227,7 @@ export function BuilderPage() {
             onSelect={handleSelect}
             onDrop={handleDrop}
             onDelete={handleDelete}
+            getLoadingState={hierarchyUpdates.getLoadingState}
           />
         }
         drawer={

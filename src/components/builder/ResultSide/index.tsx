@@ -17,6 +17,8 @@ interface ResultSideProps {
   onSelect?: (selection: Selection | null) => void;
   onDrop?: (targetId: string | undefined, targetType: EntityType | 'root') => void;
   onDelete?: (entityType: EntityType, entityId: string) => void;
+  // Feature 004: Loading state for visual feedback
+  getLoadingState?: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
 }
 
 type ViewMode = 'hierarchy' | 'code';
@@ -65,7 +67,7 @@ function ViewModeToggle({ viewMode, onViewModeChange }: ViewModeToggleProps) {
   );
 }
 
-export const ResultSide = memo(function ResultSide({ pages, selection, onSelect, onDrop, onDelete }: ResultSideProps) {
+export const ResultSide = memo(function ResultSide({ pages, selection, onSelect, onDrop, onDelete, getLoadingState }: ResultSideProps) {
   const [viewMode, setViewMode] = useState<ViewMode>('hierarchy');
   
   const handleSelect = useCallback((entityType: Selection['entityType'], entityId: string) => {
@@ -104,6 +106,7 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
                     className="p-4"
                     ariaLabel={`Page: ${page.name}`}
                     size="large"
+                    getLoadingState={getLoadingState}
                   >
                     <div className="mb-4">
                       <h2 className="text-xl font-semibold text-[rgb(var(--color-foreground))]">
@@ -136,6 +139,7 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
                               className="p-4"
                               ariaLabel={`Container: ${container.name}`}
                               size="medium"
+                              getLoadingState={getLoadingState}
                             >
                               <h3 className="mb-2 font-medium text-[rgb(var(--color-foreground))]">
                                 {container.name}
@@ -161,6 +165,7 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
                                         className="p-2"
                                         ariaLabel={`Component: ${component.type}`}
                                         size="small"
+                                        getLoadingState={getLoadingState}
                                       >
                                         <span className="text-sm text-[rgb(var(--color-foreground))]">
                                           {component.type}

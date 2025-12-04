@@ -10,6 +10,8 @@ import type { EntityType, VisualIndicator } from '@/utils/types';
 import { DeleteAction } from './DeleteAction';
 import { ColorIndicator } from './PropertyIndicators/ColorIndicator';
 import { TextIndicator } from './PropertyIndicators/TextIndicator';
+import { LoadingIndicator } from './LoadingIndicator';
+import { useLoadingIndicator } from '@/hooks/useLoadingIndicator';
 
 interface SelectableProps {
   entityType: EntityType;
@@ -24,6 +26,7 @@ interface SelectableProps {
   // Feature 004: Real-Time Hierarchy Updates
   indicators?: VisualIndicator[];
   isEditing?: boolean;
+  getLoadingState?: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
 }
 
 export const Selectable = memo(function Selectable({
@@ -37,8 +40,11 @@ export const Selectable = memo(function Selectable({
   ariaLabel,
   size = 'medium',
   indicators = [],
-  isEditing = false
+  isEditing = false,
+  getLoadingState,
 }: SelectableProps) {
+  // Loading indicator state
+  const loadingIndicator = getLoadingState ? useLoadingIndicator(entityId, getLoadingState) : null;
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     onSelect(entityType, entityId);
@@ -137,6 +143,17 @@ export const Selectable = memo(function Selectable({
             <span className="inline-flex items-center px-1.5 py-0.5 rounded-sm text-xs font-medium bg-yellow-200 text-yellow-800">
               Editing
             </span>
+          </div>
+        )}
+        
+        {/* Loading indicator for hierarchy updates */}
+        {loadingIndicator?.shouldShow && (
+          <div className="absolute top-1 right-12">
+            <LoadingIndicator
+              isLoading={loadingIndicator.isLoading}
+              isSlowUpdate={loadingIndicator.isSlowUpdate}
+              size="sm"
+            />
           </div>
         )}
       </div>

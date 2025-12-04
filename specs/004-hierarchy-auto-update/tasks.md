@@ -70,7 +70,7 @@ Single React project structure:
 - [x] T016 [US1] Integrate hierarchy updates with existing Drawer save actions in `src/components/builder/Drawer/index.tsx`
 - [x] T017 [US1] Add error handling for invalid property values with auto-reversion logic
 - [x] T018 [US1] Ensure 200ms response time requirement with performance measurement hooks
-- [ ] T018a [P] [US1] Implement visual feedback for updates taking longer than 100ms (loading indicators, transitions) in hierarchy view
+- [x] T018a [P] [US1] Implement visual feedback for updates taking longer than 100ms (loading indicators, transitions) in hierarchy view
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - saving properties immediately updates hierarchy view
 
@@ -84,8 +84,8 @@ Single React project structure:
 
 ### Tests for User Story 2
 
-- [ ] T019 [P] [US2] Unit test for property indicator generation in `tests/unit/property-indicators.test.tsx`
-- [ ] T020 [P] [US2] Unit test for Tailwind class parsing accuracy in `tests/unit/tailwind-parser.test.tsx`
+- [x] T019 [P] [US2] Unit test for property indicator generation in `tests/unit/property-indicators.test.tsx`
+- [x] T020 [P] [US2] Unit test for Tailwind class parsing accuracy in `tests/unit/tailwind-parser.test.tsx`
 
 ### Implementation for User Story 2
 

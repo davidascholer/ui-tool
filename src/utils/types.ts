@@ -140,4 +140,9 @@ export interface UpdateContext {
   lastUpdate: number;
   batchCount: number;
   isProcessing: boolean;
+  loadingStates: Map<string, { 
+    isLoading: boolean; 
+    startTime: number; 
+    isSlowUpdate: boolean; // true when > 100ms
+  }>;
 }
