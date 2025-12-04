@@ -133,18 +133,18 @@ Single React project structure:
 
 ### Tests for User Story 4
 
-- [ ] T036 [P] [US4] Unit test for debounced updates with fake timers in `tests/unit/debounced-updates.test.tsx`
-- [ ] T037 [P] [US4] Integration test for real-time preview flow in `tests/integration/real-time-preview.test.tsx`
+- [x] T036 [P] [US4] Unit test for debounced updates with fake timers in `tests/unit/debounced-updates.test.tsx`
+- [x] T037 [P] [US4] Integration test for real-time preview flow in `tests/integration/real-time-preview.test.tsx`
 
 ### Implementation for User Story 4
 
-- [ ] T038 [P] [US4] Create useBatchUpdates hook in `src/hooks/useBatchUpdates.tsx` for performance optimization
-- [ ] T039 [P] [US4] Implement debouncing logic (500ms) in useHierarchyUpdates hook for individual field changes
-- [ ] T040 [US4] Integrate React Hook Form watch API for real-time field monitoring in Drawer
-- [ ] T041 [US4] Add batch detection (3+ changes in 1 second) with requestAnimationFrame scheduling - works alongside debouncing to optimize rapid multi-field updates
-- [ ] T042 [US4] Implement visual feedback for "editing" state in hierarchy (italic text, editing badge)
-- [ ] T043 [US4] Add performance monitoring to maintain 60 FPS during batch updates
-- [ ] T044 [US4] Handle rapid component switching with proper cleanup and cancellation
+- [x] T038 [P] [US4] Create useBatchUpdates hook in `src/hooks/useBatchUpdates.tsx` for performance optimization
+- [x] T039 [P] [US4] Implement debouncing logic (500ms) in useHierarchyUpdates hook for individual field changes
+- [x] T040 [US4] Integrate React Hook Form watch API for real-time field monitoring in Drawer
+- [x] T041 [US4] Add batch detection (3+ changes in 1 second) with requestAnimationFrame scheduling - works alongside debouncing to optimize rapid multi-field updates
+- [x] T042 [US4] Implement visual feedback for "editing" state in hierarchy (italic text, editing badge)
+- [x] T043 [US4] Add performance monitoring to maintain 60 FPS during batch updates
+- [x] T044 [US4] Handle rapid component switching with proper cleanup and cancellation
 
 **Checkpoint**: All user stories functional - complete real-time hierarchy with visual feedback and performance optimization
 

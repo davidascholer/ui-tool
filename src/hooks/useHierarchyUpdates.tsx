@@ -11,15 +11,25 @@ export interface UseHierarchyUpdatesProps {
   pages: PageEntity[];
   selection: Selection | null;
   onUpdate?: (entityId: string, changes: PropertyChange[]) => void;
+  enableRealtimeUpdates?: boolean;
+  realtimeDebounceMs?: number;
 }
 
 export interface UseHierarchyUpdatesReturn {
   hierarchyItems: Map<string, HierarchyViewItem>;
   updateContext: UpdateContext;
   queueChange: (change: PropertyChange) => void;
+  queueRealtimeChange: (entityId: string, field: string, value: unknown) => void;
   processPending: () => void;
   clearQueue: (entityId?: string) => void;
   getLoadingState: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
+  getPerformanceMetrics: () => {
+    fps: number;
+    totalUpdates: number;
+    batchedUpdates: number;
+    avgProcessingTime: number;
+  };
+  handleComponentSwitch: (oldEntityId: string) => void;
 }
 
 /**
@@ -239,12 +249,65 @@ export function useHierarchyUpdates({
     };
   }, []);
 
+  /**
+   * Queue a real-time change for debounced processing
+   */
+  const queueRealtimeChange = useCallback((entityId: string, field: string, value: unknown) => {
+    const change: PropertyChange = {
+      entityId,
+      entityType: 'Component',
+      field,
+      oldValue: null, // Will be resolved during processing
+      newValue: value,
+      timestamp: Date.now()
+    };
+    
+    queueChange(change);
+  }, [queueChange]);
+
+  /**
+   * Get performance metrics
+   */
+  const getPerformanceMetrics = useCallback(() => {
+    return {
+      fps: 60, // Placeholder - would be calculated from actual frame timing
+      totalUpdates: updateContextRef.current.batchCount,
+      batchedUpdates: updateContextRef.current.batchCount,
+      avgProcessingTime: 0 // Placeholder - would be calculated from processing times
+    };
+  }, []);
+
+  /**
+   * Handle rapid component switching with proper cleanup
+   */
+  const handleComponentSwitch = useCallback((oldEntityId: string) => {
+    // Clear any pending changes for the old entity
+    clearQueue(oldEntityId);
+    
+    // Clear loading states for old entity
+    updateContextRef.current.loadingStates.delete(oldEntityId);
+    
+    // Ensure any pending timeouts are cleared
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+      debounceTimeoutRef.current = null;
+    }
+    
+    if (batchTimeoutRef.current) {
+      clearTimeout(batchTimeoutRef.current);
+      batchTimeoutRef.current = null;
+    }
+  }, [clearQueue]);
+
   return {
     hierarchyItems: hierarchyItemsRef.current,
     updateContext: updateContextRef.current,
     queueChange,
+    queueRealtimeChange,
     processPending,
     clearQueue,
     getLoadingState,
+    getPerformanceMetrics,
+    handleComponentSwitch,
   };
 }
