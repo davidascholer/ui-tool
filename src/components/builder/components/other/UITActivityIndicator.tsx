@@ -1,8 +1,9 @@
 /**
  * React Native:
- * Component that wraps platform ScrollView while providing integration with touch locking "responder" system.
+ * Displays a circular loading indicator.
  *
  * Web:
+ * Displays a circular loading indicator.
  */
 
 

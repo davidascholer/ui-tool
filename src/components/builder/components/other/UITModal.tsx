@@ -1,6 +1,6 @@
 /**
  * React Native:
- * Component that wraps platform ScrollView while providing integration with touch locking "responder" system.
+ * The Modal component is a basic way to present content above an enclosing view.
  *
  * Web:
  */

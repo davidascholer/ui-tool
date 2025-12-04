@@ -1,7 +1,8 @@
 /**
  * React Native:
- * Component that wraps platform ScrollView while providing integration with touch locking "responder" system.
- *
+ *  PixelRatio gives you access to the device's pixel density and font scale.
+
+ * 
  * Web:
  */
 

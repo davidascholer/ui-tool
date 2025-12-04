@@ -1,7 +1,7 @@
 /**
  * React Native:
- * Component that wraps platform ScrollView while providing integration with touch locking "responder" system.
- *
+ * Linking gives you a general interface to interact with both incoming and outgoing app links.
+ * 
  * Web:
  */
 
