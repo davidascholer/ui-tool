@@ -50,6 +50,8 @@ export function BuilderPage() {
   };
 
   const handleSave = (data: unknown) => {
+    console.log("something")
+    console.log('Saving data from drawer:', data);
     if (!state.selection) return;
 
     const { entityType, entityId } = state.selection;

@@ -45,8 +45,13 @@ function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: un
     },
   });
 
+  const handleFormSubmit = (data: unknown) => {
+    console.log('PageEditor: Form submitted with data:', data);
+    onSave?.(data);
+  };
+
   return (
-    <form onSubmit={handleSubmit((data) => onSave?.(data))} className="space-y-4">
+    <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-4">
       <div>
         <label htmlFor="name" className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
           Page Name
@@ -93,6 +98,7 @@ function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: un
 
       <button
         type="submit"
+        onClick={() => console.log('PageEditor: Save button clicked')}
         className="w-full rounded-lg bg-[rgb(var(--color-primary))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:ring-offset-2"
       >
         Save Page
@@ -116,6 +122,8 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
     },
   });
 
+  console.log('ContainerEditor: Current form errors:', errors);
+
   const addTailwindClass = () => {
     if (newClass.trim() && !classList.includes(newClass.trim())) {
       setClassList(prev => [...prev, newClass.trim()]);
@@ -135,6 +143,8 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
   };
 
   const handleFormSubmit = (formData: { name: string }) => {
+    console.log('ContainerEditor: Form submitted with data:', formData);
+    console.log('ContainerEditor: Current classList:', classList);
     const updatedData = {
       ...formData,
       tailwindOptions: {
@@ -142,11 +152,19 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
         classList,
       },
     };
+    console.log('ContainerEditor: Final data to save:', updatedData);
     onSave?.(updatedData);
   };
 
+  const handleSubmitWithError = handleSubmit(
+    handleFormSubmit,
+    (errors) => {
+      console.log('ContainerEditor: Form submission failed with errors:', errors);
+    }
+  );
+
   return (
-    <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmitWithError} className="space-y-6">
       <div>
         <label htmlFor="name" className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
           Container Name
@@ -228,6 +246,7 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
 
       <button
         type="submit"
+        onClick={() => console.log('ContainerEditor: Save button clicked')}
         className="w-full rounded-lg bg-[rgb(var(--color-primary))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:ring-offset-2"
       >
         Save Container
@@ -243,6 +262,7 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
   const {
     register,
     handleSubmit,
+    formState: { errors },
   } = useForm({
     resolver: zodResolver(componentFormSchema),
     defaultValues: {
@@ -250,6 +270,8 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
       props: entity.props || {},
     },
   });
+
+  console.log('ComponentEditor: Current form errors:', errors);
 
   const addTailwindClass = () => {
     if (newClass.trim() && !classList.includes(newClass.trim())) {
@@ -270,6 +292,8 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
   };
 
   const handleFormSubmit = (formData: { type: string; props: Record<string, unknown> }) => {
+    console.log('ComponentEditor: Form submitted with data:', formData);
+    console.log('ComponentEditor: Current classList:', classList);
     const updatedData = {
       ...formData,
       tailwindOptions: {
@@ -277,8 +301,16 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
         classList,
       },
     };
+    console.log('ComponentEditor: Final data to save:', updatedData);
     onSave?.(updatedData);
   };
+
+  const handleSubmitWithError = handleSubmit(
+    handleFormSubmit,
+    (errors) => {
+      console.log('ComponentEditor: Form submission failed with errors:', errors);
+    }
+  );
 
   const getComponentSpecificProps = () => {
     switch (entity.type) {
@@ -352,7 +384,7 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
   };
 
   return (
-    <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmitWithError} className="space-y-6">
       <div>
         <label className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
           Component Type
@@ -435,6 +467,7 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
 
       <button
         type="submit"
+        onClick={() => console.log('ComponentEditor: Save button clicked')}
         className="w-full rounded-lg bg-[rgb(var(--color-primary))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:ring-offset-2"
       >
         Save Component

@@ -116,7 +116,13 @@ export function useBuilderState() {
         ...page,
         children: page.children.map((container) =>
           container.id === containerId
-            ? { ...container, ...updates, codeMetadata: container.codeMetadata }
+            ? { 
+                ...container, 
+                ...updates, 
+                codeMetadata: updates.codeMetadata 
+                  ? { ...container.codeMetadata, ...updates.codeMetadata }
+                  : container.codeMetadata 
+              }
             : container
         ),
       })),
@@ -132,7 +138,13 @@ export function useBuilderState() {
           ...container,
           children: container.children.map((component) =>
             component.id === componentId
-              ? { ...component, ...updates, codeMetadata: component.codeMetadata }
+              ? { 
+                  ...component, 
+                  ...updates, 
+                  codeMetadata: updates.codeMetadata 
+                    ? { ...component.codeMetadata, ...updates.codeMetadata }
+                    : component.codeMetadata 
+                }
               : component
           ),
         })),

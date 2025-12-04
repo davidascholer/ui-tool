@@ -52,13 +52,11 @@ export const pageFormSchema = z.object({
 
 export const containerFormSchema = z.object({
   name: z.string().min(1, 'Container name is required').max(100, 'Container name too long'),
-  tailwindOptions: tailwindOptionsSchema,
 });
 
 export const componentFormSchema = z.object({
   type: z.enum(['Button', 'Input', 'Card', 'Text', 'Image', 'List']),
   props: z.record(z.string(), z.unknown()),
-  tailwindOptions: tailwindOptionsSchema,
 });
 
 // Component-specific prop schemas
