@@ -23,6 +23,7 @@ describe('Save Hanging Fix Verification', () => {
       getSelectedEntity: vi.fn(() => ({
         id: 'comp-1',
         type: 'Button',
+              uitType: 'UITButton',
         props: { text: 'Old Text' },
         tailwindClassList: ['btn']
       }))
@@ -31,6 +32,7 @@ describe('Save Hanging Fix Verification', () => {
     // Simulate the save process from BuilderPage
     const saveData = {
       type: 'Button',
+              uitType: 'UITButton',
       props: { text: 'New Text' },
       tailwindClassList: ['btn-primary']
     };
@@ -84,6 +86,7 @@ describe('Save Hanging Fix Verification', () => {
       getSelectedEntity: vi.fn(() => ({
         id: 'comp-1',
         type: 'Button',
+              uitType: 'UITButton',
         props: { text: 'Same Text' },
         tailwindClassList: ['btn']
       }))
@@ -92,6 +95,7 @@ describe('Save Hanging Fix Verification', () => {
     // Same data as current entity
     const saveData = {
       type: 'Button',
+              uitType: 'UITButton',
       props: { text: 'Same Text' },
       tailwindClassList: ['btn']
     };

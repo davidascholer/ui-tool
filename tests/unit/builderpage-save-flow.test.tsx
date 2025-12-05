@@ -44,6 +44,7 @@ describe('BuilderPage Save Flow', () => {
     const mockPage: PageEntity = {
       id: 'page-1',
       name: 'Test Page',
+      uitType: 'UITPage',
       meta: { title: 'Old Title' },
       children: []
     };
@@ -121,12 +122,14 @@ describe('BuilderPage Save Flow', () => {
     const mockComponent: ComponentEntity = {
       id: 'component-1',
       type: 'Button',
+              uitType: 'UITButton',
       props: { text: 'Old Text' },
       tailwindClassList: ['btn']
     };
 
     const saveData = {
       type: 'Button',
+              uitType: 'UITButton',
       props: { text: 'New Text' },
       tailwindClassList: ['btn-primary', 'hover:btn-secondary']
     };

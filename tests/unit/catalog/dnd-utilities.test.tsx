@@ -12,6 +12,7 @@ describe('Drag and Drop Utilities', () => {
       
       expect(dragItem).toEqual({
         type: 'page',
+              uitType: 'UITpage',
         id: expect.any(String)
       });
       expect(dragItem.id).toMatch(/^page-\d+$/);
@@ -22,6 +23,7 @@ describe('Drag and Drop Utilities', () => {
       
       expect(dragItem).toEqual({
         type: 'container',
+              uitType: 'UITcontainer',
         id: expect.any(String)
       });
       expect(dragItem.id).toMatch(/^container-\d+$/);
@@ -32,6 +34,7 @@ describe('Drag and Drop Utilities', () => {
       
       expect(dragItem).toEqual({
         type: 'component',
+              uitType: 'UITcomponent',
         componentType: 'Button',
         id: expect.any(String)
       });

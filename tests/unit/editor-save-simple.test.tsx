@@ -15,6 +15,7 @@ describe('Editor onSave Callback Tests', () => {
     const pageEntity: PageEntity = {
       id: 'page-1',
       name: 'Test Page',
+      uitType: 'UITPage',
       meta: {},
       children: []
     };
@@ -28,6 +29,7 @@ describe('Editor onSave Callback Tests', () => {
     const pageEntity: PageEntity = {
       id: 'page-1',
       name: 'Test Page',
+      uitType: 'UITPage',
       meta: {},
       children: []
     };
@@ -48,6 +50,7 @@ describe('Editor onSave Callback Tests', () => {
     };
     const componentData = { 
       type: 'Button', 
+              uitType: 'UITButton',
       props: { text: 'Updated Text' },
       tailwindClassList: ['btn-primary']
     };
@@ -69,6 +72,7 @@ describe('Editor onSave Callback Tests', () => {
     const pageEntity: PageEntity = {
       id: 'page-1',
       name: 'Test Page',
+      uitType: 'UITPage',
       meta: { title: 'Test Title', description: 'Test Description' },
       children: []
     };
@@ -76,6 +80,7 @@ describe('Editor onSave Callback Tests', () => {
     const containerEntity: ContainerEntity = {
       id: 'container-1',
       name: 'Test Container',
+          uitType: 'UITContainer',
       tailwindClassList: ['bg-blue-500'],
       children: []
     };
@@ -83,6 +88,7 @@ describe('Editor onSave Callback Tests', () => {
     const componentEntity: ComponentEntity = {
       id: 'component-1',
       type: 'Button',
+              uitType: 'UITButton',
       props: { text: 'Click me' },
       tailwindClassList: ['btn']
     };

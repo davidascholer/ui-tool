@@ -83,15 +83,18 @@ describe('ResultSide', () => {
       {
         id: 'page-1',
         name: 'Home Page',
+      uitType: 'UITPage',
         children: [
           {
             id: 'container-1',
             name: 'Hero Section',
+          uitType: 'UITContainer',
             tailwindClassList: [],
             children: [
               {
                 id: 'component-1',
                 type: 'Button' as const,
+              uitType: 'UITButton',
                 props: {},
                 tailwindClassList: [],
               },
@@ -113,6 +116,7 @@ describe('ResultSide', () => {
       {
         id: 'page-1',
         name: 'Home Page',
+      uitType: 'UITPage',
         children: [],
       },
     ];
@@ -140,6 +144,7 @@ describe('Drawer', () => {
     const page = {
       id: 'page-1',
       name: 'Home Page',
+      uitType: 'UITPage',
       children: [],
     };
 
@@ -160,6 +165,7 @@ describe('Drawer', () => {
     const container = {
       id: 'container-1',
       name: 'Hero Section',
+          uitType: 'UITContainer',
       tailwindClassList: [],
       children: [],
     };
@@ -179,6 +185,7 @@ describe('Drawer', () => {
     const component = {
       id: 'component-1',
       type: 'Button' as const,
+              uitType: 'UITButton',
       props: {},
       tailwindClassList: [],
     };

@@ -22,6 +22,7 @@ describe('LazyIndicatorManager', () => {
   const mockComponent: ComponentEntity = {
     id: 'test-component',
     type: 'Button',
+              uitType: 'UITButton',
     props: {},
     tailwindClassList: {
       classList: ['bg-blue-500', 'text-white', 'p-4']
@@ -53,6 +54,7 @@ describe('LazyIndicatorManager', () => {
     const emptyComponent: ComponentEntity = {
       id: 'empty-component',
       type: 'Button',
+              uitType: 'UITButton',
       props: {},
       tailwindClassList: {
         classList: []
@@ -89,6 +91,7 @@ describe('LazyIndicatorManager', () => {
     const largeComponent: ComponentEntity = {
       id: 'large-component',
       type: 'Button',
+              uitType: 'UITButton',
       props: {},
       tailwindClassList: {
         classList: ['bg-red-500', 'text-white', 'p-4', 'rounded', 'shadow', 'border']

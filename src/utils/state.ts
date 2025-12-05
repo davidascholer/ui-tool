@@ -6,6 +6,95 @@
 import { useState, useCallback } from 'react';
 import type { BuilderState, PageEntity, ContainerEntity, ComponentEntity, Selection, ComponentType, HierarchyViewItem, UpdateContext } from '@/utils/types';
 
+// Helper function to recursively update containers
+function updateContainerRecursive(
+  container: ContainerEntity,
+  targetId: string,
+  updater: (item: ContainerEntity | ComponentEntity) => ContainerEntity | ComponentEntity
+): ContainerEntity {
+  if (container.id === targetId) {
+    return updater(container) as ContainerEntity;
+  }
+  
+  return {
+    ...container,
+    children: container.children.map((child) => {
+      if ('children' in child && Array.isArray(child.children)) {
+        // It's a ContainerEntity
+        return updateContainerRecursive(child as ContainerEntity, targetId, updater);
+      } else if (child.id === targetId) {
+        // It's a ComponentEntity and matches
+        return updater(child);
+      }
+      return child;
+    }),
+  };
+}
+
+// Helper function to recursively find and add to a container
+function addToContainerRecursive(
+  container: ContainerEntity,
+  targetId: string,
+  newChild: ContainerEntity | ComponentEntity
+): ContainerEntity {
+  if (container.id === targetId) {
+    return {
+      ...container,
+      children: [...container.children, newChild],
+    };
+  }
+  
+  return {
+    ...container,
+    children: container.children.map((child) => {
+      if ('children' in child && Array.isArray(child.children)) {
+        return addToContainerRecursive(child as ContainerEntity, targetId, newChild);
+      }
+      return child;
+    }),
+  };
+}
+
+// Helper function to recursively delete from a container
+function deleteFromContainerRecursive(
+  container: ContainerEntity,
+  targetId: string
+): ContainerEntity {
+  return {
+    ...container,
+    children: container.children
+      .filter((child) => child.id !== targetId)
+      .map((child) => {
+        if ('children' in child && Array.isArray(child.children)) {
+          return deleteFromContainerRecursive(child as ContainerEntity, targetId);
+        }
+        return child;
+      }),
+  };
+}
+
+// Helper function to recursively find an entity in a container
+function findInContainerRecursive(
+  container: ContainerEntity,
+  targetId: string
+): ContainerEntity | ComponentEntity | null {
+  if (container.id === targetId) {
+    return container;
+  }
+  
+  for (const child of container.children) {
+    if (child.id === targetId) {
+      return child;
+    }
+    if ('children' in child && Array.isArray(child.children)) {
+      const found = findInContainerRecursive(child as ContainerEntity, targetId);
+      if (found) return found;
+    }
+  }
+  
+  return null;
+}
+
 export function useBuilderState() {
   const [state, setState] = useState<BuilderState>({
     pages: [],
@@ -27,6 +116,7 @@ export function useBuilderState() {
     const newPage: PageEntity = {
       id: `page-${Date.now()}`,
       name,
+      uitType: 'UITPage',
       children: [],
     };
     setState((prev) => ({
@@ -35,20 +125,29 @@ export function useBuilderState() {
     }));
   }, []);
 
-  const addContainer = useCallback((pageId: string, name: string) => {
+  const addContainer = useCallback((parentId: string, name: string) => {
     const newContainer: ContainerEntity = {
       id: `container-${Date.now()}`,
       name,
       tailwindClassList: [],
+      uitType: 'UITContainer',
       children: [],
     };
     setState((prev) => ({
       ...prev,
-      pages: prev.pages.map((page) =>
-        page.id === pageId
-          ? { ...page, children: [...page.children, newContainer] }
-          : page
-      ),
+      pages: prev.pages.map((page) => {
+        // Check if parent is the page itself
+        if (page.id === parentId) {
+          return { ...page, children: [...page.children, newContainer] };
+        }
+        // Otherwise, recursively add to nested container
+        return {
+          ...page,
+          children: page.children.map((container) =>
+            addToContainerRecursive(container, parentId, newContainer)
+          ),
+        };
+      }),
     }));
   }, []);
 
@@ -58,15 +157,14 @@ export function useBuilderState() {
       type,
       props: {},
       tailwindClassList: [],
+      uitType: `UIT${type}`,
     };
     setState((prev) => ({
       ...prev,
       pages: prev.pages.map((page) => ({
         ...page,
         children: page.children.map((container) =>
-          container.id === containerId
-            ? { ...container, children: [...container.children, newComponent] }
-            : container
+          addToContainerRecursive(container, containerId, newComponent)
         ),
       })),
     }));
@@ -97,9 +195,7 @@ export function useBuilderState() {
       pages: prev.pages.map((page) => ({
         ...page,
         children: page.children.map((container) =>
-          container.id === containerId
-            ? { ...container, ...updates }
-            : container
+          updateContainerRecursive(container, containerId, (item) => ({ ...item, ...updates }))
         ),
       })),
     }));
@@ -110,14 +206,9 @@ export function useBuilderState() {
       ...prev,
       pages: prev.pages.map((page) => ({
         ...page,
-        children: page.children.map((container) => ({
-          ...container,
-          children: container.children.map((component) =>
-            component.id === componentId
-              ? { ...component, ...updates }
-              : component
-          ),
-        })),
+        children: page.children.map((container) =>
+          updateContainerRecursive(container, componentId, (item) => ({ ...item, ...updates }))
+        ),
       })),
     }));
   }, []);
@@ -130,24 +221,15 @@ export function useBuilderState() {
           pages: prev.pages.filter((page) => page.id !== entityId),
           selection: prev.selection?.entityId === entityId ? null : prev.selection,
         };
-      } else if (entityType === 'Container') {
-        return {
-          ...prev,
-          pages: prev.pages.map((page) => ({
-            ...page,
-            children: page.children.filter((container) => container.id !== entityId),
-          })),
-          selection: prev.selection?.entityId === entityId ? null : prev.selection,
-        };
       } else {
+        // For Container and Component, recursively delete from nested structures
         return {
           ...prev,
           pages: prev.pages.map((page) => ({
             ...page,
-            children: page.children.map((container) => ({
-              ...container,
-              children: container.children.filter((component) => component.id !== entityId),
-            })),
+            children: page.children
+              .filter((container) => container.id !== entityId)
+              .map((container) => deleteFromContainerRecursive(container, entityId)),
           })),
           selection: prev.selection?.entityId === entityId ? null : prev.selection,
         };
@@ -162,16 +244,12 @@ export function useBuilderState() {
 
     if (entityType === 'Page') {
       return state.pages.find((p) => p.id === entityId) || null;
-    } else if (entityType === 'Container') {
-      for (const page of state.pages) {
-        const container = page.children.find((c) => c.id === entityId);
-        if (container) return container;
-      }
     } else {
+      // For Container and Component, recursively search in nested structures
       for (const page of state.pages) {
         for (const container of page.children) {
-          const component = container.children.find((c) => c.id === entityId);
-          if (component) return component;
+          const found = findInContainerRecursive(container, entityId);
+          if (found) return found;
         }
       }
     }

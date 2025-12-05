@@ -15,6 +15,7 @@ function TestErrorHandlingComponent() {
     {
       id: 'page-1',
       name: 'Test Page',
+      uitType: 'UITPage',
       children: []
     }
   ]);
@@ -150,6 +151,7 @@ describe('Error Handling and Auto-Reversion', () => {
       const mockPages: PageEntity[] = [{
         id: 'page-1',
         name: 'Test Page',
+      uitType: 'UITPage',
         children: []
       }];
 

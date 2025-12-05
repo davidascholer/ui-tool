@@ -15,18 +15,21 @@ export const componentSchema = z.object({
   type: z.enum(['Button', 'Input', 'Card', 'Text', 'Image', 'List']),
   props: z.record(z.string(), z.unknown()),
   tailwindClassList: tailwindClassListSchema,
+  uitType: z.string(),
 });
 
-export const containerSchema = z.object({
+export const containerSchema: z.ZodType<any> = z.lazy(() => z.object({
   id: z.string(),
   name: z.string().min(1, 'Container name is required'),
   tailwindClassList: tailwindClassListSchema,
-  children: z.array(componentSchema),
-});
+  uitType: z.string(),
+  children: z.array(z.union([componentSchema, containerSchema])),
+}));
 
 export const pageSchema = z.object({
   id: z.string(),
   name: z.string().min(1, 'Page name is required'),
+  uitType: z.string(),
   meta: z.object({
     title: z.string().optional(),
     description: z.string().optional(),

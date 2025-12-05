@@ -19,6 +19,7 @@ describe('Hierarchy Validation', () => {
     const validPage = {
       id: 'page-1',
       name: 'Home',
+      uitType: 'UITPage',
       children: [],
     };
 
@@ -39,6 +40,8 @@ describe('Hierarchy Validation', () => {
     const validContainer = {
       id: 'container-1',
       name: 'Hero Section',
+          uitType: 'UITContainer',
+      uitType: 'UITPage',
       tailwindClassList: [],
       children: [],
     };
@@ -50,6 +53,7 @@ describe('Hierarchy Validation', () => {
     const validComponent = {
       id: 'component-1',
       type: 'Button',
+              uitType: 'UITButton',
       props: {},
       tailwindClassList: [],
     };
@@ -139,15 +143,18 @@ describe('Page Hierarchy Validation', () => {
     const page = {
       id: 'page-1',
       name: 'Home',
+      uitType: 'UITPage',
       children: [
         {
           id: 'container-1',
           name: 'Hero',
+          uitType: 'UITContainer',
           tailwindClassList: [],
           children: [
             {
               id: 'component-1',
               type: 'Button' as const,
+              uitType: 'UITButton',
               props: {},
               tailwindClassList: [],
             },
@@ -164,15 +171,18 @@ describe('Page Hierarchy Validation', () => {
     const page = {
       id: 'page-1',
       name: 'Home',
+      uitType: 'UITPage',
       children: [
         {
           id: 'container-1',
           name: 'Hero',
+          uitType: 'UITContainer',
           tailwindClassList: [],
           children: [
             {
               id: 'component-1',
               type: 'InvalidType', // Invalid component type
+              uitType: 'UITInvalidType',
               props: {},
               tailwindClassList: [],
             },
@@ -193,6 +203,7 @@ describe('Entity Deletion', () => {
       {
         id: 'page-1',
         name: 'Home',
+      uitType: 'UITPage',
         children: [],
       },
     ];
@@ -207,11 +218,13 @@ describe('Entity Deletion', () => {
       {
         id: 'page-1',
         name: 'Home',
+      uitType: 'UITPage',
         children: [],
       },
       {
         id: 'page-2',
         name: 'About',
+      uitType: 'UITPage',
         children: [],
       },
     ];
@@ -225,6 +238,7 @@ describe('Entity Deletion', () => {
       {
         id: 'page-1',
         name: 'Home',
+      uitType: 'UITPage',
         children: [],
       },
     ];
@@ -238,6 +252,7 @@ describe('Entity Deletion', () => {
       {
         id: 'page-1',
         name: 'Home',
+      uitType: 'UITPage',
         children: [],
       },
     ];

@@ -141,6 +141,7 @@ function RealTimePreviewTestApp() {
   const [component, setComponent] = useState<ComponentEntity>({
     id: 'test-component',
     type: 'Button',
+              uitType: 'UITButton',
     props: {
       text: 'Click me',
       color: 'blue',
@@ -351,12 +352,14 @@ describe('Real-Time Preview Flow Integration', () => {
         comp1: {
           id: 'comp1',
           type: 'Button' as const,
+              uitType: 'UITButton',
           props: { text: 'Button 1' },
           tailwindClassList: []
         },
         comp2: {
           id: 'comp2', 
           type: 'Input' as const,
+              uitType: 'UITInput',
           props: { placeholder: 'Input 2' },
           tailwindClassList: []
         }
@@ -498,6 +501,7 @@ describe('Real-Time Preview Flow Integration', () => {
               component={{
                 id: 'test',
                 type: 'Button',
+              uitType: 'UITButton',
                 props: {},
                 tailwindClassList: []
               }}

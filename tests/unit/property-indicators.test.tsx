@@ -28,6 +28,7 @@ describe('Property Indicators System', () => {
       const component: MockComponent = {
         id: 'test-button',
         type: 'Button',
+              uitType: 'UITButton',
         props: { content: 'Test Button' },
         tailwindClassList: ['bg-blue-500', 'text-white', 'hover:bg-blue-600'],
         classes: 'bg-blue-500 text-white hover:bg-blue-600'
@@ -37,6 +38,7 @@ describe('Property Indicators System', () => {
       const expectedIndicators: VisualIndicator[] = [
         {
           type: 'color',
+              uitType: 'UITcolor',
           value: 'bg-blue-500',
           displayValue: '#3b82f6',
           priority: 5,
@@ -45,6 +47,7 @@ describe('Property Indicators System', () => {
         },
         {
           type: 'color', 
+              uitType: 'UITcolor',
           value: 'text-white',
           displayValue: '#ffffff',
           priority: 5,
@@ -68,6 +71,7 @@ describe('Property Indicators System', () => {
       const component: MockComponent = {
         id: 'test-text',
         type: 'Text',
+              uitType: 'UITText',
         props: { content: 'Hello World' },
         tailwindClassList: [],
         classes: ''
@@ -76,6 +80,7 @@ describe('Property Indicators System', () => {
       const expectedIndicators: VisualIndicator[] = [
         {
           type: 'text',
+              uitType: 'UITtext',
           value: 'Hello World',
           displayValue: 'Hello World',
           priority: 4,
@@ -97,6 +102,7 @@ describe('Property Indicators System', () => {
       const component: MockComponent = {
         id: 'test-container',
         type: 'Button',
+              uitType: 'UITButton',
         props: {},
         tailwindClassList: ['p-4', 'm-2', 'gap-3'],
         classes: 'p-4 m-2 gap-3'
@@ -105,6 +111,7 @@ describe('Property Indicators System', () => {
       const expectedIndicators: VisualIndicator[] = [
         {
           type: 'spacing',
+              uitType: 'UITspacing',
           value: 'p-4',
           displayValue: '16px',
           priority: 3,
@@ -113,6 +120,7 @@ describe('Property Indicators System', () => {
         },
         {
           type: 'spacing',
+              uitType: 'UITspacing',
           value: 'm-2',
           displayValue: '8px',
           priority: 3,
@@ -134,6 +142,7 @@ describe('Property Indicators System', () => {
       const component: MockComponent = {
         id: 'complex-component',
         type: 'Button',
+              uitType: 'UITButton',
         props: { content: 'Click me' },
         tailwindClassList: ['bg-red-500', 'p-4', 'text-lg'],
         classes: 'bg-red-500 p-4 text-lg'
@@ -143,6 +152,7 @@ describe('Property Indicators System', () => {
         // Colors should come first (priority 5)
         {
           type: 'color',
+              uitType: 'UITcolor',
           value: 'bg-red-500',
           displayValue: '#ef4444',
           priority: 5,
@@ -152,6 +162,7 @@ describe('Property Indicators System', () => {
         // Then text (priority 4)
         {
           type: 'text',
+              uitType: 'UITtext',
           value: 'Click me',
           displayValue: 'Click me',
           priority: 4,
@@ -161,6 +172,7 @@ describe('Property Indicators System', () => {
         // Then spacing (priority 3)
         {
           type: 'spacing',
+              uitType: 'UITspacing',
           value: 'p-4',
           displayValue: '16px',
           priority: 3,
@@ -183,6 +195,7 @@ describe('Property Indicators System', () => {
       const component: MockComponent = {
         id: 'indicator-heavy',
         type: 'Button',
+              uitType: 'UITButton',
         props: { content: 'Button text', ariaLabel: 'Accessible button' },
         tailwindClassList: ['bg-blue-500', 'text-white', 'border-red-500', 'p-4', 'm-2', 'rounded-lg', 'shadow-lg'],
         classes: 'bg-blue-500 text-white border-red-500 p-4 m-2 rounded-lg shadow-lg'
@@ -191,11 +204,17 @@ describe('Property Indicators System', () => {
       // Mock returning more than 5 indicators
       const manyIndicators: VisualIndicator[] = [
         { type: 'color', value: 'bg-blue-500', displayValue: '#3b82f6', priority: 5, tooltip: 'Background: Blue 500', isValid: true },
+              uitType: 'UITcolor',
         { type: 'color', value: 'text-white', displayValue: '#ffffff', priority: 5, tooltip: 'Text: White', isValid: true },
+              uitType: 'UITcolor',
         { type: 'color', value: 'border-red-500', displayValue: '#ef4444', priority: 5, tooltip: 'Border: Red 500', isValid: true },
+              uitType: 'UITcolor',
         { type: 'text', value: 'Button text', displayValue: 'Button text', priority: 4, tooltip: 'Content: Button text', isValid: true },
+              uitType: 'UITtext',
         { type: 'spacing', value: 'p-4', displayValue: '16px', priority: 3, tooltip: 'Padding: 16px', isValid: true },
+              uitType: 'UITspacing',
         { type: 'spacing', value: 'm-2', displayValue: '8px', priority: 3, tooltip: 'Margin: 8px', isValid: true }
+              uitType: 'UITspacing',
       ];
 
       // Should return only top 5 indicators
@@ -211,6 +230,7 @@ describe('Property Indicators System', () => {
       const component: MockComponent = {
         id: 'empty-component',
         type: 'Button',
+              uitType: 'UITButton',
         props: {},
         tailwindClassList: [],
         classes: ''
@@ -229,6 +249,7 @@ describe('Property Indicators System', () => {
       const component: MockComponent = {
         id: 'long-text',
         type: 'Text',
+              uitType: 'UITText',
         props: { content: 'This is a very long text content that should be truncated for display' },
         tailwindClassList: [],
         classes: ''
@@ -237,6 +258,7 @@ describe('Property Indicators System', () => {
       const expectedIndicators: VisualIndicator[] = [
         {
           type: 'text',
+              uitType: 'UITtext',
           value: 'This is a very long text content that should be truncated for display',
           displayValue: 'This is a very long te...', // Truncated to 25 chars
           priority: 4,
@@ -258,6 +280,7 @@ describe('Property Indicators System', () => {
       const component: MockComponent = {
         id: 'sorted-component',
         type: 'Button',
+              uitType: 'UITButton',
         props: {},
         tailwindClassList: ['text-white', 'bg-blue-500'], // Different order in classes
         classes: 'text-white bg-blue-500'
@@ -267,6 +290,7 @@ describe('Property Indicators System', () => {
         // Both have priority 5, should be alphabetical by value
         {
           type: 'color',
+              uitType: 'UITcolor',
           value: 'bg-blue-500',
           displayValue: '#3b82f6',
           priority: 5,
@@ -275,6 +299,7 @@ describe('Property Indicators System', () => {
         },
         {
           type: 'color',
+              uitType: 'UITcolor',
           value: 'text-white',
           displayValue: '#ffffff',
           priority: 5,
@@ -297,6 +322,7 @@ describe('Property Indicators System', () => {
       const indicators: VisualIndicator[] = [
         {
           type: 'color',
+              uitType: 'UITcolor',
           value: 'bg-blue-500',
           displayValue: '#3b82f6',
           priority: 5,
@@ -317,6 +343,7 @@ describe('Property Indicators System', () => {
       const indicators: VisualIndicator[] = [
         {
           type: 'spacing',
+              uitType: 'UITspacing',
           value: 'px-4 py-2',
           displayValue: '16px, 8px',
           priority: 3,

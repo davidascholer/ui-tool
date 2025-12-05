@@ -22,6 +22,7 @@ describe('Editor Save Integration Tests', () => {
       const pageEntity: PageEntity = {
         id: 'page-1',
         name: 'Test Page',
+      uitType: 'UITPage',
         meta: { title: 'Test Title' },
         children: []
       };
@@ -38,6 +39,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
+          uitType: 'UITContainer',
         tailwindClassList: ['bg-blue-500'],
         children: []
       };
@@ -54,6 +56,7 @@ describe('Editor Save Integration Tests', () => {
       const componentEntity: ComponentEntity = {
         id: 'component-1',
         type: 'Button',
+              uitType: 'UITButton',
         props: { text: 'Click me' },
         tailwindClassList: []
       };
@@ -71,6 +74,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
+          uitType: 'UITContainer',
         tailwindClassList: ['bg-red-500', 'p-4', 'rounded'],
         children: []
       };
@@ -86,6 +90,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
+          uitType: 'UITContainer',
         tailwindClassList: [],
         children: []
       };
@@ -105,6 +110,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
+          uitType: 'UITContainer',
         tailwindClassList: ['bg-red-500'],
         children: []
       };
@@ -123,6 +129,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
+          uitType: 'UITContainer',
         tailwindClassList: ['bg-blue-500'],
         children: []
       };
@@ -147,6 +154,7 @@ describe('Editor Save Integration Tests', () => {
       const buttonEntity: ComponentEntity = {
         id: 'button-1',
         type: 'Button',
+              uitType: 'UITButton',
         props: { text: 'Original Text' },
         tailwindClassList: []
       };
@@ -161,6 +169,7 @@ describe('Editor Save Integration Tests', () => {
       const inputEntity: ComponentEntity = {
         id: 'input-1',
         type: 'Input',
+        uitType: 'UITInput',
         props: { placeholder: 'Enter text', type: 'text' },
         tailwindClassList: []
       };
@@ -176,6 +185,7 @@ describe('Editor Save Integration Tests', () => {
       const textEntity: ComponentEntity = {
         id: 'text-1',
         type: 'Text',
+              uitType: 'UITText',
         props: { text: 'Original content' },
         tailwindClassList: []
       };
@@ -190,6 +200,7 @@ describe('Editor Save Integration Tests', () => {
       const cardEntity: ComponentEntity = {
         id: 'card-1',
         type: 'Card',
+              uitType: 'UITCard',
         props: {},
         tailwindClassList: []
       };
@@ -205,6 +216,7 @@ describe('Editor Save Integration Tests', () => {
       const pageEntity: PageEntity = {
         id: 'page-1',
         name: 'Test Page',
+      uitType: 'UITPage',
         meta: {},
         children: []
       };
@@ -221,6 +233,7 @@ describe('Editor Save Integration Tests', () => {
       const pageEntity: PageEntity = {
         id: 'page-1',
         name: '', // Invalid empty name
+      uitType: 'UITPage',
         meta: {},
         children: []
       };
@@ -235,9 +248,9 @@ describe('Editor Save Integration Tests', () => {
   describe('Save Button Behavior', () => {
     it('save buttons are properly typed as submit buttons', () => {
       const entities = [
-        { entity: { id: '1', name: 'Page', meta: {}, children: [] }, type: 'Page' as const },
-        { entity: { id: '2', name: 'Container', tailwindClassList: [], children: [] }, type: 'Container' as const },
-        { entity: { id: '3', type: 'Button', props: {}, tailwindClassList: [] }, type: 'Component' as const }
+        { entity: { id: '1', name: 'Page', uitType: 'UITPage', meta: {}, children: [] }, type: 'Page' as const },
+        { entity: { id: '2', name: 'Container', uitType: 'UITContainer', tailwindClassList: [], children: [] }, type: 'Container' as const },
+        { entity: { id: '3', type: 'Button', uitType: 'UITButton', props: {}, tailwindClassList: [] }, type: 'Component' as const }
       ];
 
       entities.forEach(({ entity, type }) => {
@@ -254,6 +267,7 @@ describe('Editor Save Integration Tests', () => {
       const pageEntity: PageEntity = {
         id: 'page-1',
         name: 'Original Name',
+      uitType: 'UITPage',
         meta: { title: 'Original Title' },
         children: []
       };
@@ -277,6 +291,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
+          uitType: 'UITContainer',
         tailwindClassList: [],
         children: []
       };

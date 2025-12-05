@@ -355,18 +355,21 @@ describe('ResponsivePropertyIndicator', () => {
     {
       id: 'error-1',
       type: 'error',
+              uitType: 'UITerror',
       label: 'Validation Error',
       tooltip: 'This field has validation errors'
     },
     {
       id: 'warning-1',
       type: 'warning',
+              uitType: 'UITwarning',
       label: 'Warning',
       tooltip: 'This field has warnings'
     },
     {
       id: 'required-1',
       type: 'required',
+              uitType: 'UITrequired',
       label: 'Required',
       tooltip: 'This field is required'
     }
@@ -405,6 +408,7 @@ describe('ResponsivePropertyIndicator', () => {
       expect.objectContaining({
         id: 'error-1',
         type: 'error'
+              uitType: 'UITerror',
       })
     );
   });
@@ -440,8 +444,11 @@ describe('Responsive Integration', () => {
     
     const mockIndicators: PropertyIndicatorData[] = [
       { id: '1', type: 'error', label: 'Error' },
+              uitType: 'UITerror',
       { id: '2', type: 'warning', label: 'Warning' },
+              uitType: 'UITwarning',
       { id: '3', type: 'info', label: 'Info' }
+              uitType: 'UITinfo',
     ];
     
     render(<ResponsivePropertyIndicator indicators={mockIndicators} />);
@@ -456,7 +463,9 @@ describe('Responsive Integration', () => {
   it('should handle container width constraints', () => {
     const mockIndicators: PropertyIndicatorData[] = [
       { id: '1', type: 'error', label: 'Error' },
+              uitType: 'UITerror',
       { id: '2', type: 'warning', label: 'Warning' }
+              uitType: 'UITwarning',
     ];
     
     render(

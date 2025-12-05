@@ -580,6 +580,7 @@ describe('React Integration Hooks', () => {
           width: 400, 
           height: 800, 
           type: 'mobile' 
+              uitType: 'UITmobile',
         });
       });
       

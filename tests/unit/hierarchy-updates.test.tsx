@@ -13,15 +13,18 @@ describe('useHierarchyUpdates', () => {
     {
       id: 'page-1',
       name: 'Home Page',
+      uitType: 'UITPage',
       children: [
         {
           id: 'container-1',
           name: 'Header Container',
+          uitType: 'UITContainer',
           tailwindClassList: ['bg-blue-500', 'p-4'],
           children: [
             {
               id: 'component-1',
               type: 'Button',
+              uitType: 'UITButton',
               props: { text: 'Click me' },
               tailwindClassList: ['text-white', 'px-6'],
             },

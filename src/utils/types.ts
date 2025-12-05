@@ -23,18 +23,21 @@ export interface ComponentEntity {
   type: ComponentType;
   props: Record<string, unknown>;
   tailwindClassList: string[];
+  uitType: string;
 }
 
 export interface ContainerEntity {
   id: string;
   name: string;
   tailwindClassList: string[];
-  children: ComponentEntity[];
+  uitType: string;
+  children: (ComponentEntity | ContainerEntity)[];
 }
 
 export interface PageEntity {
   id: string;
   name: string;
+  uitType: string;
   meta?: {
     title?: string;
     description?: string;
