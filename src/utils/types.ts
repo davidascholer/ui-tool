@@ -3,7 +3,18 @@
  * Defines the hierarchy: Page → Container → Component
  */
 
-export type ComponentType = 'Button' | 'Input' | 'Card' | 'Text' | 'Image' | 'List';
+// Basic Components
+export type BasicComponentType = 'View' | 'Text' | 'Image' | 'TextInput' | 'Pressable' | 'ScrollView';
+// UI Components
+export type UIComponentType = 'Button' | 'Switch';
+// List Components
+export type ListComponentType = 'FlatList' | 'SectionList';
+// Other Components
+export type OtherComponentType = 'ActivityIndicator' | 'Alert' | 'Animated' | 'KeyboardAvoidingView' | 'Linking' | 'Modal' | 'PixelRatio' | 'RefreshControl' | 'StatusBar';
+// Legacy types for backward compatibility
+export type LegacyComponentType = 'Input' | 'Card' | 'List';
+// All component types
+export type ComponentType = BasicComponentType | UIComponentType | ListComponentType | OtherComponentType | LegacyComponentType;
 export type EntityType = 'Page' | 'Container' | 'Component';
 export type CodeMode = 'react' | 'react-native';
 

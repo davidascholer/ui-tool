@@ -3,11 +3,8 @@
  * Feature 003: Component Tracking and Code Export
  */
 
-import { generateButtonCode } from '../code-generators/react/button';
 import { generateInputCode } from '../code-generators/react/input';
 import { generateCardCode } from '../code-generators/react/card';
-import { generateTextCode } from '../code-generators/react/text';
-import { generateImageCode } from '../code-generators/react/image';
 import { generateListCode } from '../code-generators/react/list';
 import { generateContainerCode } from '../code-generators/react/container';
 import { generatePageCode } from '../code-generators/react/page';
@@ -18,19 +15,64 @@ import type { PageEntity, ContainerEntity, ComponentEntity } from '../types';
  * Serialize a single component to React JSX
  */
 function serializeComponent(component: ComponentEntity): string {
+  const classes = component.tailwindOptions?.classList?.join(' ') || '';
+  const classAttr = classes ? ` className="${classes}"` : '';
+  
   switch (component.type) {
+    // Basic Components
+    case 'View':
+      return `<div${classAttr}>{children}</div>`;
+    case 'Text':
+      return `<p${classAttr}>{children}</p>`;
+    case 'Image':
+      return `<img${classAttr} />`;
+    case 'TextInput':
+      return `<input${classAttr} />`;
+    case 'Pressable':
+      return `<button${classAttr}>{children}</button>`;
+    case 'ScrollView':
+      return `<div${classAttr}>{children}</div>`;
+    
+    // UI Components
     case 'Button':
-      return generateButtonCode(component);
+      return `<button${classAttr}>{children}</button>`;
+    case 'Switch':
+      return `<input type="checkbox"${classAttr} />`;
+    
+    // List Components
+    case 'FlatList':
+      return `<ul${classAttr}>{children}</ul>`;
+    case 'SectionList':
+      return `<div${classAttr}>{children}</div>`;
+    
+    // Other Components
+    case 'ActivityIndicator':
+      return `<div${classAttr} role="status"><span className="sr-only">Loading...</span></div>`;
+    case 'Alert':
+      return `<dialog${classAttr}>{children}</dialog>`;
+    case 'Animated':
+      return `<div${classAttr}>{children}</div>`;
+    case 'KeyboardAvoidingView':
+      return `<div${classAttr}>{children}</div>`;
+    case 'Linking':
+      return `<a${classAttr}>{children}</a>`;
+    case 'Modal':
+      return `<dialog${classAttr}>{children}</dialog>`;
+    case 'PixelRatio':
+      return `<div${classAttr}>{children}</div>`;
+    case 'RefreshControl':
+      return `<div${classAttr}>{children}</div>`;
+    case 'StatusBar':
+      return `<div${classAttr}>{children}</div>`;
+    
+    // Legacy Components (backward compatibility)
     case 'Input':
       return generateInputCode(component);
     case 'Card':
       return generateCardCode(component);
-    case 'Text':
-      return generateTextCode(component);
-    case 'Image':
-      return generateImageCode(component);
     case 'List':
       return generateListCode(component);
+    
     default:
       return `<!-- Unknown component type: ${component.type} -->`;
   }

@@ -12,17 +12,37 @@ const COMPONENT_CATALOG = {
     { label: 'Page', icon: '📄' }
   ],
   containers: [
-    { label: 'Container', icon: '📦' },
-    { label: 'Section', icon: '📐' }
+    { label: 'Container', icon: '📦' }
   ],
-  components: [
-    { label: 'Button', icon: '🔘', type: 'Button' as ComponentType },
-    { label: 'Input', icon: '📝', type: 'Input' as ComponentType },
-    { label: 'Card', icon: '🃏', type: 'Card' as ComponentType },
-    { label: 'Text', icon: '📰', type: 'Text' as ComponentType },
-    { label: 'Image', icon: '🖼️', type: 'Image' as ComponentType },
-    { label: 'List', icon: '📋', type: 'List' as ComponentType }
-  ]
+  components: {
+    basic: [
+      { label: 'View', icon: '📦', type: 'View' as ComponentType },
+      { label: 'Text', icon: '📰', type: 'Text' as ComponentType },
+      { label: 'Image', icon: '🖼️', type: 'Image' as ComponentType },
+      { label: 'TextInput', icon: '📝', type: 'TextInput' as ComponentType },
+      { label: 'Pressable', icon: '👆', type: 'Pressable' as ComponentType },
+      { label: 'ScrollView', icon: '📜', type: 'ScrollView' as ComponentType }
+    ],
+    ui: [
+      { label: 'Button', icon: '🔘', type: 'Button' as ComponentType },
+      { label: 'Switch', icon: '🔀', type: 'Switch' as ComponentType }
+    ],
+    lists: [
+      { label: 'FlatList', icon: '📋', type: 'FlatList' as ComponentType },
+      { label: 'SectionList', icon: '📑', type: 'SectionList' as ComponentType }
+    ],
+    other: [
+      { label: 'ActivityIndicator', icon: '⏳', type: 'ActivityIndicator' as ComponentType },
+      { label: 'Alert', icon: '⚠️', type: 'Alert' as ComponentType },
+      { label: 'Animated', icon: '🎬', type: 'Animated' as ComponentType },
+      { label: 'KeyboardAvoidingView', icon: '⌨️', type: 'KeyboardAvoidingView' as ComponentType },
+      { label: 'Linking', icon: '🔗', type: 'Linking' as ComponentType },
+      { label: 'Modal', icon: '🪟', type: 'Modal' as ComponentType },
+      { label: 'PixelRatio', icon: '📐', type: 'PixelRatio' as ComponentType },
+      { label: 'RefreshControl', icon: '🔄', type: 'RefreshControl' as ComponentType },
+      { label: 'StatusBar', icon: '📊', type: 'StatusBar' as ComponentType }
+    ]
+  }
 } as const;
 
 interface UISideProps {
@@ -48,20 +68,41 @@ export function UISide({ onDragStart }: UISideProps) {
       <ComponentSection
         title="Pages"
         items={COMPONENT_CATALOG.pages}
-        onDragStart={(item) => handleDragStart('page')}
+        onDragStart={() => handleDragStart('page')}
       />
 
       {/* Containers Section */}
       <ComponentSection
         title="Containers"
         items={COMPONENT_CATALOG.containers}
-        onDragStart={(item) => handleDragStart('container')}
+        onDragStart={() => handleDragStart('container')}
       />
 
-      {/* Components Section */}
+      {/* Components Section - Basic */}
       <ComponentSection
-        title="Components"
-        items={COMPONENT_CATALOG.components}
+        title="Basic Components"
+        items={COMPONENT_CATALOG.components.basic}
+        onDragStart={(item) => handleDragStart('component', 'type' in item ? item.type : undefined)}
+      />
+
+      {/* Components Section - UI */}
+      <ComponentSection
+        title="UI Components"
+        items={COMPONENT_CATALOG.components.ui}
+        onDragStart={(item) => handleDragStart('component', 'type' in item ? item.type : undefined)}
+      />
+
+      {/* Components Section - Lists */}
+      <ComponentSection
+        title="List Components"
+        items={COMPONENT_CATALOG.components.lists}
+        onDragStart={(item) => handleDragStart('component', 'type' in item ? item.type : undefined)}
+      />
+
+      {/* Components Section - Other */}
+      <ComponentSection
+        title="Other Components"
+        items={COMPONENT_CATALOG.components.other}
         onDragStart={(item) => handleDragStart('component', 'type' in item ? item.type : undefined)}
       />
     </div>
