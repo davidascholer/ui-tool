@@ -54,8 +54,8 @@ export function PerformanceMonitoringDashboard({
   const [isMinimized, setIsMinimized] = useState(compact);
   const [selectedTab, setSelectedTab] = useState<'metrics' | 'health' | 'charts'>('metrics');
   
-  const updateIntervalRef = useRef<number>();
-  const { logPerformance } = useHierarchyLogger('PerformanceDashboard');
+  const updateIntervalRef = useRef<number>(null);
+  const { logPerformance } = useHierarchyLogger({ componentName: 'PerformanceDashboard' });
 
   // Performance metrics calculations
   useEffect(() => {

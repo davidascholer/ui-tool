@@ -9,7 +9,7 @@ interface LiveViewProps {
 export function LiveView({ children }: LiveViewProps) {
   // Batch detection state for
   return (
-    <div className="flex h-full items-center justify-center p-2 border-b-amber-600 border-2 min-w-[320px]">
+    <div className="flex flex-1 h-full items-start justify-center p-2 min-w-[320px]">
       {children}
     </div>
   );

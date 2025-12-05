@@ -158,7 +158,7 @@ export function createTouchDragState(): TouchDragState {
 export function handleTouchStart(
   event: React.TouchEvent,
   item: DragItem,
-  state: TouchDragState
+  // state: TouchDragState
 ): TouchDragState {
   const touch = event.touches[0];
   return {

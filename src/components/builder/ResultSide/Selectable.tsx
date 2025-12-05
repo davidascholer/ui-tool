@@ -6,7 +6,7 @@
 
 import { memo } from 'react';
 import type { ReactNode } from 'react';
-import type { EntityType, VisualIndicator } from '@/utils/types';
+import type { EntityType, VisualIndicator, ComponentEntity } from '@/utils/types';
 import { DeleteAction } from './DeleteAction';
 import { ColorIndicator } from './PropertyIndicators/ColorIndicator';
 import { TextIndicator } from './PropertyIndicators/TextIndicator';
@@ -28,12 +28,12 @@ interface SelectableProps {
   size?: 'small' | 'medium' | 'large';
   // Feature 004: Real-Time Hierarchy Updates
   indicators?: VisualIndicator[];
-  component?: any; // ComponentEntity for IndicatorManager
+  component?: ComponentEntity; // ComponentEntity for IndicatorManager
   tailwindClasses?: string; // Override classes for IndicatorManager
   isEditing?: boolean;
   getLoadingState?: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
   // Entity object for logging
-  entity?: any;
+  entity?: unknown;
 }
 
 export const Selectable = memo(function Selectable({
@@ -54,7 +54,7 @@ export const Selectable = memo(function Selectable({
   entity,
 }: SelectableProps) {
   // Loading indicator state
-  const loadingIndicator = getLoadingState ? useLoadingIndicator(entityId, getLoadingState) : null;
+  const loadingIndicator = useLoadingIndicator(entityId, getLoadingState || (() => null));
   
   // T048: Preload indicator components on user interaction
   const { preloadIndicators } = useIndicatorPreload();

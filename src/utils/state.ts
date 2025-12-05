@@ -11,9 +11,6 @@ export function useBuilderState() {
     pages: [],
     selection: null,
     codeMode: 'react',
-    // Feature 003: Component Tracking
-    globalCodeMetadata: {},
-    codeFormat: 'react',
   });
 
   // Feature 004: Real-Time Hierarchy Updates
@@ -23,6 +20,7 @@ export function useBuilderState() {
     lastUpdate: 0,
     batchCount: 0,
     isProcessing: false,
+    loadingStates: new Map(),
   });
 
   const addPage = useCallback((name: string) => {
@@ -30,11 +28,6 @@ export function useBuilderState() {
       id: `page-${Date.now()}`,
       name,
       children: [],
-      codeMetadata: {
-        'react-code': '<div></div>',
-        'styles': '',
-        'element': 'div',
-      },
     };
     setState((prev) => ({
       ...prev,
@@ -48,11 +41,6 @@ export function useBuilderState() {
       name,
       tailwindOptions: { classList: [] },
       children: [],
-      codeMetadata: {
-        'react-code': '<div></div>',
-        'styles': '',
-        'element': 'div',
-      },
     };
     setState((prev) => ({
       ...prev,
@@ -65,26 +53,11 @@ export function useBuilderState() {
   }, []);
 
   const addComponent = useCallback((containerId: string, type: ComponentType) => {
-    // Map component type to HTML element
-    const elementMap: Record<ComponentType, string> = {
-      Button: 'button',
-      Input: 'input',
-      Card: 'div',
-      Text: 'p',
-      Image: 'img',
-      List: 'ul',
-    };
-
     const newComponent: ComponentEntity = {
       id: `component-${Date.now()}`,
       type,
       props: {},
       tailwindOptions: { classList: [] },
-      codeMetadata: {
-        'react-code': `<${elementMap[type]}></${elementMap[type]}>`,
-        'styles': '',
-        'element': elementMap[type],
-      },
     };
     setState((prev) => ({
       ...prev,
@@ -112,7 +85,7 @@ export function useBuilderState() {
       ...prev,
       pages: prev.pages.map((page) =>
         page.id === pageId
-          ? { ...page, ...updates, codeMetadata: page.codeMetadata }
+          ? { ...page, ...updates }
           : page
       ),
     }));
@@ -125,13 +98,7 @@ export function useBuilderState() {
         ...page,
         children: page.children.map((container) =>
           container.id === containerId
-            ? { 
-                ...container, 
-                ...updates, 
-                codeMetadata: updates.codeMetadata 
-                  ? { ...container.codeMetadata, ...updates.codeMetadata }
-                  : container.codeMetadata 
-              }
+            ? { ...container, ...updates }
             : container
         ),
       })),
@@ -147,13 +114,7 @@ export function useBuilderState() {
           ...container,
           children: container.children.map((component) =>
             component.id === componentId
-              ? { 
-                  ...component, 
-                  ...updates, 
-                  codeMetadata: updates.codeMetadata 
-                    ? { ...component.codeMetadata, ...updates.codeMetadata }
-                    : component.codeMetadata 
-                }
+              ? { ...component, ...updates }
               : component
           ),
         })),

@@ -261,10 +261,13 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<{
+    type: 'Text' | 'Image' | 'Button' | 'Input' | 'Card' | 'List';
+    props: Record<string, unknown>;
+  }>({
     resolver: zodResolver(componentFormSchema),
     defaultValues: {
-      type: entity.type,
+      type: entity.type as 'Text' | 'Image' | 'Button' | 'Input' | 'Card' | 'List',
       props: entity.props || {},
     },
   });
