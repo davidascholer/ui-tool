@@ -44,12 +44,12 @@ describe('Editor onSave Callback Tests', () => {
     const pageData = { name: 'Updated Page', meta: { title: 'New Title' } };
     const containerData = { 
       name: 'Updated Container', 
-      tailwindOptions: { classList: ['bg-blue-500', 'p-4'] } 
+      tailwindClassList: ['bg-blue-500', 'p-4'] 
     };
     const componentData = { 
       type: 'Button', 
       props: { text: 'Updated Text' },
-      tailwindOptions: { classList: ['btn-primary'] }
+      tailwindClassList: ['btn-primary']
     };
 
     // Test that onSave can be called with different data types
@@ -76,7 +76,7 @@ describe('Editor onSave Callback Tests', () => {
     const containerEntity: ContainerEntity = {
       id: 'container-1',
       name: 'Test Container',
-      tailwindOptions: { classList: ['bg-blue-500'] },
+      tailwindClassList: ['bg-blue-500'],
       children: []
     };
 
@@ -84,7 +84,7 @@ describe('Editor onSave Callback Tests', () => {
       id: 'component-1',
       type: 'Button',
       props: { text: 'Click me' },
-      tailwindOptions: { classList: ['btn'] }
+      tailwindClassList: ['btn']
     };
 
     // All should render without errors

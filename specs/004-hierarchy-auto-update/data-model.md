@@ -48,7 +48,7 @@ Tracks what properties changed, their old and new values, and the entity they be
 **Fields**:
 - `entityId: string` - ID of the entity that changed
 - `entityType: EntityType` - Type of entity that changed
-- `propertyPath: string` - Dot-notation path to changed property (e.g., "tailwindOptions.classList")
+- `propertyPath: string` - Dot-notation path to changed property (e.g., "tailwindClassList")
 - `oldValue: unknown` - Previous property value
 - `newValue: unknown` - New property value
 - `timestamp: number` - When change occurred (Date.now())

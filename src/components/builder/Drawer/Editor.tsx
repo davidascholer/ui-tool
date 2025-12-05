@@ -107,7 +107,7 @@ function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: un
 }
 
 function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?: (data: unknown) => void }) {
-  const [classList, setClassList] = useState<string[]>(entity.tailwindOptions?.classList || []);
+  const [classList, setClassList] = useState<string[]>(entity.tailwindClassList || []);
   const [newClass, setNewClass] = useState('');
   
   const {
@@ -146,10 +146,7 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
     console.log('ContainerEditor: Current classList:', classList);
     const updatedData = {
       ...formData,
-      tailwindOptions: {
-        ...entity.tailwindOptions,
-        classList,
-      },
+      tailwindClassList: classList,
     };
     console.log('ContainerEditor: Final data to save:', updatedData);
     onSave?.(updatedData);
@@ -254,7 +251,7 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
 }
 
 function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?: (data: unknown) => void }) {
-  const [classList, setClassList] = useState<string[]>(entity.tailwindOptions?.classList || []);
+  const [classList, setClassList] = useState<string[]>(entity.tailwindClassList || []);
   const [newClass, setNewClass] = useState('');
   
   const {
@@ -297,10 +294,7 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
     console.log('ComponentEditor: Current classList:', classList);
     const updatedData = {
       ...formData,
-      tailwindOptions: {
-        ...entity.tailwindOptions,
-        classList,
-      },
+      tailwindClassList: classList,
     };
     console.log('ComponentEditor: Final data to save:', updatedData);
     onSave?.(updatedData);

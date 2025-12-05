@@ -184,7 +184,7 @@ useEffect(() => {
   // Debounced update to hierarchy
   const change: PropertyChange = {
     entityId: selection?.entityId,
-    propertyPath: 'tailwindOptions.classList',
+    propertyPath: 'tailwindClassList',
     oldValue: previousValue,
     newValue: watchedValues.classList,
     timestamp: Date.now(),

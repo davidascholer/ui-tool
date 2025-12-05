@@ -87,13 +87,13 @@ describe('ResultSide', () => {
           {
             id: 'container-1',
             name: 'Hero Section',
-            tailwindOptions: { classList: [] },
+            tailwindClassList: [],
             children: [
               {
                 id: 'component-1',
                 type: 'Button' as const,
                 props: {},
-                tailwindOptions: { classList: [] },
+                tailwindClassList: [],
               },
             ],
           },
@@ -160,7 +160,7 @@ describe('Drawer', () => {
     const container = {
       id: 'container-1',
       name: 'Hero Section',
-      tailwindOptions: { classList: [] },
+      tailwindClassList: [],
       children: [],
     };
 
@@ -180,7 +180,7 @@ describe('Drawer', () => {
       id: 'component-1',
       type: 'Button' as const,
       props: {},
-      tailwindOptions: { classList: [] },
+      tailwindClassList: [],
     };
 
     render(

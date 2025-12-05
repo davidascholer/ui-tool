@@ -365,12 +365,12 @@ describe('State Metadata Tracking', () => {
 
       act(() => {
         result.current.actions.updateContainer(containerId, {
-          tailwindOptions: { classList: ['px-4', 'py-2'] },
+          tailwindClassList: ['px-4', 'py-2'],
         });
       });
 
       const updatedContainer = result.current.state.pages[0].children[0];
-      expect(updatedContainer.tailwindOptions.classList).toEqual(['px-4', 'py-2']);
+      expect(updatedContainer.tailwindClassList).toEqual(['px-4', 'py-2']);
       expect(updatedContainer.codeMetadata).toEqual(originalMetadata);
     });
   });

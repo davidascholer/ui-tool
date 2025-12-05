@@ -84,13 +84,13 @@ describe('BuilderPage Save Flow', () => {
     const mockContainer: ContainerEntity = {
       id: 'container-1', 
       name: 'Test Container',
-      tailwindOptions: { classList: ['bg-red-500'] },
+      tailwindClassList: ['bg-red-500'],
       children: []
     };
 
     const saveData = {
       name: 'Updated Container',
-      tailwindOptions: { classList: ['bg-blue-500', 'p-4'] }
+      tailwindClassList: ['bg-blue-500', 'p-4']
     };
 
     mockActions.getSelectedEntity.mockReturnValue(mockContainer);
@@ -105,16 +105,16 @@ describe('BuilderPage Save Flow', () => {
       }
     }
 
-    if ('tailwindOptions' in dataObj) {
+    if ('tailwindClassList' in dataObj) {
       const oldOptions = mockContainer.tailwindOptions || { classList: [] };
       if (JSON.stringify(oldOptions) !== JSON.stringify(dataObj.tailwindOptions)) {
-        changes.push({ field: 'tailwindOptions', oldValue: oldOptions, newValue: dataObj.tailwindOptions });
+        changes.push({ field: 'tailwindClassList', oldValue: oldOptions, newValue: dataObj.tailwindOptions });
       }
     }
 
     expect(changes).toHaveLength(2);
     expect(changes[0]).toMatchObject({ field: 'name', oldValue: 'Test Container', newValue: 'Updated Container' });
-    expect(changes[1].field).toBe('tailwindOptions');
+    expect(changes[1].field).toBe('tailwindClassList');
   });
 
   it('should handle Component save data correctly', () => {
@@ -122,13 +122,13 @@ describe('BuilderPage Save Flow', () => {
       id: 'component-1',
       type: 'Button',
       props: { text: 'Old Text' },
-      tailwindOptions: { classList: ['btn'] }
+      tailwindClassList: ['btn']
     };
 
     const saveData = {
       type: 'Button',
       props: { text: 'New Text' },
-      tailwindOptions: { classList: ['btn-primary', 'hover:btn-secondary'] }
+      tailwindClassList: ['btn-primary', 'hover:btn-secondary']
     };
 
     mockActions.getSelectedEntity.mockReturnValue(mockComponent);
@@ -143,10 +143,10 @@ describe('BuilderPage Save Flow', () => {
       }
     }
 
-    if ('tailwindOptions' in dataObj) {
+    if ('tailwindClassList' in dataObj) {
       const oldOptions = mockComponent.tailwindOptions || { classList: [] };
       if (JSON.stringify(oldOptions) !== JSON.stringify(dataObj.tailwindOptions)) {
-        changes.push({ field: 'tailwindOptions', oldValue: oldOptions, newValue: dataObj.tailwindOptions });
+        changes.push({ field: 'tailwindClassList', oldValue: oldOptions, newValue: dataObj.tailwindOptions });
       }
     }
 
@@ -156,6 +156,6 @@ describe('BuilderPage Save Flow', () => {
       oldValue: { text: 'Old Text' }, 
       newValue: { text: 'New Text' } 
     });
-    expect(changes[1].field).toBe('tailwindOptions');
+    expect(changes[1].field).toBe('tailwindClassList');
   });
 });

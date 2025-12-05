@@ -17,13 +17,13 @@ describe('useHierarchyUpdates', () => {
         {
           id: 'container-1',
           name: 'Header Container',
-          tailwindOptions: { classList: ['bg-blue-500', 'p-4'] },
+          tailwindClassList: ['bg-blue-500', 'p-4'],
           children: [
             {
               id: 'component-1',
               type: 'Button',
               props: { text: 'Click me' },
-              tailwindOptions: { classList: ['text-white', 'px-6'] },
+              tailwindClassList: ['text-white', 'px-6'],
             },
           ],
         },
@@ -105,7 +105,7 @@ describe('useHierarchyUpdates', () => {
     const change2: PropertyChange = {
       entityId: 'component-1',
       entityType: 'Component',
-      field: 'tailwindOptions.classList',
+      field: 'tailwindClassList',
       oldValue: ['text-white', 'px-6'],
       newValue: ['text-white', 'px-8', 'py-2'],
       timestamp: Date.now() + 100,

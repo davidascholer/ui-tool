@@ -169,16 +169,16 @@ export function BuilderPage() {
           createChangeIfDifferent("type", oldType, dataObj.type);
         }
 
-        // Handle tailwindOptions
-        if ("tailwindOptions" in dataObj) {
-          const oldTailwindOptions =
-            "tailwindOptions" in currentEntity
-              ? (currentEntity as { tailwindOptions: unknown }).tailwindOptions
-              : { classList: [] };
+        // Handle tailwindClassList
+        if ("tailwindClassList" in dataObj) {
+          const oldTailwindClassList =
+            "tailwindClassList" in currentEntity
+              ? (currentEntity as { tailwindClassList: unknown }).tailwindClassList
+              : [];
           createChangeIfDifferent(
-            "tailwindOptions",
-            oldTailwindOptions,
-            dataObj.tailwindOptions
+            "tailwindClassList",
+            oldTailwindClassList,
+            dataObj.tailwindClassList
           );
         }
 

@@ -146,7 +146,7 @@ function RealTimePreviewTestApp() {
       color: 'blue',
       size: 'medium'
     },
-    tailwindOptions: {
+    tailwindClassList: {
       classList: ['bg-blue-500', 'text-white', 'px-4', 'py-2']
     }
   });
@@ -352,13 +352,13 @@ describe('Real-Time Preview Flow Integration', () => {
           id: 'comp1',
           type: 'Button' as const,
           props: { text: 'Button 1' },
-          tailwindOptions: { classList: [] }
+          tailwindClassList: []
         },
         comp2: {
           id: 'comp2', 
           type: 'Input' as const,
           props: { placeholder: 'Input 2' },
-          tailwindOptions: { classList: [] }
+          tailwindClassList: []
         }
       };
       
@@ -499,7 +499,7 @@ describe('Real-Time Preview Flow Integration', () => {
                 id: 'test',
                 type: 'Button',
                 props: {},
-                tailwindOptions: { classList: [] }
+                tailwindClassList: []
               }}
               onRealTimeUpdate={handleUpdate}
               onSave={() => {}}

@@ -118,7 +118,7 @@ export function usePropertyIndicators(entity: EntityType | null) {
     
     // Parse Tailwind classes for color indicators
     if (entity.tailwindOptions?.classList) {
-      entity.tailwindOptions.classList.forEach(className => {
+      entity.tailwindClassList.forEach(className => {
         if (className.match(/^(bg|text|border)-\w+-\d+$/)) {
           indicators.push({
             type: 'color',

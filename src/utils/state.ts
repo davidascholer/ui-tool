@@ -39,7 +39,7 @@ export function useBuilderState() {
     const newContainer: ContainerEntity = {
       id: `container-${Date.now()}`,
       name,
-      tailwindOptions: { classList: [] },
+      tailwindClassList: [],
       children: [],
     };
     setState((prev) => ({
@@ -57,7 +57,7 @@ export function useBuilderState() {
       id: `component-${Date.now()}`,
       type,
       props: {},
-      tailwindOptions: { classList: [] },
+      tailwindClassList: [],
     };
     setState((prev) => ({
       ...prev,

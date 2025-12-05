@@ -6,7 +6,7 @@ import { cn } from "@/utils/styles";
 import type { TailwindDivInterface } from "../../interface/tailwind-interfaces/TailwindDivInterface";
 
 const tailwindClassesStatic =
-  "flex flex-col min-w-[320px] max-w-6xl mx-auto justify-center items-center gap-4 bg-blue-800 p-4";
+  "flex flex-col min-w-[320px] max-w-6xl mx-auto justify-center items-center gap-4 p-4";
 
 export function UITPage({
   tailwindClasses,

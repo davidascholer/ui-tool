@@ -23,7 +23,7 @@ describe('LazyIndicatorManager', () => {
     id: 'test-component',
     type: 'Button',
     props: {},
-    tailwindOptions: {
+    tailwindClassList: {
       classList: ['bg-blue-500', 'text-white', 'p-4']
     }
   };
@@ -54,7 +54,7 @@ describe('LazyIndicatorManager', () => {
       id: 'empty-component',
       type: 'Button',
       props: {},
-      tailwindOptions: {
+      tailwindClassList: {
         classList: []
       }
     };
@@ -90,7 +90,7 @@ describe('LazyIndicatorManager', () => {
       id: 'large-component',
       type: 'Button',
       props: {},
-      tailwindOptions: {
+      tailwindClassList: {
         classList: ['bg-red-500', 'text-white', 'p-4', 'rounded', 'shadow', 'border']
       }
     };

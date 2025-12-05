@@ -42,13 +42,13 @@ export function LazyIndicatorManager(props: IndicatorManagerProps) {
   const { component, maxIndicators = 5 } = props;
   
   // Early return for no indicators - avoids loading any components
-  if (!component || !component.tailwindOptions?.classList?.length) {
+  if (!component || !component.tailwindClassList?.length) {
     return null;
   }
 
   // Estimate indicator count for skeleton (rough heuristic)
   const estimatedIndicatorCount = Math.min(
-    component.tailwindOptions.classList.length,
+    component.tailwindClassList.length,
     maxIndicators
   );
 

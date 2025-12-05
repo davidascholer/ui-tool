@@ -5,34 +5,49 @@
  * Includes code view toggle for React/React Native export
  */
 
-import { useState, useCallback, memo } from 'react';
-import type { PageEntity, Selection, EntityType } from '@/utils/types';
-import { CodeView } from './CodeView';
-import { LiveView } from '../LiveView';
-import { BuilderView } from '../Builder';
-import { ViewModeToggle, type ViewMode } from './ViewModeToggle';
+import { useState, useCallback, memo } from "react";
+import type { PageEntity, Selection, EntityType } from "@/utils/types";
+import { CodeView } from "./sections/CodeView";
+import { LiveView } from "./sections/LiveView";
+import { BuilderView } from "./sections/Builder";
+import { ViewModeToggle, type ViewMode } from "./ViewModeToggle";
 
 interface ResultSideProps {
   pages: PageEntity[];
   selection: Selection | null;
   onSelect?: (selection: Selection | null) => void;
-  onDrop?: (targetId: string | undefined, targetType: EntityType | 'root') => void;
+  onDrop?: (
+    targetId: string | undefined,
+    targetType: EntityType | "root"
+  ) => void;
   onDelete?: (entityType: EntityType, entityId: string) => void;
   // Feature 004: Loading state for visual feedback
-  getLoadingState?: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
+  getLoadingState?: (
+    entityId: string
+  ) => { isLoading: boolean; isSlowUpdate: boolean } | null;
 }
 
-export const ResultSide = memo(function ResultSide({ pages, selection, onSelect, onDrop, onDelete, getLoadingState }: ResultSideProps) {
-  const [viewMode, setViewMode] = useState<ViewMode>('builder');
-  
-  const handleSelect = useCallback((entityType: Selection['entityType'], entityId: string) => {
-    if (selection?.entityId === entityId) {
-      // Deselect if already selected
-      onSelect?.(null);
-    } else {
-      onSelect?.({ entityType, entityId });
-    }
-  }, [selection?.entityId, onSelect]);
+export const ResultSide = memo(function ResultSide({
+  pages,
+  selection,
+  onSelect,
+  onDrop,
+  onDelete,
+  getLoadingState,
+}: ResultSideProps) {
+  const [viewMode, setViewMode] = useState<ViewMode>("builder");
+
+  const handleSelect = useCallback(
+    (entityType: Selection["entityType"], entityId: string) => {
+      if (selection?.entityId === entityId) {
+        // Deselect if already selected
+        onSelect?.(null);
+      } else {
+        onSelect?.({ entityType, entityId });
+      }
+    },
+    [selection?.entityId, onSelect]
+  );
 
   return (
     <div className="flex flex-col h-full bg-green-500">
@@ -40,7 +55,7 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
 
       {/* Content Area */}
       <div className="flex-1">
-        {viewMode === 'builder' ? (
+        {viewMode === "builder" ? (
           <BuilderView
             pages={pages}
             selection={selection}
@@ -49,7 +64,7 @@ export const ResultSide = memo(function ResultSide({ pages, selection, onSelect,
             onDelete={onDelete}
             getLoadingState={getLoadingState}
           />
-        ) : viewMode === 'live' ? (
+        ) : viewMode === "live" ? (
           <LiveView>
             <div className="text-center text-[rgb(var(--color-muted-foreground))]">
               <div className="mb-4 text-4xl" aria-hidden="true">

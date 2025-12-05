@@ -24,7 +24,7 @@ describe('Save Hanging Fix Verification', () => {
         id: 'comp-1',
         type: 'Button',
         props: { text: 'Old Text' },
-        tailwindOptions: { classList: ['btn'] }
+        tailwindClassList: ['btn']
       }))
     };
 
@@ -32,7 +32,7 @@ describe('Save Hanging Fix Verification', () => {
     const saveData = {
       type: 'Button',
       props: { text: 'New Text' },
-      tailwindOptions: { classList: ['btn-primary'] }
+      tailwindClassList: ['btn-primary']
     };
 
     const currentEntity = mockActions.getSelectedEntity();
@@ -55,7 +55,7 @@ describe('Save Hanging Fix Verification', () => {
       changes.push({
         entityId: 'comp-1',
         entityType: 'Component',
-        field: 'tailwindOptions',
+        field: 'tailwindClassList',
         oldValue: currentEntity.tailwindOptions,
         newValue: saveData.tailwindOptions,
         timestamp: Date.now()
@@ -85,7 +85,7 @@ describe('Save Hanging Fix Verification', () => {
         id: 'comp-1',
         type: 'Button',
         props: { text: 'Same Text' },
-        tailwindOptions: { classList: ['btn'] }
+        tailwindClassList: ['btn']
       }))
     };
 
@@ -93,7 +93,7 @@ describe('Save Hanging Fix Verification', () => {
     const saveData = {
       type: 'Button',
       props: { text: 'Same Text' },
-      tailwindOptions: { classList: ['btn'] }
+      tailwindClassList: ['btn']
     };
 
     const currentEntity = mockActions.getSelectedEntity();

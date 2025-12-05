@@ -18,26 +18,17 @@ export type ComponentType = BasicComponentType | UIComponentType | ListComponent
 export type EntityType = 'Page' | 'Container' | 'Component';
 export type CodeMode = 'react' | 'react-native';
 
-export interface TailwindOptions {
-  classList: string[];
-  theme?: {
-    primary?: string;
-    secondary?: string;
-    accent?: string;
-  };
-}
-
 export interface ComponentEntity {
   id: string;
   type: ComponentType;
   props: Record<string, unknown>;
-  tailwindOptions: TailwindOptions;
+  tailwindClassList: string[];
 }
 
 export interface ContainerEntity {
   id: string;
   name: string;
-  tailwindOptions: TailwindOptions;
+  tailwindClassList: string[];
   children: ComponentEntity[];
 }
 
@@ -87,13 +78,13 @@ export interface PageFormData {
 
 export interface ContainerFormData {
   name: string;
-  tailwindOptions: TailwindOptions;
+  tailwindClassList: string[];
 }
 
 export interface ComponentFormData {
   type: ComponentType;
   props: Record<string, unknown>;
-  tailwindOptions: TailwindOptions;
+  tailwindClassList: string[];
 }
 
 // Feature 004: Real-Time Hierarchy Updates

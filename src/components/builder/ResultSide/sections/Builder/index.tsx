@@ -4,26 +4,38 @@
  * Shows hierarchy: Page → Container → Component
  */
 
-import type { PageEntity, Selection, EntityType } from '@/utils/types';
-import { DropZone } from '../ResultSide/DropZone';
-import { Selectable } from '../ResultSide/Selectable';
+import type { PageEntity, Selection, EntityType } from "@/utils/types";
+import { DropZone } from "./DropZone";
+import { Selectable } from "./Selectable";
 
 interface BuilderViewProps {
   pages: PageEntity[];
   selection: Selection | null;
-  onSelect: (entityType: Selection['entityType'], entityId: string) => void;
-  onDrop?: (targetId: string | undefined, targetType: EntityType | 'root') => void;
+  onSelect: (entityType: Selection["entityType"], entityId: string) => void;
+  onDrop?: (
+    targetId: string | undefined,
+    targetType: EntityType | "root"
+  ) => void;
   onDelete?: (entityType: EntityType, entityId: string) => void;
-  getLoadingState?: (entityId: string) => { isLoading: boolean; isSlowUpdate: boolean; } | null;
+  getLoadingState?: (
+    entityId: string
+  ) => { isLoading: boolean; isSlowUpdate: boolean } | null;
 }
 
-export function BuilderView({ pages, selection, onSelect, onDrop, onDelete, getLoadingState }: BuilderViewProps) {
+export function BuilderView({
+  pages,
+  selection,
+  onSelect,
+  onDrop,
+  onDelete,
+  getLoadingState,
+}: BuilderViewProps) {
   return (
     <div className="h-full p-8 border-2 border-amber-400/30 rounded-lg cursor-pointer overflow-auto">
       <DropZone
         targetType="root"
         onDrop={onDrop}
-        className={pages.length === 0 ? '' : 'space-y-6 bg-blue-200'}
+        className={pages.length === 0 ? "" : "space-y-6 bg-blue-200"}
       >
         {pages.length === 0 ? (
           <EmptyState />
@@ -94,7 +106,9 @@ export function BuilderView({ pages, selection, onSelect, onDrop, onDelete, getL
                                   key={component.id}
                                   entityType="Component"
                                   entityId={component.id}
-                                  isSelected={selection?.entityId === component.id}
+                                  isSelected={
+                                    selection?.entityId === component.id
+                                  }
                                   onSelect={onSelect}
                                   onDelete={onDelete}
                                   className="p-2"

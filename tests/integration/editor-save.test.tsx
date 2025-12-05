@@ -38,7 +38,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
-        tailwindOptions: { classList: ['bg-blue-500'] },
+        tailwindClassList: ['bg-blue-500'],
         children: []
       };
 
@@ -55,7 +55,7 @@ describe('Editor Save Integration Tests', () => {
         id: 'component-1',
         type: 'Button',
         props: { text: 'Click me' },
-        tailwindOptions: { classList: [] }
+        tailwindClassList: []
       };
 
       render(<Editor entity={componentEntity} entityType="Component" onSave={mockOnSave} />);
@@ -71,7 +71,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
-        tailwindOptions: { classList: ['bg-red-500', 'p-4', 'rounded'] },
+        tailwindClassList: ['bg-red-500', 'p-4', 'rounded'],
         children: []
       };
 
@@ -86,7 +86,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
-        tailwindOptions: { classList: [] },
+        tailwindClassList: [],
         children: []
       };
 
@@ -105,7 +105,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
-        tailwindOptions: { classList: ['bg-red-500'] },
+        tailwindClassList: ['bg-red-500'],
         children: []
       };
 
@@ -123,7 +123,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
-        tailwindOptions: { classList: ['bg-blue-500'] },
+        tailwindClassList: ['bg-blue-500'],
         children: []
       };
 
@@ -148,7 +148,7 @@ describe('Editor Save Integration Tests', () => {
         id: 'button-1',
         type: 'Button',
         props: { text: 'Original Text' },
-        tailwindOptions: { classList: [] }
+        tailwindClassList: []
       };
 
       render(<Editor entity={buttonEntity} entityType="Component" onSave={mockOnSave} />);
@@ -162,7 +162,7 @@ describe('Editor Save Integration Tests', () => {
         id: 'input-1',
         type: 'Input',
         props: { placeholder: 'Enter text', type: 'text' },
-        tailwindOptions: { classList: [] }
+        tailwindClassList: []
       };
 
       render(<Editor entity={inputEntity} entityType="Component" onSave={mockOnSave} />);
@@ -177,7 +177,7 @@ describe('Editor Save Integration Tests', () => {
         id: 'text-1',
         type: 'Text',
         props: { text: 'Original content' },
-        tailwindOptions: { classList: [] }
+        tailwindClassList: []
       };
 
       render(<Editor entity={textEntity} entityType="Component" onSave={mockOnSave} />);
@@ -191,7 +191,7 @@ describe('Editor Save Integration Tests', () => {
         id: 'card-1',
         type: 'Card',
         props: {},
-        tailwindOptions: { classList: [] }
+        tailwindClassList: []
       };
 
       render(<Editor entity={cardEntity} entityType="Component" onSave={mockOnSave} />);
@@ -236,8 +236,8 @@ describe('Editor Save Integration Tests', () => {
     it('save buttons are properly typed as submit buttons', () => {
       const entities = [
         { entity: { id: '1', name: 'Page', meta: {}, children: [] }, type: 'Page' as const },
-        { entity: { id: '2', name: 'Container', tailwindOptions: { classList: [] }, children: [] }, type: 'Container' as const },
-        { entity: { id: '3', type: 'Button', props: {}, tailwindOptions: { classList: [] } }, type: 'Component' as const }
+        { entity: { id: '2', name: 'Container', tailwindClassList: [], children: [] }, type: 'Container' as const },
+        { entity: { id: '3', type: 'Button', props: {}, tailwindClassList: [] }, type: 'Component' as const }
       ];
 
       entities.forEach(({ entity, type }) => {
@@ -277,7 +277,7 @@ describe('Editor Save Integration Tests', () => {
       const containerEntity: ContainerEntity = {
         id: 'container-1',
         name: 'Test Container',
-        tailwindOptions: { classList: [] },
+        tailwindClassList: [],
         children: []
       };
 

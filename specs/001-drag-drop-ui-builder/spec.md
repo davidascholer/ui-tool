@@ -114,8 +114,8 @@ Users can switch the code view between React (web) and React Native and copy the
 ### Key Entities *(include if feature involves data)*
 
 - **Page**: Represents a top-level layout container; attributes: `id`, `name`, `children` (Containers), `meta` (SEO-relevant title).
-- **Container**: Represents a section within a page; attributes: `id`, `name`, `children` (Components), `tailwindOptions`.
-- **Component**: Represents a visual UI element; attributes: `id`, `type`, `props`, `tailwindOptions`.
+- **Container**: Represents a section within a page; attributes: `id`, `name`, `children` (Components), `tailwindClassList`.
+- **Component**: Represents a visual UI element; attributes: `id`, `type`, `props`, `tailwindClassList`.
 - **CodeView**: Represents current code output format; attributes: `mode` (React | React Native).
 - **Selection**: Represents currently selected entity; attributes: `entityType`, `entityId`.
 

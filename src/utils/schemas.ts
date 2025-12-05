@@ -8,26 +8,19 @@ import { z } from 'zod';
 // Tailwind class validation (basic allowlist)
 const tailwindClassRegex = /^[a-z-]+(-[a-z0-9]+)*$/;
 
-export const tailwindOptionsSchema = z.object({
-  classList: z.array(z.string().regex(tailwindClassRegex, 'Invalid Tailwind class')),
-  theme: z.object({
-    primary: z.string().optional(),
-    secondary: z.string().optional(),
-    accent: z.string().optional(),
-  }).optional(),
-});
+export const tailwindClassListSchema = z.array(z.string().regex(tailwindClassRegex, 'Invalid Tailwind class'));
 
 export const componentSchema = z.object({
   id: z.string(),
   type: z.enum(['Button', 'Input', 'Card', 'Text', 'Image', 'List']),
   props: z.record(z.string(), z.unknown()),
-  tailwindOptions: tailwindOptionsSchema,
+  tailwindClassList: tailwindClassListSchema,
 });
 
 export const containerSchema = z.object({
   id: z.string(),
   name: z.string().min(1, 'Container name is required'),
-  tailwindOptions: tailwindOptionsSchema,
+  tailwindClassList: tailwindClassListSchema,
   children: z.array(componentSchema),
 });
 

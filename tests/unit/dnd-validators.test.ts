@@ -39,7 +39,7 @@ describe('Hierarchy Validation', () => {
     const validContainer = {
       id: 'container-1',
       name: 'Hero Section',
-      tailwindOptions: { classList: [] },
+      tailwindClassList: [],
       children: [],
     };
 
@@ -51,7 +51,7 @@ describe('Hierarchy Validation', () => {
       id: 'component-1',
       type: 'Button',
       props: {},
-      tailwindOptions: { classList: [] },
+      tailwindClassList: [],
     };
 
     expect(validateComponent(validComponent).valid).toBe(true);
@@ -143,13 +143,13 @@ describe('Page Hierarchy Validation', () => {
         {
           id: 'container-1',
           name: 'Hero',
-          tailwindOptions: { classList: [] },
+          tailwindClassList: [],
           children: [
             {
               id: 'component-1',
               type: 'Button' as const,
               props: {},
-              tailwindOptions: { classList: [] },
+              tailwindClassList: [],
             },
           ],
         },
@@ -168,13 +168,13 @@ describe('Page Hierarchy Validation', () => {
         {
           id: 'container-1',
           name: 'Hero',
-          tailwindOptions: { classList: [] },
+          tailwindClassList: [],
           children: [
             {
               id: 'component-1',
               type: 'InvalidType', // Invalid component type
               props: {},
-              tailwindOptions: { classList: [] },
+              tailwindClassList: [],
             },
           ],
         },

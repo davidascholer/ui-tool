@@ -34,7 +34,7 @@ const MAX_INDICATORS = 5;
 /**
  * Hook to generate visual indicators for a component's properties
  * @param component - The component entity to generate indicators for
- * @param classes - Optional Tailwind classes string (fallback to component.tailwindOptions.classList)
+ * @param classes - Optional Tailwind classes string (fallback to component.tailwindClassList)
  * @returns Array of visual indicators sorted by priority
  */
 export function usePropertyIndicators(
@@ -45,7 +45,7 @@ export function usePropertyIndicators(
     const indicators: VisualIndicator[] = [];
     
     // Get classes from parameter or component
-    const tailwindClasses = classes || component.tailwindOptions.classList.join(' ');
+    const tailwindClasses = classes || component.tailwindClassList.join(' ');
     
     // Generate color indicators
     const colorClasses = parseTailwindColors(tailwindClasses);

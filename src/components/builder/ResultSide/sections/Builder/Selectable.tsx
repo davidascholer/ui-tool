@@ -7,11 +7,11 @@
 import { memo } from 'react';
 import type { ReactNode } from 'react';
 import type { EntityType, VisualIndicator, ComponentEntity } from '@/utils/types';
-import { DeleteAction } from './DeleteAction';
-import { ColorIndicator } from './PropertyIndicators/ColorIndicator';
-import { TextIndicator } from './PropertyIndicators/TextIndicator';
-import { LoadingIndicator } from './LoadingIndicator';
-import { LazyIndicatorManager } from './PropertyIndicators/LazyIndicatorManager';
+import { DeleteAction } from '../../DeleteAction';
+import { ColorIndicator } from '../../PropertyIndicators/ColorIndicator';
+import { TextIndicator } from '../../PropertyIndicators/TextIndicator';
+import { LoadingIndicator } from '../../LoadingIndicator';
+import { LazyIndicatorManager } from '../../PropertyIndicators/LazyIndicatorManager';
 import { useLoadingIndicator } from '@/hooks/useLoadingIndicator';
 import { useIndicatorPreload } from '@/utils/lazyIndicatorUtils';
 import { useHierarchyItemKeyboard } from '@/hooks/useHierarchyKeyboardManager';

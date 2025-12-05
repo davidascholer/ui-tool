@@ -29,7 +29,7 @@ describe('Property Indicators System', () => {
         id: 'test-button',
         type: 'Button',
         props: { content: 'Test Button' },
-        tailwindOptions: { classList: ['bg-blue-500', 'text-white', 'hover:bg-blue-600'] },
+        tailwindClassList: ['bg-blue-500', 'text-white', 'hover:bg-blue-600'],
         classes: 'bg-blue-500 text-white hover:bg-blue-600'
       };
 
@@ -69,7 +69,7 @@ describe('Property Indicators System', () => {
         id: 'test-text',
         type: 'Text',
         props: { content: 'Hello World' },
-        tailwindOptions: { classList: [] },
+        tailwindClassList: [],
         classes: ''
       };
 
@@ -98,7 +98,7 @@ describe('Property Indicators System', () => {
         id: 'test-container',
         type: 'Button',
         props: {},
-        tailwindOptions: { classList: ['p-4', 'm-2', 'gap-3'] },
+        tailwindClassList: ['p-4', 'm-2', 'gap-3'],
         classes: 'p-4 m-2 gap-3'
       };
 
@@ -135,7 +135,7 @@ describe('Property Indicators System', () => {
         id: 'complex-component',
         type: 'Button',
         props: { content: 'Click me' },
-        tailwindOptions: { classList: ['bg-red-500', 'p-4', 'text-lg'] },
+        tailwindClassList: ['bg-red-500', 'p-4', 'text-lg'],
         classes: 'bg-red-500 p-4 text-lg'
       };
 
@@ -184,7 +184,7 @@ describe('Property Indicators System', () => {
         id: 'indicator-heavy',
         type: 'Button',
         props: { content: 'Button text', ariaLabel: 'Accessible button' },
-        tailwindOptions: { classList: ['bg-blue-500', 'text-white', 'border-red-500', 'p-4', 'm-2', 'rounded-lg', 'shadow-lg'] },
+        tailwindClassList: ['bg-blue-500', 'text-white', 'border-red-500', 'p-4', 'm-2', 'rounded-lg', 'shadow-lg'],
         classes: 'bg-blue-500 text-white border-red-500 p-4 m-2 rounded-lg shadow-lg'
       };
 
@@ -212,7 +212,7 @@ describe('Property Indicators System', () => {
         id: 'empty-component',
         type: 'Button',
         props: {},
-        tailwindOptions: { classList: [] },
+        tailwindClassList: [],
         classes: ''
       };
 
@@ -230,7 +230,7 @@ describe('Property Indicators System', () => {
         id: 'long-text',
         type: 'Text',
         props: { content: 'This is a very long text content that should be truncated for display' },
-        tailwindOptions: { classList: [] },
+        tailwindClassList: [],
         classes: ''
       };
 
@@ -259,7 +259,7 @@ describe('Property Indicators System', () => {
         id: 'sorted-component',
         type: 'Button',
         props: {},
-        tailwindOptions: { classList: ['text-white', 'bg-blue-500'] }, // Different order in classes
+        tailwindClassList: ['text-white', 'bg-blue-500'], // Different order in classes
         classes: 'text-white bg-blue-500'
       };
 

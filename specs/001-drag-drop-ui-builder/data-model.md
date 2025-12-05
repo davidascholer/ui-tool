@@ -11,14 +11,14 @@
 - Container
   - id: string
   - name: string
-  - tailwindOptions: TailwindOptions
+  - tailwindClassList: string[]
   - children: Component[]
 
 - Component
   - id: string
   - type: 'Button' | 'Input' | 'Card' | 'Text' | 'Image' | 'List'
   - props: Record<string, unknown>
-  - tailwindOptions: TailwindOptions
+  - tailwindClassList: string[]
 
 - Selection
   - entityType: 'Page' | 'Container' | 'Component'
@@ -27,7 +27,7 @@
 - CodeView
   - mode: 'react' | 'react-native'
 
-- TailwindOptions
+- string[] (Tailwind class list)
   - classList: string[]
   - theme?: { primary?: string, secondary?: string, accent?: string }
 
@@ -36,7 +36,7 @@
 - Page must contain 0..n Containers.
 - Container must contain 0..n Components.
 - Component placement: only inside Container.
-- TailwindOptions classList entries must be valid Tailwind utility tokens (basic validation via allowlist per component type).
+- string[] (Tailwind class list) classList entries must be valid Tailwind utility tokens (basic validation via allowlist per component type).
 
 ## State Transitions
 
