@@ -27,6 +27,31 @@ import {
 import { cn } from '@/lib/utils';
 import tailwindSelectors from '@/utils/tailwindSelectors';
 
+// Group tailwind selectors by section based on comments in the source file
+const groupedSelectors = [
+  { section: 'Layout', start: 0, end: 23 },
+  { section: 'Flexbox & Grid', start: 24, end: 49 },
+  { section: 'Spacing', start: 50, end: 52 },
+  { section: 'Sizing', start: 53, end: 61 },
+  { section: 'Typography', start: 62, end: 95 },
+  { section: 'Backgrounds', start: 96, end: 105 },
+  { section: 'Borders', start: 106, end: 115 },
+  { section: 'Effects', start: 116, end: 131 },
+  { section: 'Filters', start: 132, end: 153 },
+  { section: 'Tables', start: 154, end: 159 },
+  { section: 'Transitions & Animation', start: 160, end: 167 },
+  { section: 'Transforms', start: 168, end: 179 },
+  { section: 'Interactivity', start: 180, end: 198 },
+  { section: 'SVG', start: 199, end: 203 },
+  { section: 'Accessibility', start: 204, end: 205 },
+  { section: 'Text Colors', start: 206, end: 451 },
+  { section: 'Border Colors', start: 452, end: 697 },
+  { section: 'Background Colors', start: 698, end: tailwindSelectors.length - 1 },
+].map(group => ({
+  section: group.section,
+  items: tailwindSelectors.slice(group.start, group.end + 1)
+}));
+
 interface EditorProps {
   entity: PageEntity | ContainerEntity | ComponentEntity;
   entityType: 'Page' | 'Container' | 'Component';
@@ -215,23 +240,25 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
                 <CommandInput placeholder="Search classes..." />
                 <CommandList>
                   <CommandEmpty>No class found.</CommandEmpty>
-                  <CommandGroup>
-                    {tailwindSelectors.map((option) => (
-                      <CommandItem
-                        key={option.value}
-                        value={option.value}
-                        onSelect={() => toggleClass(option.value)}
-                      >
-                        <Check
-                          className={cn(
-                            "mr-2 h-4 w-4",
-                            classList.includes(option.value) ? "opacity-100" : "opacity-0"
-                          )}
-                        />
-                        {option.label}
-                      </CommandItem>
-                    ))}
-                  </CommandGroup>
+                  {groupedSelectors.map((group) => (
+                    <CommandGroup key={group.section} heading={group.section}>
+                      {group.items.map((option) => (
+                        <CommandItem
+                          key={option.value}
+                          value={option.value}
+                          onSelect={() => toggleClass(option.value)}
+                        >
+                          <Check
+                            className={cn(
+                              "mr-2 h-4 w-4",
+                              classList.includes(option.value) ? "opacity-100" : "opacity-0"
+                            )}
+                          />
+                          {option.label}
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  ))}
                 </CommandList>
               </Command>
             </PopoverContent>
@@ -454,23 +481,25 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
                 <CommandInput placeholder="Search classes..." />
                 <CommandList>
                   <CommandEmpty>No class found.</CommandEmpty>
-                  <CommandGroup>
-                    {tailwindSelectors.map((option) => (
-                      <CommandItem
-                        key={option.value}
-                        value={option.value}
-                        onSelect={() => toggleClass(option.value)}
-                      >
-                        <Check
-                          className={cn(
-                            "mr-2 h-4 w-4",
-                            classList.includes(option.value) ? "opacity-100" : "opacity-0"
-                          )}
-                        />
-                        {option.label}
-                      </CommandItem>
-                    ))}
-                  </CommandGroup>
+                  {groupedSelectors.map((group) => (
+                    <CommandGroup key={group.section} heading={group.section}>
+                      {group.items.map((option) => (
+                        <CommandItem
+                          key={option.value}
+                          value={option.value}
+                          onSelect={() => toggleClass(option.value)}
+                        >
+                          <Check
+                            className={cn(
+                              "mr-2 h-4 w-4",
+                              classList.includes(option.value) ? "opacity-100" : "opacity-0"
+                            )}
+                          />
+                          {option.label}
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  ))}
                 </CommandList>
               </Command>
             </PopoverContent>
