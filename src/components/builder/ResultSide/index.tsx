@@ -6,13 +6,20 @@
  */
 
 import { useState, useCallback, memo } from "react";
-import type { PageEntity, Selection, EntityType } from "@/utils/types";
+import type {
+  PageEntity,
+  Selection,
+  EntityType,
+  ContainerEntity,
+  ComponentEntity,
+} from "@/utils/types";
 import { CodeView } from "./sections/CodeView";
-import { LiveView } from "./sections/LiveView";
 import { BuilderView } from "./sections/Builder";
 import { ViewModeToggle, type ViewMode } from "./ViewModeToggle";
+import { LiveView } from "./sections/LiveView";
 
 interface ResultSideProps {
+  componentList: (PageEntity | ContainerEntity | ComponentEntity)[];
   pages: PageEntity[];
   selection: Selection | null;
   onSelect?: (selection: Selection | null) => void;
@@ -28,6 +35,7 @@ interface ResultSideProps {
 }
 
 export const ResultSide = memo(function ResultSide({
+  componentList,
   pages,
   selection,
   onSelect,
@@ -65,19 +73,9 @@ export const ResultSide = memo(function ResultSide({
             getLoadingState={getLoadingState}
           />
         ) : viewMode === "live" ? (
-          <LiveView>
-            <div className="text-center text-[rgb(var(--color-muted-foreground))]">
-              <div className="mb-4 text-4xl" aria-hidden="true">
-                👁️
-              </div>
-              <h3 className="text-lg font-medium mb-2">Live Preview</h3>
-              <p className="text-sm">
-                Real-time preview of your components will appear here
-              </p>
-            </div>
-          </LiveView>
+          <LiveView componentList={componentList} className="h-full" />
         ) : (
-          <CodeView pages={pages} className="h-full" />
+          <CodeView componentList={componentList} className="h-full" />
         )}
       </div>
     </div>

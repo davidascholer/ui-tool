@@ -95,6 +95,7 @@ describe('ResultSide', () => {
                 id: 'component-1',
                 type: 'Button' as const,
               uitType: 'UITButton',
+        parentId: 'container-1',
                 props: {},
                 tailwindClassList: [],
               },
@@ -186,6 +187,7 @@ describe('Drawer', () => {
       id: 'component-1',
       type: 'Button' as const,
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: {},
       tailwindClassList: [],
     };

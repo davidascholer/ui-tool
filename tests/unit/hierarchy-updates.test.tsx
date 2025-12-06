@@ -25,6 +25,7 @@ describe('useHierarchyUpdates', () => {
               id: 'component-1',
               type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
               props: { text: 'Click me' },
               tailwindClassList: ['text-white', 'px-6'],
             },

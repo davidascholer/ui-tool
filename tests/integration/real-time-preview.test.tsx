@@ -142,6 +142,7 @@ function RealTimePreviewTestApp() {
     id: 'test-component',
     type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
     props: {
       text: 'Click me',
       color: 'blue',
@@ -353,6 +354,7 @@ describe('Real-Time Preview Flow Integration', () => {
           id: 'comp1',
           type: 'Button' as const,
               uitType: 'UITButton',
+        parentId: 'container-1',
           props: { text: 'Button 1' },
           tailwindClassList: []
         },
@@ -502,6 +504,7 @@ describe('Real-Time Preview Flow Integration', () => {
                 id: 'test',
                 type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
                 props: {},
                 tailwindClassList: []
               }}

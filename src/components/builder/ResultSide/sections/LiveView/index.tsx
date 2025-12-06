@@ -1,16 +1,28 @@
 /**
- * LiveView Component
- * Displays the live view area in the builder interface.
+ * LiveView - Placeholder for future live preview functionality
  */
+
+import type {
+  ComponentEntity,
+  ContainerEntity,
+  PageEntity,
+} from "@/utils/types";
+import { BuiltCodeFromProps } from "@/components/common/BuiltCodeFromProps";
+
 interface LiveViewProps {
-  children: React.ReactNode;
+  componentList: (PageEntity | ContainerEntity | ComponentEntity)[];
+  className?: string;
 }
 
-export function LiveView({ children }: LiveViewProps) {
-  // Batch detection state for
+// Todo: Make "page" be the root of the object and deprecate "allPages";
+
+export function LiveView({ componentList, className = "" }: LiveViewProps) {
   return (
-    <div className="flex flex-1 h-full items-start justify-center p-2 min-w-[320px]">
-      {children}
+    <div className={`flex flex-col h-full ${className}`}>
+      {/* Placeholder content */}
+      <div className="flex-1 flex items-start justify-center p-8 bg-gray-50">
+        <BuiltCodeFromProps componentList={componentList} />
+      </div>
     </div>
   );
 }

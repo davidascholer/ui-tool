@@ -24,6 +24,7 @@ describe('Save Hanging Fix Verification', () => {
         id: 'comp-1',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: { text: 'Old Text' },
         tailwindClassList: ['btn']
       }))
@@ -33,6 +34,7 @@ describe('Save Hanging Fix Verification', () => {
     const saveData = {
       type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: { text: 'New Text' },
       tailwindClassList: ['btn-primary']
     };
@@ -87,6 +89,7 @@ describe('Save Hanging Fix Verification', () => {
         id: 'comp-1',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: { text: 'Same Text' },
         tailwindClassList: ['btn']
       }))
@@ -96,6 +99,7 @@ describe('Save Hanging Fix Verification', () => {
     const saveData = {
       type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: { text: 'Same Text' },
       tailwindClassList: ['btn']
     };

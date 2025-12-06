@@ -102,20 +102,31 @@ export function validatePageHierarchy(page: PageEntity): { valid: boolean; error
     errors.push(...(pageValidation.errors || []));
   }
 
-  // Validate all containers
-  for (const container of page.children) {
+  // Recursively validate all containers and their children
+  function validateContainerRecursive(container: ContainerEntity) {
     const containerValidation = validateContainer(container);
     if (!containerValidation.valid) {
       errors.push(...(containerValidation.errors || []));
     }
 
-    // Validate all components in container
-    for (const component of container.children) {
-      const componentValidation = validateComponent(component);
-      if (!componentValidation.valid) {
-        errors.push(...(componentValidation.errors || []));
+    // Validate all children (components or nested containers)
+    for (const child of container.children) {
+      if ('name' in child && 'children' in child) {
+        // It's a nested container - recurse
+        validateContainerRecursive(child as ContainerEntity);
+      } else {
+        // It's a component - validate
+        const componentValidation = validateComponent(child as ComponentEntity);
+        if (!componentValidation.valid) {
+          errors.push(...(componentValidation.errors || []));
+        }
       }
     }
+  }
+
+  // Validate all top-level containers
+  for (const container of page.children) {
+    validateContainerRecursive(container);
   }
 
   return errors.length > 0 ? { valid: false, errors } : { valid: true };

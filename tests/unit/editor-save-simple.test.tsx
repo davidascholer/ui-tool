@@ -51,6 +51,7 @@ describe('Editor onSave Callback Tests', () => {
     const componentData = { 
       type: 'Button', 
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: { text: 'Updated Text' },
       tailwindClassList: ['btn-primary']
     };
@@ -89,6 +90,7 @@ describe('Editor onSave Callback Tests', () => {
       id: 'component-1',
       type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: { text: 'Click me' },
       tailwindClassList: ['btn']
     };

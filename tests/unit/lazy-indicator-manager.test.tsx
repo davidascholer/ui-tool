@@ -23,6 +23,7 @@ describe('LazyIndicatorManager', () => {
     id: 'test-component',
     type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
     props: {},
     tailwindClassList: {
       classList: ['bg-blue-500', 'text-white', 'p-4']
@@ -55,6 +56,7 @@ describe('LazyIndicatorManager', () => {
       id: 'empty-component',
       type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: {},
       tailwindClassList: {
         classList: []
@@ -92,6 +94,7 @@ describe('LazyIndicatorManager', () => {
       id: 'large-component',
       type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: {},
       tailwindClassList: {
         classList: ['bg-red-500', 'text-white', 'p-4', 'rounded', 'shadow', 'border']

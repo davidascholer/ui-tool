@@ -24,6 +24,7 @@ export interface ComponentEntity {
   props: Record<string, unknown>;
   tailwindClassList: string[];
   uitType: string;
+  parentId: string; // Reference to parent container's id
 }
 
 export interface ContainerEntity {
@@ -32,6 +33,8 @@ export interface ContainerEntity {
   tailwindClassList: string[];
   uitType: string;
   children: (ComponentEntity | ContainerEntity)[];
+  parentId: string; // Reference to parent page or container id
+  parentType: 'Page' | 'Container'; // Type of parent
 }
 
 export interface PageEntity {
@@ -54,6 +57,10 @@ export interface BuilderState {
   pages: PageEntity[];
   selection: Selection | null;
   codeMode: CodeMode;
+  // Global flat maps for all entities
+  allPages: Record<string, PageEntity>;
+  allContainers: Record<string, ContainerEntity>;
+  allComponents: Record<string, ComponentEntity>;
 }
 
 // Drag and drop types

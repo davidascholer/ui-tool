@@ -16,6 +16,7 @@ export const componentSchema = z.object({
   props: z.record(z.string(), z.unknown()),
   tailwindClassList: tailwindClassListSchema,
   uitType: z.string(),
+  parentId: z.string(),
 });
 
 export const containerSchema: z.ZodType<any> = z.lazy(() => z.object({
@@ -24,6 +25,8 @@ export const containerSchema: z.ZodType<any> = z.lazy(() => z.object({
   tailwindClassList: tailwindClassListSchema,
   uitType: z.string(),
   children: z.array(z.union([componentSchema, containerSchema])),
+  parentId: z.string(),
+  parentType: z.enum(['Page', 'Container']),
 }));
 
 export const pageSchema = z.object({

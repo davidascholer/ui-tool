@@ -2,52 +2,70 @@
  * Dependencies:
  * npm i motion clsx tailwind-merge react-syntax-highlighter @types/react-syntax-highlighter @tabler/icons-react
  */
-import React from "react"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
-import { IconCheck, IconCopy } from "@tabler/icons-react"
+import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { IconCheck, IconCopy } from "@tabler/icons-react";
+import { cn } from "@/utils/styles";
 
 type CodeBlockProps = {
-  language: string
-  filename: string
-  highlightLines?: number[]
+  language: string;
+  filename: string;
+  highlightLines?: number[];
+  className?: string;
 } & (
   | {
-      code: string
-      tabs?: never
+      code: string;
+      tabs?: never;
     }
   | {
-      code?: never
+      code?: never;
       tabs: Array<{
-        name: string
-        code: string
-        language?: string
-        highlightLines?: number[]
-      }>
+        name: string;
+        code: string;
+        language?: string;
+        highlightLines?: number[];
+      }>;
     }
-)
+);
 
-export const CodeBlock = ({ language, filename, code, highlightLines = [], tabs = [] }: CodeBlockProps) => {
-  const [copied, setCopied] = React.useState(false)
-  const [activeTab, setActiveTab] = React.useState(0)
+export const CodeBlock = ({
+  language,
+  filename,
+  code,
+  className = "",
+  highlightLines = [],
+  tabs = [],
+}: CodeBlockProps) => {
+  const [copied, setCopied] = React.useState(false);
+  const [activeTab, setActiveTab] = React.useState(0);
 
-  const tabsExist = tabs.length > 0
+  const tabsExist = tabs.length > 0;
 
   const copyToClipboard = async () => {
-    const textToCopy = tabsExist ? tabs[activeTab].code : code
+    const textToCopy = tabsExist ? tabs[activeTab].code : code;
     if (textToCopy) {
-      await navigator.clipboard.writeText(textToCopy)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      await navigator.clipboard.writeText(textToCopy);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
-  }
+  };
 
-  const activeCode = tabsExist ? tabs[activeTab].code : code
-  const activeLanguage = tabsExist ? tabs[activeTab].language || language : language
-  const activeHighlightLines = tabsExist ? tabs[activeTab].highlightLines || [] : highlightLines
+  const activeCode = tabsExist ? tabs[activeTab].code : code;
+  const activeLanguage = tabsExist
+    ? tabs[activeTab].language || language
+    : language;
+  const activeHighlightLines = tabsExist
+    ? tabs[activeTab].highlightLines || []
+    : highlightLines;
 
   return (
-    <div className="relative w-full rounded-lg bg-slate-900 p-4 font-mono text-sm">
+    <div
+      className={cn(
+        "relative w-full rounded-lg bg-slate-900 p-4 font-mono text-sm",
+        className
+      )}
+    >
       <div className="flex flex-col gap-2">
         {tabsExist && (
           <div className="flex  overflow-x-auto">
@@ -56,7 +74,9 @@ export const CodeBlock = ({ language, filename, code, highlightLines = [], tabs 
                 key={index}
                 onClick={() => setActiveTab(index)}
                 className={`px-3 !py-2 text-xs transition-colors font-sans ${
-                  activeTab === index ? "text-white" : "text-zinc-400 hover:text-zinc-200"
+                  activeTab === index
+                    ? "text-white"
+                    : "text-zinc-400 hover:text-zinc-200"
                 }`}
               >
                 {tab.name}
@@ -84,20 +104,22 @@ export const CodeBlock = ({ language, filename, code, highlightLines = [], tabs 
           padding: 0,
           background: "transparent",
           fontSize: "0.875rem", // text-sm equivalent
-        }} 
-        wrapLines={true} 
-        showLineNumbers={true} 
-        lineProps={(lineNumber: number): React.HTMLProps<HTMLDivElement> => ({ 
-          style: { 
-            backgroundColor: activeHighlightLines.includes(lineNumber) ? "rgba(255,255,255,0.1)" : "transparent", 
-            display: "block", 
-            width: "100%", 
-          }, 
-        })} 
-        PreTag="div" 
-          >
+        }}
+        wrapLines={true}
+        showLineNumbers={true}
+        lineProps={(lineNumber: number): React.HTMLProps<HTMLDivElement> => ({
+          style: {
+            backgroundColor: activeHighlightLines.includes(lineNumber)
+              ? "rgba(255,255,255,0.1)"
+              : "transparent",
+            display: "block",
+            width: "100%",
+          },
+        })}
+        PreTag="div"
+      >
         {String(activeCode)}
       </SyntaxHighlighter>
     </div>
-  )
-}
+  );
+};

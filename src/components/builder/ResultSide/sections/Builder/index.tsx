@@ -1,12 +1,19 @@
 /**
  * Builder View Component
  * Displays the visual builder canvas with drag-and-drop zones
- * Shows hierarchy: Page → Container → Component
+ * Shows hierarchy: Page → Container → Component (with nested containers)
  */
 
-import type { PageEntity, Selection, EntityType } from "@/utils/types";
+import type { PageEntity, Selection, EntityType, ContainerEntity, ComponentEntity } from "@/utils/types";
 import { DropZone } from "./DropZone";
 import { Selectable } from "./Selectable";
+
+// Type guard to distinguish containers from components
+function isContainerEntity(
+  entity: ContainerEntity | ComponentEntity
+): entity is ContainerEntity {
+  return 'name' in entity && 'children' in entity;
+}
 
 interface BuilderViewProps {
   pages: PageEntity[];
@@ -20,6 +27,93 @@ interface BuilderViewProps {
   getLoadingState?: (
     entityId: string
   ) => { isLoading: boolean; isSlowUpdate: boolean } | null;
+}
+
+// Recursive component to render containers and their children (which can be components or nested containers)
+function ContainerRenderer({
+  container,
+  selection,
+  onSelect,
+  onDelete,
+  onDrop,
+  getLoadingState,
+}: {
+  container: ContainerEntity;
+  selection: BuilderViewProps["selection"];
+  onSelect: BuilderViewProps["onSelect"];
+  onDelete: BuilderViewProps["onDelete"];
+  onDrop: BuilderViewProps["onDrop"];
+  getLoadingState: BuilderViewProps["getLoadingState"];
+}) {
+  return (
+    <Selectable
+      key={container.id}
+      entityType="Container"
+      entityId={container.id}
+      isSelected={selection?.entityId === container.id}
+      onSelect={onSelect}
+      onDelete={onDelete}
+      className="p-4"
+      ariaLabel={`Container: ${container.name}`}
+      size="medium"
+      getLoadingState={getLoadingState}
+      entity={container}
+    >
+      <h3 className="mb-2 font-medium text-[rgb(var(--color-foreground))]">
+        {container.name}
+      </h3>
+
+      <DropZone
+        targetType="Container"
+        targetId={container.id}
+        onDrop={onDrop}
+        emptyMessage="Drop Components or Containers here"
+        className="min-h-[50px]"
+      >
+        {container.children.length > 0 && (
+          <div className="space-y-2">
+            {container.children.map((child) => {
+              if (isContainerEntity(child)) {
+                // Recursively render nested container
+                return (
+                  <ContainerRenderer
+                    key={child.id}
+                    container={child}
+                    selection={selection}
+                    onSelect={onSelect}
+                    onDelete={onDelete}
+                    onDrop={onDrop}
+                    getLoadingState={getLoadingState}
+                  />
+                );
+              } else {
+                // Render component
+                return (
+                  <Selectable
+                    key={child.id}
+                    entityType="Component"
+                    entityId={child.id}
+                    isSelected={selection?.entityId === child.id}
+                    onSelect={onSelect}
+                    onDelete={onDelete}
+                    className="p-2"
+                    ariaLabel={`Component: ${child.type}`}
+                    size="small"
+                    getLoadingState={getLoadingState}
+                    entity={child}
+                  >
+                    <span className="text-sm text-[rgb(var(--color-foreground))]">
+                      {child.type}
+                    </span>
+                  </Selectable>
+                );
+              }
+            })}
+          </div>
+        )}
+      </DropZone>
+    </Selectable>
+  );
 }
 
 export function BuilderView({
@@ -75,57 +169,15 @@ export function BuilderView({
                 {page.children.length > 0 && (
                   <div className="space-y-4">
                     {page.children.map((container) => (
-                      <Selectable
+                      <ContainerRenderer
                         key={container.id}
-                        entityType="Container"
-                        entityId={container.id}
-                        isSelected={selection?.entityId === container.id}
+                        container={container}
+                        selection={selection}
                         onSelect={onSelect}
                         onDelete={onDelete}
-                        className="p-4"
-                        ariaLabel={`Container: ${container.name}`}
-                        size="medium"
+                        onDrop={onDrop}
                         getLoadingState={getLoadingState}
-                        entity={container}
-                      >
-                        <h3 className="mb-2 font-medium text-[rgb(var(--color-foreground))]">
-                          {container.name}
-                        </h3>
-
-                        <DropZone
-                          targetType="Container"
-                          targetId={container.id}
-                          onDrop={onDrop}
-                          emptyMessage="Drop Components here"
-                          className="min-h-[50px]"
-                        >
-                          {container.children.length > 0 && (
-                            <div className="space-y-2">
-                              {container.children.map((component) => (
-                                <Selectable
-                                  key={component.id}
-                                  entityType="Component"
-                                  entityId={component.id}
-                                  isSelected={
-                                    selection?.entityId === component.id
-                                  }
-                                  onSelect={onSelect}
-                                  onDelete={onDelete}
-                                  className="p-2"
-                                  ariaLabel={`Component: ${component.type}`}
-                                  size="small"
-                                  getLoadingState={getLoadingState}
-                                  entity={component}
-                                >
-                                  <span className="text-sm text-[rgb(var(--color-foreground))]">
-                                    {component.type}
-                                  </span>
-                                </Selectable>
-                              ))}
-                            </div>
-                          )}
-                        </DropZone>
-                      </Selectable>
+                      />
                     ))}
                   </div>
                 )}

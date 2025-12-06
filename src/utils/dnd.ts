@@ -52,14 +52,14 @@ export function validateDrop(
     };
   }
 
-  // Container can only drop inside Page
+  // Container can drop inside Page or another Container
   if (dragItem.type === 'container') {
-    if (targetType === 'Page') {
-      return { valid: true, targetType: 'Page' };
+    if (targetType === 'Page' || targetType === 'Container') {
+      return { valid: true, targetType };
     }
     return {
       valid: false,
-      reason: 'Containers can only be added inside Pages',
+      reason: 'Containers can only be added inside Pages or other Containers',
     };
   }
 

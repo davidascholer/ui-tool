@@ -123,6 +123,7 @@ describe('BuilderPage Save Flow', () => {
       id: 'component-1',
       type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: { text: 'Old Text' },
       tailwindClassList: ['btn']
     };
@@ -130,6 +131,7 @@ describe('BuilderPage Save Flow', () => {
     const saveData = {
       type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: { text: 'New Text' },
       tailwindClassList: ['btn-primary', 'hover:btn-secondary']
     };

@@ -57,6 +57,7 @@ describe('Editor Save Integration Tests', () => {
         id: 'component-1',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: { text: 'Click me' },
         tailwindClassList: []
       };
@@ -76,7 +77,9 @@ describe('Editor Save Integration Tests', () => {
         name: 'Test Container',
           uitType: 'UITContainer',
         tailwindClassList: ['bg-red-500', 'p-4', 'rounded'],
-        children: []
+        children: [],
+        parentId: 'page-1',
+        parentType: 'Page'
       };
 
       render(<Editor entity={containerEntity} entityType="Container" onSave={mockOnSave} />);
@@ -92,7 +95,9 @@ describe('Editor Save Integration Tests', () => {
         name: 'Test Container',
           uitType: 'UITContainer',
         tailwindClassList: [],
-        children: []
+        children: [],
+        parentId: 'page-1',
+        parentType: 'Page'
       };
 
       render(<Editor entity={containerEntity} entityType="Container" onSave={mockOnSave} />);
@@ -155,6 +160,7 @@ describe('Editor Save Integration Tests', () => {
         id: 'button-1',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: { text: 'Original Text' },
         tailwindClassList: []
       };

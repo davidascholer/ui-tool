@@ -29,6 +29,7 @@ describe('Property Indicators System', () => {
         id: 'test-button',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: { content: 'Test Button' },
         tailwindClassList: ['bg-blue-500', 'text-white', 'hover:bg-blue-600'],
         classes: 'bg-blue-500 text-white hover:bg-blue-600'
@@ -103,6 +104,7 @@ describe('Property Indicators System', () => {
         id: 'test-container',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: {},
         tailwindClassList: ['p-4', 'm-2', 'gap-3'],
         classes: 'p-4 m-2 gap-3'
@@ -143,6 +145,7 @@ describe('Property Indicators System', () => {
         id: 'complex-component',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: { content: 'Click me' },
         tailwindClassList: ['bg-red-500', 'p-4', 'text-lg'],
         classes: 'bg-red-500 p-4 text-lg'
@@ -196,6 +199,7 @@ describe('Property Indicators System', () => {
         id: 'indicator-heavy',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: { content: 'Button text', ariaLabel: 'Accessible button' },
         tailwindClassList: ['bg-blue-500', 'text-white', 'border-red-500', 'p-4', 'm-2', 'rounded-lg', 'shadow-lg'],
         classes: 'bg-blue-500 text-white border-red-500 p-4 m-2 rounded-lg shadow-lg'
@@ -231,6 +235,7 @@ describe('Property Indicators System', () => {
         id: 'empty-component',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: {},
         tailwindClassList: [],
         classes: ''
@@ -281,6 +286,7 @@ describe('Property Indicators System', () => {
         id: 'sorted-component',
         type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
         props: {},
         tailwindClassList: ['text-white', 'bg-blue-500'], // Different order in classes
         classes: 'text-white bg-blue-500'

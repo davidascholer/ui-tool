@@ -95,11 +95,67 @@ function findInContainerRecursive(
   return null;
 }
 
+// Helper function to rebuild global entity maps with parent references
+function rebuildGlobalMaps(pages: PageEntity[]): {
+  allPages: Record<string, PageEntity>;
+  allContainers: Record<string, ContainerEntity>;
+  allComponents: Record<string, ComponentEntity>;
+} {
+  const allPages: Record<string, PageEntity> = {};
+  const allContainers: Record<string, ContainerEntity> = {};
+  const allComponents: Record<string, ComponentEntity> = {};
+
+  // Recursive function to process container and its children
+  function processContainer(
+    container: ContainerEntity,
+    parentId: string,
+    parentType: 'Page' | 'Container'
+  ) {
+    // Update container with parent references
+    const updatedContainer: ContainerEntity = {
+      ...container,
+      parentId,
+      parentType,
+    };
+    allContainers[container.id] = updatedContainer;
+
+    // Process children
+    container.children.forEach((child) => {
+      if ('name' in child && 'children' in child) {
+        // It's a nested container
+        processContainer(child as ContainerEntity, container.id, 'Container');
+      } else {
+        // It's a component
+        const updatedComponent: ComponentEntity = {
+          ...(child as ComponentEntity),
+          parentId: container.id,
+        };
+        allComponents[child.id] = updatedComponent;
+      }
+    });
+  }
+
+  // Process all pages
+  pages.forEach((page) => {
+    allPages[page.id] = page;
+    
+    // Process all top-level containers in this page
+    page.children.forEach((container) => {
+      processContainer(container, page.id, 'Page');
+    });
+  });
+
+  return { allPages, allContainers, allComponents };
+}
+
 export function useBuilderState() {
   const [state, setState] = useState<BuilderState>({
     pages: [],
     selection: null,
     codeMode: 'react',
+    allPages: {},
+    allContainers: {},
+    allComponents: {},
   });
 
   // Feature 004: Real-Time Hierarchy Updates
@@ -119,10 +175,11 @@ export function useBuilderState() {
       uitType: 'UITPage',
       children: [],
     };
-    setState((prev) => ({
-      ...prev,
-      pages: [...prev.pages, newPage],
-    }));
+    setState((prev) => {
+      const updatedPages = [...prev.pages, newPage];
+      const maps = rebuildGlobalMaps(updatedPages);
+      return { ...prev, pages: updatedPages, ...maps };
+    });
   }, []);
 
   const addContainer = useCallback((parentId: string, name: string) => {
@@ -132,10 +189,11 @@ export function useBuilderState() {
       tailwindClassList: [],
       uitType: 'UITContainer',
       children: [],
+      parentId: parentId, // Temporary, will be updated by rebuildGlobalMaps
+      parentType: 'Page' as const, // Temporary, will be updated by rebuildGlobalMaps
     };
-    setState((prev) => ({
-      ...prev,
-      pages: prev.pages.map((page) => {
+    setState((prev) => {
+      const updatedPages = prev.pages.map((page) => {
         // Check if parent is the page itself
         if (page.id === parentId) {
           return { ...page, children: [...page.children, newContainer] };
@@ -147,8 +205,10 @@ export function useBuilderState() {
             addToContainerRecursive(container, parentId, newContainer)
           ),
         };
-      }),
-    }));
+      });
+      const maps = rebuildGlobalMaps(updatedPages);
+      return { ...prev, pages: updatedPages, ...maps };
+    });
   }, []);
 
   const addComponent = useCallback((containerId: string, type: ComponentType) => {
@@ -158,16 +218,18 @@ export function useBuilderState() {
       props: {},
       tailwindClassList: [],
       uitType: `UIT${type}`,
+      parentId: containerId, // Reference to parent container
     };
-    setState((prev) => ({
-      ...prev,
-      pages: prev.pages.map((page) => ({
+    setState((prev) => {
+      const updatedPages = prev.pages.map((page) => ({
         ...page,
         children: page.children.map((container) =>
           addToContainerRecursive(container, containerId, newComponent)
         ),
-      })),
-    }));
+      }));
+      const maps = rebuildGlobalMaps(updatedPages);
+      return { ...prev, pages: updatedPages, ...maps };
+    });
   }, []);
 
   const setSelection = useCallback((selection: Selection | null) => {
@@ -179,61 +241,64 @@ export function useBuilderState() {
   }, []);
 
   const updatePage = useCallback((pageId: string, updates: Partial<PageEntity>) => {
-    setState((prev) => ({
-      ...prev,
-      pages: prev.pages.map((page) =>
+    setState((prev) => {
+      const updatedPages = prev.pages.map((page) =>
         page.id === pageId
           ? { ...page, ...updates }
           : page
-      ),
-    }));
+      );
+      const maps = rebuildGlobalMaps(updatedPages);
+      return { ...prev, pages: updatedPages, ...maps };
+    });
   }, []);
 
   const updateContainer = useCallback((containerId: string, updates: Partial<ContainerEntity>) => {
-    setState((prev) => ({
-      ...prev,
-      pages: prev.pages.map((page) => ({
+    setState((prev) => {
+      const updatedPages = prev.pages.map((page) => ({
         ...page,
         children: page.children.map((container) =>
           updateContainerRecursive(container, containerId, (item) => ({ ...item, ...updates }))
         ),
-      })),
-    }));
+      }));
+      const maps = rebuildGlobalMaps(updatedPages);
+      return { ...prev, pages: updatedPages, ...maps };
+    });
   }, []);
 
   const updateComponent = useCallback((componentId: string, updates: Partial<ComponentEntity>) => {
-    setState((prev) => ({
-      ...prev,
-      pages: prev.pages.map((page) => ({
+    setState((prev) => {
+      const updatedPages = prev.pages.map((page) => ({
         ...page,
         children: page.children.map((container) =>
           updateContainerRecursive(container, componentId, (item) => ({ ...item, ...updates }))
         ),
-      })),
-    }));
+      }));
+      const maps = rebuildGlobalMaps(updatedPages);
+      return { ...prev, pages: updatedPages, ...maps };
+    });
   }, []);
 
   const deleteEntity = useCallback((entityId: string, entityType: 'Page' | 'Container' | 'Component') => {
     setState((prev) => {
+      let updatedPages: PageEntity[];
       if (entityType === 'Page') {
-        return {
-          ...prev,
-          pages: prev.pages.filter((page) => page.id !== entityId),
-          selection: prev.selection?.entityId === entityId ? null : prev.selection,
-        };
+        updatedPages = prev.pages.filter((page) => page.id !== entityId);
       } else {
         // For Container and Component, recursively delete from nested structures
-        return {
-          ...prev,
-          pages: prev.pages.map((page) => ({
-            ...page,
-            children: page.children
-              .filter((container) => container.id !== entityId)
-              .map((container) => deleteFromContainerRecursive(container, entityId)),
-          })),
-          selection: prev.selection?.entityId === entityId ? null : prev.selection,
-        };
+        updatedPages = prev.pages.map((page) => ({
+          ...page,
+          children: page.children
+            .filter((container) => container.id !== entityId)
+            .map((container) => deleteFromContainerRecursive(container, entityId)),
+        }));
       }
+      const maps = rebuildGlobalMaps(updatedPages);
+      return {
+        ...prev,
+        pages: updatedPages,
+        ...maps,
+        selection: prev.selection?.entityId === entityId ? null : prev.selection,
+      };
     });
   }, []);
 

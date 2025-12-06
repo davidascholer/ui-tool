@@ -54,6 +54,7 @@ describe('Hierarchy Validation', () => {
       id: 'component-1',
       type: 'Button',
               uitType: 'UITButton',
+        parentId: 'container-1',
       props: {},
       tailwindClassList: [],
     };
@@ -155,6 +156,7 @@ describe('Page Hierarchy Validation', () => {
               id: 'component-1',
               type: 'Button' as const,
               uitType: 'UITButton',
+        parentId: 'container-1',
               props: {},
               tailwindClassList: [],
             },

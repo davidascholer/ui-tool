@@ -22,7 +22,6 @@ import type {
 } from "@/utils/types";
 import { Layout } from "@/components/builder/Layout";
 
-
 export function BuilderPage() {
   const { state, actions } = useBuilderState();
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -173,7 +172,8 @@ export function BuilderPage() {
         if ("tailwindClassList" in dataObj) {
           const oldTailwindClassList =
             "tailwindClassList" in currentEntity
-              ? (currentEntity as { tailwindClassList: unknown }).tailwindClassList
+              ? (currentEntity as { tailwindClassList: unknown })
+                  .tailwindClassList
               : [];
           createChangeIfDifferent(
             "tailwindClassList",
@@ -288,6 +288,18 @@ export function BuilderPage() {
     actions.deleteEntity(entityId, entityType);
   };
 
+  const handleLogGlobalState = () => {
+    console.group("🌍 Global Builder State");
+    console.log("Full State:", state);
+    console.log("---");
+    console.log("All Pages:", state.allPages);
+    console.log("All Containers (with parent refs):", state.allContainers);
+    console.log("All Components (with parent refs):", state.allComponents);
+    console.log("---");
+    console.log("Hierarchical Pages:", state.pages);
+    console.groupEnd();
+  };
+
   return (
     <>
       <SEO
@@ -303,11 +315,39 @@ export function BuilderPage() {
         author="UI Builder Team"
       />
 
+      {/* Test button for logging global state */}
+      <button
+        onClick={handleLogGlobalState}
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 9999,
+          padding: "12px 20px",
+          backgroundColor: "#6366f1",
+          color: "white",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+          fontWeight: 600,
+          fontSize: "14px",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        }}
+        title="Log global state to console"
+      >
+        🌍 Log State
+      </button>
+
       <Layout
         uiSide={<UISide onDragStart={handleDragStart} />}
         resultSide={
           <ResultSide
             pages={state.pages}
+            componentList={[
+              ...Object.values(state.allPages),
+              ...Object.values(state.allContainers),
+              ...Object.values(state.allComponents),
+            ]}
             selection={state.selection}
             onSelect={handleSelect}
             onDrop={handleDrop}
