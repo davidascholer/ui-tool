@@ -1,2 +1,112 @@
 @import "tailwindcss";
 @import "./styles/theme.css";
+
+/* Precompile all Tailwind v4 utilities for dynamic class changes */
+
+/* Colors - All variations for text, background, and border */
+@source inline("text-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,{100..900..100},950}");
+@source inline("bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,{100..900..100},950}");
+@source inline("border-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,{100..900..100},950}");
+
+/* Spacing - Padding, Margin, Gap */
+@source inline("p-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("px-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("py-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("pt-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("pr-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("pb-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("pl-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("m-{0,px,auto,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("mx-{0,px,auto,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("my-{0,px,auto,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("mt-{0,px,auto,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("mr-{0,px,auto,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("mb-{0,px,auto,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("ml-{0,px,auto,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("gap-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("gap-x-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("gap-y-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+
+/* Width & Height */
+@source inline("w-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto,full,screen,min,max,fit}");
+@source inline("h-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto,full,screen,min,max,fit}");
+@source inline("min-w-{0,full,min,max,fit}");
+@source inline("min-h-{0,full,screen,min,max,fit}");
+@source inline("max-w-{0,xs,sm,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl,full,min,max,fit,prose,screen-sm,screen-md,screen-lg,screen-xl,screen-2xl}");
+@source inline("max-h-{0,full,screen,min,max,fit}");
+
+/* Flexbox & Grid */
+@source inline("flex flex-row flex-col flex-row-reverse flex-col-reverse");
+@source inline("flex-wrap flex-wrap-reverse flex-nowrap");
+@source inline("flex-1 flex-auto flex-initial flex-none");
+@source inline("grow grow-0 shrink shrink-0");
+@source inline("justify-{start,end,center,between,around,evenly,stretch}");
+@source inline("items-{start,end,center,baseline,stretch}");
+@source inline("self-{auto,start,end,center,stretch,baseline}");
+@source inline("grid grid-cols-{1,2,3,4,5,6,7,8,9,10,11,12,none}");
+@source inline("grid-rows-{1,2,3,4,5,6,none}");
+@source inline("col-{auto,span-{1,2,3,4,5,6,7,8,9,10,11,12,full}}");
+@source inline("row-{auto,span-{1,2,3,4,5,6,full}}");
+
+/* Typography */
+@source inline("text-{xs,sm,base,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl,8xl,9xl}");
+@source inline("font-{thin,extralight,light,normal,medium,semibold,bold,extrabold,black}");
+@source inline("text-{left,center,right,justify,start,end}");
+@source inline("underline line-through no-underline");
+@source inline("uppercase lowercase capitalize normal-case");
+@source inline("italic not-italic");
+@source inline("leading-{3,4,5,6,7,8,9,10,none,tight,snug,normal,relaxed,loose}");
+@source inline("tracking-{tighter,tight,normal,wide,wider,widest}");
+
+/* Border */
+@source inline("border border-{0,2,4,8}");
+@source inline("border-{t,r,b,l,x,y} border-{t,r,b,l,x,y}-{0,2,4,8}");
+@source inline("border-solid border-dashed border-dotted border-double border-none");
+@source inline("rounded rounded-{none,sm,md,lg,xl,2xl,3xl,full}");
+@source inline("rounded-{t,r,b,l,tl,tr,br,bl} rounded-{t,r,b,l,tl,tr,br,bl}-{none,sm,md,lg,xl,2xl,3xl,full}");
+
+/* Display & Position */
+@source inline("block inline-block inline hidden");
+@source inline("static fixed absolute relative sticky");
+@source inline("top-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto}");
+@source inline("right-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto}");
+@source inline("bottom-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto}");
+@source inline("left-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto}");
+@source inline("inset-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto}");
+@source inline("z-{0,10,20,30,40,50,auto}");
+
+/* Overflow */
+@source inline("overflow-{auto,hidden,visible,scroll,clip}");
+@source inline("overflow-x-{auto,hidden,visible,scroll,clip}");
+@source inline("overflow-y-{auto,hidden,visible,scroll,clip}");
+
+/* Opacity */
+@source inline("opacity-{0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100}");
+
+/* Shadow */
+@source inline("shadow shadow-{sm,md,lg,xl,2xl,inner,none}");
+
+/* Cursor */
+@source inline("cursor-{auto,default,pointer,wait,text,move,help,not-allowed,none,context-menu,progress,cell,crosshair,vertical-text,alias,copy,no-drop,grab,grabbing,all-scroll,col-resize,row-resize,n-resize,e-resize,s-resize,w-resize,ne-resize,nw-resize,se-resize,sw-resize,ew-resize,ns-resize,nesw-resize,nwse-resize,zoom-in,zoom-out}");
+
+/* Pointer Events */
+@source inline("pointer-events-{none,auto}");
+
+/* User Select */
+@source inline("select-{none,text,all,auto}");
+
+/* Transition & Animation */
+@source inline("transition transition-{none,all,colors,opacity,shadow,transform}");
+@source inline("duration-{75,100,150,200,300,500,700,1000}");
+@source inline("ease-{linear,in,out,in-out}");
+
+/* Transform */
+@source inline("scale-{0,50,75,90,95,100,105,110,125,150}");
+@source inline("rotate-{0,1,2,3,6,12,45,90,180}");
+@source inline("-rotate-{1,2,3,6,12,45,90,180}");
+
+/* Visibility */
+@source inline("visible invisible");
+
+/* Content */
+@source inline("content-{none,center,start,end,between,around,evenly,baseline,stretch}");
