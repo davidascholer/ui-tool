@@ -7,8 +7,25 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Check, ChevronsUpDown } from 'lucide-react';
 import type { PageEntity, ContainerEntity, ComponentEntity } from '@/utils/types';
 import { pageFormSchema, containerFormSchema, componentFormSchema } from '@/utils/schemas';
+import { Button } from '@/components/ui/button';
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from '@/components/ui/command';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
+import tailwindSelectors from '@/utils/tailwindSelectors';
 
 interface EditorProps {
   entity: PageEntity | ContainerEntity | ComponentEntity;
@@ -108,7 +125,7 @@ function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: un
 
 function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?: (data: unknown) => void }) {
   const [classList, setClassList] = useState<string[]>(entity.tailwindClassList || []);
-  const [newClass, setNewClass] = useState('');
+  const [open, setOpen] = useState(false);
   
   const {
     register,
@@ -123,22 +140,16 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
 
   console.log('ContainerEditor: Current form errors:', errors);
 
-  const addTailwindClass = () => {
-    if (newClass.trim() && !classList.includes(newClass.trim())) {
-      setClassList(prev => [...prev, newClass.trim()]);
-      setNewClass('');
-    }
+  const toggleClass = (value: string) => {
+    setClassList(prev => 
+      prev.includes(value) 
+        ? prev.filter(c => c !== value)
+        : [...prev, value]
+    );
   };
 
-  const removeTailwindClass = (index: number) => {
-    setClassList(prev => prev.filter((_, i) => i !== index));
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      addTailwindClass();
-    }
+  const removeTailwindClass = (className: string) => {
+    setClassList(prev => prev.filter(c => c !== className));
   };
 
   const handleFormSubmit = (formData: { name: string }) => {
@@ -184,24 +195,47 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
           Tailwind Classes
         </label>
         <div className="space-y-3">
-          {/* Add new class */}
-          <div className="flex space-x-2">
-            <input
-              type="text"
-              value={newClass}
-              onChange={(e) => setNewClass(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="e.g., bg-blue-500, p-4, rounded-lg"
-              className="flex-1 rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
-            />
-            <button
-              type="button"
-              onClick={addTailwindClass}
-              className="rounded-lg bg-[rgb(var(--color-primary))] px-3 py-2 text-sm font-medium text-white hover:opacity-90"
-            >
-              Add
-            </button>
-          </div>
+          {/* Combobox for selecting classes */}
+          <Popover open={open} onOpenChange={setOpen}>
+            <PopoverTrigger asChild>
+              <Button
+                variant="outline"
+                role="combobox"
+                aria-expanded={open}
+                className="w-full justify-between"
+              >
+                {classList.length > 0
+                  ? `${classList.length} class${classList.length === 1 ? '' : 'es'} selected`
+                  : "Select classes..."}
+                <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-full p-0">
+              <Command>
+                <CommandInput placeholder="Search classes..." />
+                <CommandList>
+                  <CommandEmpty>No class found.</CommandEmpty>
+                  <CommandGroup>
+                    {tailwindSelectors.map((option) => (
+                      <CommandItem
+                        key={option.value}
+                        value={option.value}
+                        onSelect={() => toggleClass(option.value)}
+                      >
+                        <Check
+                          className={cn(
+                            "mr-2 h-4 w-4",
+                            classList.includes(option.value) ? "opacity-100" : "opacity-0"
+                          )}
+                        />
+                        {option.label}
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </PopoverContent>
+          </Popover>
 
           {/* Current classes */}
           {classList.length > 0 && (
@@ -210,9 +244,9 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
                 Current classes:
               </p>
               <div className="flex flex-wrap gap-2">
-                {classList.map((className, index) => (
+                {classList.map((className) => (
                   <div
-                    key={`${className}-${index}`}
+                    key={className}
                     className="flex items-center space-x-2 rounded-full bg-[rgb(var(--color-muted))] px-3 py-1 text-sm"
                   >
                     <span className="text-[rgb(var(--color-foreground))]">
@@ -220,7 +254,7 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
                     </span>
                     <button
                       type="button"
-                      onClick={() => removeTailwindClass(index)}
+                      onClick={() => removeTailwindClass(className)}
                       className="text-[rgb(var(--color-muted-foreground))] hover:text-[rgb(var(--color-invalid))]"
                       aria-label={`Remove ${className}`}
                     >
@@ -234,7 +268,7 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
 
           {classList.length === 0 && (
             <p className="text-sm text-[rgb(var(--color-muted-foreground))] py-4 text-center border border-dashed border-[rgb(var(--color-border))] rounded-lg">
-              No Tailwind classes added yet
+              No Tailwind classes selected yet
             </p>
           )}
         </div>
@@ -252,7 +286,7 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
 
 function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?: (data: unknown) => void }) {
   const [classList, setClassList] = useState<string[]>(entity.tailwindClassList || []);
-  const [newClass, setNewClass] = useState('');
+  const [open, setOpen] = useState(false);
   
   const {
     register,
@@ -271,22 +305,16 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
 
   console.log('ComponentEditor: Current form errors:', errors);
 
-  const addTailwindClass = () => {
-    if (newClass.trim() && !classList.includes(newClass.trim())) {
-      setClassList(prev => [...prev, newClass.trim()]);
-      setNewClass('');
-    }
+  const toggleClass = (value: string) => {
+    setClassList(prev => 
+      prev.includes(value) 
+        ? prev.filter(c => c !== value)
+        : [...prev, value]
+    );
   };
 
-  const removeTailwindClass = (index: number) => {
-    setClassList(prev => prev.filter((_, i) => i !== index));
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      addTailwindClass();
-    }
+  const removeTailwindClass = (className: string) => {
+    setClassList(prev => prev.filter(c => c !== className));
   };
 
   const handleFormSubmit = (formData: { type: string; props: Record<string, unknown> }) => {
@@ -406,33 +434,58 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
           Tailwind Classes
         </label>
         <div className="space-y-3">
-          <div className="flex space-x-2">
-            <input
-              type="text"
-              value={newClass}
-              onChange={(e) => setNewClass(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="e.g., text-blue-600, px-4, hover:bg-gray-100"
-              className="flex-1 rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
-            />
-            <button
-              type="button"
-              onClick={addTailwindClass}
-              className="rounded-lg bg-[rgb(var(--color-primary))] px-3 py-2 text-sm font-medium text-white hover:opacity-90"
-            >
-              Add
-            </button>
-          </div>
+          {/* Combobox for selecting classes */}
+          <Popover open={open} onOpenChange={setOpen}>
+            <PopoverTrigger asChild>
+              <Button
+                variant="outline"
+                role="combobox"
+                aria-expanded={open}
+                className="w-full justify-between"
+              >
+                {classList.length > 0
+                  ? `${classList.length} class${classList.length === 1 ? '' : 'es'} selected`
+                  : "Select classes..."}
+                <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-full p-0">
+              <Command>
+                <CommandInput placeholder="Search classes..." />
+                <CommandList>
+                  <CommandEmpty>No class found.</CommandEmpty>
+                  <CommandGroup>
+                    {tailwindSelectors.map((option) => (
+                      <CommandItem
+                        key={option.value}
+                        value={option.value}
+                        onSelect={() => toggleClass(option.value)}
+                      >
+                        <Check
+                          className={cn(
+                            "mr-2 h-4 w-4",
+                            classList.includes(option.value) ? "opacity-100" : "opacity-0"
+                          )}
+                        />
+                        {option.label}
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </PopoverContent>
+          </Popover>
 
+          {/* Current classes */}
           {classList.length > 0 && (
             <div className="space-y-2">
               <p className="text-sm text-[rgb(var(--color-muted-foreground))]">
                 Current classes:
               </p>
               <div className="flex flex-wrap gap-2">
-                {classList.map((className, index) => (
+                {classList.map((className) => (
                   <div
-                    key={`${className}-${index}`}
+                    key={className}
                     className="flex items-center space-x-2 rounded-full bg-[rgb(var(--color-muted))] px-3 py-1 text-sm"
                   >
                     <span className="text-[rgb(var(--color-foreground))]">
@@ -440,7 +493,7 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
                     </span>
                     <button
                       type="button"
-                      onClick={() => removeTailwindClass(index)}
+                      onClick={() => removeTailwindClass(className)}
                       className="text-[rgb(var(--color-muted-foreground))] hover:text-[rgb(var(--color-invalid))]"
                       aria-label={`Remove ${className}`}
                     >
@@ -454,7 +507,7 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
 
           {classList.length === 0 && (
             <p className="text-sm text-[rgb(var(--color-muted-foreground))] py-4 text-center border border-dashed border-[rgb(var(--color-border))] rounded-lg">
-              No Tailwind classes added yet
+              No Tailwind classes selected yet
             </p>
           )}
         </div>

@@ -4,12 +4,11 @@
  * Manages indicator priority system and limits display to 5 indicators per entity
  */
 
-import React from 'react';
 import type { ComponentEntity, VisualIndicator } from '../../../../utils/types';
 import { usePropertyIndicators } from '../../../../hooks/usePropertyIndicators';
-import ColorIndicator from './ColorIndicator';
-import TextIndicator from './TextIndicator';
+import { ColorIndicator } from './ColorIndicator';
 import SpacingIndicator from './SpacingIndicator';
+import { TextIndicator } from './TextIndicator';
 import TooltipProvider from './TooltipProvider';
 
 export interface IndicatorManagerProps {
@@ -65,52 +64,20 @@ export function IndicatorManager({
     
     switch (indicator.type) {
       case 'color':
-        return (
-          <TooltipProvider 
-            key={key}
-            content={indicator.tooltip || indicator.displayValue}
-            truncateDisplay={false} // ColorIndicator handles its own display
-          >
-            <ColorIndicator
-              colorClass={indicator.value}
-              hexValue={indicator.displayValue}
-              size={size}
-              tooltip={indicator.tooltip}
-            />
-          </TooltipProvider>
-        );
+        return <ColorIndicator key={key} indicator={indicator} />;
       
       case 'text':
-        return (
-          <TooltipProvider 
-            key={key}
-            content={indicator.tooltip || indicator.value}
-            displayText={indicator.displayValue}
-            maxDisplayLength={25}
-          >
-            <TextIndicator
-              textContent={indicator.value}
-              displayText={indicator.displayValue}
-              size={size}
-              tooltip={indicator.tooltip}
-            />
-          </TooltipProvider>
-        );
+        return <TextIndicator key={key} indicator={indicator} />;
       
       case 'spacing':
         return (
-          <TooltipProvider 
+          <SpacingIndicator
             key={key}
-            content={indicator.tooltip || indicator.displayValue}
-            truncateDisplay={false} // SpacingIndicator handles its own display
-          >
-            <SpacingIndicator
-              spacingClass={indicator.value}
-              pixelValue={indicator.displayValue}
-              size={size}
-              tooltip={indicator.tooltip}
-            />
-          </TooltipProvider>
+            spacingClass={indicator.value}
+            pixelValue={indicator.displayValue}
+            size={size}
+            tooltip={indicator.tooltip}
+          />
         );
       
       default:
