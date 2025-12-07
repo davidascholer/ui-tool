@@ -25,32 +25,48 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
-import tailwindSelectors from '@/utils/tailwindSelectors';
+import {
+  layoutOptions,
+  flexboxGridOptions,
+  spacingOptions,
+  sizingOptions,
+  typographyOptions,
+  backgroundsOptions,
+  bordersOptions,
+  effectsOptions,
+  filtersOptions,
+  tablesOptions,
+  transitionsAnimationOptions,
+  transformsOptions,
+  interactivityOptions,
+  svgOptions,
+  accessibilityOptions,
+  textColorOptions,
+  borderColorOptions,
+  backgroundColorOptions,
+} from '@/utils/tailwindSelectors';
 
-// Group tailwind selectors by section based on comments in the source file
+// Group tailwind selectors by section
 const groupedSelectors = [
-  { section: 'Layout', start: 0, end: 23 },
-  { section: 'Flexbox & Grid', start: 24, end: 49 },
-  { section: 'Spacing', start: 50, end: 52 },
-  { section: 'Sizing', start: 53, end: 61 },
-  { section: 'Typography', start: 62, end: 95 },
-  { section: 'Backgrounds', start: 96, end: 105 },
-  { section: 'Borders', start: 106, end: 115 },
-  { section: 'Effects', start: 116, end: 131 },
-  { section: 'Filters', start: 132, end: 153 },
-  { section: 'Tables', start: 154, end: 159 },
-  { section: 'Transitions & Animation', start: 160, end: 167 },
-  { section: 'Transforms', start: 168, end: 179 },
-  { section: 'Interactivity', start: 180, end: 198 },
-  { section: 'SVG', start: 199, end: 203 },
-  { section: 'Accessibility', start: 204, end: 205 },
-  { section: 'Text Colors', start: 206, end: 451 },
-  { section: 'Border Colors', start: 452, end: 697 },
-  { section: 'Background Colors', start: 698, end: tailwindSelectors.length - 1 },
-].map(group => ({
-  section: group.section,
-  items: tailwindSelectors.slice(group.start, group.end + 1)
-}));
+  { section: 'Layout', items: layoutOptions },
+  { section: 'Flexbox & Grid', items: flexboxGridOptions },
+  { section: 'Spacing', items: spacingOptions },
+  { section: 'Sizing', items: sizingOptions },
+  { section: 'Typography', items: typographyOptions },
+  { section: 'Backgrounds', items: backgroundsOptions },
+  { section: 'Borders', items: bordersOptions },
+  { section: 'Effects', items: effectsOptions },
+  { section: 'Filters', items: filtersOptions },
+  { section: 'Tables', items: tablesOptions },
+  { section: 'Transitions & Animation', items: transitionsAnimationOptions },
+  { section: 'Transforms', items: transformsOptions },
+  { section: 'Interactivity', items: interactivityOptions },
+  { section: 'SVG', items: svgOptions },
+  { section: 'Accessibility', items: accessibilityOptions },
+  { section: 'Text Colors', items: textColorOptions },
+  { section: 'Border Colors', items: borderColorOptions },
+  { section: 'Background Colors', items: backgroundColorOptions },
+];
 
 interface EditorProps {
   entity: PageEntity | ContainerEntity | ComponentEntity;
