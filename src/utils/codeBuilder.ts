@@ -7,13 +7,44 @@ export interface TreeNode {
 }
 
 export function formatSimpleHtml(html: string): string {
-  // Example: Add indentation after opening tags and before closing tags
-  return (
-    html
-      // .replace(/></g, ">\n  <") // Add newline and indent between tags
-      .replace(/(<\w+>)/g, "$1\n") // Add newline after opening tags
-      .replace(/(<\/\w+>)/g, "\n$1")
-  ); // Add newline before closing tags
+  let formatted = '';
+  let indent = 0;
+  const indentSize = 2;
+  
+  // Split by tags while preserving them
+  const tokens = html.split(/(<\/?[^>]+>)/g).filter(token => token.trim());
+  
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i].trim();
+    if (!token) continue;
+    
+    // Check if it's a closing tag
+    if (token.startsWith('</')) {
+      indent = Math.max(0, indent - 1);
+      formatted += ' '.repeat(indent * indentSize) + token + '\n';
+    }
+    // Check if it's a self-closing tag or single tag (img, br, hr, input, etc.)
+    else if (token.endsWith('/>') || /^<(img|br|hr|input|meta|link)\b[^>]*>$/i.test(token)) {
+      formatted += ' '.repeat(indent * indentSize) + token + '\n';
+    }
+    // Opening tag
+    else if (token.startsWith('<')) {
+      formatted += ' '.repeat(indent * indentSize) + token + '\n';
+      // Don't indent for inline tags that typically contain text
+      if (!/^<(span|a|strong|em|code|small|b|i|u)\b/i.test(token)) {
+        indent++;
+      }
+    }
+    // Text content
+    else {
+      // Only add text content if it's not just whitespace
+      if (token.length > 0) {
+        formatted += ' '.repeat(indent * indentSize) + token + '\n';
+      }
+    }
+  }
+  
+  return formatted.trim();
 }
 
 export const buildTreeObject = (
