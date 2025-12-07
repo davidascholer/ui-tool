@@ -4,10 +4,11 @@
  * Supports different entity types with appropriate form controls
  */
 
-import { useState } from "react";
+import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronsUpDown, Info } from "lucide-react";
 import type {
   PageEntity,
   ContainerEntity,
@@ -32,13 +33,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  TooltipProvider,
-} from "@/components/ui/tooltip";
+
 import { cn } from "@/lib/utils";
+import { groupedSelectors } from "@/utils/tailwindSelectors";
 
 interface EditorProps {
   entity: PageEntity | ContainerEntity | ComponentEntity;
@@ -162,7 +159,18 @@ function ContainerEditor({
     entity.tailwindClassList || []
   );
   const [open, setOpen] = useState(false);
-
+  const [hoveredSelector, setHoveredSelector] = useState<{
+    value: string;
+    label: string;
+    styles: string;
+    description: string;
+  } | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{
+    x: number;
+    y: number;
+    width?: number;
+  } | null>(null);
+  const [infoHovered, setInfoHovered] = useState(false);
   const {
     register,
     handleSubmit,
@@ -247,27 +255,45 @@ function ContainerEditor({
               </Button>
             </PopoverTrigger>
             <PopoverContent
-              className="w-full p-0 animate-fade-in"
+              className="w-full p-0 animate-fade-in overflow-visible"
               align="start"
               sideOffset={4}
             >
-              <TooltipProvider>
-                <Command>
-                  <CommandInput
-                    placeholder="Search classes..."
-                    className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-none focus:shadow-none focus-visible:outline-none"
-                  />
-                  <CommandList>
-                    <CommandEmpty>No class found.</CommandEmpty>
-                    {groupedSelectors.map((group) => (
-                      <CommandGroup key={group.section} heading={group.section}>
-                        {group.items.map((option) => (
-                          <Tooltip key={option.value} delayDuration={300}>
-                            <TooltipTrigger asChild>
-                              <CommandItem
-                                value={option.value}
-                                onSelect={() => toggleClass(option.value)}
-                              >
+              <Command>
+                <CommandInput
+                  placeholder="Search classes..."
+                  className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-none focus:shadow-none focus-visible:outline-none"
+                />
+                <CommandList className="overflow-scroll">
+                  <CommandEmpty>No class found.</CommandEmpty>
+                  {groupedSelectors.map((category) => (
+                    <React.Fragment key={category.category}>
+                      {category.groups.map((group) => (
+                        <CommandGroup
+                          key={`${category.category}-${group.section}`}
+                          heading={`${category.category} > ${group.section}`}
+                        >
+                          {group.selectors.map((option) => (
+                            <CommandItem
+                              key={option.value}
+                              value={option.value}
+                              onSelect={() => toggleClass(option.value)}
+                              className="justify-between"
+                              onMouseEnter={(e) => {
+                                const rect =
+                                  e.currentTarget.getBoundingClientRect();
+                                setHoveredSelector(option);
+                                setTooltipPos({
+                                  x: rect.left,
+                                  y: rect.top,
+                                });
+                              }}
+                              onMouseLeave={() => {
+                                setHoveredSelector(null);
+                                setTooltipPos(null);
+                              }}
+                            >
+                              <div className="flex items-center">
                                 <Check
                                   className={cn(
                                     "mr-2 h-4 w-4",
@@ -277,21 +303,40 @@ function ContainerEditor({
                                   )}
                                 />
                                 {option.label}
-                              </CommandItem>
-                            </TooltipTrigger>
-                            <TooltipContent side="right" className="max-w-xs">
-                              <p className="font-semibold text-xs mb-1">
-                                CSS: {option.cssSelectors}
-                              </p>
-                              <p className="text-xs">{option.description}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        ))}
-                      </CommandGroup>
-                    ))}
-                  </CommandList>
-                </Command>
-              </TooltipProvider>
+                              </div>
+                              <button
+                                type="button"
+                                onMouseEnter={(e) => {
+                                  setInfoHovered(true);
+                                  const rect = e.currentTarget
+                                    .closest('[role="option"]')
+                                    ?.getBoundingClientRect();
+                                  if (rect) {
+                                    setHoveredSelector(option);
+                                    setTooltipPos({
+                                      x: rect.left,
+                                      y: rect.top,
+                                      width: rect.width,
+                                    });
+                                  }
+                                }}
+                                onMouseLeave={() => {
+                                  setInfoHovered(false);
+                                  setHoveredSelector(null);
+                                  setTooltipPos(null);
+                                }}
+                                className="ml-2 opacity-50 hover:opacity-100 transition-opacity"
+                              >
+                                <Info className="h-3 w-3" />
+                              </button>
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      ))}
+                    </React.Fragment>
+                  ))}
+                </CommandList>
+              </Command>
             </PopoverContent>
           </Popover>
 
@@ -338,6 +383,25 @@ function ContainerEditor({
       >
         Save Container
       </button>
+      {hoveredSelector &&
+        tooltipPos &&
+        createPortal(
+          <div
+            className="fixed z-100 rounded-md bg-gray-900 px-3 py-2 text-xs text-white shadow-xl border border-gray-700 pointer-events-none"
+            style={{
+              left: `${tooltipPos.x}px`,
+              width: `${tooltipPos.width}px`,
+              bottom: `${window.innerHeight - tooltipPos.y + 8}px`,
+            }}
+          >
+            {infoHovered ? (
+              <p className="text-gray-300">{hoveredSelector.description}</p>
+            ) : (
+              <p className="text-gray-300">{hoveredSelector.styles}</p>
+            )}{" "}
+          </div>,
+          document.body
+        )}
     </form>
   );
 }
@@ -353,6 +417,19 @@ function ComponentEditor({
     entity.tailwindClassList || []
   );
   const [open, setOpen] = useState(false);
+  const [hoveredSelector, setHoveredSelector] = useState<{
+    value: string;
+    label: string;
+    styles: string;
+    description: string;
+  } | null>(null);
+  const [infoHovered, setInfoHovered] = useState(false);
+
+  const [tooltipPos, setTooltipPos] = useState<{
+    x: number;
+    y: number;
+    width: number;
+  } | null>(null);
 
   const {
     register,
@@ -522,26 +599,45 @@ function ComponentEditor({
               </Button>
             </PopoverTrigger>
             <PopoverContent
-              className="w-full p-0 animate-fade-in"
+              className="w-full p-0 animate-fade-in overflow-visible"
               sideOffset={4}
             >
-              <TooltipProvider>
-                <Command>
-                  <CommandInput
-                    placeholder="Search classes..."
-                    className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-none focus:shadow-none focus-visible:outline-none"
-                  />
-                  <CommandList>
-                    <CommandEmpty>No class found.</CommandEmpty>
-                    {groupedSelectors.map((group) => (
-                      <CommandGroup key={group.section} heading={group.section}>
-                        {group.items.map((option) => (
-                          <Tooltip key={option.value} delayDuration={300}>
-                            <TooltipTrigger asChild>
-                              <CommandItem
-                                value={option.value}
-                                onSelect={() => toggleClass(option.value)}
-                              >
+              <Command>
+                <CommandInput
+                  placeholder="Search classes..."
+                  className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-none focus:shadow-none focus-visible:outline-none"
+                />
+                <CommandList className="overflow-scroll">
+                  <CommandEmpty>No class found.</CommandEmpty>
+                  {groupedSelectors.map((category) => (
+                    <React.Fragment key={category.category}>
+                      {category.groups.map((group) => (
+                        <CommandGroup
+                          key={`${category.category}-${group.section}`}
+                          heading={`${category.category} > ${group.section}`}
+                        >
+                          {group.selectors.map((option) => (
+                            <CommandItem
+                              key={option.value}
+                              value={option.value}
+                              onSelect={() => toggleClass(option.value)}
+                              onMouseEnter={(e) => {
+                                const rect =
+                                  e.currentTarget.getBoundingClientRect();
+                                setHoveredSelector(option);
+                                setTooltipPos({
+                                  x: rect.left,
+                                  y: rect.top,
+                                  width: rect.width,
+                                });
+                              }}
+                              onMouseLeave={() => {
+                                setHoveredSelector(null);
+                                setTooltipPos(null);
+                              }}
+                              className="justify-between"
+                            >
+                              <div className="flex items-center">
                                 <Check
                                   className={cn(
                                     "mr-2 h-4 w-4",
@@ -551,21 +647,40 @@ function ComponentEditor({
                                   )}
                                 />
                                 {option.label}
-                              </CommandItem>
-                            </TooltipTrigger>
-                            <TooltipContent side="right" className="max-w-xs">
-                              <p className="font-semibold text-xs mb-1">
-                                CSS: {option.cssSelectors}
-                              </p>
-                              <p className="text-xs">{option.description}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        ))}
-                      </CommandGroup>
-                    ))}
-                  </CommandList>
-                </Command>
-              </TooltipProvider>
+                              </div>
+                              <button
+                                type="button"
+                                onMouseEnter={(e) => {
+                                  setInfoHovered(true);
+                                  const rect = e.currentTarget
+                                    .closest('[role="option"]')
+                                    ?.getBoundingClientRect();
+                                  if (rect) {
+                                    setHoveredSelector(option);
+                                    setTooltipPos({
+                                      x: rect.left,
+                                      y: rect.top,
+                                      width: rect.width,
+                                    });
+                                  }
+                                }}
+                                onMouseLeave={() => {
+                                  setInfoHovered(false);
+                                  setHoveredSelector(null);
+                                  setTooltipPos(null);
+                                }}
+                                className="ml-2 opacity-50 hover:opacity-100 transition-opacity"
+                              >
+                                <Info className="h-3 w-3" />
+                              </button>
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      ))}
+                    </React.Fragment>
+                  ))}
+                </CommandList>
+              </Command>
             </PopoverContent>
           </Popover>
 
@@ -612,6 +727,25 @@ function ComponentEditor({
       >
         Save Component
       </button>
+      {hoveredSelector &&
+        tooltipPos &&
+        createPortal(
+          <div
+            className="fixed z-100 rounded-md bg-gray-900 px-3 py-2 text-xs text-white shadow-xl border border-gray-700 pointer-events-none"
+            style={{
+              left: `${tooltipPos.x}px`,
+              width: `${tooltipPos.width}px`,
+              bottom: `${window.innerHeight - tooltipPos.y + 8}px`,
+            }}
+          >
+            {infoHovered ? (
+              <p className="text-gray-300">{hoveredSelector.description}</p>
+            ) : (
+              <p className="text-gray-300">{hoveredSelector.styles}</p>
+            )}
+          </div>,
+          document.body
+        )}
     </form>
   );
 }
