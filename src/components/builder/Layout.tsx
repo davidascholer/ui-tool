@@ -43,7 +43,7 @@ export function Layout({
       </header>
 
       {/* Mobile/Portrait: Stack vertically */}
-      <div className="flex flex-1 flex-col lg:hidden">
+      <div className="flex flex-1 flex-col lg:hidden overflow-scroll">
         {/* UI Side - collapsed on mobile */}
         <div className="border-b border-[rgb(var(--color-border))] bg-[rgb(var(--color-muted))]">
           {uiSide}
@@ -67,7 +67,7 @@ export function Layout({
       {/* Desktop/Landscape: Three columns with CSS Grid */}
       <div
         className={`
-          hidden flex-1 lg:grid transition-all duration-300
+          hidden flex-1 lg:grid transition-all duration-300 overflow-scroll
           ${
             drawerOpen
               ? "grid-cols-[256px_minmax(320px,1fr)_320px]"
