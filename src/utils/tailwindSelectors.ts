@@ -1,1000 +1,2131 @@
-// Layout
-export const layoutOptions = [
-  { value: "aspect-ratio", label: "aspect-ratio", cssSelectors: "aspect-ratio", description: "Controls the aspect ratio of an element" },
-  { value: "columns", label: "columns", cssSelectors: "columns", description: "Sets the number of columns in a multi-column layout" },
-  { value: "break-after", label: "break-after", cssSelectors: "break-after", description: "Controls page/column breaks after an element" },
-  { value: "break-before", label: "break-before", cssSelectors: "break-before", description: "Controls page/column breaks before an element" },
-  { value: "break-inside", label: "break-inside", cssSelectors: "break-inside", description: "Controls page/column breaks inside an element" },
-  { value: "box-decoration-break", label: "box-decoration-break", cssSelectors: "box-decoration-break", description: "Controls element fragment rendering across lines, columns, or pages" },
-  { value: "box-sizing", label: "box-sizing", cssSelectors: "box-sizing", description: "Controls how the total width and height of an element is calculated" },
-  { value: "display", label: "display", cssSelectors: "display", description: "Sets the display box type of an element" },
-  { value: "float", label: "float", cssSelectors: "float", description: "Places an element on the left or right side of its container" },
-  { value: "clear", label: "clear", cssSelectors: "clear", description: "Controls whether an element can be next to floating elements" },
-  { value: "isolation", label: "isolation", cssSelectors: "isolation", description: "Controls whether an element creates a new stacking context" },
-  { value: "object-fit", label: "object-fit", cssSelectors: "object-fit", description: "Controls how replaced content should be resized" },
-  { value: "object-position", label: "object-position", cssSelectors: "object-position", description: "Controls the alignment of replaced content within its box" },
-  { value: "overflow", label: "overflow", cssSelectors: "overflow", description: "Controls how content is handled when it overflows its container" },
-  { value: "overscroll-behavior", label: "overscroll-behavior", cssSelectors: "overscroll-behavior", description: "Controls browser behavior when reaching the boundary of a scrolling area" },
-  { value: "position", label: "position", cssSelectors: "position", description: "Sets how an element is positioned in the document" },
-  { value: "top", label: "top", cssSelectors: "top", description: "Sets the vertical position of a positioned element" },
-  { value: "right", label: "right", cssSelectors: "right", description: "Sets the horizontal position of a positioned element from the right" },
-  { value: "bottom", label: "bottom", cssSelectors: "bottom", description: "Sets the vertical position of a positioned element from the bottom" },
-  { value: "left", label: "left", cssSelectors: "left", description: "Sets the horizontal position of a positioned element from the left" },
-  { value: "visibility", label: "visibility", cssSelectors: "visibility", description: "Controls the visibility of an element" },
-  { value: "z-index", label: "z-index", cssSelectors: "z-index", description: "Sets the stack order of positioned elements" },
+export type TailwindSelectorType = {
+  label: string;
+  value: string;
+  styles: string;
+  description: string;
+};
+export type TailwindSelectorGroupType = {
+  section: string;
+  selectors: TailwindSelectorType[];
+};
+export type TailwindSelectorCategoryType = {
+  category: string;
+  groups: TailwindSelectorGroupType[];
+};
+
+// LAYOUT
+const aspectRatio: TailwindSelectorType[] = [
+  {
+    label: "aspect-<ratio>",
+    value: "aspect-<ratio>",
+    styles: "aspect-ratio: <ratio>;",
+    description:
+      "Sets a custom aspect ratio using any numerical ratio format (e.g., aspect-3/2, aspect-16/9)",
+  },
+  {
+    label: "aspect-square",
+    value: "aspect-square",
+    styles: "aspect-ratio: 1 / 1;",
+    description:
+      "Creates a perfect square with equal width and height proportions",
+  },
+  {
+    label: "aspect-video",
+    value: "aspect-video",
+    styles: "aspect-ratio: var(--aspect-video); /* 16 / 9 */",
+    description:
+      "Sets a widescreen video aspect ratio of 16:9, commonly used for video embeds and media content",
+  },
+  {
+    label: "aspect-auto",
+    value: "aspect-auto",
+    styles: "aspect-ratio: auto;",
+    description:
+      "Resets the aspect ratio to its natural, automatic behavior based on content dimensions",
+  },
+  {
+    label: "aspect-(<custom-property>)",
+    value: "aspect-(<custom-property>)",
+    styles: "aspect-ratio: var(<custom-property>);",
+    description:
+      "Uses a CSS custom property (variable) for the aspect ratio, automatically wrapping it in var()",
+  },
+  {
+    label: "aspect-[<value>]",
+    value: "aspect-[<value>]",
+    styles: "aspect-ratio: <value>;",
+    description:
+      "Sets an arbitrary aspect ratio value using Tailwind's square bracket notation for one-off custom values",
+  },
+];
+
+const columns: TailwindSelectorType[] = [
+  {
+    label: "columns-<number>",
+    value: "columns-<number>",
+    styles: "columns: <number>;",
+    description:
+      "Sets a specific number of columns for multi-column layout (e.g., columns-2, columns-3)",
+  },
+  {
+    label: "columns-3xs",
+    value: "columns-3xs",
+    styles: "columns: var(--container-3xs); /* 16rem (256px) */",
+    description:
+      "Sets column width to 16rem (256px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-2xs",
+    value: "columns-2xs",
+    styles: "columns: var(--container-2xs); /* 18rem (288px) */",
+    description:
+      "Sets column width to 18rem (288px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-xs",
+    value: "columns-xs",
+    styles: "columns: var(--container-xs); /* 20rem (320px) */",
+    description:
+      "Sets column width to 20rem (320px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-sm",
+    value: "columns-sm",
+    styles: "columns: var(--container-sm); /* 24rem (384px) */",
+    description:
+      "Sets column width to 24rem (384px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-md",
+    value: "columns-md",
+    styles: "columns: var(--container-md); /* 28rem (448px) */",
+    description:
+      "Sets column width to 28rem (448px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-lg",
+    value: "columns-lg",
+    styles: "columns: var(--container-lg); /* 32rem (512px) */",
+    description:
+      "Sets column width to 32rem (512px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-xl",
+    value: "columns-xl",
+    styles: "columns: var(--container-xl); /* 36rem (576px) */",
+    description:
+      "Sets column width to 36rem (576px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-2xl",
+    value: "columns-2xl",
+    styles: "columns: var(--container-2xl); /* 42rem (672px) */",
+    description:
+      "Sets column width to 42rem (672px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-3xl",
+    value: "columns-3xl",
+    styles: "columns: var(--container-3xl); /* 48rem (768px) */",
+    description:
+      "Sets column width to 48rem (768px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-4xl",
+    value: "columns-4xl",
+    styles: "columns: var(--container-4xl); /* 56rem (896px) */",
+    description:
+      "Sets column width to 56rem (896px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-5xl",
+    value: "columns-5xl",
+    styles: "columns: var(--container-5xl); /* 64rem (1024px) */",
+    description:
+      "Sets column width to 64rem (1024px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-6xl",
+    value: "columns-6xl",
+    styles: "columns: var(--container-6xl); /* 72rem (1152px) */",
+    description:
+      "Sets column width to 72rem (1152px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-7xl",
+    value: "columns-7xl",
+    styles: "columns: var(--container-7xl); /* 80rem (1280px) */",
+    description:
+      "Sets column width to 80rem (1280px), allowing the browser to calculate the number of columns that fit",
+  },
+  {
+    label: "columns-auto",
+    value: "columns-auto",
+    styles: "columns: auto;",
+    description:
+      "Resets columns to automatic behavior, removing any multi-column layout constraints",
+  },
+  {
+    label: "columns-(<custom-property>)",
+    value: "columns-(<custom-property>)",
+    styles: "columns: var(<custom-property>);",
+    description:
+      "Uses a CSS custom property (variable) for the column configuration, automatically wrapping it in var()",
+  },
+  {
+    label: "columns-[<value>]",
+    value: "columns-[<value>]",
+    styles: "columns: <value>;",
+    description:
+      "Sets an arbitrary column value using Tailwind's square bracket notation for one-off custom configurations",
+  },
+];
+
+const breakAfter: TailwindSelectorType[] = [
+  {
+    label: "break-after-auto",
+    value: "break-after-auto",
+    styles: "break-after: auto;",
+    description:
+      "Allows, but does not force, a page, column, or region break after the element",
+  },
+  {
+    label: "break-after-avoid",
+    value: "break-after-avoid",
+    styles: "break-after: avoid;",
+    description: "Avoids any break (page, column, or region) after the element",
+  },
+  {
+    label: "break-after-all",
+    value: "break-after-all",
+    styles: "break-after: all;",
+    description:
+      "Forces a page break after the element, applying to all possible breaking contexts",
+  },
+  {
+    label: "break-after-avoid-page",
+    value: "break-after-avoid-page",
+    styles: "break-after: avoid-page;",
+    description: "Avoids a page break after the element",
+  },
+  {
+    label: "break-after-page",
+    value: "break-after-page",
+    styles: "break-after: page;",
+    description: "Forces a page break after the element",
+  },
+  {
+    label: "break-after-left",
+    value: "break-after-left",
+    styles: "break-after: left;",
+    description:
+      "Forces one or two page breaks after the element so that the next page is formatted as a left page",
+  },
+  {
+    label: "break-after-right",
+    value: "break-after-right",
+    styles: "break-after: right;",
+    description:
+      "Forces one or two page breaks after the element so that the next page is formatted as a right page",
+  },
+  {
+    label: "break-after-column",
+    value: "break-after-column",
+    styles: "break-after: column;",
+    description:
+      "Forces a column break after the element in multi-column layouts",
+  },
+];
+
+const breakBefore: TailwindSelectorType[] = [
+  {
+    label: "break-before-auto",
+    value: "break-before-auto",
+    styles: "break-before: auto;",
+    description:
+      "Allows, but does not force, a page, column, or region break before the element",
+  },
+  {
+    label: "break-before-avoid",
+    value: "break-before-avoid",
+    styles: "break-before: avoid;",
+    description:
+      "Avoids any break (page, column, or region) before the element",
+  },
+  {
+    label: "break-before-all",
+    value: "break-before-all",
+    styles: "break-before: all;",
+    description:
+      "Forces a page break before the element, applying to all possible breaking contexts",
+  },
+  {
+    label: "break-before-avoid-page",
+    value: "break-before-avoid-page",
+    styles: "break-before: avoid-page;",
+    description: "Avoids a page break before the element",
+  },
+  {
+    label: "break-before-page",
+    value: "break-before-page",
+    styles: "break-before: page;",
+    description: "Forces a page break before the element",
+  },
+  {
+    label: "break-before-left",
+    value: "break-before-left",
+    styles: "break-before: left;",
+    description:
+      "Forces one or two page breaks before the element so that the next page is formatted as a left page",
+  },
+  {
+    label: "break-before-right",
+    value: "break-before-right",
+    styles: "break-before: right;",
+    description:
+      "Forces one or two page breaks before the element so that the next page is formatted as a right page",
+  },
+  {
+    label: "break-before-column",
+    value: "break-before-column",
+    styles: "break-before: column;",
+    description:
+      "Forces a column break before the element in multi-column layouts",
+  },
+];
+
+const breakInside: TailwindSelectorType[] = [
+  {
+    label: "break-inside-auto",
+    value: "break-inside-auto",
+    styles: "break-inside: auto;",
+    description:
+      "Allows, but does not force, any break (page, column, or region) within the element",
+  },
+  {
+    label: "break-inside-avoid",
+    value: "break-inside-avoid",
+    styles: "break-inside: avoid;",
+    description:
+      "Avoids any break (page, column, or region) within the element",
+  },
+  {
+    label: "break-inside-avoid-page",
+    value: "break-inside-avoid-page",
+    styles: "break-inside: avoid-page;",
+    description: "Avoids a page break within the element",
+  },
+  {
+    label: "break-inside-avoid-column",
+    value: "break-inside-avoid-column",
+    styles: "break-inside: avoid-column;",
+    description:
+      "Avoids a column break within the element in multi-column layouts",
+  },
+];
+
+const boxDecorationBreak: TailwindSelectorType[] = [
+  {
+    label: "box-decoration-clone",
+    value: "box-decoration-clone",
+    styles: "box-decoration-break: clone;",
+    description:
+      "Renders element fragments across multiple lines as separate, independent boxes with individual backgrounds, borders, padding, and margins",
+  },
+  {
+    label: "box-decoration-slice",
+    value: "box-decoration-slice",
+    styles: "box-decoration-break: slice;",
+    description:
+      "Renders element fragments as if the element were not broken, treating it as one continuous piece",
+  },
+];
+
+const boxSizing: TailwindSelectorType[] = [
+  {
+    label: "box-border",
+    value: "box-border",
+    styles: "box-sizing: border-box;",
+    description:
+      "Includes borders and padding in an element's total width and height calculations",
+  },
+  {
+    label: "box-content",
+    value: "box-content",
+    styles: "box-sizing: content-box;",
+    description:
+      "Excludes borders and padding from an element's width and height, adding them outside the specified dimensions",
+  },
+];
+
+const display: TailwindSelectorType[] = [
+  {
+    label: "inline",
+    value: "inline",
+    styles: "display: inline;",
+    description:
+      "Makes an element inline, flowing with text and not breaking to a new line",
+  },
+  {
+    label: "block",
+    value: "block",
+    styles: "display: block;",
+    description:
+      "Makes an element block-level, starting on a new line and filling its parent's width",
+  },
+  {
+    label: "inline-block",
+    value: "inline-block",
+    styles: "display: inline-block;",
+    description:
+      "Combines inline flow with block formatting, allowing width and height while staying in line",
+  },
+  {
+    label: "flow-root",
+    value: "flow-root",
+    styles: "display: flow-root;",
+    description:
+      "Creates a block-level element with its own block formatting context",
+  },
+  {
+    label: "flex",
+    value: "flex",
+    styles: "display: flex;",
+    description: "Creates a block-level flex container for flexible layouts",
+  },
+  {
+    label: "inline-flex",
+    value: "inline-flex",
+    styles: "display: inline-flex;",
+    description: "Creates an inline-level flex container that flows with text",
+  },
+  {
+    label: "grid",
+    value: "grid",
+    styles: "display: grid;",
+    description:
+      "Creates a block-level grid container for two-dimensional layouts",
+  },
+  {
+    label: "inline-grid",
+    value: "inline-grid",
+    styles: "display: inline-grid;",
+    description: "Creates an inline-level grid container that flows with text",
+  },
+  {
+    label: "contents",
+    value: "contents",
+    styles: "display: contents;",
+    description:
+      "Makes the element's children act as direct children of the parent, removing the element from the layout",
+  },
+  {
+    label: "table",
+    value: "table",
+    styles: "display: table;",
+    description: "Makes an element behave like a table element",
+  },
+  {
+    label: "inline-table",
+    value: "inline-table",
+    styles: "display: inline-table;",
+    description: "Makes an element behave like an inline-level table",
+  },
+  {
+    label: "table-caption",
+    value: "table-caption",
+    styles: "display: table-caption;",
+    description: "Makes an element behave like a table caption",
+  },
+  {
+    label: "table-cell",
+    value: "table-cell",
+    styles: "display: table-cell;",
+    description: "Makes an element behave like a table cell (td)",
+  },
+  {
+    label: "table-column",
+    value: "table-column",
+    styles: "display: table-column;",
+    description: "Makes an element behave like a table column (col)",
+  },
+  {
+    label: "table-column-group",
+    value: "table-column-group",
+    styles: "display: table-column-group;",
+    description: "Makes an element behave like a table column group (colgroup)",
+  },
+  {
+    label: "table-footer-group",
+    value: "table-footer-group",
+    styles: "display: table-footer-group;",
+    description: "Makes an element behave like a table footer group (tfoot)",
+  },
+  {
+    label: "table-header-group",
+    value: "table-header-group",
+    styles: "display: table-header-group;",
+    description: "Makes an element behave like a table header group (thead)",
+  },
+  {
+    label: "table-row-group",
+    value: "table-row-group",
+    styles: "display: table-row-group;",
+    description: "Makes an element behave like a table body (tbody)",
+  },
+  {
+    label: "table-row",
+    value: "table-row",
+    styles: "display: table-row;",
+    description: "Makes an element behave like a table row (tr)",
+  },
+  {
+    label: "list-item",
+    value: "list-item",
+    styles: "display: list-item;",
+    description: "Makes an element behave like a list item with a marker",
+  },
+  {
+    label: "hidden",
+    value: "hidden",
+    styles: "display: none;",
+    description: "Completely removes an element from the document layout",
+  },
+  {
+    label: "sr-only",
+    value: "sr-only",
+    styles:
+      "position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border-width: 0;",
+    description:
+      "Visually hides an element while keeping it accessible to screen readers",
+  },
+  {
+    label: "not-sr-only",
+    value: "not-sr-only",
+    styles:
+      "position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal;",
+    description:
+      "Reverses sr-only, making an element visible to both sighted users and screen readers",
+  },
+];
+
+const float: TailwindSelectorType[] = [
+  {
+    label: "float-right",
+    value: "float-right",
+    styles: "float: right;",
+    description:
+      "Floats an element to the right of its container, allowing text to wrap around its left side",
+  },
+  {
+    label: "float-left",
+    value: "float-left",
+    styles: "float: left;",
+    description:
+      "Floats an element to the left of its container, allowing text to wrap around its right side",
+  },
+  {
+    label: "float-start",
+    value: "float-start",
+    styles: "float: inline-start;",
+    description:
+      "Floats an element to the start side based on text direction (left in LTR, right in RTL)",
+  },
+  {
+    label: "float-end",
+    value: "float-end",
+    styles: "float: inline-end;",
+    description:
+      "Floats an element to the end side based on text direction (right in LTR, left in RTL)",
+  },
+  {
+    label: "float-none",
+    value: "float-none",
+    styles: "float: none;",
+    description:
+      "Removes any float from an element, returning it to normal document flow",
+  },
+];
+
+const clear: TailwindSelectorType[] = [
+  {
+    label: "clear-left",
+    value: "clear-left",
+    styles: "clear: left;",
+    description:
+      "Positions an element below any preceding left-floated elements",
+  },
+  {
+    label: "clear-right",
+    value: "clear-right",
+    styles: "clear: right;",
+    description:
+      "Positions an element below any preceding right-floated elements",
+  },
+  {
+    label: "clear-both",
+    value: "clear-both",
+    styles: "clear: both;",
+    description:
+      "Positions an element below all preceding floated elements (both left and right)",
+  },
+  {
+    label: "clear-start",
+    value: "clear-start",
+    styles: "clear: inline-start;",
+    description:
+      "Clears floats on the start side based on text direction (left in LTR, right in RTL)",
+  },
+  {
+    label: "clear-end",
+    value: "clear-end",
+    styles: "clear: inline-end;",
+    description:
+      "Clears floats on the end side based on text direction (right in LTR, left in RTL)",
+  },
+  {
+    label: "clear-none",
+    value: "clear-none",
+    styles: "clear: none;",
+    description:
+      "Removes any clear behavior, allowing elements to wrap around floated elements",
+  },
+];
+
+const isolation: TailwindSelectorType[] = [
+  {
+    label: "isolate",
+    value: "isolate",
+    styles: "isolation: isolate;",
+    description:
+      "Creates a new stacking context, isolating the element from blend modes and z-index stacking of other elements",
+  },
+  {
+    label: "isolation-auto",
+    value: "isolation-auto",
+    styles: "isolation: auto;",
+    description:
+      "Uses the default stacking context behavior, allowing the element to participate in its parent's stacking context",
+  },
+];
+
+const objectFit: TailwindSelectorType[] = [
+  {
+    label: "object-contain",
+    value: "object-contain",
+    styles: "object-fit: contain;",
+    description:
+      "Resizes content to fit within the container while maintaining aspect ratio",
+  },
+  {
+    label: "object-cover",
+    value: "object-cover",
+    styles: "object-fit: cover;",
+    description:
+      "Resizes content to cover the entire container while maintaining aspect ratio, cropping if necessary",
+  },
+  {
+    label: "object-fill",
+    value: "object-fill",
+    styles: "object-fit: fill;",
+    description:
+      "Stretches content to fill the container without maintaining aspect ratio",
+  },
+  {
+    label: "object-none",
+    value: "object-none",
+    styles: "object-fit: none;",
+    description:
+      "Displays content at its original size, ignoring the container dimensions",
+  },
+  {
+    label: "object-scale-down",
+    value: "object-scale-down",
+    styles: "object-fit: scale-down;",
+    description:
+      "Displays content at its original size or smaller to fit within the container, whichever is smaller",
+  },
+];
+
+const objectPosition: TailwindSelectorType[] = [
+  {
+    label: "object-bottom",
+    value: "object-bottom",
+    styles: "object-position: bottom;",
+    description:
+      "Positions replaced element content at the bottom of its container",
+  },
+  {
+    label: "object-center",
+    value: "object-center",
+    styles: "object-position: center;",
+    description:
+      "Positions replaced element content at the center of its container",
+  },
+  {
+    label: "object-left",
+    value: "object-left",
+    styles: "object-position: left;",
+    description:
+      "Positions replaced element content at the left of its container",
+  },
+  {
+    label: "object-left-bottom",
+    value: "object-left-bottom",
+    styles: "object-position: left bottom;",
+    description:
+      "Positions replaced element content at the left bottom corner of its container",
+  },
+  {
+    label: "object-left-top",
+    value: "object-left-top",
+    styles: "object-position: left top;",
+    description:
+      "Positions replaced element content at the left top corner of its container",
+  },
+  {
+    label: "object-right",
+    value: "object-right",
+    styles: "object-position: right;",
+    description:
+      "Positions replaced element content at the right of its container",
+  },
+  {
+    label: "object-right-bottom",
+    value: "object-right-bottom",
+    styles: "object-position: right bottom;",
+    description:
+      "Positions replaced element content at the right bottom corner of its container",
+  },
+  {
+    label: "object-right-top",
+    value: "object-right-top",
+    styles: "object-position: right top;",
+    description:
+      "Positions replaced element content at the right top corner of its container",
+  },
+  {
+    label: "object-top",
+    value: "object-top",
+    styles: "object-position: top;",
+    description:
+      "Positions replaced element content at the top of its container",
+  },
+  {
+    label: "object-[<value>]",
+    value: "object-[<value>]",
+    styles: "object-position: <value>;",
+    description:
+      "Sets an arbitrary object position using Tailwind's square bracket notation",
+  },
+];
+
+const overflow: TailwindSelectorType[] = [
+  {
+    label: "overflow-auto",
+    value: "overflow-auto",
+    styles: "overflow: auto;",
+    description: "Adds scrollbars only when content overflows",
+  },
+  {
+    label: "overflow-hidden",
+    value: "overflow-hidden",
+    styles: "overflow: hidden;",
+    description: "Clips overflowing content and hides scrollbars",
+  },
+  {
+    label: "overflow-clip",
+    value: "overflow-clip",
+    styles: "overflow: clip;",
+    description: "Clips overflowing content at the element's padding box",
+  },
+  {
+    label: "overflow-visible",
+    value: "overflow-visible",
+    styles: "overflow: visible;",
+    description:
+      "Allows content to overflow the container bounds without clipping",
+  },
+  {
+    label: "overflow-scroll",
+    value: "overflow-scroll",
+    styles: "overflow: scroll;",
+    description: "Always shows scrollbars, even when content doesn't overflow",
+  },
+  {
+    label: "overflow-x-auto",
+    value: "overflow-x-auto",
+    styles: "overflow-x: auto;",
+    description:
+      "Adds horizontal scrollbar only when content overflows horizontally",
+  },
+  {
+    label: "overflow-y-auto",
+    value: "overflow-y-auto",
+    styles: "overflow-y: auto;",
+    description:
+      "Adds vertical scrollbar only when content overflows vertically",
+  },
+  {
+    label: "overflow-x-hidden",
+    value: "overflow-x-hidden",
+    styles: "overflow-x: hidden;",
+    description: "Clips horizontally overflowing content",
+  },
+  {
+    label: "overflow-y-hidden",
+    value: "overflow-y-hidden",
+    styles: "overflow-y: hidden;",
+    description: "Clips vertically overflowing content",
+  },
+  {
+    label: "overflow-x-clip",
+    value: "overflow-x-clip",
+    styles: "overflow-x: clip;",
+    description: "Clips horizontally overflowing content at the padding box",
+  },
+  {
+    label: "overflow-y-clip",
+    value: "overflow-y-clip",
+    styles: "overflow-y: clip;",
+    description: "Clips vertically overflowing content at the padding box",
+  },
+  {
+    label: "overflow-x-visible",
+    value: "overflow-x-visible",
+    styles: "overflow-x: visible;",
+    description: "Allows content to overflow horizontally without clipping",
+  },
+  {
+    label: "overflow-y-visible",
+    value: "overflow-y-visible",
+    styles: "overflow-y: visible;",
+    description: "Allows content to overflow vertically without clipping",
+  },
+  {
+    label: "overflow-x-scroll",
+    value: "overflow-x-scroll",
+    styles: "overflow-x: scroll;",
+    description: "Always shows horizontal scrollbar",
+  },
+  {
+    label: "overflow-y-scroll",
+    value: "overflow-y-scroll",
+    styles: "overflow-y: scroll;",
+    description: "Always shows vertical scrollbar",
+  },
+];
+
+const overscrollBehavior: TailwindSelectorType[] = [
+  {
+    label: "overscroll-auto",
+    value: "overscroll-auto",
+    styles: "overscroll-behavior: auto;",
+    description:
+      "Allows scrolling to continue to parent elements when reaching the boundary",
+  },
+  {
+    label: "overscroll-contain",
+    value: "overscroll-contain",
+    styles: "overscroll-behavior: contain;",
+    description:
+      "Prevents scroll chaining to parent elements but preserves bounce effects",
+  },
+  {
+    label: "overscroll-none",
+    value: "overscroll-none",
+    styles: "overscroll-behavior: none;",
+    description:
+      "Prevents scroll chaining and bounce effects when reaching boundaries",
+  },
+  {
+    label: "overscroll-y-auto",
+    value: "overscroll-y-auto",
+    styles: "overscroll-behavior-y: auto;",
+    description: "Allows vertical scrolling to continue to parent elements",
+  },
+  {
+    label: "overscroll-y-contain",
+    value: "overscroll-y-contain",
+    styles: "overscroll-behavior-y: contain;",
+    description:
+      "Prevents vertical scroll chaining but preserves bounce effects",
+  },
+  {
+    label: "overscroll-y-none",
+    value: "overscroll-y-none",
+    styles: "overscroll-behavior-y: none;",
+    description: "Prevents vertical scroll chaining and bounce effects",
+  },
+  {
+    label: "overscroll-x-auto",
+    value: "overscroll-x-auto",
+    styles: "overscroll-behavior-x: auto;",
+    description: "Allows horizontal scrolling to continue to parent elements",
+  },
+  {
+    label: "overscroll-x-contain",
+    value: "overscroll-x-contain",
+    styles: "overscroll-behavior-x: contain;",
+    description:
+      "Prevents horizontal scroll chaining but preserves bounce effects",
+  },
+  {
+    label: "overscroll-x-none",
+    value: "overscroll-x-none",
+    styles: "overscroll-behavior-x: none;",
+    description: "Prevents horizontal scroll chaining and bounce effects",
+  },
+];
+
+const position: TailwindSelectorType[] = [
+  {
+    label: "static",
+    value: "static",
+    styles: "position: static;",
+    description: "Positions an element according to the normal document flow",
+  },
+  {
+    label: "fixed",
+    value: "fixed",
+    styles: "position: fixed;",
+    description:
+      "Positions an element relative to the viewport, removing it from normal document flow",
+  },
+  {
+    label: "absolute",
+    value: "absolute",
+    styles: "position: absolute;",
+    description:
+      "Positions an element relative to its nearest positioned ancestor",
+  },
+  {
+    label: "relative",
+    value: "relative",
+    styles: "position: relative;",
+    description:
+      "Positions an element relative to its normal position in the document flow",
+  },
+  {
+    label: "sticky",
+    value: "sticky",
+    styles: "position: sticky;",
+    description:
+      "Positions an element as relative until it reaches a threshold, then becomes fixed",
+  },
+];
+
+const topRightBottomLeft: TailwindSelectorType[] = [
+  {
+    label: "inset-<number>",
+    value: "inset-<number>",
+    styles: "inset: <number>;",
+    description:
+      "Sets the top, right, bottom, and left offset values simultaneously",
+  },
+  {
+    label: "inset-x-<number>",
+    value: "inset-x-<number>",
+    styles: "left: <number>; right: <number>;",
+    description: "Sets both left and right offset values",
+  },
+  {
+    label: "inset-y-<number>",
+    value: "inset-y-<number>",
+    styles: "top: <number>; bottom: <number>;",
+    description: "Sets both top and bottom offset values",
+  },
+  {
+    label: "top-<number>",
+    value: "top-<number>",
+    styles: "top: <number>;",
+    description: "Sets the top offset of a positioned element",
+  },
+  {
+    label: "right-<number>",
+    value: "right-<number>",
+    styles: "right: <number>;",
+    description: "Sets the right offset of a positioned element",
+  },
+  {
+    label: "bottom-<number>",
+    value: "bottom-<number>",
+    styles: "bottom: <number>;",
+    description: "Sets the bottom offset of a positioned element",
+  },
+  {
+    label: "left-<number>",
+    value: "left-<number>",
+    styles: "left: <number>;",
+    description: "Sets the left offset of a positioned element",
+  },
+  {
+    label: "inset-[<value>]",
+    value: "inset-[<value>]",
+    styles: "inset: <value>;",
+    description:
+      "Sets an arbitrary inset value using Tailwind's square bracket notation",
+  },
+];
+
+const visibility: TailwindSelectorType[] = [
+  {
+    label: "visible",
+    value: "visible",
+    styles: "visibility: visible;",
+    description: "Makes an element visible",
+  },
+  {
+    label: "invisible",
+    value: "invisible",
+    styles: "visibility: hidden;",
+    description: "Hides an element but maintains its space in the layout",
+  },
+  {
+    label: "collapse",
+    value: "collapse",
+    styles: "visibility: collapse;",
+    description: "Collapses table rows, columns, or other elements",
+  },
+];
+
+const zIndex: TailwindSelectorType[] = [
+  {
+    label: "z-<number>",
+    value: "z-<number>",
+    styles: "z-index: <number>;",
+    description: "Sets the stack order of an element (e.g., z-10, z-50)",
+  },
+  {
+    label: "z-auto",
+    value: "z-auto",
+    styles: "z-index: auto;",
+    description: "Uses the default stacking order based on document flow",
+  },
+  {
+    label: "z-(<custom-property>)",
+    value: "z-(<custom-property>)",
+    styles: "z-index: var(<custom-property>);",
+    description: "Uses a CSS custom property for the z-index value",
+  },
+  {
+    label: "z-[<value>]",
+    value: "z-[<value>]",
+    styles: "z-index: <value>;",
+    description:
+      "Sets an arbitrary z-index value using Tailwind's square bracket notation",
+  },
 ];
 
 // Flexbox & Grid
-export const flexboxGridOptions = [
-  { value: "flex-basis", label: "flex-basis", cssSelectors: "flex-basis", description: "Sets the initial main size of a flex item" },
-  { value: "flex-direction", label: "flex-direction", cssSelectors: "flex-direction", description: "Sets the direction of flex items in a flex container" },
-  { value: "flex-wrap", label: "flex-wrap", cssSelectors: "flex-wrap", description: "Controls whether flex items wrap onto multiple lines" },
-  { value: "flex", label: "flex", cssSelectors: "flex", description: "Shorthand for flex-grow, flex-shrink, and flex-basis" },
-  { value: "flex-grow", label: "flex-grow", cssSelectors: "flex-grow", description: "Controls how much a flex item will grow relative to others" },
-  { value: "flex-shrink", label: "flex-shrink", cssSelectors: "flex-shrink", description: "Controls how much a flex item will shrink relative to others" },
-  { value: "order", label: "order", cssSelectors: "order", description: "Controls the order of flex or grid items" },
-  { value: "grid-template-columns", label: "grid-template-columns", cssSelectors: "grid-template-columns", description: "Defines the columns of a grid container" },
-  { value: "grid-column", label: "grid-column", cssSelectors: "grid-column", description: "Specifies a grid item's size and location within the grid column" },
-  { value: "grid-template-rows", label: "grid-template-rows", cssSelectors: "grid-template-rows", description: "Defines the rows of a grid container" },
-  { value: "grid-row", label: "grid-row", cssSelectors: "grid-row", description: "Specifies a grid item's size and location within the grid row" },
-  { value: "grid-auto-flow", label: "grid-auto-flow", cssSelectors: "grid-auto-flow", description: "Controls how auto-placed items flow into the grid" },
-  { value: "grid-auto-columns", label: "grid-auto-columns", cssSelectors: "grid-auto-columns", description: "Sets the size of implicitly created grid columns" },
-  { value: "grid-auto-rows", label: "grid-auto-rows", cssSelectors: "grid-auto-rows", description: "Sets the size of implicitly created grid rows" },
-  { value: "gap", label: "gap", cssSelectors: "gap", description: "Sets the spacing between flex or grid items" },
-  { value: "justify-content", label: "justify-content", cssSelectors: "justify-content", description: "Aligns items along the main axis" },
-  { value: "justify-items", label: "justify-items", cssSelectors: "justify-items", description: "Aligns grid items along the inline (row) axis" },
-  { value: "justify-self", label: "justify-self", cssSelectors: "justify-self", description: "Aligns an individual grid item along the inline (row) axis" },
-  { value: "align-content", label: "align-content", cssSelectors: "align-content", description: "Aligns lines of content along the cross axis" },
-  { value: "align-items", label: "align-items", cssSelectors: "align-items", description: "Aligns items along the cross axis" },
-  { value: "align-self", label: "align-self", cssSelectors: "align-self", description: "Aligns an individual item along the cross axis" },
-  { value: "place-content", label: "place-content", cssSelectors: "place-content", description: "Shorthand for align-content and justify-content" },
-  { value: "place-items", label: "place-items", cssSelectors: "place-items", description: "Shorthand for align-items and justify-items" },
-  { value: "place-self", label: "place-self", cssSelectors: "place-self", description: "Shorthand for align-self and justify-self" },
+const flexBasis: TailwindSelectorType[] = [
+  {
+    label: "basis-<number>",
+    value: "basis-<number>",
+    styles: "flex-basis: calc(var(--spacing) * <number>);",
+    description:
+      "Sets the initial size of flex items based on the spacing scale (e.g., basis-64, basis-128)",
+  },
+  {
+    label: "basis-<fraction>",
+    value: "basis-<fraction>",
+    styles: "flex-basis: calc(<fraction> * 100%);",
+    description:
+      "Sets the initial size of flex items as a percentage (e.g., basis-1/2, basis-2/3)",
+  },
+  {
+    label: "basis-full",
+    value: "basis-full",
+    styles: "flex-basis: 100%;",
+    description: "Sets the flex basis to 100% of the container width",
+  },
+  {
+    label: "basis-auto",
+    value: "basis-auto",
+    styles: "flex-basis: auto;",
+    description: "Sets the flex basis to auto, using the item's content size",
+  },
+  {
+    label: "basis-3xs",
+    value: "basis-3xs",
+    styles: "flex-basis: var(--container-3xs); /* 16rem (256px) */",
+    description: "Sets flex basis to 16rem (256px)",
+  },
+  {
+    label: "basis-2xs",
+    value: "basis-2xs",
+    styles: "flex-basis: var(--container-2xs); /* 18rem (288px) */",
+    description: "Sets flex basis to 18rem (288px)",
+  },
+  {
+    label: "basis-xs",
+    value: "basis-xs",
+    styles: "flex-basis: var(--container-xs); /* 20rem (320px) */",
+    description: "Sets flex basis to 20rem (320px)",
+  },
+  {
+    label: "basis-sm",
+    value: "basis-sm",
+    styles: "flex-basis: var(--container-sm); /* 24rem (384px) */",
+    description: "Sets flex basis to 24rem (384px)",
+  },
+  {
+    label: "basis-md",
+    value: "basis-md",
+    styles: "flex-basis: var(--container-md); /* 28rem (448px) */",
+    description: "Sets flex basis to 28rem (448px)",
+  },
+  {
+    label: "basis-lg",
+    value: "basis-lg",
+    styles: "flex-basis: var(--container-lg); /* 32rem (512px) */",
+    description: "Sets flex basis to 32rem (512px)",
+  },
+  {
+    label: "basis-xl",
+    value: "basis-xl",
+    styles: "flex-basis: var(--container-xl); /* 36rem (576px) */",
+    description: "Sets flex basis to 36rem (576px)",
+  },
+  {
+    label: "basis-2xl",
+    value: "basis-2xl",
+    styles: "flex-basis: var(--container-2xl); /* 42rem (672px) */",
+    description: "Sets flex basis to 42rem (672px)",
+  },
+  {
+    label: "basis-3xl",
+    value: "basis-3xl",
+    styles: "flex-basis: var(--container-3xl); /* 48rem (768px) */",
+    description: "Sets flex basis to 48rem (768px)",
+  },
+  {
+    label: "basis-4xl",
+    value: "basis-4xl",
+    styles: "flex-basis: var(--container-4xl); /* 56rem (896px) */",
+    description: "Sets flex basis to 56rem (896px)",
+  },
+  {
+    label: "basis-5xl",
+    value: "basis-5xl",
+    styles: "flex-basis: var(--container-5xl); /* 64rem (1024px) */",
+    description: "Sets flex basis to 64rem (1024px)",
+  },
+  {
+    label: "basis-6xl",
+    value: "basis-6xl",
+    styles: "flex-basis: var(--container-6xl); /* 72rem (1152px) */",
+    description: "Sets flex basis to 72rem (1152px)",
+  },
+  {
+    label: "basis-7xl",
+    value: "basis-7xl",
+    styles: "flex-basis: var(--container-7xl); /* 80rem (1280px) */",
+    description: "Sets flex basis to 80rem (1280px)",
+  },
+  {
+    label: "basis-(<custom-property>)",
+    value: "basis-(<custom-property>)",
+    styles: "flex-basis: var(<custom-property>);",
+    description: "Uses a CSS custom property for the flex basis value",
+  },
+  {
+    label: "basis-[<value>]",
+    value: "basis-[<value>]",
+    styles: "flex-basis: <value>;",
+    description:
+      "Sets an arbitrary flex basis value using Tailwind's square bracket notation",
+  },
 ];
 
-// Spacing
-export const spacingOptions = [
-  { value: "padding", label: "padding", cssSelectors: "padding", description: "Sets the padding area on all four sides of an element" },
-  { value: "margin", label: "margin", cssSelectors: "margin", description: "Sets the margin area on all four sides of an element" },
+const flexDirection: TailwindSelectorType[] = [
+  {
+    label: "flex-row",
+    value: "flex-row",
+    styles: "flex-direction: row;",
+    description:
+      "Positions flex items horizontally in the same direction as text",
+  },
+  {
+    label: "flex-row-reverse",
+    value: "flex-row-reverse",
+    styles: "flex-direction: row-reverse;",
+    description: "Positions flex items horizontally in the opposite direction",
+  },
+  {
+    label: "flex-col",
+    value: "flex-col",
+    styles: "flex-direction: column;",
+    description: "Positions flex items vertically from top to bottom",
+  },
+  {
+    label: "flex-col-reverse",
+    value: "flex-col-reverse",
+    styles: "flex-direction: column-reverse;",
+    description: "Positions flex items vertically from bottom to top",
+  },
 ];
 
-// Sizing
-export const sizingOptions = [
-  { value: "width", label: "width", cssSelectors: "width", description: "Sets the width of an element" },
-  { value: "min-width", label: "min-width", cssSelectors: "min-width", description: "Sets the minimum width of an element" },
-  { value: "max-width", label: "max-width", cssSelectors: "max-width", description: "Sets the maximum width of an element" },
-  { value: "height", label: "height", cssSelectors: "height", description: "Sets the height of an element" },
-  { value: "min-height", label: "min-height", cssSelectors: "min-height", description: "Sets the minimum height of an element" },
-  { value: "max-height", label: "max-height", cssSelectors: "max-height", description: "Sets the maximum height of an element" },
-  { value: "size", label: "size", cssSelectors: "width, height", description: "Sets both width and height of an element" },
+const flexWrap: TailwindSelectorType[] = [
+  {
+    label: "flex-wrap",
+    value: "flex-wrap",
+    styles: "flex-wrap: wrap;",
+    description: "Allows flex items to wrap to multiple lines",
+  },
+  {
+    label: "flex-wrap-reverse",
+    value: "flex-wrap-reverse",
+    styles: "flex-wrap: wrap-reverse;",
+    description: "Wraps flex items to multiple lines in reverse order",
+  },
+  {
+    label: "flex-nowrap",
+    value: "flex-nowrap",
+    styles: "flex-wrap: nowrap;",
+    description:
+      "Prevents flex items from wrapping, causing overflow if necessary",
+  },
 ];
 
-// Typography
-export const typographyOptions = [
-  { value: "font-family", label: "font-family", cssSelectors: "font-family", description: "Sets the font family for text" },
-  { value: "font-size", label: "font-size", cssSelectors: "font-size", description: "Sets the size of the font" },
-  { value: "font-smoothing", label: "font-smoothing", cssSelectors: "-webkit-font-smoothing, -moz-osx-font-smoothing", description: "Controls the application of anti-aliasing when fonts are rendered" },
-  { value: "font-style", label: "font-style", cssSelectors: "font-style", description: "Sets the style of the font (normal, italic, oblique)" },
-  { value: "font-weight", label: "font-weight", cssSelectors: "font-weight", description: "Sets the weight (boldness) of the font" },
-  { value: "font-stretch", label: "font-stretch", cssSelectors: "font-stretch", description: "Selects a normal, condensed, or expanded face from a font" },
-  { value: "font-variant-numeric", label: "font-variant-numeric", cssSelectors: "font-variant-numeric", description: "Controls the usage of alternate glyphs for numbers" },
-  { value: "letter-spacing", label: "letter-spacing", cssSelectors: "letter-spacing", description: "Sets the spacing between letters" },
-  { value: "line-clamp", label: "line-clamp", cssSelectors: "-webkit-line-clamp", description: "Limits text to a specified number of lines" },
-  { value: "line-height", label: "line-height", cssSelectors: "line-height", description: "Sets the height of a line box" },
-  { value: "list-style-image", label: "list-style-image", cssSelectors: "list-style-image", description: "Sets an image as the list item marker" },
-  { value: "list-style-position", label: "list-style-position", cssSelectors: "list-style-position", description: "Sets the position of list item markers" },
-  { value: "list-style-type", label: "list-style-type", cssSelectors: "list-style-type", description: "Sets the type of list item marker" },
-  { value: "text-align", label: "text-align", cssSelectors: "text-align", description: "Sets the horizontal alignment of text" },
-  { value: "color", label: "color", cssSelectors: "color", description: "Sets the color of text" },
-  { value: "text-decoration-line", label: "text-decoration-line", cssSelectors: "text-decoration-line", description: "Sets the kind of text decoration line" },
-  { value: "text-decoration-color", label: "text-decoration-color", cssSelectors: "text-decoration-color", description: "Sets the color of text decoration lines" },
-  { value: "text-decoration-style", label: "text-decoration-style", cssSelectors: "text-decoration-style", description: "Sets the style of text decoration lines" },
-  { value: "text-decoration-thickness", label: "text-decoration-thickness", cssSelectors: "text-decoration-thickness", description: "Sets the thickness of text decoration lines" },
-  { value: "text-underline-offset", label: "text-underline-offset", cssSelectors: "text-underline-offset", description: "Sets the offset distance of text underline" },
-  { value: "text-transform", label: "text-transform", cssSelectors: "text-transform", description: "Controls the capitalization of text" },
-  { value: "text-overflow", label: "text-overflow", cssSelectors: "text-overflow", description: "Controls how overflowing text is displayed" },
-  { value: "text-wrap", label: "text-wrap", cssSelectors: "text-wrap", description: "Controls how text wraps" },
-  { value: "text-indent", label: "text-indent", cssSelectors: "text-indent", description: "Sets the indentation of the first line of text" },
-  { value: "vertical-align", label: "vertical-align", cssSelectors: "vertical-align", description: "Sets the vertical alignment of an inline or table-cell element" },
-  { value: "white-space", label: "white-space", cssSelectors: "white-space", description: "Controls how whitespace inside an element is handled" },
-  { value: "word-break", label: "word-break", cssSelectors: "word-break", description: "Controls how words should break at line endings" },
-  { value: "overflow-wrap", label: "overflow-wrap", cssSelectors: "overflow-wrap", description: "Controls whether the browser should break words to prevent overflow" },
-  { value: "hyphens", label: "hyphens", cssSelectors: "hyphens", description: "Controls how words are hyphenated when text wraps" },
-  { value: "content", label: "content", cssSelectors: "content", description: "Generates content for pseudo-elements" },
+const flex: TailwindSelectorType[] = [
+  {
+    label: "flex-<number>",
+    value: "flex-<number>",
+    styles: "flex: <number> 1 0%;",
+    description:
+      "Allows a flex item to grow and shrink with a specific flex factor (e.g., flex-1)",
+  },
+  {
+    label: "flex-initial",
+    value: "flex-initial",
+    styles: "flex: 0 1 auto;",
+    description:
+      "Allows a flex item to shrink but not grow, considering its initial size",
+  },
+  {
+    label: "flex-auto",
+    value: "flex-auto",
+    styles: "flex: 1 1 auto;",
+    description:
+      "Allows a flex item to grow and shrink, considering its initial size",
+  },
+  {
+    label: "flex-none",
+    value: "flex-none",
+    styles: "flex: none;",
+    description: "Prevents a flex item from growing or shrinking",
+  },
+  {
+    label: "flex-(<custom-property>)",
+    value: "flex-(<custom-property>)",
+    styles: "flex: var(<custom-property>);",
+    description: "Uses a CSS custom property for the flex value",
+  },
+  {
+    label: "flex-[<value>]",
+    value: "flex-[<value>]",
+    styles: "flex: <value>;",
+    description:
+      "Sets an arbitrary flex value using Tailwind's square bracket notation",
+  },
 ];
 
-// Backgrounds
-export const backgroundsOptions = [
-  { value: "background-attachment", label: "background-attachment", cssSelectors: "background-attachment", description: "Sets whether a background image is fixed or scrolls" },
-  { value: "background-clip", label: "background-clip", cssSelectors: "background-clip", description: "Sets how far a background extends within an element" },
-  { value: "background-color", label: "background-color", cssSelectors: "background-color", description: "Sets the background color of an element" },
-  { value: "background-image", label: "background-image", cssSelectors: "background-image", description: "Sets one or more background images for an element" },
-  { value: "background-origin", label: "background-origin", cssSelectors: "background-origin", description: "Sets the origin position of a background image" },
-  { value: "background-position", label: "background-position", cssSelectors: "background-position", description: "Sets the position of a background image" },
-  { value: "background-repeat", label: "background-repeat", cssSelectors: "background-repeat", description: "Sets how background images are repeated" },
-  { value: "background-size", label: "background-size", cssSelectors: "background-size", description: "Sets the size of background images" },
+const flexGrow: TailwindSelectorType[] = [
+  {
+    label: "grow",
+    value: "grow",
+    styles: "flex-grow: 1;",
+    description: "Allows a flex item to grow to fill available space",
+  },
+  {
+    label: "grow-<number>",
+    value: "grow-<number>",
+    styles: "flex-grow: <number>;",
+    description: "Sets a specific flex grow factor (e.g., grow-3, grow-7)",
+  },
+  {
+    label: "grow-0",
+    value: "grow-0",
+    styles: "flex-grow: 0;",
+    description: "Prevents a flex item from growing",
+  },
+  {
+    label: "grow-(<custom-property>)",
+    value: "grow-(<custom-property>)",
+    styles: "flex-grow: var(<custom-property>);",
+    description: "Uses a CSS custom property for the flex grow value",
+  },
+  {
+    label: "grow-[<value>]",
+    value: "grow-[<value>]",
+    styles: "flex-grow: <value>;",
+    description:
+      "Sets an arbitrary flex grow value using Tailwind's square bracket notation",
+  },
 ];
 
-// Borders
-export const bordersOptions = [
-  { value: "border-radius", label: "border-radius", cssSelectors: "border-radius", description: "Rounds the corners of an element's border" },
-  { value: "border-width", label: "border-width", cssSelectors: "border-width", description: "Sets the width of an element's border" },
-  { value: "border-color", label: "border-color", cssSelectors: "border-color", description: "Sets the color of an element's border" },
-  { value: "border-style", label: "border-style", cssSelectors: "border-style", description: "Sets the style of an element's border" },
-  { value: "outline-width", label: "outline-width", cssSelectors: "outline-width", description: "Sets the width of an element's outline" },
-  { value: "outline-color", label: "outline-color", cssSelectors: "outline-color", description: "Sets the color of an element's outline" },
-  { value: "outline-style", label: "outline-style", cssSelectors: "outline-style", description: "Sets the style of an element's outline" },
-  { value: "outline-offset", label: "outline-offset", cssSelectors: "outline-offset", description: "Sets the distance between an outline and the edge of an element" },
+const flexShrink: TailwindSelectorType[] = [
+  {
+    label: "shrink",
+    value: "shrink",
+    styles: "flex-shrink: 1;",
+    description: "Allows a flex item to shrink if needed",
+  },
+  {
+    label: "shrink-<number>",
+    value: "shrink-<number>",
+    styles: "flex-shrink: <number>;",
+    description: "Sets a specific flex shrink factor",
+  },
+  {
+    label: "shrink-0",
+    value: "shrink-0",
+    styles: "flex-shrink: 0;",
+    description: "Prevents a flex item from shrinking",
+  },
+  {
+    label: "shrink-(<custom-property>)",
+    value: "shrink-(<custom-property>)",
+    styles: "flex-shrink: var(<custom-property>);",
+    description: "Uses a CSS custom property for the flex shrink value",
+  },
+  {
+    label: "shrink-[<value>]",
+    value: "shrink-[<value>]",
+    styles: "flex-shrink: <value>;",
+    description:
+      "Sets an arbitrary flex shrink value using Tailwind's square bracket notation",
+  },
 ];
 
-// Effects
-export const effectsOptions = [
-  { value: "box-shadow", label: "box-shadow", cssSelectors: "box-shadow", description: "Adds shadow effects around an element's frame" },
-  { value: "text-shadow", label: "text-shadow", cssSelectors: "text-shadow", description: "Adds shadow effects to text" },
-  { value: "opacity", label: "opacity", cssSelectors: "opacity", description: "Sets the transparency of an element" },
-  { value: "mix-blend-mode", label: "mix-blend-mode", cssSelectors: "mix-blend-mode", description: "Sets how an element's content blends with its background" },
-  { value: "background-blend-mode", label: "background-blend-mode", cssSelectors: "background-blend-mode", description: "Sets how background images blend with each other and the background color" },
-  { value: "mask-clip", label: "mask-clip", cssSelectors: "mask-clip", description: "Determines the area affected by a mask" },
-  { value: "mask-composite", label: "mask-composite", cssSelectors: "mask-composite", description: "Sets the compositing operation used for mask layers" },
-  { value: "mask-image", label: "mask-image", cssSelectors: "mask-image", description: "Sets the image used as a mask layer for an element" },
-  { value: "mask-mode", label: "mask-mode", cssSelectors: "mask-mode", description: "Sets whether the mask is treated as a luminance or alpha mask" },
-  { value: "mask-origin", label: "mask-origin", cssSelectors: "mask-origin", description: "Sets the origin position of a mask" },
-  { value: "mask-position", label: "mask-position", cssSelectors: "mask-position", description: "Sets the initial position of a mask" },
-  { value: "mask-repeat", label: "mask-repeat", cssSelectors: "mask-repeat", description: "Sets how mask images are repeated" },
-  { value: "mask-size", label: "mask-size", cssSelectors: "mask-size", description: "Sets the size of mask images" },
-  { value: "mask-type", label: "mask-type", cssSelectors: "mask-type", description: "Sets whether an SVG mask is treated as luminance or alpha" },
+const order: TailwindSelectorType[] = [
+  {
+    label: "order-<number>",
+    value: "order-<number>",
+    styles: "order: <number>;",
+    description:
+      "Sets the order of a flex or grid item (e.g., order-1, order-2)",
+  },
+  {
+    label: "order-first",
+    value: "order-first",
+    styles: "order: -9999;",
+    description: "Makes a flex or grid item appear first",
+  },
+  {
+    label: "order-last",
+    value: "order-last",
+    styles: "order: 9999;",
+    description: "Makes a flex or grid item appear last",
+  },
+  {
+    label: "order-none",
+    value: "order-none",
+    styles: "order: 0;",
+    description: "Resets the order to default",
+  },
+  {
+    label: "order-[<value>]",
+    value: "order-[<value>]",
+    styles: "order: <value>;",
+    description:
+      "Sets an arbitrary order value using Tailwind's square bracket notation",
+  },
 ];
 
-// Filters
-export const filtersOptions = [
-  { value: "filter", label: "filter", cssSelectors: "filter", description: "Applies graphical effects like blur or color shift to an element" },
-  { value: "blur", label: "blur", cssSelectors: "filter: blur()", description: "Applies a Gaussian blur to an element" },
-  { value: "brightness", label: "brightness", cssSelectors: "filter: brightness()", description: "Adjusts the brightness of an element" },
-  { value: "contrast", label: "contrast", cssSelectors: "filter: contrast()", description: "Adjusts the contrast of an element" },
-  { value: "drop-shadow", label: "drop-shadow", cssSelectors: "filter: drop-shadow()", description: "Applies a drop shadow effect to an element" },
-  { value: "grayscale", label: "grayscale", cssSelectors: "filter: grayscale()", description: "Converts an element to grayscale" },
-  { value: "hue-rotate", label: "hue-rotate", cssSelectors: "filter: hue-rotate()", description: "Applies a hue rotation to an element" },
-  { value: "invert", label: "invert", cssSelectors: "filter: invert()", description: "Inverts the colors of an element" },
-  { value: "saturate", label: "saturate", cssSelectors: "filter: saturate()", description: "Adjusts the saturation of an element" },
-  { value: "sepia", label: "sepia", cssSelectors: "filter: sepia()", description: "Converts an element to sepia" },
-  { value: "backdrop-filter", label: "backdrop-filter", cssSelectors: "backdrop-filter", description: "Applies graphical effects to the area behind an element" },
-  { value: "backdrop-blur", label: "backdrop-blur", cssSelectors: "backdrop-filter: blur()", description: "Applies a blur effect to the area behind an element" },
-  { value: "backdrop-brightness", label: "backdrop-brightness", cssSelectors: "backdrop-filter: brightness()", description: "Adjusts the brightness of the area behind an element" },
-  { value: "backdrop-contrast", label: "backdrop-contrast", cssSelectors: "backdrop-filter: contrast()", description: "Adjusts the contrast of the area behind an element" },
-  { value: "backdrop-grayscale", label: "backdrop-grayscale", cssSelectors: "backdrop-filter: grayscale()", description: "Converts the area behind an element to grayscale" },
-  { value: "backdrop-hue-rotate", label: "backdrop-hue-rotate", cssSelectors: "backdrop-filter: hue-rotate()", description: "Applies hue rotation to the area behind an element" },
-  { value: "backdrop-invert", label: "backdrop-invert", cssSelectors: "backdrop-filter: invert()", description: "Inverts the colors of the area behind an element" },
-  { value: "backdrop-opacity", label: "backdrop-opacity", cssSelectors: "backdrop-filter: opacity()", description: "Adjusts the opacity of the area behind an element" },
-  { value: "backdrop-saturate", label: "backdrop-saturate", cssSelectors: "backdrop-filter: saturate()", description: "Adjusts the saturation of the area behind an element" },
-  { value: "backdrop-sepia", label: "backdrop-sepia", cssSelectors: "backdrop-filter: sepia()", description: "Converts the area behind an element to sepia" },
+const gridTemplateColumns: TailwindSelectorType[] = [
+  {
+    label: "grid-cols-<number>",
+    value: "grid-cols-<number>",
+    styles: "grid-template-columns: repeat(<number>, minmax(0, 1fr));",
+    description:
+      "Creates a grid with the specified number of equal-width columns",
+  },
+  {
+    label: "grid-cols-none",
+    value: "grid-cols-none",
+    styles: "grid-template-columns: none;",
+    description: "Removes any explicit grid column definition",
+  },
+  {
+    label: "grid-cols-subgrid",
+    value: "grid-cols-subgrid",
+    styles: "grid-template-columns: subgrid;",
+    description: "Uses the parent grid's column track definitions",
+  },
+  {
+    label: "grid-cols-(<custom-property>)",
+    value: "grid-cols-(<custom-property>)",
+    styles: "grid-template-columns: var(<custom-property>);",
+    description: "Uses a CSS custom property for grid template columns",
+  },
+  {
+    label: "grid-cols-[<value>]",
+    value: "grid-cols-[<value>]",
+    styles: "grid-template-columns: <value>;",
+    description:
+      "Sets arbitrary grid column templates using Tailwind's square bracket notation",
+  },
 ];
 
-// Tables
-export const tablesOptions = [
-  { value: "border-collapse", label: "border-collapse", cssSelectors: "border-collapse", description: "Sets whether table borders are collapsed or separated" },
-  { value: "border-spacing", label: "border-spacing", cssSelectors: "border-spacing", description: "Sets the distance between the borders of adjacent table cells" },
-  { value: "table-layout", label: "table-layout", cssSelectors: "table-layout", description: "Sets the algorithm used to lay out table cells, rows, and columns" },
-  { value: "caption-side", label: "caption-side", cssSelectors: "caption-side", description: "Sets the position of a table caption" },
+const gridColumn: TailwindSelectorType[] = [
+  {
+    label: "col-auto",
+    value: "col-auto",
+    styles: "grid-column: auto;",
+    description:
+      "Automatically sizes a grid column based on the grid definition",
+  },
+  {
+    label: "col-span-<number>",
+    value: "col-span-<number>",
+    styles: "grid-column: span <number> / span <number>;",
+    description: "Makes an element span the specified number of columns",
+  },
+  {
+    label: "col-span-full",
+    value: "col-span-full",
+    styles: "grid-column: 1 / -1;",
+    description: "Makes an element span all columns",
+  },
+  {
+    label: "col-start-<number>",
+    value: "col-start-<number>",
+    styles: "grid-column-start: <number>;",
+    description: "Sets the starting column line for a grid item",
+  },
+  {
+    label: "col-start-auto",
+    value: "col-start-auto",
+    styles: "grid-column-start: auto;",
+    description: "Automatically determines the starting column",
+  },
+  {
+    label: "col-end-<number>",
+    value: "col-end-<number>",
+    styles: "grid-column-end: <number>;",
+    description: "Sets the ending column line for a grid item",
+  },
+  {
+    label: "col-end-auto",
+    value: "col-end-auto",
+    styles: "grid-column-end: auto;",
+    description: "Automatically determines the ending column",
+  },
+  {
+    label: "col-[<value>]",
+    value: "col-[<value>]",
+    styles: "grid-column: <value>;",
+    description:
+      "Sets an arbitrary grid column value using Tailwind's square bracket notation",
+  },
 ];
 
-// Transitions & Animation
-export const transitionsAnimationOptions = [
-  { value: "transition-property", label: "transition-property", cssSelectors: "transition-property", description: "Sets the CSS properties to which a transition effect should be applied" },
-  { value: "transition-behavior", label: "transition-behavior", cssSelectors: "transition-behavior", description: "Sets whether transitions should apply to discrete properties" },
-  { value: "transition-duration", label: "transition-duration", cssSelectors: "transition-duration", description: "Sets the length of time a transition animation should take" },
-  { value: "transition-timing-function", label: "transition-timing-function", cssSelectors: "transition-timing-function", description: "Sets the easing function for transitions" },
-  { value: "transition-delay", label: "transition-delay", cssSelectors: "transition-delay", description: "Sets when a transition will start" },
-  { value: "animation", label: "animation", cssSelectors: "animation", description: "Applies an animation to an element" },
+const gridTemplateRows: TailwindSelectorType[] = [
+  {
+    label: "grid-rows-<number>",
+    value: "grid-rows-<number>",
+    styles: "grid-template-rows: repeat(<number>, minmax(0, 1fr));",
+    description:
+      "Creates a grid with the specified number of equal-height rows",
+  },
+  {
+    label: "grid-rows-none",
+    value: "grid-rows-none",
+    styles: "grid-template-rows: none;",
+    description: "Removes any explicit grid row definition",
+  },
+  {
+    label: "grid-rows-subgrid",
+    value: "grid-rows-subgrid",
+    styles: "grid-template-rows: subgrid;",
+    description: "Uses the parent grid's row track definitions",
+  },
+  {
+    label: "grid-rows-(<custom-property>)",
+    value: "grid-rows-(<custom-property>)",
+    styles: "grid-template-rows: var(<custom-property>);",
+    description: "Uses a CSS custom property for grid template rows",
+  },
+  {
+    label: "grid-rows-[<value>]",
+    value: "grid-rows-[<value>]",
+    styles: "grid-template-rows: <value>;",
+    description:
+      "Sets arbitrary grid row templates using Tailwind's square bracket notation",
+  },
 ];
 
-// Transforms
-export const transformsOptions = [
-  { value: "backface-visibility", label: "backface-visibility", cssSelectors: "backface-visibility", description: "Sets whether the back face of an element is visible when turned toward the user" },
-  { value: "perspective", label: "perspective", cssSelectors: "perspective", description: "Gives a 3D-positioned element some perspective" },
-  { value: "perspective-origin", label: "perspective-origin", cssSelectors: "perspective-origin", description: "Sets the position at which the viewer is looking at 3D elements" },
-  { value: "rotate", label: "rotate", cssSelectors: "rotate", description: "Rotates an element around a fixed point" },
-  { value: "scale", label: "scale", cssSelectors: "scale", description: "Resizes an element in 2D or 3D space" },
-  { value: "skew", label: "skew", cssSelectors: "skew", description: "Skews an element along the X and Y axes" },
-  { value: "transform", label: "transform", cssSelectors: "transform", description: "Applies 2D or 3D transformations to an element" },
-  { value: "transform-origin", label: "transform-origin", cssSelectors: "transform-origin", description: "Sets the origin for an element's transformations" },
-  { value: "transform-style", label: "transform-style", cssSelectors: "transform-style", description: "Sets whether child elements are positioned in 3D space or flattened" },
-  { value: "translate", label: "translate", cssSelectors: "translate", description: "Moves an element in 2D or 3D space" },
+const gridRow: TailwindSelectorType[] = [
+  {
+    label: "row-auto",
+    value: "row-auto",
+    styles: "grid-row: auto;",
+    description: "Automatically sizes a grid row based on the grid definition",
+  },
+  {
+    label: "row-span-<number>",
+    value: "row-span-<number>",
+    styles: "grid-row: span <number> / span <number>;",
+    description: "Makes an element span the specified number of rows",
+  },
+  {
+    label: "row-span-full",
+    value: "row-span-full",
+    styles: "grid-row: 1 / -1;",
+    description: "Makes an element span all rows",
+  },
+  {
+    label: "row-start-<number>",
+    value: "row-start-<number>",
+    styles: "grid-row-start: <number>;",
+    description: "Sets the starting row line for a grid item",
+  },
+  {
+    label: "row-start-auto",
+    value: "row-start-auto",
+    styles: "grid-row-start: auto;",
+    description: "Automatically determines the starting row",
+  },
+  {
+    label: "row-end-<number>",
+    value: "row-end-<number>",
+    styles: "grid-row-end: <number>;",
+    description: "Sets the ending row line for a grid item",
+  },
+  {
+    label: "row-end-auto",
+    value: "row-end-auto",
+    styles: "grid-row-end: auto;",
+    description: "Automatically determines the ending row",
+  },
+  {
+    label: "row-[<value>]",
+    value: "row-[<value>]",
+    styles: "grid-row: <value>;",
+    description:
+      "Sets an arbitrary grid row value using Tailwind's square bracket notation",
+  },
 ];
 
-// Interactivity
-export const interactivityOptions = [
-  { value: "accent-color", label: "accent-color", cssSelectors: "accent-color", description: "Sets the accent color for UI controls" },
-  { value: "appearance", label: "appearance", cssSelectors: "appearance", description: "Controls the native appearance of UI controls" },
-  { value: "caret-color", label: "caret-color", cssSelectors: "caret-color", description: "Sets the color of the text input cursor" },
-  { value: "color-scheme", label: "color-scheme", cssSelectors: "color-scheme", description: "Sets the color scheme an element should render in" },
-  { value: "cursor", label: "cursor", cssSelectors: "cursor", description: "Sets the type of cursor to be displayed" },
-  { value: "field-sizing", label: "field-sizing", cssSelectors: "field-sizing", description: "Controls whether form fields grow to fit their content" },
-  { value: "pointer-events", label: "pointer-events", cssSelectors: "pointer-events", description: "Sets whether an element can be the target of pointer events" },
-  { value: "resize", label: "resize", cssSelectors: "resize", description: "Sets whether an element is resizable by the user" },
-  { value: "scroll-behavior", label: "scroll-behavior", cssSelectors: "scroll-behavior", description: "Sets the behavior for a scrolling box when scrolling is triggered" },
-  { value: "scroll-margin", label: "scroll-margin", cssSelectors: "scroll-margin", description: "Sets the margin around scroll snap positions" },
-  { value: "scroll-padding", label: "scroll-padding", cssSelectors: "scroll-padding", description: "Sets the padding around scroll snap positions" },
-  { value: "scroll-snap-align", label: "scroll-snap-align", cssSelectors: "scroll-snap-align", description: "Sets the alignment of snap positions within a scroll container" },
-  { value: "scroll-snap-stop", label: "scroll-snap-stop", cssSelectors: "scroll-snap-stop", description: "Controls whether scroll containers must stop at snap positions" },
-  { value: "scroll-snap-type", label: "scroll-snap-type", cssSelectors: "scroll-snap-type", description: "Sets how strictly snap points are enforced on scroll containers" },
-  { value: "touch-action", label: "touch-action", cssSelectors: "touch-action", description: "Sets how an element's region can be manipulated by touch" },
-  { value: "user-select", label: "user-select", cssSelectors: "user-select", description: "Controls whether the user can select text" },
-  { value: "will-change", label: "will-change", cssSelectors: "will-change", description: "Hints to browsers how an element is expected to change" },
+const gridAutoFlow: TailwindSelectorType[] = [
+  {
+    label: "grid-flow-row",
+    value: "grid-flow-row",
+    styles: "grid-auto-flow: row;",
+    description: "Places grid items by filling each row in turn",
+  },
+  {
+    label: "grid-flow-col",
+    value: "grid-flow-col",
+    styles: "grid-auto-flow: column;",
+    description: "Places grid items by filling each column in turn",
+  },
+  {
+    label: "grid-flow-dense",
+    value: "grid-flow-dense",
+    styles: "grid-auto-flow: dense;",
+    description: "Uses dense packing algorithm to fill gaps in the grid",
+  },
+  {
+    label: "grid-flow-row-dense",
+    value: "grid-flow-row-dense",
+    styles: "grid-auto-flow: row dense;",
+    description: "Places items by row with dense packing",
+  },
+  {
+    label: "grid-flow-col-dense",
+    value: "grid-flow-col-dense",
+    styles: "grid-auto-flow: column dense;",
+    description: "Places items by column with dense packing",
+  },
 ];
 
-// SVG
-export const svgOptions = [
-  { value: "fill", label: "fill", cssSelectors: "fill", description: "Sets the fill color of SVG shapes" },
-  { value: "stroke", label: "stroke", cssSelectors: "stroke", description: "Sets the stroke color of SVG shapes" },
-  { value: "stroke-width", label: "stroke-width", cssSelectors: "stroke-width", description: "Sets the width of SVG shape strokes" },
+const gridAutoColumns: TailwindSelectorType[] = [
+  {
+    label: "auto-cols-auto",
+    value: "auto-cols-auto",
+    styles: "grid-auto-columns: auto;",
+    description: "Automatically sizes implicitly-created grid columns",
+  },
+  {
+    label: "auto-cols-min",
+    value: "auto-cols-min",
+    styles: "grid-auto-columns: min-content;",
+    description:
+      "Sizes implicitly-created columns to their minimum content size",
+  },
+  {
+    label: "auto-cols-max",
+    value: "auto-cols-max",
+    styles: "grid-auto-columns: max-content;",
+    description:
+      "Sizes implicitly-created columns to their maximum content size",
+  },
+  {
+    label: "auto-cols-fr",
+    value: "auto-cols-fr",
+    styles: "grid-auto-columns: minmax(0, 1fr);",
+    description:
+      "Sizes implicitly-created columns to fill available space equally",
+  },
+  {
+    label: "auto-cols-[<value>]",
+    value: "auto-cols-[<value>]",
+    styles: "grid-auto-columns: <value>;",
+    description:
+      "Sets an arbitrary grid auto columns value using Tailwind's square bracket notation",
+  },
 ];
 
-// Accessibility
-export const accessibilityOptions = [
-  { value: "forced-color-adjust", label: "forced-color-adjust", cssSelectors: "forced-color-adjust", description: "Controls whether to preserve author-defined colors in forced colors mode" },
+const gridAutoRows: TailwindSelectorType[] = [
+  {
+    label: "auto-rows-auto",
+    value: "auto-rows-auto",
+    styles: "grid-auto-rows: auto;",
+    description: "Automatically sizes implicitly-created grid rows",
+  },
+  {
+    label: "auto-rows-min",
+    value: "auto-rows-min",
+    styles: "grid-auto-rows: min-content;",
+    description: "Sizes implicitly-created rows to their minimum content size",
+  },
+  {
+    label: "auto-rows-max",
+    value: "auto-rows-max",
+    styles: "grid-auto-rows: max-content;",
+    description: "Sizes implicitly-created rows to their maximum content size",
+  },
+  {
+    label: "auto-rows-fr",
+    value: "auto-rows-fr",
+    styles: "grid-auto-rows: minmax(0, 1fr);",
+    description:
+      "Sizes implicitly-created rows to fill available space equally",
+  },
+  {
+    label: "auto-rows-[<value>]",
+    value: "auto-rows-[<value>]",
+    styles: "grid-auto-rows: <value>;",
+    description:
+      "Sets an arbitrary grid auto rows value using Tailwind's square bracket notation",
+  },
 ];
 
-// Text Colors
-export const textColorOptions = [
-  { value: "text-red-50", label: "text-red-50", cssSelectors: "color", description: "Sets text color to red shade 50" },
-  { value: "text-red-100", label: "text-red-100", cssSelectors: "color", description: "Sets text color to red shade 100" },
-  { value: "text-red-200", label: "text-red-200", cssSelectors: "color", description: "Sets text color to red shade 200" },
-  { value: "text-red-300", label: "text-red-300", cssSelectors: "color", description: "Sets text color to red shade 300" },
-  { value: "text-red-400", label: "text-red-400", cssSelectors: "color", description: "Sets text color to red shade 400" },
-  { value: "text-red-500", label: "text-red-500", cssSelectors: "color", description: "Sets text color to red shade 500" },
-  { value: "text-red-600", label: "text-red-600", cssSelectors: "color", description: "Sets text color to red shade 600" },
-  { value: "text-red-700", label: "text-red-700", cssSelectors: "color", description: "Sets text color to red shade 700" },
-  { value: "text-red-800", label: "text-red-800", cssSelectors: "color", description: "Sets text color to red shade 800" },
-  { value: "text-red-900", label: "text-red-900", cssSelectors: "color", description: "Sets text color to red shade 900" },
-  { value: "text-red-950", label: "text-red-950", cssSelectors: "color", description: "Sets text color to red shade 950" },
-  { value: "text-orange-50", label: "text-orange-50", cssSelectors: "color", description: "Sets text color to orange shade 50" },
-  { value: "text-orange-100", label: "text-orange-100", cssSelectors: "color", description: "Sets text color to orange shade 100" },
-  { value: "text-orange-200", label: "text-orange-200", cssSelectors: "color", description: "Sets text color to orange shade 200" },
-  { value: "text-orange-300", label: "text-orange-300", cssSelectors: "color", description: "Sets text color to orange shade 300" },
-  { value: "text-orange-400", label: "text-orange-400", cssSelectors: "color", description: "Sets text color to orange shade 400" },
-  { value: "text-orange-500", label: "text-orange-500", cssSelectors: "color", description: "Sets text color to orange shade 500" },
-  { value: "text-orange-600", label: "text-orange-600", cssSelectors: "color", description: "Sets text color to orange shade 600" },
-  { value: "text-orange-700", label: "text-orange-700", cssSelectors: "color", description: "Sets text color to orange shade 700" },
-  { value: "text-orange-800", label: "text-orange-800", cssSelectors: "color", description: "Sets text color to orange shade 800" },
-  { value: "text-orange-900", label: "text-orange-900", cssSelectors: "color", description: "Sets text color to orange shade 900" },
-  { value: "text-orange-950", label: "text-orange-950", cssSelectors: "color", description: "Sets text color to orange shade 950" },
-  { value: "text-amber-50", label: "text-amber-50", cssSelectors: "color", description: "Sets text color to amber shade 50" },
-  { value: "text-amber-100", label: "text-amber-100", cssSelectors: "color", description: "Sets text color to amber shade 100" },
-  { value: "text-amber-200", label: "text-amber-200", cssSelectors: "color", description: "Sets text color to amber shade 200" },
-  { value: "text-amber-300", label: "text-amber-300", cssSelectors: "color", description: "Sets text color to amber shade 300" },
-  { value: "text-amber-400", label: "text-amber-400", cssSelectors: "color", description: "Sets text color to amber shade 400" },
-  { value: "text-amber-500", label: "text-amber-500", cssSelectors: "color", description: "Sets text color to amber shade 500" },
-  { value: "text-amber-600", label: "text-amber-600", cssSelectors: "color", description: "Sets text color to amber shade 600" },
-  { value: "text-amber-700", label: "text-amber-700", cssSelectors: "color", description: "Sets text color to amber shade 700" },
-  { value: "text-amber-800", label: "text-amber-800", cssSelectors: "color", description: "Sets text color to amber shade 800" },
-  { value: "text-amber-900", label: "text-amber-900", cssSelectors: "color", description: "Sets text color to amber shade 900" },
-  { value: "text-amber-950", label: "text-amber-950", cssSelectors: "color", description: "Sets text color to amber shade 950" },
-  { value: "text-yellow-50", label: "text-yellow-50", cssSelectors: "color", description: "Sets text color to yellow shade 50" },
-  { value: "text-yellow-100", label: "text-yellow-100", cssSelectors: "color", description: "Sets text color to yellow shade 100" },
-  { value: "text-yellow-200", label: "text-yellow-200", cssSelectors: "color", description: "Sets text color to yellow shade 200" },
-  { value: "text-yellow-300", label: "text-yellow-300", cssSelectors: "color", description: "Sets text color to yellow shade 300" },
-  { value: "text-yellow-400", label: "text-yellow-400", cssSelectors: "color", description: "Sets text color to yellow shade 400" },
-  { value: "text-yellow-500", label: "text-yellow-500", cssSelectors: "color", description: "Sets text color to yellow shade 500" },
-  { value: "text-yellow-600", label: "text-yellow-600", cssSelectors: "color", description: "Sets text color to yellow shade 600" },
-  { value: "text-yellow-700", label: "text-yellow-700", cssSelectors: "color", description: "Sets text color to yellow shade 700" },
-  { value: "text-yellow-800", label: "text-yellow-800", cssSelectors: "color", description: "Sets text color to yellow shade 800" },
-  { value: "text-yellow-900", label: "text-yellow-900", cssSelectors: "color", description: "Sets text color to yellow shade 900" },
-  { value: "text-yellow-950", label: "text-yellow-950", cssSelectors: "color", description: "Sets text color to yellow shade 950" },
-  { value: "text-lime-50", label: "text-lime-50", cssSelectors: "color", description: "Sets text color to lime shade 50" },
-  { value: "text-lime-100", label: "text-lime-100", cssSelectors: "color", description: "Sets text color to lime shade 100" },
-  { value: "text-lime-200", label: "text-lime-200", cssSelectors: "color", description: "Sets text color to lime shade 200" },
-  { value: "text-lime-300", label: "text-lime-300", cssSelectors: "color", description: "Sets text color to lime shade 300" },
-  { value: "text-lime-400", label: "text-lime-400", cssSelectors: "color", description: "Sets text color to lime shade 400" },
-  { value: "text-lime-500", label: "text-lime-500", cssSelectors: "color", description: "Sets text color to lime shade 500" },
-  { value: "text-lime-600", label: "text-lime-600", cssSelectors: "color", description: "Sets text color to lime shade 600" },
-  { value: "text-lime-700", label: "text-lime-700", cssSelectors: "color", description: "Sets text color to lime shade 700" },
-  { value: "text-lime-800", label: "text-lime-800", cssSelectors: "color", description: "Sets text color to lime shade 800" },
-  { value: "text-lime-900", label: "text-lime-900", cssSelectors: "color", description: "Sets text color to lime shade 900" },
-  { value: "text-lime-950", label: "text-lime-950", cssSelectors: "color", description: "Sets text color to lime shade 950" },
-  { value: "text-green-50", label: "text-green-50", cssSelectors: "color", description: "Sets text color to green shade 50" },
-  { value: "text-green-100", label: "text-green-100", cssSelectors: "color", description: "Sets text color to green shade 100" },
-  { value: "text-green-200", label: "text-green-200", cssSelectors: "color", description: "Sets text color to green shade 200" },
-  { value: "text-green-300", label: "text-green-300", cssSelectors: "color", description: "Sets text color to green shade 300" },
-  { value: "text-green-400", label: "text-green-400", cssSelectors: "color", description: "Sets text color to green shade 400" },
-  { value: "text-green-500", label: "text-green-500", cssSelectors: "color", description: "Sets text color to green shade 500" },
-  { value: "text-green-600", label: "text-green-600", cssSelectors: "color", description: "Sets text color to green shade 600" },
-  { value: "text-green-700", label: "text-green-700", cssSelectors: "color", description: "Sets text color to green shade 700" },
-  { value: "text-green-800", label: "text-green-800", cssSelectors: "color", description: "Sets text color to green shade 800" },
-  { value: "text-green-900", label: "text-green-900", cssSelectors: "color", description: "Sets text color to green shade 900" },
-  { value: "text-green-950", label: "text-green-950", cssSelectors: "color", description: "Sets text color to green shade 950" },
-  { value: "text-emerald-50", label: "text-emerald-50", cssSelectors: "color", description: "Sets text color to emerald shade 50" },
-  { value: "text-emerald-100", label: "text-emerald-100", cssSelectors: "color", description: "Sets text color to emerald shade 100" },
-  { value: "text-emerald-200", label: "text-emerald-200", cssSelectors: "color", description: "Sets text color to emerald shade 200" },
-  { value: "text-emerald-300", label: "text-emerald-300", cssSelectors: "color", description: "Sets text color to emerald shade 300" },
-  { value: "text-emerald-400", label: "text-emerald-400", cssSelectors: "color", description: "Sets text color to emerald shade 400" },
-  { value: "text-emerald-500", label: "text-emerald-500", cssSelectors: "color", description: "Sets text color to emerald shade 500" },
-  { value: "text-emerald-600", label: "text-emerald-600", cssSelectors: "color", description: "Sets text color to emerald shade 600" },
-  { value: "text-emerald-700", label: "text-emerald-700", cssSelectors: "color", description: "Sets text color to emerald shade 700" },
-  { value: "text-emerald-800", label: "text-emerald-800", cssSelectors: "color", description: "Sets text color to emerald shade 800" },
-  { value: "text-emerald-900", label: "text-emerald-900", cssSelectors: "color", description: "Sets text color to emerald shade 900" },
-  { value: "text-emerald-950", label: "text-emerald-950", cssSelectors: "color", description: "Sets text color to emerald shade 950" },
-  { value: "text-teal-50", label: "text-teal-50", cssSelectors: "color", description: "Sets text color to teal shade 50" },
-  { value: "text-teal-100", label: "text-teal-100", cssSelectors: "color", description: "Sets text color to teal shade 100" },
-  { value: "text-teal-200", label: "text-teal-200", cssSelectors: "color", description: "Sets text color to teal shade 200" },
-  { value: "text-teal-300", label: "text-teal-300", cssSelectors: "color", description: "Sets text color to teal shade 300" },
-  { value: "text-teal-400", label: "text-teal-400", cssSelectors: "color", description: "Sets text color to teal shade 400" },
-  { value: "text-teal-500", label: "text-teal-500", cssSelectors: "color", description: "Sets text color to teal shade 500" },
-  { value: "text-teal-600", label: "text-teal-600", cssSelectors: "color", description: "Sets text color to teal shade 600" },
-  { value: "text-teal-700", label: "text-teal-700", cssSelectors: "color", description: "Sets text color to teal shade 700" },
-  { value: "text-teal-800", label: "text-teal-800", cssSelectors: "color", description: "Sets text color to teal shade 800" },
-  { value: "text-teal-900", label: "text-teal-900", cssSelectors: "color", description: "Sets text color to teal shade 900" },
-  { value: "text-teal-950", label: "text-teal-950", cssSelectors: "color", description: "Sets text color to teal shade 950" },
-  { value: "text-cyan-50", label: "text-cyan-50", cssSelectors: "color", description: "Sets text color to cyan shade 50" },
-  { value: "text-cyan-100", label: "text-cyan-100", cssSelectors: "color", description: "Sets text color to cyan shade 100" },
-  { value: "text-cyan-200", label: "text-cyan-200", cssSelectors: "color", description: "Sets text color to cyan shade 200" },
-  { value: "text-cyan-300", label: "text-cyan-300", cssSelectors: "color", description: "Sets text color to cyan shade 300" },
-  { value: "text-cyan-400", label: "text-cyan-400", cssSelectors: "color", description: "Sets text color to cyan shade 400" },
-  { value: "text-cyan-500", label: "text-cyan-500", cssSelectors: "color", description: "Sets text color to cyan shade 500" },
-  { value: "text-cyan-600", label: "text-cyan-600", cssSelectors: "color", description: "Sets text color to cyan shade 600" },
-  { value: "text-cyan-700", label: "text-cyan-700", cssSelectors: "color", description: "Sets text color to cyan shade 700" },
-  { value: "text-cyan-800", label: "text-cyan-800", cssSelectors: "color", description: "Sets text color to cyan shade 800" },
-  { value: "text-cyan-900", label: "text-cyan-900", cssSelectors: "color", description: "Sets text color to cyan shade 900" },
-  { value: "text-cyan-950", label: "text-cyan-950", cssSelectors: "color", description: "Sets text color to cyan shade 950" },
-  { value: "text-sky-50", label: "text-sky-50", cssSelectors: "color", description: "Sets text color to sky shade 50" },
-  { value: "text-sky-100", label: "text-sky-100", cssSelectors: "color", description: "Sets text color to sky shade 100" },
-  { value: "text-sky-200", label: "text-sky-200", cssSelectors: "color", description: "Sets text color to sky shade 200" },
-  { value: "text-sky-300", label: "text-sky-300", cssSelectors: "color", description: "Sets text color to sky shade 300" },
-  { value: "text-sky-400", label: "text-sky-400", cssSelectors: "color", description: "Sets text color to sky shade 400" },
-  { value: "text-sky-500", label: "text-sky-500", cssSelectors: "color", description: "Sets text color to sky shade 500" },
-  { value: "text-sky-600", label: "text-sky-600", cssSelectors: "color", description: "Sets text color to sky shade 600" },
-  { value: "text-sky-700", label: "text-sky-700", cssSelectors: "color", description: "Sets text color to sky shade 700" },
-  { value: "text-sky-800", label: "text-sky-800", cssSelectors: "color", description: "Sets text color to sky shade 800" },
-  { value: "text-sky-900", label: "text-sky-900", cssSelectors: "color", description: "Sets text color to sky shade 900" },
-  { value: "text-sky-950", label: "text-sky-950", cssSelectors: "color", description: "Sets text color to sky shade 950" },
-  { value: "text-blue-50", label: "text-blue-50", cssSelectors: "color", description: "Sets text color to blue shade 50" },
-  { value: "text-blue-100", label: "text-blue-100", cssSelectors: "color", description: "Sets text color to blue shade 100" },
-  { value: "text-blue-200", label: "text-blue-200", cssSelectors: "color", description: "Sets text color to blue shade 200" },
-  { value: "text-blue-300", label: "text-blue-300", cssSelectors: "color", description: "Sets text color to blue shade 300" },
-  { value: "text-blue-400", label: "text-blue-400", cssSelectors: "color", description: "Sets text color to blue shade 400" },
-  { value: "text-blue-500", label: "text-blue-500", cssSelectors: "color", description: "Sets text color to blue shade 500" },
-  { value: "text-blue-600", label: "text-blue-600", cssSelectors: "color", description: "Sets text color to blue shade 600" },
-  { value: "text-blue-700", label: "text-blue-700", cssSelectors: "color", description: "Sets text color to blue shade 700" },
-  { value: "text-blue-800", label: "text-blue-800", cssSelectors: "color", description: "Sets text color to blue shade 800" },
-  { value: "text-blue-900", label: "text-blue-900", cssSelectors: "color", description: "Sets text color to blue shade 900" },
-  { value: "text-blue-950", label: "text-blue-950", cssSelectors: "color", description: "Sets text color to blue shade 950" },
-  { value: "text-indigo-50", label: "text-indigo-50", cssSelectors: "color", description: "Sets text color to indigo shade 50" },
-  { value: "text-indigo-100", label: "text-indigo-100", cssSelectors: "color", description: "Sets text color to indigo shade 100" },
-  { value: "text-indigo-200", label: "text-indigo-200", cssSelectors: "color", description: "Sets text color to indigo shade 200" },
-  { value: "text-indigo-300", label: "text-indigo-300", cssSelectors: "color", description: "Sets text color to indigo shade 300" },
-  { value: "text-indigo-400", label: "text-indigo-400", cssSelectors: "color", description: "Sets text color to indigo shade 400" },
-  { value: "text-indigo-500", label: "text-indigo-500", cssSelectors: "color", description: "Sets text color to indigo shade 500" },
-  { value: "text-indigo-600", label: "text-indigo-600", cssSelectors: "color", description: "Sets text color to indigo shade 600" },
-  { value: "text-indigo-700", label: "text-indigo-700", cssSelectors: "color", description: "Sets text color to indigo shade 700" },
-  { value: "text-indigo-800", label: "text-indigo-800", cssSelectors: "color", description: "Sets text color to indigo shade 800" },
-  { value: "text-indigo-900", label: "text-indigo-900", cssSelectors: "color", description: "Sets text color to indigo shade 900" },
-  { value: "text-indigo-950", label: "text-indigo-950", cssSelectors: "color", description: "Sets text color to indigo shade 950" },
-  { value: "text-violet-50", label: "text-violet-50", cssSelectors: "color", description: "Sets text color to violet shade 50" },
-  { value: "text-violet-100", label: "text-violet-100", cssSelectors: "color", description: "Sets text color to violet shade 100" },
-  { value: "text-violet-200", label: "text-violet-200", cssSelectors: "color", description: "Sets text color to violet shade 200" },
-  { value: "text-violet-300", label: "text-violet-300", cssSelectors: "color", description: "Sets text color to violet shade 300" },
-  { value: "text-violet-400", label: "text-violet-400", cssSelectors: "color", description: "Sets text color to violet shade 400" },
-  { value: "text-violet-500", label: "text-violet-500", cssSelectors: "color", description: "Sets text color to violet shade 500" },
-  { value: "text-violet-600", label: "text-violet-600", cssSelectors: "color", description: "Sets text color to violet shade 600" },
-  { value: "text-violet-700", label: "text-violet-700", cssSelectors: "color", description: "Sets text color to violet shade 700" },
-  { value: "text-violet-800", label: "text-violet-800", cssSelectors: "color", description: "Sets text color to violet shade 800" },
-  { value: "text-violet-900", label: "text-violet-900", cssSelectors: "color", description: "Sets text color to violet shade 900" },
-  { value: "text-violet-950", label: "text-violet-950", cssSelectors: "color", description: "Sets text color to violet shade 950" },
-  { value: "text-purple-50", label: "text-purple-50", cssSelectors: "color", description: "Sets text color to purple shade 50" },
-  { value: "text-purple-100", label: "text-purple-100", cssSelectors: "color", description: "Sets text color to purple shade 100" },
-  { value: "text-purple-200", label: "text-purple-200", cssSelectors: "color", description: "Sets text color to purple shade 200" },
-  { value: "text-purple-300", label: "text-purple-300", cssSelectors: "color", description: "Sets text color to purple shade 300" },
-  { value: "text-purple-400", label: "text-purple-400", cssSelectors: "color", description: "Sets text color to purple shade 400" },
-  { value: "text-purple-500", label: "text-purple-500", cssSelectors: "color", description: "Sets text color to purple shade 500" },
-  { value: "text-purple-600", label: "text-purple-600", cssSelectors: "color", description: "Sets text color to purple shade 600" },
-  { value: "text-purple-700", label: "text-purple-700", cssSelectors: "color", description: "Sets text color to purple shade 700" },
-  { value: "text-purple-800", label: "text-purple-800", cssSelectors: "color", description: "Sets text color to purple shade 800" },
-  { value: "text-purple-900", label: "text-purple-900", cssSelectors: "color", description: "Sets text color to purple shade 900" },
-  { value: "text-purple-950", label: "text-purple-950", cssSelectors: "color", description: "Sets text color to purple shade 950" },
-  { value: "text-fuchsia-50", label: "text-fuchsia-50", cssSelectors: "color", description: "Sets text color to fuchsia shade 50" },
-  { value: "text-fuchsia-100", label: "text-fuchsia-100", cssSelectors: "color", description: "Sets text color to fuchsia shade 100" },
-  { value: "text-fuchsia-200", label: "text-fuchsia-200", cssSelectors: "color", description: "Sets text color to fuchsia shade 200" },
-  { value: "text-fuchsia-300", label: "text-fuchsia-300", cssSelectors: "color", description: "Sets text color to fuchsia shade 300" },
-  { value: "text-fuchsia-400", label: "text-fuchsia-400", cssSelectors: "color", description: "Sets text color to fuchsia shade 400" },
-  { value: "text-fuchsia-500", label: "text-fuchsia-500", cssSelectors: "color", description: "Sets text color to fuchsia shade 500" },
-  { value: "text-fuchsia-600", label: "text-fuchsia-600", cssSelectors: "color", description: "Sets text color to fuchsia shade 600" },
-  { value: "text-fuchsia-700", label: "text-fuchsia-700", cssSelectors: "color", description: "Sets text color to fuchsia shade 700" },
-  { value: "text-fuchsia-800", label: "text-fuchsia-800", cssSelectors: "color", description: "Sets text color to fuchsia shade 800" },
-  { value: "text-fuchsia-900", label: "text-fuchsia-900", cssSelectors: "color", description: "Sets text color to fuchsia shade 900" },
-  { value: "text-fuchsia-950", label: "text-fuchsia-950", cssSelectors: "color", description: "Sets text color to fuchsia shade 950" },
-  { value: "text-pink-50", label: "text-pink-50", cssSelectors: "color", description: "Sets text color to pink shade 50" },
-  { value: "text-pink-100", label: "text-pink-100", cssSelectors: "color", description: "Sets text color to pink shade 100" },
-  { value: "text-pink-200", label: "text-pink-200", cssSelectors: "color", description: "Sets text color to pink shade 200" },
-  { value: "text-pink-300", label: "text-pink-300", cssSelectors: "color", description: "Sets text color to pink shade 300" },
-  { value: "text-pink-400", label: "text-pink-400", cssSelectors: "color", description: "Sets text color to pink shade 400" },
-  { value: "text-pink-500", label: "text-pink-500", cssSelectors: "color", description: "Sets text color to pink shade 500" },
-  { value: "text-pink-600", label: "text-pink-600", cssSelectors: "color", description: "Sets text color to pink shade 600" },
-  { value: "text-pink-700", label: "text-pink-700", cssSelectors: "color", description: "Sets text color to pink shade 700" },
-  { value: "text-pink-800", label: "text-pink-800", cssSelectors: "color", description: "Sets text color to pink shade 800" },
-  { value: "text-pink-900", label: "text-pink-900", cssSelectors: "color", description: "Sets text color to pink shade 900" },
-  { value: "text-pink-950", label: "text-pink-950", cssSelectors: "color", description: "Sets text color to pink shade 950" },
-  { value: "text-rose-50", label: "text-rose-50", cssSelectors: "color", description: "Sets text color to rose shade 50" },
-  { value: "text-rose-100", label: "text-rose-100", cssSelectors: "color", description: "Sets text color to rose shade 100" },
-  { value: "text-rose-200", label: "text-rose-200", cssSelectors: "color", description: "Sets text color to rose shade 200" },
-  { value: "text-rose-300", label: "text-rose-300", cssSelectors: "color", description: "Sets text color to rose shade 300" },
-  { value: "text-rose-400", label: "text-rose-400", cssSelectors: "color", description: "Sets text color to rose shade 400" },
-  { value: "text-rose-500", label: "text-rose-500", cssSelectors: "color", description: "Sets text color to rose shade 500" },
-  { value: "text-rose-600", label: "text-rose-600", cssSelectors: "color", description: "Sets text color to rose shade 600" },
-  { value: "text-rose-700", label: "text-rose-700", cssSelectors: "color", description: "Sets text color to rose shade 700" },
-  { value: "text-rose-800", label: "text-rose-800", cssSelectors: "color", description: "Sets text color to rose shade 800" },
-  { value: "text-rose-900", label: "text-rose-900", cssSelectors: "color", description: "Sets text color to rose shade 900" },
-  { value: "text-rose-950", label: "text-rose-950", cssSelectors: "color", description: "Sets text color to rose shade 950" },
-  { value: "text-slate-50", label: "text-slate-50", cssSelectors: "color", description: "Sets text color to slate shade 50" },
-  { value: "text-slate-100", label: "text-slate-100", cssSelectors: "color", description: "Sets text color to slate shade 100" },
-  { value: "text-slate-200", label: "text-slate-200", cssSelectors: "color", description: "Sets text color to slate shade 200" },
-  { value: "text-slate-300", label: "text-slate-300", cssSelectors: "color", description: "Sets text color to slate shade 300" },
-  { value: "text-slate-400", label: "text-slate-400", cssSelectors: "color", description: "Sets text color to slate shade 400" },
-  { value: "text-slate-500", label: "text-slate-500", cssSelectors: "color", description: "Sets text color to slate shade 500" },
-  { value: "text-slate-600", label: "text-slate-600", cssSelectors: "color", description: "Sets text color to slate shade 600" },
-  { value: "text-slate-700", label: "text-slate-700", cssSelectors: "color", description: "Sets text color to slate shade 700" },
-  { value: "text-slate-800", label: "text-slate-800", cssSelectors: "color", description: "Sets text color to slate shade 800" },
-  { value: "text-slate-900", label: "text-slate-900", cssSelectors: "color", description: "Sets text color to slate shade 900" },
-  { value: "text-slate-950", label: "text-slate-950", cssSelectors: "color", description: "Sets text color to slate shade 950" },
-  { value: "text-gray-50", label: "text-gray-50", cssSelectors: "color", description: "Sets text color to gray shade 50" },
-  { value: "text-gray-100", label: "text-gray-100", cssSelectors: "color", description: "Sets text color to gray shade 100" },
-  { value: "text-gray-200", label: "text-gray-200", cssSelectors: "color", description: "Sets text color to gray shade 200" },
-  { value: "text-gray-300", label: "text-gray-300", cssSelectors: "color", description: "Sets text color to gray shade 300" },
-  { value: "text-gray-400", label: "text-gray-400", cssSelectors: "color", description: "Sets text color to gray shade 400" },
-  { value: "text-gray-500", label: "text-gray-500", cssSelectors: "color", description: "Sets text color to gray shade 500" },
-  { value: "text-gray-600", label: "text-gray-600", cssSelectors: "color", description: "Sets text color to gray shade 600" },
-  { value: "text-gray-700", label: "text-gray-700", cssSelectors: "color", description: "Sets text color to gray shade 700" },
-  { value: "text-gray-800", label: "text-gray-800", cssSelectors: "color", description: "Sets text color to gray shade 800" },
-  { value: "text-gray-900", label: "text-gray-900", cssSelectors: "color", description: "Sets text color to gray shade 900" },
-  { value: "text-gray-950", label: "text-gray-950", cssSelectors: "color", description: "Sets text color to gray shade 950" },
-  { value: "text-zinc-50", label: "text-zinc-50", cssSelectors: "color", description: "Sets text color to zinc shade 50" },
-  { value: "text-zinc-100", label: "text-zinc-100", cssSelectors: "color", description: "Sets text color to zinc shade 100" },
-  { value: "text-zinc-200", label: "text-zinc-200", cssSelectors: "color", description: "Sets text color to zinc shade 200" },
-  { value: "text-zinc-300", label: "text-zinc-300", cssSelectors: "color", description: "Sets text color to zinc shade 300" },
-  { value: "text-zinc-400", label: "text-zinc-400", cssSelectors: "color", description: "Sets text color to zinc shade 400" },
-  { value: "text-zinc-500", label: "text-zinc-500", cssSelectors: "color", description: "Sets text color to zinc shade 500" },
-  { value: "text-zinc-600", label: "text-zinc-600", cssSelectors: "color", description: "Sets text color to zinc shade 600" },
-  { value: "text-zinc-700", label: "text-zinc-700", cssSelectors: "color", description: "Sets text color to zinc shade 700" },
-  { value: "text-zinc-800", label: "text-zinc-800", cssSelectors: "color", description: "Sets text color to zinc shade 800" },
-  { value: "text-zinc-900", label: "text-zinc-900", cssSelectors: "color", description: "Sets text color to zinc shade 900" },
-  { value: "text-zinc-950", label: "text-zinc-950", cssSelectors: "color", description: "Sets text color to zinc shade 950" },
-  { value: "text-neutral-50", label: "text-neutral-50", cssSelectors: "color", description: "Sets text color to neutral shade 50" },
-  { value: "text-neutral-100", label: "text-neutral-100", cssSelectors: "color", description: "Sets text color to neutral shade 100" },
-  { value: "text-neutral-200", label: "text-neutral-200", cssSelectors: "color", description: "Sets text color to neutral shade 200" },
-  { value: "text-neutral-300", label: "text-neutral-300", cssSelectors: "color", description: "Sets text color to neutral shade 300" },
-  { value: "text-neutral-400", label: "text-neutral-400", cssSelectors: "color", description: "Sets text color to neutral shade 400" },
-  { value: "text-neutral-500", label: "text-neutral-500", cssSelectors: "color", description: "Sets text color to neutral shade 500" },
-  { value: "text-neutral-600", label: "text-neutral-600", cssSelectors: "color", description: "Sets text color to neutral shade 600" },
-  { value: "text-neutral-700", label: "text-neutral-700", cssSelectors: "color", description: "Sets text color to neutral shade 700" },
-  { value: "text-neutral-800", label: "text-neutral-800", cssSelectors: "color", description: "Sets text color to neutral shade 800" },
-  { value: "text-neutral-900", label: "text-neutral-900", cssSelectors: "color", description: "Sets text color to neutral shade 900" },
-  { value: "text-neutral-950", label: "text-neutral-950", cssSelectors: "color", description: "Sets text color to neutral shade 950" },
-  { value: "text-stone-50", label: "text-stone-50", cssSelectors: "color", description: "Sets text color to stone shade 50" },
-  { value: "text-stone-100", label: "text-stone-100", cssSelectors: "color", description: "Sets text color to stone shade 100" },
-  { value: "text-stone-200", label: "text-stone-200", cssSelectors: "color", description: "Sets text color to stone shade 200" },
-  { value: "text-stone-300", label: "text-stone-300", cssSelectors: "color", description: "Sets text color to stone shade 300" },
-  { value: "text-stone-400", label: "text-stone-400", cssSelectors: "color", description: "Sets text color to stone shade 400" },
-  { value: "text-stone-500", label: "text-stone-500", cssSelectors: "color", description: "Sets text color to stone shade 500" },
-  { value: "text-stone-600", label: "text-stone-600", cssSelectors: "color", description: "Sets text color to stone shade 600" },
-  { value: "text-stone-700", label: "text-stone-700", cssSelectors: "color", description: "Sets text color to stone shade 700" },
-  { value: "text-stone-800", label: "text-stone-800", cssSelectors: "color", description: "Sets text color to stone shade 800" },
-  { value: "text-stone-900", label: "text-stone-900", cssSelectors: "color", description: "Sets text color to stone shade 900" },
-  { value: "text-stone-950", label: "text-stone-950", cssSelectors: "color", description: "Sets text color to stone shade 950" },
-  { value: "text-black", label: "text-black", cssSelectors: "color", description: "Sets text color to black" },
-  { value: "text-white", label: "text-white", cssSelectors: "color", description: "Sets text color to white" }
+const gap: TailwindSelectorType[] = [
+  {
+    label: "gap-<number>",
+    value: "gap-<number>",
+    styles: "gap: calc(var(--spacing) * <number>);",
+    description:
+      "Sets the gap between rows and columns in grid and flexbox layouts",
+  },
+  {
+    label: "gap-x-<number>",
+    value: "gap-x-<number>",
+    styles: "column-gap: calc(var(--spacing) * <number>);",
+    description: "Sets the horizontal gap between columns",
+  },
+  {
+    label: "gap-y-<number>",
+    value: "gap-y-<number>",
+    styles: "row-gap: calc(var(--spacing) * <number>);",
+    description: "Sets the vertical gap between rows",
+  },
+  {
+    label: "gap-(<custom-property>)",
+    value: "gap-(<custom-property>)",
+    styles: "gap: var(<custom-property>);",
+    description: "Uses a CSS custom property for the gap value",
+  },
+  {
+    label: "gap-[<value>]",
+    value: "gap-[<value>]",
+    styles: "gap: <value>;",
+    description:
+      "Sets an arbitrary gap value using Tailwind's square bracket notation",
+  },
 ];
 
-// Border Colors
-export const borderColorOptions = [
-  { value: "border-red-50", label: "border-red-50", cssSelectors: "border-color", description: "Sets border color to red shade 50" },
-  { value: "border-red-100", label: "border-red-100", cssSelectors: "border-color", description: "Sets border color to red shade 100" },
-  { value: "border-red-200", label: "border-red-200", cssSelectors: "border-color", description: "Sets border color to red shade 200" },
-  { value: "border-red-300", label: "border-red-300", cssSelectors: "border-color", description: "Sets border color to red shade 300" },
-  { value: "border-red-400", label: "border-red-400", cssSelectors: "border-color", description: "Sets border color to red shade 400" },
-  { value: "border-red-500", label: "border-red-500", cssSelectors: "border-color", description: "Sets border color to red shade 500" },
-  { value: "border-red-600", label: "border-red-600", cssSelectors: "border-color", description: "Sets border color to red shade 600" },
-  { value: "border-red-700", label: "border-red-700", cssSelectors: "border-color", description: "Sets border color to red shade 700" },
-  { value: "border-red-800", label: "border-red-800", cssSelectors: "border-color", description: "Sets border color to red shade 800" },
-  { value: "border-red-900", label: "border-red-900", cssSelectors: "border-color", description: "Sets border color to red shade 900" },
-  { value: "border-red-950", label: "border-red-950", cssSelectors: "border-color", description: "Sets border color to red shade 950" },
-  { value: "border-orange-50", label: "border-orange-50", cssSelectors: "border-color", description: "Sets border color to orange shade 50" },
-  { value: "border-orange-100", label: "border-orange-100", cssSelectors: "border-color", description: "Sets border color to orange shade 100" },
-  { value: "border-orange-200", label: "border-orange-200", cssSelectors: "border-color", description: "Sets border color to orange shade 200" },
-  { value: "border-orange-300", label: "border-orange-300", cssSelectors: "border-color", description: "Sets border color to orange shade 300" },
-  { value: "border-orange-400", label: "border-orange-400", cssSelectors: "border-color", description: "Sets border color to orange shade 400" },
-  { value: "border-orange-500", label: "border-orange-500", cssSelectors: "border-color", description: "Sets border color to orange shade 500" },
-  { value: "border-orange-600", label: "border-orange-600", cssSelectors: "border-color", description: "Sets border color to orange shade 600" },
-  { value: "border-orange-700", label: "border-orange-700", cssSelectors: "border-color", description: "Sets border color to orange shade 700" },
-  { value: "border-orange-800", label: "border-orange-800", cssSelectors: "border-color", description: "Sets border color to orange shade 800" },
-  { value: "border-orange-900", label: "border-orange-900", cssSelectors: "border-color", description: "Sets border color to orange shade 900" },
-  { value: "border-orange-950", label: "border-orange-950", cssSelectors: "border-color", description: "Sets border color to orange shade 950" },
-  { value: "border-amber-50", label: "border-amber-50", cssSelectors: "border-color", description: "Sets border color to amber shade 50" },
-  { value: "border-amber-100", label: "border-amber-100", cssSelectors: "border-color", description: "Sets border color to amber shade 100" },
-  { value: "border-amber-200", label: "border-amber-200", cssSelectors: "border-color", description: "Sets border color to amber shade 200" },
-  { value: "border-amber-300", label: "border-amber-300", cssSelectors: "border-color", description: "Sets border color to amber shade 300" },
-  { value: "border-amber-400", label: "border-amber-400", cssSelectors: "border-color", description: "Sets border color to amber shade 400" },
-  { value: "border-amber-500", label: "border-amber-500", cssSelectors: "border-color", description: "Sets border color to amber shade 500" },
-  { value: "border-amber-600", label: "border-amber-600", cssSelectors: "border-color", description: "Sets border color to amber shade 600" },
-  { value: "border-amber-700", label: "border-amber-700", cssSelectors: "border-color", description: "Sets border color to amber shade 700" },
-  { value: "border-amber-800", label: "border-amber-800", cssSelectors: "border-color", description: "Sets border color to amber shade 800" },
-  { value: "border-amber-900", label: "border-amber-900", cssSelectors: "border-color", description: "Sets border color to amber shade 900" },
-  { value: "border-amber-950", label: "border-amber-950", cssSelectors: "border-color", description: "Sets border color to amber shade 950" },
-  { value: "border-yellow-50", label: "border-yellow-50", cssSelectors: "border-color", description: "Sets border color to yellow shade 50" },
-  { value: "border-yellow-100", label: "border-yellow-100", cssSelectors: "border-color", description: "Sets border color to yellow shade 100" },
-  { value: "border-yellow-200", label: "border-yellow-200", cssSelectors: "border-color", description: "Sets border color to yellow shade 200" },
-  { value: "border-yellow-300", label: "border-yellow-300", cssSelectors: "border-color", description: "Sets border color to yellow shade 300" },
-  { value: "border-yellow-400", label: "border-yellow-400", cssSelectors: "border-color", description: "Sets border color to yellow shade 400" },
-  { value: "border-yellow-500", label: "border-yellow-500", cssSelectors: "border-color", description: "Sets border color to yellow shade 500" },
-  { value: "border-yellow-600", label: "border-yellow-600", cssSelectors: "border-color", description: "Sets border color to yellow shade 600" },
-  { value: "border-yellow-700", label: "border-yellow-700", cssSelectors: "border-color", description: "Sets border color to yellow shade 700" },
-  { value: "border-yellow-800", label: "border-yellow-800", cssSelectors: "border-color", description: "Sets border color to yellow shade 800" },
-  { value: "border-yellow-900", label: "border-yellow-900", cssSelectors: "border-color", description: "Sets border color to yellow shade 900" },
-  { value: "border-yellow-950", label: "border-yellow-950", cssSelectors: "border-color", description: "Sets border color to yellow shade 950" },
-  { value: "border-lime-50", label: "border-lime-50", cssSelectors: "border-color", description: "Sets border color to lime shade 50" },
-  { value: "border-lime-100", label: "border-lime-100", cssSelectors: "border-color", description: "Sets border color to lime shade 100" },
-  { value: "border-lime-200", label: "border-lime-200", cssSelectors: "border-color", description: "Sets border color to lime shade 200" },
-  { value: "border-lime-300", label: "border-lime-300", cssSelectors: "border-color", description: "Sets border color to lime shade 300" },
-  { value: "border-lime-400", label: "border-lime-400", cssSelectors: "border-color", description: "Sets border color to lime shade 400" },
-  { value: "border-lime-500", label: "border-lime-500", cssSelectors: "border-color", description: "Sets border color to lime shade 500" },
-  { value: "border-lime-600", label: "border-lime-600", cssSelectors: "border-color", description: "Sets border color to lime shade 600" },
-  { value: "border-lime-700", label: "border-lime-700", cssSelectors: "border-color", description: "Sets border color to lime shade 700" },
-  { value: "border-lime-800", label: "border-lime-800", cssSelectors: "border-color", description: "Sets border color to lime shade 800" },
-  { value: "border-lime-900", label: "border-lime-900", cssSelectors: "border-color", description: "Sets border color to lime shade 900" },
-  { value: "border-lime-950", label: "border-lime-950", cssSelectors: "border-color", description: "Sets border color to lime shade 950" },
-  { value: "border-green-50", label: "border-green-50", cssSelectors: "border-color", description: "Sets border color to green shade 50" },
-  { value: "border-green-100", label: "border-green-100", cssSelectors: "border-color", description: "Sets border color to green shade 100" },
-  { value: "border-green-200", label: "border-green-200", cssSelectors: "border-color", description: "Sets border color to green shade 200" },
-  { value: "border-green-300", label: "border-green-300", cssSelectors: "border-color", description: "Sets border color to green shade 300" },
-  { value: "border-green-400", label: "border-green-400", cssSelectors: "border-color", description: "Sets border color to green shade 400" },
-  { value: "border-green-500", label: "border-green-500", cssSelectors: "border-color", description: "Sets border color to green shade 500" },
-  { value: "border-green-600", label: "border-green-600", cssSelectors: "border-color", description: "Sets border color to green shade 600" },
-  { value: "border-green-700", label: "border-green-700", cssSelectors: "border-color", description: "Sets border color to green shade 700" },
-  { value: "border-green-800", label: "border-green-800", cssSelectors: "border-color", description: "Sets border color to green shade 800" },
-  { value: "border-green-900", label: "border-green-900", cssSelectors: "border-color", description: "Sets border color to green shade 900" },
-  { value: "border-green-950", label: "border-green-950", cssSelectors: "border-color", description: "Sets border color to green shade 950" },
-  { value: "border-emerald-50", label: "border-emerald-50", cssSelectors: "border-color", description: "Sets border color to emerald shade 50" },
-  { value: "border-emerald-100", label: "border-emerald-100", cssSelectors: "border-color", description: "Sets border color to emerald shade 100" },
-  { value: "border-emerald-200", label: "border-emerald-200", cssSelectors: "border-color", description: "Sets border color to emerald shade 200" },
-  { value: "border-emerald-300", label: "border-emerald-300", cssSelectors: "border-color", description: "Sets border color to emerald shade 300" },
-  { value: "border-emerald-400", label: "border-emerald-400", cssSelectors: "border-color", description: "Sets border color to emerald shade 400" },
-  { value: "border-emerald-500", label: "border-emerald-500", cssSelectors: "border-color", description: "Sets border color to emerald shade 500" },
-  { value: "border-emerald-600", label: "border-emerald-600", cssSelectors: "border-color", description: "Sets border color to emerald shade 600" },
-  { value: "border-emerald-700", label: "border-emerald-700", cssSelectors: "border-color", description: "Sets border color to emerald shade 700" },
-  { value: "border-emerald-800", label: "border-emerald-800", cssSelectors: "border-color", description: "Sets border color to emerald shade 800" },
-  { value: "border-emerald-900", label: "border-emerald-900", cssSelectors: "border-color", description: "Sets border color to emerald shade 900" },
-  { value: "border-emerald-950", label: "border-emerald-950", cssSelectors: "border-color", description: "Sets border color to emerald shade 950" },
-  { value: "border-teal-50", label: "border-teal-50", cssSelectors: "border-color", description: "Sets border color to teal shade 50" },
-  { value: "border-teal-100", label: "border-teal-100", cssSelectors: "border-color", description: "Sets border color to teal shade 100" },
-  { value: "border-teal-200", label: "border-teal-200", cssSelectors: "border-color", description: "Sets border color to teal shade 200" },
-  { value: "border-teal-300", label: "border-teal-300", cssSelectors: "border-color", description: "Sets border color to teal shade 300" },
-  { value: "border-teal-400", label: "border-teal-400", cssSelectors: "border-color", description: "Sets border color to teal shade 400" },
-  { value: "border-teal-500", label: "border-teal-500", cssSelectors: "border-color", description: "Sets border color to teal shade 500" },
-  { value: "border-teal-600", label: "border-teal-600", cssSelectors: "border-color", description: "Sets border color to teal shade 600" },
-  { value: "border-teal-700", label: "border-teal-700", cssSelectors: "border-color", description: "Sets border color to teal shade 700" },
-  { value: "border-teal-800", label: "border-teal-800", cssSelectors: "border-color", description: "Sets border color to teal shade 800" },
-  { value: "border-teal-900", label: "border-teal-900", cssSelectors: "border-color", description: "Sets border color to teal shade 900" },
-  { value: "border-teal-950", label: "border-teal-950", cssSelectors: "border-color", description: "Sets border color to teal shade 950" },
-  { value: "border-cyan-50", label: "border-cyan-50", cssSelectors: "border-color", description: "Sets border color to cyan shade 50" },
-  { value: "border-cyan-100", label: "border-cyan-100", cssSelectors: "border-color", description: "Sets border color to cyan shade 100" },
-  { value: "border-cyan-200", label: "border-cyan-200", cssSelectors: "border-color", description: "Sets border color to cyan shade 200" },
-  { value: "border-cyan-300", label: "border-cyan-300", cssSelectors: "border-color", description: "Sets border color to cyan shade 300" },
-  { value: "border-cyan-400", label: "border-cyan-400", cssSelectors: "border-color", description: "Sets border color to cyan shade 400" },
-  { value: "border-cyan-500", label: "border-cyan-500", cssSelectors: "border-color", description: "Sets border color to cyan shade 500" },
-  { value: "border-cyan-600", label: "border-cyan-600", cssSelectors: "border-color", description: "Sets border color to cyan shade 600" },
-  { value: "border-cyan-700", label: "border-cyan-700", cssSelectors: "border-color", description: "Sets border color to cyan shade 700" },
-  { value: "border-cyan-800", label: "border-cyan-800", cssSelectors: "border-color", description: "Sets border color to cyan shade 800" },
-  { value: "border-cyan-900", label: "border-cyan-900", cssSelectors: "border-color", description: "Sets border color to cyan shade 900" },
-  { value: "border-cyan-950", label: "border-cyan-950", cssSelectors: "border-color", description: "Sets border color to cyan shade 950" },
-  { value: "border-sky-50", label: "border-sky-50", cssSelectors: "border-color", description: "Sets border color to sky shade 50" },
-  { value: "border-sky-100", label: "border-sky-100", cssSelectors: "border-color", description: "Sets border color to sky shade 100" },
-  { value: "border-sky-200", label: "border-sky-200", cssSelectors: "border-color", description: "Sets border color to sky shade 200" },
-  { value: "border-sky-300", label: "border-sky-300", cssSelectors: "border-color", description: "Sets border color to sky shade 300" },
-  { value: "border-sky-400", label: "border-sky-400", cssSelectors: "border-color", description: "Sets border color to sky shade 400" },
-  { value: "border-sky-500", label: "border-sky-500", cssSelectors: "border-color", description: "Sets border color to sky shade 500" },
-  { value: "border-sky-600", label: "border-sky-600", cssSelectors: "border-color", description: "Sets border color to sky shade 600" },
-  { value: "border-sky-700", label: "border-sky-700", cssSelectors: "border-color", description: "Sets border color to sky shade 700" },
-  { value: "border-sky-800", label: "border-sky-800", cssSelectors: "border-color", description: "Sets border color to sky shade 800" },
-  { value: "border-sky-900", label: "border-sky-900", cssSelectors: "border-color", description: "Sets border color to sky shade 900" },
-  { value: "border-sky-950", label: "border-sky-950", cssSelectors: "border-color", description: "Sets border color to sky shade 950" },
-  { value: "border-blue-50", label: "border-blue-50", cssSelectors: "border-color", description: "Sets border color to blue shade 50" },
-  { value: "border-blue-100", label: "border-blue-100", cssSelectors: "border-color", description: "Sets border color to blue shade 100" },
-  { value: "border-blue-200", label: "border-blue-200", cssSelectors: "border-color", description: "Sets border color to blue shade 200" },
-  { value: "border-blue-300", label: "border-blue-300", cssSelectors: "border-color", description: "Sets border color to blue shade 300" },
-  { value: "border-blue-400", label: "border-blue-400", cssSelectors: "border-color", description: "Sets border color to blue shade 400" },
-  { value: "border-blue-500", label: "border-blue-500", cssSelectors: "border-color", description: "Sets border color to blue shade 500" },
-  { value: "border-blue-600", label: "border-blue-600", cssSelectors: "border-color", description: "Sets border color to blue shade 600" },
-  { value: "border-blue-700", label: "border-blue-700", cssSelectors: "border-color", description: "Sets border color to blue shade 700" },
-  { value: "border-blue-800", label: "border-blue-800", cssSelectors: "border-color", description: "Sets border color to blue shade 800" },
-  { value: "border-blue-900", label: "border-blue-900", cssSelectors: "border-color", description: "Sets border color to blue shade 900" },
-  { value: "border-blue-950", label: "border-blue-950", cssSelectors: "border-color", description: "Sets border color to blue shade 950" },
-  { value: "border-indigo-50", label: "border-indigo-50", cssSelectors: "border-color", description: "Sets border color to indigo shade 50" },
-  { value: "border-indigo-100", label: "border-indigo-100", cssSelectors: "border-color", description: "Sets border color to indigo shade 100" },
-  { value: "border-indigo-200", label: "border-indigo-200", cssSelectors: "border-color", description: "Sets border color to indigo shade 200" },
-  { value: "border-indigo-300", label: "border-indigo-300", cssSelectors: "border-color", description: "Sets border color to indigo shade 300" },
-  { value: "border-indigo-400", label: "border-indigo-400", cssSelectors: "border-color", description: "Sets border color to indigo shade 400" },
-  { value: "border-indigo-500", label: "border-indigo-500", cssSelectors: "border-color", description: "Sets border color to indigo shade 500" },
-  { value: "border-indigo-600", label: "border-indigo-600", cssSelectors: "border-color", description: "Sets border color to indigo shade 600" },
-  { value: "border-indigo-700", label: "border-indigo-700", cssSelectors: "border-color", description: "Sets border color to indigo shade 700" },
-  { value: "border-indigo-800", label: "border-indigo-800", cssSelectors: "border-color", description: "Sets border color to indigo shade 800" },
-  { value: "border-indigo-900", label: "border-indigo-900", cssSelectors: "border-color", description: "Sets border color to indigo shade 900" },
-  { value: "border-indigo-950", label: "border-indigo-950", cssSelectors: "border-color", description: "Sets border color to indigo shade 950" },
-  { value: "border-violet-50", label: "border-violet-50", cssSelectors: "border-color", description: "Sets border color to violet shade 50" },
-  { value: "border-violet-100", label: "border-violet-100", cssSelectors: "border-color", description: "Sets border color to violet shade 100" },
-  { value: "border-violet-200", label: "border-violet-200", cssSelectors: "border-color", description: "Sets border color to violet shade 200" },
-  { value: "border-violet-300", label: "border-violet-300", cssSelectors: "border-color", description: "Sets border color to violet shade 300" },
-  { value: "border-violet-400", label: "border-violet-400", cssSelectors: "border-color", description: "Sets border color to violet shade 400" },
-  { value: "border-violet-500", label: "border-violet-500", cssSelectors: "border-color", description: "Sets border color to violet shade 500" },
-  { value: "border-violet-600", label: "border-violet-600", cssSelectors: "border-color", description: "Sets border color to violet shade 600" },
-  { value: "border-violet-700", label: "border-violet-700", cssSelectors: "border-color", description: "Sets border color to violet shade 700" },
-  { value: "border-violet-800", label: "border-violet-800", cssSelectors: "border-color", description: "Sets border color to violet shade 800" },
-  { value: "border-violet-900", label: "border-violet-900", cssSelectors: "border-color", description: "Sets border color to violet shade 900" },
-  { value: "border-violet-950", label: "border-violet-950", cssSelectors: "border-color", description: "Sets border color to violet shade 950" },
-  { value: "border-purple-50", label: "border-purple-50", cssSelectors: "border-color", description: "Sets border color to purple shade 50" },
-  { value: "border-purple-100", label: "border-purple-100", cssSelectors: "border-color", description: "Sets border color to purple shade 100" },
-  { value: "border-purple-200", label: "border-purple-200", cssSelectors: "border-color", description: "Sets border color to purple shade 200" },
-  { value: "border-purple-300", label: "border-purple-300", cssSelectors: "border-color", description: "Sets border color to purple shade 300" },
-  { value: "border-purple-400", label: "border-purple-400", cssSelectors: "border-color", description: "Sets border color to purple shade 400" },
-  { value: "border-purple-500", label: "border-purple-500", cssSelectors: "border-color", description: "Sets border color to purple shade 500" },
-  { value: "border-purple-600", label: "border-purple-600", cssSelectors: "border-color", description: "Sets border color to purple shade 600" },
-  { value: "border-purple-700", label: "border-purple-700", cssSelectors: "border-color", description: "Sets border color to purple shade 700" },
-  { value: "border-purple-800", label: "border-purple-800", cssSelectors: "border-color", description: "Sets border color to purple shade 800" },
-  { value: "border-purple-900", label: "border-purple-900", cssSelectors: "border-color", description: "Sets border color to purple shade 900" },
-  { value: "border-purple-950", label: "border-purple-950", cssSelectors: "border-color", description: "Sets border color to purple shade 950" },
-  { value: "border-fuchsia-50", label: "border-fuchsia-50", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 50" },
-  { value: "border-fuchsia-100", label: "border-fuchsia-100", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 100" },
-  { value: "border-fuchsia-200", label: "border-fuchsia-200", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 200" },
-  { value: "border-fuchsia-300", label: "border-fuchsia-300", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 300" },
-  { value: "border-fuchsia-400", label: "border-fuchsia-400", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 400" },
-  { value: "border-fuchsia-500", label: "border-fuchsia-500", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 500" },
-  { value: "border-fuchsia-600", label: "border-fuchsia-600", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 600" },
-  { value: "border-fuchsia-700", label: "border-fuchsia-700", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 700" },
-  { value: "border-fuchsia-800", label: "border-fuchsia-800", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 800" },
-  { value: "border-fuchsia-900", label: "border-fuchsia-900", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 900" },
-  { value: "border-fuchsia-950", label: "border-fuchsia-950", cssSelectors: "border-color", description: "Sets border color to fuchsia shade 950" },
-  { value: "border-pink-50", label: "border-pink-50", cssSelectors: "border-color", description: "Sets border color to pink shade 50" },
-  { value: "border-pink-100", label: "border-pink-100", cssSelectors: "border-color", description: "Sets border color to pink shade 100" },
-  { value: "border-pink-200", label: "border-pink-200", cssSelectors: "border-color", description: "Sets border color to pink shade 200" },
-  { value: "border-pink-300", label: "border-pink-300", cssSelectors: "border-color", description: "Sets border color to pink shade 300" },
-  { value: "border-pink-400", label: "border-pink-400", cssSelectors: "border-color", description: "Sets border color to pink shade 400" },
-  { value: "border-pink-500", label: "border-pink-500", cssSelectors: "border-color", description: "Sets border color to pink shade 500" },
-  { value: "border-pink-600", label: "border-pink-600", cssSelectors: "border-color", description: "Sets border color to pink shade 600" },
-  { value: "border-pink-700", label: "border-pink-700", cssSelectors: "border-color", description: "Sets border color to pink shade 700" },
-  { value: "border-pink-800", label: "border-pink-800", cssSelectors: "border-color", description: "Sets border color to pink shade 800" },
-  { value: "border-pink-900", label: "border-pink-900", cssSelectors: "border-color", description: "Sets border color to pink shade 900" },
-  { value: "border-pink-950", label: "border-pink-950", cssSelectors: "border-color", description: "Sets border color to pink shade 950" },
-  { value: "border-rose-50", label: "border-rose-50", cssSelectors: "border-color", description: "Sets border color to rose shade 50" },
-  { value: "border-rose-100", label: "border-rose-100", cssSelectors: "border-color", description: "Sets border color to rose shade 100" },
-  { value: "border-rose-200", label: "border-rose-200", cssSelectors: "border-color", description: "Sets border color to rose shade 200" },
-  { value: "border-rose-300", label: "border-rose-300", cssSelectors: "border-color", description: "Sets border color to rose shade 300" },
-  { value: "border-rose-400", label: "border-rose-400", cssSelectors: "border-color", description: "Sets border color to rose shade 400" },
-  { value: "border-rose-500", label: "border-rose-500", cssSelectors: "border-color", description: "Sets border color to rose shade 500" },
-  { value: "border-rose-600", label: "border-rose-600", cssSelectors: "border-color", description: "Sets border color to rose shade 600" },
-  { value: "border-rose-700", label: "border-rose-700", cssSelectors: "border-color", description: "Sets border color to rose shade 700" },
-  { value: "border-rose-800", label: "border-rose-800", cssSelectors: "border-color", description: "Sets border color to rose shade 800" },
-  { value: "border-rose-900", label: "border-rose-900", cssSelectors: "border-color", description: "Sets border color to rose shade 900" },
-  { value: "border-rose-950", label: "border-rose-950", cssSelectors: "border-color", description: "Sets border color to rose shade 950" },
-  { value: "border-slate-50", label: "border-slate-50", cssSelectors: "border-color", description: "Sets border color to slate shade 50" },
-  { value: "border-slate-100", label: "border-slate-100", cssSelectors: "border-color", description: "Sets border color to slate shade 100" },
-  { value: "border-slate-200", label: "border-slate-200", cssSelectors: "border-color", description: "Sets border color to slate shade 200" },
-  { value: "border-slate-300", label: "border-slate-300", cssSelectors: "border-color", description: "Sets border color to slate shade 300" },
-  { value: "border-slate-400", label: "border-slate-400", cssSelectors: "border-color", description: "Sets border color to slate shade 400" },
-  { value: "border-slate-500", label: "border-slate-500", cssSelectors: "border-color", description: "Sets border color to slate shade 500" },
-  { value: "border-slate-600", label: "border-slate-600", cssSelectors: "border-color", description: "Sets border color to slate shade 600" },
-  { value: "border-slate-700", label: "border-slate-700", cssSelectors: "border-color", description: "Sets border color to slate shade 700" },
-  { value: "border-slate-800", label: "border-slate-800", cssSelectors: "border-color", description: "Sets border color to slate shade 800" },
-  { value: "border-slate-900", label: "border-slate-900", cssSelectors: "border-color", description: "Sets border color to slate shade 900" },
-  { value: "border-slate-950", label: "border-slate-950", cssSelectors: "border-color", description: "Sets border color to slate shade 950" },
-  { value: "border-gray-50", label: "border-gray-50", cssSelectors: "border-color", description: "Sets border color to gray shade 50" },
-  { value: "border-gray-100", label: "border-gray-100", cssSelectors: "border-color", description: "Sets border color to gray shade 100" },
-  { value: "border-gray-200", label: "border-gray-200", cssSelectors: "border-color", description: "Sets border color to gray shade 200" },
-  { value: "border-gray-300", label: "border-gray-300", cssSelectors: "border-color", description: "Sets border color to gray shade 300" },
-  { value: "border-gray-400", label: "border-gray-400", cssSelectors: "border-color", description: "Sets border color to gray shade 400" },
-  { value: "border-gray-500", label: "border-gray-500", cssSelectors: "border-color", description: "Sets border color to gray shade 500" },
-  { value: "border-gray-600", label: "border-gray-600", cssSelectors: "border-color", description: "Sets border color to gray shade 600" },
-  { value: "border-gray-700", label: "border-gray-700", cssSelectors: "border-color", description: "Sets border color to gray shade 700" },
-  { value: "border-gray-800", label: "border-gray-800", cssSelectors: "border-color", description: "Sets border color to gray shade 800" },
-  { value: "border-gray-900", label: "border-gray-900", cssSelectors: "border-color", description: "Sets border color to gray shade 900" },
-  { value: "border-gray-950", label: "border-gray-950", cssSelectors: "border-color", description: "Sets border color to gray shade 950" },
-  { value: "border-zinc-50", label: "border-zinc-50", cssSelectors: "border-color", description: "Sets border color to zinc shade 50" },
-  { value: "border-zinc-100", label: "border-zinc-100", cssSelectors: "border-color", description: "Sets border color to zinc shade 100" },
-  { value: "border-zinc-200", label: "border-zinc-200", cssSelectors: "border-color", description: "Sets border color to zinc shade 200" },
-  { value: "border-zinc-300", label: "border-zinc-300", cssSelectors: "border-color", description: "Sets border color to zinc shade 300" },
-  { value: "border-zinc-400", label: "border-zinc-400", cssSelectors: "border-color", description: "Sets border color to zinc shade 400" },
-  { value: "border-zinc-500", label: "border-zinc-500", cssSelectors: "border-color", description: "Sets border color to zinc shade 500" },
-  { value: "border-zinc-600", label: "border-zinc-600", cssSelectors: "border-color", description: "Sets border color to zinc shade 600" },
-  { value: "border-zinc-700", label: "border-zinc-700", cssSelectors: "border-color", description: "Sets border color to zinc shade 700" },
-  { value: "border-zinc-800", label: "border-zinc-800", cssSelectors: "border-color", description: "Sets border color to zinc shade 800" },
-  { value: "border-zinc-900", label: "border-zinc-900", cssSelectors: "border-color", description: "Sets border color to zinc shade 900" },
-  { value: "border-zinc-950", label: "border-zinc-950", cssSelectors: "border-color", description: "Sets border color to zinc shade 950" },
-  { value: "border-neutral-50", label: "border-neutral-50", cssSelectors: "border-color", description: "Sets border color to neutral shade 50" },
-  { value: "border-neutral-100", label: "border-neutral-100", cssSelectors: "border-color", description: "Sets border color to neutral shade 100" },
-  { value: "border-neutral-200", label: "border-neutral-200", cssSelectors: "border-color", description: "Sets border color to neutral shade 200" },
-  { value: "border-neutral-300", label: "border-neutral-300", cssSelectors: "border-color", description: "Sets border color to neutral shade 300" },
-  { value: "border-neutral-400", label: "border-neutral-400", cssSelectors: "border-color", description: "Sets border color to neutral shade 400" },
-  { value: "border-neutral-500", label: "border-neutral-500", cssSelectors: "border-color", description: "Sets border color to neutral shade 500" },
-  { value: "border-neutral-600", label: "border-neutral-600", cssSelectors: "border-color", description: "Sets border color to neutral shade 600" },
-  { value: "border-neutral-700", label: "border-neutral-700", cssSelectors: "border-color", description: "Sets border color to neutral shade 700" },
-  { value: "border-neutral-800", label: "border-neutral-800", cssSelectors: "border-color", description: "Sets border color to neutral shade 800" },
-  { value: "border-neutral-900", label: "border-neutral-900", cssSelectors: "border-color", description: "Sets border color to neutral shade 900" },
-  { value: "border-neutral-950", label: "border-neutral-950", cssSelectors: "border-color", description: "Sets border color to neutral shade 950" },
-  { value: "border-stone-50", label: "border-stone-50", cssSelectors: "border-color", description: "Sets border color to stone shade 50" },
-  { value: "border-stone-100", label: "border-stone-100", cssSelectors: "border-color", description: "Sets border color to stone shade 100" },
-  { value: "border-stone-200", label: "border-stone-200", cssSelectors: "border-color", description: "Sets border color to stone shade 200" },
-  { value: "border-stone-300", label: "border-stone-300", cssSelectors: "border-color", description: "Sets border color to stone shade 300" },
-  { value: "border-stone-400", label: "border-stone-400", cssSelectors: "border-color", description: "Sets border color to stone shade 400" },
-  { value: "border-stone-500", label: "border-stone-500", cssSelectors: "border-color", description: "Sets border color to stone shade 500" },
-  { value: "border-stone-600", label: "border-stone-600", cssSelectors: "border-color", description: "Sets border color to stone shade 600" },
-  { value: "border-stone-700", label: "border-stone-700", cssSelectors: "border-color", description: "Sets border color to stone shade 700" },
-  { value: "border-stone-800", label: "border-stone-800", cssSelectors: "border-color", description: "Sets border color to stone shade 800" },
-  { value: "border-stone-900", label: "border-stone-900", cssSelectors: "border-color", description: "Sets border color to stone shade 900" },
-  { value: "border-stone-950", label: "border-stone-950", cssSelectors: "border-color", description: "Sets border color to stone shade 950" },
-  { value: "border-black", label: "border-black", cssSelectors: "border-color", description: "Sets border color to black" },
-  { value: "border-white", label: "border-white", cssSelectors: "border-color", description: "Sets border color to white" }
+const justifyContent: TailwindSelectorType[] = [
+  {
+    label: "justify-normal",
+    value: "justify-normal",
+    styles: "justify-content: normal;",
+    description: "Uses the default justification for the layout mode",
+  },
+  {
+    label: "justify-start",
+    value: "justify-start",
+    styles: "justify-content: flex-start;",
+    description: "Justifies items to the start of the container",
+  },
+  {
+    label: "justify-end",
+    value: "justify-end",
+    styles: "justify-content: flex-end;",
+    description: "Justifies items to the end of the container",
+  },
+  {
+    label: "justify-center",
+    value: "justify-center",
+    styles: "justify-content: center;",
+    description: "Justifies items to the center of the container",
+  },
+  {
+    label: "justify-between",
+    value: "justify-between",
+    styles: "justify-content: space-between;",
+    description:
+      "Distributes items evenly with the first item at the start and last at the end",
+  },
+  {
+    label: "justify-around",
+    value: "justify-around",
+    styles: "justify-content: space-around;",
+    description: "Distributes items with equal space around each item",
+  },
+  {
+    label: "justify-evenly",
+    value: "justify-evenly",
+    styles: "justify-content: space-evenly;",
+    description: "Distributes items with equal space between them",
+  },
+  {
+    label: "justify-stretch",
+    value: "justify-stretch",
+    styles: "justify-content: stretch;",
+    description: "Stretches items to fill the container",
+  },
 ];
 
-// Background Colors
-export const backgroundColorOptions = [
-  { value: "bg-red-50", label: "bg-red-50", cssSelectors: "background-color", description: "Sets background color to red shade 50" },
-  { value: "bg-red-100", label: "bg-red-100", cssSelectors: "background-color", description: "Sets background color to red shade 100" },
-  { value: "bg-red-200", label: "bg-red-200", cssSelectors: "background-color", description: "Sets background color to red shade 200" },
-  { value: "bg-red-300", label: "bg-red-300", cssSelectors: "background-color", description: "Sets background color to red shade 300" },
-  { value: "bg-red-400", label: "bg-red-400", cssSelectors: "background-color", description: "Sets background color to red shade 400" },
-  { value: "bg-red-500", label: "bg-red-500", cssSelectors: "background-color", description: "Sets background color to red shade 500" },
-  { value: "bg-red-600", label: "bg-red-600", cssSelectors: "background-color", description: "Sets background color to red shade 600" },
-  { value: "bg-red-700", label: "bg-red-700", cssSelectors: "background-color", description: "Sets background color to red shade 700" },
-  { value: "bg-red-800", label: "bg-red-800", cssSelectors: "background-color", description: "Sets background color to red shade 800" },
-  { value: "bg-red-900", label: "bg-red-900", cssSelectors: "background-color", description: "Sets background color to red shade 900" },
-  { value: "bg-red-950", label: "bg-red-950", cssSelectors: "background-color", description: "Sets background color to red shade 950" },
-  { value: "bg-orange-50", label: "bg-orange-50", cssSelectors: "background-color", description: "Sets background color to orange shade 50" },
-  { value: "bg-orange-100", label: "bg-orange-100", cssSelectors: "background-color", description: "Sets background color to orange shade 100" },
-  { value: "bg-orange-200", label: "bg-orange-200", cssSelectors: "background-color", description: "Sets background color to orange shade 200" },
-  { value: "bg-orange-300", label: "bg-orange-300", cssSelectors: "background-color", description: "Sets background color to orange shade 300" },
-  { value: "bg-orange-400", label: "bg-orange-400", cssSelectors: "background-color", description: "Sets background color to orange shade 400" },
-  { value: "bg-orange-500", label: "bg-orange-500", cssSelectors: "background-color", description: "Sets background color to orange shade 500" },
-  { value: "bg-orange-600", label: "bg-orange-600", cssSelectors: "background-color", description: "Sets background color to orange shade 600" },
-  { value: "bg-orange-700", label: "bg-orange-700", cssSelectors: "background-color", description: "Sets background color to orange shade 700" },
-  { value: "bg-orange-800", label: "bg-orange-800", cssSelectors: "background-color", description: "Sets background color to orange shade 800" },
-  { value: "bg-orange-900", label: "bg-orange-900", cssSelectors: "background-color", description: "Sets background color to orange shade 900" },
-  { value: "bg-orange-950", label: "bg-orange-950", cssSelectors: "background-color", description: "Sets background color to orange shade 950" },
-  { value: "bg-amber-50", label: "bg-amber-50", cssSelectors: "background-color", description: "Sets background color to amber shade 50" },
-  { value: "bg-amber-100", label: "bg-amber-100", cssSelectors: "background-color", description: "Sets background color to amber shade 100" },
-  { value: "bg-amber-200", label: "bg-amber-200", cssSelectors: "background-color", description: "Sets background color to amber shade 200" },
-  { value: "bg-amber-300", label: "bg-amber-300", cssSelectors: "background-color", description: "Sets background color to amber shade 300" },
-  { value: "bg-amber-400", label: "bg-amber-400", cssSelectors: "background-color", description: "Sets background color to amber shade 400" },
-  { value: "bg-amber-500", label: "bg-amber-500", cssSelectors: "background-color", description: "Sets background color to amber shade 500" },
-  { value: "bg-amber-600", label: "bg-amber-600", cssSelectors: "background-color", description: "Sets background color to amber shade 600" },
-  { value: "bg-amber-700", label: "bg-amber-700", cssSelectors: "background-color", description: "Sets background color to amber shade 700" },
-  { value: "bg-amber-800", label: "bg-amber-800", cssSelectors: "background-color", description: "Sets background color to amber shade 800" },
-  { value: "bg-amber-900", label: "bg-amber-900", cssSelectors: "background-color", description: "Sets background color to amber shade 900" },
-  { value: "bg-amber-950", label: "bg-amber-950", cssSelectors: "background-color", description: "Sets background color to amber shade 950" },
-  { value: "bg-yellow-50", label: "bg-yellow-50", cssSelectors: "background-color", description: "Sets background color to yellow shade 50" },
-  { value: "bg-yellow-100", label: "bg-yellow-100", cssSelectors: "background-color", description: "Sets background color to yellow shade 100" },
-  { value: "bg-yellow-200", label: "bg-yellow-200", cssSelectors: "background-color", description: "Sets background color to yellow shade 200" },
-  { value: "bg-yellow-300", label: "bg-yellow-300", cssSelectors: "background-color", description: "Sets background color to yellow shade 300" },
-  { value: "bg-yellow-400", label: "bg-yellow-400", cssSelectors: "background-color", description: "Sets background color to yellow shade 400" },
-  { value: "bg-yellow-500", label: "bg-yellow-500", cssSelectors: "background-color", description: "Sets background color to yellow shade 500" },
-  { value: "bg-yellow-600", label: "bg-yellow-600", cssSelectors: "background-color", description: "Sets background color to yellow shade 600" },
-  { value: "bg-yellow-700", label: "bg-yellow-700", cssSelectors: "background-color", description: "Sets background color to yellow shade 700" },
-  { value: "bg-yellow-800", label: "bg-yellow-800", cssSelectors: "background-color", description: "Sets background color to yellow shade 800" },
-  { value: "bg-yellow-900", label: "bg-yellow-900", cssSelectors: "background-color", description: "Sets background color to yellow shade 900" },
-  { value: "bg-yellow-950", label: "bg-yellow-950", cssSelectors: "background-color", description: "Sets background color to yellow shade 950" },
-  { value: "bg-lime-50", label: "bg-lime-50", cssSelectors: "background-color", description: "Sets background color to lime shade 50" },
-  { value: "bg-lime-100", label: "bg-lime-100", cssSelectors: "background-color", description: "Sets background color to lime shade 100" },
-  { value: "bg-lime-200", label: "bg-lime-200", cssSelectors: "background-color", description: "Sets background color to lime shade 200" },
-  { value: "bg-lime-300", label: "bg-lime-300", cssSelectors: "background-color", description: "Sets background color to lime shade 300" },
-  { value: "bg-lime-400", label: "bg-lime-400", cssSelectors: "background-color", description: "Sets background color to lime shade 400" },
-  { value: "bg-lime-500", label: "bg-lime-500", cssSelectors: "background-color", description: "Sets background color to lime shade 500" },
-  { value: "bg-lime-600", label: "bg-lime-600", cssSelectors: "background-color", description: "Sets background color to lime shade 600" },
-  { value: "bg-lime-700", label: "bg-lime-700", cssSelectors: "background-color", description: "Sets background color to lime shade 700" },
-  { value: "bg-lime-800", label: "bg-lime-800", cssSelectors: "background-color", description: "Sets background color to lime shade 800" },
-  { value: "bg-lime-900", label: "bg-lime-900", cssSelectors: "background-color", description: "Sets background color to lime shade 900" },
-  { value: "bg-lime-950", label: "bg-lime-950", cssSelectors: "background-color", description: "Sets background color to lime shade 950" },
-  { value: "bg-green-50", label: "bg-green-50", cssSelectors: "background-color", description: "Sets background color to green shade 50" },
-  { value: "bg-green-100", label: "bg-green-100", cssSelectors: "background-color", description: "Sets background color to green shade 100" },
-  { value: "bg-green-200", label: "bg-green-200", cssSelectors: "background-color", description: "Sets background color to green shade 200" },
-  { value: "bg-green-300", label: "bg-green-300", cssSelectors: "background-color", description: "Sets background color to green shade 300" },
-  { value: "bg-green-400", label: "bg-green-400", cssSelectors: "background-color", description: "Sets background color to green shade 400" },
-  { value: "bg-green-500", label: "bg-green-500", cssSelectors: "background-color", description: "Sets background color to green shade 500" },
-  { value: "bg-green-600", label: "bg-green-600", cssSelectors: "background-color", description: "Sets background color to green shade 600" },
-  { value: "bg-green-700", label: "bg-green-700", cssSelectors: "background-color", description: "Sets background color to green shade 700" },
-  { value: "bg-green-800", label: "bg-green-800", cssSelectors: "background-color", description: "Sets background color to green shade 800" },
-  { value: "bg-green-900", label: "bg-green-900", cssSelectors: "background-color", description: "Sets background color to green shade 900" },
-  { value: "bg-green-950", label: "bg-green-950", cssSelectors: "background-color", description: "Sets background color to green shade 950" },
-  { value: "bg-emerald-50", label: "bg-emerald-50", cssSelectors: "background-color", description: "Sets background color to emerald shade 50" },
-  { value: "bg-emerald-100", label: "bg-emerald-100", cssSelectors: "background-color", description: "Sets background color to emerald shade 100" },
-  { value: "bg-emerald-200", label: "bg-emerald-200", cssSelectors: "background-color", description: "Sets background color to emerald shade 200" },
-  { value: "bg-emerald-300", label: "bg-emerald-300", cssSelectors: "background-color", description: "Sets background color to emerald shade 300" },
-  { value: "bg-emerald-400", label: "bg-emerald-400", cssSelectors: "background-color", description: "Sets background color to emerald shade 400" },
-  { value: "bg-emerald-500", label: "bg-emerald-500", cssSelectors: "background-color", description: "Sets background color to emerald shade 500" },
-  { value: "bg-emerald-600", label: "bg-emerald-600", cssSelectors: "background-color", description: "Sets background color to emerald shade 600" },
-  { value: "bg-emerald-700", label: "bg-emerald-700", cssSelectors: "background-color", description: "Sets background color to emerald shade 700" },
-  { value: "bg-emerald-800", label: "bg-emerald-800", cssSelectors: "background-color", description: "Sets background color to emerald shade 800" },
-  { value: "bg-emerald-900", label: "bg-emerald-900", cssSelectors: "background-color", description: "Sets background color to emerald shade 900" },
-  { value: "bg-emerald-950", label: "bg-emerald-950", cssSelectors: "background-color", description: "Sets background color to emerald shade 950" },
-  { value: "bg-teal-50", label: "bg-teal-50", cssSelectors: "background-color", description: "Sets background color to teal shade 50" },
-  { value: "bg-teal-100", label: "bg-teal-100", cssSelectors: "background-color", description: "Sets background color to teal shade 100" },
-  { value: "bg-teal-200", label: "bg-teal-200", cssSelectors: "background-color", description: "Sets background color to teal shade 200" },
-  { value: "bg-teal-300", label: "bg-teal-300", cssSelectors: "background-color", description: "Sets background color to teal shade 300" },
-  { value: "bg-teal-400", label: "bg-teal-400", cssSelectors: "background-color", description: "Sets background color to teal shade 400" },
-  { value: "bg-teal-500", label: "bg-teal-500", cssSelectors: "background-color", description: "Sets background color to teal shade 500" },
-  { value: "bg-teal-600", label: "bg-teal-600", cssSelectors: "background-color", description: "Sets background color to teal shade 600" },
-  { value: "bg-teal-700", label: "bg-teal-700", cssSelectors: "background-color", description: "Sets background color to teal shade 700" },
-  { value: "bg-teal-800", label: "bg-teal-800", cssSelectors: "background-color", description: "Sets background color to teal shade 800" },
-  { value: "bg-teal-900", label: "bg-teal-900", cssSelectors: "background-color", description: "Sets background color to teal shade 900" },
-  { value: "bg-teal-950", label: "bg-teal-950", cssSelectors: "background-color", description: "Sets background color to teal shade 950" },
-  { value: "bg-cyan-50", label: "bg-cyan-50", cssSelectors: "background-color", description: "Sets background color to cyan shade 50" },
-  { value: "bg-cyan-100", label: "bg-cyan-100", cssSelectors: "background-color", description: "Sets background color to cyan shade 100" },
-  { value: "bg-cyan-200", label: "bg-cyan-200", cssSelectors: "background-color", description: "Sets background color to cyan shade 200" },
-  { value: "bg-cyan-300", label: "bg-cyan-300", cssSelectors: "background-color", description: "Sets background color to cyan shade 300" },
-  { value: "bg-cyan-400", label: "bg-cyan-400", cssSelectors: "background-color", description: "Sets background color to cyan shade 400" },
-  { value: "bg-cyan-500", label: "bg-cyan-500", cssSelectors: "background-color", description: "Sets background color to cyan shade 500" },
-  { value: "bg-cyan-600", label: "bg-cyan-600", cssSelectors: "background-color", description: "Sets background color to cyan shade 600" },
-  { value: "bg-cyan-700", label: "bg-cyan-700", cssSelectors: "background-color", description: "Sets background color to cyan shade 700" },
-  { value: "bg-cyan-800", label: "bg-cyan-800", cssSelectors: "background-color", description: "Sets background color to cyan shade 800" },
-  { value: "bg-cyan-900", label: "bg-cyan-900", cssSelectors: "background-color", description: "Sets background color to cyan shade 900" },
-  { value: "bg-cyan-950", label: "bg-cyan-950", cssSelectors: "background-color", description: "Sets background color to cyan shade 950" },
-  { value: "bg-sky-50", label: "bg-sky-50", cssSelectors: "background-color", description: "Sets background color to sky shade 50" },
-  { value: "bg-sky-100", label: "bg-sky-100", cssSelectors: "background-color", description: "Sets background color to sky shade 100" },
-  { value: "bg-sky-200", label: "bg-sky-200", cssSelectors: "background-color", description: "Sets background color to sky shade 200" },
-  { value: "bg-sky-300", label: "bg-sky-300", cssSelectors: "background-color", description: "Sets background color to sky shade 300" },
-  { value: "bg-sky-400", label: "bg-sky-400", cssSelectors: "background-color", description: "Sets background color to sky shade 400" },
-  { value: "bg-sky-500", label: "bg-sky-500", cssSelectors: "background-color", description: "Sets background color to sky shade 500" },
-  { value: "bg-sky-600", label: "bg-sky-600", cssSelectors: "background-color", description: "Sets background color to sky shade 600" },
-  { value: "bg-sky-700", label: "bg-sky-700", cssSelectors: "background-color", description: "Sets background color to sky shade 700" },
-  { value: "bg-sky-800", label: "bg-sky-800", cssSelectors: "background-color", description: "Sets background color to sky shade 800" },
-  { value: "bg-sky-900", label: "bg-sky-900", cssSelectors: "background-color", description: "Sets background color to sky shade 900" },
-  { value: "bg-sky-950", label: "bg-sky-950", cssSelectors: "background-color", description: "Sets background color to sky shade 950" },
-  { value: "bg-blue-50", label: "bg-blue-50", cssSelectors: "background-color", description: "Sets background color to blue shade 50" },
-  { value: "bg-blue-100", label: "bg-blue-100", cssSelectors: "background-color", description: "Sets background color to blue shade 100" },
-  { value: "bg-blue-200", label: "bg-blue-200", cssSelectors: "background-color", description: "Sets background color to blue shade 200" },
-  { value: "bg-blue-300", label: "bg-blue-300", cssSelectors: "background-color", description: "Sets background color to blue shade 300" },
-  { value: "bg-blue-400", label: "bg-blue-400", cssSelectors: "background-color", description: "Sets background color to blue shade 400" },
-  { value: "bg-blue-500", label: "bg-blue-500", cssSelectors: "background-color", description: "Sets background color to blue shade 500" },
-  { value: "bg-blue-600", label: "bg-blue-600", cssSelectors: "background-color", description: "Sets background color to blue shade 600" },
-  { value: "bg-blue-700", label: "bg-blue-700", cssSelectors: "background-color", description: "Sets background color to blue shade 700" },
-  { value: "bg-blue-800", label: "bg-blue-800", cssSelectors: "background-color", description: "Sets background color to blue shade 800" },
-  { value: "bg-blue-900", label: "bg-blue-900", cssSelectors: "background-color", description: "Sets background color to blue shade 900" },
-  { value: "bg-blue-950", label: "bg-blue-950", cssSelectors: "background-color", description: "Sets background color to blue shade 950" },
-  { value: "bg-indigo-50", label: "bg-indigo-50", cssSelectors: "background-color", description: "Sets background color to indigo shade 50" },
-  { value: "bg-indigo-100", label: "bg-indigo-100", cssSelectors: "background-color", description: "Sets background color to indigo shade 100" },
-  { value: "bg-indigo-200", label: "bg-indigo-200", cssSelectors: "background-color", description: "Sets background color to indigo shade 200" },
-  { value: "bg-indigo-300", label: "bg-indigo-300", cssSelectors: "background-color", description: "Sets background color to indigo shade 300" },
-  { value: "bg-indigo-400", label: "bg-indigo-400", cssSelectors: "background-color", description: "Sets background color to indigo shade 400" },
-  { value: "bg-indigo-500", label: "bg-indigo-500", cssSelectors: "background-color", description: "Sets background color to indigo shade 500" },
-  { value: "bg-indigo-600", label: "bg-indigo-600", cssSelectors: "background-color", description: "Sets background color to indigo shade 600" },
-  { value: "bg-indigo-700", label: "bg-indigo-700", cssSelectors: "background-color", description: "Sets background color to indigo shade 700" },
-  { value: "bg-indigo-800", label: "bg-indigo-800", cssSelectors: "background-color", description: "Sets background color to indigo shade 800" },
-  { value: "bg-indigo-900", label: "bg-indigo-900", cssSelectors: "background-color", description: "Sets background color to indigo shade 900" },
-  { value: "bg-indigo-950", label: "bg-indigo-950", cssSelectors: "background-color", description: "Sets background color to indigo shade 950" },
-  { value: "bg-violet-50", label: "bg-violet-50", cssSelectors: "background-color", description: "Sets background color to violet shade 50" },
-  { value: "bg-violet-100", label: "bg-violet-100", cssSelectors: "background-color", description: "Sets background color to violet shade 100" },
-  { value: "bg-violet-200", label: "bg-violet-200", cssSelectors: "background-color", description: "Sets background color to violet shade 200" },
-  { value: "bg-violet-300", label: "bg-violet-300", cssSelectors: "background-color", description: "Sets background color to violet shade 300" },
-  { value: "bg-violet-400", label: "bg-violet-400", cssSelectors: "background-color", description: "Sets background color to violet shade 400" },
-  { value: "bg-violet-500", label: "bg-violet-500", cssSelectors: "background-color", description: "Sets background color to violet shade 500" },
-  { value: "bg-violet-600", label: "bg-violet-600", cssSelectors: "background-color", description: "Sets background color to violet shade 600" },
-  { value: "bg-violet-700", label: "bg-violet-700", cssSelectors: "background-color", description: "Sets background color to violet shade 700" },
-  { value: "bg-violet-800", label: "bg-violet-800", cssSelectors: "background-color", description: "Sets background color to violet shade 800" },
-  { value: "bg-violet-900", label: "bg-violet-900", cssSelectors: "background-color", description: "Sets background color to violet shade 900" },
-  { value: "bg-violet-950", label: "bg-violet-950", cssSelectors: "background-color", description: "Sets background color to violet shade 950" },
-  { value: "bg-purple-50", label: "bg-purple-50", cssSelectors: "background-color", description: "Sets background color to purple shade 50" },
-  { value: "bg-purple-100", label: "bg-purple-100", cssSelectors: "background-color", description: "Sets background color to purple shade 100" },
-  { value: "bg-purple-200", label: "bg-purple-200", cssSelectors: "background-color", description: "Sets background color to purple shade 200" },
-  { value: "bg-purple-300", label: "bg-purple-300", cssSelectors: "background-color", description: "Sets background color to purple shade 300" },
-  { value: "bg-purple-400", label: "bg-purple-400", cssSelectors: "background-color", description: "Sets background color to purple shade 400" },
-  { value: "bg-purple-500", label: "bg-purple-500", cssSelectors: "background-color", description: "Sets background color to purple shade 500" },
-  { value: "bg-purple-600", label: "bg-purple-600", cssSelectors: "background-color", description: "Sets background color to purple shade 600" },
-  { value: "bg-purple-700", label: "bg-purple-700", cssSelectors: "background-color", description: "Sets background color to purple shade 700" },
-  { value: "bg-purple-800", label: "bg-purple-800", cssSelectors: "background-color", description: "Sets background color to purple shade 800" },
-  { value: "bg-purple-900", label: "bg-purple-900", cssSelectors: "background-color", description: "Sets background color to purple shade 900" },
-  { value: "bg-purple-950", label: "bg-purple-950", cssSelectors: "background-color", description: "Sets background color to purple shade 950" },
-  { value: "bg-fuchsia-50", label: "bg-fuchsia-50", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 50" },
-  { value: "bg-fuchsia-100", label: "bg-fuchsia-100", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 100" },
-  { value: "bg-fuchsia-200", label: "bg-fuchsia-200", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 200" },
-  { value: "bg-fuchsia-300", label: "bg-fuchsia-300", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 300" },
-  { value: "bg-fuchsia-400", label: "bg-fuchsia-400", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 400" },
-  { value: "bg-fuchsia-500", label: "bg-fuchsia-500", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 500" },
-  { value: "bg-fuchsia-600", label: "bg-fuchsia-600", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 600" },
-  { value: "bg-fuchsia-700", label: "bg-fuchsia-700", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 700" },
-  { value: "bg-fuchsia-800", label: "bg-fuchsia-800", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 800" },
-  { value: "bg-fuchsia-900", label: "bg-fuchsia-900", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 900" },
-  { value: "bg-fuchsia-950", label: "bg-fuchsia-950", cssSelectors: "background-color", description: "Sets background color to fuchsia shade 950" },
-  { value: "bg-pink-50", label: "bg-pink-50", cssSelectors: "background-color", description: "Sets background color to pink shade 50" },
-  { value: "bg-pink-100", label: "bg-pink-100", cssSelectors: "background-color", description: "Sets background color to pink shade 100" },
-  { value: "bg-pink-200", label: "bg-pink-200", cssSelectors: "background-color", description: "Sets background color to pink shade 200" },
-  { value: "bg-pink-300", label: "bg-pink-300", cssSelectors: "background-color", description: "Sets background color to pink shade 300" },
-  { value: "bg-pink-400", label: "bg-pink-400", cssSelectors: "background-color", description: "Sets background color to pink shade 400" },
-  { value: "bg-pink-500", label: "bg-pink-500", cssSelectors: "background-color", description: "Sets background color to pink shade 500" },
-  { value: "bg-pink-600", label: "bg-pink-600", cssSelectors: "background-color", description: "Sets background color to pink shade 600" },
-  { value: "bg-pink-700", label: "bg-pink-700", cssSelectors: "background-color", description: "Sets background color to pink shade 700" },
-  { value: "bg-pink-800", label: "bg-pink-800", cssSelectors: "background-color", description: "Sets background color to pink shade 800" },
-  { value: "bg-pink-900", label: "bg-pink-900", cssSelectors: "background-color", description: "Sets background color to pink shade 900" },
-  { value: "bg-pink-950", label: "bg-pink-950", cssSelectors: "background-color", description: "Sets background color to pink shade 950" },
-  { value: "bg-rose-50", label: "bg-rose-50", cssSelectors: "background-color", description: "Sets background color to rose shade 50" },
-  { value: "bg-rose-100", label: "bg-rose-100", cssSelectors: "background-color", description: "Sets background color to rose shade 100" },
-  { value: "bg-rose-200", label: "bg-rose-200", cssSelectors: "background-color", description: "Sets background color to rose shade 200" },
-  { value: "bg-rose-300", label: "bg-rose-300", cssSelectors: "background-color", description: "Sets background color to rose shade 300" },
-  { value: "bg-rose-400", label: "bg-rose-400", cssSelectors: "background-color", description: "Sets background color to rose shade 400" },
-  { value: "bg-rose-500", label: "bg-rose-500", cssSelectors: "background-color", description: "Sets background color to rose shade 500" },
-  { value: "bg-rose-600", label: "bg-rose-600", cssSelectors: "background-color", description: "Sets background color to rose shade 600" },
-  { value: "bg-rose-700", label: "bg-rose-700", cssSelectors: "background-color", description: "Sets background color to rose shade 700" },
-  { value: "bg-rose-800", label: "bg-rose-800", cssSelectors: "background-color", description: "Sets background color to rose shade 800" },
-  { value: "bg-rose-900", label: "bg-rose-900", cssSelectors: "background-color", description: "Sets background color to rose shade 900" },
-  { value: "bg-rose-950", label: "bg-rose-950", cssSelectors: "background-color", description: "Sets background color to rose shade 950" },
-  { value: "bg-slate-50", label: "bg-slate-50", cssSelectors: "background-color", description: "Sets background color to slate shade 50" },
-  { value: "bg-slate-100", label: "bg-slate-100", cssSelectors: "background-color", description: "Sets background color to slate shade 100" },
-  { value: "bg-slate-200", label: "bg-slate-200", cssSelectors: "background-color", description: "Sets background color to slate shade 200" },
-  { value: "bg-slate-300", label: "bg-slate-300", cssSelectors: "background-color", description: "Sets background color to slate shade 300" },
-  { value: "bg-slate-400", label: "bg-slate-400", cssSelectors: "background-color", description: "Sets background color to slate shade 400" },
-  { value: "bg-slate-500", label: "bg-slate-500", cssSelectors: "background-color", description: "Sets background color to slate shade 500" },
-  { value: "bg-slate-600", label: "bg-slate-600", cssSelectors: "background-color", description: "Sets background color to slate shade 600" },
-  { value: "bg-slate-700", label: "bg-slate-700", cssSelectors: "background-color", description: "Sets background color to slate shade 700" },
-  { value: "bg-slate-800", label: "bg-slate-800", cssSelectors: "background-color", description: "Sets background color to slate shade 800" },
-  { value: "bg-slate-900", label: "bg-slate-900", cssSelectors: "background-color", description: "Sets background color to slate shade 900" },
-  { value: "bg-slate-950", label: "bg-slate-950", cssSelectors: "background-color", description: "Sets background color to slate shade 950" },
-  { value: "bg-gray-50", label: "bg-gray-50", cssSelectors: "background-color", description: "Sets background color to gray shade 50" },
-  { value: "bg-gray-100", label: "bg-gray-100", cssSelectors: "background-color", description: "Sets background color to gray shade 100" },
-  { value: "bg-gray-200", label: "bg-gray-200", cssSelectors: "background-color", description: "Sets background color to gray shade 200" },
-  { value: "bg-gray-300", label: "bg-gray-300", cssSelectors: "background-color", description: "Sets background color to gray shade 300" },
-  { value: "bg-gray-400", label: "bg-gray-400", cssSelectors: "background-color", description: "Sets background color to gray shade 400" },
-  { value: "bg-gray-500", label: "bg-gray-500", cssSelectors: "background-color", description: "Sets background color to gray shade 500" },
-  { value: "bg-gray-600", label: "bg-gray-600", cssSelectors: "background-color", description: "Sets background color to gray shade 600" },
-  { value: "bg-gray-700", label: "bg-gray-700", cssSelectors: "background-color", description: "Sets background color to gray shade 700" },
-  { value: "bg-gray-800", label: "bg-gray-800", cssSelectors: "background-color", description: "Sets background color to gray shade 800" },
-  { value: "bg-gray-900", label: "bg-gray-900", cssSelectors: "background-color", description: "Sets background color to gray shade 900" },
-  { value: "bg-gray-950", label: "bg-gray-950", cssSelectors: "background-color", description: "Sets background color to gray shade 950" },
-  { value: "bg-zinc-50", label: "bg-zinc-50", cssSelectors: "background-color", description: "Sets background color to zinc shade 50" },
-  { value: "bg-zinc-100", label: "bg-zinc-100", cssSelectors: "background-color", description: "Sets background color to zinc shade 100" },
-  { value: "bg-zinc-200", label: "bg-zinc-200", cssSelectors: "background-color", description: "Sets background color to zinc shade 200" },
-  { value: "bg-zinc-300", label: "bg-zinc-300", cssSelectors: "background-color", description: "Sets background color to zinc shade 300" },
-  { value: "bg-zinc-400", label: "bg-zinc-400", cssSelectors: "background-color", description: "Sets background color to zinc shade 400" },
-  { value: "bg-zinc-500", label: "bg-zinc-500", cssSelectors: "background-color", description: "Sets background color to zinc shade 500" },
-  { value: "bg-zinc-600", label: "bg-zinc-600", cssSelectors: "background-color", description: "Sets background color to zinc shade 600" },
-  { value: "bg-zinc-700", label: "bg-zinc-700", cssSelectors: "background-color", description: "Sets background color to zinc shade 700" },
-  { value: "bg-zinc-800", label: "bg-zinc-800", cssSelectors: "background-color", description: "Sets background color to zinc shade 800" },
-  { value: "bg-zinc-900", label: "bg-zinc-900", cssSelectors: "background-color", description: "Sets background color to zinc shade 900" },
-  { value: "bg-zinc-950", label: "bg-zinc-950", cssSelectors: "background-color", description: "Sets background color to zinc shade 950" },
-  { value: "bg-neutral-50", label: "bg-neutral-50", cssSelectors: "background-color", description: "Sets background color to neutral shade 50" },
-  { value: "bg-neutral-100", label: "bg-neutral-100", cssSelectors: "background-color", description: "Sets background color to neutral shade 100" },
-  { value: "bg-neutral-200", label: "bg-neutral-200", cssSelectors: "background-color", description: "Sets background color to neutral shade 200" },
-  { value: "bg-neutral-300", label: "bg-neutral-300", cssSelectors: "background-color", description: "Sets background color to neutral shade 300" },
-  { value: "bg-neutral-400", label: "bg-neutral-400", cssSelectors: "background-color", description: "Sets background color to neutral shade 400" },
-  { value: "bg-neutral-500", label: "bg-neutral-500", cssSelectors: "background-color", description: "Sets background color to neutral shade 500" },
-  { value: "bg-neutral-600", label: "bg-neutral-600", cssSelectors: "background-color", description: "Sets background color to neutral shade 600" },
-  { value: "bg-neutral-700", label: "bg-neutral-700", cssSelectors: "background-color", description: "Sets background color to neutral shade 700" },
-  { value: "bg-neutral-800", label: "bg-neutral-800", cssSelectors: "background-color", description: "Sets background color to neutral shade 800" },
-  { value: "bg-neutral-900", label: "bg-neutral-900", cssSelectors: "background-color", description: "Sets background color to neutral shade 900" },
-  { value: "bg-neutral-950", label: "bg-neutral-950", cssSelectors: "background-color", description: "Sets background color to neutral shade 950" },
-  { value: "bg-stone-50", label: "bg-stone-50", cssSelectors: "background-color", description: "Sets background color to stone shade 50" },
-  { value: "bg-stone-100", label: "bg-stone-100", cssSelectors: "background-color", description: "Sets background color to stone shade 100" },
-  { value: "bg-stone-200", label: "bg-stone-200", cssSelectors: "background-color", description: "Sets background color to stone shade 200" },
-  { value: "bg-stone-300", label: "bg-stone-300", cssSelectors: "background-color", description: "Sets background color to stone shade 300" },
-  { value: "bg-stone-400", label: "bg-stone-400", cssSelectors: "background-color", description: "Sets background color to stone shade 400" },
-  { value: "bg-stone-500", label: "bg-stone-500", cssSelectors: "background-color", description: "Sets background color to stone shade 500" },
-  { value: "bg-stone-600", label: "bg-stone-600", cssSelectors: "background-color", description: "Sets background color to stone shade 600" },
-  { value: "bg-stone-700", label: "bg-stone-700", cssSelectors: "background-color", description: "Sets background color to stone shade 700" },
-  { value: "bg-stone-800", label: "bg-stone-800", cssSelectors: "background-color", description: "Sets background color to stone shade 800" },
-  { value: "bg-stone-900", label: "bg-stone-900", cssSelectors: "background-color", description: "Sets background color to stone shade 900" },
-  { value: "bg-stone-950", label: "bg-stone-950", cssSelectors: "background-color", description: "Sets background color to stone shade 950" },
-  { value: "bg-black", label: "bg-black", cssSelectors: "background-color", description: "Sets background color to black" }
+const justifyItems: TailwindSelectorType[] = [
+  {
+    label: "justify-items-start",
+    value: "justify-items-start",
+    styles: "justify-items: start;",
+    description: "Justifies grid items to the start of their inline axis",
+  },
+  {
+    label: "justify-items-end",
+    value: "justify-items-end",
+    styles: "justify-items: end;",
+    description: "Justifies grid items to the end of their inline axis",
+  },
+  {
+    label: "justify-items-center",
+    value: "justify-items-center",
+    styles: "justify-items: center;",
+    description: "Justifies grid items to the center of their inline axis",
+  },
+  {
+    label: "justify-items-stretch",
+    value: "justify-items-stretch",
+    styles: "justify-items: stretch;",
+    description: "Stretches grid items to fill their inline axis",
+  },
 ];
 
-// Combined default export for backward compatibility
-export default [
-  ...layoutOptions,
-  ...flexboxGridOptions,
-  ...spacingOptions,
-  ...sizingOptions,
-  ...typographyOptions,
-  ...backgroundsOptions,
-  ...bordersOptions,
-  ...effectsOptions,
-  ...filtersOptions,
-  ...tablesOptions,
-  ...transitionsAnimationOptions,
-  ...transformsOptions,
-  ...interactivityOptions,
-  ...svgOptions,
-  ...accessibilityOptions,
-  ...textColorOptions,
-  ...borderColorOptions,
-  ...backgroundColorOptions,
+const justifySelf: TailwindSelectorType[] = [
+  {
+    label: "justify-self-auto",
+    value: "justify-self-auto",
+    styles: "justify-self: auto;",
+    description: "Uses the value from justify-items",
+  },
+  {
+    label: "justify-self-start",
+    value: "justify-self-start",
+    styles: "justify-self: start;",
+    description: "Justifies a grid item to the start of its inline axis",
+  },
+  {
+    label: "justify-self-end",
+    value: "justify-self-end",
+    styles: "justify-self: end;",
+    description: "Justifies a grid item to the end of its inline axis",
+  },
+  {
+    label: "justify-self-center",
+    value: "justify-self-center",
+    styles: "justify-self: center;",
+    description: "Justifies a grid item to the center of its inline axis",
+  },
+  {
+    label: "justify-self-stretch",
+    value: "justify-self-stretch",
+    styles: "justify-self: stretch;",
+    description: "Stretches a grid item to fill its inline axis",
+  },
+];
+
+const alignContent: TailwindSelectorType[] = [
+  {
+    label: "content-normal",
+    value: "content-normal",
+    styles: "align-content: normal;",
+    description: "Uses the default alignment for the layout mode",
+  },
+  {
+    label: "content-start",
+    value: "content-start",
+    styles: "align-content: flex-start;",
+    description: "Aligns content to the start of the container",
+  },
+  {
+    label: "content-end",
+    value: "content-end",
+    styles: "align-content: flex-end;",
+    description: "Aligns content to the end of the container",
+  },
+  {
+    label: "content-center",
+    value: "content-center",
+    styles: "align-content: center;",
+    description: "Aligns content to the center of the container",
+  },
+  {
+    label: "content-between",
+    value: "content-between",
+    styles: "align-content: space-between;",
+    description:
+      "Distributes rows with the first row at the start and last at the end",
+  },
+  {
+    label: "content-around",
+    value: "content-around",
+    styles: "align-content: space-around;",
+    description: "Distributes rows with equal space around each row",
+  },
+  {
+    label: "content-evenly",
+    value: "content-evenly",
+    styles: "align-content: space-evenly;",
+    description: "Distributes rows with equal space between them",
+  },
+  {
+    label: "content-baseline",
+    value: "content-baseline",
+    styles: "align-content: baseline;",
+    description: "Aligns content along their baseline",
+  },
+  {
+    label: "content-stretch",
+    value: "content-stretch",
+    styles: "align-content: stretch;",
+    description: "Stretches rows to fill the container",
+  },
+];
+
+const alignItems: TailwindSelectorType[] = [
+  {
+    label: "items-start",
+    value: "items-start",
+    styles: "align-items: flex-start;",
+    description: "Aligns items to the start of the cross axis",
+  },
+  {
+    label: "items-end",
+    value: "items-end",
+    styles: "align-items: flex-end;",
+    description: "Aligns items to the end of the cross axis",
+  },
+  {
+    label: "items-center",
+    value: "items-center",
+    styles: "align-items: center;",
+    description: "Aligns items to the center of the cross axis",
+  },
+  {
+    label: "items-baseline",
+    value: "items-baseline",
+    styles: "align-items: baseline;",
+    description: "Aligns items along their baseline",
+  },
+  {
+    label: "items-stretch",
+    value: "items-stretch",
+    styles: "align-items: stretch;",
+    description: "Stretches items to fill the cross axis",
+  },
+];
+
+const alignSelf: TailwindSelectorType[] = [
+  {
+    label: "self-auto",
+    value: "self-auto",
+    styles: "align-self: auto;",
+    description: "Uses the value from align-items",
+  },
+  {
+    label: "self-start",
+    value: "self-start",
+    styles: "align-self: flex-start;",
+    description: "Aligns an item to the start of the cross axis",
+  },
+  {
+    label: "self-end",
+    value: "self-end",
+    styles: "align-self: flex-end;",
+    description: "Aligns an item to the end of the cross axis",
+  },
+  {
+    label: "self-center",
+    value: "self-center",
+    styles: "align-self: center;",
+    description: "Aligns an item to the center of the cross axis",
+  },
+  {
+    label: "self-stretch",
+    value: "self-stretch",
+    styles: "align-self: stretch;",
+    description: "Stretches an item to fill the cross axis",
+  },
+  {
+    label: "self-baseline",
+    value: "self-baseline",
+    styles: "align-self: baseline;",
+    description: "Aligns an item along its baseline",
+  },
+];
+
+// Group tailwind selectors by section
+const layoutSelectors: TailwindSelectorGroupType[] = [
+  { section: "Aspect Ratio", selectors: aspectRatio },
+  { section: "Columns", selectors: columns },
+  { section: "Break After", selectors: breakAfter },
+  { section: "Break Before", selectors: breakBefore },
+  { section: "Break Inside", selectors: breakInside },
+  { section: "Box Decoration Break", selectors: boxDecorationBreak },
+  { section: "Box Sizing", selectors: boxSizing },
+  { section: "Display", selectors: display },
+  { section: "Float", selectors: float },
+  { section: "Clear", selectors: clear },
+  { section: "Isolation", selectors: isolation },
+  { section: "Object Fit", selectors: objectFit },
+  { section: "Object Position", selectors: objectPosition },
+  { section: "Overflow", selectors: overflow },
+  { section: "Overscroll Behavior", selectors: overscrollBehavior },
+  { section: "Position", selectors: position },
+  { section: "Top / Right / Bottom / Left", selectors: topRightBottomLeft },
+  { section: "Visibility", selectors: visibility },
+  { section: "Z-Index", selectors: zIndex },
+];
+
+const flexboxGridSelectors: TailwindSelectorGroupType[] = [
+  { section: "Flex Basis", selectors: flexBasis },
+  { section: "Flex Direction", selectors: flexDirection },
+  { section: "Flex Wrap", selectors: flexWrap },
+  { section: "Flex", selectors: flex },
+  { section: "Flex Grow", selectors: flexGrow },
+  { section: "Flex Shrink", selectors: flexShrink },
+  { section: "Order", selectors: order },
+  { section: "Grid Template Columns", selectors: gridTemplateColumns },
+  { section: "Grid Column", selectors: gridColumn },
+  { section: "Grid Template Rows", selectors: gridTemplateRows },
+  { section: "Grid Row", selectors: gridRow },
+  { section: "Grid Auto Flow", selectors: gridAutoFlow },
+  { section: "Grid Auto Columns", selectors: gridAutoColumns },
+  { section: "Grid Auto Rows", selectors: gridAutoRows },
+  { section: "Gap", selectors: gap },
+  { section: "Justify Items", selectors: justifyItems },
+  { section: "Justify Content", selectors: justifyContent },
+  { section: "Justify Self", selectors: justifySelf },
+  { section: "Align Items", selectors: alignItems },
+  { section: "Align Content", selectors: alignContent },
+  { section: "Align Self", selectors: alignSelf },
+  // { section: "Place Content", selectors: placeContent },
+  // { section: "Place selectors", selectors: placeselectors },
+  // { section: "Place Self", selectors: placeSelf }
+];
+
+const spacingProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Spacing", selectors: padding},
+  //     {section: "Spacing", selectors: margin}
+];
+
+const sizingProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Width", selectors: width},
+  //     {section: "Min Width", selectors: minWidth},
+  //     {section: "Max Width", selectors: maxWidth},
+  //     {section: "Height", selectors: height},
+  //     {section: "Min Height", selectors: minHeight},
+  //     {section: "Max Height", selectors: maxHeight}
+];
+
+const typographyProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Font Family", selectors: fontFamily},
+  //     {section: "Font Size", selectors: fontSize},
+  //     {section: "Font Smoothing", selectors: fontSmoothing},
+  //     {section: "Font Style", selectors: fontStyle},
+  //     {section: "Font Weight", selectors: fontWeight},
+  //     {section: "Font Stretch", selectors: fontStretch},
+  //     {section: "Font Variant Numeric", selectors: fontVariantNumeric},
+  //     {section: "Letter Spacing", selectors: letterSpacing},
+  //     {section: "Line Clamp", selectors: lineClamp},
+  //     {section: "Line Height", selectors: lineHeight},
+  //     {section: "List Style Image", selectors: listStyleImage},
+  //     {section: "List Style Position", selectors: listStylePosition},
+  //     {section: "List Style Type", selectors: listStyleType},
+  //     {section: "Text Align", selectors: textAlign},
+  //     {section: "Color", selectors: color},
+  //     {section: "Text Decoration Line", selectors: textDecorationLine},
+  //     {section: "Text Decoration Color", selectors: textDecorationColor},
+  //     {section: "Text Decoration Style", selectors: textDecorationStyle},
+  //     {section: "Text Decoration Thickness", selectors: textDecorationThickness},
+  //     {section: "Text Underline Offset", selectors: textUnderlineOffset},
+  //     {section: "Text Transform", selectors: textTransform},
+  //     {section: "Text Overflow", selectors: textOverflow},
+  //     {section: "Text Wrap", selectors: textWrap},
+  //     {section: "Text Indent", selectors: textIndent},
+  //     {section: "Vertical Align", selectors: verticalAlign},
+  //     {section: "White Space", selectors: whiteSpace},
+  //     {section: "Word Break", selectors: wordBreak},
+  //     {section: "Overflow Wrap", selectors: overflowWrap},
+  //     {section: "Hyphens", selectors: hyphens},
+  //     {section: "Content", selectors: content}
+];
+
+const backgroundProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Background Attachment", selectors: backgroundAttachment},
+  //     {section: "Background Clip", selectors: backgroundClip},
+  //     {section: "Background Color", selectors: backgroundColor},
+  //     {section: "Background Image", selectors: backgroundImage},
+  //     {section: "Background Origin", selectors: backgroundOrigin},
+  //     {section: "Background Position", selectors: backgroundPosition},
+  //     {section: "Background Repeat", selectors: backgroundRepeat},
+  //     {section: "Background Size", selectors: backgroundSize}
+];
+
+const borderProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Border Radius", selectors: borderRadius},
+  //     {section: "Border Width", selectors: borderWidth},
+  //     {section: "Border Color", selectors: borderColor},
+  //     {section: "Border Style", selectors: borderStyle},
+  //     {section: "Outline Width", selectors: outlineWidth},
+  //     {section: "Outline Color", selectors: outlineColor},
+  //     {section: "Outline Style", selectors: outlineStyle},
+  //     {section: "Outline Offset", selectors: outlineOffset}
+];
+
+const effectsProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Box Shadow", selectors: boxShadow},
+  //     {section: "Text Shadow", selectors: textShadow},
+  //     {section: "Opacity", selectors: opacity},
+  //     {section: "Mix Blend Mode", selectors: mixBlendMode},
+  //     {section: "Background Blend Mode", selectors: backgroundBlendMode},
+  //     {section: "Mask Clip", selectors: maskClip},
+  //     {section: "Mask Composite", selectors: maskComposite},
+  //     {section: "Mask Image", selectors: maskImage},
+  //     {section: "Mask Mode", selectors: maskMode},
+  //     {section: "Mask Origin", selectors: maskOrigin},
+  //     {section: "Mask Position", selectors: maskPosition},
+  //     {section: "Mask Repeat", selectors: maskRepeat},
+  //     {section: "Mask Size", selectors: maskSize},
+  //     {section: "Mask Type", selectors: maskType}
+];
+
+const filterProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Filter", selectors: filter},
+  //     {section: "Blur", selectors: blur},
+  //     {section: "Brightness", selectors: brightness},
+  //     {section: "Contrast", selectors: contrast},
+  //     {section: "Drop Shadow", selectors: dropShadow},
+  //     {section: "Grayscale", selectors: grayscale},
+  //     {section: "Hue Rotate", selectors: hueRotate},
+  //     {section: "Invert", selectors: invert},
+  //     {section: "Saturate", selectors: saturate},
+  //     {section: "Sepia", selectors: sepia},
+  //     {section: "Backdrop Filter", selectors: backdropFilter},
+  //     {section: "Backdrop Blur", selectors: backdropBlur},
+  //     {section: "Backdrop Brightness", selectors: backdropBrightness},
+  //     {section: "Backdrop Contrast", selectors: backdropContrast},
+  //     {section: "Backdrop Grayscale", selectors: backdropGrayscale},
+  //     {section: "Backdrop Hue Rotate", selectors: backdropHueRotate},
+  //     {section: "Backdrop Invert", selectors: backdropInvert},
+  //     {section: "Backdrop Opacity", selectors: backdropOpacity},
+  //     {section: "Backdrop Saturate", selectors: backdropSaturate},
+  //     {section: "Backdrop Sepia", selectors: backdropSepia}
+];
+
+const tableProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Border Collapse", selectors: borderCollapse},
+  //     {section: "Border Spacing", selectors: borderSpacing},
+  //     {section: "Table Layout", selectors: tableLayout},
+  //     {section: "Caption Side", selectors: captionSide}
+];
+
+const transitionAnimationProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Transition Property", selectors: transitionProperty},
+  //     {section: "Transition Behavior", selectors: transitionBehavior},
+  //     {section: "Transition Duration", selectors: transitionDuration},
+  //     {section: "Transition Timing Function", selectors: transitionTimingFunction},
+  //     {section: "Transition Delay", selectors: transitionDelay},
+  //     {section: "Animation", selectors: animation}
+];
+
+const transformProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Backface Visibility", selectors: backfaceVisibility},
+  //     {section: "Perspective", selectors: perspective},
+  //     {section: "Perspective Origin", selectors: perspectiveOrigin},
+  //     {section: "Rotate", selectors: rotate},
+  //     {section: "Scale", selectors: scale},
+  //     {section: "Skew", selectors: skew},
+  //     {section: "Transform", selectors: transform},
+  //     {section: "Transform Origin", selectors: transformOrigin},
+  //     {section: "Transform Style", selectors: transformStyle},
+  //     {section: "Translate", selectors: translate}
+];
+
+const interactivityProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Accent Color", selectors: accentColor},
+  //     {section: "Appearance", selectors: appearance},
+  //     {section: "Caret Color", selectors: caretColor},
+  //     {section: "Color Scheme", selectors: colorScheme},
+  //     {section: "Cursor", selectors: cursor},
+  //     {section: "Field Sizing", selectors: fieldSizing},
+  //     {section: "Pointer Events", selectors: pointerEvents},
+  //     {section: "Resize", selectors: resize},
+  //     {section: "Scroll Behavior", selectors: scrollBehavior},
+  //     {section: "Scroll Margin", selectors: scrollMargin},
+  //     {section: "Scroll Padding", selectors: scrollPadding},
+  //     {section: "Scroll Snap Align", selectors: scrollSnapAlign},
+  //     {section: "Scroll Snap Stop", selectors: scrollSnapStop},
+  //     {section: "Scroll Snap Type", selectors: scrollSnapType},
+  //     {section: "Touch Action", selectors: touchAction},
+  //     {section: "User Select", selectors: userSelect},
+  //     {section: "Will Change", selectors: willChange}
+];
+
+const svgProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Fill", selectors: fill},
+  //     {section: "Stroke", selectors: stroke},
+  //     {section: "Stroke Width", selectors: strokeWidth}
+];
+
+const accessibilityProperties: TailwindSelectorGroupType[] = [
+  //     {section: "Forced Color Adjust", selectors: forcedColorAdjust}
+];
+
+export const groupedSelectors: TailwindSelectorCategoryType[] = [
+  { category: "Layout", groups: layoutSelectors },
+  { category: "Flexbox & Grid", groups: flexboxGridSelectors },
+  { category: "Spacing", groups: spacingProperties },
+  { category: "Sizing", groups: sizingProperties },
+  { category: "Typography", groups: typographyProperties },
+  { category: "Backgrounds", groups: backgroundProperties },
+  { category: "Borders", groups: borderProperties },
+  { category: "Effects", groups: effectsProperties },
+  { category: "Filters", groups: filterProperties },
+  { category: "Tables", groups: tableProperties },
+  {
+    category: "Transitions & Animation",
+    groups: transitionAnimationProperties,
+  },
+  { category: "Transforms", groups: transformProperties },
+  { category: "Interactivity", groups: interactivityProperties },
+  { category: "SVG", groups: svgProperties },
+  { category: "Accessibility", groups: accessibilityProperties },
 ];

@@ -4,13 +4,21 @@
  * Supports different entity types with appropriate form controls
  */
 
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Check, ChevronsUpDown } from 'lucide-react';
-import type { PageEntity, ContainerEntity, ComponentEntity } from '@/utils/types';
-import { pageFormSchema, containerFormSchema, componentFormSchema } from '@/utils/schemas';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Check, ChevronsUpDown } from "lucide-react";
+import type {
+  PageEntity,
+  ContainerEntity,
+  ComponentEntity,
+} from "@/utils/types";
+import {
+  pageFormSchema,
+  containerFormSchema,
+  componentFormSchema,
+} from "@/utils/schemas";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -18,79 +26,49 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from '@/components/ui/command';
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { cn } from '@/lib/utils';
+} from "@/components/ui/popover";
 import {
-  layoutOptions,
-  flexboxGridOptions,
-  spacingOptions,
-  sizingOptions,
-  typographyOptions,
-  backgroundsOptions,
-  bordersOptions,
-  effectsOptions,
-  filtersOptions,
-  tablesOptions,
-  transitionsAnimationOptions,
-  transformsOptions,
-  interactivityOptions,
-  svgOptions,
-  accessibilityOptions,
-  textColorOptions,
-  borderColorOptions,
-  backgroundColorOptions,
-} from '@/utils/tailwindSelectors';
-
-// Group tailwind selectors by section
-const groupedSelectors = [
-  { section: 'Layout', items: layoutOptions },
-  { section: 'Flexbox & Grid', items: flexboxGridOptions },
-  { section: 'Spacing', items: spacingOptions },
-  { section: 'Sizing', items: sizingOptions },
-  { section: 'Typography', items: typographyOptions },
-  { section: 'Backgrounds', items: backgroundsOptions },
-  { section: 'Borders', items: bordersOptions },
-  { section: 'Effects', items: effectsOptions },
-  { section: 'Filters', items: filtersOptions },
-  { section: 'Tables', items: tablesOptions },
-  { section: 'Transitions & Animation', items: transitionsAnimationOptions },
-  { section: 'Transforms', items: transformsOptions },
-  { section: 'Interactivity', items: interactivityOptions },
-  { section: 'SVG', items: svgOptions },
-  { section: 'Accessibility', items: accessibilityOptions },
-  { section: 'Text Colors', items: textColorOptions },
-  { section: 'Border Colors', items: borderColorOptions },
-  { section: 'Background Colors', items: backgroundColorOptions },
-];
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  TooltipProvider,
+} from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 interface EditorProps {
   entity: PageEntity | ContainerEntity | ComponentEntity;
-  entityType: 'Page' | 'Container' | 'Component';
+  entityType: "Page" | "Container" | "Component";
   onSave?: (data: unknown) => void;
 }
 
 export function Editor({ entity, entityType, onSave }: EditorProps) {
   return (
     <div className="space-y-6">
-      {entityType === 'Page' && (
+      {entityType === "Page" && (
         <PageEditor entity={entity as PageEntity} onSave={onSave} />
       )}
-      {entityType === 'Container' && (
+      {entityType === "Container" && (
         <ContainerEditor entity={entity as ContainerEntity} onSave={onSave} />
       )}
-      {entityType === 'Component' && (
+      {entityType === "Component" && (
         <ComponentEditor entity={entity as ComponentEntity} onSave={onSave} />
       )}
     </div>
   );
 }
 
-function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: unknown) => void }) {
+function PageEditor({
+  entity,
+  onSave,
+}: {
+  entity: PageEntity;
+  onSave?: (data: unknown) => void;
+}) {
   const {
     register,
     handleSubmit,
@@ -104,18 +82,21 @@ function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: un
   });
 
   const handleFormSubmit = (data: unknown) => {
-    console.log('PageEditor: Form submitted with data:', data);
+    console.log("PageEditor: Form submitted with data:", data);
     onSave?.(data);
   };
 
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-4">
       <div>
-        <label htmlFor="name" className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
+        <label
+          htmlFor="name"
+          className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]"
+        >
           Page Name
         </label>
         <input
-          {...register('name')}
+          {...register("name")}
           id="name"
           type="text"
           className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
@@ -129,11 +110,14 @@ function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: un
       </div>
 
       <div>
-        <label htmlFor="meta.title" className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
+        <label
+          htmlFor="meta.title"
+          className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]"
+        >
           SEO Title
         </label>
         <input
-          {...register('meta.title')}
+          {...register("meta.title")}
           id="meta.title"
           type="text"
           placeholder="Page title for search engines"
@@ -142,11 +126,14 @@ function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: un
       </div>
 
       <div>
-        <label htmlFor="meta.description" className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
+        <label
+          htmlFor="meta.description"
+          className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]"
+        >
           SEO Description
         </label>
         <textarea
-          {...register('meta.description')}
+          {...register("meta.description")}
           id="meta.description"
           rows={3}
           placeholder="Brief description for search engines"
@@ -164,10 +151,18 @@ function PageEditor({ entity, onSave }: { entity: PageEntity; onSave?: (data: un
   );
 }
 
-function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?: (data: unknown) => void }) {
-  const [classList, setClassList] = useState<string[]>(entity.tailwindClassList || []);
+function ContainerEditor({
+  entity,
+  onSave,
+}: {
+  entity: ContainerEntity;
+  onSave?: (data: unknown) => void;
+}) {
+  const [classList, setClassList] = useState<string[]>(
+    entity.tailwindClassList || []
+  );
   const [open, setOpen] = useState(false);
-  
+
   const {
     register,
     handleSubmit,
@@ -179,46 +174,44 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
     },
   });
 
-  console.log('ContainerEditor: Current form errors:', errors);
+  console.log("ContainerEditor: Current form errors:", errors);
 
   const toggleClass = (value: string) => {
-    setClassList(prev => 
-      prev.includes(value) 
-        ? prev.filter(c => c !== value)
-        : [...prev, value]
+    setClassList((prev) =>
+      prev.includes(value) ? prev.filter((c) => c !== value) : [...prev, value]
     );
   };
 
   const removeTailwindClass = (className: string) => {
-    setClassList(prev => prev.filter(c => c !== className));
+    setClassList((prev) => prev.filter((c) => c !== className));
   };
 
   const handleFormSubmit = (formData: { name: string }) => {
-    console.log('ContainerEditor: Form submitted with data:', formData);
-    console.log('ContainerEditor: Current classList:', classList);
+    console.log("ContainerEditor: Form submitted with data:", formData);
+    console.log("ContainerEditor: Current classList:", classList);
     const updatedData = {
       ...formData,
       tailwindClassList: classList,
     };
-    console.log('ContainerEditor: Final data to save:', updatedData);
+    console.log("ContainerEditor: Final data to save:", updatedData);
     onSave?.(updatedData);
   };
 
-  const handleSubmitWithError = handleSubmit(
-    handleFormSubmit,
-    (errors) => {
-      console.log('ContainerEditor: Form submission failed with errors:', errors);
-    }
-  );
+  const handleSubmitWithError = handleSubmit(handleFormSubmit, (errors) => {
+    console.log("ContainerEditor: Form submission failed with errors:", errors);
+  });
 
   return (
     <form onSubmit={handleSubmitWithError} className="space-y-6">
       <div>
-        <label htmlFor="name" className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
+        <label
+          htmlFor="name"
+          className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]"
+        >
           Container Name
         </label>
         <input
-          {...register('name')}
+          {...register("name")}
           id="name"
           type="text"
           className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
@@ -246,37 +239,59 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
                 className="w-full justify-between"
               >
                 {classList.length > 0
-                  ? `${classList.length} class${classList.length === 1 ? '' : 'es'} selected`
+                  ? `${classList.length} class${
+                      classList.length === 1 ? "" : "es"
+                    } selected`
                   : "Select classes..."}
                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-full p-0">
-              <Command>
-                <CommandInput placeholder="Search classes..." />
-                <CommandList>
-                  <CommandEmpty>No class found.</CommandEmpty>
-                  {groupedSelectors.map((group) => (
-                    <CommandGroup key={group.section} heading={group.section}>
-                      {group.items.map((option) => (
-                        <CommandItem
-                          key={option.value}
-                          value={option.value}
-                          onSelect={() => toggleClass(option.value)}
-                        >
-                          <Check
-                            className={cn(
-                              "mr-2 h-4 w-4",
-                              classList.includes(option.value) ? "opacity-100" : "opacity-0"
-                            )}
-                          />
-                          {option.label}
-                        </CommandItem>
-                      ))}
-                    </CommandGroup>
-                  ))}
-                </CommandList>
-              </Command>
+            <PopoverContent
+              className="w-full p-0 animate-fade-in"
+              align="start"
+              sideOffset={4}
+            >
+              <TooltipProvider>
+                <Command>
+                  <CommandInput
+                    placeholder="Search classes..."
+                    className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-none focus:shadow-none focus-visible:outline-none"
+                  />
+                  <CommandList>
+                    <CommandEmpty>No class found.</CommandEmpty>
+                    {groupedSelectors.map((group) => (
+                      <CommandGroup key={group.section} heading={group.section}>
+                        {group.items.map((option) => (
+                          <Tooltip key={option.value} delayDuration={300}>
+                            <TooltipTrigger asChild>
+                              <CommandItem
+                                value={option.value}
+                                onSelect={() => toggleClass(option.value)}
+                              >
+                                <Check
+                                  className={cn(
+                                    "mr-2 h-4 w-4",
+                                    classList.includes(option.value)
+                                      ? "opacity-100"
+                                      : "opacity-0"
+                                  )}
+                                />
+                                {option.label}
+                              </CommandItem>
+                            </TooltipTrigger>
+                            <TooltipContent side="right" className="max-w-xs">
+                              <p className="font-semibold text-xs mb-1">
+                                CSS: {option.cssSelectors}
+                              </p>
+                              <p className="text-xs">{option.description}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        ))}
+                      </CommandGroup>
+                    ))}
+                  </CommandList>
+                </Command>
+              </TooltipProvider>
             </PopoverContent>
           </Popover>
 
@@ -327,88 +342,100 @@ function ContainerEditor({ entity, onSave }: { entity: ContainerEntity; onSave?:
   );
 }
 
-function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?: (data: unknown) => void }) {
-  const [classList, setClassList] = useState<string[]>(entity.tailwindClassList || []);
+function ComponentEditor({
+  entity,
+  onSave,
+}: {
+  entity: ComponentEntity;
+  onSave?: (data: unknown) => void;
+}) {
+  const [classList, setClassList] = useState<string[]>(
+    entity.tailwindClassList || []
+  );
   const [open, setOpen] = useState(false);
-  
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<{
-    type: 'Text' | 'Image' | 'Button' | 'Input' | 'Card' | 'List';
+    type: "Text" | "Image" | "Button" | "Input" | "Card" | "List";
     props: Record<string, unknown>;
   }>({
     resolver: zodResolver(componentFormSchema),
     defaultValues: {
-      type: entity.type as 'Text' | 'Image' | 'Button' | 'Input' | 'Card' | 'List',
+      type: entity.type as
+        | "Text"
+        | "Image"
+        | "Button"
+        | "Input"
+        | "Card"
+        | "List",
       props: entity.props || {},
     },
   });
 
-  console.log('ComponentEditor: Current form errors:', errors);
+  console.log("ComponentEditor: Current form errors:", errors);
 
   const toggleClass = (value: string) => {
-    setClassList(prev => 
-      prev.includes(value) 
-        ? prev.filter(c => c !== value)
-        : [...prev, value]
+    setClassList((prev) =>
+      prev.includes(value) ? prev.filter((c) => c !== value) : [...prev, value]
     );
   };
 
   const removeTailwindClass = (className: string) => {
-    setClassList(prev => prev.filter(c => c !== className));
+    setClassList((prev) => prev.filter((c) => c !== className));
   };
 
-  const handleFormSubmit = (formData: { type: string; props: Record<string, unknown> }) => {
-    console.log('ComponentEditor: Form submitted with data:', formData);
-    console.log('ComponentEditor: Current classList:', classList);
+  const handleFormSubmit = (formData: {
+    type: string;
+    props: Record<string, unknown>;
+  }) => {
+    console.log("ComponentEditor: Form submitted with data:", formData);
+    console.log("ComponentEditor: Current classList:", classList);
     const updatedData = {
       ...formData,
       tailwindClassList: classList,
     };
-    console.log('ComponentEditor: Final data to save:', updatedData);
+    console.log("ComponentEditor: Final data to save:", updatedData);
     onSave?.(updatedData);
   };
 
-  const handleSubmitWithError = handleSubmit(
-    handleFormSubmit,
-    (errors) => {
-      console.log('ComponentEditor: Form submission failed with errors:', errors);
-    }
-  );
+  const handleSubmitWithError = handleSubmit(handleFormSubmit, (errors) => {
+    console.log("ComponentEditor: Form submission failed with errors:", errors);
+  });
 
   const getComponentSpecificProps = () => {
     switch (entity.type) {
-      case 'Button':
+      case "Button":
         return (
           <div>
             <label className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
               Button Text
             </label>
             <input
-              {...register('props.text')}
+              {...register("props.text")}
               type="text"
               placeholder="Click me"
               className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
             />
           </div>
         );
-      case 'Text':
+      case "Text":
         return (
           <div>
             <label className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
               Text Content
             </label>
             <textarea
-              {...register('props.text')}
+              {...register("props.text")}
               rows={3}
               placeholder="Enter your text here"
               className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent resize-none"
             />
           </div>
         );
-      case 'Input':
+      case "Input":
         return (
           <div className="space-y-4">
             <div>
@@ -416,7 +443,7 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
                 Placeholder
               </label>
               <input
-                {...register('props.placeholder')}
+                {...register("props.placeholder")}
                 type="text"
                 placeholder="Enter placeholder text"
                 className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
@@ -427,7 +454,7 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
                 Input Type
               </label>
               <select
-                {...register('props.type')}
+                {...register("props.type")}
                 className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
               >
                 <option value="text">Text</option>
@@ -487,37 +514,58 @@ function ComponentEditor({ entity, onSave }: { entity: ComponentEntity; onSave?:
                 className="w-full justify-between"
               >
                 {classList.length > 0
-                  ? `${classList.length} class${classList.length === 1 ? '' : 'es'} selected`
+                  ? `${classList.length} class${
+                      classList.length === 1 ? "" : "es"
+                    } selected`
                   : "Select classes..."}
                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-full p-0">
-              <Command>
-                <CommandInput placeholder="Search classes..." />
-                <CommandList>
-                  <CommandEmpty>No class found.</CommandEmpty>
-                  {groupedSelectors.map((group) => (
-                    <CommandGroup key={group.section} heading={group.section}>
-                      {group.items.map((option) => (
-                        <CommandItem
-                          key={option.value}
-                          value={option.value}
-                          onSelect={() => toggleClass(option.value)}
-                        >
-                          <Check
-                            className={cn(
-                              "mr-2 h-4 w-4",
-                              classList.includes(option.value) ? "opacity-100" : "opacity-0"
-                            )}
-                          />
-                          {option.label}
-                        </CommandItem>
-                      ))}
-                    </CommandGroup>
-                  ))}
-                </CommandList>
-              </Command>
+            <PopoverContent
+              className="w-full p-0 animate-fade-in"
+              sideOffset={4}
+            >
+              <TooltipProvider>
+                <Command>
+                  <CommandInput
+                    placeholder="Search classes..."
+                    className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-none focus:shadow-none focus-visible:outline-none"
+                  />
+                  <CommandList>
+                    <CommandEmpty>No class found.</CommandEmpty>
+                    {groupedSelectors.map((group) => (
+                      <CommandGroup key={group.section} heading={group.section}>
+                        {group.items.map((option) => (
+                          <Tooltip key={option.value} delayDuration={300}>
+                            <TooltipTrigger asChild>
+                              <CommandItem
+                                value={option.value}
+                                onSelect={() => toggleClass(option.value)}
+                              >
+                                <Check
+                                  className={cn(
+                                    "mr-2 h-4 w-4",
+                                    classList.includes(option.value)
+                                      ? "opacity-100"
+                                      : "opacity-0"
+                                  )}
+                                />
+                                {option.label}
+                              </CommandItem>
+                            </TooltipTrigger>
+                            <TooltipContent side="right" className="max-w-xs">
+                              <p className="font-semibold text-xs mb-1">
+                                CSS: {option.cssSelectors}
+                              </p>
+                              <p className="text-xs">{option.description}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        ))}
+                      </CommandGroup>
+                    ))}
+                  </CommandList>
+                </Command>
+              </TooltipProvider>
             </PopoverContent>
           </Popover>
 
