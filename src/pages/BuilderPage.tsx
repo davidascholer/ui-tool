@@ -67,6 +67,12 @@ export function BuilderPage() {
       if (page) {
         actions.addContainer(targetId, `Container ${page.children.length + 1}`);
       }
+    } else if (type === "container" && targetType === "Container" && targetId) {
+      // Handle container being dropped into another container
+      const parentContainer = state.allContainers[targetId];
+      if (parentContainer) {
+        actions.addContainer(targetId, `Container ${parentContainer.children.length + 1}`);
+      }
     } else if (
       type === "component" &&
       targetType === "Container" &&

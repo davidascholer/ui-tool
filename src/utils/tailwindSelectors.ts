@@ -1891,6 +1891,362 @@ const alignSelf: TailwindSelectorType[] = [
   },
 ];
 
+export const placeContent = [
+  {
+    label: "place-content-center",
+    value: "place-content-center",
+    styles: "place-content: center;",
+    description: "Centers content both horizontally and vertically",
+  },
+  {
+    label: "place-content-start",
+    value: "place-content-start",
+    styles: "place-content: start;",
+    description: "Aligns content to the start in both dimensions",
+  },
+  {
+    label: "place-content-end",
+    value: "place-content-end",
+    styles: "place-content: end;",
+    description: "Aligns content to the end in both dimensions",
+  },
+  {
+    label: "place-content-between",
+    value: "place-content-between",
+    styles: "place-content: space-between;",
+    description: "Distributes content with space between in both dimensions",
+  },
+  {
+    label: "place-content-around",
+    value: "place-content-around",
+    styles: "place-content: space-around;",
+    description: "Distributes content with space around in both dimensions",
+  },
+  {
+    label: "place-content-evenly",
+    value: "place-content-evenly",
+    styles: "place-content: space-evenly;",
+    description: "Distributes content evenly in both dimensions",
+  },
+  {
+    label: "place-content-baseline",
+    value: "place-content-baseline",
+    styles: "place-content: baseline;",
+    description: "Aligns content along baseline in both dimensions",
+  },
+  {
+    label: "place-content-stretch",
+    value: "place-content-stretch",
+    styles: "place-content: stretch;",
+    description: "Stretches content in both dimensions",
+  },
+];
+
+export const placeItems = [
+  {
+    label: "place-items-start",
+    value: "place-items-start",
+    styles: "place-items: start;",
+    description: "Aligns items to the start in both dimensions",
+  },
+  {
+    label: "place-items-end",
+    value: "place-items-end",
+    styles: "place-items: end;",
+    description: "Aligns items to the end in both dimensions",
+  },
+  {
+    label: "place-items-center",
+    value: "place-items-center",
+    styles: "place-items: center;",
+    description: "Centers items in both dimensions",
+  },
+  {
+    label: "place-items-baseline",
+    value: "place-items-baseline",
+    styles: "place-items: baseline;",
+    description: "Aligns items along baseline in both dimensions",
+  },
+  {
+    label: "place-items-stretch",
+    value: "place-items-stretch",
+    styles: "place-items: stretch;",
+    description: "Stretches items in both dimensions",
+  },
+];
+
+export const placeSelf = [
+  {
+    label: "place-self-auto",
+    value: "place-self-auto",
+    styles: "place-self: auto;",
+    description: "Uses the value from place-items",
+  },
+  {
+    label: "place-self-start",
+    value: "place-self-start",
+    styles: "place-self: start;",
+    description: "Aligns an item to the start in both dimensions",
+  },
+  {
+    label: "place-self-end",
+    value: "place-self-end",
+    styles: "place-self: end;",
+    description: "Aligns an item to the end in both dimensions",
+  },
+  {
+    label: "place-self-center",
+    value: "place-self-center",
+    styles: "place-self: center;",
+    description: "Centers an item in both dimensions",
+  },
+  {
+    label: "place-self-stretch",
+    value: "place-self-stretch",
+    styles: "place-self: stretch;",
+    description: "Stretches an item in both dimensions",
+  },
+];
+
+// SPACING
+export const padding = [
+  { label: "p-<number>", value: "p-<number>", styles: "padding: calc(var(--spacing) * <number>);", description: "Sets padding on all sides using the spacing scale" },
+  { label: "p-px", value: "p-px", styles: "padding: 1px;", description: "Sets 1px padding on all sides" },
+  { label: "px-<number>", value: "px-<number>", styles: "padding-inline: calc(var(--spacing) * <number>);", description: "Sets horizontal padding (left and right)" },
+  { label: "py-<number>", value: "py-<number>", styles: "padding-block: calc(var(--spacing) * <number>);", description: "Sets vertical padding (top and bottom)" },
+  { label: "pt-<number>", value: "pt-<number>", styles: "padding-top: calc(var(--spacing) * <number>);", description: "Sets top padding" },
+  { label: "pr-<number>", value: "pr-<number>", styles: "padding-right: calc(var(--spacing) * <number>);", description: "Sets right padding" },
+  { label: "pb-<number>", value: "pb-<number>", styles: "padding-bottom: calc(var(--spacing) * <number>);", description: "Sets bottom padding" },
+  { label: "pl-<number>", value: "pl-<number>", styles: "padding-left: calc(var(--spacing) * <number>);", description: "Sets left padding" },
+  { label: "ps-<number>", value: "ps-<number>", styles: "padding-inline-start: calc(var(--spacing) * <number>);", description: "Sets padding at the inline start (left in LTR, right in RTL)" },
+  { label: "pe-<number>", value: "pe-<number>", styles: "padding-inline-end: calc(var(--spacing) * <number>);", description: "Sets padding at the inline end (right in LTR, left in RTL)" },
+  { label: "p-[<value>]", value: "p-[<value>]", styles: "padding: <value>;", description: "Sets arbitrary padding value" }
+];
+
+export const margin = [
+  { label: "m-<number>", value: "m-<number>", styles: "margin: calc(var(--spacing) * <number>);", description: "Sets margin on all sides" },
+  { label: "m-auto", value: "m-auto", styles: "margin: auto;", description: "Sets automatic margin on all sides" },
+  { label: "mx-<number>", value: "mx-<number>", styles: "margin-inline: calc(var(--spacing) * <number>);", description: "Sets horizontal margin" },
+  { label: "my-<number>", value: "my-<number>", styles: "margin-block: calc(var(--spacing) * <number>);", description: "Sets vertical margin" },
+  { label: "mt-<number>", value: "mt-<number>", styles: "margin-top: calc(var(--spacing) * <number>);", description: "Sets top margin" },
+  { label: "mr-<number>", value: "mr-<number>", styles: "margin-right: calc(var(--spacing) * <number>);", description: "Sets right margin" },
+  { label: "mb-<number>", value: "mb-<number>", styles: "margin-bottom: calc(var(--spacing) * <number>);", description: "Sets bottom margin" },
+  { label: "ml-<number>", value: "ml-<number>", styles: "margin-left: calc(var(--spacing) * <number>);", description: "Sets left margin" },
+  { label: "ms-<number>", value: "ms-<number>", styles: "margin-inline-start: calc(var(--spacing) * <number>);", description: "Sets margin at inline start" },
+  { label: "me-<number>", value: "me-<number>", styles: "margin-inline-end: calc(var(--spacing) * <number>);", description: "Sets margin at inline end" },
+  { label: "-m-<number>", value: "-m-<number>", styles: "margin: calc(var(--spacing) * -<number>);", description: "Sets negative margin on all sides" },
+  { label: "m-[<value>]", value: "m-[<value>]", styles: "margin: <value>;", description: "Sets arbitrary margin value" }
+];
+
+// SIZING
+export const width = [
+  { label: "w-<number>", value: "w-<number>", styles: "width: calc(var(--spacing) * <number>);", description: "Sets width using spacing scale" },
+  { label: "w-<fraction>", value: "w-<fraction>", styles: "width: calc(<fraction> * 100%);", description: "Sets width as percentage (e.g., w-1/2, w-2/3)" },
+  { label: "w-full", value: "w-full", styles: "width: 100%;", description: "Sets width to 100%" },
+  { label: "w-screen", value: "w-screen", styles: "width: 100vw;", description: "Sets width to viewport width" },
+  { label: "w-svw", value: "w-svw", styles: "width: 100svw;", description: "Sets width to small viewport width" },
+  { label: "w-lvw", value: "w-lvw", styles: "width: 100lvw;", description: "Sets width to large viewport width" },
+  { label: "w-dvw", value: "w-dvw", styles: "width: 100dvw;", description: "Sets width to dynamic viewport width" },
+  { label: "w-min", value: "w-min", styles: "width: min-content;", description: "Sets width to minimum content size" },
+  { label: "w-max", value: "w-max", styles: "width: max-content;", description: "Sets width to maximum content size" },
+  { label: "w-fit", value: "w-fit", styles: "width: fit-content;", description: "Sets width to fit content" },
+  { label: "w-auto", value: "w-auto", styles: "width: auto;", description: "Sets automatic width" },
+  { label: "w-[<value>]", value: "w-[<value>]", styles: "width: <value>;", description: "Sets arbitrary width value" }
+];
+
+export const minWidth = [
+  { label: "min-w-<number>", value: "min-w-<number>", styles: "min-width: calc(var(--spacing) * <number>);", description: "Sets minimum width" },
+  { label: "min-w-full", value: "min-w-full", styles: "min-width: 100%;", description: "Sets minimum width to 100%" },
+  { label: "min-w-min", value: "min-w-min", styles: "min-width: min-content;", description: "Sets minimum width to minimum content" },
+  { label: "min-w-max", value: "min-w-max", styles: "min-width: max-content;", description: "Sets minimum width to maximum content" },
+  { label: "min-w-fit", value: "min-w-fit", styles: "min-width: fit-content;", description: "Sets minimum width to fit content" },
+  { label: "min-w-[<value>]", value: "min-w-[<value>]", styles: "min-width: <value>;", description: "Sets arbitrary minimum width" }
+];
+
+export const maxWidth = [
+  { label: "max-w-<number>", value: "max-w-<number>", styles: "max-width: calc(var(--spacing) * <number>);", description: "Sets maximum width" },
+  { label: "max-w-none", value: "max-w-none", styles: "max-width: none;", description: "Removes maximum width constraint" },
+  { label: "max-w-xs", value: "max-w-xs", styles: "max-width: 20rem;", description: "Sets max width to 20rem" },
+  { label: "max-w-sm", value: "max-w-sm", styles: "max-width: 24rem;", description: "Sets max width to 24rem" },
+  { label: "max-w-md", value: "max-w-md", styles: "max-width: 28rem;", description: "Sets max width to 28rem" },
+  { label: "max-w-lg", value: "max-w-lg", styles: "max-width: 32rem;", description: "Sets max width to 32rem" },
+  { label: "max-w-xl", value: "max-w-xl", styles: "max-width: 36rem;", description: "Sets max width to 36rem" },
+  { label: "max-w-full", value: "max-w-full", styles: "max-width: 100%;", description: "Sets maximum width to 100%" },
+  { label: "max-w-min", value: "max-w-min", styles: "max-width: min-content;", description: "Sets maximum width to minimum content" },
+  { label: "max-w-max", value: "max-w-max", styles: "max-width: max-content;", description: "Sets maximum width to maximum content" },
+  { label: "max-w-fit", value: "max-w-fit", styles: "max-width: fit-content;", description: "Sets maximum width to fit content" },
+  { label: "max-w-[<value>]", value: "max-w-[<value>]", styles: "max-width: <value>;", description: "Sets arbitrary maximum width" }
+];
+
+export const height = [
+  { label: "h-<number>", value: "h-<number>", styles: "height: calc(var(--spacing) * <number>);", description: "Sets height using spacing scale" },
+  { label: "h-<fraction>", value: "h-<fraction>", styles: "height: calc(<fraction> * 100%);", description: "Sets height as percentage" },
+  { label: "h-full", value: "h-full", styles: "height: 100%;", description: "Sets height to 100%" },
+  { label: "h-screen", value: "h-screen", styles: "height: 100vh;", description: "Sets height to viewport height" },
+  { label: "h-svh", value: "h-svh", styles: "height: 100svh;", description: "Sets height to small viewport height" },
+  { label: "h-lvh", value: "h-lvh", styles: "height: 100lvh;", description: "Sets height to large viewport height" },
+  { label: "h-dvh", value: "h-dvh", styles: "height: 100dvh;", description: "Sets height to dynamic viewport height" },
+  { label: "h-min", value: "h-min", styles: "height: min-content;", description: "Sets height to minimum content" },
+  { label: "h-max", value: "h-max", styles: "height: max-content;", description: "Sets height to maximum content" },
+  { label: "h-fit", value: "h-fit", styles: "height: fit-content;", description: "Sets height to fit content" },
+  { label: "h-auto", value: "h-auto", styles: "height: auto;", description: "Sets automatic height" },
+  { label: "h-[<value>]", value: "h-[<value>]", styles: "height: <value>;", description: "Sets arbitrary height value" }
+];
+
+export const minHeight = [
+  { label: "min-h-<number>", value: "min-h-<number>", styles: "min-height: calc(var(--spacing) * <number>);", description: "Sets minimum height" },
+  { label: "min-h-full", value: "min-h-full", styles: "min-height: 100%;", description: "Sets minimum height to 100%" },
+  { label: "min-h-screen", value: "min-h-screen", styles: "min-height: 100vh;", description: "Sets minimum height to viewport height" },
+  { label: "min-h-min", value: "min-h-min", styles: "min-height: min-content;", description: "Sets minimum height to minimum content" },
+  { label: "min-h-max", value: "min-h-max", styles: "min-height: max-content;", description: "Sets minimum height to maximum content" },
+  { label: "min-h-fit", value: "min-h-fit", styles: "min-height: fit-content;", description: "Sets minimum height to fit content" },
+  { label: "min-h-[<value>]", value: "min-h-[<value>]", styles: "min-height: <value>;", description: "Sets arbitrary minimum height" }
+];
+
+export const maxHeight = [
+  { label: "max-h-<number>", value: "max-h-<number>", styles: "max-height: calc(var(--spacing) * <number>);", description: "Sets maximum height" },
+  { label: "max-h-none", value: "max-h-none", styles: "max-height: none;", description: "Removes maximum height constraint" },
+  { label: "max-h-full", value: "max-h-full", styles: "max-height: 100%;", description: "Sets maximum height to 100%" },
+  { label: "max-h-screen", value: "max-h-screen", styles: "max-height: 100vh;", description: "Sets maximum height to viewport height" },
+  { label: "max-h-min", value: "max-h-min", styles: "max-height: min-content;", description: "Sets maximum height to minimum content" },
+  { label: "max-h-max", value: "max-h-max", styles: "max-height: max-content;", description: "Sets maximum height to maximum content" },
+  { label: "max-h-fit", value: "max-h-fit", styles: "max-height: fit-content;", description: "Sets maximum height to fit content" },
+  { label: "max-h-[<value>]", value: "max-h-[<value>]", styles: "max-height: <value>;", description: "Sets arbitrary maximum height" }
+];
+
+// TYPOGRAPHY
+export const fontFamily = [
+  { label: "font-sans", value: "font-sans", styles: "font-family: var(--font-sans);", description: "Applies sans-serif font family" },
+  { label: "font-serif", value: "font-serif", styles: "font-family: var(--font-serif);", description: "Applies serif font family" },
+  { label: "font-mono", value: "font-mono", styles: "font-family: var(--font-mono);", description: "Applies monospace font family" },
+  { label: "font-[<value>]", value: "font-[<value>]", styles: "font-family: <value>;", description: "Sets arbitrary font family" }
+];
+
+export const fontSize = [
+  { label: "text-xs", value: "text-xs", styles: "font-size: var(--font-size-xs);", description: "Sets extra small font size" },
+  { label: "text-sm", value: "text-sm", styles: "font-size: var(--font-size-sm);", description: "Sets small font size" },
+  { label: "text-base", value: "text-base", styles: "font-size: var(--font-size-base);", description: "Sets base font size" },
+  { label: "text-lg", value: "text-lg", styles: "font-size: var(--font-size-lg);", description: "Sets large font size" },
+  { label: "text-xl", value: "text-xl", styles: "font-size: var(--font-size-xl);", description: "Sets extra large font size" },
+  { label: "text-2xl", value: "text-2xl", styles: "font-size: var(--font-size-2xl);", description: "Sets 2x large font size" },
+  { label: "text-3xl", value: "text-3xl", styles: "font-size: var(--font-size-3xl);", description: "Sets 3x large font size" },
+  { label: "text-4xl", value: "text-4xl", styles: "font-size: var(--font-size-4xl);", description: "Sets 4x large font size" },
+  { label: "text-5xl", value: "text-5xl", styles: "font-size: var(--font-size-5xl);", description: "Sets 5x large font size" },
+  { label: "text-6xl", value: "text-6xl", styles: "font-size: var(--font-size-6xl);", description: "Sets 6x large font size" },
+  { label: "text-7xl", value: "text-7xl", styles: "font-size: var(--font-size-7xl);", description: "Sets 7x large font size" },
+  { label: "text-8xl", value: "text-8xl", styles: "font-size: var(--font-size-8xl);", description: "Sets 8x large font size" },
+  { label: "text-9xl", value: "text-9xl", styles: "font-size: var(--font-size-9xl);", description: "Sets 9x large font size" },
+  { label: "text-[<value>]", value: "text-[<value>]", styles: "font-size: <value>;", description: "Sets arbitrary font size" }
+];
+
+export const fontWeight = [
+  { label: "font-thin", value: "font-thin", styles: "font-weight: 100;", description: "Sets thin font weight" },
+  { label: "font-extralight", value: "font-extralight", styles: "font-weight: 200;", description: "Sets extra light font weight" },
+  { label: "font-light", value: "font-light", styles: "font-weight: 300;", description: "Sets light font weight" },
+  { label: "font-normal", value: "font-normal", styles: "font-weight: 400;", description: "Sets normal font weight" },
+  { label: "font-medium", value: "font-medium", styles: "font-weight: 500;", description: "Sets medium font weight" },
+  { label: "font-semibold", value: "font-semibold", styles: "font-weight: 600;", description: "Sets semibold font weight" },
+  { label: "font-bold", value: "font-bold", styles: "font-weight: 700;", description: "Sets bold font weight" },
+  { label: "font-extrabold", value: "font-extrabold", styles: "font-weight: 800;", description: "Sets extra bold font weight" },
+  { label: "font-black", value: "font-black", styles: "font-weight: 900;", description: "Sets black font weight" },
+  { label: "font-[<value>]", value: "font-[<value>]", styles: "font-weight: <value>;", description: "Sets arbitrary font weight" }
+];
+
+export const textAlign = [
+  { label: "text-left", value: "text-left", styles: "text-align: left;", description: "Aligns text to the left" },
+  { label: "text-center", value: "text-center", styles: "text-align: center;", description: "Centers text" },
+  { label: "text-right", value: "text-right", styles: "text-align: right;", description: "Aligns text to the right" },
+  { label: "text-justify", value: "text-justify", styles: "text-align: justify;", description: "Justifies text" },
+  { label: "text-start", value: "text-start", styles: "text-align: start;", description: "Aligns text to the start based on direction" },
+  { label: "text-end", value: "text-end", styles: "text-align: end;", description: "Aligns text to the end based on direction" }
+];
+
+export const textColor = [
+  { label: "text-<color>", value: "text-<color>", styles: "color: var(--color-<color>);", description: "Sets text color from theme palette" },
+  { label: "text-inherit", value: "text-inherit", styles: "color: inherit;", description: "Inherits text color from parent" },
+  { label: "text-current", value: "text-current", styles: "color: currentColor;", description: "Sets text color to currentColor" },
+  { label: "text-transparent", value: "text-transparent", styles: "color: transparent;", description: "Makes text transparent" },
+  { label: "text-[<value>]", value: "text-[<value>]", styles: "color: <value>;", description: "Sets arbitrary text color" }
+];
+
+export const textDecoration = [
+  { label: "underline", value: "underline", styles: "text-decoration-line: underline;", description: "Underlines text" },
+  { label: "overline", value: "overline", styles: "text-decoration-line: overline;", description: "Adds overline to text" },
+  { label: "line-through", value: "line-through", styles: "text-decoration-line: line-through;", description: "Adds line-through to text" },
+  { label: "no-underline", value: "no-underline", styles: "text-decoration-line: none;", description: "Removes text decoration" }
+];
+
+export const textTransform = [
+  { label: "uppercase", value: "uppercase", styles: "text-transform: uppercase;", description: "Transforms text to uppercase" },
+  { label: "lowercase", value: "lowercase", styles: "text-transform: lowercase;", description: "Transforms text to lowercase" },
+  { label: "capitalize", value: "capitalize", styles: "text-transform: capitalize;", description: "Capitalizes first letter of each word" },
+  { label: "normal-case", value: "normal-case", styles: "text-transform: none;", description: "Removes text transform" }
+];
+
+export const lineHeight = [
+  { label: "leading-<number>", value: "leading-<number>", styles: "line-height: calc(var(--spacing) * <number>);", description: "Sets line height using spacing scale" },
+  { label: "leading-none", value: "leading-none", styles: "line-height: 1;", description: "Sets line height to 1" },
+  { label: "leading-tight", value: "leading-tight", styles: "line-height: 1.25;", description: "Sets tight line height" },
+  { label: "leading-snug", value: "leading-snug", styles: "line-height: 1.375;", description: "Sets snug line height" },
+  { label: "leading-normal", value: "leading-normal", styles: "line-height: 1.5;", description: "Sets normal line height" },
+  { label: "leading-relaxed", value: "leading-relaxed", styles: "line-height: 1.625;", description: "Sets relaxed line height" },
+  { label: "leading-loose", value: "leading-loose", styles: "line-height: 2;", description: "Sets loose line height" },
+  { label: "leading-[<value>]", value: "leading-[<value>]", styles: "line-height: <value>;", description: "Sets arbitrary line height" }
+];
+
+export const letterSpacing = [
+  { label: "tracking-tighter", value: "tracking-tighter", styles: "letter-spacing: -0.05em;", description: "Sets tighter letter spacing" },
+  { label: "tracking-tight", value: "tracking-tight", styles: "letter-spacing: -0.025em;", description: "Sets tight letter spacing" },
+  { label: "tracking-normal", value: "tracking-normal", styles: "letter-spacing: 0em;", description: "Sets normal letter spacing" },
+  { label: "tracking-wide", value: "tracking-wide", styles: "letter-spacing: 0.025em;", description: "Sets wide letter spacing" },
+  { label: "tracking-wider", value: "tracking-wider", styles: "letter-spacing: 0.05em;", description: "Sets wider letter spacing" },
+  { label: "tracking-widest", value: "tracking-widest", styles: "letter-spacing: 0.1em;", description: "Sets widest letter spacing" },
+  { label: "tracking-[<value>]", value: "tracking-[<value>]", styles: "letter-spacing: <value>;", description: "Sets arbitrary letter spacing" }
+];
+
+// BACKGROUNDS
+export const backgroundColor = [
+  { label: "bg-<color>", value: "bg-<color>", styles: "background-color: var(--color-<color>);", description: "Sets background color from theme" },
+  { label: "bg-inherit", value: "bg-inherit", styles: "background-color: inherit;", description: "Inherits background color" },
+  { label: "bg-current", value: "bg-current", styles: "background-color: currentColor;", description: "Sets background to currentColor" },
+  { label: "bg-transparent", value: "bg-transparent", styles: "background-color: transparent;", description: "Makes background transparent" },
+  { label: "bg-[<value>]", value: "bg-[<value>]", styles: "background-color: <value>;", description: "Sets arbitrary background color" }
+];
+
+export const backgroundImage = [
+  { label: "bg-none", value: "bg-none", styles: "background-image: none;", description: "Removes background image" },
+  { label: "bg-gradient-to-t", value: "bg-gradient-to-t", styles: "background-image: linear-gradient(to top, var(--tw-gradient-stops));", description: "Gradient to top" },
+  { label: "bg-gradient-to-tr", value: "bg-gradient-to-tr", styles: "background-image: linear-gradient(to top right, var(--tw-gradient-stops));", description: "Gradient to top right" },
+  { label: "bg-gradient-to-r", value: "bg-gradient-to-r", styles: "background-image: linear-gradient(to right, var(--tw-gradient-stops));", description: "Gradient to right" },
+  { label: "bg-gradient-to-br", value: "bg-gradient-to-br", styles: "background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));", description: "Gradient to bottom right" },
+  { label: "bg-gradient-to-b", value: "bg-gradient-to-b", styles: "background-image: linear-gradient(to bottom, var(--tw-gradient-stops));", description: "Gradient to bottom" },
+  { label: "bg-gradient-to-bl", value: "bg-gradient-to-bl", styles: "background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));", description: "Gradient to bottom left" },
+  { label: "bg-gradient-to-l", value: "bg-gradient-to-l", styles: "background-image: linear-gradient(to left, var(--tw-gradient-stops));", description: "Gradient to left" },
+  { label: "bg-gradient-to-tl", value: "bg-gradient-to-tl", styles: "background-image: linear-gradient(to top left, var(--tw-gradient-stops));", description: "Gradient to top left" },
+  { label: "bg-[<value>]", value: "bg-[<value>]", styles: "background-image: <value>;", description: "Sets arbitrary background image" }
+];
+
+export const backgroundSize = [
+  { label: "bg-auto", value: "bg-auto", styles: "background-size: auto;", description: "Sets background size to auto" },
+  { label: "bg-cover", value: "bg-cover", styles: "background-size: cover;", description: "Scales background to cover entire element" },
+  { label: "bg-contain", value: "bg-contain", styles: "background-size: contain;", description: "Scales background to fit within element" },
+  { label: "bg-[<value>]", value: "bg-[<value>]", styles: "background-size: <value>;", description: "Sets arbitrary background size" }
+];
+
+export const backgroundPosition = [
+  { label: "bg-bottom", value: "bg-bottom", styles: "background-position: bottom;", description: "Positions background at bottom" },
+  { label: "bg-center", value: "bg-center", styles: "background-position: center;", description: "Centers background" },
+  { label: "bg-left", value: "bg-left", styles: "background-position: left;", description: "Positions background at left" },
+  { label: "bg-left-bottom", value: "bg-left-bottom", styles: "background-position: left bottom;", description: "Positions at left bottom" },
+  { label: "bg-left-top", value: "bg-left-top", styles: "background-position: left top;", description: "Positions at left top" },
+  { label: "bg-right", value: "bg-right", styles: "background-position: right;", description: "Positions background at right" },
+  { label: "bg-right-bottom", value: "bg-right-bottom", styles: "background-position: right bottom;", description: "Positions at right bottom" },
+  { label: "bg-right-top", value: "bg-right-top", styles: "background-position: right top;", description: "Positions at right top" },
+  { label: "bg-top", value: "bg-top", styles: "background-position: top;", description: "Positions background at top" },
+  { label: "bg-[<value>]", value: "bg-[<value>]", styles: "background-position: <value>;", description: "Sets arbitrary background position" }
+];
+
+
 // Group tailwind selectors by section
 const layoutSelectors: TailwindSelectorGroupType[] = [
   { section: "Aspect Ratio", selectors: aspectRatio },
@@ -1936,67 +2292,67 @@ const flexboxGridSelectors: TailwindSelectorGroupType[] = [
   { section: "Align Items", selectors: alignItems },
   { section: "Align Content", selectors: alignContent },
   { section: "Align Self", selectors: alignSelf },
-  // { section: "Place Content", selectors: placeContent },
-  // { section: "Place selectors", selectors: placeselectors },
-  // { section: "Place Self", selectors: placeSelf }
+  { section: "Place Content", selectors: placeContent },
+  { section: "Place Items", selectors: placeItems },
+  { section: "Place Self", selectors: placeSelf },
 ];
 
 const spacingProperties: TailwindSelectorGroupType[] = [
-  //     {section: "Spacing", selectors: padding},
-  //     {section: "Spacing", selectors: margin}
+      {section: "Padding", selectors: padding},
+      {section: "Margin", selectors: margin}
 ];
 
 const sizingProperties: TailwindSelectorGroupType[] = [
-  //     {section: "Width", selectors: width},
-  //     {section: "Min Width", selectors: minWidth},
-  //     {section: "Max Width", selectors: maxWidth},
-  //     {section: "Height", selectors: height},
-  //     {section: "Min Height", selectors: minHeight},
-  //     {section: "Max Height", selectors: maxHeight}
+      {section: "Width", selectors: width},
+      {section: "Min Width", selectors: minWidth},
+      {section: "Max Width", selectors: maxWidth},
+      {section: "Height", selectors: height},
+      {section: "Min Height", selectors: minHeight},
+      {section: "Max Height", selectors: maxHeight}
 ];
 
 const typographyProperties: TailwindSelectorGroupType[] = [
-  //     {section: "Font Family", selectors: fontFamily},
-  //     {section: "Font Size", selectors: fontSize},
-  //     {section: "Font Smoothing", selectors: fontSmoothing},
-  //     {section: "Font Style", selectors: fontStyle},
-  //     {section: "Font Weight", selectors: fontWeight},
-  //     {section: "Font Stretch", selectors: fontStretch},
-  //     {section: "Font Variant Numeric", selectors: fontVariantNumeric},
-  //     {section: "Letter Spacing", selectors: letterSpacing},
-  //     {section: "Line Clamp", selectors: lineClamp},
-  //     {section: "Line Height", selectors: lineHeight},
-  //     {section: "List Style Image", selectors: listStyleImage},
-  //     {section: "List Style Position", selectors: listStylePosition},
-  //     {section: "List Style Type", selectors: listStyleType},
-  //     {section: "Text Align", selectors: textAlign},
-  //     {section: "Color", selectors: color},
-  //     {section: "Text Decoration Line", selectors: textDecorationLine},
-  //     {section: "Text Decoration Color", selectors: textDecorationColor},
-  //     {section: "Text Decoration Style", selectors: textDecorationStyle},
-  //     {section: "Text Decoration Thickness", selectors: textDecorationThickness},
-  //     {section: "Text Underline Offset", selectors: textUnderlineOffset},
-  //     {section: "Text Transform", selectors: textTransform},
-  //     {section: "Text Overflow", selectors: textOverflow},
-  //     {section: "Text Wrap", selectors: textWrap},
-  //     {section: "Text Indent", selectors: textIndent},
-  //     {section: "Vertical Align", selectors: verticalAlign},
-  //     {section: "White Space", selectors: whiteSpace},
-  //     {section: "Word Break", selectors: wordBreak},
-  //     {section: "Overflow Wrap", selectors: overflowWrap},
-  //     {section: "Hyphens", selectors: hyphens},
-  //     {section: "Content", selectors: content}
+      {section: "Font Family", selectors: fontFamily},
+      {section: "Font Size", selectors: fontSize},
+    //   {section: "Font Smoothing", selectors: fontSmoothing},
+    //   {section: "Font Style", selectors: fontStyle},
+      {section: "Font Weight", selectors: fontWeight},
+    //   {section: "Font Stretch", selectors: fontStretch},
+    //   {section: "Font Variant Numeric", selectors: fontVariantNumeric},
+      {section: "Letter Spacing", selectors: letterSpacing},
+    //   {section: "Line Clamp", selectors: lineClamp},
+      {section: "Line Height", selectors: lineHeight},
+    //   {section: "List Style Image", selectors: listStyleImage},
+    //   {section: "List Style Position", selectors: listStylePosition},
+    //   {section: "List Style Type", selectors: listStyleType},
+      {section: "Text Align", selectors: textAlign},
+    //   {section: "Color", selectors: color},
+    //   {section: "Text Decoration Line", selectors: textDecorationLine},
+    //   {section: "Text Decoration Color", selectors: textDecorationColor},
+    //   {section: "Text Decoration Style", selectors: textDecorationStyle},
+    //   {section: "Text Decoration Thickness", selectors: textDecorationThickness},
+    //   {section: "Text Underline Offset", selectors: textUnderlineOffset},
+      {section: "Text Transform", selectors: textTransform},
+    //   {section: "Text Overflow", selectors: textOverflow},
+    //   {section: "Text Wrap", selectors: textWrap},
+    //   {section: "Text Indent", selectors: textIndent},
+    //   {section: "Vertical Align", selectors: verticalAlign},
+    //   {section: "White Space", selectors: whiteSpace},
+    //   {section: "Word Break", selectors: wordBreak},
+    //   {section: "Overflow Wrap", selectors: overflowWrap},
+    //   {section: "Hyphens", selectors: hyphens},
+    //   {section: "Content", selectors: content}
 ];
 
 const backgroundProperties: TailwindSelectorGroupType[] = [
-  //     {section: "Background Attachment", selectors: backgroundAttachment},
-  //     {section: "Background Clip", selectors: backgroundClip},
-  //     {section: "Background Color", selectors: backgroundColor},
-  //     {section: "Background Image", selectors: backgroundImage},
-  //     {section: "Background Origin", selectors: backgroundOrigin},
-  //     {section: "Background Position", selectors: backgroundPosition},
-  //     {section: "Background Repeat", selectors: backgroundRepeat},
-  //     {section: "Background Size", selectors: backgroundSize}
+    //   {section: "Background Attachment", selectors: backgroundAttachment},
+    //   {section: "Background Clip", selectors: backgroundClip},
+      {section: "Background Color", selectors: backgroundColor},
+      {section: "Background Image", selectors: backgroundImage},
+    //   {section: "Background Origin", selectors: backgroundOrigin},
+      {section: "Background Position", selectors: backgroundPosition},
+    //   {section: "Background Repeat", selectors: backgroundRepeat},
+      {section: "Background Size", selectors: backgroundSize}
 ];
 
 const borderProperties: TailwindSelectorGroupType[] = [
