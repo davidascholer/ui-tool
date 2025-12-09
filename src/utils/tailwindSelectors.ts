@@ -4471,7 +4471,22461 @@ export const borderRadius = [
     description:
       "Applies a 2x extra large border radius of 16px to the left corners",
   },
+  {
+    label: "rounded-l-3xl",
+    value: "rounded-l-3xl",
+    styles:
+      "border-top-left-radius: var(--radius-3xl); /* 1.5rem (24px) */ border-bottom-left-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the left corners",
+  },
+  {
+    label: "rounded-l-4xl",
+    value: "rounded-l-4xl",
+    styles:
+      "border-top-left-radius: var(--radius-4xl); /* 2rem (32px) */ border-bottom-left-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the left corners",
+  },
+  {
+    label: "rounded-l-none",
+    value: "rounded-l-none",
+    styles: "border-top-left-radius: 0; border-bottom-left-radius: 0;",
+    description: "Removes border radius from the left corners",
+  },
+  {
+    label: "rounded-l-full",
+    value: "rounded-l-full",
+    styles:
+      "border-top-left-radius: calc(infinity * 1px); border-bottom-left-radius: calc(infinity * 1px);",
+    description: "Applies a fully rounded border radius to the left corners",
+  },
+  {
+    label: "rounded-l-(<custom-property>)",
+    value: "rounded-l-(<custom-property>)",
+    styles:
+      "border-top-left-radius: var(<custom-property>); border-bottom-left-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the left corners",
+  },
+  {
+    label: "rounded-l-[<value>]",
+    value: "rounded-l-[<value>]",
+    styles:
+      "border-top-left-radius: <value>; border-bottom-left-radius: <value>;",
+    description: "Applies an arbitrary border radius value to the left corners",
+  },
+  {
+    label: "rounded-ss-xs",
+    value: "rounded-ss-xs",
+    styles: "border-start-start-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-sm",
+    value: "rounded-ss-sm",
+    styles: "border-start-start-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description:
+      "Applies a small border radius of 4px to the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-md",
+    value: "rounded-ss-md",
+    styles: "border-start-start-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-lg",
+    value: "rounded-ss-lg",
+    styles: "border-start-start-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description:
+      "Applies a large border radius of 8px to the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-xl",
+    value: "rounded-ss-xl",
+    styles: "border-start-start-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-2xl",
+    value: "rounded-ss-2xl",
+    styles: "border-start-start-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-3xl",
+    value: "rounded-ss-3xl",
+    styles: "border-start-start-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-4xl",
+    value: "rounded-ss-4xl",
+    styles: "border-start-start-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-none",
+    value: "rounded-ss-none",
+    styles: "border-start-start-radius: 0;",
+    description:
+      "Removes border radius from the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-full",
+    value: "rounded-ss-full",
+    styles: "border-start-start-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius to the start-start corner (top-left in LTR, top-right in RTL)",
+  },
+  {
+    label: "rounded-ss-(<custom-property>)",
+    value: "rounded-ss-(<custom-property>)",
+    styles: "border-start-start-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the start-start corner",
+  },
+  {
+    label: "rounded-ss-[<value>]",
+    value: "rounded-ss-[<value>]",
+    styles: "border-start-start-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the start-start corner",
+  },
+  {
+    label: "rounded-se-xs",
+    value: "rounded-se-xs",
+    styles: "border-start-end-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-sm",
+    value: "rounded-se-sm",
+    styles: "border-start-end-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description:
+      "Applies a small border radius of 4px to the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-md",
+    value: "rounded-se-md",
+    styles: "border-start-end-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-lg",
+    value: "rounded-se-lg",
+    styles: "border-start-end-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description:
+      "Applies a large border radius of 8px to the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-xl",
+    value: "rounded-se-xl",
+    styles: "border-start-end-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-2xl",
+    value: "rounded-se-2xl",
+    styles: "border-start-end-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-3xl",
+    value: "rounded-se-3xl",
+    styles: "border-start-end-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-4xl",
+    value: "rounded-se-4xl",
+    styles: "border-start-end-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-none",
+    value: "rounded-se-none",
+    styles: "border-start-end-radius: 0;",
+    description:
+      "Removes border radius from the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-full",
+    value: "rounded-se-full",
+    styles: "border-start-end-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius to the start-end corner (top-right in LTR, top-left in RTL)",
+  },
+  {
+    label: "rounded-se-(<custom-property>)",
+    value: "rounded-se-(<custom-property>)",
+    styles: "border-start-end-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the start-end corner",
+  },
+  {
+    label: "rounded-se-[<value>]",
+    value: "rounded-se-[<value>]",
+    styles: "border-start-end-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the start-end corner",
+  },
+  {
+    label: "rounded-ee-xs",
+    value: "rounded-ee-xs",
+    styles: "border-end-end-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-sm",
+    value: "rounded-ee-sm",
+    styles: "border-end-end-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description:
+      "Applies a small border radius of 4px to the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-md",
+    value: "rounded-ee-md",
+    styles: "border-end-end-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-lg",
+    value: "rounded-ee-lg",
+    styles: "border-end-end-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description:
+      "Applies a large border radius of 8px to the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-xl",
+    value: "rounded-ee-xl",
+    styles: "border-end-end-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-2xl",
+    value: "rounded-ee-2xl",
+    styles: "border-end-end-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-3xl",
+    value: "rounded-ee-3xl",
+    styles: "border-end-end-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-4xl",
+    value: "rounded-ee-4xl",
+    styles: "border-end-end-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-none",
+    value: "rounded-ee-none",
+    styles: "border-end-end-radius: 0;",
+    description:
+      "Removes border radius from the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-full",
+    value: "rounded-ee-full",
+    styles: "border-end-end-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius to the end-end corner (bottom-right in LTR, bottom-left in RTL)",
+  },
+  {
+    label: "rounded-ee-(<custom-property>)",
+    value: "rounded-ee-(<custom-property>)",
+    styles: "border-end-end-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the end-end corner",
+  },
+  {
+    label: "rounded-ee-[<value>]",
+    value: "rounded-ee-[<value>]",
+    styles: "border-end-end-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the end-end corner",
+  },
+  {
+    label: "rounded-es-xs",
+    value: "rounded-es-xs",
+    styles: "border-end-start-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-sm",
+    value: "rounded-es-sm",
+    styles: "border-end-start-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description:
+      "Applies a small border radius of 4px to the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-md",
+    value: "rounded-es-md",
+    styles: "border-end-start-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-lg",
+    value: "rounded-es-lg",
+    styles: "border-end-start-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description:
+      "Applies a large border radius of 8px to the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-xl",
+    value: "rounded-es-xl",
+    styles: "border-end-start-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-2xl",
+    value: "rounded-es-2xl",
+    styles: "border-end-start-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-3xl",
+    value: "rounded-es-3xl",
+    styles: "border-end-start-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-4xl",
+    value: "rounded-es-4xl",
+    styles: "border-end-start-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-none",
+    value: "rounded-es-none",
+    styles: "border-end-start-radius: 0;",
+    description:
+      "Removes border radius from the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-full",
+    value: "rounded-es-full",
+    styles: "border-end-start-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius to the end-start corner (bottom-left in LTR, bottom-right in RTL)",
+  },
+  {
+    label: "rounded-es-(<custom-property>)",
+    value: "rounded-es-(<custom-property>)",
+    styles: "border-end-start-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the end-start corner",
+  },
+  {
+    label: "rounded-es-[<value>]",
+    value: "rounded-es-[<value>]",
+    styles: "border-end-start-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the end-start corner",
+  },
+  {
+    label: "rounded-tl-xs",
+    value: "rounded-tl-xs",
+    styles: "border-top-left-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the top-left corner",
+  },
+  {
+    label: "rounded-tl-sm",
+    value: "rounded-tl-sm",
+    styles: "border-top-left-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description: "Applies a small border radius of 4px to the top-left corner",
+  },
+  {
+    label: "rounded-tl-md",
+    value: "rounded-tl-md",
+    styles: "border-top-left-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description: "Applies a medium border radius of 6px to the top-left corner",
+  },
+  {
+    label: "rounded-tl-lg",
+    value: "rounded-tl-lg",
+    styles: "border-top-left-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description: "Applies a large border radius of 8px to the top-left corner",
+  },
+  {
+    label: "rounded-tl-xl",
+    value: "rounded-tl-xl",
+    styles: "border-top-left-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the top-left corner",
+  },
+  {
+    label: "rounded-tl-2xl",
+    value: "rounded-tl-2xl",
+    styles: "border-top-left-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the top-left corner",
+  },
+  {
+    label: "rounded-tl-3xl",
+    value: "rounded-tl-3xl",
+    styles: "border-top-left-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the top-left corner",
+  },
+  {
+    label: "rounded-tl-4xl",
+    value: "rounded-tl-4xl",
+    styles: "border-top-left-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the top-left corner",
+  },
+  {
+    label: "rounded-tl-none",
+    value: "rounded-tl-none",
+    styles: "border-top-left-radius: 0;",
+    description: "Removes border radius from the top-left corner",
+  },
+  {
+    label: "rounded-tl-full",
+    value: "rounded-tl-full",
+    styles: "border-top-left-radius: calc(infinity * 1px);",
+    description: "Applies a fully rounded border radius to the top-left corner",
+  },
+  {
+    label: "rounded-tl-(<custom-property>)",
+    value: "rounded-tl-(<custom-property>)",
+    styles: "border-top-left-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the top-left corner",
+  },
+  {
+    label: "rounded-tl-[<value>]",
+    value: "rounded-tl-[<value>]",
+    styles: "border-top-left-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the top-left corner",
+  },
+  {
+    label: "rounded-tr-xs",
+    value: "rounded-tr-xs",
+    styles: "border-top-right-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the top-right corner",
+  },
+  {
+    label: "rounded-tr-sm",
+    value: "rounded-tr-sm",
+    styles: "border-top-right-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description: "Applies a small border radius of 4px to the top-right corner",
+  },
+  {
+    label: "rounded-tr-md",
+    value: "rounded-tr-md",
+    styles: "border-top-right-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to the top-right corner",
+  },
+  {
+    label: "rounded-tr-lg",
+    value: "rounded-tr-lg",
+    styles: "border-top-right-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description: "Applies a large border radius of 8px to the top-right corner",
+  },
+  {
+    label: "rounded-tr-xl",
+    value: "rounded-tr-xl",
+    styles: "border-top-right-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the top-right corner",
+  },
+  {
+    label: "rounded-tr-2xl",
+    value: "rounded-tr-2xl",
+    styles: "border-top-right-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the top-right corner",
+  },
+  {
+    label: "rounded-tr-3xl",
+    value: "rounded-tr-3xl",
+    styles: "border-top-right-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the top-right corner",
+  },
+  {
+    label: "rounded-tr-4xl",
+    value: "rounded-tr-4xl",
+    styles: "border-top-right-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the top-right corner",
+  },
+  {
+    label: "rounded-tr-none",
+    value: "rounded-tr-none",
+    styles: "border-top-right-radius: 0;",
+    description: "Removes border radius from the top-right corner",
+  },
+  {
+    label: "rounded-tr-full",
+    value: "rounded-tr-full",
+    styles: "border-top-right-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius to the top-right corner",
+  },
+  {
+    label: "rounded-tr-(<custom-property>)",
+    value: "rounded-tr-(<custom-property>)",
+    styles: "border-top-right-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the top-right corner",
+  },
+  {
+    label: "rounded-tr-[<value>]",
+    value: "rounded-tr-[<value>]",
+    styles: "border-top-right-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the top-right corner",
+  },
+  {
+    label: "rounded-br-xs",
+    value: "rounded-br-xs",
+    styles:
+      "border-bottom-right-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-sm",
+    value: "rounded-br-sm",
+    styles: "border-bottom-right-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description:
+      "Applies a small border radius of 4px to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-md",
+    value: "rounded-br-md",
+    styles:
+      "border-bottom-right-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-lg",
+    value: "rounded-br-lg",
+    styles: "border-bottom-right-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description:
+      "Applies a large border radius of 8px to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-xl",
+    value: "rounded-br-xl",
+    styles:
+      "border-bottom-right-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-2xl",
+    value: "rounded-br-2xl",
+    styles: "border-bottom-right-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-3xl",
+    value: "rounded-br-3xl",
+    styles:
+      "border-bottom-right-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-4xl",
+    value: "rounded-br-4xl",
+    styles: "border-bottom-right-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-none",
+    value: "rounded-br-none",
+    styles: "border-bottom-right-radius: 0;",
+    description: "Removes border radius from the bottom-right corner",
+  },
+  {
+    label: "rounded-br-full",
+    value: "rounded-br-full",
+    styles: "border-bottom-right-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-(<custom-property>)",
+    value: "rounded-br-(<custom-property>)",
+    styles: "border-bottom-right-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the bottom-right corner",
+  },
+  {
+    label: "rounded-br-[<value>]",
+    value: "rounded-br-[<value>]",
+    styles: "border-bottom-right-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the bottom-right corner",
+  },
+  {
+    label: "rounded-bl-xs",
+    value: "rounded-bl-xs",
+    styles: "border-bottom-left-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-sm",
+    value: "rounded-bl-sm",
+    styles: "border-bottom-left-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description:
+      "Applies a small border radius of 4px to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-md",
+    value: "rounded-bl-md",
+    styles: "border-bottom-left-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-lg",
+    value: "rounded-bl-lg",
+    styles: "border-bottom-left-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description:
+      "Applies a large border radius of 8px to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-xl",
+    value: "rounded-bl-xl",
+    styles: "border-bottom-left-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-2xl",
+    value: "rounded-bl-2xl",
+    styles: "border-bottom-left-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-3xl",
+    value: "rounded-bl-3xl",
+    styles: "border-bottom-left-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-4xl",
+    value: "rounded-bl-4xl",
+    styles: "border-bottom-left-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-none",
+    value: "rounded-bl-none",
+    styles: "border-bottom-left-radius: 0;",
+    description: "Removes border radius from the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-full",
+    value: "rounded-bl-full",
+    styles: "border-bottom-left-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-(<custom-property>)",
+    value: "rounded-bl-(<custom-property>)",
+    styles: "border-bottom-left-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the bottom-left corner",
+  },
+  {
+    label: "rounded-bl-[<value>]",
+    value: "rounded-bl-[<value>]",
+    styles: "border-bottom-left-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the bottom-left corner",
+  },
 ];
+export const borderWidth = [
+  {
+    label: "border",
+    value: "border",
+    styles: "border-width: 1px;",
+    description: "Sets a 1px border width on all sides of an element",
+  },
+  {
+    label: "border-<number>",
+    value: "border-<number>",
+    styles: "border-width: <number>px;",
+    description:
+      "Sets a custom numeric border width in pixels on all sides (e.g., border-2, border-4)",
+  },
+  {
+    label: "border-(length:<custom-property>)",
+    value: "border-(length:<custom-property>)",
+    styles: "border-width: var(<custom-property>);",
+    description: "Sets border width using a CSS custom property for all sides",
+  },
+  {
+    label: "border-[<value>]",
+    value: "border-[<value>]",
+    styles: "border-width: <value>;",
+    description:
+      "Sets an arbitrary border width value using square bracket notation for all sides",
+  },
+  {
+    label: "border-x",
+    value: "border-x",
+    styles: "border-inline-width: 1px;",
+    description:
+      "Sets a 1px border width on the horizontal (left and right) sides",
+  },
+  {
+    label: "border-x-<number>",
+    value: "border-x-<number>",
+    styles: "border-inline-width: <number>px;",
+    description:
+      "Sets a custom numeric border width in pixels on horizontal sides",
+  },
+  {
+    label: "border-x-(length:<custom-property>)",
+    value: "border-x-(length:<custom-property>)",
+    styles: "border-inline-width: var(<custom-property>);",
+    description: "Sets horizontal border width using a CSS custom property",
+  },
+  {
+    label: "border-x-[<value>]",
+    value: "border-x-[<value>]",
+    styles: "border-inline-width: <value>;",
+    description: "Sets an arbitrary border width value for horizontal sides",
+  },
+  {
+    label: "border-y",
+    value: "border-y",
+    styles: "border-block-width: 1px;",
+    description:
+      "Sets a 1px border width on the vertical (top and bottom) sides",
+  },
+  {
+    label: "border-y-<number>",
+    value: "border-y-<number>",
+    styles: "border-block-width: <number>px;",
+    description:
+      "Sets a custom numeric border width in pixels on vertical sides",
+  },
+  {
+    label: "border-y-(length:<custom-property>)",
+    value: "border-y-(length:<custom-property>)",
+    styles: "border-block-width: var(<custom-property>);",
+    description: "Sets vertical border width using a CSS custom property",
+  },
+  {
+    label: "border-y-[<value>]",
+    value: "border-y-[<value>]",
+    styles: "border-block-width: <value>;",
+    description: "Sets an arbitrary border width value for vertical sides",
+  },
+  {
+    label: "border-s",
+    value: "border-s",
+    styles: "border-inline-start-width: 1px;",
+    description:
+      "Sets a 1px border width on the inline start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "border-s-<number>",
+    value: "border-s-<number>",
+    styles: "border-inline-start-width: <number>px;",
+    description:
+      "Sets a custom numeric border width in pixels on the inline start side",
+  },
+  {
+    label: "border-s-(length:<custom-property>)",
+    value: "border-s-(length:<custom-property>)",
+    styles: "border-inline-start-width: var(<custom-property>);",
+    description: "Sets inline start border width using a CSS custom property",
+  },
+  {
+    label: "border-s-[<value>]",
+    value: "border-s-[<value>]",
+    styles: "border-inline-start-width: <value>;",
+    description:
+      "Sets an arbitrary border width value for the inline start side",
+  },
+  {
+    label: "border-e",
+    value: "border-e",
+    styles: "border-inline-end-width: 1px;",
+    description:
+      "Sets a 1px border width on the inline end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "border-e-<number>",
+    value: "border-e-<number>",
+    styles: "border-inline-end-width: <number>px;",
+    description:
+      "Sets a custom numeric border width in pixels on the inline end side",
+  },
+  {
+    label: "border-e-(length:<custom-property>)",
+    value: "border-e-(length:<custom-property>)",
+    styles: "border-inline-end-width: var(<custom-property>);",
+    description: "Sets inline end border width using a CSS custom property",
+  },
+  {
+    label: "border-e-[<value>]",
+    value: "border-e-[<value>]",
+    styles: "border-inline-end-width: <value>;",
+    description: "Sets an arbitrary border width value for the inline end side",
+  },
+  {
+    label: "border-t",
+    value: "border-t",
+    styles: "border-top-width: 1px;",
+    description: "Sets a 1px border width on the top side",
+  },
+  {
+    label: "border-t-<number>",
+    value: "border-t-<number>",
+    styles: "border-top-width: <number>px;",
+    description: "Sets a custom numeric border width in pixels on the top side",
+  },
+  {
+    label: "border-t-(length:<custom-property>)",
+    value: "border-t-(length:<custom-property>)",
+    styles: "border-top-width: var(<custom-property>);",
+    description: "Sets top border width using a CSS custom property",
+  },
+  {
+    label: "border-t-[<value>]",
+    value: "border-t-[<value>]",
+    styles: "border-top-width: <value>;",
+    description: "Sets an arbitrary border width value for the top side",
+  },
+  {
+    label: "border-r",
+    value: "border-r",
+    styles: "border-right-width: 1px;",
+    description: "Sets a 1px border width on the right side",
+  },
+  {
+    label: "border-r-<number>",
+    value: "border-r-<number>",
+    styles: "border-right-width: <number>px;",
+    description:
+      "Sets a custom numeric border width in pixels on the right side",
+  },
+  {
+    label: "border-r-(length:<custom-property>)",
+    value: "border-r-(length:<custom-property>)",
+    styles: "border-right-width: var(<custom-property>);",
+    description: "Sets right border width using a CSS custom property",
+  },
+  {
+    label: "border-r-[<value>]",
+    value: "border-r-[<value>]",
+    styles: "border-right-width: <value>;",
+    description: "Sets an arbitrary border width value for the right side",
+  },
+  {
+    label: "border-b",
+    value: "border-b",
+    styles: "border-bottom-width: 1px;",
+    description: "Sets a 1px border width on the bottom side",
+  },
+  {
+    label: "border-b-<number>",
+    value: "border-b-<number>",
+    styles: "border-bottom-width: <number>px;",
+    description:
+      "Sets a custom numeric border width in pixels on the bottom side",
+  },
+  {
+    label: "border-b-(length:<custom-property>)",
+    value: "border-b-(length:<custom-property>)",
+    styles: "border-bottom-width: var(<custom-property>);",
+    description: "Sets bottom border width using a CSS custom property",
+  },
+  {
+    label: "border-b-[<value>]",
+    value: "border-b-[<value>]",
+    styles: "border-bottom-width: <value>;",
+    description: "Sets an arbitrary border width value for the bottom side",
+  },
+  {
+    label: "border-l",
+    value: "border-l",
+    styles: "border-left-width: 1px;",
+    description: "Sets a 1px border width on the left side",
+  },
+  {
+    label: "border-l-<number>",
+    value: "border-l-<number>",
+    styles: "border-left-width: <number>px;",
+    description:
+      "Sets a custom numeric border width in pixels on the left side",
+  },
+  {
+    label: "border-l-(length:<custom-property>)",
+    value: "border-l-(length:<custom-property>)",
+    styles: "border-left-width: var(<custom-property>);",
+    description: "Sets left border width using a CSS custom property",
+  },
+  {
+    label: "border-l-[<value>]",
+    value: "border-l-[<value>]",
+    styles: "border-left-width: <value>;",
+    description: "Sets an arbitrary border width value for the left side",
+  },
+  {
+    label: "divide-x",
+    value: "divide-x",
+    styles:
+      "& > :not(:last-child) {\n  border-inline-start-width: 0px;\n  border-inline-end-width: 1px;\n}",
+    description:
+      "Adds a 1px vertical divider between child elements (horizontal spacing)",
+  },
+  {
+    label: "divide-x-<number>",
+    value: "divide-x-<number>",
+    styles:
+      "& > :not(:last-child) {\n  border-inline-start-width: 0px;\n  border-inline-end-width: <number>px;\n}",
+    description: "Adds a custom width vertical divider between child elements",
+  },
+  {
+    label: "divide-x-(length:<custom-property>)",
+    value: "divide-x-(length:<custom-property>)",
+    styles:
+      "& > :not(:last-child) {\n  border-inline-start-width: 0px;\n  border-inline-end-width: var(<custom-property>);\n}",
+    description:
+      "Adds a vertical divider between child elements using a CSS custom property",
+  },
+  {
+    label: "divide-x-[<value>]",
+    value: "divide-x-[<value>]",
+    styles:
+      "& > :not(:last-child) {\n  border-inline-start-width: 0px;\n  border-inline-end-width: <value>;\n}",
+    description:
+      "Adds an arbitrary width vertical divider between child elements",
+  },
+  {
+    label: "divide-y",
+    value: "divide-y",
+    styles:
+      "& > :not(:last-child) {\n  border-top-width: 0px;\n  border-bottom-width: 1px;\n}",
+    description:
+      "Adds a 1px horizontal divider between child elements (vertical spacing)",
+  },
+  {
+    label: "divide-y-<number>",
+    value: "divide-y-<number>",
+    styles:
+      "& > :not(:last-child) {\n  border-top-width: 0px;\n  border-bottom-width: <number>px;\n}",
+    description:
+      "Adds a custom width horizontal divider between child elements",
+  },
+  {
+    label: "divide-y-(length:<custom-property>)",
+    value: "divide-y-(length:<custom-property>)",
+    styles:
+      "& > :not(:last-child) {\n  border-top-width: 0px;\n  border-bottom-width: var(<custom-property>);\n}",
+    description:
+      "Adds a horizontal divider between child elements using a CSS custom property",
+  },
+  {
+    label: "divide-y-[<value>]",
+    value: "divide-y-[<value>]",
+    styles:
+      "& > :not(:last-child) {\n  border-top-width: 0px;\n  border-bottom-width: <value>;\n}",
+    description:
+      "Adds an arbitrary width horizontal divider between child elements",
+  },
+  {
+    label: "divide-x-reverse",
+    value: "divide-x-reverse",
+    styles: "--tw-divide-x-reverse: 1;",
+    description:
+      "Reverses the direction of vertical dividers (useful for RTL layouts)",
+  },
+  {
+    label: "divide-y-reverse",
+    value: "divide-y-reverse",
+    styles: "--tw-divide-y-reverse: 1;",
+    description:
+      "Reverses the direction of horizontal dividers (places divider above instead of below)",
+  },
+];
+
+export const borderColor = [
+  {
+    label: "border-inherit",
+    value: "border-inherit",
+    styles: "border-color: inherit;",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-current",
+    value: "border-current",
+    styles: "border-color: currentColor;",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-transparent",
+    value: "border-transparent",
+    styles: "border-color: transparent;",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-black",
+    value: "border-black",
+    styles: "border-color: var(--color-black); /* #000 */",
+    description: "Sets border color to black",
+  },
+  {
+    label: "border-white",
+    value: "border-white",
+    styles: "border-color: var(--color-white); /* #fff */",
+    description: "Sets border color to white",
+  },
+  {
+    label: "border-red-50",
+    value: "border-red-50",
+    styles: "border-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets border color to red-50",
+  },
+  {
+    label: "border-red-100",
+    value: "border-red-100",
+    styles:
+      "border-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets border color to red-100",
+  },
+  {
+    label: "border-red-200",
+    value: "border-red-200",
+    styles:
+      "border-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets border color to red-200",
+  },
+  {
+    label: "border-red-300",
+    value: "border-red-300",
+    styles:
+      "border-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets border color to red-300",
+  },
+  {
+    label: "border-red-400",
+    value: "border-red-400",
+    styles:
+      "border-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets border color to red-400",
+  },
+  {
+    label: "border-red-500",
+    value: "border-red-500",
+    styles:
+      "border-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets border color to red-500",
+  },
+  {
+    label: "border-red-600",
+    value: "border-red-600",
+    styles:
+      "border-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets border color to red-600",
+  },
+  {
+    label: "border-red-700",
+    value: "border-red-700",
+    styles:
+      "border-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets border color to red-700",
+  },
+  {
+    label: "border-red-800",
+    value: "border-red-800",
+    styles:
+      "border-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets border color to red-800",
+  },
+  {
+    label: "border-red-900",
+    value: "border-red-900",
+    styles:
+      "border-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets border color to red-900",
+  },
+  {
+    label: "border-red-950",
+    value: "border-red-950",
+    styles:
+      "border-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets border color to red-950",
+  },
+  {
+    label: "border-orange-50",
+    value: "border-orange-50",
+    styles:
+      "border-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets border color to orange-50",
+  },
+  {
+    label: "border-orange-100",
+    value: "border-orange-100",
+    styles:
+      "border-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets border color to orange-100",
+  },
+  {
+    label: "border-orange-200",
+    value: "border-orange-200",
+    styles:
+      "border-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets border color to orange-200",
+  },
+  {
+    label: "border-orange-300",
+    value: "border-orange-300",
+    styles:
+      "border-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets border color to orange-300",
+  },
+  {
+    label: "border-orange-400",
+    value: "border-orange-400",
+    styles:
+      "border-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets border color to orange-400",
+  },
+  {
+    label: "border-orange-500",
+    value: "border-orange-500",
+    styles:
+      "border-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets border color to orange-500",
+  },
+  {
+    label: "border-orange-600",
+    value: "border-orange-600",
+    styles:
+      "border-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets border color to orange-600",
+  },
+  {
+    label: "border-orange-700",
+    value: "border-orange-700",
+    styles:
+      "border-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets border color to orange-700",
+  },
+  {
+    label: "border-orange-800",
+    value: "border-orange-800",
+    styles:
+      "border-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets border color to orange-800",
+  },
+  {
+    label: "border-orange-900",
+    value: "border-orange-900",
+    styles:
+      "border-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets border color to orange-900",
+  },
+  {
+    label: "border-orange-950",
+    value: "border-orange-950",
+    styles:
+      "border-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets border color to orange-950",
+  },
+  {
+    label: "border-amber-50",
+    value: "border-amber-50",
+    styles:
+      "border-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets border color to amber-50",
+  },
+  {
+    label: "border-amber-100",
+    value: "border-amber-100",
+    styles:
+      "border-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets border color to amber-100",
+  },
+  {
+    label: "border-amber-200",
+    value: "border-amber-200",
+    styles:
+      "border-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets border color to amber-200",
+  },
+  {
+    label: "border-amber-300",
+    value: "border-amber-300",
+    styles:
+      "border-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets border color to amber-300",
+  },
+  {
+    label: "border-amber-400",
+    value: "border-amber-400",
+    styles:
+      "border-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets border color to amber-400",
+  },
+  {
+    label: "border-amber-500",
+    value: "border-amber-500",
+    styles:
+      "border-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets border color to amber-500",
+  },
+  {
+    label: "border-amber-600",
+    value: "border-amber-600",
+    styles:
+      "border-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets border color to amber-600",
+  },
+  {
+    label: "border-amber-700",
+    value: "border-amber-700",
+    styles:
+      "border-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets border color to amber-700",
+  },
+  {
+    label: "border-amber-800",
+    value: "border-amber-800",
+    styles:
+      "border-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets border color to amber-800",
+  },
+  {
+    label: "border-amber-900",
+    value: "border-amber-900",
+    styles:
+      "border-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets border color to amber-900",
+  },
+  {
+    label: "border-amber-950",
+    value: "border-amber-950",
+    styles:
+      "border-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets border color to amber-950",
+  },
+  {
+    label: "border-yellow-50",
+    value: "border-yellow-50",
+    styles:
+      "border-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets border color to yellow-50",
+  },
+  {
+    label: "border-yellow-100",
+    value: "border-yellow-100",
+    styles:
+      "border-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets border color to yellow-100",
+  },
+  {
+    label: "border-yellow-200",
+    value: "border-yellow-200",
+    styles:
+      "border-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets border color to yellow-200",
+  },
+  {
+    label: "border-yellow-300",
+    value: "border-yellow-300",
+    styles:
+      "border-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets border color to yellow-300",
+  },
+  {
+    label: "border-yellow-400",
+    value: "border-yellow-400",
+    styles:
+      "border-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets border color to yellow-400",
+  },
+  {
+    label: "border-yellow-500",
+    value: "border-yellow-500",
+    styles:
+      "border-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets border color to yellow-500",
+  },
+  {
+    label: "border-yellow-600",
+    value: "border-yellow-600",
+    styles:
+      "border-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets border color to yellow-600",
+  },
+  {
+    label: "border-yellow-700",
+    value: "border-yellow-700",
+    styles:
+      "border-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets border color to yellow-700",
+  },
+  {
+    label: "border-yellow-800",
+    value: "border-yellow-800",
+    styles:
+      "border-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets border color to yellow-800",
+  },
+  {
+    label: "border-yellow-900",
+    value: "border-yellow-900",
+    styles:
+      "border-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets border color to yellow-900",
+  },
+  {
+    label: "border-yellow-950",
+    value: "border-yellow-950",
+    styles:
+      "border-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets border color to yellow-950",
+  },
+  {
+    label: "border-lime-50",
+    value: "border-lime-50",
+    styles:
+      "border-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets border color to lime-50",
+  },
+  {
+    label: "border-lime-100",
+    value: "border-lime-100",
+    styles:
+      "border-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets border color to lime-100",
+  },
+  {
+    label: "border-lime-200",
+    value: "border-lime-200",
+    styles:
+      "border-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets border color to lime-200",
+  },
+  {
+    label: "border-lime-300",
+    value: "border-lime-300",
+    styles:
+      "border-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets border color to lime-300",
+  },
+  {
+    label: "border-lime-400",
+    value: "border-lime-400",
+    styles:
+      "border-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets border color to lime-400",
+  },
+  {
+    label: "border-lime-500",
+    value: "border-lime-500",
+    styles:
+      "border-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets border color to lime-500",
+  },
+  {
+    label: "border-lime-600",
+    value: "border-lime-600",
+    styles:
+      "border-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets border color to lime-600",
+  },
+  {
+    label: "border-lime-700",
+    value: "border-lime-700",
+    styles:
+      "border-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets border color to lime-700",
+  },
+  {
+    label: "border-lime-800",
+    value: "border-lime-800",
+    styles:
+      "border-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets border color to lime-800",
+  },
+  {
+    label: "border-lime-900",
+    value: "border-lime-900",
+    styles:
+      "border-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets border color to lime-900",
+  },
+  {
+    label: "border-lime-950",
+    value: "border-lime-950",
+    styles:
+      "border-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets border color to lime-950",
+  },
+  {
+    label: "border-green-50",
+    value: "border-green-50",
+    styles:
+      "border-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets border color to green-50",
+  },
+  {
+    label: "border-green-100",
+    value: "border-green-100",
+    styles:
+      "border-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets border color to green-100",
+  },
+  {
+    label: "border-green-200",
+    value: "border-green-200",
+    styles:
+      "border-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets border color to green-200",
+  },
+  {
+    label: "border-green-300",
+    value: "border-green-300",
+    styles:
+      "border-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets border color to green-300",
+  },
+  {
+    label: "border-green-400",
+    value: "border-green-400",
+    styles:
+      "border-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets border color to green-400",
+  },
+  {
+    label: "border-green-500",
+    value: "border-green-500",
+    styles:
+      "border-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets border color to green-500",
+  },
+  {
+    label: "border-green-600",
+    value: "border-green-600",
+    styles:
+      "border-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets border color to green-600",
+  },
+  {
+    label: "border-green-700",
+    value: "border-green-700",
+    styles:
+      "border-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets border color to green-700",
+  },
+  {
+    label: "border-green-800",
+    value: "border-green-800",
+    styles:
+      "border-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets border color to green-800",
+  },
+  {
+    label: "border-green-900",
+    value: "border-green-900",
+    styles:
+      "border-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets border color to green-900",
+  },
+  {
+    label: "border-green-950",
+    value: "border-green-950",
+    styles:
+      "border-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets border color to green-950",
+  },
+  {
+    label: "border-emerald-50",
+    value: "border-emerald-50",
+    styles:
+      "border-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets border color to emerald-50",
+  },
+  {
+    label: "border-emerald-100",
+    value: "border-emerald-100",
+    styles:
+      "border-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets border color to emerald-100",
+  },
+  {
+    label: "border-emerald-200",
+    value: "border-emerald-200",
+    styles:
+      "border-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets border color to emerald-200",
+  },
+  {
+    label: "border-emerald-300",
+    value: "border-emerald-300",
+    styles:
+      "border-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets border color to emerald-300",
+  },
+  {
+    label: "border-emerald-400",
+    value: "border-emerald-400",
+    styles:
+      "border-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets border color to emerald-400",
+  },
+  {
+    label: "border-emerald-500",
+    value: "border-emerald-500",
+    styles:
+      "border-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets border color to emerald-500",
+  },
+  {
+    label: "border-emerald-600",
+    value: "border-emerald-600",
+    styles:
+      "border-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets border color to emerald-600",
+  },
+  {
+    label: "border-emerald-700",
+    value: "border-emerald-700",
+    styles:
+      "border-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets border color to emerald-700",
+  },
+  {
+    label: "border-emerald-800",
+    value: "border-emerald-800",
+    styles:
+      "border-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets border color to emerald-800",
+  },
+  {
+    label: "border-emerald-900",
+    value: "border-emerald-900",
+    styles:
+      "border-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets border color to emerald-900",
+  },
+  {
+    label: "border-emerald-950",
+    value: "border-emerald-950",
+    styles:
+      "border-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets border color to emerald-950",
+  },
+  {
+    label: "border-teal-50",
+    value: "border-teal-50",
+    styles:
+      "border-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets border color to teal-50",
+  },
+  {
+    label: "border-teal-100",
+    value: "border-teal-100",
+    styles:
+      "border-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets border color to teal-100",
+  },
+  {
+    label: "border-teal-200",
+    value: "border-teal-200",
+    styles:
+      "border-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets border color to teal-200",
+  },
+  {
+    label: "border-teal-300",
+    value: "border-teal-300",
+    styles:
+      "border-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets border color to teal-300",
+  },
+  {
+    label: "border-teal-400",
+    value: "border-teal-400",
+    styles:
+      "border-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets border color to teal-400",
+  },
+  {
+    label: "border-teal-500",
+    value: "border-teal-500",
+    styles:
+      "border-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets border color to teal-500",
+  },
+  {
+    label: "border-teal-600",
+    value: "border-teal-600",
+    styles:
+      "border-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets border color to teal-600",
+  },
+  {
+    label: "border-teal-700",
+    value: "border-teal-700",
+    styles:
+      "border-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets border color to teal-700",
+  },
+  {
+    label: "border-teal-800",
+    value: "border-teal-800",
+    styles:
+      "border-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets border color to teal-800",
+  },
+  {
+    label: "border-teal-900",
+    value: "border-teal-900",
+    styles:
+      "border-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets border color to teal-900",
+  },
+  {
+    label: "border-teal-950",
+    value: "border-teal-950",
+    styles:
+      "border-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets border color to teal-950",
+  },
+  {
+    label: "border-cyan-50",
+    value: "border-cyan-50",
+    styles:
+      "border-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets border color to cyan-50",
+  },
+  {
+    label: "border-cyan-100",
+    value: "border-cyan-100",
+    styles:
+      "border-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets border color to cyan-100",
+  },
+  {
+    label: "border-cyan-200",
+    value: "border-cyan-200",
+    styles:
+      "border-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets border color to cyan-200",
+  },
+  {
+    label: "border-cyan-300",
+    value: "border-cyan-300",
+    styles:
+      "border-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets border color to cyan-300",
+  },
+  {
+    label: "border-cyan-400",
+    value: "border-cyan-400",
+    styles:
+      "border-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets border color to cyan-400",
+  },
+  {
+    label: "border-cyan-500",
+    value: "border-cyan-500",
+    styles:
+      "border-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets border color to cyan-500",
+  },
+  {
+    label: "border-cyan-600",
+    value: "border-cyan-600",
+    styles:
+      "border-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets border color to cyan-600",
+  },
+  {
+    label: "border-cyan-700",
+    value: "border-cyan-700",
+    styles:
+      "border-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets border color to cyan-700",
+  },
+  {
+    label: "border-cyan-800",
+    value: "border-cyan-800",
+    styles:
+      "border-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets border color to cyan-800",
+  },
+  {
+    label: "border-cyan-900",
+    value: "border-cyan-900",
+    styles:
+      "border-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets border color to cyan-900",
+  },
+  {
+    label: "border-cyan-950",
+    value: "border-cyan-950",
+    styles:
+      "border-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets border color to cyan-950",
+  },
+  {
+    label: "border-sky-50",
+    value: "border-sky-50",
+    styles:
+      "border-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets border color to sky-50",
+  },
+  {
+    label: "border-sky-100",
+    value: "border-sky-100",
+    styles:
+      "border-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets border color to sky-100",
+  },
+  {
+    label: "border-sky-200",
+    value: "border-sky-200",
+    styles:
+      "border-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets border color to sky-200",
+  },
+  {
+    label: "border-sky-300",
+    value: "border-sky-300",
+    styles:
+      "border-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets border color to sky-300",
+  },
+  {
+    label: "border-sky-400",
+    value: "border-sky-400",
+    styles:
+      "border-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets border color to sky-400",
+  },
+  {
+    label: "border-sky-500",
+    value: "border-sky-500",
+    styles:
+      "border-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets border color to sky-500",
+  },
+  {
+    label: "border-sky-600",
+    value: "border-sky-600",
+    styles:
+      "border-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets border color to sky-600",
+  },
+  {
+    label: "border-sky-700",
+    value: "border-sky-700",
+    styles:
+      "border-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets border color to sky-700",
+  },
+  {
+    label: "border-sky-800",
+    value: "border-sky-800",
+    styles:
+      "border-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets border color to sky-800",
+  },
+  {
+    label: "border-sky-900",
+    value: "border-sky-900",
+    styles:
+      "border-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets border color to sky-900",
+  },
+  {
+    label: "border-sky-950",
+    value: "border-sky-950",
+    styles:
+      "border-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets border color to sky-950",
+  },
+  {
+    label: "border-blue-50",
+    value: "border-blue-50",
+    styles:
+      "border-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets border color to blue-50",
+  },
+  {
+    label: "border-blue-100",
+    value: "border-blue-100",
+    styles:
+      "border-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets border color to blue-100",
+  },
+  {
+    label: "border-blue-200",
+    value: "border-blue-200",
+    styles:
+      "border-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets border color to blue-200",
+  },
+  {
+    label: "border-blue-300",
+    value: "border-blue-300",
+    styles:
+      "border-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets border color to blue-300",
+  },
+  {
+    label: "border-blue-400",
+    value: "border-blue-400",
+    styles:
+      "border-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets border color to blue-400",
+  },
+  {
+    label: "border-blue-500",
+    value: "border-blue-500",
+    styles:
+      "border-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets border color to blue-500",
+  },
+  {
+    label: "border-blue-600",
+    value: "border-blue-600",
+    styles:
+      "border-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets border color to blue-600",
+  },
+  {
+    label: "border-blue-700",
+    value: "border-blue-700",
+    styles:
+      "border-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets border color to blue-700",
+  },
+  {
+    label: "border-blue-800",
+    value: "border-blue-800",
+    styles:
+      "border-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets border color to blue-800",
+  },
+  {
+    label: "border-blue-900",
+    value: "border-blue-900",
+    styles:
+      "border-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets border color to blue-900",
+  },
+  {
+    label: "border-blue-950",
+    value: "border-blue-950",
+    styles:
+      "border-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets border color to blue-950",
+  },
+  {
+    label: "border-indigo-50",
+    value: "border-indigo-50",
+    styles:
+      "border-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets border color to indigo-50",
+  },
+  {
+    label: "border-indigo-100",
+    value: "border-indigo-100",
+    styles:
+      "border-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets border color to indigo-100",
+  },
+  {
+    label: "border-indigo-200",
+    value: "border-indigo-200",
+    styles:
+      "border-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets border color to indigo-200",
+  },
+  {
+    label: "border-indigo-300",
+    value: "border-indigo-300",
+    styles:
+      "border-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets border color to indigo-300",
+  },
+  {
+    label: "border-indigo-400",
+    value: "border-indigo-400",
+    styles:
+      "border-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets border color to indigo-400",
+  },
+  {
+    label: "border-indigo-500",
+    value: "border-indigo-500",
+    styles:
+      "border-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets border color to indigo-500",
+  },
+  {
+    label: "border-indigo-600",
+    value: "border-indigo-600",
+    styles:
+      "border-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets border color to indigo-600",
+  },
+  {
+    label: "border-indigo-700",
+    value: "border-indigo-700",
+    styles:
+      "border-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets border color to indigo-700",
+  },
+  {
+    label: "border-indigo-800",
+    value: "border-indigo-800",
+    styles:
+      "border-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets border color to indigo-800",
+  },
+  {
+    label: "border-indigo-900",
+    value: "border-indigo-900",
+    styles:
+      "border-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets border color to indigo-900",
+  },
+  {
+    label: "border-indigo-950",
+    value: "border-indigo-950",
+    styles:
+      "border-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets border color to indigo-950",
+  },
+  {
+    label: "border-violet-50",
+    value: "border-violet-50",
+    styles:
+      "border-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets border color to violet-50",
+  },
+  {
+    label: "border-violet-100",
+    value: "border-violet-100",
+    styles:
+      "border-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets border color to violet-100",
+  },
+  {
+    label: "border-violet-200",
+    value: "border-violet-200",
+    styles:
+      "border-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets border color to violet-200",
+  },
+  {
+    label: "border-violet-300",
+    value: "border-violet-300",
+    styles:
+      "border-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets border color to violet-300",
+  },
+  {
+    label: "border-violet-400",
+    value: "border-violet-400",
+    styles:
+      "border-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets border color to violet-400",
+  },
+  {
+    label: "border-violet-500",
+    value: "border-violet-500",
+    styles:
+      "border-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets border color to violet-500",
+  },
+  {
+    label: "border-violet-600",
+    value: "border-violet-600",
+    styles:
+      "border-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets border color to violet-600",
+  },
+  {
+    label: "border-violet-700",
+    value: "border-violet-700",
+    styles:
+      "border-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets border color to violet-700",
+  },
+  {
+    label: "border-violet-800",
+    value: "border-violet-800",
+    styles:
+      "border-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets border color to violet-800",
+  },
+  {
+    label: "border-violet-900",
+    value: "border-violet-900",
+    styles:
+      "border-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets border color to violet-900",
+  },
+  {
+    label: "border-violet-950",
+    value: "border-violet-950",
+    styles:
+      "border-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets border color to violet-950",
+  },
+  {
+    label: "border-purple-50",
+    value: "border-purple-50",
+    styles:
+      "border-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets border color to purple-50",
+  },
+  {
+    label: "border-purple-100",
+    value: "border-purple-100",
+    styles:
+      "border-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets border color to purple-100",
+  },
+  {
+    label: "border-purple-200",
+    value: "border-purple-200",
+    styles:
+      "border-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets border color to purple-200",
+  },
+  {
+    label: "border-purple-300",
+    value: "border-purple-300",
+    styles:
+      "border-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets border color to purple-300",
+  },
+  {
+    label: "border-purple-400",
+    value: "border-purple-400",
+    styles:
+      "border-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets border color to purple-400",
+  },
+  {
+    label: "border-purple-500",
+    value: "border-purple-500",
+    styles:
+      "border-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets border color to purple-500",
+  },
+  {
+    label: "border-purple-600",
+    value: "border-purple-600",
+    styles:
+      "border-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets border color to purple-600",
+  },
+  {
+    label: "border-purple-700",
+    value: "border-purple-700",
+    styles:
+      "border-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets border color to purple-700",
+  },
+  {
+    label: "border-purple-800",
+    value: "border-purple-800",
+    styles:
+      "border-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets border color to purple-800",
+  },
+  {
+    label: "border-purple-900",
+    value: "border-purple-900",
+    styles:
+      "border-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets border color to purple-900",
+  },
+  {
+    label: "border-purple-950",
+    value: "border-purple-950",
+    styles:
+      "border-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets border color to purple-950",
+  },
+  {
+    label: "border-fuchsia-50",
+    value: "border-fuchsia-50",
+    styles:
+      "border-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets border color to fuchsia-50",
+  },
+  {
+    label: "border-fuchsia-100",
+    value: "border-fuchsia-100",
+    styles:
+      "border-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets border color to fuchsia-100",
+  },
+  {
+    label: "border-fuchsia-200",
+    value: "border-fuchsia-200",
+    styles:
+      "border-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets border color to fuchsia-200",
+  },
+  {
+    label: "border-fuchsia-300",
+    value: "border-fuchsia-300",
+    styles:
+      "border-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets border color to fuchsia-300",
+  },
+  {
+    label: "border-fuchsia-400",
+    value: "border-fuchsia-400",
+    styles:
+      "border-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets border color to fuchsia-400",
+  },
+  {
+    label: "border-fuchsia-500",
+    value: "border-fuchsia-500",
+    styles:
+      "border-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets border color to fuchsia-500",
+  },
+  {
+    label: "border-fuchsia-600",
+    value: "border-fuchsia-600",
+    styles:
+      "border-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets border color to fuchsia-600",
+  },
+  {
+    label: "border-fuchsia-700",
+    value: "border-fuchsia-700",
+    styles:
+      "border-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets border color to fuchsia-700",
+  },
+  {
+    label: "border-fuchsia-800",
+    value: "border-fuchsia-800",
+    styles:
+      "border-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets border color to fuchsia-800",
+  },
+  {
+    label: "border-fuchsia-900",
+    value: "border-fuchsia-900",
+    styles:
+      "border-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets border color to fuchsia-900",
+  },
+  {
+    label: "border-fuchsia-950",
+    value: "border-fuchsia-950",
+    styles:
+      "border-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets border color to fuchsia-950",
+  },
+  {
+    label: "border-pink-50",
+    value: "border-pink-50",
+    styles:
+      "border-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets border color to pink-50",
+  },
+  {
+    label: "border-pink-100",
+    value: "border-pink-100",
+    styles:
+      "border-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets border color to pink-100",
+  },
+  {
+    label: "border-pink-200",
+    value: "border-pink-200",
+    styles:
+      "border-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets border color to pink-200",
+  },
+  {
+    label: "border-pink-300",
+    value: "border-pink-300",
+    styles:
+      "border-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets border color to pink-300",
+  },
+  {
+    label: "border-pink-400",
+    value: "border-pink-400",
+    styles:
+      "border-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets border color to pink-400",
+  },
+  {
+    label: "border-pink-500",
+    value: "border-pink-500",
+    styles:
+      "border-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets border color to pink-500",
+  },
+  {
+    label: "border-pink-600",
+    value: "border-pink-600",
+    styles:
+      "border-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets border color to pink-600",
+  },
+  {
+    label: "border-pink-700",
+    value: "border-pink-700",
+    styles:
+      "border-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets border color to pink-700",
+  },
+  {
+    label: "border-pink-800",
+    value: "border-pink-800",
+    styles:
+      "border-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets border color to pink-800",
+  },
+  {
+    label: "border-pink-900",
+    value: "border-pink-900",
+    styles:
+      "border-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets border color to pink-900",
+  },
+  {
+    label: "border-pink-950",
+    value: "border-pink-950",
+    styles:
+      "border-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets border color to pink-950",
+  },
+  {
+    label: "border-rose-50",
+    value: "border-rose-50",
+    styles:
+      "border-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets border color to rose-50",
+  },
+  {
+    label: "border-rose-100",
+    value: "border-rose-100",
+    styles:
+      "border-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets border color to rose-100",
+  },
+  {
+    label: "border-rose-200",
+    value: "border-rose-200",
+    styles:
+      "border-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets border color to rose-200",
+  },
+  {
+    label: "border-rose-300",
+    value: "border-rose-300",
+    styles:
+      "border-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets border color to rose-300",
+  },
+  {
+    label: "border-rose-400",
+    value: "border-rose-400",
+    styles:
+      "border-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets border color to rose-400",
+  },
+  {
+    label: "border-rose-500",
+    value: "border-rose-500",
+    styles:
+      "border-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets border color to rose-500",
+  },
+  {
+    label: "border-rose-600",
+    value: "border-rose-600",
+    styles:
+      "border-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets border color to rose-600",
+  },
+  {
+    label: "border-rose-700",
+    value: "border-rose-700",
+    styles:
+      "border-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets border color to rose-700",
+  },
+  {
+    label: "border-rose-800",
+    value: "border-rose-800",
+    styles:
+      "border-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets border color to rose-800",
+  },
+  {
+    label: "border-rose-900",
+    value: "border-rose-900",
+    styles:
+      "border-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets border color to rose-900",
+  },
+  {
+    label: "border-rose-950",
+    value: "border-rose-950",
+    styles:
+      "border-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets border color to rose-950",
+  },
+  {
+    label: "border-slate-50",
+    value: "border-slate-50",
+    styles:
+      "border-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets border color to slate-50",
+  },
+  {
+    label: "border-slate-100",
+    value: "border-slate-100",
+    styles:
+      "border-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets border color to slate-100",
+  },
+  {
+    label: "border-slate-200",
+    value: "border-slate-200",
+    styles:
+      "border-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets border color to slate-200",
+  },
+  {
+    label: "border-slate-300",
+    value: "border-slate-300",
+    styles:
+      "border-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets border color to slate-300",
+  },
+  {
+    label: "border-slate-400",
+    value: "border-slate-400",
+    styles:
+      "border-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets border color to slate-400",
+  },
+  {
+    label: "border-slate-500",
+    value: "border-slate-500",
+    styles:
+      "border-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets border color to slate-500",
+  },
+  {
+    label: "border-slate-600",
+    value: "border-slate-600",
+    styles:
+      "border-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets border color to slate-600",
+  },
+  {
+    label: "border-slate-700",
+    value: "border-slate-700",
+    styles:
+      "border-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets border color to slate-700",
+  },
+  {
+    label: "border-slate-800",
+    value: "border-slate-800",
+    styles:
+      "border-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets border color to slate-800",
+  },
+  {
+    label: "border-slate-900",
+    value: "border-slate-900",
+    styles:
+      "border-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets border color to slate-900",
+  },
+  {
+    label: "border-slate-950",
+    value: "border-slate-950",
+    styles:
+      "border-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets border color to slate-950",
+  },
+  {
+    label: "border-gray-50",
+    value: "border-gray-50",
+    styles:
+      "border-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets border color to gray-50",
+  },
+  {
+    label: "border-gray-100",
+    value: "border-gray-100",
+    styles:
+      "border-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets border color to gray-100",
+  },
+  {
+    label: "border-gray-200",
+    value: "border-gray-200",
+    styles:
+      "border-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets border color to gray-200",
+  },
+  {
+    label: "border-gray-300",
+    value: "border-gray-300",
+    styles:
+      "border-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets border color to gray-300",
+  },
+  {
+    label: "border-gray-400",
+    value: "border-gray-400",
+    styles:
+      "border-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets border color to gray-400",
+  },
+  {
+    label: "border-gray-500",
+    value: "border-gray-500",
+    styles:
+      "border-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets border color to gray-500",
+  },
+  {
+    label: "border-gray-600",
+    value: "border-gray-600",
+    styles:
+      "border-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets border color to gray-600",
+  },
+  {
+    label: "border-gray-700",
+    value: "border-gray-700",
+    styles:
+      "border-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets border color to gray-700",
+  },
+  {
+    label: "border-gray-800",
+    value: "border-gray-800",
+    styles:
+      "border-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets border color to gray-800",
+  },
+  {
+    label: "border-gray-900",
+    value: "border-gray-900",
+    styles:
+      "border-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets border color to gray-900",
+  },
+  {
+    label: "border-gray-950",
+    value: "border-gray-950",
+    styles:
+      "border-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets border color to gray-950",
+  },
+  {
+    label: "border-zinc-50",
+    value: "border-zinc-50",
+    styles: "border-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets border color to zinc-50",
+  },
+  {
+    label: "border-zinc-100",
+    value: "border-zinc-100",
+    styles:
+      "border-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets border color to zinc-100",
+  },
+  {
+    label: "border-zinc-200",
+    value: "border-zinc-200",
+    styles:
+      "border-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets border color to zinc-200",
+  },
+  {
+    label: "border-zinc-300",
+    value: "border-zinc-300",
+    styles:
+      "border-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets border color to zinc-300",
+  },
+  {
+    label: "border-zinc-400",
+    value: "border-zinc-400",
+    styles:
+      "border-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets border color to zinc-400",
+  },
+  {
+    label: "border-zinc-500",
+    value: "border-zinc-500",
+    styles:
+      "border-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets border color to zinc-500",
+  },
+  {
+    label: "border-zinc-600",
+    value: "border-zinc-600",
+    styles:
+      "border-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets border color to zinc-600",
+  },
+  {
+    label: "border-zinc-700",
+    value: "border-zinc-700",
+    styles:
+      "border-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets border color to zinc-700",
+  },
+  {
+    label: "border-zinc-800",
+    value: "border-zinc-800",
+    styles:
+      "border-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets border color to zinc-800",
+  },
+  {
+    label: "border-zinc-900",
+    value: "border-zinc-900",
+    styles:
+      "border-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets border color to zinc-900",
+  },
+  {
+    label: "border-zinc-950",
+    value: "border-zinc-950",
+    styles:
+      "border-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets border color to zinc-950",
+  },
+  {
+    label: "border-neutral-50",
+    value: "border-neutral-50",
+    styles: "border-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets border color to neutral-50",
+  },
+  {
+    label: "border-neutral-100",
+    value: "border-neutral-100",
+    styles: "border-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets border color to neutral-100",
+  },
+  {
+    label: "border-neutral-200",
+    value: "border-neutral-200",
+    styles: "border-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets border color to neutral-200",
+  },
+  {
+    label: "border-neutral-300",
+    value: "border-neutral-300",
+    styles: "border-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets border color to neutral-300",
+  },
+  {
+    label: "border-neutral-400",
+    value: "border-neutral-400",
+    styles: "border-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets border color to neutral-400",
+  },
+  {
+    label: "border-neutral-500",
+    value: "border-neutral-500",
+    styles: "border-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets border color to neutral-500",
+  },
+  {
+    label: "border-neutral-600",
+    value: "border-neutral-600",
+    styles: "border-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets border color to neutral-600",
+  },
+  {
+    label: "border-neutral-700",
+    value: "border-neutral-700",
+    styles: "border-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets border color to neutral-700",
+  },
+  {
+    label: "border-neutral-800",
+    value: "border-neutral-800",
+    styles: "border-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets border color to neutral-800",
+  },
+  {
+    label: "border-neutral-900",
+    value: "border-neutral-900",
+    styles: "border-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets border color to neutral-900",
+  },
+  {
+    label: "border-neutral-950",
+    value: "border-neutral-950",
+    styles: "border-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets border color to neutral-950",
+  },
+  {
+    label: "border-stone-50",
+    value: "border-stone-50",
+    styles:
+      "border-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets border color to stone-50",
+  },
+  {
+    label: "border-stone-100",
+    value: "border-stone-100",
+    styles:
+      "border-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets border color to stone-100",
+  },
+  {
+    label: "border-stone-200",
+    value: "border-stone-200",
+    styles:
+      "border-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets border color to stone-200",
+  },
+  {
+    label: "border-stone-300",
+    value: "border-stone-300",
+    styles:
+      "border-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets border color to stone-300",
+  },
+  {
+    label: "border-stone-400",
+    value: "border-stone-400",
+    styles:
+      "border-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets border color to stone-400",
+  },
+  {
+    label: "border-stone-500",
+    value: "border-stone-500",
+    styles:
+      "border-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets border color to stone-500",
+  },
+  {
+    label: "border-stone-600",
+    value: "border-stone-600",
+    styles:
+      "border-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets border color to stone-600",
+  },
+  {
+    label: "border-stone-700",
+    value: "border-stone-700",
+    styles:
+      "border-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets border color to stone-700",
+  },
+  {
+    label: "border-stone-800",
+    value: "border-stone-800",
+    styles:
+      "border-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets border color to stone-800",
+  },
+  {
+    label: "border-stone-900",
+    value: "border-stone-900",
+    styles:
+      "border-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets border color to stone-900",
+  },
+  {
+    label: "border-stone-950",
+    value: "border-stone-950",
+    styles:
+      "border-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets border color to stone-950",
+  },
+  {
+    label: "border-(<custom-property>)",
+    value: "border-(<custom-property>)",
+    styles: "border-color: var(<custom-property>);",
+    description: "Sets border color using a CSS custom property",
+  },
+  {
+    label: "border-[<value>]",
+    value: "border-[<value>]",
+    styles: "border-color: <value>;",
+    description: "Sets border color using an arbitrary CSS value",
+  },
+  {
+    label: "border-x-inherit",
+    value: "border-x-inherit",
+    styles: "border-inline-color: inherit;",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-x-current",
+    value: "border-x-current",
+    styles: "border-inline-color: currentColor;",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-x-transparent",
+    value: "border-x-transparent",
+    styles: "border-inline-color: transparent;",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-x-black",
+    value: "border-x-black",
+    styles: "border-inline-color: var(--color-black); /* #000 */",
+    description: "Sets horizontal (left and right) border color to black",
+  },
+  {
+    label: "border-x-white",
+    value: "border-x-white",
+    styles: "border-inline-color: var(--color-white); /* #fff */",
+    description: "Sets horizontal (left and right) border color to white",
+  },
+  {
+    label: "border-x-red-50",
+    value: "border-x-red-50",
+    styles:
+      "border-inline-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets horizontal (left and right) border color to red-50",
+  },
+  {
+    label: "border-x-red-100",
+    value: "border-x-red-100",
+    styles:
+      "border-inline-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets horizontal (left and right) border color to red-100",
+  },
+  {
+    label: "border-x-red-200",
+    value: "border-x-red-200",
+    styles:
+      "border-inline-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets horizontal (left and right) border color to red-200",
+  },
+  {
+    label: "border-x-red-300",
+    value: "border-x-red-300",
+    styles:
+      "border-inline-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets horizontal (left and right) border color to red-300",
+  },
+  {
+    label: "border-x-red-400",
+    value: "border-x-red-400",
+    styles:
+      "border-inline-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets horizontal (left and right) border color to red-400",
+  },
+  {
+    label: "border-x-red-500",
+    value: "border-x-red-500",
+    styles:
+      "border-inline-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets horizontal (left and right) border color to red-500",
+  },
+  {
+    label: "border-x-red-600",
+    value: "border-x-red-600",
+    styles:
+      "border-inline-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets horizontal (left and right) border color to red-600",
+  },
+  {
+    label: "border-x-red-700",
+    value: "border-x-red-700",
+    styles:
+      "border-inline-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets horizontal (left and right) border color to red-700",
+  },
+  {
+    label: "border-x-red-800",
+    value: "border-x-red-800",
+    styles:
+      "border-inline-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets horizontal (left and right) border color to red-800",
+  },
+  {
+    label: "border-x-red-900",
+    value: "border-x-red-900",
+    styles:
+      "border-inline-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets horizontal (left and right) border color to red-900",
+  },
+  {
+    label: "border-x-red-950",
+    value: "border-x-red-950",
+    styles:
+      "border-inline-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets horizontal (left and right) border color to red-950",
+  },
+  {
+    label: "border-x-orange-50",
+    value: "border-x-orange-50",
+    styles:
+      "border-inline-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets horizontal (left and right) border color to orange-50",
+  },
+  {
+    label: "border-x-orange-100",
+    value: "border-x-orange-100",
+    styles:
+      "border-inline-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets horizontal (left and right) border color to orange-100",
+  },
+  {
+    label: "border-x-orange-200",
+    value: "border-x-orange-200",
+    styles:
+      "border-inline-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets horizontal (left and right) border color to orange-200",
+  },
+  {
+    label: "border-x-orange-300",
+    value: "border-x-orange-300",
+    styles:
+      "border-inline-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets horizontal (left and right) border color to orange-300",
+  },
+  {
+    label: "border-x-orange-400",
+    value: "border-x-orange-400",
+    styles:
+      "border-inline-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets horizontal (left and right) border color to orange-400",
+  },
+  {
+    label: "border-x-orange-500",
+    value: "border-x-orange-500",
+    styles:
+      "border-inline-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets horizontal (left and right) border color to orange-500",
+  },
+  {
+    label: "border-x-orange-600",
+    value: "border-x-orange-600",
+    styles:
+      "border-inline-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets horizontal (left and right) border color to orange-600",
+  },
+  {
+    label: "border-x-orange-700",
+    value: "border-x-orange-700",
+    styles:
+      "border-inline-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets horizontal (left and right) border color to orange-700",
+  },
+  {
+    label: "border-x-orange-800",
+    value: "border-x-orange-800",
+    styles:
+      "border-inline-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets horizontal (left and right) border color to orange-800",
+  },
+  {
+    label: "border-x-orange-900",
+    value: "border-x-orange-900",
+    styles:
+      "border-inline-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets horizontal (left and right) border color to orange-900",
+  },
+  {
+    label: "border-x-orange-950",
+    value: "border-x-orange-950",
+    styles:
+      "border-inline-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets horizontal (left and right) border color to orange-950",
+  },
+  {
+    label: "border-x-amber-50",
+    value: "border-x-amber-50",
+    styles:
+      "border-inline-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets horizontal (left and right) border color to amber-50",
+  },
+  {
+    label: "border-x-amber-100",
+    value: "border-x-amber-100",
+    styles:
+      "border-inline-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets horizontal (left and right) border color to amber-100",
+  },
+  {
+    label: "border-x-amber-200",
+    value: "border-x-amber-200",
+    styles:
+      "border-inline-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets horizontal (left and right) border color to amber-200",
+  },
+  {
+    label: "border-x-amber-300",
+    value: "border-x-amber-300",
+    styles:
+      "border-inline-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets horizontal (left and right) border color to amber-300",
+  },
+  {
+    label: "border-x-amber-400",
+    value: "border-x-amber-400",
+    styles:
+      "border-inline-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets horizontal (left and right) border color to amber-400",
+  },
+  {
+    label: "border-x-amber-500",
+    value: "border-x-amber-500",
+    styles:
+      "border-inline-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets horizontal (left and right) border color to amber-500",
+  },
+  {
+    label: "border-x-amber-600",
+    value: "border-x-amber-600",
+    styles:
+      "border-inline-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets horizontal (left and right) border color to amber-600",
+  },
+  {
+    label: "border-x-amber-700",
+    value: "border-x-amber-700",
+    styles:
+      "border-inline-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets horizontal (left and right) border color to amber-700",
+  },
+  {
+    label: "border-x-amber-800",
+    value: "border-x-amber-800",
+    styles:
+      "border-inline-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets horizontal (left and right) border color to amber-800",
+  },
+  {
+    label: "border-x-amber-900",
+    value: "border-x-amber-900",
+    styles:
+      "border-inline-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets horizontal (left and right) border color to amber-900",
+  },
+  {
+    label: "border-x-amber-950",
+    value: "border-x-amber-950",
+    styles:
+      "border-inline-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets horizontal (left and right) border color to amber-950",
+  },
+  {
+    label: "border-x-yellow-50",
+    value: "border-x-yellow-50",
+    styles:
+      "border-inline-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets horizontal (left and right) border color to yellow-50",
+  },
+  {
+    label: "border-x-yellow-100",
+    value: "border-x-yellow-100",
+    styles:
+      "border-inline-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets horizontal (left and right) border color to yellow-100",
+  },
+  {
+    label: "border-x-yellow-200",
+    value: "border-x-yellow-200",
+    styles:
+      "border-inline-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets horizontal (left and right) border color to yellow-200",
+  },
+  {
+    label: "border-x-yellow-300",
+    value: "border-x-yellow-300",
+    styles:
+      "border-inline-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets horizontal (left and right) border color to yellow-300",
+  },
+  {
+    label: "border-x-yellow-400",
+    value: "border-x-yellow-400",
+    styles:
+      "border-inline-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets horizontal (left and right) border color to yellow-400",
+  },
+  {
+    label: "border-x-yellow-500",
+    value: "border-x-yellow-500",
+    styles:
+      "border-inline-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets horizontal (left and right) border color to yellow-500",
+  },
+  {
+    label: "border-x-yellow-600",
+    value: "border-x-yellow-600",
+    styles:
+      "border-inline-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets horizontal (left and right) border color to yellow-600",
+  },
+  {
+    label: "border-x-yellow-700",
+    value: "border-x-yellow-700",
+    styles:
+      "border-inline-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets horizontal (left and right) border color to yellow-700",
+  },
+  {
+    label: "border-x-yellow-800",
+    value: "border-x-yellow-800",
+    styles:
+      "border-inline-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets horizontal (left and right) border color to yellow-800",
+  },
+  {
+    label: "border-x-yellow-900",
+    value: "border-x-yellow-900",
+    styles:
+      "border-inline-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets horizontal (left and right) border color to yellow-900",
+  },
+  {
+    label: "border-x-yellow-950",
+    value: "border-x-yellow-950",
+    styles:
+      "border-inline-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets horizontal (left and right) border color to yellow-950",
+  },
+  {
+    label: "border-x-lime-50",
+    value: "border-x-lime-50",
+    styles:
+      "border-inline-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets horizontal (left and right) border color to lime-50",
+  },
+  {
+    label: "border-x-lime-100",
+    value: "border-x-lime-100",
+    styles:
+      "border-inline-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets horizontal (left and right) border color to lime-100",
+  },
+  {
+    label: "border-x-lime-200",
+    value: "border-x-lime-200",
+    styles:
+      "border-inline-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets horizontal (left and right) border color to lime-200",
+  },
+  {
+    label: "border-x-lime-300",
+    value: "border-x-lime-300",
+    styles:
+      "border-inline-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets horizontal (left and right) border color to lime-300",
+  },
+  {
+    label: "border-x-lime-400",
+    value: "border-x-lime-400",
+    styles:
+      "border-inline-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets horizontal (left and right) border color to lime-400",
+  },
+  {
+    label: "border-x-lime-500",
+    value: "border-x-lime-500",
+    styles:
+      "border-inline-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets horizontal (left and right) border color to lime-500",
+  },
+  {
+    label: "border-x-lime-600",
+    value: "border-x-lime-600",
+    styles:
+      "border-inline-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets horizontal (left and right) border color to lime-600",
+  },
+  {
+    label: "border-x-lime-700",
+    value: "border-x-lime-700",
+    styles:
+      "border-inline-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets horizontal (left and right) border color to lime-700",
+  },
+  {
+    label: "border-x-lime-800",
+    value: "border-x-lime-800",
+    styles:
+      "border-inline-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets horizontal (left and right) border color to lime-800",
+  },
+  {
+    label: "border-x-lime-900",
+    value: "border-x-lime-900",
+    styles:
+      "border-inline-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets horizontal (left and right) border color to lime-900",
+  },
+  {
+    label: "border-x-lime-950",
+    value: "border-x-lime-950",
+    styles:
+      "border-inline-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets horizontal (left and right) border color to lime-950",
+  },
+  {
+    label: "border-x-green-50",
+    value: "border-x-green-50",
+    styles:
+      "border-inline-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets horizontal (left and right) border color to green-50",
+  },
+  {
+    label: "border-x-green-100",
+    value: "border-x-green-100",
+    styles:
+      "border-inline-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets horizontal (left and right) border color to green-100",
+  },
+  {
+    label: "border-x-green-200",
+    value: "border-x-green-200",
+    styles:
+      "border-inline-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets horizontal (left and right) border color to green-200",
+  },
+  {
+    label: "border-x-green-300",
+    value: "border-x-green-300",
+    styles:
+      "border-inline-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets horizontal (left and right) border color to green-300",
+  },
+  {
+    label: "border-x-green-400",
+    value: "border-x-green-400",
+    styles:
+      "border-inline-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets horizontal (left and right) border color to green-400",
+  },
+  {
+    label: "border-x-green-500",
+    value: "border-x-green-500",
+    styles:
+      "border-inline-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets horizontal (left and right) border color to green-500",
+  },
+  {
+    label: "border-x-green-600",
+    value: "border-x-green-600",
+    styles:
+      "border-inline-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets horizontal (left and right) border color to green-600",
+  },
+  {
+    label: "border-x-green-700",
+    value: "border-x-green-700",
+    styles:
+      "border-inline-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets horizontal (left and right) border color to green-700",
+  },
+  {
+    label: "border-x-green-800",
+    value: "border-x-green-800",
+    styles:
+      "border-inline-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets horizontal (left and right) border color to green-800",
+  },
+  {
+    label: "border-x-green-900",
+    value: "border-x-green-900",
+    styles:
+      "border-inline-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets horizontal (left and right) border color to green-900",
+  },
+  {
+    label: "border-x-green-950",
+    value: "border-x-green-950",
+    styles:
+      "border-inline-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets horizontal (left and right) border color to green-950",
+  },
+  {
+    label: "border-x-emerald-50",
+    value: "border-x-emerald-50",
+    styles:
+      "border-inline-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets horizontal (left and right) border color to emerald-50",
+  },
+  {
+    label: "border-x-emerald-100",
+    value: "border-x-emerald-100",
+    styles:
+      "border-inline-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets horizontal (left and right) border color to emerald-100",
+  },
+  {
+    label: "border-x-emerald-200",
+    value: "border-x-emerald-200",
+    styles:
+      "border-inline-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets horizontal (left and right) border color to emerald-200",
+  },
+  {
+    label: "border-x-emerald-300",
+    value: "border-x-emerald-300",
+    styles:
+      "border-inline-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets horizontal (left and right) border color to emerald-300",
+  },
+  {
+    label: "border-x-emerald-400",
+    value: "border-x-emerald-400",
+    styles:
+      "border-inline-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets horizontal (left and right) border color to emerald-400",
+  },
+  {
+    label: "border-x-emerald-500",
+    value: "border-x-emerald-500",
+    styles:
+      "border-inline-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets horizontal (left and right) border color to emerald-500",
+  },
+  {
+    label: "border-x-emerald-600",
+    value: "border-x-emerald-600",
+    styles:
+      "border-inline-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets horizontal (left and right) border color to emerald-600",
+  },
+  {
+    label: "border-x-emerald-700",
+    value: "border-x-emerald-700",
+    styles:
+      "border-inline-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets horizontal (left and right) border color to emerald-700",
+  },
+  {
+    label: "border-x-emerald-800",
+    value: "border-x-emerald-800",
+    styles:
+      "border-inline-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets horizontal (left and right) border color to emerald-800",
+  },
+  {
+    label: "border-x-emerald-900",
+    value: "border-x-emerald-900",
+    styles:
+      "border-inline-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets horizontal (left and right) border color to emerald-900",
+  },
+  {
+    label: "border-x-emerald-950",
+    value: "border-x-emerald-950",
+    styles:
+      "border-inline-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets horizontal (left and right) border color to emerald-950",
+  },
+  {
+    label: "border-x-teal-50",
+    value: "border-x-teal-50",
+    styles:
+      "border-inline-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets horizontal (left and right) border color to teal-50",
+  },
+  {
+    label: "border-x-teal-100",
+    value: "border-x-teal-100",
+    styles:
+      "border-inline-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets horizontal (left and right) border color to teal-100",
+  },
+  {
+    label: "border-x-teal-200",
+    value: "border-x-teal-200",
+    styles:
+      "border-inline-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets horizontal (left and right) border color to teal-200",
+  },
+  {
+    label: "border-x-teal-300",
+    value: "border-x-teal-300",
+    styles:
+      "border-inline-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets horizontal (left and right) border color to teal-300",
+  },
+  {
+    label: "border-x-teal-400",
+    value: "border-x-teal-400",
+    styles:
+      "border-inline-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets horizontal (left and right) border color to teal-400",
+  },
+  {
+    label: "border-x-teal-500",
+    value: "border-x-teal-500",
+    styles:
+      "border-inline-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets horizontal (left and right) border color to teal-500",
+  },
+  {
+    label: "border-x-teal-600",
+    value: "border-x-teal-600",
+    styles:
+      "border-inline-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets horizontal (left and right) border color to teal-600",
+  },
+  {
+    label: "border-x-teal-700",
+    value: "border-x-teal-700",
+    styles:
+      "border-inline-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets horizontal (left and right) border color to teal-700",
+  },
+  {
+    label: "border-x-teal-800",
+    value: "border-x-teal-800",
+    styles:
+      "border-inline-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets horizontal (left and right) border color to teal-800",
+  },
+  {
+    label: "border-x-teal-900",
+    value: "border-x-teal-900",
+    styles:
+      "border-inline-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets horizontal (left and right) border color to teal-900",
+  },
+  {
+    label: "border-x-teal-950",
+    value: "border-x-teal-950",
+    styles:
+      "border-inline-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets horizontal (left and right) border color to teal-950",
+  },
+  {
+    label: "border-x-cyan-50",
+    value: "border-x-cyan-50",
+    styles:
+      "border-inline-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets horizontal (left and right) border color to cyan-50",
+  },
+  {
+    label: "border-x-cyan-100",
+    value: "border-x-cyan-100",
+    styles:
+      "border-inline-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets horizontal (left and right) border color to cyan-100",
+  },
+  {
+    label: "border-x-cyan-200",
+    value: "border-x-cyan-200",
+    styles:
+      "border-inline-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets horizontal (left and right) border color to cyan-200",
+  },
+  {
+    label: "border-x-cyan-300",
+    value: "border-x-cyan-300",
+    styles:
+      "border-inline-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets horizontal (left and right) border color to cyan-300",
+  },
+  {
+    label: "border-x-cyan-400",
+    value: "border-x-cyan-400",
+    styles:
+      "border-inline-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets horizontal (left and right) border color to cyan-400",
+  },
+  {
+    label: "border-x-cyan-500",
+    value: "border-x-cyan-500",
+    styles:
+      "border-inline-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets horizontal (left and right) border color to cyan-500",
+  },
+  {
+    label: "border-x-cyan-600",
+    value: "border-x-cyan-600",
+    styles:
+      "border-inline-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets horizontal (left and right) border color to cyan-600",
+  },
+  {
+    label: "border-x-cyan-700",
+    value: "border-x-cyan-700",
+    styles:
+      "border-inline-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets horizontal (left and right) border color to cyan-700",
+  },
+  {
+    label: "border-x-cyan-800",
+    value: "border-x-cyan-800",
+    styles:
+      "border-inline-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets horizontal (left and right) border color to cyan-800",
+  },
+  {
+    label: "border-x-cyan-900",
+    value: "border-x-cyan-900",
+    styles:
+      "border-inline-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets horizontal (left and right) border color to cyan-900",
+  },
+  {
+    label: "border-x-cyan-950",
+    value: "border-x-cyan-950",
+    styles:
+      "border-inline-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets horizontal (left and right) border color to cyan-950",
+  },
+  {
+    label: "border-x-sky-50",
+    value: "border-x-sky-50",
+    styles:
+      "border-inline-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets horizontal (left and right) border color to sky-50",
+  },
+  {
+    label: "border-x-sky-100",
+    value: "border-x-sky-100",
+    styles:
+      "border-inline-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets horizontal (left and right) border color to sky-100",
+  },
+  {
+    label: "border-x-sky-200",
+    value: "border-x-sky-200",
+    styles:
+      "border-inline-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets horizontal (left and right) border color to sky-200",
+  },
+  {
+    label: "border-x-sky-300",
+    value: "border-x-sky-300",
+    styles:
+      "border-inline-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets horizontal (left and right) border color to sky-300",
+  },
+  {
+    label: "border-x-sky-400",
+    value: "border-x-sky-400",
+    styles:
+      "border-inline-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets horizontal (left and right) border color to sky-400",
+  },
+  {
+    label: "border-x-sky-500",
+    value: "border-x-sky-500",
+    styles:
+      "border-inline-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets horizontal (left and right) border color to sky-500",
+  },
+  {
+    label: "border-x-sky-600",
+    value: "border-x-sky-600",
+    styles:
+      "border-inline-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets horizontal (left and right) border color to sky-600",
+  },
+  {
+    label: "border-x-sky-700",
+    value: "border-x-sky-700",
+    styles:
+      "border-inline-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets horizontal (left and right) border color to sky-700",
+  },
+  {
+    label: "border-x-sky-800",
+    value: "border-x-sky-800",
+    styles:
+      "border-inline-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets horizontal (left and right) border color to sky-800",
+  },
+  {
+    label: "border-x-sky-900",
+    value: "border-x-sky-900",
+    styles:
+      "border-inline-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets horizontal (left and right) border color to sky-900",
+  },
+  {
+    label: "border-x-sky-950",
+    value: "border-x-sky-950",
+    styles:
+      "border-inline-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets horizontal (left and right) border color to sky-950",
+  },
+  {
+    label: "border-x-blue-50",
+    value: "border-x-blue-50",
+    styles:
+      "border-inline-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets horizontal (left and right) border color to blue-50",
+  },
+  {
+    label: "border-x-blue-100",
+    value: "border-x-blue-100",
+    styles:
+      "border-inline-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets horizontal (left and right) border color to blue-100",
+  },
+  {
+    label: "border-x-blue-200",
+    value: "border-x-blue-200",
+    styles:
+      "border-inline-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets horizontal (left and right) border color to blue-200",
+  },
+  {
+    label: "border-x-blue-300",
+    value: "border-x-blue-300",
+    styles:
+      "border-inline-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets horizontal (left and right) border color to blue-300",
+  },
+  {
+    label: "border-x-blue-400",
+    value: "border-x-blue-400",
+    styles:
+      "border-inline-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets horizontal (left and right) border color to blue-400",
+  },
+  {
+    label: "border-x-blue-500",
+    value: "border-x-blue-500",
+    styles:
+      "border-inline-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets horizontal (left and right) border color to blue-500",
+  },
+  {
+    label: "border-x-blue-600",
+    value: "border-x-blue-600",
+    styles:
+      "border-inline-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets horizontal (left and right) border color to blue-600",
+  },
+  {
+    label: "border-x-blue-700",
+    value: "border-x-blue-700",
+    styles:
+      "border-inline-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets horizontal (left and right) border color to blue-700",
+  },
+  {
+    label: "border-x-blue-800",
+    value: "border-x-blue-800",
+    styles:
+      "border-inline-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets horizontal (left and right) border color to blue-800",
+  },
+  {
+    label: "border-x-blue-900",
+    value: "border-x-blue-900",
+    styles:
+      "border-inline-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets horizontal (left and right) border color to blue-900",
+  },
+  {
+    label: "border-x-blue-950",
+    value: "border-x-blue-950",
+    styles:
+      "border-inline-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets horizontal (left and right) border color to blue-950",
+  },
+  {
+    label: "border-x-indigo-50",
+    value: "border-x-indigo-50",
+    styles:
+      "border-inline-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets horizontal (left and right) border color to indigo-50",
+  },
+  {
+    label: "border-x-indigo-100",
+    value: "border-x-indigo-100",
+    styles:
+      "border-inline-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets horizontal (left and right) border color to indigo-100",
+  },
+  {
+    label: "border-x-indigo-200",
+    value: "border-x-indigo-200",
+    styles:
+      "border-inline-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets horizontal (left and right) border color to indigo-200",
+  },
+  {
+    label: "border-x-indigo-300",
+    value: "border-x-indigo-300",
+    styles:
+      "border-inline-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets horizontal (left and right) border color to indigo-300",
+  },
+  {
+    label: "border-x-indigo-400",
+    value: "border-x-indigo-400",
+    styles:
+      "border-inline-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets horizontal (left and right) border color to indigo-400",
+  },
+  {
+    label: "border-x-indigo-500",
+    value: "border-x-indigo-500",
+    styles:
+      "border-inline-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets horizontal (left and right) border color to indigo-500",
+  },
+  {
+    label: "border-x-indigo-600",
+    value: "border-x-indigo-600",
+    styles:
+      "border-inline-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets horizontal (left and right) border color to indigo-600",
+  },
+  {
+    label: "border-x-indigo-700",
+    value: "border-x-indigo-700",
+    styles:
+      "border-inline-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets horizontal (left and right) border color to indigo-700",
+  },
+  {
+    label: "border-x-indigo-800",
+    value: "border-x-indigo-800",
+    styles:
+      "border-inline-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets horizontal (left and right) border color to indigo-800",
+  },
+  {
+    label: "border-x-indigo-900",
+    value: "border-x-indigo-900",
+    styles:
+      "border-inline-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets horizontal (left and right) border color to indigo-900",
+  },
+  {
+    label: "border-x-indigo-950",
+    value: "border-x-indigo-950",
+    styles:
+      "border-inline-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets horizontal (left and right) border color to indigo-950",
+  },
+  {
+    label: "border-x-violet-50",
+    value: "border-x-violet-50",
+    styles:
+      "border-inline-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets horizontal (left and right) border color to violet-50",
+  },
+  {
+    label: "border-x-violet-100",
+    value: "border-x-violet-100",
+    styles:
+      "border-inline-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets horizontal (left and right) border color to violet-100",
+  },
+  {
+    label: "border-x-violet-200",
+    value: "border-x-violet-200",
+    styles:
+      "border-inline-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets horizontal (left and right) border color to violet-200",
+  },
+  {
+    label: "border-x-violet-300",
+    value: "border-x-violet-300",
+    styles:
+      "border-inline-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets horizontal (left and right) border color to violet-300",
+  },
+  {
+    label: "border-x-violet-400",
+    value: "border-x-violet-400",
+    styles:
+      "border-inline-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets horizontal (left and right) border color to violet-400",
+  },
+  {
+    label: "border-x-violet-500",
+    value: "border-x-violet-500",
+    styles:
+      "border-inline-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets horizontal (left and right) border color to violet-500",
+  },
+  {
+    label: "border-x-violet-600",
+    value: "border-x-violet-600",
+    styles:
+      "border-inline-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets horizontal (left and right) border color to violet-600",
+  },
+  {
+    label: "border-x-violet-700",
+    value: "border-x-violet-700",
+    styles:
+      "border-inline-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets horizontal (left and right) border color to violet-700",
+  },
+  {
+    label: "border-x-violet-800",
+    value: "border-x-violet-800",
+    styles:
+      "border-inline-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets horizontal (left and right) border color to violet-800",
+  },
+  {
+    label: "border-x-violet-900",
+    value: "border-x-violet-900",
+    styles:
+      "border-inline-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets horizontal (left and right) border color to violet-900",
+  },
+  {
+    label: "border-x-violet-950",
+    value: "border-x-violet-950",
+    styles:
+      "border-inline-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets horizontal (left and right) border color to violet-950",
+  },
+  {
+    label: "border-x-purple-50",
+    value: "border-x-purple-50",
+    styles:
+      "border-inline-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets horizontal (left and right) border color to purple-50",
+  },
+  {
+    label: "border-x-purple-100",
+    value: "border-x-purple-100",
+    styles:
+      "border-inline-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets horizontal (left and right) border color to purple-100",
+  },
+  {
+    label: "border-x-purple-200",
+    value: "border-x-purple-200",
+    styles:
+      "border-inline-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets horizontal (left and right) border color to purple-200",
+  },
+  {
+    label: "border-x-purple-300",
+    value: "border-x-purple-300",
+    styles:
+      "border-inline-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets horizontal (left and right) border color to purple-300",
+  },
+  {
+    label: "border-x-purple-400",
+    value: "border-x-purple-400",
+    styles:
+      "border-inline-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets horizontal (left and right) border color to purple-400",
+  },
+  {
+    label: "border-x-purple-500",
+    value: "border-x-purple-500",
+    styles:
+      "border-inline-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets horizontal (left and right) border color to purple-500",
+  },
+  {
+    label: "border-x-purple-600",
+    value: "border-x-purple-600",
+    styles:
+      "border-inline-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets horizontal (left and right) border color to purple-600",
+  },
+  {
+    label: "border-x-purple-700",
+    value: "border-x-purple-700",
+    styles:
+      "border-inline-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets horizontal (left and right) border color to purple-700",
+  },
+  {
+    label: "border-x-purple-800",
+    value: "border-x-purple-800",
+    styles:
+      "border-inline-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets horizontal (left and right) border color to purple-800",
+  },
+  {
+    label: "border-x-purple-900",
+    value: "border-x-purple-900",
+    styles:
+      "border-inline-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets horizontal (left and right) border color to purple-900",
+  },
+  {
+    label: "border-x-purple-950",
+    value: "border-x-purple-950",
+    styles:
+      "border-inline-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets horizontal (left and right) border color to purple-950",
+  },
+  {
+    label: "border-x-fuchsia-50",
+    value: "border-x-fuchsia-50",
+    styles:
+      "border-inline-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-50",
+  },
+  {
+    label: "border-x-fuchsia-100",
+    value: "border-x-fuchsia-100",
+    styles:
+      "border-inline-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-100",
+  },
+  {
+    label: "border-x-fuchsia-200",
+    value: "border-x-fuchsia-200",
+    styles:
+      "border-inline-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-200",
+  },
+  {
+    label: "border-x-fuchsia-300",
+    value: "border-x-fuchsia-300",
+    styles:
+      "border-inline-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-300",
+  },
+  {
+    label: "border-x-fuchsia-400",
+    value: "border-x-fuchsia-400",
+    styles:
+      "border-inline-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-400",
+  },
+  {
+    label: "border-x-fuchsia-500",
+    value: "border-x-fuchsia-500",
+    styles:
+      "border-inline-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-500",
+  },
+  {
+    label: "border-x-fuchsia-600",
+    value: "border-x-fuchsia-600",
+    styles:
+      "border-inline-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-600",
+  },
+  {
+    label: "border-x-fuchsia-700",
+    value: "border-x-fuchsia-700",
+    styles:
+      "border-inline-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-700",
+  },
+  {
+    label: "border-x-fuchsia-800",
+    value: "border-x-fuchsia-800",
+    styles:
+      "border-inline-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-800",
+  },
+  {
+    label: "border-x-fuchsia-900",
+    value: "border-x-fuchsia-900",
+    styles:
+      "border-inline-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-900",
+  },
+  {
+    label: "border-x-fuchsia-950",
+    value: "border-x-fuchsia-950",
+    styles:
+      "border-inline-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets horizontal (left and right) border color to fuchsia-950",
+  },
+  {
+    label: "border-x-pink-50",
+    value: "border-x-pink-50",
+    styles:
+      "border-inline-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets horizontal (left and right) border color to pink-50",
+  },
+  {
+    label: "border-x-pink-100",
+    value: "border-x-pink-100",
+    styles:
+      "border-inline-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets horizontal (left and right) border color to pink-100",
+  },
+  {
+    label: "border-x-pink-200",
+    value: "border-x-pink-200",
+    styles:
+      "border-inline-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets horizontal (left and right) border color to pink-200",
+  },
+  {
+    label: "border-x-pink-300",
+    value: "border-x-pink-300",
+    styles:
+      "border-inline-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets horizontal (left and right) border color to pink-300",
+  },
+  {
+    label: "border-x-pink-400",
+    value: "border-x-pink-400",
+    styles:
+      "border-inline-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets horizontal (left and right) border color to pink-400",
+  },
+  {
+    label: "border-x-pink-500",
+    value: "border-x-pink-500",
+    styles:
+      "border-inline-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets horizontal (left and right) border color to pink-500",
+  },
+  {
+    label: "border-x-pink-600",
+    value: "border-x-pink-600",
+    styles:
+      "border-inline-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets horizontal (left and right) border color to pink-600",
+  },
+  {
+    label: "border-x-pink-700",
+    value: "border-x-pink-700",
+    styles:
+      "border-inline-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets horizontal (left and right) border color to pink-700",
+  },
+  {
+    label: "border-x-pink-800",
+    value: "border-x-pink-800",
+    styles:
+      "border-inline-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets horizontal (left and right) border color to pink-800",
+  },
+  {
+    label: "border-x-pink-900",
+    value: "border-x-pink-900",
+    styles:
+      "border-inline-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets horizontal (left and right) border color to pink-900",
+  },
+  {
+    label: "border-x-pink-950",
+    value: "border-x-pink-950",
+    styles:
+      "border-inline-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets horizontal (left and right) border color to pink-950",
+  },
+  {
+    label: "border-x-rose-50",
+    value: "border-x-rose-50",
+    styles:
+      "border-inline-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets horizontal (left and right) border color to rose-50",
+  },
+  {
+    label: "border-x-rose-100",
+    value: "border-x-rose-100",
+    styles:
+      "border-inline-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets horizontal (left and right) border color to rose-100",
+  },
+  {
+    label: "border-x-rose-200",
+    value: "border-x-rose-200",
+    styles:
+      "border-inline-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets horizontal (left and right) border color to rose-200",
+  },
+  {
+    label: "border-x-rose-300",
+    value: "border-x-rose-300",
+    styles:
+      "border-inline-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets horizontal (left and right) border color to rose-300",
+  },
+  {
+    label: "border-x-rose-400",
+    value: "border-x-rose-400",
+    styles:
+      "border-inline-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets horizontal (left and right) border color to rose-400",
+  },
+  {
+    label: "border-x-rose-500",
+    value: "border-x-rose-500",
+    styles:
+      "border-inline-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets horizontal (left and right) border color to rose-500",
+  },
+  {
+    label: "border-x-rose-600",
+    value: "border-x-rose-600",
+    styles:
+      "border-inline-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets horizontal (left and right) border color to rose-600",
+  },
+  {
+    label: "border-x-rose-700",
+    value: "border-x-rose-700",
+    styles:
+      "border-inline-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets horizontal (left and right) border color to rose-700",
+  },
+  {
+    label: "border-x-rose-800",
+    value: "border-x-rose-800",
+    styles:
+      "border-inline-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets horizontal (left and right) border color to rose-800",
+  },
+  {
+    label: "border-x-rose-900",
+    value: "border-x-rose-900",
+    styles:
+      "border-inline-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets horizontal (left and right) border color to rose-900",
+  },
+  {
+    label: "border-x-rose-950",
+    value: "border-x-rose-950",
+    styles:
+      "border-inline-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets horizontal (left and right) border color to rose-950",
+  },
+  {
+    label: "border-x-slate-50",
+    value: "border-x-slate-50",
+    styles:
+      "border-inline-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets horizontal (left and right) border color to slate-50",
+  },
+  {
+    label: "border-x-slate-100",
+    value: "border-x-slate-100",
+    styles:
+      "border-inline-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets horizontal (left and right) border color to slate-100",
+  },
+  {
+    label: "border-x-slate-200",
+    value: "border-x-slate-200",
+    styles:
+      "border-inline-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets horizontal (left and right) border color to slate-200",
+  },
+  {
+    label: "border-x-slate-300",
+    value: "border-x-slate-300",
+    styles:
+      "border-inline-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets horizontal (left and right) border color to slate-300",
+  },
+  {
+    label: "border-x-slate-400",
+    value: "border-x-slate-400",
+    styles:
+      "border-inline-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets horizontal (left and right) border color to slate-400",
+  },
+  {
+    label: "border-x-slate-500",
+    value: "border-x-slate-500",
+    styles:
+      "border-inline-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets horizontal (left and right) border color to slate-500",
+  },
+  {
+    label: "border-x-slate-600",
+    value: "border-x-slate-600",
+    styles:
+      "border-inline-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets horizontal (left and right) border color to slate-600",
+  },
+  {
+    label: "border-x-slate-700",
+    value: "border-x-slate-700",
+    styles:
+      "border-inline-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets horizontal (left and right) border color to slate-700",
+  },
+  {
+    label: "border-x-slate-800",
+    value: "border-x-slate-800",
+    styles:
+      "border-inline-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets horizontal (left and right) border color to slate-800",
+  },
+  {
+    label: "border-x-slate-900",
+    value: "border-x-slate-900",
+    styles:
+      "border-inline-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets horizontal (left and right) border color to slate-900",
+  },
+  {
+    label: "border-x-slate-950",
+    value: "border-x-slate-950",
+    styles:
+      "border-inline-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets horizontal (left and right) border color to slate-950",
+  },
+  {
+    label: "border-x-gray-50",
+    value: "border-x-gray-50",
+    styles:
+      "border-inline-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets horizontal (left and right) border color to gray-50",
+  },
+  {
+    label: "border-x-gray-100",
+    value: "border-x-gray-100",
+    styles:
+      "border-inline-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets horizontal (left and right) border color to gray-100",
+  },
+  {
+    label: "border-x-gray-200",
+    value: "border-x-gray-200",
+    styles:
+      "border-inline-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets horizontal (left and right) border color to gray-200",
+  },
+  {
+    label: "border-x-gray-300",
+    value: "border-x-gray-300",
+    styles:
+      "border-inline-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets horizontal (left and right) border color to gray-300",
+  },
+  {
+    label: "border-x-gray-400",
+    value: "border-x-gray-400",
+    styles:
+      "border-inline-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets horizontal (left and right) border color to gray-400",
+  },
+  {
+    label: "border-x-gray-500",
+    value: "border-x-gray-500",
+    styles:
+      "border-inline-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets horizontal (left and right) border color to gray-500",
+  },
+  {
+    label: "border-x-gray-600",
+    value: "border-x-gray-600",
+    styles:
+      "border-inline-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets horizontal (left and right) border color to gray-600",
+  },
+  {
+    label: "border-x-gray-700",
+    value: "border-x-gray-700",
+    styles:
+      "border-inline-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets horizontal (left and right) border color to gray-700",
+  },
+  {
+    label: "border-x-gray-800",
+    value: "border-x-gray-800",
+    styles:
+      "border-inline-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets horizontal (left and right) border color to gray-800",
+  },
+  {
+    label: "border-x-gray-900",
+    value: "border-x-gray-900",
+    styles:
+      "border-inline-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets horizontal (left and right) border color to gray-900",
+  },
+  {
+    label: "border-x-gray-950",
+    value: "border-x-gray-950",
+    styles:
+      "border-inline-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets horizontal (left and right) border color to gray-950",
+  },
+  {
+    label: "border-x-zinc-50",
+    value: "border-x-zinc-50",
+    styles: "border-inline-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets horizontal (left and right) border color to zinc-50",
+  },
+  {
+    label: "border-x-zinc-100",
+    value: "border-x-zinc-100",
+    styles:
+      "border-inline-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets horizontal (left and right) border color to zinc-100",
+  },
+  {
+    label: "border-x-zinc-200",
+    value: "border-x-zinc-200",
+    styles:
+      "border-inline-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets horizontal (left and right) border color to zinc-200",
+  },
+  {
+    label: "border-x-zinc-300",
+    value: "border-x-zinc-300",
+    styles:
+      "border-inline-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets horizontal (left and right) border color to zinc-300",
+  },
+  {
+    label: "border-x-zinc-400",
+    value: "border-x-zinc-400",
+    styles:
+      "border-inline-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets horizontal (left and right) border color to zinc-400",
+  },
+  {
+    label: "border-x-zinc-500",
+    value: "border-x-zinc-500",
+    styles:
+      "border-inline-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets horizontal (left and right) border color to zinc-500",
+  },
+  {
+    label: "border-x-zinc-600",
+    value: "border-x-zinc-600",
+    styles:
+      "border-inline-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets horizontal (left and right) border color to zinc-600",
+  },
+  {
+    label: "border-x-zinc-700",
+    value: "border-x-zinc-700",
+    styles:
+      "border-inline-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets horizontal (left and right) border color to zinc-700",
+  },
+  {
+    label: "border-x-zinc-800",
+    value: "border-x-zinc-800",
+    styles:
+      "border-inline-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets horizontal (left and right) border color to zinc-800",
+  },
+  {
+    label: "border-x-zinc-900",
+    value: "border-x-zinc-900",
+    styles:
+      "border-inline-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets horizontal (left and right) border color to zinc-900",
+  },
+  {
+    label: "border-x-zinc-950",
+    value: "border-x-zinc-950",
+    styles:
+      "border-inline-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets horizontal (left and right) border color to zinc-950",
+  },
+  {
+    label: "border-x-neutral-50",
+    value: "border-x-neutral-50",
+    styles:
+      "border-inline-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-50",
+  },
+  {
+    label: "border-x-neutral-100",
+    value: "border-x-neutral-100",
+    styles:
+      "border-inline-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-100",
+  },
+  {
+    label: "border-x-neutral-200",
+    value: "border-x-neutral-200",
+    styles:
+      "border-inline-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-200",
+  },
+  {
+    label: "border-x-neutral-300",
+    value: "border-x-neutral-300",
+    styles:
+      "border-inline-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-300",
+  },
+  {
+    label: "border-x-neutral-400",
+    value: "border-x-neutral-400",
+    styles:
+      "border-inline-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-400",
+  },
+  {
+    label: "border-x-neutral-500",
+    value: "border-x-neutral-500",
+    styles:
+      "border-inline-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-500",
+  },
+  {
+    label: "border-x-neutral-600",
+    value: "border-x-neutral-600",
+    styles:
+      "border-inline-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-600",
+  },
+  {
+    label: "border-x-neutral-700",
+    value: "border-x-neutral-700",
+    styles:
+      "border-inline-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-700",
+  },
+  {
+    label: "border-x-neutral-800",
+    value: "border-x-neutral-800",
+    styles:
+      "border-inline-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-800",
+  },
+  {
+    label: "border-x-neutral-900",
+    value: "border-x-neutral-900",
+    styles:
+      "border-inline-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-900",
+  },
+  {
+    label: "border-x-neutral-950",
+    value: "border-x-neutral-950",
+    styles:
+      "border-inline-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets horizontal (left and right) border color to neutral-950",
+  },
+  {
+    label: "border-x-stone-50",
+    value: "border-x-stone-50",
+    styles:
+      "border-inline-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets horizontal (left and right) border color to stone-50",
+  },
+  {
+    label: "border-x-stone-100",
+    value: "border-x-stone-100",
+    styles:
+      "border-inline-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets horizontal (left and right) border color to stone-100",
+  },
+  {
+    label: "border-x-stone-200",
+    value: "border-x-stone-200",
+    styles:
+      "border-inline-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets horizontal (left and right) border color to stone-200",
+  },
+  {
+    label: "border-x-stone-300",
+    value: "border-x-stone-300",
+    styles:
+      "border-inline-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets horizontal (left and right) border color to stone-300",
+  },
+  {
+    label: "border-x-stone-400",
+    value: "border-x-stone-400",
+    styles:
+      "border-inline-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets horizontal (left and right) border color to stone-400",
+  },
+  {
+    label: "border-x-stone-500",
+    value: "border-x-stone-500",
+    styles:
+      "border-inline-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets horizontal (left and right) border color to stone-500",
+  },
+  {
+    label: "border-x-stone-600",
+    value: "border-x-stone-600",
+    styles:
+      "border-inline-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets horizontal (left and right) border color to stone-600",
+  },
+  {
+    label: "border-x-stone-700",
+    value: "border-x-stone-700",
+    styles:
+      "border-inline-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets horizontal (left and right) border color to stone-700",
+  },
+  {
+    label: "border-x-stone-800",
+    value: "border-x-stone-800",
+    styles:
+      "border-inline-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets horizontal (left and right) border color to stone-800",
+  },
+  {
+    label: "border-x-stone-900",
+    value: "border-x-stone-900",
+    styles:
+      "border-inline-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets horizontal (left and right) border color to stone-900",
+  },
+  {
+    label: "border-x-stone-950",
+    value: "border-x-stone-950",
+    styles:
+      "border-inline-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets horizontal (left and right) border color to stone-950",
+  },
+  {
+    label: "border-x-(<custom-property>)",
+    value: "border-x-(<custom-property>)",
+    styles: "border-inline-color: var(<custom-property>);",
+    description:
+      "Sets horizontal (left and right) border color to (<custom-property>)",
+  },
+  {
+    label: "border-x-[<value>]",
+    value: "border-x-[<value>]",
+    styles: "border-inline-color: <value>;",
+    description: "Sets horizontal (left and right) border color to [<value>]",
+  },
+  {
+    label: "border-y-inherit",
+    value: "border-y-inherit",
+    styles: "border-block-color: inherit;",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-y-current",
+    value: "border-y-current",
+    styles: "border-block-color: currentColor;",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-y-transparent",
+    value: "border-y-transparent",
+    styles: "border-block-color: transparent;",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-y-black",
+    value: "border-y-black",
+    styles: "border-block-color: var(--color-black); /* #000 */",
+    description: "Sets vertical (top and bottom) border color to black",
+  },
+  {
+    label: "border-y-white",
+    value: "border-y-white",
+    styles: "border-block-color: var(--color-white); /* #fff */",
+    description: "Sets vertical (top and bottom) border color to white",
+  },
+  {
+    label: "border-y-red-50",
+    value: "border-y-red-50",
+    styles:
+      "border-block-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets vertical (top and bottom) border color to red-50",
+  },
+  {
+    label: "border-y-red-100",
+    value: "border-y-red-100",
+    styles:
+      "border-block-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets vertical (top and bottom) border color to red-100",
+  },
+  {
+    label: "border-y-red-200",
+    value: "border-y-red-200",
+    styles:
+      "border-block-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets vertical (top and bottom) border color to red-200",
+  },
+  {
+    label: "border-y-red-300",
+    value: "border-y-red-300",
+    styles:
+      "border-block-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets vertical (top and bottom) border color to red-300",
+  },
+  {
+    label: "border-y-red-400",
+    value: "border-y-red-400",
+    styles:
+      "border-block-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets vertical (top and bottom) border color to red-400",
+  },
+  {
+    label: "border-y-red-500",
+    value: "border-y-red-500",
+    styles:
+      "border-block-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets vertical (top and bottom) border color to red-500",
+  },
+  {
+    label: "border-y-red-600",
+    value: "border-y-red-600",
+    styles:
+      "border-block-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets vertical (top and bottom) border color to red-600",
+  },
+  {
+    label: "border-y-red-700",
+    value: "border-y-red-700",
+    styles:
+      "border-block-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets vertical (top and bottom) border color to red-700",
+  },
+  {
+    label: "border-y-red-800",
+    value: "border-y-red-800",
+    styles:
+      "border-block-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets vertical (top and bottom) border color to red-800",
+  },
+  {
+    label: "border-y-red-900",
+    value: "border-y-red-900",
+    styles:
+      "border-block-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets vertical (top and bottom) border color to red-900",
+  },
+  {
+    label: "border-y-red-950",
+    value: "border-y-red-950",
+    styles:
+      "border-block-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets vertical (top and bottom) border color to red-950",
+  },
+  {
+    label: "border-y-orange-50",
+    value: "border-y-orange-50",
+    styles:
+      "border-block-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets vertical (top and bottom) border color to orange-50",
+  },
+  {
+    label: "border-y-orange-100",
+    value: "border-y-orange-100",
+    styles:
+      "border-block-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets vertical (top and bottom) border color to orange-100",
+  },
+  {
+    label: "border-y-orange-200",
+    value: "border-y-orange-200",
+    styles:
+      "border-block-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets vertical (top and bottom) border color to orange-200",
+  },
+  {
+    label: "border-y-orange-300",
+    value: "border-y-orange-300",
+    styles:
+      "border-block-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets vertical (top and bottom) border color to orange-300",
+  },
+  {
+    label: "border-y-orange-400",
+    value: "border-y-orange-400",
+    styles:
+      "border-block-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets vertical (top and bottom) border color to orange-400",
+  },
+  {
+    label: "border-y-orange-500",
+    value: "border-y-orange-500",
+    styles:
+      "border-block-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets vertical (top and bottom) border color to orange-500",
+  },
+  {
+    label: "border-y-orange-600",
+    value: "border-y-orange-600",
+    styles:
+      "border-block-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets vertical (top and bottom) border color to orange-600",
+  },
+  {
+    label: "border-y-orange-700",
+    value: "border-y-orange-700",
+    styles:
+      "border-block-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets vertical (top and bottom) border color to orange-700",
+  },
+  {
+    label: "border-y-orange-800",
+    value: "border-y-orange-800",
+    styles:
+      "border-block-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets vertical (top and bottom) border color to orange-800",
+  },
+  {
+    label: "border-y-orange-900",
+    value: "border-y-orange-900",
+    styles:
+      "border-block-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets vertical (top and bottom) border color to orange-900",
+  },
+  {
+    label: "border-y-orange-950",
+    value: "border-y-orange-950",
+    styles:
+      "border-block-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets vertical (top and bottom) border color to orange-950",
+  },
+  {
+    label: "border-y-amber-50",
+    value: "border-y-amber-50",
+    styles:
+      "border-block-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets vertical (top and bottom) border color to amber-50",
+  },
+  {
+    label: "border-y-amber-100",
+    value: "border-y-amber-100",
+    styles:
+      "border-block-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets vertical (top and bottom) border color to amber-100",
+  },
+  {
+    label: "border-y-amber-200",
+    value: "border-y-amber-200",
+    styles:
+      "border-block-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets vertical (top and bottom) border color to amber-200",
+  },
+  {
+    label: "border-y-amber-300",
+    value: "border-y-amber-300",
+    styles:
+      "border-block-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets vertical (top and bottom) border color to amber-300",
+  },
+  {
+    label: "border-y-amber-400",
+    value: "border-y-amber-400",
+    styles:
+      "border-block-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets vertical (top and bottom) border color to amber-400",
+  },
+  {
+    label: "border-y-amber-500",
+    value: "border-y-amber-500",
+    styles:
+      "border-block-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets vertical (top and bottom) border color to amber-500",
+  },
+  {
+    label: "border-y-amber-600",
+    value: "border-y-amber-600",
+    styles:
+      "border-block-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets vertical (top and bottom) border color to amber-600",
+  },
+  {
+    label: "border-y-amber-700",
+    value: "border-y-amber-700",
+    styles:
+      "border-block-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets vertical (top and bottom) border color to amber-700",
+  },
+  {
+    label: "border-y-amber-800",
+    value: "border-y-amber-800",
+    styles:
+      "border-block-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets vertical (top and bottom) border color to amber-800",
+  },
+  {
+    label: "border-y-amber-900",
+    value: "border-y-amber-900",
+    styles:
+      "border-block-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets vertical (top and bottom) border color to amber-900",
+  },
+  {
+    label: "border-y-amber-950",
+    value: "border-y-amber-950",
+    styles:
+      "border-block-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets vertical (top and bottom) border color to amber-950",
+  },
+  {
+    label: "border-y-yellow-50",
+    value: "border-y-yellow-50",
+    styles:
+      "border-block-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets vertical (top and bottom) border color to yellow-50",
+  },
+  {
+    label: "border-y-yellow-100",
+    value: "border-y-yellow-100",
+    styles:
+      "border-block-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets vertical (top and bottom) border color to yellow-100",
+  },
+  {
+    label: "border-y-yellow-200",
+    value: "border-y-yellow-200",
+    styles:
+      "border-block-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets vertical (top and bottom) border color to yellow-200",
+  },
+  {
+    label: "border-y-yellow-300",
+    value: "border-y-yellow-300",
+    styles:
+      "border-block-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets vertical (top and bottom) border color to yellow-300",
+  },
+  {
+    label: "border-y-yellow-400",
+    value: "border-y-yellow-400",
+    styles:
+      "border-block-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets vertical (top and bottom) border color to yellow-400",
+  },
+  {
+    label: "border-y-yellow-500",
+    value: "border-y-yellow-500",
+    styles:
+      "border-block-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets vertical (top and bottom) border color to yellow-500",
+  },
+  {
+    label: "border-y-yellow-600",
+    value: "border-y-yellow-600",
+    styles:
+      "border-block-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets vertical (top and bottom) border color to yellow-600",
+  },
+  {
+    label: "border-y-yellow-700",
+    value: "border-y-yellow-700",
+    styles:
+      "border-block-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets vertical (top and bottom) border color to yellow-700",
+  },
+  {
+    label: "border-y-yellow-800",
+    value: "border-y-yellow-800",
+    styles:
+      "border-block-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets vertical (top and bottom) border color to yellow-800",
+  },
+  {
+    label: "border-y-yellow-900",
+    value: "border-y-yellow-900",
+    styles:
+      "border-block-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets vertical (top and bottom) border color to yellow-900",
+  },
+  {
+    label: "border-y-yellow-950",
+    value: "border-y-yellow-950",
+    styles:
+      "border-block-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets vertical (top and bottom) border color to yellow-950",
+  },
+  {
+    label: "border-y-lime-50",
+    value: "border-y-lime-50",
+    styles:
+      "border-block-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets vertical (top and bottom) border color to lime-50",
+  },
+  {
+    label: "border-y-lime-100",
+    value: "border-y-lime-100",
+    styles:
+      "border-block-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets vertical (top and bottom) border color to lime-100",
+  },
+  {
+    label: "border-y-lime-200",
+    value: "border-y-lime-200",
+    styles:
+      "border-block-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets vertical (top and bottom) border color to lime-200",
+  },
+  {
+    label: "border-y-lime-300",
+    value: "border-y-lime-300",
+    styles:
+      "border-block-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets vertical (top and bottom) border color to lime-300",
+  },
+  {
+    label: "border-y-lime-400",
+    value: "border-y-lime-400",
+    styles:
+      "border-block-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets vertical (top and bottom) border color to lime-400",
+  },
+  {
+    label: "border-y-lime-500",
+    value: "border-y-lime-500",
+    styles:
+      "border-block-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets vertical (top and bottom) border color to lime-500",
+  },
+  {
+    label: "border-y-lime-600",
+    value: "border-y-lime-600",
+    styles:
+      "border-block-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets vertical (top and bottom) border color to lime-600",
+  },
+  {
+    label: "border-y-lime-700",
+    value: "border-y-lime-700",
+    styles:
+      "border-block-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets vertical (top and bottom) border color to lime-700",
+  },
+  {
+    label: "border-y-lime-800",
+    value: "border-y-lime-800",
+    styles:
+      "border-block-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets vertical (top and bottom) border color to lime-800",
+  },
+  {
+    label: "border-y-lime-900",
+    value: "border-y-lime-900",
+    styles:
+      "border-block-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets vertical (top and bottom) border color to lime-900",
+  },
+  {
+    label: "border-y-lime-950",
+    value: "border-y-lime-950",
+    styles:
+      "border-block-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets vertical (top and bottom) border color to lime-950",
+  },
+  {
+    label: "border-y-green-50",
+    value: "border-y-green-50",
+    styles:
+      "border-block-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets vertical (top and bottom) border color to green-50",
+  },
+  {
+    label: "border-y-green-100",
+    value: "border-y-green-100",
+    styles:
+      "border-block-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets vertical (top and bottom) border color to green-100",
+  },
+  {
+    label: "border-y-green-200",
+    value: "border-y-green-200",
+    styles:
+      "border-block-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets vertical (top and bottom) border color to green-200",
+  },
+  {
+    label: "border-y-green-300",
+    value: "border-y-green-300",
+    styles:
+      "border-block-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets vertical (top and bottom) border color to green-300",
+  },
+  {
+    label: "border-y-green-400",
+    value: "border-y-green-400",
+    styles:
+      "border-block-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets vertical (top and bottom) border color to green-400",
+  },
+  {
+    label: "border-y-green-500",
+    value: "border-y-green-500",
+    styles:
+      "border-block-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets vertical (top and bottom) border color to green-500",
+  },
+  {
+    label: "border-y-green-600",
+    value: "border-y-green-600",
+    styles:
+      "border-block-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets vertical (top and bottom) border color to green-600",
+  },
+  {
+    label: "border-y-green-700",
+    value: "border-y-green-700",
+    styles:
+      "border-block-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets vertical (top and bottom) border color to green-700",
+  },
+  {
+    label: "border-y-green-800",
+    value: "border-y-green-800",
+    styles:
+      "border-block-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets vertical (top and bottom) border color to green-800",
+  },
+  {
+    label: "border-y-green-900",
+    value: "border-y-green-900",
+    styles:
+      "border-block-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets vertical (top and bottom) border color to green-900",
+  },
+  {
+    label: "border-y-green-950",
+    value: "border-y-green-950",
+    styles:
+      "border-block-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets vertical (top and bottom) border color to green-950",
+  },
+  {
+    label: "border-y-emerald-50",
+    value: "border-y-emerald-50",
+    styles:
+      "border-block-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets vertical (top and bottom) border color to emerald-50",
+  },
+  {
+    label: "border-y-emerald-100",
+    value: "border-y-emerald-100",
+    styles:
+      "border-block-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets vertical (top and bottom) border color to emerald-100",
+  },
+  {
+    label: "border-y-emerald-200",
+    value: "border-y-emerald-200",
+    styles:
+      "border-block-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets vertical (top and bottom) border color to emerald-200",
+  },
+  {
+    label: "border-y-emerald-300",
+    value: "border-y-emerald-300",
+    styles:
+      "border-block-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets vertical (top and bottom) border color to emerald-300",
+  },
+  {
+    label: "border-y-emerald-400",
+    value: "border-y-emerald-400",
+    styles:
+      "border-block-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets vertical (top and bottom) border color to emerald-400",
+  },
+  {
+    label: "border-y-emerald-500",
+    value: "border-y-emerald-500",
+    styles:
+      "border-block-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets vertical (top and bottom) border color to emerald-500",
+  },
+  {
+    label: "border-y-emerald-600",
+    value: "border-y-emerald-600",
+    styles:
+      "border-block-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets vertical (top and bottom) border color to emerald-600",
+  },
+  {
+    label: "border-y-emerald-700",
+    value: "border-y-emerald-700",
+    styles:
+      "border-block-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets vertical (top and bottom) border color to emerald-700",
+  },
+  {
+    label: "border-y-emerald-800",
+    value: "border-y-emerald-800",
+    styles:
+      "border-block-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets vertical (top and bottom) border color to emerald-800",
+  },
+  {
+    label: "border-y-emerald-900",
+    value: "border-y-emerald-900",
+    styles:
+      "border-block-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets vertical (top and bottom) border color to emerald-900",
+  },
+  {
+    label: "border-y-emerald-950",
+    value: "border-y-emerald-950",
+    styles:
+      "border-block-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets vertical (top and bottom) border color to emerald-950",
+  },
+  {
+    label: "border-y-teal-50",
+    value: "border-y-teal-50",
+    styles:
+      "border-block-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets vertical (top and bottom) border color to teal-50",
+  },
+  {
+    label: "border-y-teal-100",
+    value: "border-y-teal-100",
+    styles:
+      "border-block-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets vertical (top and bottom) border color to teal-100",
+  },
+  {
+    label: "border-y-teal-200",
+    value: "border-y-teal-200",
+    styles:
+      "border-block-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets vertical (top and bottom) border color to teal-200",
+  },
+  {
+    label: "border-y-teal-300",
+    value: "border-y-teal-300",
+    styles:
+      "border-block-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets vertical (top and bottom) border color to teal-300",
+  },
+  {
+    label: "border-y-teal-400",
+    value: "border-y-teal-400",
+    styles:
+      "border-block-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets vertical (top and bottom) border color to teal-400",
+  },
+  {
+    label: "border-y-teal-500",
+    value: "border-y-teal-500",
+    styles:
+      "border-block-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets vertical (top and bottom) border color to teal-500",
+  },
+  {
+    label: "border-y-teal-600",
+    value: "border-y-teal-600",
+    styles:
+      "border-block-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets vertical (top and bottom) border color to teal-600",
+  },
+  {
+    label: "border-y-teal-700",
+    value: "border-y-teal-700",
+    styles:
+      "border-block-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets vertical (top and bottom) border color to teal-700",
+  },
+  {
+    label: "border-y-teal-800",
+    value: "border-y-teal-800",
+    styles:
+      "border-block-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets vertical (top and bottom) border color to teal-800",
+  },
+  {
+    label: "border-y-teal-900",
+    value: "border-y-teal-900",
+    styles:
+      "border-block-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets vertical (top and bottom) border color to teal-900",
+  },
+  {
+    label: "border-y-teal-950",
+    value: "border-y-teal-950",
+    styles:
+      "border-block-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets vertical (top and bottom) border color to teal-950",
+  },
+  {
+    label: "border-y-cyan-50",
+    value: "border-y-cyan-50",
+    styles:
+      "border-block-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets vertical (top and bottom) border color to cyan-50",
+  },
+  {
+    label: "border-y-cyan-100",
+    value: "border-y-cyan-100",
+    styles:
+      "border-block-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets vertical (top and bottom) border color to cyan-100",
+  },
+  {
+    label: "border-y-cyan-200",
+    value: "border-y-cyan-200",
+    styles:
+      "border-block-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets vertical (top and bottom) border color to cyan-200",
+  },
+  {
+    label: "border-y-cyan-300",
+    value: "border-y-cyan-300",
+    styles:
+      "border-block-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets vertical (top and bottom) border color to cyan-300",
+  },
+  {
+    label: "border-y-cyan-400",
+    value: "border-y-cyan-400",
+    styles:
+      "border-block-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets vertical (top and bottom) border color to cyan-400",
+  },
+  {
+    label: "border-y-cyan-500",
+    value: "border-y-cyan-500",
+    styles:
+      "border-block-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets vertical (top and bottom) border color to cyan-500",
+  },
+  {
+    label: "border-y-cyan-600",
+    value: "border-y-cyan-600",
+    styles:
+      "border-block-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets vertical (top and bottom) border color to cyan-600",
+  },
+  {
+    label: "border-y-cyan-700",
+    value: "border-y-cyan-700",
+    styles:
+      "border-block-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets vertical (top and bottom) border color to cyan-700",
+  },
+  {
+    label: "border-y-cyan-800",
+    value: "border-y-cyan-800",
+    styles:
+      "border-block-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets vertical (top and bottom) border color to cyan-800",
+  },
+  {
+    label: "border-y-cyan-900",
+    value: "border-y-cyan-900",
+    styles:
+      "border-block-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets vertical (top and bottom) border color to cyan-900",
+  },
+  {
+    label: "border-y-cyan-950",
+    value: "border-y-cyan-950",
+    styles:
+      "border-block-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets vertical (top and bottom) border color to cyan-950",
+  },
+  {
+    label: "border-y-sky-50",
+    value: "border-y-sky-50",
+    styles:
+      "border-block-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets vertical (top and bottom) border color to sky-50",
+  },
+  {
+    label: "border-y-sky-100",
+    value: "border-y-sky-100",
+    styles:
+      "border-block-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets vertical (top and bottom) border color to sky-100",
+  },
+  {
+    label: "border-y-sky-200",
+    value: "border-y-sky-200",
+    styles:
+      "border-block-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets vertical (top and bottom) border color to sky-200",
+  },
+  {
+    label: "border-y-sky-300",
+    value: "border-y-sky-300",
+    styles:
+      "border-block-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets vertical (top and bottom) border color to sky-300",
+  },
+  {
+    label: "border-y-sky-400",
+    value: "border-y-sky-400",
+    styles:
+      "border-block-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets vertical (top and bottom) border color to sky-400",
+  },
+  {
+    label: "border-y-sky-500",
+    value: "border-y-sky-500",
+    styles:
+      "border-block-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets vertical (top and bottom) border color to sky-500",
+  },
+  {
+    label: "border-y-sky-600",
+    value: "border-y-sky-600",
+    styles:
+      "border-block-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets vertical (top and bottom) border color to sky-600",
+  },
+  {
+    label: "border-y-sky-700",
+    value: "border-y-sky-700",
+    styles:
+      "border-block-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets vertical (top and bottom) border color to sky-700",
+  },
+  {
+    label: "border-y-sky-800",
+    value: "border-y-sky-800",
+    styles:
+      "border-block-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets vertical (top and bottom) border color to sky-800",
+  },
+  {
+    label: "border-y-sky-900",
+    value: "border-y-sky-900",
+    styles:
+      "border-block-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets vertical (top and bottom) border color to sky-900",
+  },
+  {
+    label: "border-y-sky-950",
+    value: "border-y-sky-950",
+    styles:
+      "border-block-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets vertical (top and bottom) border color to sky-950",
+  },
+  {
+    label: "border-y-blue-50",
+    value: "border-y-blue-50",
+    styles:
+      "border-block-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets vertical (top and bottom) border color to blue-50",
+  },
+  {
+    label: "border-y-blue-100",
+    value: "border-y-blue-100",
+    styles:
+      "border-block-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets vertical (top and bottom) border color to blue-100",
+  },
+  {
+    label: "border-y-blue-200",
+    value: "border-y-blue-200",
+    styles:
+      "border-block-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets vertical (top and bottom) border color to blue-200",
+  },
+  {
+    label: "border-y-blue-300",
+    value: "border-y-blue-300",
+    styles:
+      "border-block-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets vertical (top and bottom) border color to blue-300",
+  },
+  {
+    label: "border-y-blue-400",
+    value: "border-y-blue-400",
+    styles:
+      "border-block-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets vertical (top and bottom) border color to blue-400",
+  },
+  {
+    label: "border-y-blue-500",
+    value: "border-y-blue-500",
+    styles:
+      "border-block-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets vertical (top and bottom) border color to blue-500",
+  },
+  {
+    label: "border-y-blue-600",
+    value: "border-y-blue-600",
+    styles:
+      "border-block-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets vertical (top and bottom) border color to blue-600",
+  },
+  {
+    label: "border-y-blue-700",
+    value: "border-y-blue-700",
+    styles:
+      "border-block-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets vertical (top and bottom) border color to blue-700",
+  },
+  {
+    label: "border-y-blue-800",
+    value: "border-y-blue-800",
+    styles:
+      "border-block-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets vertical (top and bottom) border color to blue-800",
+  },
+  {
+    label: "border-y-blue-900",
+    value: "border-y-blue-900",
+    styles:
+      "border-block-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets vertical (top and bottom) border color to blue-900",
+  },
+  {
+    label: "border-y-blue-950",
+    value: "border-y-blue-950",
+    styles:
+      "border-block-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets vertical (top and bottom) border color to blue-950",
+  },
+  {
+    label: "border-y-indigo-50",
+    value: "border-y-indigo-50",
+    styles:
+      "border-block-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets vertical (top and bottom) border color to indigo-50",
+  },
+  {
+    label: "border-y-indigo-100",
+    value: "border-y-indigo-100",
+    styles:
+      "border-block-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets vertical (top and bottom) border color to indigo-100",
+  },
+  {
+    label: "border-y-indigo-200",
+    value: "border-y-indigo-200",
+    styles:
+      "border-block-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets vertical (top and bottom) border color to indigo-200",
+  },
+  {
+    label: "border-y-indigo-300",
+    value: "border-y-indigo-300",
+    styles:
+      "border-block-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets vertical (top and bottom) border color to indigo-300",
+  },
+  {
+    label: "border-y-indigo-400",
+    value: "border-y-indigo-400",
+    styles:
+      "border-block-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets vertical (top and bottom) border color to indigo-400",
+  },
+  {
+    label: "border-y-indigo-500",
+    value: "border-y-indigo-500",
+    styles:
+      "border-block-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets vertical (top and bottom) border color to indigo-500",
+  },
+  {
+    label: "border-y-indigo-600",
+    value: "border-y-indigo-600",
+    styles:
+      "border-block-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets vertical (top and bottom) border color to indigo-600",
+  },
+  {
+    label: "border-y-indigo-700",
+    value: "border-y-indigo-700",
+    styles:
+      "border-block-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets vertical (top and bottom) border color to indigo-700",
+  },
+  {
+    label: "border-y-indigo-800",
+    value: "border-y-indigo-800",
+    styles:
+      "border-block-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets vertical (top and bottom) border color to indigo-800",
+  },
+  {
+    label: "border-y-indigo-900",
+    value: "border-y-indigo-900",
+    styles:
+      "border-block-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets vertical (top and bottom) border color to indigo-900",
+  },
+  {
+    label: "border-y-indigo-950",
+    value: "border-y-indigo-950",
+    styles:
+      "border-block-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets vertical (top and bottom) border color to indigo-950",
+  },
+  {
+    label: "border-y-violet-50",
+    value: "border-y-violet-50",
+    styles:
+      "border-block-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets vertical (top and bottom) border color to violet-50",
+  },
+  {
+    label: "border-y-violet-100",
+    value: "border-y-violet-100",
+    styles:
+      "border-block-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets vertical (top and bottom) border color to violet-100",
+  },
+  {
+    label: "border-y-violet-200",
+    value: "border-y-violet-200",
+    styles:
+      "border-block-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets vertical (top and bottom) border color to violet-200",
+  },
+  {
+    label: "border-y-violet-300",
+    value: "border-y-violet-300",
+    styles:
+      "border-block-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets vertical (top and bottom) border color to violet-300",
+  },
+  {
+    label: "border-y-violet-400",
+    value: "border-y-violet-400",
+    styles:
+      "border-block-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets vertical (top and bottom) border color to violet-400",
+  },
+  {
+    label: "border-y-violet-500",
+    value: "border-y-violet-500",
+    styles:
+      "border-block-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets vertical (top and bottom) border color to violet-500",
+  },
+  {
+    label: "border-y-violet-600",
+    value: "border-y-violet-600",
+    styles:
+      "border-block-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets vertical (top and bottom) border color to violet-600",
+  },
+  {
+    label: "border-y-violet-700",
+    value: "border-y-violet-700",
+    styles:
+      "border-block-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets vertical (top and bottom) border color to violet-700",
+  },
+  {
+    label: "border-y-violet-800",
+    value: "border-y-violet-800",
+    styles:
+      "border-block-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets vertical (top and bottom) border color to violet-800",
+  },
+  {
+    label: "border-y-violet-900",
+    value: "border-y-violet-900",
+    styles:
+      "border-block-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets vertical (top and bottom) border color to violet-900",
+  },
+  {
+    label: "border-y-violet-950",
+    value: "border-y-violet-950",
+    styles:
+      "border-block-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets vertical (top and bottom) border color to violet-950",
+  },
+  {
+    label: "border-y-purple-50",
+    value: "border-y-purple-50",
+    styles:
+      "border-block-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets vertical (top and bottom) border color to purple-50",
+  },
+  {
+    label: "border-y-purple-100",
+    value: "border-y-purple-100",
+    styles:
+      "border-block-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets vertical (top and bottom) border color to purple-100",
+  },
+  {
+    label: "border-y-purple-200",
+    value: "border-y-purple-200",
+    styles:
+      "border-block-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets vertical (top and bottom) border color to purple-200",
+  },
+  {
+    label: "border-y-purple-300",
+    value: "border-y-purple-300",
+    styles:
+      "border-block-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets vertical (top and bottom) border color to purple-300",
+  },
+  {
+    label: "border-y-purple-400",
+    value: "border-y-purple-400",
+    styles:
+      "border-block-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets vertical (top and bottom) border color to purple-400",
+  },
+  {
+    label: "border-y-purple-500",
+    value: "border-y-purple-500",
+    styles:
+      "border-block-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets vertical (top and bottom) border color to purple-500",
+  },
+  {
+    label: "border-y-purple-600",
+    value: "border-y-purple-600",
+    styles:
+      "border-block-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets vertical (top and bottom) border color to purple-600",
+  },
+  {
+    label: "border-y-purple-700",
+    value: "border-y-purple-700",
+    styles:
+      "border-block-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets vertical (top and bottom) border color to purple-700",
+  },
+  {
+    label: "border-y-purple-800",
+    value: "border-y-purple-800",
+    styles:
+      "border-block-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets vertical (top and bottom) border color to purple-800",
+  },
+  {
+    label: "border-y-purple-900",
+    value: "border-y-purple-900",
+    styles:
+      "border-block-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets vertical (top and bottom) border color to purple-900",
+  },
+  {
+    label: "border-y-purple-950",
+    value: "border-y-purple-950",
+    styles:
+      "border-block-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets vertical (top and bottom) border color to purple-950",
+  },
+  {
+    label: "border-y-fuchsia-50",
+    value: "border-y-fuchsia-50",
+    styles:
+      "border-block-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-50",
+  },
+  {
+    label: "border-y-fuchsia-100",
+    value: "border-y-fuchsia-100",
+    styles:
+      "border-block-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-100",
+  },
+  {
+    label: "border-y-fuchsia-200",
+    value: "border-y-fuchsia-200",
+    styles:
+      "border-block-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-200",
+  },
+  {
+    label: "border-y-fuchsia-300",
+    value: "border-y-fuchsia-300",
+    styles:
+      "border-block-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-300",
+  },
+  {
+    label: "border-y-fuchsia-400",
+    value: "border-y-fuchsia-400",
+    styles:
+      "border-block-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-400",
+  },
+  {
+    label: "border-y-fuchsia-500",
+    value: "border-y-fuchsia-500",
+    styles:
+      "border-block-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-500",
+  },
+  {
+    label: "border-y-fuchsia-600",
+    value: "border-y-fuchsia-600",
+    styles:
+      "border-block-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-600",
+  },
+  {
+    label: "border-y-fuchsia-700",
+    value: "border-y-fuchsia-700",
+    styles:
+      "border-block-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-700",
+  },
+  {
+    label: "border-y-fuchsia-800",
+    value: "border-y-fuchsia-800",
+    styles:
+      "border-block-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-800",
+  },
+  {
+    label: "border-y-fuchsia-900",
+    value: "border-y-fuchsia-900",
+    styles:
+      "border-block-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-900",
+  },
+  {
+    label: "border-y-fuchsia-950",
+    value: "border-y-fuchsia-950",
+    styles:
+      "border-block-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets vertical (top and bottom) border color to fuchsia-950",
+  },
+  {
+    label: "border-y-pink-50",
+    value: "border-y-pink-50",
+    styles:
+      "border-block-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets vertical (top and bottom) border color to pink-50",
+  },
+  {
+    label: "border-y-pink-100",
+    value: "border-y-pink-100",
+    styles:
+      "border-block-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets vertical (top and bottom) border color to pink-100",
+  },
+  {
+    label: "border-y-pink-200",
+    value: "border-y-pink-200",
+    styles:
+      "border-block-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets vertical (top and bottom) border color to pink-200",
+  },
+  {
+    label: "border-y-pink-300",
+    value: "border-y-pink-300",
+    styles:
+      "border-block-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets vertical (top and bottom) border color to pink-300",
+  },
+  {
+    label: "border-y-pink-400",
+    value: "border-y-pink-400",
+    styles:
+      "border-block-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets vertical (top and bottom) border color to pink-400",
+  },
+  {
+    label: "border-y-pink-500",
+    value: "border-y-pink-500",
+    styles:
+      "border-block-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets vertical (top and bottom) border color to pink-500",
+  },
+  {
+    label: "border-y-pink-600",
+    value: "border-y-pink-600",
+    styles:
+      "border-block-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets vertical (top and bottom) border color to pink-600",
+  },
+  {
+    label: "border-y-pink-700",
+    value: "border-y-pink-700",
+    styles:
+      "border-block-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets vertical (top and bottom) border color to pink-700",
+  },
+  {
+    label: "border-y-pink-800",
+    value: "border-y-pink-800",
+    styles:
+      "border-block-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets vertical (top and bottom) border color to pink-800",
+  },
+  {
+    label: "border-y-pink-900",
+    value: "border-y-pink-900",
+    styles:
+      "border-block-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets vertical (top and bottom) border color to pink-900",
+  },
+  {
+    label: "border-y-pink-950",
+    value: "border-y-pink-950",
+    styles:
+      "border-block-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets vertical (top and bottom) border color to pink-950",
+  },
+  {
+    label: "border-y-rose-50",
+    value: "border-y-rose-50",
+    styles:
+      "border-block-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets vertical (top and bottom) border color to rose-50",
+  },
+  {
+    label: "border-y-rose-100",
+    value: "border-y-rose-100",
+    styles:
+      "border-block-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets vertical (top and bottom) border color to rose-100",
+  },
+  {
+    label: "border-y-rose-200",
+    value: "border-y-rose-200",
+    styles:
+      "border-block-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets vertical (top and bottom) border color to rose-200",
+  },
+  {
+    label: "border-y-rose-300",
+    value: "border-y-rose-300",
+    styles:
+      "border-block-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets vertical (top and bottom) border color to rose-300",
+  },
+  {
+    label: "border-y-rose-400",
+    value: "border-y-rose-400",
+    styles:
+      "border-block-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets vertical (top and bottom) border color to rose-400",
+  },
+  {
+    label: "border-y-rose-500",
+    value: "border-y-rose-500",
+    styles:
+      "border-block-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets vertical (top and bottom) border color to rose-500",
+  },
+  {
+    label: "border-y-rose-600",
+    value: "border-y-rose-600",
+    styles:
+      "border-block-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets vertical (top and bottom) border color to rose-600",
+  },
+  {
+    label: "border-y-rose-700",
+    value: "border-y-rose-700",
+    styles:
+      "border-block-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets vertical (top and bottom) border color to rose-700",
+  },
+  {
+    label: "border-y-rose-800",
+    value: "border-y-rose-800",
+    styles:
+      "border-block-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets vertical (top and bottom) border color to rose-800",
+  },
+  {
+    label: "border-y-rose-900",
+    value: "border-y-rose-900",
+    styles:
+      "border-block-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets vertical (top and bottom) border color to rose-900",
+  },
+  {
+    label: "border-y-rose-950",
+    value: "border-y-rose-950",
+    styles:
+      "border-block-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets vertical (top and bottom) border color to rose-950",
+  },
+  {
+    label: "border-y-slate-50",
+    value: "border-y-slate-50",
+    styles:
+      "border-block-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets vertical (top and bottom) border color to slate-50",
+  },
+  {
+    label: "border-y-slate-100",
+    value: "border-y-slate-100",
+    styles:
+      "border-block-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets vertical (top and bottom) border color to slate-100",
+  },
+  {
+    label: "border-y-slate-200",
+    value: "border-y-slate-200",
+    styles:
+      "border-block-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets vertical (top and bottom) border color to slate-200",
+  },
+  {
+    label: "border-y-slate-300",
+    value: "border-y-slate-300",
+    styles:
+      "border-block-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets vertical (top and bottom) border color to slate-300",
+  },
+  {
+    label: "border-y-slate-400",
+    value: "border-y-slate-400",
+    styles:
+      "border-block-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets vertical (top and bottom) border color to slate-400",
+  },
+  {
+    label: "border-y-slate-500",
+    value: "border-y-slate-500",
+    styles:
+      "border-block-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets vertical (top and bottom) border color to slate-500",
+  },
+  {
+    label: "border-y-slate-600",
+    value: "border-y-slate-600",
+    styles:
+      "border-block-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets vertical (top and bottom) border color to slate-600",
+  },
+  {
+    label: "border-y-slate-700",
+    value: "border-y-slate-700",
+    styles:
+      "border-block-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets vertical (top and bottom) border color to slate-700",
+  },
+  {
+    label: "border-y-slate-800",
+    value: "border-y-slate-800",
+    styles:
+      "border-block-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets vertical (top and bottom) border color to slate-800",
+  },
+  {
+    label: "border-y-slate-900",
+    value: "border-y-slate-900",
+    styles:
+      "border-block-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets vertical (top and bottom) border color to slate-900",
+  },
+  {
+    label: "border-y-slate-950",
+    value: "border-y-slate-950",
+    styles:
+      "border-block-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets vertical (top and bottom) border color to slate-950",
+  },
+  {
+    label: "border-y-gray-50",
+    value: "border-y-gray-50",
+    styles:
+      "border-block-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets vertical (top and bottom) border color to gray-50",
+  },
+  {
+    label: "border-y-gray-100",
+    value: "border-y-gray-100",
+    styles:
+      "border-block-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets vertical (top and bottom) border color to gray-100",
+  },
+  {
+    label: "border-y-gray-200",
+    value: "border-y-gray-200",
+    styles:
+      "border-block-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets vertical (top and bottom) border color to gray-200",
+  },
+  {
+    label: "border-y-gray-300",
+    value: "border-y-gray-300",
+    styles:
+      "border-block-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets vertical (top and bottom) border color to gray-300",
+  },
+  {
+    label: "border-y-gray-400",
+    value: "border-y-gray-400",
+    styles:
+      "border-block-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets vertical (top and bottom) border color to gray-400",
+  },
+  {
+    label: "border-y-gray-500",
+    value: "border-y-gray-500",
+    styles:
+      "border-block-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets vertical (top and bottom) border color to gray-500",
+  },
+  {
+    label: "border-y-gray-600",
+    value: "border-y-gray-600",
+    styles:
+      "border-block-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets vertical (top and bottom) border color to gray-600",
+  },
+  {
+    label: "border-y-gray-700",
+    value: "border-y-gray-700",
+    styles:
+      "border-block-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets vertical (top and bottom) border color to gray-700",
+  },
+  {
+    label: "border-y-gray-800",
+    value: "border-y-gray-800",
+    styles:
+      "border-block-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets vertical (top and bottom) border color to gray-800",
+  },
+  {
+    label: "border-y-gray-900",
+    value: "border-y-gray-900",
+    styles:
+      "border-block-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets vertical (top and bottom) border color to gray-900",
+  },
+  {
+    label: "border-y-gray-950",
+    value: "border-y-gray-950",
+    styles:
+      "border-block-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets vertical (top and bottom) border color to gray-950",
+  },
+  {
+    label: "border-y-zinc-50",
+    value: "border-y-zinc-50",
+    styles: "border-block-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to zinc-50",
+  },
+  {
+    label: "border-y-zinc-100",
+    value: "border-y-zinc-100",
+    styles:
+      "border-block-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets vertical (top and bottom) border color to zinc-100",
+  },
+  {
+    label: "border-y-zinc-200",
+    value: "border-y-zinc-200",
+    styles:
+      "border-block-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets vertical (top and bottom) border color to zinc-200",
+  },
+  {
+    label: "border-y-zinc-300",
+    value: "border-y-zinc-300",
+    styles:
+      "border-block-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets vertical (top and bottom) border color to zinc-300",
+  },
+  {
+    label: "border-y-zinc-400",
+    value: "border-y-zinc-400",
+    styles:
+      "border-block-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets vertical (top and bottom) border color to zinc-400",
+  },
+  {
+    label: "border-y-zinc-500",
+    value: "border-y-zinc-500",
+    styles:
+      "border-block-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets vertical (top and bottom) border color to zinc-500",
+  },
+  {
+    label: "border-y-zinc-600",
+    value: "border-y-zinc-600",
+    styles:
+      "border-block-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets vertical (top and bottom) border color to zinc-600",
+  },
+  {
+    label: "border-y-zinc-700",
+    value: "border-y-zinc-700",
+    styles:
+      "border-block-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets vertical (top and bottom) border color to zinc-700",
+  },
+  {
+    label: "border-y-zinc-800",
+    value: "border-y-zinc-800",
+    styles:
+      "border-block-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets vertical (top and bottom) border color to zinc-800",
+  },
+  {
+    label: "border-y-zinc-900",
+    value: "border-y-zinc-900",
+    styles:
+      "border-block-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets vertical (top and bottom) border color to zinc-900",
+  },
+  {
+    label: "border-y-zinc-950",
+    value: "border-y-zinc-950",
+    styles:
+      "border-block-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets vertical (top and bottom) border color to zinc-950",
+  },
+  {
+    label: "border-y-neutral-50",
+    value: "border-y-neutral-50",
+    styles:
+      "border-block-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-50",
+  },
+  {
+    label: "border-y-neutral-100",
+    value: "border-y-neutral-100",
+    styles:
+      "border-block-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-100",
+  },
+  {
+    label: "border-y-neutral-200",
+    value: "border-y-neutral-200",
+    styles:
+      "border-block-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-200",
+  },
+  {
+    label: "border-y-neutral-300",
+    value: "border-y-neutral-300",
+    styles:
+      "border-block-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-300",
+  },
+  {
+    label: "border-y-neutral-400",
+    value: "border-y-neutral-400",
+    styles:
+      "border-block-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-400",
+  },
+  {
+    label: "border-y-neutral-500",
+    value: "border-y-neutral-500",
+    styles:
+      "border-block-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-500",
+  },
+  {
+    label: "border-y-neutral-600",
+    value: "border-y-neutral-600",
+    styles:
+      "border-block-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-600",
+  },
+  {
+    label: "border-y-neutral-700",
+    value: "border-y-neutral-700",
+    styles:
+      "border-block-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-700",
+  },
+  {
+    label: "border-y-neutral-800",
+    value: "border-y-neutral-800",
+    styles:
+      "border-block-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-800",
+  },
+  {
+    label: "border-y-neutral-900",
+    value: "border-y-neutral-900",
+    styles:
+      "border-block-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-900",
+  },
+  {
+    label: "border-y-neutral-950",
+    value: "border-y-neutral-950",
+    styles:
+      "border-block-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets vertical (top and bottom) border color to neutral-950",
+  },
+  {
+    label: "border-y-stone-50",
+    value: "border-y-stone-50",
+    styles:
+      "border-block-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets vertical (top and bottom) border color to stone-50",
+  },
+  {
+    label: "border-y-stone-100",
+    value: "border-y-stone-100",
+    styles:
+      "border-block-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets vertical (top and bottom) border color to stone-100",
+  },
+  {
+    label: "border-y-stone-200",
+    value: "border-y-stone-200",
+    styles:
+      "border-block-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets vertical (top and bottom) border color to stone-200",
+  },
+  {
+    label: "border-y-stone-300",
+    value: "border-y-stone-300",
+    styles:
+      "border-block-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets vertical (top and bottom) border color to stone-300",
+  },
+  {
+    label: "border-y-stone-400",
+    value: "border-y-stone-400",
+    styles:
+      "border-block-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets vertical (top and bottom) border color to stone-400",
+  },
+  {
+    label: "border-y-stone-500",
+    value: "border-y-stone-500",
+    styles:
+      "border-block-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets vertical (top and bottom) border color to stone-500",
+  },
+  {
+    label: "border-y-stone-600",
+    value: "border-y-stone-600",
+    styles:
+      "border-block-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets vertical (top and bottom) border color to stone-600",
+  },
+  {
+    label: "border-y-stone-700",
+    value: "border-y-stone-700",
+    styles:
+      "border-block-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets vertical (top and bottom) border color to stone-700",
+  },
+  {
+    label: "border-y-stone-800",
+    value: "border-y-stone-800",
+    styles:
+      "border-block-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets vertical (top and bottom) border color to stone-800",
+  },
+  {
+    label: "border-y-stone-900",
+    value: "border-y-stone-900",
+    styles:
+      "border-block-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets vertical (top and bottom) border color to stone-900",
+  },
+  {
+    label: "border-y-stone-950",
+    value: "border-y-stone-950",
+    styles:
+      "border-block-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets vertical (top and bottom) border color to stone-950",
+  },
+  {
+    label: "border-y-(<custom-property>)",
+    value: "border-y-(<custom-property>)",
+    styles: "border-block-color: var(<custom-property>);",
+    description:
+      "Sets vertical (top and bottom) border color to (<custom-property>)",
+  },
+  {
+    label: "border-y-[<value>]",
+    value: "border-y-[<value>]",
+    styles: "border-block-color: <value>;",
+    description: "Sets vertical (top and bottom) border color to [<value>]",
+  },
+  {
+    label: "border-s-inherit",
+    value: "border-s-inherit",
+    styles: "border-inline-start-color: inherit;",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-s-current",
+    value: "border-s-current",
+    styles: "border-inline-start-color: currentColor;",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-s-transparent",
+    value: "border-s-transparent",
+    styles: "border-inline-start-color: transparent;",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-s-black",
+    value: "border-s-black",
+    styles: "border-inline-start-color: var(--color-black); /* #000 */",
+    description: "Sets inline start border color to black",
+  },
+  {
+    label: "border-s-white",
+    value: "border-s-white",
+    styles: "border-inline-start-color: var(--color-white); /* #fff */",
+    description: "Sets inline start border color to white",
+  },
+  {
+    label: "border-s-red-50",
+    value: "border-s-red-50",
+    styles:
+      "border-inline-start-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets inline start border color to red-50",
+  },
+  {
+    label: "border-s-red-100",
+    value: "border-s-red-100",
+    styles:
+      "border-inline-start-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets inline start border color to red-100",
+  },
+  {
+    label: "border-s-red-200",
+    value: "border-s-red-200",
+    styles:
+      "border-inline-start-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets inline start border color to red-200",
+  },
+  {
+    label: "border-s-red-300",
+    value: "border-s-red-300",
+    styles:
+      "border-inline-start-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets inline start border color to red-300",
+  },
+  {
+    label: "border-s-red-400",
+    value: "border-s-red-400",
+    styles:
+      "border-inline-start-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets inline start border color to red-400",
+  },
+  {
+    label: "border-s-red-500",
+    value: "border-s-red-500",
+    styles:
+      "border-inline-start-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets inline start border color to red-500",
+  },
+  {
+    label: "border-s-red-600",
+    value: "border-s-red-600",
+    styles:
+      "border-inline-start-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets inline start border color to red-600",
+  },
+  {
+    label: "border-s-red-700",
+    value: "border-s-red-700",
+    styles:
+      "border-inline-start-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets inline start border color to red-700",
+  },
+  {
+    label: "border-s-red-800",
+    value: "border-s-red-800",
+    styles:
+      "border-inline-start-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets inline start border color to red-800",
+  },
+  {
+    label: "border-s-red-900",
+    value: "border-s-red-900",
+    styles:
+      "border-inline-start-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets inline start border color to red-900",
+  },
+  {
+    label: "border-s-red-950",
+    value: "border-s-red-950",
+    styles:
+      "border-inline-start-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets inline start border color to red-950",
+  },
+  {
+    label: "border-s-orange-50",
+    value: "border-s-orange-50",
+    styles:
+      "border-inline-start-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets inline start border color to orange-50",
+  },
+  {
+    label: "border-s-orange-100",
+    value: "border-s-orange-100",
+    styles:
+      "border-inline-start-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets inline start border color to orange-100",
+  },
+  {
+    label: "border-s-orange-200",
+    value: "border-s-orange-200",
+    styles:
+      "border-inline-start-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets inline start border color to orange-200",
+  },
+  {
+    label: "border-s-orange-300",
+    value: "border-s-orange-300",
+    styles:
+      "border-inline-start-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets inline start border color to orange-300",
+  },
+  {
+    label: "border-s-orange-400",
+    value: "border-s-orange-400",
+    styles:
+      "border-inline-start-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets inline start border color to orange-400",
+  },
+  {
+    label: "border-s-orange-500",
+    value: "border-s-orange-500",
+    styles:
+      "border-inline-start-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets inline start border color to orange-500",
+  },
+  {
+    label: "border-s-orange-600",
+    value: "border-s-orange-600",
+    styles:
+      "border-inline-start-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets inline start border color to orange-600",
+  },
+  {
+    label: "border-s-orange-700",
+    value: "border-s-orange-700",
+    styles:
+      "border-inline-start-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets inline start border color to orange-700",
+  },
+  {
+    label: "border-s-orange-800",
+    value: "border-s-orange-800",
+    styles:
+      "border-inline-start-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets inline start border color to orange-800",
+  },
+  {
+    label: "border-s-orange-900",
+    value: "border-s-orange-900",
+    styles:
+      "border-inline-start-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets inline start border color to orange-900",
+  },
+  {
+    label: "border-s-orange-950",
+    value: "border-s-orange-950",
+    styles:
+      "border-inline-start-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets inline start border color to orange-950",
+  },
+  {
+    label: "border-s-amber-50",
+    value: "border-s-amber-50",
+    styles:
+      "border-inline-start-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets inline start border color to amber-50",
+  },
+  {
+    label: "border-s-amber-100",
+    value: "border-s-amber-100",
+    styles:
+      "border-inline-start-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets inline start border color to amber-100",
+  },
+  {
+    label: "border-s-amber-200",
+    value: "border-s-amber-200",
+    styles:
+      "border-inline-start-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets inline start border color to amber-200",
+  },
+  {
+    label: "border-s-amber-300",
+    value: "border-s-amber-300",
+    styles:
+      "border-inline-start-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets inline start border color to amber-300",
+  },
+  {
+    label: "border-s-amber-400",
+    value: "border-s-amber-400",
+    styles:
+      "border-inline-start-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets inline start border color to amber-400",
+  },
+  {
+    label: "border-s-amber-500",
+    value: "border-s-amber-500",
+    styles:
+      "border-inline-start-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets inline start border color to amber-500",
+  },
+  {
+    label: "border-s-amber-600",
+    value: "border-s-amber-600",
+    styles:
+      "border-inline-start-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets inline start border color to amber-600",
+  },
+  {
+    label: "border-s-amber-700",
+    value: "border-s-amber-700",
+    styles:
+      "border-inline-start-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets inline start border color to amber-700",
+  },
+  {
+    label: "border-s-amber-800",
+    value: "border-s-amber-800",
+    styles:
+      "border-inline-start-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets inline start border color to amber-800",
+  },
+  {
+    label: "border-s-amber-900",
+    value: "border-s-amber-900",
+    styles:
+      "border-inline-start-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets inline start border color to amber-900",
+  },
+  {
+    label: "border-s-amber-950",
+    value: "border-s-amber-950",
+    styles:
+      "border-inline-start-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets inline start border color to amber-950",
+  },
+  {
+    label: "border-s-yellow-50",
+    value: "border-s-yellow-50",
+    styles:
+      "border-inline-start-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets inline start border color to yellow-50",
+  },
+  {
+    label: "border-s-yellow-100",
+    value: "border-s-yellow-100",
+    styles:
+      "border-inline-start-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets inline start border color to yellow-100",
+  },
+  {
+    label: "border-s-yellow-200",
+    value: "border-s-yellow-200",
+    styles:
+      "border-inline-start-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets inline start border color to yellow-200",
+  },
+  {
+    label: "border-s-yellow-300",
+    value: "border-s-yellow-300",
+    styles:
+      "border-inline-start-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets inline start border color to yellow-300",
+  },
+  {
+    label: "border-s-yellow-400",
+    value: "border-s-yellow-400",
+    styles:
+      "border-inline-start-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets inline start border color to yellow-400",
+  },
+  {
+    label: "border-s-yellow-500",
+    value: "border-s-yellow-500",
+    styles:
+      "border-inline-start-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets inline start border color to yellow-500",
+  },
+  {
+    label: "border-s-yellow-600",
+    value: "border-s-yellow-600",
+    styles:
+      "border-inline-start-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets inline start border color to yellow-600",
+  },
+  {
+    label: "border-s-yellow-700",
+    value: "border-s-yellow-700",
+    styles:
+      "border-inline-start-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets inline start border color to yellow-700",
+  },
+  {
+    label: "border-s-yellow-800",
+    value: "border-s-yellow-800",
+    styles:
+      "border-inline-start-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets inline start border color to yellow-800",
+  },
+  {
+    label: "border-s-yellow-900",
+    value: "border-s-yellow-900",
+    styles:
+      "border-inline-start-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets inline start border color to yellow-900",
+  },
+  {
+    label: "border-s-yellow-950",
+    value: "border-s-yellow-950",
+    styles:
+      "border-inline-start-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets inline start border color to yellow-950",
+  },
+  {
+    label: "border-s-lime-50",
+    value: "border-s-lime-50",
+    styles:
+      "border-inline-start-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets inline start border color to lime-50",
+  },
+  {
+    label: "border-s-lime-100",
+    value: "border-s-lime-100",
+    styles:
+      "border-inline-start-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets inline start border color to lime-100",
+  },
+  {
+    label: "border-s-lime-200",
+    value: "border-s-lime-200",
+    styles:
+      "border-inline-start-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets inline start border color to lime-200",
+  },
+  {
+    label: "border-s-lime-300",
+    value: "border-s-lime-300",
+    styles:
+      "border-inline-start-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets inline start border color to lime-300",
+  },
+  {
+    label: "border-s-lime-400",
+    value: "border-s-lime-400",
+    styles:
+      "border-inline-start-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets inline start border color to lime-400",
+  },
+  {
+    label: "border-s-lime-500",
+    value: "border-s-lime-500",
+    styles:
+      "border-inline-start-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets inline start border color to lime-500",
+  },
+  {
+    label: "border-s-lime-600",
+    value: "border-s-lime-600",
+    styles:
+      "border-inline-start-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets inline start border color to lime-600",
+  },
+  {
+    label: "border-s-lime-700",
+    value: "border-s-lime-700",
+    styles:
+      "border-inline-start-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets inline start border color to lime-700",
+  },
+  {
+    label: "border-s-lime-800",
+    value: "border-s-lime-800",
+    styles:
+      "border-inline-start-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets inline start border color to lime-800",
+  },
+  {
+    label: "border-s-lime-900",
+    value: "border-s-lime-900",
+    styles:
+      "border-inline-start-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets inline start border color to lime-900",
+  },
+  {
+    label: "border-s-lime-950",
+    value: "border-s-lime-950",
+    styles:
+      "border-inline-start-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets inline start border color to lime-950",
+  },
+  {
+    label: "border-s-green-50",
+    value: "border-s-green-50",
+    styles:
+      "border-inline-start-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets inline start border color to green-50",
+  },
+  {
+    label: "border-s-green-100",
+    value: "border-s-green-100",
+    styles:
+      "border-inline-start-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets inline start border color to green-100",
+  },
+  {
+    label: "border-s-green-200",
+    value: "border-s-green-200",
+    styles:
+      "border-inline-start-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets inline start border color to green-200",
+  },
+  {
+    label: "border-s-green-300",
+    value: "border-s-green-300",
+    styles:
+      "border-inline-start-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets inline start border color to green-300",
+  },
+  {
+    label: "border-s-green-400",
+    value: "border-s-green-400",
+    styles:
+      "border-inline-start-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets inline start border color to green-400",
+  },
+  {
+    label: "border-s-green-500",
+    value: "border-s-green-500",
+    styles:
+      "border-inline-start-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets inline start border color to green-500",
+  },
+  {
+    label: "border-s-green-600",
+    value: "border-s-green-600",
+    styles:
+      "border-inline-start-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets inline start border color to green-600",
+  },
+  {
+    label: "border-s-green-700",
+    value: "border-s-green-700",
+    styles:
+      "border-inline-start-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets inline start border color to green-700",
+  },
+  {
+    label: "border-s-green-800",
+    value: "border-s-green-800",
+    styles:
+      "border-inline-start-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets inline start border color to green-800",
+  },
+  {
+    label: "border-s-green-900",
+    value: "border-s-green-900",
+    styles:
+      "border-inline-start-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets inline start border color to green-900",
+  },
+  {
+    label: "border-s-green-950",
+    value: "border-s-green-950",
+    styles:
+      "border-inline-start-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets inline start border color to green-950",
+  },
+  {
+    label: "border-s-emerald-50",
+    value: "border-s-emerald-50",
+    styles:
+      "border-inline-start-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets inline start border color to emerald-50",
+  },
+  {
+    label: "border-s-emerald-100",
+    value: "border-s-emerald-100",
+    styles:
+      "border-inline-start-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets inline start border color to emerald-100",
+  },
+  {
+    label: "border-s-emerald-200",
+    value: "border-s-emerald-200",
+    styles:
+      "border-inline-start-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets inline start border color to emerald-200",
+  },
+  {
+    label: "border-s-emerald-300",
+    value: "border-s-emerald-300",
+    styles:
+      "border-inline-start-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets inline start border color to emerald-300",
+  },
+  {
+    label: "border-s-emerald-400",
+    value: "border-s-emerald-400",
+    styles:
+      "border-inline-start-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets inline start border color to emerald-400",
+  },
+  {
+    label: "border-s-emerald-500",
+    value: "border-s-emerald-500",
+    styles:
+      "border-inline-start-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets inline start border color to emerald-500",
+  },
+  {
+    label: "border-s-emerald-600",
+    value: "border-s-emerald-600",
+    styles:
+      "border-inline-start-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets inline start border color to emerald-600",
+  },
+  {
+    label: "border-s-emerald-700",
+    value: "border-s-emerald-700",
+    styles:
+      "border-inline-start-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets inline start border color to emerald-700",
+  },
+  {
+    label: "border-s-emerald-800",
+    value: "border-s-emerald-800",
+    styles:
+      "border-inline-start-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets inline start border color to emerald-800",
+  },
+  {
+    label: "border-s-emerald-900",
+    value: "border-s-emerald-900",
+    styles:
+      "border-inline-start-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets inline start border color to emerald-900",
+  },
+  {
+    label: "border-s-emerald-950",
+    value: "border-s-emerald-950",
+    styles:
+      "border-inline-start-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets inline start border color to emerald-950",
+  },
+  {
+    label: "border-s-teal-50",
+    value: "border-s-teal-50",
+    styles:
+      "border-inline-start-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets inline start border color to teal-50",
+  },
+  {
+    label: "border-s-teal-100",
+    value: "border-s-teal-100",
+    styles:
+      "border-inline-start-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets inline start border color to teal-100",
+  },
+  {
+    label: "border-s-teal-200",
+    value: "border-s-teal-200",
+    styles:
+      "border-inline-start-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets inline start border color to teal-200",
+  },
+  {
+    label: "border-s-teal-300",
+    value: "border-s-teal-300",
+    styles:
+      "border-inline-start-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets inline start border color to teal-300",
+  },
+  {
+    label: "border-s-teal-400",
+    value: "border-s-teal-400",
+    styles:
+      "border-inline-start-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets inline start border color to teal-400",
+  },
+  {
+    label: "border-s-teal-500",
+    value: "border-s-teal-500",
+    styles:
+      "border-inline-start-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets inline start border color to teal-500",
+  },
+  {
+    label: "border-s-teal-600",
+    value: "border-s-teal-600",
+    styles:
+      "border-inline-start-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets inline start border color to teal-600",
+  },
+  {
+    label: "border-s-teal-700",
+    value: "border-s-teal-700",
+    styles:
+      "border-inline-start-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets inline start border color to teal-700",
+  },
+  {
+    label: "border-s-teal-800",
+    value: "border-s-teal-800",
+    styles:
+      "border-inline-start-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets inline start border color to teal-800",
+  },
+  {
+    label: "border-s-teal-900",
+    value: "border-s-teal-900",
+    styles:
+      "border-inline-start-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets inline start border color to teal-900",
+  },
+  {
+    label: "border-s-teal-950",
+    value: "border-s-teal-950",
+    styles:
+      "border-inline-start-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets inline start border color to teal-950",
+  },
+  {
+    label: "border-s-cyan-50",
+    value: "border-s-cyan-50",
+    styles:
+      "border-inline-start-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets inline start border color to cyan-50",
+  },
+  {
+    label: "border-s-cyan-100",
+    value: "border-s-cyan-100",
+    styles:
+      "border-inline-start-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets inline start border color to cyan-100",
+  },
+  {
+    label: "border-s-cyan-200",
+    value: "border-s-cyan-200",
+    styles:
+      "border-inline-start-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets inline start border color to cyan-200",
+  },
+  {
+    label: "border-s-cyan-300",
+    value: "border-s-cyan-300",
+    styles:
+      "border-inline-start-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets inline start border color to cyan-300",
+  },
+  {
+    label: "border-s-cyan-400",
+    value: "border-s-cyan-400",
+    styles:
+      "border-inline-start-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets inline start border color to cyan-400",
+  },
+  {
+    label: "border-s-cyan-500",
+    value: "border-s-cyan-500",
+    styles:
+      "border-inline-start-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets inline start border color to cyan-500",
+  },
+  {
+    label: "border-s-cyan-600",
+    value: "border-s-cyan-600",
+    styles:
+      "border-inline-start-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets inline start border color to cyan-600",
+  },
+  {
+    label: "border-s-cyan-700",
+    value: "border-s-cyan-700",
+    styles:
+      "border-inline-start-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets inline start border color to cyan-700",
+  },
+  {
+    label: "border-s-cyan-800",
+    value: "border-s-cyan-800",
+    styles:
+      "border-inline-start-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets inline start border color to cyan-800",
+  },
+  {
+    label: "border-s-cyan-900",
+    value: "border-s-cyan-900",
+    styles:
+      "border-inline-start-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets inline start border color to cyan-900",
+  },
+  {
+    label: "border-s-cyan-950",
+    value: "border-s-cyan-950",
+    styles:
+      "border-inline-start-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets inline start border color to cyan-950",
+  },
+  {
+    label: "border-s-sky-50",
+    value: "border-s-sky-50",
+    styles:
+      "border-inline-start-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets inline start border color to sky-50",
+  },
+  {
+    label: "border-s-sky-100",
+    value: "border-s-sky-100",
+    styles:
+      "border-inline-start-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets inline start border color to sky-100",
+  },
+  {
+    label: "border-s-sky-200",
+    value: "border-s-sky-200",
+    styles:
+      "border-inline-start-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets inline start border color to sky-200",
+  },
+  {
+    label: "border-s-sky-300",
+    value: "border-s-sky-300",
+    styles:
+      "border-inline-start-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets inline start border color to sky-300",
+  },
+  {
+    label: "border-s-sky-400",
+    value: "border-s-sky-400",
+    styles:
+      "border-inline-start-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets inline start border color to sky-400",
+  },
+  {
+    label: "border-s-sky-500",
+    value: "border-s-sky-500",
+    styles:
+      "border-inline-start-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets inline start border color to sky-500",
+  },
+  {
+    label: "border-s-sky-600",
+    value: "border-s-sky-600",
+    styles:
+      "border-inline-start-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets inline start border color to sky-600",
+  },
+  {
+    label: "border-s-sky-700",
+    value: "border-s-sky-700",
+    styles:
+      "border-inline-start-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets inline start border color to sky-700",
+  },
+  {
+    label: "border-s-sky-800",
+    value: "border-s-sky-800",
+    styles:
+      "border-inline-start-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets inline start border color to sky-800",
+  },
+  {
+    label: "border-s-sky-900",
+    value: "border-s-sky-900",
+    styles:
+      "border-inline-start-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets inline start border color to sky-900",
+  },
+  {
+    label: "border-s-sky-950",
+    value: "border-s-sky-950",
+    styles:
+      "border-inline-start-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets inline start border color to sky-950",
+  },
+  {
+    label: "border-s-blue-50",
+    value: "border-s-blue-50",
+    styles:
+      "border-inline-start-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets inline start border color to blue-50",
+  },
+  {
+    label: "border-s-blue-100",
+    value: "border-s-blue-100",
+    styles:
+      "border-inline-start-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets inline start border color to blue-100",
+  },
+  {
+    label: "border-s-blue-200",
+    value: "border-s-blue-200",
+    styles:
+      "border-inline-start-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets inline start border color to blue-200",
+  },
+  {
+    label: "border-s-blue-300",
+    value: "border-s-blue-300",
+    styles:
+      "border-inline-start-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets inline start border color to blue-300",
+  },
+  {
+    label: "border-s-blue-400",
+    value: "border-s-blue-400",
+    styles:
+      "border-inline-start-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets inline start border color to blue-400",
+  },
+  {
+    label: "border-s-blue-500",
+    value: "border-s-blue-500",
+    styles:
+      "border-inline-start-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets inline start border color to blue-500",
+  },
+  {
+    label: "border-s-blue-600",
+    value: "border-s-blue-600",
+    styles:
+      "border-inline-start-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets inline start border color to blue-600",
+  },
+  {
+    label: "border-s-blue-700",
+    value: "border-s-blue-700",
+    styles:
+      "border-inline-start-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets inline start border color to blue-700",
+  },
+  {
+    label: "border-s-blue-800",
+    value: "border-s-blue-800",
+    styles:
+      "border-inline-start-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets inline start border color to blue-800",
+  },
+  {
+    label: "border-s-blue-900",
+    value: "border-s-blue-900",
+    styles:
+      "border-inline-start-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets inline start border color to blue-900",
+  },
+  {
+    label: "border-s-blue-950",
+    value: "border-s-blue-950",
+    styles:
+      "border-inline-start-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets inline start border color to blue-950",
+  },
+  {
+    label: "border-s-indigo-50",
+    value: "border-s-indigo-50",
+    styles:
+      "border-inline-start-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets inline start border color to indigo-50",
+  },
+  {
+    label: "border-s-indigo-100",
+    value: "border-s-indigo-100",
+    styles:
+      "border-inline-start-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets inline start border color to indigo-100",
+  },
+  {
+    label: "border-s-indigo-200",
+    value: "border-s-indigo-200",
+    styles:
+      "border-inline-start-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets inline start border color to indigo-200",
+  },
+  {
+    label: "border-s-indigo-300",
+    value: "border-s-indigo-300",
+    styles:
+      "border-inline-start-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets inline start border color to indigo-300",
+  },
+  {
+    label: "border-s-indigo-400",
+    value: "border-s-indigo-400",
+    styles:
+      "border-inline-start-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets inline start border color to indigo-400",
+  },
+  {
+    label: "border-s-indigo-500",
+    value: "border-s-indigo-500",
+    styles:
+      "border-inline-start-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets inline start border color to indigo-500",
+  },
+  {
+    label: "border-s-indigo-600",
+    value: "border-s-indigo-600",
+    styles:
+      "border-inline-start-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets inline start border color to indigo-600",
+  },
+  {
+    label: "border-s-indigo-700",
+    value: "border-s-indigo-700",
+    styles:
+      "border-inline-start-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets inline start border color to indigo-700",
+  },
+  {
+    label: "border-s-indigo-800",
+    value: "border-s-indigo-800",
+    styles:
+      "border-inline-start-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets inline start border color to indigo-800",
+  },
+  {
+    label: "border-s-indigo-900",
+    value: "border-s-indigo-900",
+    styles:
+      "border-inline-start-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets inline start border color to indigo-900",
+  },
+  {
+    label: "border-s-indigo-950",
+    value: "border-s-indigo-950",
+    styles:
+      "border-inline-start-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets inline start border color to indigo-950",
+  },
+  {
+    label: "border-s-violet-50",
+    value: "border-s-violet-50",
+    styles:
+      "border-inline-start-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets inline start border color to violet-50",
+  },
+  {
+    label: "border-s-violet-100",
+    value: "border-s-violet-100",
+    styles:
+      "border-inline-start-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets inline start border color to violet-100",
+  },
+  {
+    label: "border-s-violet-200",
+    value: "border-s-violet-200",
+    styles:
+      "border-inline-start-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets inline start border color to violet-200",
+  },
+  {
+    label: "border-s-violet-300",
+    value: "border-s-violet-300",
+    styles:
+      "border-inline-start-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets inline start border color to violet-300",
+  },
+  {
+    label: "border-s-violet-400",
+    value: "border-s-violet-400",
+    styles:
+      "border-inline-start-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets inline start border color to violet-400",
+  },
+  {
+    label: "border-s-violet-500",
+    value: "border-s-violet-500",
+    styles:
+      "border-inline-start-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets inline start border color to violet-500",
+  },
+  {
+    label: "border-s-violet-600",
+    value: "border-s-violet-600",
+    styles:
+      "border-inline-start-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets inline start border color to violet-600",
+  },
+  {
+    label: "border-s-violet-700",
+    value: "border-s-violet-700",
+    styles:
+      "border-inline-start-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets inline start border color to violet-700",
+  },
+  {
+    label: "border-s-violet-800",
+    value: "border-s-violet-800",
+    styles:
+      "border-inline-start-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets inline start border color to violet-800",
+  },
+  {
+    label: "border-s-violet-900",
+    value: "border-s-violet-900",
+    styles:
+      "border-inline-start-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets inline start border color to violet-900",
+  },
+  {
+    label: "border-s-violet-950",
+    value: "border-s-violet-950",
+    styles:
+      "border-inline-start-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets inline start border color to violet-950",
+  },
+  {
+    label: "border-s-purple-50",
+    value: "border-s-purple-50",
+    styles:
+      "border-inline-start-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets inline start border color to purple-50",
+  },
+  {
+    label: "border-s-purple-100",
+    value: "border-s-purple-100",
+    styles:
+      "border-inline-start-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets inline start border color to purple-100",
+  },
+  {
+    label: "border-s-purple-200",
+    value: "border-s-purple-200",
+    styles:
+      "border-inline-start-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets inline start border color to purple-200",
+  },
+  {
+    label: "border-s-purple-300",
+    value: "border-s-purple-300",
+    styles:
+      "border-inline-start-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets inline start border color to purple-300",
+  },
+  {
+    label: "border-s-purple-400",
+    value: "border-s-purple-400",
+    styles:
+      "border-inline-start-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets inline start border color to purple-400",
+  },
+  {
+    label: "border-s-purple-500",
+    value: "border-s-purple-500",
+    styles:
+      "border-inline-start-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets inline start border color to purple-500",
+  },
+  {
+    label: "border-s-purple-600",
+    value: "border-s-purple-600",
+    styles:
+      "border-inline-start-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets inline start border color to purple-600",
+  },
+  {
+    label: "border-s-purple-700",
+    value: "border-s-purple-700",
+    styles:
+      "border-inline-start-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets inline start border color to purple-700",
+  },
+  {
+    label: "border-s-purple-800",
+    value: "border-s-purple-800",
+    styles:
+      "border-inline-start-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets inline start border color to purple-800",
+  },
+  {
+    label: "border-s-purple-900",
+    value: "border-s-purple-900",
+    styles:
+      "border-inline-start-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets inline start border color to purple-900",
+  },
+  {
+    label: "border-s-purple-950",
+    value: "border-s-purple-950",
+    styles:
+      "border-inline-start-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets inline start border color to purple-950",
+  },
+  {
+    label: "border-s-fuchsia-50",
+    value: "border-s-fuchsia-50",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets inline start border color to fuchsia-50",
+  },
+  {
+    label: "border-s-fuchsia-100",
+    value: "border-s-fuchsia-100",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets inline start border color to fuchsia-100",
+  },
+  {
+    label: "border-s-fuchsia-200",
+    value: "border-s-fuchsia-200",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets inline start border color to fuchsia-200",
+  },
+  {
+    label: "border-s-fuchsia-300",
+    value: "border-s-fuchsia-300",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets inline start border color to fuchsia-300",
+  },
+  {
+    label: "border-s-fuchsia-400",
+    value: "border-s-fuchsia-400",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets inline start border color to fuchsia-400",
+  },
+  {
+    label: "border-s-fuchsia-500",
+    value: "border-s-fuchsia-500",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets inline start border color to fuchsia-500",
+  },
+  {
+    label: "border-s-fuchsia-600",
+    value: "border-s-fuchsia-600",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets inline start border color to fuchsia-600",
+  },
+  {
+    label: "border-s-fuchsia-700",
+    value: "border-s-fuchsia-700",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets inline start border color to fuchsia-700",
+  },
+  {
+    label: "border-s-fuchsia-800",
+    value: "border-s-fuchsia-800",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets inline start border color to fuchsia-800",
+  },
+  {
+    label: "border-s-fuchsia-900",
+    value: "border-s-fuchsia-900",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets inline start border color to fuchsia-900",
+  },
+  {
+    label: "border-s-fuchsia-950",
+    value: "border-s-fuchsia-950",
+    styles:
+      "border-inline-start-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets inline start border color to fuchsia-950",
+  },
+  {
+    label: "border-s-pink-50",
+    value: "border-s-pink-50",
+    styles:
+      "border-inline-start-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets inline start border color to pink-50",
+  },
+  {
+    label: "border-s-pink-100",
+    value: "border-s-pink-100",
+    styles:
+      "border-inline-start-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets inline start border color to pink-100",
+  },
+  {
+    label: "border-s-pink-200",
+    value: "border-s-pink-200",
+    styles:
+      "border-inline-start-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets inline start border color to pink-200",
+  },
+  {
+    label: "border-s-pink-300",
+    value: "border-s-pink-300",
+    styles:
+      "border-inline-start-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets inline start border color to pink-300",
+  },
+  {
+    label: "border-s-pink-400",
+    value: "border-s-pink-400",
+    styles:
+      "border-inline-start-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets inline start border color to pink-400",
+  },
+  {
+    label: "border-s-pink-500",
+    value: "border-s-pink-500",
+    styles:
+      "border-inline-start-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets inline start border color to pink-500",
+  },
+  {
+    label: "border-s-pink-600",
+    value: "border-s-pink-600",
+    styles:
+      "border-inline-start-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets inline start border color to pink-600",
+  },
+  {
+    label: "border-s-pink-700",
+    value: "border-s-pink-700",
+    styles:
+      "border-inline-start-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets inline start border color to pink-700",
+  },
+  {
+    label: "border-s-pink-800",
+    value: "border-s-pink-800",
+    styles:
+      "border-inline-start-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets inline start border color to pink-800",
+  },
+  {
+    label: "border-s-pink-900",
+    value: "border-s-pink-900",
+    styles:
+      "border-inline-start-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets inline start border color to pink-900",
+  },
+  {
+    label: "border-s-pink-950",
+    value: "border-s-pink-950",
+    styles:
+      "border-inline-start-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets inline start border color to pink-950",
+  },
+  {
+    label: "border-s-rose-50",
+    value: "border-s-rose-50",
+    styles:
+      "border-inline-start-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets inline start border color to rose-50",
+  },
+  {
+    label: "border-s-rose-100",
+    value: "border-s-rose-100",
+    styles:
+      "border-inline-start-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets inline start border color to rose-100",
+  },
+  {
+    label: "border-s-rose-200",
+    value: "border-s-rose-200",
+    styles:
+      "border-inline-start-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets inline start border color to rose-200",
+  },
+  {
+    label: "border-s-rose-300",
+    value: "border-s-rose-300",
+    styles:
+      "border-inline-start-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets inline start border color to rose-300",
+  },
+  {
+    label: "border-s-rose-400",
+    value: "border-s-rose-400",
+    styles:
+      "border-inline-start-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets inline start border color to rose-400",
+  },
+  {
+    label: "border-s-rose-500",
+    value: "border-s-rose-500",
+    styles:
+      "border-inline-start-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets inline start border color to rose-500",
+  },
+  {
+    label: "border-s-rose-600",
+    value: "border-s-rose-600",
+    styles:
+      "border-inline-start-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets inline start border color to rose-600",
+  },
+  {
+    label: "border-s-rose-700",
+    value: "border-s-rose-700",
+    styles:
+      "border-inline-start-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets inline start border color to rose-700",
+  },
+  {
+    label: "border-s-rose-800",
+    value: "border-s-rose-800",
+    styles:
+      "border-inline-start-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets inline start border color to rose-800",
+  },
+  {
+    label: "border-s-rose-900",
+    value: "border-s-rose-900",
+    styles:
+      "border-inline-start-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets inline start border color to rose-900",
+  },
+  {
+    label: "border-s-rose-950",
+    value: "border-s-rose-950",
+    styles:
+      "border-inline-start-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets inline start border color to rose-950",
+  },
+  {
+    label: "border-s-slate-50",
+    value: "border-s-slate-50",
+    styles:
+      "border-inline-start-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets inline start border color to slate-50",
+  },
+  {
+    label: "border-s-slate-100",
+    value: "border-s-slate-100",
+    styles:
+      "border-inline-start-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets inline start border color to slate-100",
+  },
+  {
+    label: "border-s-slate-200",
+    value: "border-s-slate-200",
+    styles:
+      "border-inline-start-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets inline start border color to slate-200",
+  },
+  {
+    label: "border-s-slate-300",
+    value: "border-s-slate-300",
+    styles:
+      "border-inline-start-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets inline start border color to slate-300",
+  },
+  {
+    label: "border-s-slate-400",
+    value: "border-s-slate-400",
+    styles:
+      "border-inline-start-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets inline start border color to slate-400",
+  },
+  {
+    label: "border-s-slate-500",
+    value: "border-s-slate-500",
+    styles:
+      "border-inline-start-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets inline start border color to slate-500",
+  },
+  {
+    label: "border-s-slate-600",
+    value: "border-s-slate-600",
+    styles:
+      "border-inline-start-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets inline start border color to slate-600",
+  },
+  {
+    label: "border-s-slate-700",
+    value: "border-s-slate-700",
+    styles:
+      "border-inline-start-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets inline start border color to slate-700",
+  },
+  {
+    label: "border-s-slate-800",
+    value: "border-s-slate-800",
+    styles:
+      "border-inline-start-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets inline start border color to slate-800",
+  },
+  {
+    label: "border-s-slate-900",
+    value: "border-s-slate-900",
+    styles:
+      "border-inline-start-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets inline start border color to slate-900",
+  },
+  {
+    label: "border-s-slate-950",
+    value: "border-s-slate-950",
+    styles:
+      "border-inline-start-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets inline start border color to slate-950",
+  },
+  {
+    label: "border-s-gray-50",
+    value: "border-s-gray-50",
+    styles:
+      "border-inline-start-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets inline start border color to gray-50",
+  },
+  {
+    label: "border-s-gray-100",
+    value: "border-s-gray-100",
+    styles:
+      "border-inline-start-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets inline start border color to gray-100",
+  },
+  {
+    label: "border-s-gray-200",
+    value: "border-s-gray-200",
+    styles:
+      "border-inline-start-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets inline start border color to gray-200",
+  },
+  {
+    label: "border-s-gray-300",
+    value: "border-s-gray-300",
+    styles:
+      "border-inline-start-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets inline start border color to gray-300",
+  },
+  {
+    label: "border-s-gray-400",
+    value: "border-s-gray-400",
+    styles:
+      "border-inline-start-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets inline start border color to gray-400",
+  },
+  {
+    label: "border-s-gray-500",
+    value: "border-s-gray-500",
+    styles:
+      "border-inline-start-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets inline start border color to gray-500",
+  },
+  {
+    label: "border-s-gray-600",
+    value: "border-s-gray-600",
+    styles:
+      "border-inline-start-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets inline start border color to gray-600",
+  },
+  {
+    label: "border-s-gray-700",
+    value: "border-s-gray-700",
+    styles:
+      "border-inline-start-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets inline start border color to gray-700",
+  },
+  {
+    label: "border-s-gray-800",
+    value: "border-s-gray-800",
+    styles:
+      "border-inline-start-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets inline start border color to gray-800",
+  },
+  {
+    label: "border-s-gray-900",
+    value: "border-s-gray-900",
+    styles:
+      "border-inline-start-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets inline start border color to gray-900",
+  },
+  {
+    label: "border-s-gray-950",
+    value: "border-s-gray-950",
+    styles:
+      "border-inline-start-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets inline start border color to gray-950",
+  },
+  {
+    label: "border-s-zinc-50",
+    value: "border-s-zinc-50",
+    styles:
+      "border-inline-start-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets inline start border color to zinc-50",
+  },
+  {
+    label: "border-s-zinc-100",
+    value: "border-s-zinc-100",
+    styles:
+      "border-inline-start-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets inline start border color to zinc-100",
+  },
+  {
+    label: "border-s-zinc-200",
+    value: "border-s-zinc-200",
+    styles:
+      "border-inline-start-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets inline start border color to zinc-200",
+  },
+  {
+    label: "border-s-zinc-300",
+    value: "border-s-zinc-300",
+    styles:
+      "border-inline-start-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets inline start border color to zinc-300",
+  },
+  {
+    label: "border-s-zinc-400",
+    value: "border-s-zinc-400",
+    styles:
+      "border-inline-start-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets inline start border color to zinc-400",
+  },
+  {
+    label: "border-s-zinc-500",
+    value: "border-s-zinc-500",
+    styles:
+      "border-inline-start-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets inline start border color to zinc-500",
+  },
+  {
+    label: "border-s-zinc-600",
+    value: "border-s-zinc-600",
+    styles:
+      "border-inline-start-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets inline start border color to zinc-600",
+  },
+  {
+    label: "border-s-zinc-700",
+    value: "border-s-zinc-700",
+    styles:
+      "border-inline-start-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets inline start border color to zinc-700",
+  },
+  {
+    label: "border-s-zinc-800",
+    value: "border-s-zinc-800",
+    styles:
+      "border-inline-start-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets inline start border color to zinc-800",
+  },
+  {
+    label: "border-s-zinc-900",
+    value: "border-s-zinc-900",
+    styles:
+      "border-inline-start-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets inline start border color to zinc-900",
+  },
+  {
+    label: "border-s-zinc-950",
+    value: "border-s-zinc-950",
+    styles:
+      "border-inline-start-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets inline start border color to zinc-950",
+  },
+  {
+    label: "border-s-neutral-50",
+    value: "border-s-neutral-50",
+    styles:
+      "border-inline-start-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets inline start border color to neutral-50",
+  },
+  {
+    label: "border-s-neutral-100",
+    value: "border-s-neutral-100",
+    styles:
+      "border-inline-start-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets inline start border color to neutral-100",
+  },
+  {
+    label: "border-s-neutral-200",
+    value: "border-s-neutral-200",
+    styles:
+      "border-inline-start-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets inline start border color to neutral-200",
+  },
+  {
+    label: "border-s-neutral-300",
+    value: "border-s-neutral-300",
+    styles:
+      "border-inline-start-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets inline start border color to neutral-300",
+  },
+  {
+    label: "border-s-neutral-400",
+    value: "border-s-neutral-400",
+    styles:
+      "border-inline-start-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets inline start border color to neutral-400",
+  },
+  {
+    label: "border-s-neutral-500",
+    value: "border-s-neutral-500",
+    styles:
+      "border-inline-start-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets inline start border color to neutral-500",
+  },
+  {
+    label: "border-s-neutral-600",
+    value: "border-s-neutral-600",
+    styles:
+      "border-inline-start-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets inline start border color to neutral-600",
+  },
+  {
+    label: "border-s-neutral-700",
+    value: "border-s-neutral-700",
+    styles:
+      "border-inline-start-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets inline start border color to neutral-700",
+  },
+  {
+    label: "border-s-neutral-800",
+    value: "border-s-neutral-800",
+    styles:
+      "border-inline-start-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets inline start border color to neutral-800",
+  },
+  {
+    label: "border-s-neutral-900",
+    value: "border-s-neutral-900",
+    styles:
+      "border-inline-start-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets inline start border color to neutral-900",
+  },
+  {
+    label: "border-s-neutral-950",
+    value: "border-s-neutral-950",
+    styles:
+      "border-inline-start-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets inline start border color to neutral-950",
+  },
+  {
+    label: "border-s-stone-50",
+    value: "border-s-stone-50",
+    styles:
+      "border-inline-start-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets inline start border color to stone-50",
+  },
+  {
+    label: "border-s-stone-100",
+    value: "border-s-stone-100",
+    styles:
+      "border-inline-start-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets inline start border color to stone-100",
+  },
+  {
+    label: "border-s-stone-200",
+    value: "border-s-stone-200",
+    styles:
+      "border-inline-start-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets inline start border color to stone-200",
+  },
+  {
+    label: "border-s-stone-300",
+    value: "border-s-stone-300",
+    styles:
+      "border-inline-start-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets inline start border color to stone-300",
+  },
+  {
+    label: "border-s-stone-400",
+    value: "border-s-stone-400",
+    styles:
+      "border-inline-start-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets inline start border color to stone-400",
+  },
+  {
+    label: "border-s-stone-500",
+    value: "border-s-stone-500",
+    styles:
+      "border-inline-start-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets inline start border color to stone-500",
+  },
+  {
+    label: "border-s-stone-600",
+    value: "border-s-stone-600",
+    styles:
+      "border-inline-start-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets inline start border color to stone-600",
+  },
+  {
+    label: "border-s-stone-700",
+    value: "border-s-stone-700",
+    styles:
+      "border-inline-start-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets inline start border color to stone-700",
+  },
+  {
+    label: "border-s-stone-800",
+    value: "border-s-stone-800",
+    styles:
+      "border-inline-start-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets inline start border color to stone-800",
+  },
+  {
+    label: "border-s-stone-900",
+    value: "border-s-stone-900",
+    styles:
+      "border-inline-start-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets inline start border color to stone-900",
+  },
+  {
+    label: "border-s-stone-950",
+    value: "border-s-stone-950",
+    styles:
+      "border-inline-start-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets inline start border color to stone-950",
+  },
+  {
+    label: "border-s-(<custom-property>)",
+    value: "border-s-(<custom-property>)",
+    styles: "border-inline-start-color: var(<custom-property>);",
+    description: "Sets inline start border color to (<custom-property>)",
+  },
+  {
+    label: "border-s-[<value>]",
+    value: "border-s-[<value>]",
+    styles: "border-inline-start-color: <value>;",
+    description: "Sets inline start border color to [<value>]",
+  },
+  {
+    label: "border-e-inherit",
+    value: "border-e-inherit",
+    styles: "border-inline-end-color: inherit;",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-e-current",
+    value: "border-e-current",
+    styles: "border-inline-end-color: currentColor;",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-e-transparent",
+    value: "border-e-transparent",
+    styles: "border-inline-end-color: transparent;",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-e-black",
+    value: "border-e-black",
+    styles: "border-inline-end-color: var(--color-black); /* #000 */",
+    description: "Sets inline end border color to black",
+  },
+  {
+    label: "border-e-white",
+    value: "border-e-white",
+    styles: "border-inline-end-color: var(--color-white); /* #fff */",
+    description: "Sets inline end border color to white",
+  },
+  {
+    label: "border-e-red-50",
+    value: "border-e-red-50",
+    styles:
+      "border-inline-end-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets inline end border color to red-50",
+  },
+  {
+    label: "border-e-red-100",
+    value: "border-e-red-100",
+    styles:
+      "border-inline-end-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets inline end border color to red-100",
+  },
+  {
+    label: "border-e-red-200",
+    value: "border-e-red-200",
+    styles:
+      "border-inline-end-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets inline end border color to red-200",
+  },
+  {
+    label: "border-e-red-300",
+    value: "border-e-red-300",
+    styles:
+      "border-inline-end-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets inline end border color to red-300",
+  },
+  {
+    label: "border-e-red-400",
+    value: "border-e-red-400",
+    styles:
+      "border-inline-end-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets inline end border color to red-400",
+  },
+  {
+    label: "border-e-red-500",
+    value: "border-e-red-500",
+    styles:
+      "border-inline-end-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets inline end border color to red-500",
+  },
+  {
+    label: "border-e-red-600",
+    value: "border-e-red-600",
+    styles:
+      "border-inline-end-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets inline end border color to red-600",
+  },
+  {
+    label: "border-e-red-700",
+    value: "border-e-red-700",
+    styles:
+      "border-inline-end-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets inline end border color to red-700",
+  },
+  {
+    label: "border-e-red-800",
+    value: "border-e-red-800",
+    styles:
+      "border-inline-end-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets inline end border color to red-800",
+  },
+  {
+    label: "border-e-red-900",
+    value: "border-e-red-900",
+    styles:
+      "border-inline-end-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets inline end border color to red-900",
+  },
+  {
+    label: "border-e-red-950",
+    value: "border-e-red-950",
+    styles:
+      "border-inline-end-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets inline end border color to red-950",
+  },
+  {
+    label: "border-e-orange-50",
+    value: "border-e-orange-50",
+    styles:
+      "border-inline-end-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets inline end border color to orange-50",
+  },
+  {
+    label: "border-e-orange-100",
+    value: "border-e-orange-100",
+    styles:
+      "border-inline-end-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets inline end border color to orange-100",
+  },
+  {
+    label: "border-e-orange-200",
+    value: "border-e-orange-200",
+    styles:
+      "border-inline-end-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets inline end border color to orange-200",
+  },
+  {
+    label: "border-e-orange-300",
+    value: "border-e-orange-300",
+    styles:
+      "border-inline-end-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets inline end border color to orange-300",
+  },
+  {
+    label: "border-e-orange-400",
+    value: "border-e-orange-400",
+    styles:
+      "border-inline-end-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets inline end border color to orange-400",
+  },
+  {
+    label: "border-e-orange-500",
+    value: "border-e-orange-500",
+    styles:
+      "border-inline-end-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets inline end border color to orange-500",
+  },
+  {
+    label: "border-e-orange-600",
+    value: "border-e-orange-600",
+    styles:
+      "border-inline-end-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets inline end border color to orange-600",
+  },
+  {
+    label: "border-e-orange-700",
+    value: "border-e-orange-700",
+    styles:
+      "border-inline-end-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets inline end border color to orange-700",
+  },
+  {
+    label: "border-e-orange-800",
+    value: "border-e-orange-800",
+    styles:
+      "border-inline-end-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets inline end border color to orange-800",
+  },
+  {
+    label: "border-e-orange-900",
+    value: "border-e-orange-900",
+    styles:
+      "border-inline-end-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets inline end border color to orange-900",
+  },
+  {
+    label: "border-e-orange-950",
+    value: "border-e-orange-950",
+    styles:
+      "border-inline-end-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets inline end border color to orange-950",
+  },
+  {
+    label: "border-e-amber-50",
+    value: "border-e-amber-50",
+    styles:
+      "border-inline-end-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets inline end border color to amber-50",
+  },
+  {
+    label: "border-e-amber-100",
+    value: "border-e-amber-100",
+    styles:
+      "border-inline-end-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets inline end border color to amber-100",
+  },
+  {
+    label: "border-e-amber-200",
+    value: "border-e-amber-200",
+    styles:
+      "border-inline-end-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets inline end border color to amber-200",
+  },
+  {
+    label: "border-e-amber-300",
+    value: "border-e-amber-300",
+    styles:
+      "border-inline-end-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets inline end border color to amber-300",
+  },
+  {
+    label: "border-e-amber-400",
+    value: "border-e-amber-400",
+    styles:
+      "border-inline-end-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets inline end border color to amber-400",
+  },
+  {
+    label: "border-e-amber-500",
+    value: "border-e-amber-500",
+    styles:
+      "border-inline-end-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets inline end border color to amber-500",
+  },
+  {
+    label: "border-e-amber-600",
+    value: "border-e-amber-600",
+    styles:
+      "border-inline-end-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets inline end border color to amber-600",
+  },
+  {
+    label: "border-e-amber-700",
+    value: "border-e-amber-700",
+    styles:
+      "border-inline-end-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets inline end border color to amber-700",
+  },
+  {
+    label: "border-e-amber-800",
+    value: "border-e-amber-800",
+    styles:
+      "border-inline-end-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets inline end border color to amber-800",
+  },
+  {
+    label: "border-e-amber-900",
+    value: "border-e-amber-900",
+    styles:
+      "border-inline-end-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets inline end border color to amber-900",
+  },
+  {
+    label: "border-e-amber-950",
+    value: "border-e-amber-950",
+    styles:
+      "border-inline-end-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets inline end border color to amber-950",
+  },
+  {
+    label: "border-e-yellow-50",
+    value: "border-e-yellow-50",
+    styles:
+      "border-inline-end-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets inline end border color to yellow-50",
+  },
+  {
+    label: "border-e-yellow-100",
+    value: "border-e-yellow-100",
+    styles:
+      "border-inline-end-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets inline end border color to yellow-100",
+  },
+  {
+    label: "border-e-yellow-200",
+    value: "border-e-yellow-200",
+    styles:
+      "border-inline-end-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets inline end border color to yellow-200",
+  },
+  {
+    label: "border-e-yellow-300",
+    value: "border-e-yellow-300",
+    styles:
+      "border-inline-end-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets inline end border color to yellow-300",
+  },
+  {
+    label: "border-e-yellow-400",
+    value: "border-e-yellow-400",
+    styles:
+      "border-inline-end-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets inline end border color to yellow-400",
+  },
+  {
+    label: "border-e-yellow-500",
+    value: "border-e-yellow-500",
+    styles:
+      "border-inline-end-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets inline end border color to yellow-500",
+  },
+  {
+    label: "border-e-yellow-600",
+    value: "border-e-yellow-600",
+    styles:
+      "border-inline-end-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets inline end border color to yellow-600",
+  },
+  {
+    label: "border-e-yellow-700",
+    value: "border-e-yellow-700",
+    styles:
+      "border-inline-end-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets inline end border color to yellow-700",
+  },
+  {
+    label: "border-e-yellow-800",
+    value: "border-e-yellow-800",
+    styles:
+      "border-inline-end-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets inline end border color to yellow-800",
+  },
+  {
+    label: "border-e-yellow-900",
+    value: "border-e-yellow-900",
+    styles:
+      "border-inline-end-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets inline end border color to yellow-900",
+  },
+  {
+    label: "border-e-yellow-950",
+    value: "border-e-yellow-950",
+    styles:
+      "border-inline-end-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets inline end border color to yellow-950",
+  },
+  {
+    label: "border-e-lime-50",
+    value: "border-e-lime-50",
+    styles:
+      "border-inline-end-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets inline end border color to lime-50",
+  },
+  {
+    label: "border-e-lime-100",
+    value: "border-e-lime-100",
+    styles:
+      "border-inline-end-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets inline end border color to lime-100",
+  },
+  {
+    label: "border-e-lime-200",
+    value: "border-e-lime-200",
+    styles:
+      "border-inline-end-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets inline end border color to lime-200",
+  },
+  {
+    label: "border-e-lime-300",
+    value: "border-e-lime-300",
+    styles:
+      "border-inline-end-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets inline end border color to lime-300",
+  },
+  {
+    label: "border-e-lime-400",
+    value: "border-e-lime-400",
+    styles:
+      "border-inline-end-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets inline end border color to lime-400",
+  },
+  {
+    label: "border-e-lime-500",
+    value: "border-e-lime-500",
+    styles:
+      "border-inline-end-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets inline end border color to lime-500",
+  },
+  {
+    label: "border-e-lime-600",
+    value: "border-e-lime-600",
+    styles:
+      "border-inline-end-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets inline end border color to lime-600",
+  },
+  {
+    label: "border-e-lime-700",
+    value: "border-e-lime-700",
+    styles:
+      "border-inline-end-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets inline end border color to lime-700",
+  },
+  {
+    label: "border-e-lime-800",
+    value: "border-e-lime-800",
+    styles:
+      "border-inline-end-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets inline end border color to lime-800",
+  },
+  {
+    label: "border-e-lime-900",
+    value: "border-e-lime-900",
+    styles:
+      "border-inline-end-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets inline end border color to lime-900",
+  },
+  {
+    label: "border-e-lime-950",
+    value: "border-e-lime-950",
+    styles:
+      "border-inline-end-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets inline end border color to lime-950",
+  },
+  {
+    label: "border-e-green-50",
+    value: "border-e-green-50",
+    styles:
+      "border-inline-end-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets inline end border color to green-50",
+  },
+  {
+    label: "border-e-green-100",
+    value: "border-e-green-100",
+    styles:
+      "border-inline-end-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets inline end border color to green-100",
+  },
+  {
+    label: "border-e-green-200",
+    value: "border-e-green-200",
+    styles:
+      "border-inline-end-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets inline end border color to green-200",
+  },
+  {
+    label: "border-e-green-300",
+    value: "border-e-green-300",
+    styles:
+      "border-inline-end-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets inline end border color to green-300",
+  },
+  {
+    label: "border-e-green-400",
+    value: "border-e-green-400",
+    styles:
+      "border-inline-end-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets inline end border color to green-400",
+  },
+  {
+    label: "border-e-green-500",
+    value: "border-e-green-500",
+    styles:
+      "border-inline-end-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets inline end border color to green-500",
+  },
+  {
+    label: "border-e-green-600",
+    value: "border-e-green-600",
+    styles:
+      "border-inline-end-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets inline end border color to green-600",
+  },
+  {
+    label: "border-e-green-700",
+    value: "border-e-green-700",
+    styles:
+      "border-inline-end-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets inline end border color to green-700",
+  },
+  {
+    label: "border-e-green-800",
+    value: "border-e-green-800",
+    styles:
+      "border-inline-end-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets inline end border color to green-800",
+  },
+  {
+    label: "border-e-green-900",
+    value: "border-e-green-900",
+    styles:
+      "border-inline-end-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets inline end border color to green-900",
+  },
+  {
+    label: "border-e-green-950",
+    value: "border-e-green-950",
+    styles:
+      "border-inline-end-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets inline end border color to green-950",
+  },
+  {
+    label: "border-e-emerald-50",
+    value: "border-e-emerald-50",
+    styles:
+      "border-inline-end-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets inline end border color to emerald-50",
+  },
+  {
+    label: "border-e-emerald-100",
+    value: "border-e-emerald-100",
+    styles:
+      "border-inline-end-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets inline end border color to emerald-100",
+  },
+  {
+    label: "border-e-emerald-200",
+    value: "border-e-emerald-200",
+    styles:
+      "border-inline-end-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets inline end border color to emerald-200",
+  },
+  {
+    label: "border-e-emerald-300",
+    value: "border-e-emerald-300",
+    styles:
+      "border-inline-end-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets inline end border color to emerald-300",
+  },
+  {
+    label: "border-e-emerald-400",
+    value: "border-e-emerald-400",
+    styles:
+      "border-inline-end-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets inline end border color to emerald-400",
+  },
+  {
+    label: "border-e-emerald-500",
+    value: "border-e-emerald-500",
+    styles:
+      "border-inline-end-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets inline end border color to emerald-500",
+  },
+  {
+    label: "border-e-emerald-600",
+    value: "border-e-emerald-600",
+    styles:
+      "border-inline-end-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets inline end border color to emerald-600",
+  },
+  {
+    label: "border-e-emerald-700",
+    value: "border-e-emerald-700",
+    styles:
+      "border-inline-end-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets inline end border color to emerald-700",
+  },
+  {
+    label: "border-e-emerald-800",
+    value: "border-e-emerald-800",
+    styles:
+      "border-inline-end-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets inline end border color to emerald-800",
+  },
+  {
+    label: "border-e-emerald-900",
+    value: "border-e-emerald-900",
+    styles:
+      "border-inline-end-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets inline end border color to emerald-900",
+  },
+  {
+    label: "border-e-emerald-950",
+    value: "border-e-emerald-950",
+    styles:
+      "border-inline-end-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets inline end border color to emerald-950",
+  },
+  {
+    label: "border-e-teal-50",
+    value: "border-e-teal-50",
+    styles:
+      "border-inline-end-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets inline end border color to teal-50",
+  },
+  {
+    label: "border-e-teal-100",
+    value: "border-e-teal-100",
+    styles:
+      "border-inline-end-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets inline end border color to teal-100",
+  },
+  {
+    label: "border-e-teal-200",
+    value: "border-e-teal-200",
+    styles:
+      "border-inline-end-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets inline end border color to teal-200",
+  },
+  {
+    label: "border-e-teal-300",
+    value: "border-e-teal-300",
+    styles:
+      "border-inline-end-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets inline end border color to teal-300",
+  },
+  {
+    label: "border-e-teal-400",
+    value: "border-e-teal-400",
+    styles:
+      "border-inline-end-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets inline end border color to teal-400",
+  },
+  {
+    label: "border-e-teal-500",
+    value: "border-e-teal-500",
+    styles:
+      "border-inline-end-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets inline end border color to teal-500",
+  },
+  {
+    label: "border-e-teal-600",
+    value: "border-e-teal-600",
+    styles:
+      "border-inline-end-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets inline end border color to teal-600",
+  },
+  {
+    label: "border-e-teal-700",
+    value: "border-e-teal-700",
+    styles:
+      "border-inline-end-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets inline end border color to teal-700",
+  },
+  {
+    label: "border-e-teal-800",
+    value: "border-e-teal-800",
+    styles:
+      "border-inline-end-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets inline end border color to teal-800",
+  },
+  {
+    label: "border-e-teal-900",
+    value: "border-e-teal-900",
+    styles:
+      "border-inline-end-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets inline end border color to teal-900",
+  },
+  {
+    label: "border-e-teal-950",
+    value: "border-e-teal-950",
+    styles:
+      "border-inline-end-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets inline end border color to teal-950",
+  },
+  {
+    label: "border-e-cyan-50",
+    value: "border-e-cyan-50",
+    styles:
+      "border-inline-end-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets inline end border color to cyan-50",
+  },
+  {
+    label: "border-e-cyan-100",
+    value: "border-e-cyan-100",
+    styles:
+      "border-inline-end-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets inline end border color to cyan-100",
+  },
+  {
+    label: "border-e-cyan-200",
+    value: "border-e-cyan-200",
+    styles:
+      "border-inline-end-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets inline end border color to cyan-200",
+  },
+  {
+    label: "border-e-cyan-300",
+    value: "border-e-cyan-300",
+    styles:
+      "border-inline-end-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets inline end border color to cyan-300",
+  },
+  {
+    label: "border-e-cyan-400",
+    value: "border-e-cyan-400",
+    styles:
+      "border-inline-end-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets inline end border color to cyan-400",
+  },
+  {
+    label: "border-e-cyan-500",
+    value: "border-e-cyan-500",
+    styles:
+      "border-inline-end-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets inline end border color to cyan-500",
+  },
+  {
+    label: "border-e-cyan-600",
+    value: "border-e-cyan-600",
+    styles:
+      "border-inline-end-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets inline end border color to cyan-600",
+  },
+  {
+    label: "border-e-cyan-700",
+    value: "border-e-cyan-700",
+    styles:
+      "border-inline-end-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets inline end border color to cyan-700",
+  },
+  {
+    label: "border-e-cyan-800",
+    value: "border-e-cyan-800",
+    styles:
+      "border-inline-end-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets inline end border color to cyan-800",
+  },
+  {
+    label: "border-e-cyan-900",
+    value: "border-e-cyan-900",
+    styles:
+      "border-inline-end-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets inline end border color to cyan-900",
+  },
+  {
+    label: "border-e-cyan-950",
+    value: "border-e-cyan-950",
+    styles:
+      "border-inline-end-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets inline end border color to cyan-950",
+  },
+  {
+    label: "border-e-sky-50",
+    value: "border-e-sky-50",
+    styles:
+      "border-inline-end-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets inline end border color to sky-50",
+  },
+  {
+    label: "border-e-sky-100",
+    value: "border-e-sky-100",
+    styles:
+      "border-inline-end-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets inline end border color to sky-100",
+  },
+  {
+    label: "border-e-sky-200",
+    value: "border-e-sky-200",
+    styles:
+      "border-inline-end-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets inline end border color to sky-200",
+  },
+  {
+    label: "border-e-sky-300",
+    value: "border-e-sky-300",
+    styles:
+      "border-inline-end-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets inline end border color to sky-300",
+  },
+  {
+    label: "border-e-sky-400",
+    value: "border-e-sky-400",
+    styles:
+      "border-inline-end-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets inline end border color to sky-400",
+  },
+  {
+    label: "border-e-sky-500",
+    value: "border-e-sky-500",
+    styles:
+      "border-inline-end-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets inline end border color to sky-500",
+  },
+  {
+    label: "border-e-sky-600",
+    value: "border-e-sky-600",
+    styles:
+      "border-inline-end-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets inline end border color to sky-600",
+  },
+  {
+    label: "border-e-sky-700",
+    value: "border-e-sky-700",
+    styles:
+      "border-inline-end-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets inline end border color to sky-700",
+  },
+  {
+    label: "border-e-sky-800",
+    value: "border-e-sky-800",
+    styles:
+      "border-inline-end-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets inline end border color to sky-800",
+  },
+  {
+    label: "border-e-sky-900",
+    value: "border-e-sky-900",
+    styles:
+      "border-inline-end-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets inline end border color to sky-900",
+  },
+  {
+    label: "border-e-sky-950",
+    value: "border-e-sky-950",
+    styles:
+      "border-inline-end-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets inline end border color to sky-950",
+  },
+  {
+    label: "border-e-blue-50",
+    value: "border-e-blue-50",
+    styles:
+      "border-inline-end-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets inline end border color to blue-50",
+  },
+  {
+    label: "border-e-blue-100",
+    value: "border-e-blue-100",
+    styles:
+      "border-inline-end-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets inline end border color to blue-100",
+  },
+  {
+    label: "border-e-blue-200",
+    value: "border-e-blue-200",
+    styles:
+      "border-inline-end-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets inline end border color to blue-200",
+  },
+  {
+    label: "border-e-blue-300",
+    value: "border-e-blue-300",
+    styles:
+      "border-inline-end-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets inline end border color to blue-300",
+  },
+  {
+    label: "border-e-blue-400",
+    value: "border-e-blue-400",
+    styles:
+      "border-inline-end-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets inline end border color to blue-400",
+  },
+  {
+    label: "border-e-blue-500",
+    value: "border-e-blue-500",
+    styles:
+      "border-inline-end-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets inline end border color to blue-500",
+  },
+  {
+    label: "border-e-blue-600",
+    value: "border-e-blue-600",
+    styles:
+      "border-inline-end-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets inline end border color to blue-600",
+  },
+  {
+    label: "border-e-blue-700",
+    value: "border-e-blue-700",
+    styles:
+      "border-inline-end-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets inline end border color to blue-700",
+  },
+  {
+    label: "border-e-blue-800",
+    value: "border-e-blue-800",
+    styles:
+      "border-inline-end-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets inline end border color to blue-800",
+  },
+  {
+    label: "border-e-blue-900",
+    value: "border-e-blue-900",
+    styles:
+      "border-inline-end-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets inline end border color to blue-900",
+  },
+  {
+    label: "border-e-blue-950",
+    value: "border-e-blue-950",
+    styles:
+      "border-inline-end-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets inline end border color to blue-950",
+  },
+  {
+    label: "border-e-indigo-50",
+    value: "border-e-indigo-50",
+    styles:
+      "border-inline-end-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets inline end border color to indigo-50",
+  },
+  {
+    label: "border-e-indigo-100",
+    value: "border-e-indigo-100",
+    styles:
+      "border-inline-end-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets inline end border color to indigo-100",
+  },
+  {
+    label: "border-e-indigo-200",
+    value: "border-e-indigo-200",
+    styles:
+      "border-inline-end-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets inline end border color to indigo-200",
+  },
+  {
+    label: "border-e-indigo-300",
+    value: "border-e-indigo-300",
+    styles:
+      "border-inline-end-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets inline end border color to indigo-300",
+  },
+  {
+    label: "border-e-indigo-400",
+    value: "border-e-indigo-400",
+    styles:
+      "border-inline-end-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets inline end border color to indigo-400",
+  },
+  {
+    label: "border-e-indigo-500",
+    value: "border-e-indigo-500",
+    styles:
+      "border-inline-end-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets inline end border color to indigo-500",
+  },
+  {
+    label: "border-e-indigo-600",
+    value: "border-e-indigo-600",
+    styles:
+      "border-inline-end-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets inline end border color to indigo-600",
+  },
+  {
+    label: "border-e-indigo-700",
+    value: "border-e-indigo-700",
+    styles:
+      "border-inline-end-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets inline end border color to indigo-700",
+  },
+  {
+    label: "border-e-indigo-800",
+    value: "border-e-indigo-800",
+    styles:
+      "border-inline-end-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets inline end border color to indigo-800",
+  },
+  {
+    label: "border-e-indigo-900",
+    value: "border-e-indigo-900",
+    styles:
+      "border-inline-end-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets inline end border color to indigo-900",
+  },
+  {
+    label: "border-e-indigo-950",
+    value: "border-e-indigo-950",
+    styles:
+      "border-inline-end-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets inline end border color to indigo-950",
+  },
+  {
+    label: "border-e-violet-50",
+    value: "border-e-violet-50",
+    styles:
+      "border-inline-end-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets inline end border color to violet-50",
+  },
+  {
+    label: "border-e-violet-100",
+    value: "border-e-violet-100",
+    styles:
+      "border-inline-end-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets inline end border color to violet-100",
+  },
+  {
+    label: "border-e-violet-200",
+    value: "border-e-violet-200",
+    styles:
+      "border-inline-end-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets inline end border color to violet-200",
+  },
+  {
+    label: "border-e-violet-300",
+    value: "border-e-violet-300",
+    styles:
+      "border-inline-end-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets inline end border color to violet-300",
+  },
+  {
+    label: "border-e-violet-400",
+    value: "border-e-violet-400",
+    styles:
+      "border-inline-end-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets inline end border color to violet-400",
+  },
+  {
+    label: "border-e-violet-500",
+    value: "border-e-violet-500",
+    styles:
+      "border-inline-end-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets inline end border color to violet-500",
+  },
+  {
+    label: "border-e-violet-600",
+    value: "border-e-violet-600",
+    styles:
+      "border-inline-end-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets inline end border color to violet-600",
+  },
+  {
+    label: "border-e-violet-700",
+    value: "border-e-violet-700",
+    styles:
+      "border-inline-end-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets inline end border color to violet-700",
+  },
+  {
+    label: "border-e-violet-800",
+    value: "border-e-violet-800",
+    styles:
+      "border-inline-end-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets inline end border color to violet-800",
+  },
+  {
+    label: "border-e-violet-900",
+    value: "border-e-violet-900",
+    styles:
+      "border-inline-end-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets inline end border color to violet-900",
+  },
+  {
+    label: "border-e-violet-950",
+    value: "border-e-violet-950",
+    styles:
+      "border-inline-end-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets inline end border color to violet-950",
+  },
+  {
+    label: "border-e-purple-50",
+    value: "border-e-purple-50",
+    styles:
+      "border-inline-end-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets inline end border color to purple-50",
+  },
+  {
+    label: "border-e-purple-100",
+    value: "border-e-purple-100",
+    styles:
+      "border-inline-end-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets inline end border color to purple-100",
+  },
+  {
+    label: "border-e-purple-200",
+    value: "border-e-purple-200",
+    styles:
+      "border-inline-end-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets inline end border color to purple-200",
+  },
+  {
+    label: "border-e-purple-300",
+    value: "border-e-purple-300",
+    styles:
+      "border-inline-end-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets inline end border color to purple-300",
+  },
+  {
+    label: "border-e-purple-400",
+    value: "border-e-purple-400",
+    styles:
+      "border-inline-end-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets inline end border color to purple-400",
+  },
+  {
+    label: "border-e-purple-500",
+    value: "border-e-purple-500",
+    styles:
+      "border-inline-end-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets inline end border color to purple-500",
+  },
+  {
+    label: "border-e-purple-600",
+    value: "border-e-purple-600",
+    styles:
+      "border-inline-end-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets inline end border color to purple-600",
+  },
+  {
+    label: "border-e-purple-700",
+    value: "border-e-purple-700",
+    styles:
+      "border-inline-end-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets inline end border color to purple-700",
+  },
+  {
+    label: "border-e-purple-800",
+    value: "border-e-purple-800",
+    styles:
+      "border-inline-end-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets inline end border color to purple-800",
+  },
+  {
+    label: "border-e-purple-900",
+    value: "border-e-purple-900",
+    styles:
+      "border-inline-end-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets inline end border color to purple-900",
+  },
+  {
+    label: "border-e-purple-950",
+    value: "border-e-purple-950",
+    styles:
+      "border-inline-end-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets inline end border color to purple-950",
+  },
+  {
+    label: "border-e-fuchsia-50",
+    value: "border-e-fuchsia-50",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets inline end border color to fuchsia-50",
+  },
+  {
+    label: "border-e-fuchsia-100",
+    value: "border-e-fuchsia-100",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets inline end border color to fuchsia-100",
+  },
+  {
+    label: "border-e-fuchsia-200",
+    value: "border-e-fuchsia-200",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets inline end border color to fuchsia-200",
+  },
+  {
+    label: "border-e-fuchsia-300",
+    value: "border-e-fuchsia-300",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets inline end border color to fuchsia-300",
+  },
+  {
+    label: "border-e-fuchsia-400",
+    value: "border-e-fuchsia-400",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets inline end border color to fuchsia-400",
+  },
+  {
+    label: "border-e-fuchsia-500",
+    value: "border-e-fuchsia-500",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets inline end border color to fuchsia-500",
+  },
+  {
+    label: "border-e-fuchsia-600",
+    value: "border-e-fuchsia-600",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets inline end border color to fuchsia-600",
+  },
+  {
+    label: "border-e-fuchsia-700",
+    value: "border-e-fuchsia-700",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets inline end border color to fuchsia-700",
+  },
+  {
+    label: "border-e-fuchsia-800",
+    value: "border-e-fuchsia-800",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets inline end border color to fuchsia-800",
+  },
+  {
+    label: "border-e-fuchsia-900",
+    value: "border-e-fuchsia-900",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets inline end border color to fuchsia-900",
+  },
+  {
+    label: "border-e-fuchsia-950",
+    value: "border-e-fuchsia-950",
+    styles:
+      "border-inline-end-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets inline end border color to fuchsia-950",
+  },
+  {
+    label: "border-e-pink-50",
+    value: "border-e-pink-50",
+    styles:
+      "border-inline-end-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets inline end border color to pink-50",
+  },
+  {
+    label: "border-e-pink-100",
+    value: "border-e-pink-100",
+    styles:
+      "border-inline-end-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets inline end border color to pink-100",
+  },
+  {
+    label: "border-e-pink-200",
+    value: "border-e-pink-200",
+    styles:
+      "border-inline-end-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets inline end border color to pink-200",
+  },
+  {
+    label: "border-e-pink-300",
+    value: "border-e-pink-300",
+    styles:
+      "border-inline-end-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets inline end border color to pink-300",
+  },
+  {
+    label: "border-e-pink-400",
+    value: "border-e-pink-400",
+    styles:
+      "border-inline-end-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets inline end border color to pink-400",
+  },
+  {
+    label: "border-e-pink-500",
+    value: "border-e-pink-500",
+    styles:
+      "border-inline-end-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets inline end border color to pink-500",
+  },
+  {
+    label: "border-e-pink-600",
+    value: "border-e-pink-600",
+    styles:
+      "border-inline-end-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets inline end border color to pink-600",
+  },
+  {
+    label: "border-e-pink-700",
+    value: "border-e-pink-700",
+    styles:
+      "border-inline-end-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets inline end border color to pink-700",
+  },
+  {
+    label: "border-e-pink-800",
+    value: "border-e-pink-800",
+    styles:
+      "border-inline-end-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets inline end border color to pink-800",
+  },
+  {
+    label: "border-e-pink-900",
+    value: "border-e-pink-900",
+    styles:
+      "border-inline-end-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets inline end border color to pink-900",
+  },
+  {
+    label: "border-e-pink-950",
+    value: "border-e-pink-950",
+    styles:
+      "border-inline-end-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets inline end border color to pink-950",
+  },
+  {
+    label: "border-e-rose-50",
+    value: "border-e-rose-50",
+    styles:
+      "border-inline-end-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets inline end border color to rose-50",
+  },
+  {
+    label: "border-e-rose-100",
+    value: "border-e-rose-100",
+    styles:
+      "border-inline-end-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets inline end border color to rose-100",
+  },
+  {
+    label: "border-e-rose-200",
+    value: "border-e-rose-200",
+    styles:
+      "border-inline-end-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets inline end border color to rose-200",
+  },
+  {
+    label: "border-e-rose-300",
+    value: "border-e-rose-300",
+    styles:
+      "border-inline-end-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets inline end border color to rose-300",
+  },
+  {
+    label: "border-e-rose-400",
+    value: "border-e-rose-400",
+    styles:
+      "border-inline-end-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets inline end border color to rose-400",
+  },
+  {
+    label: "border-e-rose-500",
+    value: "border-e-rose-500",
+    styles:
+      "border-inline-end-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets inline end border color to rose-500",
+  },
+  {
+    label: "border-e-rose-600",
+    value: "border-e-rose-600",
+    styles:
+      "border-inline-end-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets inline end border color to rose-600",
+  },
+  {
+    label: "border-e-rose-700",
+    value: "border-e-rose-700",
+    styles:
+      "border-inline-end-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets inline end border color to rose-700",
+  },
+  {
+    label: "border-e-rose-800",
+    value: "border-e-rose-800",
+    styles:
+      "border-inline-end-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets inline end border color to rose-800",
+  },
+  {
+    label: "border-e-rose-900",
+    value: "border-e-rose-900",
+    styles:
+      "border-inline-end-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets inline end border color to rose-900",
+  },
+  {
+    label: "border-e-rose-950",
+    value: "border-e-rose-950",
+    styles:
+      "border-inline-end-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets inline end border color to rose-950",
+  },
+  {
+    label: "border-e-slate-50",
+    value: "border-e-slate-50",
+    styles:
+      "border-inline-end-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets inline end border color to slate-50",
+  },
+  {
+    label: "border-e-slate-100",
+    value: "border-e-slate-100",
+    styles:
+      "border-inline-end-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets inline end border color to slate-100",
+  },
+  {
+    label: "border-e-slate-200",
+    value: "border-e-slate-200",
+    styles:
+      "border-inline-end-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets inline end border color to slate-200",
+  },
+  {
+    label: "border-e-slate-300",
+    value: "border-e-slate-300",
+    styles:
+      "border-inline-end-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets inline end border color to slate-300",
+  },
+  {
+    label: "border-e-slate-400",
+    value: "border-e-slate-400",
+    styles:
+      "border-inline-end-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets inline end border color to slate-400",
+  },
+  {
+    label: "border-e-slate-500",
+    value: "border-e-slate-500",
+    styles:
+      "border-inline-end-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets inline end border color to slate-500",
+  },
+  {
+    label: "border-e-slate-600",
+    value: "border-e-slate-600",
+    styles:
+      "border-inline-end-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets inline end border color to slate-600",
+  },
+  {
+    label: "border-e-slate-700",
+    value: "border-e-slate-700",
+    styles:
+      "border-inline-end-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets inline end border color to slate-700",
+  },
+  {
+    label: "border-e-slate-800",
+    value: "border-e-slate-800",
+    styles:
+      "border-inline-end-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets inline end border color to slate-800",
+  },
+  {
+    label: "border-e-slate-900",
+    value: "border-e-slate-900",
+    styles:
+      "border-inline-end-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets inline end border color to slate-900",
+  },
+  {
+    label: "border-e-slate-950",
+    value: "border-e-slate-950",
+    styles:
+      "border-inline-end-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets inline end border color to slate-950",
+  },
+  {
+    label: "border-e-gray-50",
+    value: "border-e-gray-50",
+    styles:
+      "border-inline-end-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets inline end border color to gray-50",
+  },
+  {
+    label: "border-e-gray-100",
+    value: "border-e-gray-100",
+    styles:
+      "border-inline-end-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets inline end border color to gray-100",
+  },
+  {
+    label: "border-e-gray-200",
+    value: "border-e-gray-200",
+    styles:
+      "border-inline-end-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets inline end border color to gray-200",
+  },
+  {
+    label: "border-e-gray-300",
+    value: "border-e-gray-300",
+    styles:
+      "border-inline-end-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets inline end border color to gray-300",
+  },
+  {
+    label: "border-e-gray-400",
+    value: "border-e-gray-400",
+    styles:
+      "border-inline-end-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets inline end border color to gray-400",
+  },
+  {
+    label: "border-e-gray-500",
+    value: "border-e-gray-500",
+    styles:
+      "border-inline-end-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets inline end border color to gray-500",
+  },
+  {
+    label: "border-e-gray-600",
+    value: "border-e-gray-600",
+    styles:
+      "border-inline-end-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets inline end border color to gray-600",
+  },
+  {
+    label: "border-e-gray-700",
+    value: "border-e-gray-700",
+    styles:
+      "border-inline-end-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets inline end border color to gray-700",
+  },
+  {
+    label: "border-e-gray-800",
+    value: "border-e-gray-800",
+    styles:
+      "border-inline-end-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets inline end border color to gray-800",
+  },
+  {
+    label: "border-e-gray-900",
+    value: "border-e-gray-900",
+    styles:
+      "border-inline-end-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets inline end border color to gray-900",
+  },
+  {
+    label: "border-e-gray-950",
+    value: "border-e-gray-950",
+    styles:
+      "border-inline-end-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets inline end border color to gray-950",
+  },
+  {
+    label: "border-e-zinc-50",
+    value: "border-e-zinc-50",
+    styles:
+      "border-inline-end-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets inline end border color to zinc-50",
+  },
+  {
+    label: "border-e-zinc-100",
+    value: "border-e-zinc-100",
+    styles:
+      "border-inline-end-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets inline end border color to zinc-100",
+  },
+  {
+    label: "border-e-zinc-200",
+    value: "border-e-zinc-200",
+    styles:
+      "border-inline-end-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets inline end border color to zinc-200",
+  },
+  {
+    label: "border-e-zinc-300",
+    value: "border-e-zinc-300",
+    styles:
+      "border-inline-end-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets inline end border color to zinc-300",
+  },
+  {
+    label: "border-e-zinc-400",
+    value: "border-e-zinc-400",
+    styles:
+      "border-inline-end-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets inline end border color to zinc-400",
+  },
+  {
+    label: "border-e-zinc-500",
+    value: "border-e-zinc-500",
+    styles:
+      "border-inline-end-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets inline end border color to zinc-500",
+  },
+  {
+    label: "border-e-zinc-600",
+    value: "border-e-zinc-600",
+    styles:
+      "border-inline-end-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets inline end border color to zinc-600",
+  },
+  {
+    label: "border-e-zinc-700",
+    value: "border-e-zinc-700",
+    styles:
+      "border-inline-end-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets inline end border color to zinc-700",
+  },
+  {
+    label: "border-e-zinc-800",
+    value: "border-e-zinc-800",
+    styles:
+      "border-inline-end-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets inline end border color to zinc-800",
+  },
+  {
+    label: "border-e-zinc-900",
+    value: "border-e-zinc-900",
+    styles:
+      "border-inline-end-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets inline end border color to zinc-900",
+  },
+  {
+    label: "border-e-zinc-950",
+    value: "border-e-zinc-950",
+    styles:
+      "border-inline-end-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets inline end border color to zinc-950",
+  },
+  {
+    label: "border-e-neutral-50",
+    value: "border-e-neutral-50",
+    styles:
+      "border-inline-end-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets inline end border color to neutral-50",
+  },
+  {
+    label: "border-e-neutral-100",
+    value: "border-e-neutral-100",
+    styles:
+      "border-inline-end-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets inline end border color to neutral-100",
+  },
+  {
+    label: "border-e-neutral-200",
+    value: "border-e-neutral-200",
+    styles:
+      "border-inline-end-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets inline end border color to neutral-200",
+  },
+  {
+    label: "border-e-neutral-300",
+    value: "border-e-neutral-300",
+    styles:
+      "border-inline-end-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets inline end border color to neutral-300",
+  },
+  {
+    label: "border-e-neutral-400",
+    value: "border-e-neutral-400",
+    styles:
+      "border-inline-end-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets inline end border color to neutral-400",
+  },
+  {
+    label: "border-e-neutral-500",
+    value: "border-e-neutral-500",
+    styles:
+      "border-inline-end-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets inline end border color to neutral-500",
+  },
+  {
+    label: "border-e-neutral-600",
+    value: "border-e-neutral-600",
+    styles:
+      "border-inline-end-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets inline end border color to neutral-600",
+  },
+  {
+    label: "border-e-neutral-700",
+    value: "border-e-neutral-700",
+    styles:
+      "border-inline-end-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets inline end border color to neutral-700",
+  },
+  {
+    label: "border-e-neutral-800",
+    value: "border-e-neutral-800",
+    styles:
+      "border-inline-end-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets inline end border color to neutral-800",
+  },
+  {
+    label: "border-e-neutral-900",
+    value: "border-e-neutral-900",
+    styles:
+      "border-inline-end-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets inline end border color to neutral-900",
+  },
+  {
+    label: "border-e-neutral-950",
+    value: "border-e-neutral-950",
+    styles:
+      "border-inline-end-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets inline end border color to neutral-950",
+  },
+  {
+    label: "border-e-stone-50",
+    value: "border-e-stone-50",
+    styles:
+      "border-inline-end-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets inline end border color to stone-50",
+  },
+  {
+    label: "border-e-stone-100",
+    value: "border-e-stone-100",
+    styles:
+      "border-inline-end-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets inline end border color to stone-100",
+  },
+  {
+    label: "border-e-stone-200",
+    value: "border-e-stone-200",
+    styles:
+      "border-inline-end-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets inline end border color to stone-200",
+  },
+  {
+    label: "border-e-stone-300",
+    value: "border-e-stone-300",
+    styles:
+      "border-inline-end-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets inline end border color to stone-300",
+  },
+  {
+    label: "border-e-stone-400",
+    value: "border-e-stone-400",
+    styles:
+      "border-inline-end-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets inline end border color to stone-400",
+  },
+  {
+    label: "border-e-stone-500",
+    value: "border-e-stone-500",
+    styles:
+      "border-inline-end-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets inline end border color to stone-500",
+  },
+  {
+    label: "border-e-stone-600",
+    value: "border-e-stone-600",
+    styles:
+      "border-inline-end-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets inline end border color to stone-600",
+  },
+  {
+    label: "border-e-stone-700",
+    value: "border-e-stone-700",
+    styles:
+      "border-inline-end-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets inline end border color to stone-700",
+  },
+  {
+    label: "border-e-stone-800",
+    value: "border-e-stone-800",
+    styles:
+      "border-inline-end-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets inline end border color to stone-800",
+  },
+  {
+    label: "border-e-stone-900",
+    value: "border-e-stone-900",
+    styles:
+      "border-inline-end-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets inline end border color to stone-900",
+  },
+  {
+    label: "border-e-stone-950",
+    value: "border-e-stone-950",
+    styles:
+      "border-inline-end-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets inline end border color to stone-950",
+  },
+  {
+    label: "border-e-(<custom-property>)",
+    value: "border-e-(<custom-property>)",
+    styles: "border-inline-end-color: var(<custom-property>);",
+    description: "Sets inline end border color to (<custom-property>)",
+  },
+  {
+    label: "border-e-[<value>]",
+    value: "border-e-[<value>]",
+    styles: "border-inline-end-color: <value>;",
+    description: "Sets inline end border color to [<value>]",
+  },
+  {
+    label: "border-t-inherit",
+    value: "border-t-inherit",
+    styles: "border-top-color: inherit;",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-t-current",
+    value: "border-t-current",
+    styles: "border-top-color: currentColor;",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-t-transparent",
+    value: "border-t-transparent",
+    styles: "border-top-color: transparent;",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-t-black",
+    value: "border-t-black",
+    styles: "border-top-color: var(--color-black); /* #000 */",
+    description: "Sets top border color to black",
+  },
+  {
+    label: "border-t-white",
+    value: "border-t-white",
+    styles: "border-top-color: var(--color-white); /* #fff */",
+    description: "Sets top border color to white",
+  },
+  {
+    label: "border-t-red-50",
+    value: "border-t-red-50",
+    styles:
+      "border-top-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets top border color to red-50",
+  },
+  {
+    label: "border-t-red-100",
+    value: "border-t-red-100",
+    styles:
+      "border-top-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets top border color to red-100",
+  },
+  {
+    label: "border-t-red-200",
+    value: "border-t-red-200",
+    styles:
+      "border-top-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets top border color to red-200",
+  },
+  {
+    label: "border-t-red-300",
+    value: "border-t-red-300",
+    styles:
+      "border-top-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets top border color to red-300",
+  },
+  {
+    label: "border-t-red-400",
+    value: "border-t-red-400",
+    styles:
+      "border-top-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets top border color to red-400",
+  },
+  {
+    label: "border-t-red-500",
+    value: "border-t-red-500",
+    styles:
+      "border-top-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets top border color to red-500",
+  },
+  {
+    label: "border-t-red-600",
+    value: "border-t-red-600",
+    styles:
+      "border-top-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets top border color to red-600",
+  },
+  {
+    label: "border-t-red-700",
+    value: "border-t-red-700",
+    styles:
+      "border-top-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets top border color to red-700",
+  },
+  {
+    label: "border-t-red-800",
+    value: "border-t-red-800",
+    styles:
+      "border-top-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets top border color to red-800",
+  },
+  {
+    label: "border-t-red-900",
+    value: "border-t-red-900",
+    styles:
+      "border-top-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets top border color to red-900",
+  },
+  {
+    label: "border-t-red-950",
+    value: "border-t-red-950",
+    styles:
+      "border-top-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets top border color to red-950",
+  },
+  {
+    label: "border-t-orange-50",
+    value: "border-t-orange-50",
+    styles:
+      "border-top-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets top border color to orange-50",
+  },
+  {
+    label: "border-t-orange-100",
+    value: "border-t-orange-100",
+    styles:
+      "border-top-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets top border color to orange-100",
+  },
+  {
+    label: "border-t-orange-200",
+    value: "border-t-orange-200",
+    styles:
+      "border-top-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets top border color to orange-200",
+  },
+  {
+    label: "border-t-orange-300",
+    value: "border-t-orange-300",
+    styles:
+      "border-top-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets top border color to orange-300",
+  },
+  {
+    label: "border-t-orange-400",
+    value: "border-t-orange-400",
+    styles:
+      "border-top-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets top border color to orange-400",
+  },
+  {
+    label: "border-t-orange-500",
+    value: "border-t-orange-500",
+    styles:
+      "border-top-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets top border color to orange-500",
+  },
+  {
+    label: "border-t-orange-600",
+    value: "border-t-orange-600",
+    styles:
+      "border-top-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets top border color to orange-600",
+  },
+  {
+    label: "border-t-orange-700",
+    value: "border-t-orange-700",
+    styles:
+      "border-top-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets top border color to orange-700",
+  },
+  {
+    label: "border-t-orange-800",
+    value: "border-t-orange-800",
+    styles:
+      "border-top-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets top border color to orange-800",
+  },
+  {
+    label: "border-t-orange-900",
+    value: "border-t-orange-900",
+    styles:
+      "border-top-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets top border color to orange-900",
+  },
+  {
+    label: "border-t-orange-950",
+    value: "border-t-orange-950",
+    styles:
+      "border-top-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets top border color to orange-950",
+  },
+  {
+    label: "border-t-amber-50",
+    value: "border-t-amber-50",
+    styles:
+      "border-top-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets top border color to amber-50",
+  },
+  {
+    label: "border-t-amber-100",
+    value: "border-t-amber-100",
+    styles:
+      "border-top-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets top border color to amber-100",
+  },
+  {
+    label: "border-t-amber-200",
+    value: "border-t-amber-200",
+    styles:
+      "border-top-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets top border color to amber-200",
+  },
+  {
+    label: "border-t-amber-300",
+    value: "border-t-amber-300",
+    styles:
+      "border-top-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets top border color to amber-300",
+  },
+  {
+    label: "border-t-amber-400",
+    value: "border-t-amber-400",
+    styles:
+      "border-top-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets top border color to amber-400",
+  },
+  {
+    label: "border-t-amber-500",
+    value: "border-t-amber-500",
+    styles:
+      "border-top-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets top border color to amber-500",
+  },
+  {
+    label: "border-t-amber-600",
+    value: "border-t-amber-600",
+    styles:
+      "border-top-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets top border color to amber-600",
+  },
+  {
+    label: "border-t-amber-700",
+    value: "border-t-amber-700",
+    styles:
+      "border-top-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets top border color to amber-700",
+  },
+  {
+    label: "border-t-amber-800",
+    value: "border-t-amber-800",
+    styles:
+      "border-top-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets top border color to amber-800",
+  },
+  {
+    label: "border-t-amber-900",
+    value: "border-t-amber-900",
+    styles:
+      "border-top-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets top border color to amber-900",
+  },
+  {
+    label: "border-t-amber-950",
+    value: "border-t-amber-950",
+    styles:
+      "border-top-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets top border color to amber-950",
+  },
+  {
+    label: "border-t-yellow-50",
+    value: "border-t-yellow-50",
+    styles:
+      "border-top-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets top border color to yellow-50",
+  },
+  {
+    label: "border-t-yellow-100",
+    value: "border-t-yellow-100",
+    styles:
+      "border-top-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets top border color to yellow-100",
+  },
+  {
+    label: "border-t-yellow-200",
+    value: "border-t-yellow-200",
+    styles:
+      "border-top-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets top border color to yellow-200",
+  },
+  {
+    label: "border-t-yellow-300",
+    value: "border-t-yellow-300",
+    styles:
+      "border-top-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets top border color to yellow-300",
+  },
+  {
+    label: "border-t-yellow-400",
+    value: "border-t-yellow-400",
+    styles:
+      "border-top-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets top border color to yellow-400",
+  },
+  {
+    label: "border-t-yellow-500",
+    value: "border-t-yellow-500",
+    styles:
+      "border-top-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets top border color to yellow-500",
+  },
+  {
+    label: "border-t-yellow-600",
+    value: "border-t-yellow-600",
+    styles:
+      "border-top-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets top border color to yellow-600",
+  },
+  {
+    label: "border-t-yellow-700",
+    value: "border-t-yellow-700",
+    styles:
+      "border-top-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets top border color to yellow-700",
+  },
+  {
+    label: "border-t-yellow-800",
+    value: "border-t-yellow-800",
+    styles:
+      "border-top-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets top border color to yellow-800",
+  },
+  {
+    label: "border-t-yellow-900",
+    value: "border-t-yellow-900",
+    styles:
+      "border-top-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets top border color to yellow-900",
+  },
+  {
+    label: "border-t-yellow-950",
+    value: "border-t-yellow-950",
+    styles:
+      "border-top-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets top border color to yellow-950",
+  },
+  {
+    label: "border-t-lime-50",
+    value: "border-t-lime-50",
+    styles:
+      "border-top-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets top border color to lime-50",
+  },
+  {
+    label: "border-t-lime-100",
+    value: "border-t-lime-100",
+    styles:
+      "border-top-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets top border color to lime-100",
+  },
+  {
+    label: "border-t-lime-200",
+    value: "border-t-lime-200",
+    styles:
+      "border-top-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets top border color to lime-200",
+  },
+  {
+    label: "border-t-lime-300",
+    value: "border-t-lime-300",
+    styles:
+      "border-top-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets top border color to lime-300",
+  },
+  {
+    label: "border-t-lime-400",
+    value: "border-t-lime-400",
+    styles:
+      "border-top-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets top border color to lime-400",
+  },
+  {
+    label: "border-t-lime-500",
+    value: "border-t-lime-500",
+    styles:
+      "border-top-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets top border color to lime-500",
+  },
+  {
+    label: "border-t-lime-600",
+    value: "border-t-lime-600",
+    styles:
+      "border-top-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets top border color to lime-600",
+  },
+  {
+    label: "border-t-lime-700",
+    value: "border-t-lime-700",
+    styles:
+      "border-top-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets top border color to lime-700",
+  },
+  {
+    label: "border-t-lime-800",
+    value: "border-t-lime-800",
+    styles:
+      "border-top-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets top border color to lime-800",
+  },
+  {
+    label: "border-t-lime-900",
+    value: "border-t-lime-900",
+    styles:
+      "border-top-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets top border color to lime-900",
+  },
+  {
+    label: "border-t-lime-950",
+    value: "border-t-lime-950",
+    styles:
+      "border-top-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets top border color to lime-950",
+  },
+  {
+    label: "border-t-green-50",
+    value: "border-t-green-50",
+    styles:
+      "border-top-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets top border color to green-50",
+  },
+  {
+    label: "border-t-green-100",
+    value: "border-t-green-100",
+    styles:
+      "border-top-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets top border color to green-100",
+  },
+  {
+    label: "border-t-green-200",
+    value: "border-t-green-200",
+    styles:
+      "border-top-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets top border color to green-200",
+  },
+  {
+    label: "border-t-green-300",
+    value: "border-t-green-300",
+    styles:
+      "border-top-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets top border color to green-300",
+  },
+  {
+    label: "border-t-green-400",
+    value: "border-t-green-400",
+    styles:
+      "border-top-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets top border color to green-400",
+  },
+  {
+    label: "border-t-green-500",
+    value: "border-t-green-500",
+    styles:
+      "border-top-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets top border color to green-500",
+  },
+  {
+    label: "border-t-green-600",
+    value: "border-t-green-600",
+    styles:
+      "border-top-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets top border color to green-600",
+  },
+  {
+    label: "border-t-green-700",
+    value: "border-t-green-700",
+    styles:
+      "border-top-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets top border color to green-700",
+  },
+  {
+    label: "border-t-green-800",
+    value: "border-t-green-800",
+    styles:
+      "border-top-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets top border color to green-800",
+  },
+  {
+    label: "border-t-green-900",
+    value: "border-t-green-900",
+    styles:
+      "border-top-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets top border color to green-900",
+  },
+  {
+    label: "border-t-green-950",
+    value: "border-t-green-950",
+    styles:
+      "border-top-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets top border color to green-950",
+  },
+  {
+    label: "border-t-emerald-50",
+    value: "border-t-emerald-50",
+    styles:
+      "border-top-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets top border color to emerald-50",
+  },
+  {
+    label: "border-t-emerald-100",
+    value: "border-t-emerald-100",
+    styles:
+      "border-top-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets top border color to emerald-100",
+  },
+  {
+    label: "border-t-emerald-200",
+    value: "border-t-emerald-200",
+    styles:
+      "border-top-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets top border color to emerald-200",
+  },
+  {
+    label: "border-t-emerald-300",
+    value: "border-t-emerald-300",
+    styles:
+      "border-top-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets top border color to emerald-300",
+  },
+  {
+    label: "border-t-emerald-400",
+    value: "border-t-emerald-400",
+    styles:
+      "border-top-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets top border color to emerald-400",
+  },
+  {
+    label: "border-t-emerald-500",
+    value: "border-t-emerald-500",
+    styles:
+      "border-top-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets top border color to emerald-500",
+  },
+  {
+    label: "border-t-emerald-600",
+    value: "border-t-emerald-600",
+    styles:
+      "border-top-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets top border color to emerald-600",
+  },
+  {
+    label: "border-t-emerald-700",
+    value: "border-t-emerald-700",
+    styles:
+      "border-top-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets top border color to emerald-700",
+  },
+  {
+    label: "border-t-emerald-800",
+    value: "border-t-emerald-800",
+    styles:
+      "border-top-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets top border color to emerald-800",
+  },
+  {
+    label: "border-t-emerald-900",
+    value: "border-t-emerald-900",
+    styles:
+      "border-top-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets top border color to emerald-900",
+  },
+  {
+    label: "border-t-emerald-950",
+    value: "border-t-emerald-950",
+    styles:
+      "border-top-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets top border color to emerald-950",
+  },
+  {
+    label: "border-t-teal-50",
+    value: "border-t-teal-50",
+    styles:
+      "border-top-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets top border color to teal-50",
+  },
+  {
+    label: "border-t-teal-100",
+    value: "border-t-teal-100",
+    styles:
+      "border-top-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets top border color to teal-100",
+  },
+  {
+    label: "border-t-teal-200",
+    value: "border-t-teal-200",
+    styles:
+      "border-top-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets top border color to teal-200",
+  },
+  {
+    label: "border-t-teal-300",
+    value: "border-t-teal-300",
+    styles:
+      "border-top-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets top border color to teal-300",
+  },
+  {
+    label: "border-t-teal-400",
+    value: "border-t-teal-400",
+    styles:
+      "border-top-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets top border color to teal-400",
+  },
+  {
+    label: "border-t-teal-500",
+    value: "border-t-teal-500",
+    styles:
+      "border-top-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets top border color to teal-500",
+  },
+  {
+    label: "border-t-teal-600",
+    value: "border-t-teal-600",
+    styles:
+      "border-top-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets top border color to teal-600",
+  },
+  {
+    label: "border-t-teal-700",
+    value: "border-t-teal-700",
+    styles:
+      "border-top-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets top border color to teal-700",
+  },
+  {
+    label: "border-t-teal-800",
+    value: "border-t-teal-800",
+    styles:
+      "border-top-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets top border color to teal-800",
+  },
+  {
+    label: "border-t-teal-900",
+    value: "border-t-teal-900",
+    styles:
+      "border-top-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets top border color to teal-900",
+  },
+  {
+    label: "border-t-teal-950",
+    value: "border-t-teal-950",
+    styles:
+      "border-top-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets top border color to teal-950",
+  },
+  {
+    label: "border-t-cyan-50",
+    value: "border-t-cyan-50",
+    styles:
+      "border-top-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets top border color to cyan-50",
+  },
+  {
+    label: "border-t-cyan-100",
+    value: "border-t-cyan-100",
+    styles:
+      "border-top-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets top border color to cyan-100",
+  },
+  {
+    label: "border-t-cyan-200",
+    value: "border-t-cyan-200",
+    styles:
+      "border-top-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets top border color to cyan-200",
+  },
+  {
+    label: "border-t-cyan-300",
+    value: "border-t-cyan-300",
+    styles:
+      "border-top-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets top border color to cyan-300",
+  },
+  {
+    label: "border-t-cyan-400",
+    value: "border-t-cyan-400",
+    styles:
+      "border-top-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets top border color to cyan-400",
+  },
+  {
+    label: "border-t-cyan-500",
+    value: "border-t-cyan-500",
+    styles:
+      "border-top-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets top border color to cyan-500",
+  },
+  {
+    label: "border-t-cyan-600",
+    value: "border-t-cyan-600",
+    styles:
+      "border-top-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets top border color to cyan-600",
+  },
+  {
+    label: "border-t-cyan-700",
+    value: "border-t-cyan-700",
+    styles:
+      "border-top-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets top border color to cyan-700",
+  },
+  {
+    label: "border-t-cyan-800",
+    value: "border-t-cyan-800",
+    styles:
+      "border-top-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets top border color to cyan-800",
+  },
+  {
+    label: "border-t-cyan-900",
+    value: "border-t-cyan-900",
+    styles:
+      "border-top-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets top border color to cyan-900",
+  },
+  {
+    label: "border-t-cyan-950",
+    value: "border-t-cyan-950",
+    styles:
+      "border-top-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets top border color to cyan-950",
+  },
+  {
+    label: "border-t-sky-50",
+    value: "border-t-sky-50",
+    styles:
+      "border-top-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets top border color to sky-50",
+  },
+  {
+    label: "border-t-sky-100",
+    value: "border-t-sky-100",
+    styles:
+      "border-top-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets top border color to sky-100",
+  },
+  {
+    label: "border-t-sky-200",
+    value: "border-t-sky-200",
+    styles:
+      "border-top-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets top border color to sky-200",
+  },
+  {
+    label: "border-t-sky-300",
+    value: "border-t-sky-300",
+    styles:
+      "border-top-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets top border color to sky-300",
+  },
+  {
+    label: "border-t-sky-400",
+    value: "border-t-sky-400",
+    styles:
+      "border-top-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets top border color to sky-400",
+  },
+  {
+    label: "border-t-sky-500",
+    value: "border-t-sky-500",
+    styles:
+      "border-top-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets top border color to sky-500",
+  },
+  {
+    label: "border-t-sky-600",
+    value: "border-t-sky-600",
+    styles:
+      "border-top-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets top border color to sky-600",
+  },
+  {
+    label: "border-t-sky-700",
+    value: "border-t-sky-700",
+    styles:
+      "border-top-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets top border color to sky-700",
+  },
+  {
+    label: "border-t-sky-800",
+    value: "border-t-sky-800",
+    styles:
+      "border-top-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets top border color to sky-800",
+  },
+  {
+    label: "border-t-sky-900",
+    value: "border-t-sky-900",
+    styles:
+      "border-top-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets top border color to sky-900",
+  },
+  {
+    label: "border-t-sky-950",
+    value: "border-t-sky-950",
+    styles:
+      "border-top-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets top border color to sky-950",
+  },
+  {
+    label: "border-t-blue-50",
+    value: "border-t-blue-50",
+    styles:
+      "border-top-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets top border color to blue-50",
+  },
+  {
+    label: "border-t-blue-100",
+    value: "border-t-blue-100",
+    styles:
+      "border-top-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets top border color to blue-100",
+  },
+  {
+    label: "border-t-blue-200",
+    value: "border-t-blue-200",
+    styles:
+      "border-top-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets top border color to blue-200",
+  },
+  {
+    label: "border-t-blue-300",
+    value: "border-t-blue-300",
+    styles:
+      "border-top-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets top border color to blue-300",
+  },
+  {
+    label: "border-t-blue-400",
+    value: "border-t-blue-400",
+    styles:
+      "border-top-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets top border color to blue-400",
+  },
+  {
+    label: "border-t-blue-500",
+    value: "border-t-blue-500",
+    styles:
+      "border-top-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets top border color to blue-500",
+  },
+  {
+    label: "border-t-blue-600",
+    value: "border-t-blue-600",
+    styles:
+      "border-top-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets top border color to blue-600",
+  },
+  {
+    label: "border-t-blue-700",
+    value: "border-t-blue-700",
+    styles:
+      "border-top-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets top border color to blue-700",
+  },
+  {
+    label: "border-t-blue-800",
+    value: "border-t-blue-800",
+    styles:
+      "border-top-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets top border color to blue-800",
+  },
+  {
+    label: "border-t-blue-900",
+    value: "border-t-blue-900",
+    styles:
+      "border-top-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets top border color to blue-900",
+  },
+  {
+    label: "border-t-blue-950",
+    value: "border-t-blue-950",
+    styles:
+      "border-top-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets top border color to blue-950",
+  },
+  {
+    label: "border-t-indigo-50",
+    value: "border-t-indigo-50",
+    styles:
+      "border-top-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets top border color to indigo-50",
+  },
+  {
+    label: "border-t-indigo-100",
+    value: "border-t-indigo-100",
+    styles:
+      "border-top-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets top border color to indigo-100",
+  },
+  {
+    label: "border-t-indigo-200",
+    value: "border-t-indigo-200",
+    styles:
+      "border-top-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets top border color to indigo-200",
+  },
+  {
+    label: "border-t-indigo-300",
+    value: "border-t-indigo-300",
+    styles:
+      "border-top-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets top border color to indigo-300",
+  },
+  {
+    label: "border-t-indigo-400",
+    value: "border-t-indigo-400",
+    styles:
+      "border-top-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets top border color to indigo-400",
+  },
+  {
+    label: "border-t-indigo-500",
+    value: "border-t-indigo-500",
+    styles:
+      "border-top-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets top border color to indigo-500",
+  },
+  {
+    label: "border-t-indigo-600",
+    value: "border-t-indigo-600",
+    styles:
+      "border-top-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets top border color to indigo-600",
+  },
+  {
+    label: "border-t-indigo-700",
+    value: "border-t-indigo-700",
+    styles:
+      "border-top-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets top border color to indigo-700",
+  },
+  {
+    label: "border-t-indigo-800",
+    value: "border-t-indigo-800",
+    styles:
+      "border-top-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets top border color to indigo-800",
+  },
+  {
+    label: "border-t-indigo-900",
+    value: "border-t-indigo-900",
+    styles:
+      "border-top-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets top border color to indigo-900",
+  },
+  {
+    label: "border-t-indigo-950",
+    value: "border-t-indigo-950",
+    styles:
+      "border-top-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets top border color to indigo-950",
+  },
+  {
+    label: "border-t-violet-50",
+    value: "border-t-violet-50",
+    styles:
+      "border-top-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets top border color to violet-50",
+  },
+  {
+    label: "border-t-violet-100",
+    value: "border-t-violet-100",
+    styles:
+      "border-top-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets top border color to violet-100",
+  },
+  {
+    label: "border-t-violet-200",
+    value: "border-t-violet-200",
+    styles:
+      "border-top-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets top border color to violet-200",
+  },
+  {
+    label: "border-t-violet-300",
+    value: "border-t-violet-300",
+    styles:
+      "border-top-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets top border color to violet-300",
+  },
+  {
+    label: "border-t-violet-400",
+    value: "border-t-violet-400",
+    styles:
+      "border-top-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets top border color to violet-400",
+  },
+  {
+    label: "border-t-violet-500",
+    value: "border-t-violet-500",
+    styles:
+      "border-top-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets top border color to violet-500",
+  },
+  {
+    label: "border-t-violet-600",
+    value: "border-t-violet-600",
+    styles:
+      "border-top-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets top border color to violet-600",
+  },
+  {
+    label: "border-t-violet-700",
+    value: "border-t-violet-700",
+    styles:
+      "border-top-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets top border color to violet-700",
+  },
+  {
+    label: "border-t-violet-800",
+    value: "border-t-violet-800",
+    styles:
+      "border-top-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets top border color to violet-800",
+  },
+  {
+    label: "border-t-violet-900",
+    value: "border-t-violet-900",
+    styles:
+      "border-top-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets top border color to violet-900",
+  },
+  {
+    label: "border-t-violet-950",
+    value: "border-t-violet-950",
+    styles:
+      "border-top-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets top border color to violet-950",
+  },
+  {
+    label: "border-t-purple-50",
+    value: "border-t-purple-50",
+    styles:
+      "border-top-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets top border color to purple-50",
+  },
+  {
+    label: "border-t-purple-100",
+    value: "border-t-purple-100",
+    styles:
+      "border-top-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets top border color to purple-100",
+  },
+  {
+    label: "border-t-purple-200",
+    value: "border-t-purple-200",
+    styles:
+      "border-top-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets top border color to purple-200",
+  },
+  {
+    label: "border-t-purple-300",
+    value: "border-t-purple-300",
+    styles:
+      "border-top-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets top border color to purple-300",
+  },
+  {
+    label: "border-t-purple-400",
+    value: "border-t-purple-400",
+    styles:
+      "border-top-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets top border color to purple-400",
+  },
+  {
+    label: "border-t-purple-500",
+    value: "border-t-purple-500",
+    styles:
+      "border-top-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets top border color to purple-500",
+  },
+  {
+    label: "border-t-purple-600",
+    value: "border-t-purple-600",
+    styles:
+      "border-top-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets top border color to purple-600",
+  },
+  {
+    label: "border-t-purple-700",
+    value: "border-t-purple-700",
+    styles:
+      "border-top-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets top border color to purple-700",
+  },
+  {
+    label: "border-t-purple-800",
+    value: "border-t-purple-800",
+    styles:
+      "border-top-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets top border color to purple-800",
+  },
+  {
+    label: "border-t-purple-900",
+    value: "border-t-purple-900",
+    styles:
+      "border-top-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets top border color to purple-900",
+  },
+  {
+    label: "border-t-purple-950",
+    value: "border-t-purple-950",
+    styles:
+      "border-top-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets top border color to purple-950",
+  },
+  {
+    label: "border-t-fuchsia-50",
+    value: "border-t-fuchsia-50",
+    styles:
+      "border-top-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets top border color to fuchsia-50",
+  },
+  {
+    label: "border-t-fuchsia-100",
+    value: "border-t-fuchsia-100",
+    styles:
+      "border-top-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets top border color to fuchsia-100",
+  },
+  {
+    label: "border-t-fuchsia-200",
+    value: "border-t-fuchsia-200",
+    styles:
+      "border-top-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets top border color to fuchsia-200",
+  },
+  {
+    label: "border-t-fuchsia-300",
+    value: "border-t-fuchsia-300",
+    styles:
+      "border-top-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets top border color to fuchsia-300",
+  },
+  {
+    label: "border-t-fuchsia-400",
+    value: "border-t-fuchsia-400",
+    styles:
+      "border-top-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets top border color to fuchsia-400",
+  },
+  {
+    label: "border-t-fuchsia-500",
+    value: "border-t-fuchsia-500",
+    styles:
+      "border-top-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets top border color to fuchsia-500",
+  },
+  {
+    label: "border-t-fuchsia-600",
+    value: "border-t-fuchsia-600",
+    styles:
+      "border-top-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets top border color to fuchsia-600",
+  },
+  {
+    label: "border-t-fuchsia-700",
+    value: "border-t-fuchsia-700",
+    styles:
+      "border-top-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets top border color to fuchsia-700",
+  },
+  {
+    label: "border-t-fuchsia-800",
+    value: "border-t-fuchsia-800",
+    styles:
+      "border-top-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets top border color to fuchsia-800",
+  },
+  {
+    label: "border-t-fuchsia-900",
+    value: "border-t-fuchsia-900",
+    styles:
+      "border-top-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets top border color to fuchsia-900",
+  },
+  {
+    label: "border-t-fuchsia-950",
+    value: "border-t-fuchsia-950",
+    styles:
+      "border-top-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets top border color to fuchsia-950",
+  },
+  {
+    label: "border-t-pink-50",
+    value: "border-t-pink-50",
+    styles:
+      "border-top-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets top border color to pink-50",
+  },
+  {
+    label: "border-t-pink-100",
+    value: "border-t-pink-100",
+    styles:
+      "border-top-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets top border color to pink-100",
+  },
+  {
+    label: "border-t-pink-200",
+    value: "border-t-pink-200",
+    styles:
+      "border-top-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets top border color to pink-200",
+  },
+  {
+    label: "border-t-pink-300",
+    value: "border-t-pink-300",
+    styles:
+      "border-top-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets top border color to pink-300",
+  },
+  {
+    label: "border-t-pink-400",
+    value: "border-t-pink-400",
+    styles:
+      "border-top-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets top border color to pink-400",
+  },
+  {
+    label: "border-t-pink-500",
+    value: "border-t-pink-500",
+    styles:
+      "border-top-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets top border color to pink-500",
+  },
+  {
+    label: "border-t-pink-600",
+    value: "border-t-pink-600",
+    styles:
+      "border-top-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets top border color to pink-600",
+  },
+  {
+    label: "border-t-pink-700",
+    value: "border-t-pink-700",
+    styles:
+      "border-top-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets top border color to pink-700",
+  },
+  {
+    label: "border-t-pink-800",
+    value: "border-t-pink-800",
+    styles:
+      "border-top-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets top border color to pink-800",
+  },
+  {
+    label: "border-t-pink-900",
+    value: "border-t-pink-900",
+    styles:
+      "border-top-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets top border color to pink-900",
+  },
+  {
+    label: "border-t-pink-950",
+    value: "border-t-pink-950",
+    styles:
+      "border-top-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets top border color to pink-950",
+  },
+  {
+    label: "border-t-rose-50",
+    value: "border-t-rose-50",
+    styles:
+      "border-top-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets top border color to rose-50",
+  },
+  {
+    label: "border-t-rose-100",
+    value: "border-t-rose-100",
+    styles:
+      "border-top-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets top border color to rose-100",
+  },
+  {
+    label: "border-t-rose-200",
+    value: "border-t-rose-200",
+    styles:
+      "border-top-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets top border color to rose-200",
+  },
+  {
+    label: "border-t-rose-300",
+    value: "border-t-rose-300",
+    styles:
+      "border-top-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets top border color to rose-300",
+  },
+  {
+    label: "border-t-rose-400",
+    value: "border-t-rose-400",
+    styles:
+      "border-top-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets top border color to rose-400",
+  },
+  {
+    label: "border-t-rose-500",
+    value: "border-t-rose-500",
+    styles:
+      "border-top-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets top border color to rose-500",
+  },
+  {
+    label: "border-t-rose-600",
+    value: "border-t-rose-600",
+    styles:
+      "border-top-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets top border color to rose-600",
+  },
+  {
+    label: "border-t-rose-700",
+    value: "border-t-rose-700",
+    styles:
+      "border-top-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets top border color to rose-700",
+  },
+  {
+    label: "border-t-rose-800",
+    value: "border-t-rose-800",
+    styles:
+      "border-top-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets top border color to rose-800",
+  },
+  {
+    label: "border-t-rose-900",
+    value: "border-t-rose-900",
+    styles:
+      "border-top-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets top border color to rose-900",
+  },
+  {
+    label: "border-t-rose-950",
+    value: "border-t-rose-950",
+    styles:
+      "border-top-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets top border color to rose-950",
+  },
+  {
+    label: "border-t-slate-50",
+    value: "border-t-slate-50",
+    styles:
+      "border-top-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets top border color to slate-50",
+  },
+  {
+    label: "border-t-slate-100",
+    value: "border-t-slate-100",
+    styles:
+      "border-top-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets top border color to slate-100",
+  },
+  {
+    label: "border-t-slate-200",
+    value: "border-t-slate-200",
+    styles:
+      "border-top-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets top border color to slate-200",
+  },
+  {
+    label: "border-t-slate-300",
+    value: "border-t-slate-300",
+    styles:
+      "border-top-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets top border color to slate-300",
+  },
+  {
+    label: "border-t-slate-400",
+    value: "border-t-slate-400",
+    styles:
+      "border-top-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets top border color to slate-400",
+  },
+  {
+    label: "border-t-slate-500",
+    value: "border-t-slate-500",
+    styles:
+      "border-top-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets top border color to slate-500",
+  },
+  {
+    label: "border-t-slate-600",
+    value: "border-t-slate-600",
+    styles:
+      "border-top-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets top border color to slate-600",
+  },
+  {
+    label: "border-t-slate-700",
+    value: "border-t-slate-700",
+    styles:
+      "border-top-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets top border color to slate-700",
+  },
+  {
+    label: "border-t-slate-800",
+    value: "border-t-slate-800",
+    styles:
+      "border-top-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets top border color to slate-800",
+  },
+  {
+    label: "border-t-slate-900",
+    value: "border-t-slate-900",
+    styles:
+      "border-top-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets top border color to slate-900",
+  },
+  {
+    label: "border-t-slate-950",
+    value: "border-t-slate-950",
+    styles:
+      "border-top-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets top border color to slate-950",
+  },
+  {
+    label: "border-t-gray-50",
+    value: "border-t-gray-50",
+    styles:
+      "border-top-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets top border color to gray-50",
+  },
+  {
+    label: "border-t-gray-100",
+    value: "border-t-gray-100",
+    styles:
+      "border-top-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets top border color to gray-100",
+  },
+  {
+    label: "border-t-gray-200",
+    value: "border-t-gray-200",
+    styles:
+      "border-top-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets top border color to gray-200",
+  },
+  {
+    label: "border-t-gray-300",
+    value: "border-t-gray-300",
+    styles:
+      "border-top-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets top border color to gray-300",
+  },
+  {
+    label: "border-t-gray-400",
+    value: "border-t-gray-400",
+    styles:
+      "border-top-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets top border color to gray-400",
+  },
+  {
+    label: "border-t-gray-500",
+    value: "border-t-gray-500",
+    styles:
+      "border-top-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets top border color to gray-500",
+  },
+  {
+    label: "border-t-gray-600",
+    value: "border-t-gray-600",
+    styles:
+      "border-top-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets top border color to gray-600",
+  },
+  {
+    label: "border-t-gray-700",
+    value: "border-t-gray-700",
+    styles:
+      "border-top-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets top border color to gray-700",
+  },
+  {
+    label: "border-t-gray-800",
+    value: "border-t-gray-800",
+    styles:
+      "border-top-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets top border color to gray-800",
+  },
+  {
+    label: "border-t-gray-900",
+    value: "border-t-gray-900",
+    styles:
+      "border-top-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets top border color to gray-900",
+  },
+  {
+    label: "border-t-gray-950",
+    value: "border-t-gray-950",
+    styles:
+      "border-top-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets top border color to gray-950",
+  },
+  {
+    label: "border-t-zinc-50",
+    value: "border-t-zinc-50",
+    styles: "border-top-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets top border color to zinc-50",
+  },
+  {
+    label: "border-t-zinc-100",
+    value: "border-t-zinc-100",
+    styles:
+      "border-top-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets top border color to zinc-100",
+  },
+  {
+    label: "border-t-zinc-200",
+    value: "border-t-zinc-200",
+    styles:
+      "border-top-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets top border color to zinc-200",
+  },
+  {
+    label: "border-t-zinc-300",
+    value: "border-t-zinc-300",
+    styles:
+      "border-top-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets top border color to zinc-300",
+  },
+  {
+    label: "border-t-zinc-400",
+    value: "border-t-zinc-400",
+    styles:
+      "border-top-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets top border color to zinc-400",
+  },
+  {
+    label: "border-t-zinc-500",
+    value: "border-t-zinc-500",
+    styles:
+      "border-top-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets top border color to zinc-500",
+  },
+  {
+    label: "border-t-zinc-600",
+    value: "border-t-zinc-600",
+    styles:
+      "border-top-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets top border color to zinc-600",
+  },
+  {
+    label: "border-t-zinc-700",
+    value: "border-t-zinc-700",
+    styles:
+      "border-top-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets top border color to zinc-700",
+  },
+  {
+    label: "border-t-zinc-800",
+    value: "border-t-zinc-800",
+    styles:
+      "border-top-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets top border color to zinc-800",
+  },
+  {
+    label: "border-t-zinc-900",
+    value: "border-t-zinc-900",
+    styles:
+      "border-top-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets top border color to zinc-900",
+  },
+  {
+    label: "border-t-zinc-950",
+    value: "border-t-zinc-950",
+    styles:
+      "border-top-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets top border color to zinc-950",
+  },
+  {
+    label: "border-t-neutral-50",
+    value: "border-t-neutral-50",
+    styles: "border-top-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets top border color to neutral-50",
+  },
+  {
+    label: "border-t-neutral-100",
+    value: "border-t-neutral-100",
+    styles: "border-top-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets top border color to neutral-100",
+  },
+  {
+    label: "border-t-neutral-200",
+    value: "border-t-neutral-200",
+    styles:
+      "border-top-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets top border color to neutral-200",
+  },
+  {
+    label: "border-t-neutral-300",
+    value: "border-t-neutral-300",
+    styles: "border-top-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets top border color to neutral-300",
+  },
+  {
+    label: "border-t-neutral-400",
+    value: "border-t-neutral-400",
+    styles:
+      "border-top-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets top border color to neutral-400",
+  },
+  {
+    label: "border-t-neutral-500",
+    value: "border-t-neutral-500",
+    styles:
+      "border-top-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets top border color to neutral-500",
+  },
+  {
+    label: "border-t-neutral-600",
+    value: "border-t-neutral-600",
+    styles:
+      "border-top-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets top border color to neutral-600",
+  },
+  {
+    label: "border-t-neutral-700",
+    value: "border-t-neutral-700",
+    styles:
+      "border-top-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets top border color to neutral-700",
+  },
+  {
+    label: "border-t-neutral-800",
+    value: "border-t-neutral-800",
+    styles:
+      "border-top-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets top border color to neutral-800",
+  },
+  {
+    label: "border-t-neutral-900",
+    value: "border-t-neutral-900",
+    styles:
+      "border-top-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets top border color to neutral-900",
+  },
+  {
+    label: "border-t-neutral-950",
+    value: "border-t-neutral-950",
+    styles:
+      "border-top-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets top border color to neutral-950",
+  },
+  {
+    label: "border-t-stone-50",
+    value: "border-t-stone-50",
+    styles:
+      "border-top-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets top border color to stone-50",
+  },
+  {
+    label: "border-t-stone-100",
+    value: "border-t-stone-100",
+    styles:
+      "border-top-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets top border color to stone-100",
+  },
+  {
+    label: "border-t-stone-200",
+    value: "border-t-stone-200",
+    styles:
+      "border-top-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets top border color to stone-200",
+  },
+  {
+    label: "border-t-stone-300",
+    value: "border-t-stone-300",
+    styles:
+      "border-top-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets top border color to stone-300",
+  },
+  {
+    label: "border-t-stone-400",
+    value: "border-t-stone-400",
+    styles:
+      "border-top-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets top border color to stone-400",
+  },
+  {
+    label: "border-t-stone-500",
+    value: "border-t-stone-500",
+    styles:
+      "border-top-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets top border color to stone-500",
+  },
+  {
+    label: "border-t-stone-600",
+    value: "border-t-stone-600",
+    styles:
+      "border-top-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets top border color to stone-600",
+  },
+  {
+    label: "border-t-stone-700",
+    value: "border-t-stone-700",
+    styles:
+      "border-top-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets top border color to stone-700",
+  },
+  {
+    label: "border-t-stone-800",
+    value: "border-t-stone-800",
+    styles:
+      "border-top-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets top border color to stone-800",
+  },
+  {
+    label: "border-t-stone-900",
+    value: "border-t-stone-900",
+    styles:
+      "border-top-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets top border color to stone-900",
+  },
+  {
+    label: "border-t-stone-950",
+    value: "border-t-stone-950",
+    styles:
+      "border-top-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets top border color to stone-950",
+  },
+  {
+    label: "border-t-(<custom-property>)",
+    value: "border-t-(<custom-property>)",
+    styles: "border-top-color: var(<custom-property>);",
+    description: "Sets top border color to (<custom-property>)",
+  },
+  {
+    label: "border-t-[<value>]",
+    value: "border-t-[<value>]",
+    styles: "border-top-color: <value>;",
+    description: "Sets top border color to [<value>]",
+  },
+  {
+    label: "border-r-inherit",
+    value: "border-r-inherit",
+    styles: "border-right-color: inherit;",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-r-current",
+    value: "border-r-current",
+    styles: "border-right-color: currentColor;",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-r-transparent",
+    value: "border-r-transparent",
+    styles: "border-right-color: transparent;",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-r-black",
+    value: "border-r-black",
+    styles: "border-right-color: var(--color-black); /* #000 */",
+    description: "Sets right border color to black",
+  },
+  {
+    label: "border-r-white",
+    value: "border-r-white",
+    styles: "border-right-color: var(--color-white); /* #fff */",
+    description: "Sets right border color to white",
+  },
+  {
+    label: "border-r-red-50",
+    value: "border-r-red-50",
+    styles:
+      "border-right-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets right border color to red-50",
+  },
+  {
+    label: "border-r-red-100",
+    value: "border-r-red-100",
+    styles:
+      "border-right-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets right border color to red-100",
+  },
+  {
+    label: "border-r-red-200",
+    value: "border-r-red-200",
+    styles:
+      "border-right-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets right border color to red-200",
+  },
+  {
+    label: "border-r-red-300",
+    value: "border-r-red-300",
+    styles:
+      "border-right-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets right border color to red-300",
+  },
+  {
+    label: "border-r-red-400",
+    value: "border-r-red-400",
+    styles:
+      "border-right-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets right border color to red-400",
+  },
+  {
+    label: "border-r-red-500",
+    value: "border-r-red-500",
+    styles:
+      "border-right-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets right border color to red-500",
+  },
+  {
+    label: "border-r-red-600",
+    value: "border-r-red-600",
+    styles:
+      "border-right-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets right border color to red-600",
+  },
+  {
+    label: "border-r-red-700",
+    value: "border-r-red-700",
+    styles:
+      "border-right-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets right border color to red-700",
+  },
+  {
+    label: "border-r-red-800",
+    value: "border-r-red-800",
+    styles:
+      "border-right-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets right border color to red-800",
+  },
+  {
+    label: "border-r-red-900",
+    value: "border-r-red-900",
+    styles:
+      "border-right-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets right border color to red-900",
+  },
+  {
+    label: "border-r-red-950",
+    value: "border-r-red-950",
+    styles:
+      "border-right-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets right border color to red-950",
+  },
+  {
+    label: "border-r-orange-50",
+    value: "border-r-orange-50",
+    styles:
+      "border-right-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets right border color to orange-50",
+  },
+  {
+    label: "border-r-orange-100",
+    value: "border-r-orange-100",
+    styles:
+      "border-right-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets right border color to orange-100",
+  },
+  {
+    label: "border-r-orange-200",
+    value: "border-r-orange-200",
+    styles:
+      "border-right-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets right border color to orange-200",
+  },
+  {
+    label: "border-r-orange-300",
+    value: "border-r-orange-300",
+    styles:
+      "border-right-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets right border color to orange-300",
+  },
+  {
+    label: "border-r-orange-400",
+    value: "border-r-orange-400",
+    styles:
+      "border-right-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets right border color to orange-400",
+  },
+  {
+    label: "border-r-orange-500",
+    value: "border-r-orange-500",
+    styles:
+      "border-right-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets right border color to orange-500",
+  },
+  {
+    label: "border-r-orange-600",
+    value: "border-r-orange-600",
+    styles:
+      "border-right-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets right border color to orange-600",
+  },
+  {
+    label: "border-r-orange-700",
+    value: "border-r-orange-700",
+    styles:
+      "border-right-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets right border color to orange-700",
+  },
+  {
+    label: "border-r-orange-800",
+    value: "border-r-orange-800",
+    styles:
+      "border-right-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets right border color to orange-800",
+  },
+  {
+    label: "border-r-orange-900",
+    value: "border-r-orange-900",
+    styles:
+      "border-right-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets right border color to orange-900",
+  },
+  {
+    label: "border-r-orange-950",
+    value: "border-r-orange-950",
+    styles:
+      "border-right-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets right border color to orange-950",
+  },
+  {
+    label: "border-r-amber-50",
+    value: "border-r-amber-50",
+    styles:
+      "border-right-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets right border color to amber-50",
+  },
+  {
+    label: "border-r-amber-100",
+    value: "border-r-amber-100",
+    styles:
+      "border-right-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets right border color to amber-100",
+  },
+  {
+    label: "border-r-amber-200",
+    value: "border-r-amber-200",
+    styles:
+      "border-right-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets right border color to amber-200",
+  },
+  {
+    label: "border-r-amber-300",
+    value: "border-r-amber-300",
+    styles:
+      "border-right-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets right border color to amber-300",
+  },
+  {
+    label: "border-r-amber-400",
+    value: "border-r-amber-400",
+    styles:
+      "border-right-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets right border color to amber-400",
+  },
+  {
+    label: "border-r-amber-500",
+    value: "border-r-amber-500",
+    styles:
+      "border-right-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets right border color to amber-500",
+  },
+  {
+    label: "border-r-amber-600",
+    value: "border-r-amber-600",
+    styles:
+      "border-right-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets right border color to amber-600",
+  },
+  {
+    label: "border-r-amber-700",
+    value: "border-r-amber-700",
+    styles:
+      "border-right-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets right border color to amber-700",
+  },
+  {
+    label: "border-r-amber-800",
+    value: "border-r-amber-800",
+    styles:
+      "border-right-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets right border color to amber-800",
+  },
+  {
+    label: "border-r-amber-900",
+    value: "border-r-amber-900",
+    styles:
+      "border-right-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets right border color to amber-900",
+  },
+  {
+    label: "border-r-amber-950",
+    value: "border-r-amber-950",
+    styles:
+      "border-right-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets right border color to amber-950",
+  },
+  {
+    label: "border-r-yellow-50",
+    value: "border-r-yellow-50",
+    styles:
+      "border-right-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets right border color to yellow-50",
+  },
+  {
+    label: "border-r-yellow-100",
+    value: "border-r-yellow-100",
+    styles:
+      "border-right-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets right border color to yellow-100",
+  },
+  {
+    label: "border-r-yellow-200",
+    value: "border-r-yellow-200",
+    styles:
+      "border-right-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets right border color to yellow-200",
+  },
+  {
+    label: "border-r-yellow-300",
+    value: "border-r-yellow-300",
+    styles:
+      "border-right-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets right border color to yellow-300",
+  },
+  {
+    label: "border-r-yellow-400",
+    value: "border-r-yellow-400",
+    styles:
+      "border-right-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets right border color to yellow-400",
+  },
+  {
+    label: "border-r-yellow-500",
+    value: "border-r-yellow-500",
+    styles:
+      "border-right-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets right border color to yellow-500",
+  },
+  {
+    label: "border-r-yellow-600",
+    value: "border-r-yellow-600",
+    styles:
+      "border-right-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets right border color to yellow-600",
+  },
+  {
+    label: "border-r-yellow-700",
+    value: "border-r-yellow-700",
+    styles:
+      "border-right-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets right border color to yellow-700",
+  },
+  {
+    label: "border-r-yellow-800",
+    value: "border-r-yellow-800",
+    styles:
+      "border-right-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets right border color to yellow-800",
+  },
+  {
+    label: "border-r-yellow-900",
+    value: "border-r-yellow-900",
+    styles:
+      "border-right-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets right border color to yellow-900",
+  },
+  {
+    label: "border-r-yellow-950",
+    value: "border-r-yellow-950",
+    styles:
+      "border-right-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets right border color to yellow-950",
+  },
+  {
+    label: "border-r-lime-50",
+    value: "border-r-lime-50",
+    styles:
+      "border-right-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets right border color to lime-50",
+  },
+  {
+    label: "border-r-lime-100",
+    value: "border-r-lime-100",
+    styles:
+      "border-right-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets right border color to lime-100",
+  },
+  {
+    label: "border-r-lime-200",
+    value: "border-r-lime-200",
+    styles:
+      "border-right-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets right border color to lime-200",
+  },
+  {
+    label: "border-r-lime-300",
+    value: "border-r-lime-300",
+    styles:
+      "border-right-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets right border color to lime-300",
+  },
+  {
+    label: "border-r-lime-400",
+    value: "border-r-lime-400",
+    styles:
+      "border-right-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets right border color to lime-400",
+  },
+  {
+    label: "border-r-lime-500",
+    value: "border-r-lime-500",
+    styles:
+      "border-right-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets right border color to lime-500",
+  },
+  {
+    label: "border-r-lime-600",
+    value: "border-r-lime-600",
+    styles:
+      "border-right-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets right border color to lime-600",
+  },
+  {
+    label: "border-r-lime-700",
+    value: "border-r-lime-700",
+    styles:
+      "border-right-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets right border color to lime-700",
+  },
+  {
+    label: "border-r-lime-800",
+    value: "border-r-lime-800",
+    styles:
+      "border-right-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets right border color to lime-800",
+  },
+  {
+    label: "border-r-lime-900",
+    value: "border-r-lime-900",
+    styles:
+      "border-right-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets right border color to lime-900",
+  },
+  {
+    label: "border-r-lime-950",
+    value: "border-r-lime-950",
+    styles:
+      "border-right-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets right border color to lime-950",
+  },
+  {
+    label: "border-r-green-50",
+    value: "border-r-green-50",
+    styles:
+      "border-right-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets right border color to green-50",
+  },
+  {
+    label: "border-r-green-100",
+    value: "border-r-green-100",
+    styles:
+      "border-right-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets right border color to green-100",
+  },
+  {
+    label: "border-r-green-200",
+    value: "border-r-green-200",
+    styles:
+      "border-right-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets right border color to green-200",
+  },
+  {
+    label: "border-r-green-300",
+    value: "border-r-green-300",
+    styles:
+      "border-right-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets right border color to green-300",
+  },
+  {
+    label: "border-r-green-400",
+    value: "border-r-green-400",
+    styles:
+      "border-right-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets right border color to green-400",
+  },
+  {
+    label: "border-r-green-500",
+    value: "border-r-green-500",
+    styles:
+      "border-right-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets right border color to green-500",
+  },
+  {
+    label: "border-r-green-600",
+    value: "border-r-green-600",
+    styles:
+      "border-right-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets right border color to green-600",
+  },
+  {
+    label: "border-r-green-700",
+    value: "border-r-green-700",
+    styles:
+      "border-right-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets right border color to green-700",
+  },
+  {
+    label: "border-r-green-800",
+    value: "border-r-green-800",
+    styles:
+      "border-right-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets right border color to green-800",
+  },
+  {
+    label: "border-r-green-900",
+    value: "border-r-green-900",
+    styles:
+      "border-right-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets right border color to green-900",
+  },
+  {
+    label: "border-r-green-950",
+    value: "border-r-green-950",
+    styles:
+      "border-right-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets right border color to green-950",
+  },
+  {
+    label: "border-r-emerald-50",
+    value: "border-r-emerald-50",
+    styles:
+      "border-right-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets right border color to emerald-50",
+  },
+  {
+    label: "border-r-emerald-100",
+    value: "border-r-emerald-100",
+    styles:
+      "border-right-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets right border color to emerald-100",
+  },
+  {
+    label: "border-r-emerald-200",
+    value: "border-r-emerald-200",
+    styles:
+      "border-right-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets right border color to emerald-200",
+  },
+  {
+    label: "border-r-emerald-300",
+    value: "border-r-emerald-300",
+    styles:
+      "border-right-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets right border color to emerald-300",
+  },
+  {
+    label: "border-r-emerald-400",
+    value: "border-r-emerald-400",
+    styles:
+      "border-right-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets right border color to emerald-400",
+  },
+  {
+    label: "border-r-emerald-500",
+    value: "border-r-emerald-500",
+    styles:
+      "border-right-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets right border color to emerald-500",
+  },
+  {
+    label: "border-r-emerald-600",
+    value: "border-r-emerald-600",
+    styles:
+      "border-right-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets right border color to emerald-600",
+  },
+  {
+    label: "border-r-emerald-700",
+    value: "border-r-emerald-700",
+    styles:
+      "border-right-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets right border color to emerald-700",
+  },
+  {
+    label: "border-r-emerald-800",
+    value: "border-r-emerald-800",
+    styles:
+      "border-right-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets right border color to emerald-800",
+  },
+  {
+    label: "border-r-emerald-900",
+    value: "border-r-emerald-900",
+    styles:
+      "border-right-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets right border color to emerald-900",
+  },
+  {
+    label: "border-r-emerald-950",
+    value: "border-r-emerald-950",
+    styles:
+      "border-right-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets right border color to emerald-950",
+  },
+  {
+    label: "border-r-teal-50",
+    value: "border-r-teal-50",
+    styles:
+      "border-right-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets right border color to teal-50",
+  },
+  {
+    label: "border-r-teal-100",
+    value: "border-r-teal-100",
+    styles:
+      "border-right-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets right border color to teal-100",
+  },
+  {
+    label: "border-r-teal-200",
+    value: "border-r-teal-200",
+    styles:
+      "border-right-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets right border color to teal-200",
+  },
+  {
+    label: "border-r-teal-300",
+    value: "border-r-teal-300",
+    styles:
+      "border-right-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets right border color to teal-300",
+  },
+  {
+    label: "border-r-teal-400",
+    value: "border-r-teal-400",
+    styles:
+      "border-right-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets right border color to teal-400",
+  },
+  {
+    label: "border-r-teal-500",
+    value: "border-r-teal-500",
+    styles:
+      "border-right-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets right border color to teal-500",
+  },
+  {
+    label: "border-r-teal-600",
+    value: "border-r-teal-600",
+    styles:
+      "border-right-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets right border color to teal-600",
+  },
+  {
+    label: "border-r-teal-700",
+    value: "border-r-teal-700",
+    styles:
+      "border-right-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets right border color to teal-700",
+  },
+  {
+    label: "border-r-teal-800",
+    value: "border-r-teal-800",
+    styles:
+      "border-right-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets right border color to teal-800",
+  },
+  {
+    label: "border-r-teal-900",
+    value: "border-r-teal-900",
+    styles:
+      "border-right-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets right border color to teal-900",
+  },
+  {
+    label: "border-r-teal-950",
+    value: "border-r-teal-950",
+    styles:
+      "border-right-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets right border color to teal-950",
+  },
+  {
+    label: "border-r-cyan-50",
+    value: "border-r-cyan-50",
+    styles:
+      "border-right-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets right border color to cyan-50",
+  },
+  {
+    label: "border-r-cyan-100",
+    value: "border-r-cyan-100",
+    styles:
+      "border-right-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets right border color to cyan-100",
+  },
+  {
+    label: "border-r-cyan-200",
+    value: "border-r-cyan-200",
+    styles:
+      "border-right-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets right border color to cyan-200",
+  },
+  {
+    label: "border-r-cyan-300",
+    value: "border-r-cyan-300",
+    styles:
+      "border-right-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets right border color to cyan-300",
+  },
+  {
+    label: "border-r-cyan-400",
+    value: "border-r-cyan-400",
+    styles:
+      "border-right-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets right border color to cyan-400",
+  },
+  {
+    label: "border-r-cyan-500",
+    value: "border-r-cyan-500",
+    styles:
+      "border-right-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets right border color to cyan-500",
+  },
+  {
+    label: "border-r-cyan-600",
+    value: "border-r-cyan-600",
+    styles:
+      "border-right-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets right border color to cyan-600",
+  },
+  {
+    label: "border-r-cyan-700",
+    value: "border-r-cyan-700",
+    styles:
+      "border-right-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets right border color to cyan-700",
+  },
+  {
+    label: "border-r-cyan-800",
+    value: "border-r-cyan-800",
+    styles:
+      "border-right-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets right border color to cyan-800",
+  },
+  {
+    label: "border-r-cyan-900",
+    value: "border-r-cyan-900",
+    styles:
+      "border-right-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets right border color to cyan-900",
+  },
+  {
+    label: "border-r-cyan-950",
+    value: "border-r-cyan-950",
+    styles:
+      "border-right-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets right border color to cyan-950",
+  },
+  {
+    label: "border-r-sky-50",
+    value: "border-r-sky-50",
+    styles:
+      "border-right-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets right border color to sky-50",
+  },
+  {
+    label: "border-r-sky-100",
+    value: "border-r-sky-100",
+    styles:
+      "border-right-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets right border color to sky-100",
+  },
+  {
+    label: "border-r-sky-200",
+    value: "border-r-sky-200",
+    styles:
+      "border-right-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets right border color to sky-200",
+  },
+  {
+    label: "border-r-sky-300",
+    value: "border-r-sky-300",
+    styles:
+      "border-right-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets right border color to sky-300",
+  },
+  {
+    label: "border-r-sky-400",
+    value: "border-r-sky-400",
+    styles:
+      "border-right-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets right border color to sky-400",
+  },
+  {
+    label: "border-r-sky-500",
+    value: "border-r-sky-500",
+    styles:
+      "border-right-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets right border color to sky-500",
+  },
+  {
+    label: "border-r-sky-600",
+    value: "border-r-sky-600",
+    styles:
+      "border-right-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets right border color to sky-600",
+  },
+  {
+    label: "border-r-sky-700",
+    value: "border-r-sky-700",
+    styles:
+      "border-right-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets right border color to sky-700",
+  },
+  {
+    label: "border-r-sky-800",
+    value: "border-r-sky-800",
+    styles:
+      "border-right-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets right border color to sky-800",
+  },
+  {
+    label: "border-r-sky-900",
+    value: "border-r-sky-900",
+    styles:
+      "border-right-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets right border color to sky-900",
+  },
+  {
+    label: "border-r-sky-950",
+    value: "border-r-sky-950",
+    styles:
+      "border-right-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets right border color to sky-950",
+  },
+  {
+    label: "border-r-blue-50",
+    value: "border-r-blue-50",
+    styles:
+      "border-right-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets right border color to blue-50",
+  },
+  {
+    label: "border-r-blue-100",
+    value: "border-r-blue-100",
+    styles:
+      "border-right-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets right border color to blue-100",
+  },
+  {
+    label: "border-r-blue-200",
+    value: "border-r-blue-200",
+    styles:
+      "border-right-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets right border color to blue-200",
+  },
+  {
+    label: "border-r-blue-300",
+    value: "border-r-blue-300",
+    styles:
+      "border-right-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets right border color to blue-300",
+  },
+  {
+    label: "border-r-blue-400",
+    value: "border-r-blue-400",
+    styles:
+      "border-right-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets right border color to blue-400",
+  },
+  {
+    label: "border-r-blue-500",
+    value: "border-r-blue-500",
+    styles:
+      "border-right-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets right border color to blue-500",
+  },
+  {
+    label: "border-r-blue-600",
+    value: "border-r-blue-600",
+    styles:
+      "border-right-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets right border color to blue-600",
+  },
+  {
+    label: "border-r-blue-700",
+    value: "border-r-blue-700",
+    styles:
+      "border-right-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets right border color to blue-700",
+  },
+  {
+    label: "border-r-blue-800",
+    value: "border-r-blue-800",
+    styles:
+      "border-right-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets right border color to blue-800",
+  },
+  {
+    label: "border-r-blue-900",
+    value: "border-r-blue-900",
+    styles:
+      "border-right-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets right border color to blue-900",
+  },
+  {
+    label: "border-r-blue-950",
+    value: "border-r-blue-950",
+    styles:
+      "border-right-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets right border color to blue-950",
+  },
+  {
+    label: "border-r-indigo-50",
+    value: "border-r-indigo-50",
+    styles:
+      "border-right-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets right border color to indigo-50",
+  },
+  {
+    label: "border-r-indigo-100",
+    value: "border-r-indigo-100",
+    styles:
+      "border-right-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets right border color to indigo-100",
+  },
+  {
+    label: "border-r-indigo-200",
+    value: "border-r-indigo-200",
+    styles:
+      "border-right-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets right border color to indigo-200",
+  },
+  {
+    label: "border-r-indigo-300",
+    value: "border-r-indigo-300",
+    styles:
+      "border-right-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets right border color to indigo-300",
+  },
+  {
+    label: "border-r-indigo-400",
+    value: "border-r-indigo-400",
+    styles:
+      "border-right-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets right border color to indigo-400",
+  },
+  {
+    label: "border-r-indigo-500",
+    value: "border-r-indigo-500",
+    styles:
+      "border-right-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets right border color to indigo-500",
+  },
+  {
+    label: "border-r-indigo-600",
+    value: "border-r-indigo-600",
+    styles:
+      "border-right-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets right border color to indigo-600",
+  },
+  {
+    label: "border-r-indigo-700",
+    value: "border-r-indigo-700",
+    styles:
+      "border-right-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets right border color to indigo-700",
+  },
+  {
+    label: "border-r-indigo-800",
+    value: "border-r-indigo-800",
+    styles:
+      "border-right-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets right border color to indigo-800",
+  },
+  {
+    label: "border-r-indigo-900",
+    value: "border-r-indigo-900",
+    styles:
+      "border-right-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets right border color to indigo-900",
+  },
+  {
+    label: "border-r-indigo-950",
+    value: "border-r-indigo-950",
+    styles:
+      "border-right-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets right border color to indigo-950",
+  },
+  {
+    label: "border-r-violet-50",
+    value: "border-r-violet-50",
+    styles:
+      "border-right-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets right border color to violet-50",
+  },
+  {
+    label: "border-r-violet-100",
+    value: "border-r-violet-100",
+    styles:
+      "border-right-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets right border color to violet-100",
+  },
+  {
+    label: "border-r-violet-200",
+    value: "border-r-violet-200",
+    styles:
+      "border-right-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets right border color to violet-200",
+  },
+  {
+    label: "border-r-violet-300",
+    value: "border-r-violet-300",
+    styles:
+      "border-right-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets right border color to violet-300",
+  },
+  {
+    label: "border-r-violet-400",
+    value: "border-r-violet-400",
+    styles:
+      "border-right-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets right border color to violet-400",
+  },
+  {
+    label: "border-r-violet-500",
+    value: "border-r-violet-500",
+    styles:
+      "border-right-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets right border color to violet-500",
+  },
+  {
+    label: "border-r-violet-600",
+    value: "border-r-violet-600",
+    styles:
+      "border-right-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets right border color to violet-600",
+  },
+  {
+    label: "border-r-violet-700",
+    value: "border-r-violet-700",
+    styles:
+      "border-right-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets right border color to violet-700",
+  },
+  {
+    label: "border-r-violet-800",
+    value: "border-r-violet-800",
+    styles:
+      "border-right-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets right border color to violet-800",
+  },
+  {
+    label: "border-r-violet-900",
+    value: "border-r-violet-900",
+    styles:
+      "border-right-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets right border color to violet-900",
+  },
+  {
+    label: "border-r-violet-950",
+    value: "border-r-violet-950",
+    styles:
+      "border-right-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets right border color to violet-950",
+  },
+  {
+    label: "border-r-purple-50",
+    value: "border-r-purple-50",
+    styles:
+      "border-right-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets right border color to purple-50",
+  },
+  {
+    label: "border-r-purple-100",
+    value: "border-r-purple-100",
+    styles:
+      "border-right-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets right border color to purple-100",
+  },
+  {
+    label: "border-r-purple-200",
+    value: "border-r-purple-200",
+    styles:
+      "border-right-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets right border color to purple-200",
+  },
+  {
+    label: "border-r-purple-300",
+    value: "border-r-purple-300",
+    styles:
+      "border-right-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets right border color to purple-300",
+  },
+  {
+    label: "border-r-purple-400",
+    value: "border-r-purple-400",
+    styles:
+      "border-right-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets right border color to purple-400",
+  },
+  {
+    label: "border-r-purple-500",
+    value: "border-r-purple-500",
+    styles:
+      "border-right-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets right border color to purple-500",
+  },
+  {
+    label: "border-r-purple-600",
+    value: "border-r-purple-600",
+    styles:
+      "border-right-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets right border color to purple-600",
+  },
+  {
+    label: "border-r-purple-700",
+    value: "border-r-purple-700",
+    styles:
+      "border-right-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets right border color to purple-700",
+  },
+  {
+    label: "border-r-purple-800",
+    value: "border-r-purple-800",
+    styles:
+      "border-right-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets right border color to purple-800",
+  },
+  {
+    label: "border-r-purple-900",
+    value: "border-r-purple-900",
+    styles:
+      "border-right-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets right border color to purple-900",
+  },
+  {
+    label: "border-r-purple-950",
+    value: "border-r-purple-950",
+    styles:
+      "border-right-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets right border color to purple-950",
+  },
+  {
+    label: "border-r-fuchsia-50",
+    value: "border-r-fuchsia-50",
+    styles:
+      "border-right-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets right border color to fuchsia-50",
+  },
+  {
+    label: "border-r-fuchsia-100",
+    value: "border-r-fuchsia-100",
+    styles:
+      "border-right-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets right border color to fuchsia-100",
+  },
+  {
+    label: "border-r-fuchsia-200",
+    value: "border-r-fuchsia-200",
+    styles:
+      "border-right-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets right border color to fuchsia-200",
+  },
+  {
+    label: "border-r-fuchsia-300",
+    value: "border-r-fuchsia-300",
+    styles:
+      "border-right-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets right border color to fuchsia-300",
+  },
+  {
+    label: "border-r-fuchsia-400",
+    value: "border-r-fuchsia-400",
+    styles:
+      "border-right-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets right border color to fuchsia-400",
+  },
+  {
+    label: "border-r-fuchsia-500",
+    value: "border-r-fuchsia-500",
+    styles:
+      "border-right-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets right border color to fuchsia-500",
+  },
+  {
+    label: "border-r-fuchsia-600",
+    value: "border-r-fuchsia-600",
+    styles:
+      "border-right-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets right border color to fuchsia-600",
+  },
+  {
+    label: "border-r-fuchsia-700",
+    value: "border-r-fuchsia-700",
+    styles:
+      "border-right-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets right border color to fuchsia-700",
+  },
+  {
+    label: "border-r-fuchsia-800",
+    value: "border-r-fuchsia-800",
+    styles:
+      "border-right-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets right border color to fuchsia-800",
+  },
+  {
+    label: "border-r-fuchsia-900",
+    value: "border-r-fuchsia-900",
+    styles:
+      "border-right-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets right border color to fuchsia-900",
+  },
+  {
+    label: "border-r-fuchsia-950",
+    value: "border-r-fuchsia-950",
+    styles:
+      "border-right-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets right border color to fuchsia-950",
+  },
+  {
+    label: "border-r-pink-50",
+    value: "border-r-pink-50",
+    styles:
+      "border-right-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets right border color to pink-50",
+  },
+  {
+    label: "border-r-pink-100",
+    value: "border-r-pink-100",
+    styles:
+      "border-right-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets right border color to pink-100",
+  },
+  {
+    label: "border-r-pink-200",
+    value: "border-r-pink-200",
+    styles:
+      "border-right-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets right border color to pink-200",
+  },
+  {
+    label: "border-r-pink-300",
+    value: "border-r-pink-300",
+    styles:
+      "border-right-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets right border color to pink-300",
+  },
+  {
+    label: "border-r-pink-400",
+    value: "border-r-pink-400",
+    styles:
+      "border-right-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets right border color to pink-400",
+  },
+  {
+    label: "border-r-pink-500",
+    value: "border-r-pink-500",
+    styles:
+      "border-right-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets right border color to pink-500",
+  },
+  {
+    label: "border-r-pink-600",
+    value: "border-r-pink-600",
+    styles:
+      "border-right-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets right border color to pink-600",
+  },
+  {
+    label: "border-r-pink-700",
+    value: "border-r-pink-700",
+    styles:
+      "border-right-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets right border color to pink-700",
+  },
+  {
+    label: "border-r-pink-800",
+    value: "border-r-pink-800",
+    styles:
+      "border-right-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets right border color to pink-800",
+  },
+  {
+    label: "border-r-pink-900",
+    value: "border-r-pink-900",
+    styles:
+      "border-right-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets right border color to pink-900",
+  },
+  {
+    label: "border-r-pink-950",
+    value: "border-r-pink-950",
+    styles:
+      "border-right-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets right border color to pink-950",
+  },
+  {
+    label: "border-r-rose-50",
+    value: "border-r-rose-50",
+    styles:
+      "border-right-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets right border color to rose-50",
+  },
+  {
+    label: "border-r-rose-100",
+    value: "border-r-rose-100",
+    styles:
+      "border-right-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets right border color to rose-100",
+  },
+  {
+    label: "border-r-rose-200",
+    value: "border-r-rose-200",
+    styles:
+      "border-right-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets right border color to rose-200",
+  },
+  {
+    label: "border-r-rose-300",
+    value: "border-r-rose-300",
+    styles:
+      "border-right-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets right border color to rose-300",
+  },
+  {
+    label: "border-r-rose-400",
+    value: "border-r-rose-400",
+    styles:
+      "border-right-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets right border color to rose-400",
+  },
+  {
+    label: "border-r-rose-500",
+    value: "border-r-rose-500",
+    styles:
+      "border-right-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets right border color to rose-500",
+  },
+  {
+    label: "border-r-rose-600",
+    value: "border-r-rose-600",
+    styles:
+      "border-right-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets right border color to rose-600",
+  },
+  {
+    label: "border-r-rose-700",
+    value: "border-r-rose-700",
+    styles:
+      "border-right-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets right border color to rose-700",
+  },
+  {
+    label: "border-r-rose-800",
+    value: "border-r-rose-800",
+    styles:
+      "border-right-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets right border color to rose-800",
+  },
+  {
+    label: "border-r-rose-900",
+    value: "border-r-rose-900",
+    styles:
+      "border-right-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets right border color to rose-900",
+  },
+  {
+    label: "border-r-rose-950",
+    value: "border-r-rose-950",
+    styles:
+      "border-right-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets right border color to rose-950",
+  },
+  {
+    label: "border-r-slate-50",
+    value: "border-r-slate-50",
+    styles:
+      "border-right-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets right border color to slate-50",
+  },
+  {
+    label: "border-r-slate-100",
+    value: "border-r-slate-100",
+    styles:
+      "border-right-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets right border color to slate-100",
+  },
+  {
+    label: "border-r-slate-200",
+    value: "border-r-slate-200",
+    styles:
+      "border-right-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets right border color to slate-200",
+  },
+  {
+    label: "border-r-slate-300",
+    value: "border-r-slate-300",
+    styles:
+      "border-right-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets right border color to slate-300",
+  },
+  {
+    label: "border-r-slate-400",
+    value: "border-r-slate-400",
+    styles:
+      "border-right-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets right border color to slate-400",
+  },
+  {
+    label: "border-r-slate-500",
+    value: "border-r-slate-500",
+    styles:
+      "border-right-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets right border color to slate-500",
+  },
+  {
+    label: "border-r-slate-600",
+    value: "border-r-slate-600",
+    styles:
+      "border-right-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets right border color to slate-600",
+  },
+  {
+    label: "border-r-slate-700",
+    value: "border-r-slate-700",
+    styles:
+      "border-right-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets right border color to slate-700",
+  },
+  {
+    label: "border-r-slate-800",
+    value: "border-r-slate-800",
+    styles:
+      "border-right-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets right border color to slate-800",
+  },
+  {
+    label: "border-r-slate-900",
+    value: "border-r-slate-900",
+    styles:
+      "border-right-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets right border color to slate-900",
+  },
+  {
+    label: "border-r-slate-950",
+    value: "border-r-slate-950",
+    styles:
+      "border-right-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets right border color to slate-950",
+  },
+  {
+    label: "border-r-gray-50",
+    value: "border-r-gray-50",
+    styles:
+      "border-right-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets right border color to gray-50",
+  },
+  {
+    label: "border-r-gray-100",
+    value: "border-r-gray-100",
+    styles:
+      "border-right-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets right border color to gray-100",
+  },
+  {
+    label: "border-r-gray-200",
+    value: "border-r-gray-200",
+    styles:
+      "border-right-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets right border color to gray-200",
+  },
+  {
+    label: "border-r-gray-300",
+    value: "border-r-gray-300",
+    styles:
+      "border-right-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets right border color to gray-300",
+  },
+  {
+    label: "border-r-gray-400",
+    value: "border-r-gray-400",
+    styles:
+      "border-right-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets right border color to gray-400",
+  },
+  {
+    label: "border-r-gray-500",
+    value: "border-r-gray-500",
+    styles:
+      "border-right-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets right border color to gray-500",
+  },
+  {
+    label: "border-r-gray-600",
+    value: "border-r-gray-600",
+    styles:
+      "border-right-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets right border color to gray-600",
+  },
+  {
+    label: "border-r-gray-700",
+    value: "border-r-gray-700",
+    styles:
+      "border-right-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets right border color to gray-700",
+  },
+  {
+    label: "border-r-gray-800",
+    value: "border-r-gray-800",
+    styles:
+      "border-right-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets right border color to gray-800",
+  },
+  {
+    label: "border-r-gray-900",
+    value: "border-r-gray-900",
+    styles:
+      "border-right-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets right border color to gray-900",
+  },
+  {
+    label: "border-r-gray-950",
+    value: "border-r-gray-950",
+    styles:
+      "border-right-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets right border color to gray-950",
+  },
+  {
+    label: "border-r-zinc-50",
+    value: "border-r-zinc-50",
+    styles: "border-right-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets right border color to zinc-50",
+  },
+  {
+    label: "border-r-zinc-100",
+    value: "border-r-zinc-100",
+    styles:
+      "border-right-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets right border color to zinc-100",
+  },
+  {
+    label: "border-r-zinc-200",
+    value: "border-r-zinc-200",
+    styles:
+      "border-right-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets right border color to zinc-200",
+  },
+  {
+    label: "border-r-zinc-300",
+    value: "border-r-zinc-300",
+    styles:
+      "border-right-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets right border color to zinc-300",
+  },
+  {
+    label: "border-r-zinc-400",
+    value: "border-r-zinc-400",
+    styles:
+      "border-right-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets right border color to zinc-400",
+  },
+  {
+    label: "border-r-zinc-500",
+    value: "border-r-zinc-500",
+    styles:
+      "border-right-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets right border color to zinc-500",
+  },
+  {
+    label: "border-r-zinc-600",
+    value: "border-r-zinc-600",
+    styles:
+      "border-right-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets right border color to zinc-600",
+  },
+  {
+    label: "border-r-zinc-700",
+    value: "border-r-zinc-700",
+    styles:
+      "border-right-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets right border color to zinc-700",
+  },
+  {
+    label: "border-r-zinc-800",
+    value: "border-r-zinc-800",
+    styles:
+      "border-right-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets right border color to zinc-800",
+  },
+  {
+    label: "border-r-zinc-900",
+    value: "border-r-zinc-900",
+    styles:
+      "border-right-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets right border color to zinc-900",
+  },
+  {
+    label: "border-r-zinc-950",
+    value: "border-r-zinc-950",
+    styles:
+      "border-right-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets right border color to zinc-950",
+  },
+  {
+    label: "border-r-neutral-50",
+    value: "border-r-neutral-50",
+    styles:
+      "border-right-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets right border color to neutral-50",
+  },
+  {
+    label: "border-r-neutral-100",
+    value: "border-r-neutral-100",
+    styles:
+      "border-right-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets right border color to neutral-100",
+  },
+  {
+    label: "border-r-neutral-200",
+    value: "border-r-neutral-200",
+    styles:
+      "border-right-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets right border color to neutral-200",
+  },
+  {
+    label: "border-r-neutral-300",
+    value: "border-r-neutral-300",
+    styles:
+      "border-right-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets right border color to neutral-300",
+  },
+  {
+    label: "border-r-neutral-400",
+    value: "border-r-neutral-400",
+    styles:
+      "border-right-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets right border color to neutral-400",
+  },
+  {
+    label: "border-r-neutral-500",
+    value: "border-r-neutral-500",
+    styles:
+      "border-right-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets right border color to neutral-500",
+  },
+  {
+    label: "border-r-neutral-600",
+    value: "border-r-neutral-600",
+    styles:
+      "border-right-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets right border color to neutral-600",
+  },
+  {
+    label: "border-r-neutral-700",
+    value: "border-r-neutral-700",
+    styles:
+      "border-right-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets right border color to neutral-700",
+  },
+  {
+    label: "border-r-neutral-800",
+    value: "border-r-neutral-800",
+    styles:
+      "border-right-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets right border color to neutral-800",
+  },
+  {
+    label: "border-r-neutral-900",
+    value: "border-r-neutral-900",
+    styles:
+      "border-right-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets right border color to neutral-900",
+  },
+  {
+    label: "border-r-neutral-950",
+    value: "border-r-neutral-950",
+    styles:
+      "border-right-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets right border color to neutral-950",
+  },
+  {
+    label: "border-r-stone-50",
+    value: "border-r-stone-50",
+    styles:
+      "border-right-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets right border color to stone-50",
+  },
+  {
+    label: "border-r-stone-100",
+    value: "border-r-stone-100",
+    styles:
+      "border-right-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets right border color to stone-100",
+  },
+  {
+    label: "border-r-stone-200",
+    value: "border-r-stone-200",
+    styles:
+      "border-right-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets right border color to stone-200",
+  },
+  {
+    label: "border-r-stone-300",
+    value: "border-r-stone-300",
+    styles:
+      "border-right-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets right border color to stone-300",
+  },
+  {
+    label: "border-r-stone-400",
+    value: "border-r-stone-400",
+    styles:
+      "border-right-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets right border color to stone-400",
+  },
+  {
+    label: "border-r-stone-500",
+    value: "border-r-stone-500",
+    styles:
+      "border-right-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets right border color to stone-500",
+  },
+  {
+    label: "border-r-stone-600",
+    value: "border-r-stone-600",
+    styles:
+      "border-right-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets right border color to stone-600",
+  },
+  {
+    label: "border-r-stone-700",
+    value: "border-r-stone-700",
+    styles:
+      "border-right-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets right border color to stone-700",
+  },
+  {
+    label: "border-r-stone-800",
+    value: "border-r-stone-800",
+    styles:
+      "border-right-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets right border color to stone-800",
+  },
+  {
+    label: "border-r-stone-900",
+    value: "border-r-stone-900",
+    styles:
+      "border-right-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets right border color to stone-900",
+  },
+  {
+    label: "border-r-stone-950",
+    value: "border-r-stone-950",
+    styles:
+      "border-right-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets right border color to stone-950",
+  },
+  {
+    label: "border-r-(<custom-property>)",
+    value: "border-r-(<custom-property>)",
+    styles: "border-right-color: var(<custom-property>);",
+    description: "Sets right border color to (<custom-property>)",
+  },
+  {
+    label: "border-r-[<value>]",
+    value: "border-r-[<value>]",
+    styles: "border-right-color: <value>;",
+    description: "Sets right border color to [<value>]",
+  },
+  {
+    label: "border-b-inherit",
+    value: "border-b-inherit",
+    styles: "border-bottom-color: inherit;",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-b-current",
+    value: "border-b-current",
+    styles: "border-bottom-color: currentColor;",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-b-transparent",
+    value: "border-b-transparent",
+    styles: "border-bottom-color: transparent;",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-b-black",
+    value: "border-b-black",
+    styles: "border-bottom-color: var(--color-black); /* #000 */",
+    description: "Sets bottom border color to black",
+  },
+  {
+    label: "border-b-white",
+    value: "border-b-white",
+    styles: "border-bottom-color: var(--color-white); /* #fff */",
+    description: "Sets bottom border color to white",
+  },
+  {
+    label: "border-b-red-50",
+    value: "border-b-red-50",
+    styles:
+      "border-bottom-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets bottom border color to red-50",
+  },
+  {
+    label: "border-b-red-100",
+    value: "border-b-red-100",
+    styles:
+      "border-bottom-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets bottom border color to red-100",
+  },
+  {
+    label: "border-b-red-200",
+    value: "border-b-red-200",
+    styles:
+      "border-bottom-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets bottom border color to red-200",
+  },
+  {
+    label: "border-b-red-300",
+    value: "border-b-red-300",
+    styles:
+      "border-bottom-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets bottom border color to red-300",
+  },
+  {
+    label: "border-b-red-400",
+    value: "border-b-red-400",
+    styles:
+      "border-bottom-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets bottom border color to red-400",
+  },
+  {
+    label: "border-b-red-500",
+    value: "border-b-red-500",
+    styles:
+      "border-bottom-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets bottom border color to red-500",
+  },
+  {
+    label: "border-b-red-600",
+    value: "border-b-red-600",
+    styles:
+      "border-bottom-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets bottom border color to red-600",
+  },
+  {
+    label: "border-b-red-700",
+    value: "border-b-red-700",
+    styles:
+      "border-bottom-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets bottom border color to red-700",
+  },
+  {
+    label: "border-b-red-800",
+    value: "border-b-red-800",
+    styles:
+      "border-bottom-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets bottom border color to red-800",
+  },
+  {
+    label: "border-b-red-900",
+    value: "border-b-red-900",
+    styles:
+      "border-bottom-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets bottom border color to red-900",
+  },
+  {
+    label: "border-b-red-950",
+    value: "border-b-red-950",
+    styles:
+      "border-bottom-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets bottom border color to red-950",
+  },
+  {
+    label: "border-b-orange-50",
+    value: "border-b-orange-50",
+    styles:
+      "border-bottom-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets bottom border color to orange-50",
+  },
+  {
+    label: "border-b-orange-100",
+    value: "border-b-orange-100",
+    styles:
+      "border-bottom-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets bottom border color to orange-100",
+  },
+  {
+    label: "border-b-orange-200",
+    value: "border-b-orange-200",
+    styles:
+      "border-bottom-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets bottom border color to orange-200",
+  },
+  {
+    label: "border-b-orange-300",
+    value: "border-b-orange-300",
+    styles:
+      "border-bottom-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets bottom border color to orange-300",
+  },
+  {
+    label: "border-b-orange-400",
+    value: "border-b-orange-400",
+    styles:
+      "border-bottom-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets bottom border color to orange-400",
+  },
+  {
+    label: "border-b-orange-500",
+    value: "border-b-orange-500",
+    styles:
+      "border-bottom-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets bottom border color to orange-500",
+  },
+  {
+    label: "border-b-orange-600",
+    value: "border-b-orange-600",
+    styles:
+      "border-bottom-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets bottom border color to orange-600",
+  },
+  {
+    label: "border-b-orange-700",
+    value: "border-b-orange-700",
+    styles:
+      "border-bottom-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets bottom border color to orange-700",
+  },
+  {
+    label: "border-b-orange-800",
+    value: "border-b-orange-800",
+    styles:
+      "border-bottom-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets bottom border color to orange-800",
+  },
+  {
+    label: "border-b-orange-900",
+    value: "border-b-orange-900",
+    styles:
+      "border-bottom-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets bottom border color to orange-900",
+  },
+  {
+    label: "border-b-orange-950",
+    value: "border-b-orange-950",
+    styles:
+      "border-bottom-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets bottom border color to orange-950",
+  },
+  {
+    label: "border-b-amber-50",
+    value: "border-b-amber-50",
+    styles:
+      "border-bottom-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets bottom border color to amber-50",
+  },
+  {
+    label: "border-b-amber-100",
+    value: "border-b-amber-100",
+    styles:
+      "border-bottom-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets bottom border color to amber-100",
+  },
+  {
+    label: "border-b-amber-200",
+    value: "border-b-amber-200",
+    styles:
+      "border-bottom-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets bottom border color to amber-200",
+  },
+  {
+    label: "border-b-amber-300",
+    value: "border-b-amber-300",
+    styles:
+      "border-bottom-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets bottom border color to amber-300",
+  },
+  {
+    label: "border-b-amber-400",
+    value: "border-b-amber-400",
+    styles:
+      "border-bottom-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets bottom border color to amber-400",
+  },
+  {
+    label: "border-b-amber-500",
+    value: "border-b-amber-500",
+    styles:
+      "border-bottom-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets bottom border color to amber-500",
+  },
+  {
+    label: "border-b-amber-600",
+    value: "border-b-amber-600",
+    styles:
+      "border-bottom-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets bottom border color to amber-600",
+  },
+  {
+    label: "border-b-amber-700",
+    value: "border-b-amber-700",
+    styles:
+      "border-bottom-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets bottom border color to amber-700",
+  },
+  {
+    label: "border-b-amber-800",
+    value: "border-b-amber-800",
+    styles:
+      "border-bottom-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets bottom border color to amber-800",
+  },
+  {
+    label: "border-b-amber-900",
+    value: "border-b-amber-900",
+    styles:
+      "border-bottom-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets bottom border color to amber-900",
+  },
+  {
+    label: "border-b-amber-950",
+    value: "border-b-amber-950",
+    styles:
+      "border-bottom-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets bottom border color to amber-950",
+  },
+  {
+    label: "border-b-yellow-50",
+    value: "border-b-yellow-50",
+    styles:
+      "border-bottom-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets bottom border color to yellow-50",
+  },
+  {
+    label: "border-b-yellow-100",
+    value: "border-b-yellow-100",
+    styles:
+      "border-bottom-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets bottom border color to yellow-100",
+  },
+  {
+    label: "border-b-yellow-200",
+    value: "border-b-yellow-200",
+    styles:
+      "border-bottom-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets bottom border color to yellow-200",
+  },
+  {
+    label: "border-b-yellow-300",
+    value: "border-b-yellow-300",
+    styles:
+      "border-bottom-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets bottom border color to yellow-300",
+  },
+  {
+    label: "border-b-yellow-400",
+    value: "border-b-yellow-400",
+    styles:
+      "border-bottom-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets bottom border color to yellow-400",
+  },
+  {
+    label: "border-b-yellow-500",
+    value: "border-b-yellow-500",
+    styles:
+      "border-bottom-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets bottom border color to yellow-500",
+  },
+  {
+    label: "border-b-yellow-600",
+    value: "border-b-yellow-600",
+    styles:
+      "border-bottom-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets bottom border color to yellow-600",
+  },
+  {
+    label: "border-b-yellow-700",
+    value: "border-b-yellow-700",
+    styles:
+      "border-bottom-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets bottom border color to yellow-700",
+  },
+  {
+    label: "border-b-yellow-800",
+    value: "border-b-yellow-800",
+    styles:
+      "border-bottom-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets bottom border color to yellow-800",
+  },
+  {
+    label: "border-b-yellow-900",
+    value: "border-b-yellow-900",
+    styles:
+      "border-bottom-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets bottom border color to yellow-900",
+  },
+  {
+    label: "border-b-yellow-950",
+    value: "border-b-yellow-950",
+    styles:
+      "border-bottom-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets bottom border color to yellow-950",
+  },
+  {
+    label: "border-b-lime-50",
+    value: "border-b-lime-50",
+    styles:
+      "border-bottom-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets bottom border color to lime-50",
+  },
+  {
+    label: "border-b-lime-100",
+    value: "border-b-lime-100",
+    styles:
+      "border-bottom-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets bottom border color to lime-100",
+  },
+  {
+    label: "border-b-lime-200",
+    value: "border-b-lime-200",
+    styles:
+      "border-bottom-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets bottom border color to lime-200",
+  },
+  {
+    label: "border-b-lime-300",
+    value: "border-b-lime-300",
+    styles:
+      "border-bottom-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets bottom border color to lime-300",
+  },
+  {
+    label: "border-b-lime-400",
+    value: "border-b-lime-400",
+    styles:
+      "border-bottom-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets bottom border color to lime-400",
+  },
+  {
+    label: "border-b-lime-500",
+    value: "border-b-lime-500",
+    styles:
+      "border-bottom-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets bottom border color to lime-500",
+  },
+  {
+    label: "border-b-lime-600",
+    value: "border-b-lime-600",
+    styles:
+      "border-bottom-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets bottom border color to lime-600",
+  },
+  {
+    label: "border-b-lime-700",
+    value: "border-b-lime-700",
+    styles:
+      "border-bottom-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets bottom border color to lime-700",
+  },
+  {
+    label: "border-b-lime-800",
+    value: "border-b-lime-800",
+    styles:
+      "border-bottom-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets bottom border color to lime-800",
+  },
+  {
+    label: "border-b-lime-900",
+    value: "border-b-lime-900",
+    styles:
+      "border-bottom-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets bottom border color to lime-900",
+  },
+  {
+    label: "border-b-lime-950",
+    value: "border-b-lime-950",
+    styles:
+      "border-bottom-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets bottom border color to lime-950",
+  },
+  {
+    label: "border-b-green-50",
+    value: "border-b-green-50",
+    styles:
+      "border-bottom-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets bottom border color to green-50",
+  },
+  {
+    label: "border-b-green-100",
+    value: "border-b-green-100",
+    styles:
+      "border-bottom-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets bottom border color to green-100",
+  },
+  {
+    label: "border-b-green-200",
+    value: "border-b-green-200",
+    styles:
+      "border-bottom-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets bottom border color to green-200",
+  },
+  {
+    label: "border-b-green-300",
+    value: "border-b-green-300",
+    styles:
+      "border-bottom-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets bottom border color to green-300",
+  },
+  {
+    label: "border-b-green-400",
+    value: "border-b-green-400",
+    styles:
+      "border-bottom-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets bottom border color to green-400",
+  },
+  {
+    label: "border-b-green-500",
+    value: "border-b-green-500",
+    styles:
+      "border-bottom-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets bottom border color to green-500",
+  },
+  {
+    label: "border-b-green-600",
+    value: "border-b-green-600",
+    styles:
+      "border-bottom-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets bottom border color to green-600",
+  },
+  {
+    label: "border-b-green-700",
+    value: "border-b-green-700",
+    styles:
+      "border-bottom-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets bottom border color to green-700",
+  },
+  {
+    label: "border-b-green-800",
+    value: "border-b-green-800",
+    styles:
+      "border-bottom-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets bottom border color to green-800",
+  },
+  {
+    label: "border-b-green-900",
+    value: "border-b-green-900",
+    styles:
+      "border-bottom-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets bottom border color to green-900",
+  },
+  {
+    label: "border-b-green-950",
+    value: "border-b-green-950",
+    styles:
+      "border-bottom-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets bottom border color to green-950",
+  },
+  {
+    label: "border-b-emerald-50",
+    value: "border-b-emerald-50",
+    styles:
+      "border-bottom-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets bottom border color to emerald-50",
+  },
+  {
+    label: "border-b-emerald-100",
+    value: "border-b-emerald-100",
+    styles:
+      "border-bottom-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets bottom border color to emerald-100",
+  },
+  {
+    label: "border-b-emerald-200",
+    value: "border-b-emerald-200",
+    styles:
+      "border-bottom-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets bottom border color to emerald-200",
+  },
+  {
+    label: "border-b-emerald-300",
+    value: "border-b-emerald-300",
+    styles:
+      "border-bottom-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets bottom border color to emerald-300",
+  },
+  {
+    label: "border-b-emerald-400",
+    value: "border-b-emerald-400",
+    styles:
+      "border-bottom-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets bottom border color to emerald-400",
+  },
+  {
+    label: "border-b-emerald-500",
+    value: "border-b-emerald-500",
+    styles:
+      "border-bottom-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets bottom border color to emerald-500",
+  },
+  {
+    label: "border-b-emerald-600",
+    value: "border-b-emerald-600",
+    styles:
+      "border-bottom-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets bottom border color to emerald-600",
+  },
+  {
+    label: "border-b-emerald-700",
+    value: "border-b-emerald-700",
+    styles:
+      "border-bottom-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets bottom border color to emerald-700",
+  },
+  {
+    label: "border-b-emerald-800",
+    value: "border-b-emerald-800",
+    styles:
+      "border-bottom-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets bottom border color to emerald-800",
+  },
+  {
+    label: "border-b-emerald-900",
+    value: "border-b-emerald-900",
+    styles:
+      "border-bottom-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets bottom border color to emerald-900",
+  },
+  {
+    label: "border-b-emerald-950",
+    value: "border-b-emerald-950",
+    styles:
+      "border-bottom-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets bottom border color to emerald-950",
+  },
+  {
+    label: "border-b-teal-50",
+    value: "border-b-teal-50",
+    styles:
+      "border-bottom-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets bottom border color to teal-50",
+  },
+  {
+    label: "border-b-teal-100",
+    value: "border-b-teal-100",
+    styles:
+      "border-bottom-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets bottom border color to teal-100",
+  },
+  {
+    label: "border-b-teal-200",
+    value: "border-b-teal-200",
+    styles:
+      "border-bottom-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets bottom border color to teal-200",
+  },
+  {
+    label: "border-b-teal-300",
+    value: "border-b-teal-300",
+    styles:
+      "border-bottom-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets bottom border color to teal-300",
+  },
+  {
+    label: "border-b-teal-400",
+    value: "border-b-teal-400",
+    styles:
+      "border-bottom-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets bottom border color to teal-400",
+  },
+  {
+    label: "border-b-teal-500",
+    value: "border-b-teal-500",
+    styles:
+      "border-bottom-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets bottom border color to teal-500",
+  },
+  {
+    label: "border-b-teal-600",
+    value: "border-b-teal-600",
+    styles:
+      "border-bottom-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets bottom border color to teal-600",
+  },
+  {
+    label: "border-b-teal-700",
+    value: "border-b-teal-700",
+    styles:
+      "border-bottom-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets bottom border color to teal-700",
+  },
+  {
+    label: "border-b-teal-800",
+    value: "border-b-teal-800",
+    styles:
+      "border-bottom-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets bottom border color to teal-800",
+  },
+  {
+    label: "border-b-teal-900",
+    value: "border-b-teal-900",
+    styles:
+      "border-bottom-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets bottom border color to teal-900",
+  },
+  {
+    label: "border-b-teal-950",
+    value: "border-b-teal-950",
+    styles:
+      "border-bottom-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets bottom border color to teal-950",
+  },
+  {
+    label: "border-b-cyan-50",
+    value: "border-b-cyan-50",
+    styles:
+      "border-bottom-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets bottom border color to cyan-50",
+  },
+  {
+    label: "border-b-cyan-100",
+    value: "border-b-cyan-100",
+    styles:
+      "border-bottom-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets bottom border color to cyan-100",
+  },
+  {
+    label: "border-b-cyan-200",
+    value: "border-b-cyan-200",
+    styles:
+      "border-bottom-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets bottom border color to cyan-200",
+  },
+  {
+    label: "border-b-cyan-300",
+    value: "border-b-cyan-300",
+    styles:
+      "border-bottom-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets bottom border color to cyan-300",
+  },
+  {
+    label: "border-b-cyan-400",
+    value: "border-b-cyan-400",
+    styles:
+      "border-bottom-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets bottom border color to cyan-400",
+  },
+  {
+    label: "border-b-cyan-500",
+    value: "border-b-cyan-500",
+    styles:
+      "border-bottom-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets bottom border color to cyan-500",
+  },
+  {
+    label: "border-b-cyan-600",
+    value: "border-b-cyan-600",
+    styles:
+      "border-bottom-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets bottom border color to cyan-600",
+  },
+  {
+    label: "border-b-cyan-700",
+    value: "border-b-cyan-700",
+    styles:
+      "border-bottom-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets bottom border color to cyan-700",
+  },
+  {
+    label: "border-b-cyan-800",
+    value: "border-b-cyan-800",
+    styles:
+      "border-bottom-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets bottom border color to cyan-800",
+  },
+  {
+    label: "border-b-cyan-900",
+    value: "border-b-cyan-900",
+    styles:
+      "border-bottom-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets bottom border color to cyan-900",
+  },
+  {
+    label: "border-b-cyan-950",
+    value: "border-b-cyan-950",
+    styles:
+      "border-bottom-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets bottom border color to cyan-950",
+  },
+  {
+    label: "border-b-sky-50",
+    value: "border-b-sky-50",
+    styles:
+      "border-bottom-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets bottom border color to sky-50",
+  },
+  {
+    label: "border-b-sky-100",
+    value: "border-b-sky-100",
+    styles:
+      "border-bottom-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets bottom border color to sky-100",
+  },
+  {
+    label: "border-b-sky-200",
+    value: "border-b-sky-200",
+    styles:
+      "border-bottom-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets bottom border color to sky-200",
+  },
+  {
+    label: "border-b-sky-300",
+    value: "border-b-sky-300",
+    styles:
+      "border-bottom-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets bottom border color to sky-300",
+  },
+  {
+    label: "border-b-sky-400",
+    value: "border-b-sky-400",
+    styles:
+      "border-bottom-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets bottom border color to sky-400",
+  },
+  {
+    label: "border-b-sky-500",
+    value: "border-b-sky-500",
+    styles:
+      "border-bottom-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets bottom border color to sky-500",
+  },
+  {
+    label: "border-b-sky-600",
+    value: "border-b-sky-600",
+    styles:
+      "border-bottom-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets bottom border color to sky-600",
+  },
+  {
+    label: "border-b-sky-700",
+    value: "border-b-sky-700",
+    styles:
+      "border-bottom-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets bottom border color to sky-700",
+  },
+  {
+    label: "border-b-sky-800",
+    value: "border-b-sky-800",
+    styles:
+      "border-bottom-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets bottom border color to sky-800",
+  },
+  {
+    label: "border-b-sky-900",
+    value: "border-b-sky-900",
+    styles:
+      "border-bottom-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets bottom border color to sky-900",
+  },
+  {
+    label: "border-b-sky-950",
+    value: "border-b-sky-950",
+    styles:
+      "border-bottom-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets bottom border color to sky-950",
+  },
+  {
+    label: "border-b-blue-50",
+    value: "border-b-blue-50",
+    styles:
+      "border-bottom-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets bottom border color to blue-50",
+  },
+  {
+    label: "border-b-blue-100",
+    value: "border-b-blue-100",
+    styles:
+      "border-bottom-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets bottom border color to blue-100",
+  },
+  {
+    label: "border-b-blue-200",
+    value: "border-b-blue-200",
+    styles:
+      "border-bottom-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets bottom border color to blue-200",
+  },
+  {
+    label: "border-b-blue-300",
+    value: "border-b-blue-300",
+    styles:
+      "border-bottom-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets bottom border color to blue-300",
+  },
+  {
+    label: "border-b-blue-400",
+    value: "border-b-blue-400",
+    styles:
+      "border-bottom-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets bottom border color to blue-400",
+  },
+  {
+    label: "border-b-blue-500",
+    value: "border-b-blue-500",
+    styles:
+      "border-bottom-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets bottom border color to blue-500",
+  },
+  {
+    label: "border-b-blue-600",
+    value: "border-b-blue-600",
+    styles:
+      "border-bottom-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets bottom border color to blue-600",
+  },
+  {
+    label: "border-b-blue-700",
+    value: "border-b-blue-700",
+    styles:
+      "border-bottom-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets bottom border color to blue-700",
+  },
+  {
+    label: "border-b-blue-800",
+    value: "border-b-blue-800",
+    styles:
+      "border-bottom-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets bottom border color to blue-800",
+  },
+  {
+    label: "border-b-blue-900",
+    value: "border-b-blue-900",
+    styles:
+      "border-bottom-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets bottom border color to blue-900",
+  },
+  {
+    label: "border-b-blue-950",
+    value: "border-b-blue-950",
+    styles:
+      "border-bottom-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets bottom border color to blue-950",
+  },
+  {
+    label: "border-b-indigo-50",
+    value: "border-b-indigo-50",
+    styles:
+      "border-bottom-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets bottom border color to indigo-50",
+  },
+  {
+    label: "border-b-indigo-100",
+    value: "border-b-indigo-100",
+    styles:
+      "border-bottom-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets bottom border color to indigo-100",
+  },
+  {
+    label: "border-b-indigo-200",
+    value: "border-b-indigo-200",
+    styles:
+      "border-bottom-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets bottom border color to indigo-200",
+  },
+  {
+    label: "border-b-indigo-300",
+    value: "border-b-indigo-300",
+    styles:
+      "border-bottom-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets bottom border color to indigo-300",
+  },
+  {
+    label: "border-b-indigo-400",
+    value: "border-b-indigo-400",
+    styles:
+      "border-bottom-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets bottom border color to indigo-400",
+  },
+  {
+    label: "border-b-indigo-500",
+    value: "border-b-indigo-500",
+    styles:
+      "border-bottom-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets bottom border color to indigo-500",
+  },
+  {
+    label: "border-b-indigo-600",
+    value: "border-b-indigo-600",
+    styles:
+      "border-bottom-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets bottom border color to indigo-600",
+  },
+  {
+    label: "border-b-indigo-700",
+    value: "border-b-indigo-700",
+    styles:
+      "border-bottom-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets bottom border color to indigo-700",
+  },
+  {
+    label: "border-b-indigo-800",
+    value: "border-b-indigo-800",
+    styles:
+      "border-bottom-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets bottom border color to indigo-800",
+  },
+  {
+    label: "border-b-indigo-900",
+    value: "border-b-indigo-900",
+    styles:
+      "border-bottom-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets bottom border color to indigo-900",
+  },
+  {
+    label: "border-b-indigo-950",
+    value: "border-b-indigo-950",
+    styles:
+      "border-bottom-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets bottom border color to indigo-950",
+  },
+  {
+    label: "border-b-violet-50",
+    value: "border-b-violet-50",
+    styles:
+      "border-bottom-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets bottom border color to violet-50",
+  },
+  {
+    label: "border-b-violet-100",
+    value: "border-b-violet-100",
+    styles:
+      "border-bottom-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets bottom border color to violet-100",
+  },
+  {
+    label: "border-b-violet-200",
+    value: "border-b-violet-200",
+    styles:
+      "border-bottom-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets bottom border color to violet-200",
+  },
+  {
+    label: "border-b-violet-300",
+    value: "border-b-violet-300",
+    styles:
+      "border-bottom-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets bottom border color to violet-300",
+  },
+  {
+    label: "border-b-violet-400",
+    value: "border-b-violet-400",
+    styles:
+      "border-bottom-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets bottom border color to violet-400",
+  },
+  {
+    label: "border-b-violet-500",
+    value: "border-b-violet-500",
+    styles:
+      "border-bottom-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets bottom border color to violet-500",
+  },
+  {
+    label: "border-b-violet-600",
+    value: "border-b-violet-600",
+    styles:
+      "border-bottom-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets bottom border color to violet-600",
+  },
+  {
+    label: "border-b-violet-700",
+    value: "border-b-violet-700",
+    styles:
+      "border-bottom-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets bottom border color to violet-700",
+  },
+  {
+    label: "border-b-violet-800",
+    value: "border-b-violet-800",
+    styles:
+      "border-bottom-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets bottom border color to violet-800",
+  },
+  {
+    label: "border-b-violet-900",
+    value: "border-b-violet-900",
+    styles:
+      "border-bottom-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets bottom border color to violet-900",
+  },
+  {
+    label: "border-b-violet-950",
+    value: "border-b-violet-950",
+    styles:
+      "border-bottom-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets bottom border color to violet-950",
+  },
+  {
+    label: "border-b-purple-50",
+    value: "border-b-purple-50",
+    styles:
+      "border-bottom-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets bottom border color to purple-50",
+  },
+  {
+    label: "border-b-purple-100",
+    value: "border-b-purple-100",
+    styles:
+      "border-bottom-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets bottom border color to purple-100",
+  },
+  {
+    label: "border-b-purple-200",
+    value: "border-b-purple-200",
+    styles:
+      "border-bottom-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets bottom border color to purple-200",
+  },
+  {
+    label: "border-b-purple-300",
+    value: "border-b-purple-300",
+    styles:
+      "border-bottom-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets bottom border color to purple-300",
+  },
+  {
+    label: "border-b-purple-400",
+    value: "border-b-purple-400",
+    styles:
+      "border-bottom-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets bottom border color to purple-400",
+  },
+  {
+    label: "border-b-purple-500",
+    value: "border-b-purple-500",
+    styles:
+      "border-bottom-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets bottom border color to purple-500",
+  },
+  {
+    label: "border-b-purple-600",
+    value: "border-b-purple-600",
+    styles:
+      "border-bottom-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets bottom border color to purple-600",
+  },
+  {
+    label: "border-b-purple-700",
+    value: "border-b-purple-700",
+    styles:
+      "border-bottom-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets bottom border color to purple-700",
+  },
+  {
+    label: "border-b-purple-800",
+    value: "border-b-purple-800",
+    styles:
+      "border-bottom-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets bottom border color to purple-800",
+  },
+  {
+    label: "border-b-purple-900",
+    value: "border-b-purple-900",
+    styles:
+      "border-bottom-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets bottom border color to purple-900",
+  },
+  {
+    label: "border-b-purple-950",
+    value: "border-b-purple-950",
+    styles:
+      "border-bottom-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets bottom border color to purple-950",
+  },
+  {
+    label: "border-b-fuchsia-50",
+    value: "border-b-fuchsia-50",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets bottom border color to fuchsia-50",
+  },
+  {
+    label: "border-b-fuchsia-100",
+    value: "border-b-fuchsia-100",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets bottom border color to fuchsia-100",
+  },
+  {
+    label: "border-b-fuchsia-200",
+    value: "border-b-fuchsia-200",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets bottom border color to fuchsia-200",
+  },
+  {
+    label: "border-b-fuchsia-300",
+    value: "border-b-fuchsia-300",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets bottom border color to fuchsia-300",
+  },
+  {
+    label: "border-b-fuchsia-400",
+    value: "border-b-fuchsia-400",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets bottom border color to fuchsia-400",
+  },
+  {
+    label: "border-b-fuchsia-500",
+    value: "border-b-fuchsia-500",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets bottom border color to fuchsia-500",
+  },
+  {
+    label: "border-b-fuchsia-600",
+    value: "border-b-fuchsia-600",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets bottom border color to fuchsia-600",
+  },
+  {
+    label: "border-b-fuchsia-700",
+    value: "border-b-fuchsia-700",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets bottom border color to fuchsia-700",
+  },
+  {
+    label: "border-b-fuchsia-800",
+    value: "border-b-fuchsia-800",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets bottom border color to fuchsia-800",
+  },
+  {
+    label: "border-b-fuchsia-900",
+    value: "border-b-fuchsia-900",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets bottom border color to fuchsia-900",
+  },
+  {
+    label: "border-b-fuchsia-950",
+    value: "border-b-fuchsia-950",
+    styles:
+      "border-bottom-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets bottom border color to fuchsia-950",
+  },
+  {
+    label: "border-b-pink-50",
+    value: "border-b-pink-50",
+    styles:
+      "border-bottom-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets bottom border color to pink-50",
+  },
+  {
+    label: "border-b-pink-100",
+    value: "border-b-pink-100",
+    styles:
+      "border-bottom-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets bottom border color to pink-100",
+  },
+  {
+    label: "border-b-pink-200",
+    value: "border-b-pink-200",
+    styles:
+      "border-bottom-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets bottom border color to pink-200",
+  },
+  {
+    label: "border-b-pink-300",
+    value: "border-b-pink-300",
+    styles:
+      "border-bottom-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets bottom border color to pink-300",
+  },
+  {
+    label: "border-b-pink-400",
+    value: "border-b-pink-400",
+    styles:
+      "border-bottom-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets bottom border color to pink-400",
+  },
+  {
+    label: "border-b-pink-500",
+    value: "border-b-pink-500",
+    styles:
+      "border-bottom-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets bottom border color to pink-500",
+  },
+  {
+    label: "border-b-pink-600",
+    value: "border-b-pink-600",
+    styles:
+      "border-bottom-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets bottom border color to pink-600",
+  },
+  {
+    label: "border-b-pink-700",
+    value: "border-b-pink-700",
+    styles:
+      "border-bottom-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets bottom border color to pink-700",
+  },
+  {
+    label: "border-b-pink-800",
+    value: "border-b-pink-800",
+    styles:
+      "border-bottom-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets bottom border color to pink-800",
+  },
+  {
+    label: "border-b-pink-900",
+    value: "border-b-pink-900",
+    styles:
+      "border-bottom-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets bottom border color to pink-900",
+  },
+  {
+    label: "border-b-pink-950",
+    value: "border-b-pink-950",
+    styles:
+      "border-bottom-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets bottom border color to pink-950",
+  },
+  {
+    label: "border-b-rose-50",
+    value: "border-b-rose-50",
+    styles:
+      "border-bottom-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets bottom border color to rose-50",
+  },
+  {
+    label: "border-b-rose-100",
+    value: "border-b-rose-100",
+    styles:
+      "border-bottom-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets bottom border color to rose-100",
+  },
+  {
+    label: "border-b-rose-200",
+    value: "border-b-rose-200",
+    styles:
+      "border-bottom-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets bottom border color to rose-200",
+  },
+  {
+    label: "border-b-rose-300",
+    value: "border-b-rose-300",
+    styles:
+      "border-bottom-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets bottom border color to rose-300",
+  },
+  {
+    label: "border-b-rose-400",
+    value: "border-b-rose-400",
+    styles:
+      "border-bottom-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets bottom border color to rose-400",
+  },
+  {
+    label: "border-b-rose-500",
+    value: "border-b-rose-500",
+    styles:
+      "border-bottom-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets bottom border color to rose-500",
+  },
+  {
+    label: "border-b-rose-600",
+    value: "border-b-rose-600",
+    styles:
+      "border-bottom-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets bottom border color to rose-600",
+  },
+  {
+    label: "border-b-rose-700",
+    value: "border-b-rose-700",
+    styles:
+      "border-bottom-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets bottom border color to rose-700",
+  },
+  {
+    label: "border-b-rose-800",
+    value: "border-b-rose-800",
+    styles:
+      "border-bottom-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets bottom border color to rose-800",
+  },
+  {
+    label: "border-b-rose-900",
+    value: "border-b-rose-900",
+    styles:
+      "border-bottom-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets bottom border color to rose-900",
+  },
+  {
+    label: "border-b-rose-950",
+    value: "border-b-rose-950",
+    styles:
+      "border-bottom-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets bottom border color to rose-950",
+  },
+  {
+    label: "border-b-slate-50",
+    value: "border-b-slate-50",
+    styles:
+      "border-bottom-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets bottom border color to slate-50",
+  },
+  {
+    label: "border-b-slate-100",
+    value: "border-b-slate-100",
+    styles:
+      "border-bottom-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets bottom border color to slate-100",
+  },
+  {
+    label: "border-b-slate-200",
+    value: "border-b-slate-200",
+    styles:
+      "border-bottom-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets bottom border color to slate-200",
+  },
+  {
+    label: "border-b-slate-300",
+    value: "border-b-slate-300",
+    styles:
+      "border-bottom-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets bottom border color to slate-300",
+  },
+  {
+    label: "border-b-slate-400",
+    value: "border-b-slate-400",
+    styles:
+      "border-bottom-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets bottom border color to slate-400",
+  },
+  {
+    label: "border-b-slate-500",
+    value: "border-b-slate-500",
+    styles:
+      "border-bottom-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets bottom border color to slate-500",
+  },
+  {
+    label: "border-b-slate-600",
+    value: "border-b-slate-600",
+    styles:
+      "border-bottom-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets bottom border color to slate-600",
+  },
+  {
+    label: "border-b-slate-700",
+    value: "border-b-slate-700",
+    styles:
+      "border-bottom-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets bottom border color to slate-700",
+  },
+  {
+    label: "border-b-slate-800",
+    value: "border-b-slate-800",
+    styles:
+      "border-bottom-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets bottom border color to slate-800",
+  },
+  {
+    label: "border-b-slate-900",
+    value: "border-b-slate-900",
+    styles:
+      "border-bottom-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets bottom border color to slate-900",
+  },
+  {
+    label: "border-b-slate-950",
+    value: "border-b-slate-950",
+    styles:
+      "border-bottom-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets bottom border color to slate-950",
+  },
+  {
+    label: "border-b-gray-50",
+    value: "border-b-gray-50",
+    styles:
+      "border-bottom-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets bottom border color to gray-50",
+  },
+  {
+    label: "border-b-gray-100",
+    value: "border-b-gray-100",
+    styles:
+      "border-bottom-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets bottom border color to gray-100",
+  },
+  {
+    label: "border-b-gray-200",
+    value: "border-b-gray-200",
+    styles:
+      "border-bottom-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets bottom border color to gray-200",
+  },
+  {
+    label: "border-b-gray-300",
+    value: "border-b-gray-300",
+    styles:
+      "border-bottom-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets bottom border color to gray-300",
+  },
+  {
+    label: "border-b-gray-400",
+    value: "border-b-gray-400",
+    styles:
+      "border-bottom-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets bottom border color to gray-400",
+  },
+  {
+    label: "border-b-gray-500",
+    value: "border-b-gray-500",
+    styles:
+      "border-bottom-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets bottom border color to gray-500",
+  },
+  {
+    label: "border-b-gray-600",
+    value: "border-b-gray-600",
+    styles:
+      "border-bottom-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets bottom border color to gray-600",
+  },
+  {
+    label: "border-b-gray-700",
+    value: "border-b-gray-700",
+    styles:
+      "border-bottom-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets bottom border color to gray-700",
+  },
+  {
+    label: "border-b-gray-800",
+    value: "border-b-gray-800",
+    styles:
+      "border-bottom-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets bottom border color to gray-800",
+  },
+  {
+    label: "border-b-gray-900",
+    value: "border-b-gray-900",
+    styles:
+      "border-bottom-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets bottom border color to gray-900",
+  },
+  {
+    label: "border-b-gray-950",
+    value: "border-b-gray-950",
+    styles:
+      "border-bottom-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets bottom border color to gray-950",
+  },
+  {
+    label: "border-b-zinc-50",
+    value: "border-b-zinc-50",
+    styles: "border-bottom-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets bottom border color to zinc-50",
+  },
+  {
+    label: "border-b-zinc-100",
+    value: "border-b-zinc-100",
+    styles:
+      "border-bottom-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets bottom border color to zinc-100",
+  },
+  {
+    label: "border-b-zinc-200",
+    value: "border-b-zinc-200",
+    styles:
+      "border-bottom-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets bottom border color to zinc-200",
+  },
+  {
+    label: "border-b-zinc-300",
+    value: "border-b-zinc-300",
+    styles:
+      "border-bottom-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets bottom border color to zinc-300",
+  },
+  {
+    label: "border-b-zinc-400",
+    value: "border-b-zinc-400",
+    styles:
+      "border-bottom-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets bottom border color to zinc-400",
+  },
+  {
+    label: "border-b-zinc-500",
+    value: "border-b-zinc-500",
+    styles:
+      "border-bottom-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets bottom border color to zinc-500",
+  },
+  {
+    label: "border-b-zinc-600",
+    value: "border-b-zinc-600",
+    styles:
+      "border-bottom-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets bottom border color to zinc-600",
+  },
+  {
+    label: "border-b-zinc-700",
+    value: "border-b-zinc-700",
+    styles:
+      "border-bottom-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets bottom border color to zinc-700",
+  },
+  {
+    label: "border-b-zinc-800",
+    value: "border-b-zinc-800",
+    styles:
+      "border-bottom-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets bottom border color to zinc-800",
+  },
+  {
+    label: "border-b-zinc-900",
+    value: "border-b-zinc-900",
+    styles:
+      "border-bottom-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets bottom border color to zinc-900",
+  },
+  {
+    label: "border-b-zinc-950",
+    value: "border-b-zinc-950",
+    styles:
+      "border-bottom-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets bottom border color to zinc-950",
+  },
+  {
+    label: "border-b-neutral-50",
+    value: "border-b-neutral-50",
+    styles:
+      "border-bottom-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets bottom border color to neutral-50",
+  },
+  {
+    label: "border-b-neutral-100",
+    value: "border-b-neutral-100",
+    styles:
+      "border-bottom-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets bottom border color to neutral-100",
+  },
+  {
+    label: "border-b-neutral-200",
+    value: "border-b-neutral-200",
+    styles:
+      "border-bottom-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets bottom border color to neutral-200",
+  },
+  {
+    label: "border-b-neutral-300",
+    value: "border-b-neutral-300",
+    styles:
+      "border-bottom-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets bottom border color to neutral-300",
+  },
+  {
+    label: "border-b-neutral-400",
+    value: "border-b-neutral-400",
+    styles:
+      "border-bottom-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets bottom border color to neutral-400",
+  },
+  {
+    label: "border-b-neutral-500",
+    value: "border-b-neutral-500",
+    styles:
+      "border-bottom-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets bottom border color to neutral-500",
+  },
+  {
+    label: "border-b-neutral-600",
+    value: "border-b-neutral-600",
+    styles:
+      "border-bottom-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets bottom border color to neutral-600",
+  },
+  {
+    label: "border-b-neutral-700",
+    value: "border-b-neutral-700",
+    styles:
+      "border-bottom-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets bottom border color to neutral-700",
+  },
+  {
+    label: "border-b-neutral-800",
+    value: "border-b-neutral-800",
+    styles:
+      "border-bottom-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets bottom border color to neutral-800",
+  },
+  {
+    label: "border-b-neutral-900",
+    value: "border-b-neutral-900",
+    styles:
+      "border-bottom-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets bottom border color to neutral-900",
+  },
+  {
+    label: "border-b-neutral-950",
+    value: "border-b-neutral-950",
+    styles:
+      "border-bottom-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets bottom border color to neutral-950",
+  },
+  {
+    label: "border-b-stone-50",
+    value: "border-b-stone-50",
+    styles:
+      "border-bottom-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets bottom border color to stone-50",
+  },
+  {
+    label: "border-b-stone-100",
+    value: "border-b-stone-100",
+    styles:
+      "border-bottom-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets bottom border color to stone-100",
+  },
+  {
+    label: "border-b-stone-200",
+    value: "border-b-stone-200",
+    styles:
+      "border-bottom-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets bottom border color to stone-200",
+  },
+  {
+    label: "border-b-stone-300",
+    value: "border-b-stone-300",
+    styles:
+      "border-bottom-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets bottom border color to stone-300",
+  },
+  {
+    label: "border-b-stone-400",
+    value: "border-b-stone-400",
+    styles:
+      "border-bottom-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets bottom border color to stone-400",
+  },
+  {
+    label: "border-b-stone-500",
+    value: "border-b-stone-500",
+    styles:
+      "border-bottom-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets bottom border color to stone-500",
+  },
+  {
+    label: "border-b-stone-600",
+    value: "border-b-stone-600",
+    styles:
+      "border-bottom-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets bottom border color to stone-600",
+  },
+  {
+    label: "border-b-stone-700",
+    value: "border-b-stone-700",
+    styles:
+      "border-bottom-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets bottom border color to stone-700",
+  },
+  {
+    label: "border-b-stone-800",
+    value: "border-b-stone-800",
+    styles:
+      "border-bottom-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets bottom border color to stone-800",
+  },
+  {
+    label: "border-b-stone-900",
+    value: "border-b-stone-900",
+    styles:
+      "border-bottom-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets bottom border color to stone-900",
+  },
+  {
+    label: "border-b-stone-950",
+    value: "border-b-stone-950",
+    styles:
+      "border-bottom-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets bottom border color to stone-950",
+  },
+  {
+    label: "border-b-(<custom-property>)",
+    value: "border-b-(<custom-property>)",
+    styles: "border-bottom-color: var(<custom-property>);",
+    description: "Sets bottom border color to (<custom-property>)",
+  },
+  {
+    label: "border-b-[<value>]",
+    value: "border-b-[<value>]",
+    styles: "border-bottom-color: <value>;",
+    description: "Sets bottom border color to [<value>]",
+  },
+  {
+    label: "border-l-inherit",
+    value: "border-l-inherit",
+    styles: "border-left-color: inherit;",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-l-current",
+    value: "border-l-current",
+    styles: "border-left-color: currentColor;",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-l-transparent",
+    value: "border-l-transparent",
+    styles: "border-left-color: transparent;",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-l-black",
+    value: "border-l-black",
+    styles: "border-left-color: var(--color-black); /* #000 */",
+    description: "Sets left border color to black",
+  },
+  {
+    label: "border-l-white",
+    value: "border-l-white",
+    styles: "border-left-color: var(--color-white); /* #fff */",
+    description: "Sets left border color to white",
+  },
+  {
+    label: "border-l-red-50",
+    value: "border-l-red-50",
+    styles:
+      "border-left-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets left border color to red-50",
+  },
+  {
+    label: "border-l-red-100",
+    value: "border-l-red-100",
+    styles:
+      "border-left-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets left border color to red-100",
+  },
+  {
+    label: "border-l-red-200",
+    value: "border-l-red-200",
+    styles:
+      "border-left-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets left border color to red-200",
+  },
+  {
+    label: "border-l-red-300",
+    value: "border-l-red-300",
+    styles:
+      "border-left-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets left border color to red-300",
+  },
+  {
+    label: "border-l-red-400",
+    value: "border-l-red-400",
+    styles:
+      "border-left-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets left border color to red-400",
+  },
+  {
+    label: "border-l-red-500",
+    value: "border-l-red-500",
+    styles:
+      "border-left-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets left border color to red-500",
+  },
+  {
+    label: "border-l-red-600",
+    value: "border-l-red-600",
+    styles:
+      "border-left-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets left border color to red-600",
+  },
+  {
+    label: "border-l-red-700",
+    value: "border-l-red-700",
+    styles:
+      "border-left-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets left border color to red-700",
+  },
+  {
+    label: "border-l-red-800",
+    value: "border-l-red-800",
+    styles:
+      "border-left-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets left border color to red-800",
+  },
+  {
+    label: "border-l-red-900",
+    value: "border-l-red-900",
+    styles:
+      "border-left-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets left border color to red-900",
+  },
+  {
+    label: "border-l-red-950",
+    value: "border-l-red-950",
+    styles:
+      "border-left-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets left border color to red-950",
+  },
+  {
+    label: "border-l-orange-50",
+    value: "border-l-orange-50",
+    styles:
+      "border-left-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets left border color to orange-50",
+  },
+  {
+    label: "border-l-orange-100",
+    value: "border-l-orange-100",
+    styles:
+      "border-left-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets left border color to orange-100",
+  },
+  {
+    label: "border-l-orange-200",
+    value: "border-l-orange-200",
+    styles:
+      "border-left-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets left border color to orange-200",
+  },
+  {
+    label: "border-l-orange-300",
+    value: "border-l-orange-300",
+    styles:
+      "border-left-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets left border color to orange-300",
+  },
+  {
+    label: "border-l-orange-400",
+    value: "border-l-orange-400",
+    styles:
+      "border-left-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets left border color to orange-400",
+  },
+  {
+    label: "border-l-orange-500",
+    value: "border-l-orange-500",
+    styles:
+      "border-left-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets left border color to orange-500",
+  },
+  {
+    label: "border-l-orange-600",
+    value: "border-l-orange-600",
+    styles:
+      "border-left-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets left border color to orange-600",
+  },
+  {
+    label: "border-l-orange-700",
+    value: "border-l-orange-700",
+    styles:
+      "border-left-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets left border color to orange-700",
+  },
+  {
+    label: "border-l-orange-800",
+    value: "border-l-orange-800",
+    styles:
+      "border-left-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets left border color to orange-800",
+  },
+  {
+    label: "border-l-orange-900",
+    value: "border-l-orange-900",
+    styles:
+      "border-left-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets left border color to orange-900",
+  },
+  {
+    label: "border-l-orange-950",
+    value: "border-l-orange-950",
+    styles:
+      "border-left-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets left border color to orange-950",
+  },
+  {
+    label: "border-l-amber-50",
+    value: "border-l-amber-50",
+    styles:
+      "border-left-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets left border color to amber-50",
+  },
+  {
+    label: "border-l-amber-100",
+    value: "border-l-amber-100",
+    styles:
+      "border-left-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets left border color to amber-100",
+  },
+  {
+    label: "border-l-amber-200",
+    value: "border-l-amber-200",
+    styles:
+      "border-left-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets left border color to amber-200",
+  },
+  {
+    label: "border-l-amber-300",
+    value: "border-l-amber-300",
+    styles:
+      "border-left-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets left border color to amber-300",
+  },
+  {
+    label: "border-l-amber-400",
+    value: "border-l-amber-400",
+    styles:
+      "border-left-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets left border color to amber-400",
+  },
+  {
+    label: "border-l-amber-500",
+    value: "border-l-amber-500",
+    styles:
+      "border-left-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets left border color to amber-500",
+  },
+  {
+    label: "border-l-amber-600",
+    value: "border-l-amber-600",
+    styles:
+      "border-left-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets left border color to amber-600",
+  },
+  {
+    label: "border-l-amber-700",
+    value: "border-l-amber-700",
+    styles:
+      "border-left-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets left border color to amber-700",
+  },
+  {
+    label: "border-l-amber-800",
+    value: "border-l-amber-800",
+    styles:
+      "border-left-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets left border color to amber-800",
+  },
+  {
+    label: "border-l-amber-900",
+    value: "border-l-amber-900",
+    styles:
+      "border-left-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets left border color to amber-900",
+  },
+  {
+    label: "border-l-amber-950",
+    value: "border-l-amber-950",
+    styles:
+      "border-left-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets left border color to amber-950",
+  },
+  {
+    label: "border-l-yellow-50",
+    value: "border-l-yellow-50",
+    styles:
+      "border-left-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets left border color to yellow-50",
+  },
+  {
+    label: "border-l-yellow-100",
+    value: "border-l-yellow-100",
+    styles:
+      "border-left-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets left border color to yellow-100",
+  },
+  {
+    label: "border-l-yellow-200",
+    value: "border-l-yellow-200",
+    styles:
+      "border-left-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets left border color to yellow-200",
+  },
+  {
+    label: "border-l-yellow-300",
+    value: "border-l-yellow-300",
+    styles:
+      "border-left-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets left border color to yellow-300",
+  },
+  {
+    label: "border-l-yellow-400",
+    value: "border-l-yellow-400",
+    styles:
+      "border-left-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets left border color to yellow-400",
+  },
+  {
+    label: "border-l-yellow-500",
+    value: "border-l-yellow-500",
+    styles:
+      "border-left-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets left border color to yellow-500",
+  },
+  {
+    label: "border-l-yellow-600",
+    value: "border-l-yellow-600",
+    styles:
+      "border-left-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets left border color to yellow-600",
+  },
+  {
+    label: "border-l-yellow-700",
+    value: "border-l-yellow-700",
+    styles:
+      "border-left-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets left border color to yellow-700",
+  },
+  {
+    label: "border-l-yellow-800",
+    value: "border-l-yellow-800",
+    styles:
+      "border-left-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets left border color to yellow-800",
+  },
+  {
+    label: "border-l-yellow-900",
+    value: "border-l-yellow-900",
+    styles:
+      "border-left-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets left border color to yellow-900",
+  },
+  {
+    label: "border-l-yellow-950",
+    value: "border-l-yellow-950",
+    styles:
+      "border-left-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets left border color to yellow-950",
+  },
+  {
+    label: "border-l-lime-50",
+    value: "border-l-lime-50",
+    styles:
+      "border-left-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets left border color to lime-50",
+  },
+  {
+    label: "border-l-lime-100",
+    value: "border-l-lime-100",
+    styles:
+      "border-left-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets left border color to lime-100",
+  },
+  {
+    label: "border-l-lime-200",
+    value: "border-l-lime-200",
+    styles:
+      "border-left-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets left border color to lime-200",
+  },
+  {
+    label: "border-l-lime-300",
+    value: "border-l-lime-300",
+    styles:
+      "border-left-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets left border color to lime-300",
+  },
+  {
+    label: "border-l-lime-400",
+    value: "border-l-lime-400",
+    styles:
+      "border-left-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets left border color to lime-400",
+  },
+  {
+    label: "border-l-lime-500",
+    value: "border-l-lime-500",
+    styles:
+      "border-left-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets left border color to lime-500",
+  },
+  {
+    label: "border-l-lime-600",
+    value: "border-l-lime-600",
+    styles:
+      "border-left-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets left border color to lime-600",
+  },
+  {
+    label: "border-l-lime-700",
+    value: "border-l-lime-700",
+    styles:
+      "border-left-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets left border color to lime-700",
+  },
+  {
+    label: "border-l-lime-800",
+    value: "border-l-lime-800",
+    styles:
+      "border-left-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets left border color to lime-800",
+  },
+  {
+    label: "border-l-lime-900",
+    value: "border-l-lime-900",
+    styles:
+      "border-left-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets left border color to lime-900",
+  },
+  {
+    label: "border-l-lime-950",
+    value: "border-l-lime-950",
+    styles:
+      "border-left-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets left border color to lime-950",
+  },
+  {
+    label: "border-l-green-50",
+    value: "border-l-green-50",
+    styles:
+      "border-left-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets left border color to green-50",
+  },
+  {
+    label: "border-l-green-100",
+    value: "border-l-green-100",
+    styles:
+      "border-left-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets left border color to green-100",
+  },
+  {
+    label: "border-l-green-200",
+    value: "border-l-green-200",
+    styles:
+      "border-left-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets left border color to green-200",
+  },
+  {
+    label: "border-l-green-300",
+    value: "border-l-green-300",
+    styles:
+      "border-left-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets left border color to green-300",
+  },
+  {
+    label: "border-l-green-400",
+    value: "border-l-green-400",
+    styles:
+      "border-left-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets left border color to green-400",
+  },
+  {
+    label: "border-l-green-500",
+    value: "border-l-green-500",
+    styles:
+      "border-left-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets left border color to green-500",
+  },
+  {
+    label: "border-l-green-600",
+    value: "border-l-green-600",
+    styles:
+      "border-left-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets left border color to green-600",
+  },
+  {
+    label: "border-l-green-700",
+    value: "border-l-green-700",
+    styles:
+      "border-left-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets left border color to green-700",
+  },
+  {
+    label: "border-l-green-800",
+    value: "border-l-green-800",
+    styles:
+      "border-left-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets left border color to green-800",
+  },
+  {
+    label: "border-l-green-900",
+    value: "border-l-green-900",
+    styles:
+      "border-left-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets left border color to green-900",
+  },
+  {
+    label: "border-l-green-950",
+    value: "border-l-green-950",
+    styles:
+      "border-left-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets left border color to green-950",
+  },
+  {
+    label: "border-l-emerald-50",
+    value: "border-l-emerald-50",
+    styles:
+      "border-left-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets left border color to emerald-50",
+  },
+  {
+    label: "border-l-emerald-100",
+    value: "border-l-emerald-100",
+    styles:
+      "border-left-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets left border color to emerald-100",
+  },
+  {
+    label: "border-l-emerald-200",
+    value: "border-l-emerald-200",
+    styles:
+      "border-left-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets left border color to emerald-200",
+  },
+  {
+    label: "border-l-emerald-300",
+    value: "border-l-emerald-300",
+    styles:
+      "border-left-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets left border color to emerald-300",
+  },
+  {
+    label: "border-l-emerald-400",
+    value: "border-l-emerald-400",
+    styles:
+      "border-left-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets left border color to emerald-400",
+  },
+  {
+    label: "border-l-emerald-500",
+    value: "border-l-emerald-500",
+    styles:
+      "border-left-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets left border color to emerald-500",
+  },
+  {
+    label: "border-l-emerald-600",
+    value: "border-l-emerald-600",
+    styles:
+      "border-left-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets left border color to emerald-600",
+  },
+  {
+    label: "border-l-emerald-700",
+    value: "border-l-emerald-700",
+    styles:
+      "border-left-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets left border color to emerald-700",
+  },
+  {
+    label: "border-l-emerald-800",
+    value: "border-l-emerald-800",
+    styles:
+      "border-left-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets left border color to emerald-800",
+  },
+  {
+    label: "border-l-emerald-900",
+    value: "border-l-emerald-900",
+    styles:
+      "border-left-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets left border color to emerald-900",
+  },
+  {
+    label: "border-l-emerald-950",
+    value: "border-l-emerald-950",
+    styles:
+      "border-left-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets left border color to emerald-950",
+  },
+  {
+    label: "border-l-teal-50",
+    value: "border-l-teal-50",
+    styles:
+      "border-left-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets left border color to teal-50",
+  },
+  {
+    label: "border-l-teal-100",
+    value: "border-l-teal-100",
+    styles:
+      "border-left-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets left border color to teal-100",
+  },
+  {
+    label: "border-l-teal-200",
+    value: "border-l-teal-200",
+    styles:
+      "border-left-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets left border color to teal-200",
+  },
+  {
+    label: "border-l-teal-300",
+    value: "border-l-teal-300",
+    styles:
+      "border-left-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets left border color to teal-300",
+  },
+  {
+    label: "border-l-teal-400",
+    value: "border-l-teal-400",
+    styles:
+      "border-left-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets left border color to teal-400",
+  },
+  {
+    label: "border-l-teal-500",
+    value: "border-l-teal-500",
+    styles:
+      "border-left-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets left border color to teal-500",
+  },
+  {
+    label: "border-l-teal-600",
+    value: "border-l-teal-600",
+    styles:
+      "border-left-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets left border color to teal-600",
+  },
+  {
+    label: "border-l-teal-700",
+    value: "border-l-teal-700",
+    styles:
+      "border-left-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets left border color to teal-700",
+  },
+  {
+    label: "border-l-teal-800",
+    value: "border-l-teal-800",
+    styles:
+      "border-left-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets left border color to teal-800",
+  },
+  {
+    label: "border-l-teal-900",
+    value: "border-l-teal-900",
+    styles:
+      "border-left-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets left border color to teal-900",
+  },
+  {
+    label: "border-l-teal-950",
+    value: "border-l-teal-950",
+    styles:
+      "border-left-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets left border color to teal-950",
+  },
+  {
+    label: "border-l-cyan-50",
+    value: "border-l-cyan-50",
+    styles:
+      "border-left-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets left border color to cyan-50",
+  },
+  {
+    label: "border-l-cyan-100",
+    value: "border-l-cyan-100",
+    styles:
+      "border-left-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets left border color to cyan-100",
+  },
+  {
+    label: "border-l-cyan-200",
+    value: "border-l-cyan-200",
+    styles:
+      "border-left-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets left border color to cyan-200",
+  },
+  {
+    label: "border-l-cyan-300",
+    value: "border-l-cyan-300",
+    styles:
+      "border-left-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets left border color to cyan-300",
+  },
+  {
+    label: "border-l-cyan-400",
+    value: "border-l-cyan-400",
+    styles:
+      "border-left-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets left border color to cyan-400",
+  },
+  {
+    label: "border-l-cyan-500",
+    value: "border-l-cyan-500",
+    styles:
+      "border-left-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets left border color to cyan-500",
+  },
+  {
+    label: "border-l-cyan-600",
+    value: "border-l-cyan-600",
+    styles:
+      "border-left-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets left border color to cyan-600",
+  },
+  {
+    label: "border-l-cyan-700",
+    value: "border-l-cyan-700",
+    styles:
+      "border-left-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets left border color to cyan-700",
+  },
+  {
+    label: "border-l-cyan-800",
+    value: "border-l-cyan-800",
+    styles:
+      "border-left-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets left border color to cyan-800",
+  },
+  {
+    label: "border-l-cyan-900",
+    value: "border-l-cyan-900",
+    styles:
+      "border-left-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets left border color to cyan-900",
+  },
+  {
+    label: "border-l-cyan-950",
+    value: "border-l-cyan-950",
+    styles:
+      "border-left-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets left border color to cyan-950",
+  },
+  {
+    label: "border-l-sky-50",
+    value: "border-l-sky-50",
+    styles:
+      "border-left-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets left border color to sky-50",
+  },
+  {
+    label: "border-l-sky-100",
+    value: "border-l-sky-100",
+    styles:
+      "border-left-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets left border color to sky-100",
+  },
+  {
+    label: "border-l-sky-200",
+    value: "border-l-sky-200",
+    styles:
+      "border-left-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets left border color to sky-200",
+  },
+  {
+    label: "border-l-sky-300",
+    value: "border-l-sky-300",
+    styles:
+      "border-left-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets left border color to sky-300",
+  },
+  {
+    label: "border-l-sky-400",
+    value: "border-l-sky-400",
+    styles:
+      "border-left-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets left border color to sky-400",
+  },
+  {
+    label: "border-l-sky-500",
+    value: "border-l-sky-500",
+    styles:
+      "border-left-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets left border color to sky-500",
+  },
+  {
+    label: "border-l-sky-600",
+    value: "border-l-sky-600",
+    styles:
+      "border-left-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets left border color to sky-600",
+  },
+  {
+    label: "border-l-sky-700",
+    value: "border-l-sky-700",
+    styles:
+      "border-left-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets left border color to sky-700",
+  },
+  {
+    label: "border-l-sky-800",
+    value: "border-l-sky-800",
+    styles:
+      "border-left-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets left border color to sky-800",
+  },
+  {
+    label: "border-l-sky-900",
+    value: "border-l-sky-900",
+    styles:
+      "border-left-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets left border color to sky-900",
+  },
+  {
+    label: "border-l-sky-950",
+    value: "border-l-sky-950",
+    styles:
+      "border-left-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets left border color to sky-950",
+  },
+  {
+    label: "border-l-blue-50",
+    value: "border-l-blue-50",
+    styles:
+      "border-left-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets left border color to blue-50",
+  },
+  {
+    label: "border-l-blue-100",
+    value: "border-l-blue-100",
+    styles:
+      "border-left-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets left border color to blue-100",
+  },
+  {
+    label: "border-l-blue-200",
+    value: "border-l-blue-200",
+    styles:
+      "border-left-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets left border color to blue-200",
+  },
+  {
+    label: "border-l-blue-300",
+    value: "border-l-blue-300",
+    styles:
+      "border-left-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets left border color to blue-300",
+  },
+  {
+    label: "border-l-blue-400",
+    value: "border-l-blue-400",
+    styles:
+      "border-left-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets left border color to blue-400",
+  },
+  {
+    label: "border-l-blue-500",
+    value: "border-l-blue-500",
+    styles:
+      "border-left-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets left border color to blue-500",
+  },
+  {
+    label: "border-l-blue-600",
+    value: "border-l-blue-600",
+    styles:
+      "border-left-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets left border color to blue-600",
+  },
+  {
+    label: "border-l-blue-700",
+    value: "border-l-blue-700",
+    styles:
+      "border-left-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets left border color to blue-700",
+  },
+  {
+    label: "border-l-blue-800",
+    value: "border-l-blue-800",
+    styles:
+      "border-left-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets left border color to blue-800",
+  },
+  {
+    label: "border-l-blue-900",
+    value: "border-l-blue-900",
+    styles:
+      "border-left-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets left border color to blue-900",
+  },
+  {
+    label: "border-l-blue-950",
+    value: "border-l-blue-950",
+    styles:
+      "border-left-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets left border color to blue-950",
+  },
+  {
+    label: "border-l-indigo-50",
+    value: "border-l-indigo-50",
+    styles:
+      "border-left-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets left border color to indigo-50",
+  },
+  {
+    label: "border-l-indigo-100",
+    value: "border-l-indigo-100",
+    styles:
+      "border-left-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets left border color to indigo-100",
+  },
+  {
+    label: "border-l-indigo-200",
+    value: "border-l-indigo-200",
+    styles:
+      "border-left-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets left border color to indigo-200",
+  },
+  {
+    label: "border-l-indigo-300",
+    value: "border-l-indigo-300",
+    styles:
+      "border-left-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets left border color to indigo-300",
+  },
+  {
+    label: "border-l-indigo-400",
+    value: "border-l-indigo-400",
+    styles:
+      "border-left-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets left border color to indigo-400",
+  },
+  {
+    label: "border-l-indigo-500",
+    value: "border-l-indigo-500",
+    styles:
+      "border-left-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets left border color to indigo-500",
+  },
+  {
+    label: "border-l-indigo-600",
+    value: "border-l-indigo-600",
+    styles:
+      "border-left-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets left border color to indigo-600",
+  },
+  {
+    label: "border-l-indigo-700",
+    value: "border-l-indigo-700",
+    styles:
+      "border-left-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets left border color to indigo-700",
+  },
+  {
+    label: "border-l-indigo-800",
+    value: "border-l-indigo-800",
+    styles:
+      "border-left-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets left border color to indigo-800",
+  },
+  {
+    label: "border-l-indigo-900",
+    value: "border-l-indigo-900",
+    styles:
+      "border-left-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets left border color to indigo-900",
+  },
+  {
+    label: "border-l-indigo-950",
+    value: "border-l-indigo-950",
+    styles:
+      "border-left-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets left border color to indigo-950",
+  },
+  {
+    label: "border-l-violet-50",
+    value: "border-l-violet-50",
+    styles:
+      "border-left-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets left border color to violet-50",
+  },
+  {
+    label: "border-l-violet-100",
+    value: "border-l-violet-100",
+    styles:
+      "border-left-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets left border color to violet-100",
+  },
+  {
+    label: "border-l-violet-200",
+    value: "border-l-violet-200",
+    styles:
+      "border-left-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets left border color to violet-200",
+  },
+  {
+    label: "border-l-violet-300",
+    value: "border-l-violet-300",
+    styles:
+      "border-left-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets left border color to violet-300",
+  },
+  {
+    label: "border-l-violet-400",
+    value: "border-l-violet-400",
+    styles:
+      "border-left-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets left border color to violet-400",
+  },
+  {
+    label: "border-l-violet-500",
+    value: "border-l-violet-500",
+    styles:
+      "border-left-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets left border color to violet-500",
+  },
+  {
+    label: "border-l-violet-600",
+    value: "border-l-violet-600",
+    styles:
+      "border-left-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets left border color to violet-600",
+  },
+  {
+    label: "border-l-violet-700",
+    value: "border-l-violet-700",
+    styles:
+      "border-left-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets left border color to violet-700",
+  },
+  {
+    label: "border-l-violet-800",
+    value: "border-l-violet-800",
+    styles:
+      "border-left-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets left border color to violet-800",
+  },
+  {
+    label: "border-l-violet-900",
+    value: "border-l-violet-900",
+    styles:
+      "border-left-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets left border color to violet-900",
+  },
+  {
+    label: "border-l-violet-950",
+    value: "border-l-violet-950",
+    styles:
+      "border-left-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets left border color to violet-950",
+  },
+  {
+    label: "border-l-purple-50",
+    value: "border-l-purple-50",
+    styles:
+      "border-left-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets left border color to purple-50",
+  },
+  {
+    label: "border-l-purple-100",
+    value: "border-l-purple-100",
+    styles:
+      "border-left-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets left border color to purple-100",
+  },
+  {
+    label: "border-l-purple-200",
+    value: "border-l-purple-200",
+    styles:
+      "border-left-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets left border color to purple-200",
+  },
+  {
+    label: "border-l-purple-300",
+    value: "border-l-purple-300",
+    styles:
+      "border-left-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets left border color to purple-300",
+  },
+  {
+    label: "border-l-purple-400",
+    value: "border-l-purple-400",
+    styles:
+      "border-left-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets left border color to purple-400",
+  },
+  {
+    label: "border-l-purple-500",
+    value: "border-l-purple-500",
+    styles:
+      "border-left-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets left border color to purple-500",
+  },
+  {
+    label: "border-l-purple-600",
+    value: "border-l-purple-600",
+    styles:
+      "border-left-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets left border color to purple-600",
+  },
+  {
+    label: "border-l-purple-700",
+    value: "border-l-purple-700",
+    styles:
+      "border-left-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets left border color to purple-700",
+  },
+  {
+    label: "border-l-purple-800",
+    value: "border-l-purple-800",
+    styles:
+      "border-left-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets left border color to purple-800",
+  },
+  {
+    label: "border-l-purple-900",
+    value: "border-l-purple-900",
+    styles:
+      "border-left-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets left border color to purple-900",
+  },
+  {
+    label: "border-l-purple-950",
+    value: "border-l-purple-950",
+    styles:
+      "border-left-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets left border color to purple-950",
+  },
+  {
+    label: "border-l-fuchsia-50",
+    value: "border-l-fuchsia-50",
+    styles:
+      "border-left-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets left border color to fuchsia-50",
+  },
+  {
+    label: "border-l-fuchsia-100",
+    value: "border-l-fuchsia-100",
+    styles:
+      "border-left-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets left border color to fuchsia-100",
+  },
+  {
+    label: "border-l-fuchsia-200",
+    value: "border-l-fuchsia-200",
+    styles:
+      "border-left-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets left border color to fuchsia-200",
+  },
+  {
+    label: "border-l-fuchsia-300",
+    value: "border-l-fuchsia-300",
+    styles:
+      "border-left-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets left border color to fuchsia-300",
+  },
+  {
+    label: "border-l-fuchsia-400",
+    value: "border-l-fuchsia-400",
+    styles:
+      "border-left-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets left border color to fuchsia-400",
+  },
+  {
+    label: "border-l-fuchsia-500",
+    value: "border-l-fuchsia-500",
+    styles:
+      "border-left-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets left border color to fuchsia-500",
+  },
+  {
+    label: "border-l-fuchsia-600",
+    value: "border-l-fuchsia-600",
+    styles:
+      "border-left-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets left border color to fuchsia-600",
+  },
+  {
+    label: "border-l-fuchsia-700",
+    value: "border-l-fuchsia-700",
+    styles:
+      "border-left-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets left border color to fuchsia-700",
+  },
+  {
+    label: "border-l-fuchsia-800",
+    value: "border-l-fuchsia-800",
+    styles:
+      "border-left-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets left border color to fuchsia-800",
+  },
+  {
+    label: "border-l-fuchsia-900",
+    value: "border-l-fuchsia-900",
+    styles:
+      "border-left-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets left border color to fuchsia-900",
+  },
+  {
+    label: "border-l-fuchsia-950",
+    value: "border-l-fuchsia-950",
+    styles:
+      "border-left-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets left border color to fuchsia-950",
+  },
+  {
+    label: "border-l-pink-50",
+    value: "border-l-pink-50",
+    styles:
+      "border-left-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets left border color to pink-50",
+  },
+  {
+    label: "border-l-pink-100",
+    value: "border-l-pink-100",
+    styles:
+      "border-left-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets left border color to pink-100",
+  },
+  {
+    label: "border-l-pink-200",
+    value: "border-l-pink-200",
+    styles:
+      "border-left-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets left border color to pink-200",
+  },
+  {
+    label: "border-l-pink-300",
+    value: "border-l-pink-300",
+    styles:
+      "border-left-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets left border color to pink-300",
+  },
+  {
+    label: "border-l-pink-400",
+    value: "border-l-pink-400",
+    styles:
+      "border-left-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets left border color to pink-400",
+  },
+  {
+    label: "border-l-pink-500",
+    value: "border-l-pink-500",
+    styles:
+      "border-left-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets left border color to pink-500",
+  },
+  {
+    label: "border-l-pink-600",
+    value: "border-l-pink-600",
+    styles:
+      "border-left-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets left border color to pink-600",
+  },
+  {
+    label: "border-l-pink-700",
+    value: "border-l-pink-700",
+    styles:
+      "border-left-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets left border color to pink-700",
+  },
+  {
+    label: "border-l-pink-800",
+    value: "border-l-pink-800",
+    styles:
+      "border-left-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets left border color to pink-800",
+  },
+  {
+    label: "border-l-pink-900",
+    value: "border-l-pink-900",
+    styles:
+      "border-left-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets left border color to pink-900",
+  },
+  {
+    label: "border-l-pink-950",
+    value: "border-l-pink-950",
+    styles:
+      "border-left-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets left border color to pink-950",
+  },
+  {
+    label: "border-l-rose-50",
+    value: "border-l-rose-50",
+    styles:
+      "border-left-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets left border color to rose-50",
+  },
+  {
+    label: "border-l-rose-100",
+    value: "border-l-rose-100",
+    styles:
+      "border-left-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets left border color to rose-100",
+  },
+  {
+    label: "border-l-rose-200",
+    value: "border-l-rose-200",
+    styles:
+      "border-left-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets left border color to rose-200",
+  },
+  {
+    label: "border-l-rose-300",
+    value: "border-l-rose-300",
+    styles:
+      "border-left-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets left border color to rose-300",
+  },
+  {
+    label: "border-l-rose-400",
+    value: "border-l-rose-400",
+    styles:
+      "border-left-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets left border color to rose-400",
+  },
+  {
+    label: "border-l-rose-500",
+    value: "border-l-rose-500",
+    styles:
+      "border-left-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets left border color to rose-500",
+  },
+  {
+    label: "border-l-rose-600",
+    value: "border-l-rose-600",
+    styles:
+      "border-left-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets left border color to rose-600",
+  },
+  {
+    label: "border-l-rose-700",
+    value: "border-l-rose-700",
+    styles:
+      "border-left-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets left border color to rose-700",
+  },
+  {
+    label: "border-l-rose-800",
+    value: "border-l-rose-800",
+    styles:
+      "border-left-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets left border color to rose-800",
+  },
+  {
+    label: "border-l-rose-900",
+    value: "border-l-rose-900",
+    styles:
+      "border-left-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets left border color to rose-900",
+  },
+  {
+    label: "border-l-rose-950",
+    value: "border-l-rose-950",
+    styles:
+      "border-left-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets left border color to rose-950",
+  },
+  {
+    label: "border-l-slate-50",
+    value: "border-l-slate-50",
+    styles:
+      "border-left-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets left border color to slate-50",
+  },
+  {
+    label: "border-l-slate-100",
+    value: "border-l-slate-100",
+    styles:
+      "border-left-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets left border color to slate-100",
+  },
+  {
+    label: "border-l-slate-200",
+    value: "border-l-slate-200",
+    styles:
+      "border-left-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets left border color to slate-200",
+  },
+  {
+    label: "border-l-slate-300",
+    value: "border-l-slate-300",
+    styles:
+      "border-left-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets left border color to slate-300",
+  },
+  {
+    label: "border-l-slate-400",
+    value: "border-l-slate-400",
+    styles:
+      "border-left-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets left border color to slate-400",
+  },
+  {
+    label: "border-l-slate-500",
+    value: "border-l-slate-500",
+    styles:
+      "border-left-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets left border color to slate-500",
+  },
+  {
+    label: "border-l-slate-600",
+    value: "border-l-slate-600",
+    styles:
+      "border-left-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets left border color to slate-600",
+  },
+  {
+    label: "border-l-slate-700",
+    value: "border-l-slate-700",
+    styles:
+      "border-left-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets left border color to slate-700",
+  },
+  {
+    label: "border-l-slate-800",
+    value: "border-l-slate-800",
+    styles:
+      "border-left-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets left border color to slate-800",
+  },
+  {
+    label: "border-l-slate-900",
+    value: "border-l-slate-900",
+    styles:
+      "border-left-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets left border color to slate-900",
+  },
+  {
+    label: "border-l-slate-950",
+    value: "border-l-slate-950",
+    styles:
+      "border-left-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets left border color to slate-950",
+  },
+  {
+    label: "border-l-gray-50",
+    value: "border-l-gray-50",
+    styles:
+      "border-left-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets left border color to gray-50",
+  },
+  {
+    label: "border-l-gray-100",
+    value: "border-l-gray-100",
+    styles:
+      "border-left-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets left border color to gray-100",
+  },
+  {
+    label: "border-l-gray-200",
+    value: "border-l-gray-200",
+    styles:
+      "border-left-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets left border color to gray-200",
+  },
+  {
+    label: "border-l-gray-300",
+    value: "border-l-gray-300",
+    styles:
+      "border-left-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets left border color to gray-300",
+  },
+  {
+    label: "border-l-gray-400",
+    value: "border-l-gray-400",
+    styles:
+      "border-left-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets left border color to gray-400",
+  },
+  {
+    label: "border-l-gray-500",
+    value: "border-l-gray-500",
+    styles:
+      "border-left-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets left border color to gray-500",
+  },
+  {
+    label: "border-l-gray-600",
+    value: "border-l-gray-600",
+    styles:
+      "border-left-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets left border color to gray-600",
+  },
+  {
+    label: "border-l-gray-700",
+    value: "border-l-gray-700",
+    styles:
+      "border-left-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets left border color to gray-700",
+  },
+  {
+    label: "border-l-gray-800",
+    value: "border-l-gray-800",
+    styles:
+      "border-left-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets left border color to gray-800",
+  },
+  {
+    label: "border-l-gray-900",
+    value: "border-l-gray-900",
+    styles:
+      "border-left-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets left border color to gray-900",
+  },
+  {
+    label: "border-l-gray-950",
+    value: "border-l-gray-950",
+    styles:
+      "border-left-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets left border color to gray-950",
+  },
+  {
+    label: "border-l-zinc-50",
+    value: "border-l-zinc-50",
+    styles: "border-left-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets left border color to zinc-50",
+  },
+  {
+    label: "border-l-zinc-100",
+    value: "border-l-zinc-100",
+    styles:
+      "border-left-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets left border color to zinc-100",
+  },
+  {
+    label: "border-l-zinc-200",
+    value: "border-l-zinc-200",
+    styles:
+      "border-left-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets left border color to zinc-200",
+  },
+  {
+    label: "border-l-zinc-300",
+    value: "border-l-zinc-300",
+    styles:
+      "border-left-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets left border color to zinc-300",
+  },
+  {
+    label: "border-l-zinc-400",
+    value: "border-l-zinc-400",
+    styles:
+      "border-left-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets left border color to zinc-400",
+  },
+  {
+    label: "border-l-zinc-500",
+    value: "border-l-zinc-500",
+    styles:
+      "border-left-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets left border color to zinc-500",
+  },
+  {
+    label: "border-l-zinc-600",
+    value: "border-l-zinc-600",
+    styles:
+      "border-left-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets left border color to zinc-600",
+  },
+  {
+    label: "border-l-zinc-700",
+    value: "border-l-zinc-700",
+    styles:
+      "border-left-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets left border color to zinc-700",
+  },
+  {
+    label: "border-l-zinc-800",
+    value: "border-l-zinc-800",
+    styles:
+      "border-left-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets left border color to zinc-800",
+  },
+  {
+    label: "border-l-zinc-900",
+    value: "border-l-zinc-900",
+    styles:
+      "border-left-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets left border color to zinc-900",
+  },
+  {
+    label: "border-l-zinc-950",
+    value: "border-l-zinc-950",
+    styles:
+      "border-left-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets left border color to zinc-950",
+  },
+  {
+    label: "border-l-neutral-50",
+    value: "border-l-neutral-50",
+    styles:
+      "border-left-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets left border color to neutral-50",
+  },
+  {
+    label: "border-l-neutral-100",
+    value: "border-l-neutral-100",
+    styles: "border-left-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets left border color to neutral-100",
+  },
+  {
+    label: "border-l-neutral-200",
+    value: "border-l-neutral-200",
+    styles:
+      "border-left-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets left border color to neutral-200",
+  },
+  {
+    label: "border-l-neutral-300",
+    value: "border-l-neutral-300",
+    styles: "border-left-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets left border color to neutral-300",
+  },
+  {
+    label: "border-l-neutral-400",
+    value: "border-l-neutral-400",
+    styles:
+      "border-left-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets left border color to neutral-400",
+  },
+  {
+    label: "border-l-neutral-500",
+    value: "border-l-neutral-500",
+    styles:
+      "border-left-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets left border color to neutral-500",
+  },
+  {
+    label: "border-l-neutral-600",
+    value: "border-l-neutral-600",
+    styles:
+      "border-left-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets left border color to neutral-600",
+  },
+  {
+    label: "border-l-neutral-700",
+    value: "border-l-neutral-700",
+    styles:
+      "border-left-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets left border color to neutral-700",
+  },
+  {
+    label: "border-l-neutral-800",
+    value: "border-l-neutral-800",
+    styles:
+      "border-left-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets left border color to neutral-800",
+  },
+  {
+    label: "border-l-neutral-900",
+    value: "border-l-neutral-900",
+    styles:
+      "border-left-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets left border color to neutral-900",
+  },
+  {
+    label: "border-l-neutral-950",
+    value: "border-l-neutral-950",
+    styles:
+      "border-left-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets left border color to neutral-950",
+  },
+  {
+    label: "border-l-stone-50",
+    value: "border-l-stone-50",
+    styles:
+      "border-left-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets left border color to stone-50",
+  },
+  {
+    label: "border-l-stone-100",
+    value: "border-l-stone-100",
+    styles:
+      "border-left-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets left border color to stone-100",
+  },
+  {
+    label: "border-l-stone-200",
+    value: "border-l-stone-200",
+    styles:
+      "border-left-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets left border color to stone-200",
+  },
+  {
+    label: "border-l-stone-300",
+    value: "border-l-stone-300",
+    styles:
+      "border-left-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets left border color to stone-300",
+  },
+  {
+    label: "border-l-stone-400",
+    value: "border-l-stone-400",
+    styles:
+      "border-left-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets left border color to stone-400",
+  },
+  {
+    label: "border-l-stone-500",
+    value: "border-l-stone-500",
+    styles:
+      "border-left-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets left border color to stone-500",
+  },
+  {
+    label: "border-l-stone-600",
+    value: "border-l-stone-600",
+    styles:
+      "border-left-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets left border color to stone-600",
+  },
+  {
+    label: "border-l-stone-700",
+    value: "border-l-stone-700",
+    styles:
+      "border-left-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets left border color to stone-700",
+  },
+  {
+    label: "border-l-stone-800",
+    value: "border-l-stone-800",
+    styles:
+      "border-left-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets left border color to stone-800",
+  },
+  {
+    label: "border-l-stone-900",
+    value: "border-l-stone-900",
+    styles:
+      "border-left-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets left border color to stone-900",
+  },
+  {
+    label: "border-l-stone-950",
+    value: "border-l-stone-950",
+    styles:
+      "border-left-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets left border color to stone-950",
+  },
+  {
+    label: "border-l-(<custom-property>)",
+    value: "border-l-(<custom-property>)",
+    styles: "border-left-color: var(<custom-property>);",
+    description: "Sets left border color to (<custom-property>)",
+  },
+  {
+    label: "border-l-[<value>]",
+    value: "border-l-[<value>]",
+    styles: "border-left-color: <value>;",
+    description: "Sets left border color to [<value>]",
+  },
+  {
+    label: "divide-inherit",
+    value: "divide-inherit",
+    styles: "& > :not(:last-child) {",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "border-color: inherit;",
+    value: "border-color: inherit;",
+    styles: "}",
+    description: "Inherits border color from parent element",
+  },
+  {
+    label: "divide-current",
+    value: "divide-current",
+    styles: "& > :not(:last-child) {",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "border-color: currentColor;",
+    value: "border-color: currentColor;",
+    styles: "}",
+    description: "Sets border color to the current text color",
+  },
+  {
+    label: "divide-transparent",
+    value: "divide-transparent",
+    styles: "& > :not(:last-child) {",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "border-color: transparent;",
+    value: "border-color: transparent;",
+    styles: "}",
+    description: "Sets border color to transparent",
+  },
+  {
+    label: "divide-black",
+    value: "divide-black",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to black",
+  },
+  {
+    label: "border-color: var(--color-black); /* #000 */",
+    value: "border-color: var(--color-black); /* #000 */",
+    styles: "}",
+    description: "Sets border color to color: var(--color-black); /* #000 */",
+  },
+  {
+    label: "divide-white",
+    value: "divide-white",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to white",
+  },
+  {
+    label: "border-color: var(--color-white); /* #fff */",
+    value: "border-color: var(--color-white); /* #fff */",
+    styles: "}",
+    description: "Sets border color to color: var(--color-white); /* #fff */",
+  },
+  {
+    label: "divide-red-50",
+    value: "divide-red-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-50",
+  },
+  {
+    label: "border-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    value: "border-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+  },
+  {
+    label: "divide-red-100",
+    value: "divide-red-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-100",
+  },
+  {
+    label:
+      "border-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    value:
+      "border-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+  },
+  {
+    label: "divide-red-200",
+    value: "divide-red-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-200",
+  },
+  {
+    label:
+      "border-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    value:
+      "border-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+  },
+  {
+    label: "divide-red-300",
+    value: "divide-red-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-300",
+  },
+  {
+    label:
+      "border-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    value:
+      "border-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+  },
+  {
+    label: "divide-red-400",
+    value: "divide-red-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-400",
+  },
+  {
+    label:
+      "border-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    value:
+      "border-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+  },
+  {
+    label: "divide-red-500",
+    value: "divide-red-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-500",
+  },
+  {
+    label:
+      "border-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    value:
+      "border-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+  },
+  {
+    label: "divide-red-600",
+    value: "divide-red-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-600",
+  },
+  {
+    label:
+      "border-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    value:
+      "border-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+  },
+  {
+    label: "divide-red-700",
+    value: "divide-red-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-700",
+  },
+  {
+    label:
+      "border-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    value:
+      "border-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+  },
+  {
+    label: "divide-red-800",
+    value: "divide-red-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-800",
+  },
+  {
+    label:
+      "border-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    value:
+      "border-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+  },
+  {
+    label: "divide-red-900",
+    value: "divide-red-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-900",
+  },
+  {
+    label:
+      "border-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    value:
+      "border-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+  },
+  {
+    label: "divide-red-950",
+    value: "divide-red-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to red-950",
+  },
+  {
+    label:
+      "border-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    value:
+      "border-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+  },
+  {
+    label: "divide-orange-50",
+    value: "divide-orange-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-50",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    value:
+      "border-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+  },
+  {
+    label: "divide-orange-100",
+    value: "divide-orange-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-100",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    value:
+      "border-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+  },
+  {
+    label: "divide-orange-200",
+    value: "divide-orange-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-200",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    value:
+      "border-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+  },
+  {
+    label: "divide-orange-300",
+    value: "divide-orange-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-300",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    value:
+      "border-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+  },
+  {
+    label: "divide-orange-400",
+    value: "divide-orange-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-400",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    value:
+      "border-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+  },
+  {
+    label: "divide-orange-500",
+    value: "divide-orange-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-500",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    value:
+      "border-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+  },
+  {
+    label: "divide-orange-600",
+    value: "divide-orange-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-600",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    value:
+      "border-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+  },
+  {
+    label: "divide-orange-700",
+    value: "divide-orange-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-700",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    value:
+      "border-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+  },
+  {
+    label: "divide-orange-800",
+    value: "divide-orange-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-800",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    value:
+      "border-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+  },
+  {
+    label: "divide-orange-900",
+    value: "divide-orange-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-900",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    value:
+      "border-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+  },
+  {
+    label: "divide-orange-950",
+    value: "divide-orange-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to orange-950",
+  },
+  {
+    label:
+      "border-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    value:
+      "border-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+  },
+  {
+    label: "divide-amber-50",
+    value: "divide-amber-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-50",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    value:
+      "border-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+  },
+  {
+    label: "divide-amber-100",
+    value: "divide-amber-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-100",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    value:
+      "border-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+  },
+  {
+    label: "divide-amber-200",
+    value: "divide-amber-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-200",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    value:
+      "border-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+  },
+  {
+    label: "divide-amber-300",
+    value: "divide-amber-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-300",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    value:
+      "border-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+  },
+  {
+    label: "divide-amber-400",
+    value: "divide-amber-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-400",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    value:
+      "border-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+  },
+  {
+    label: "divide-amber-500",
+    value: "divide-amber-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-500",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    value:
+      "border-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+  },
+  {
+    label: "divide-amber-600",
+    value: "divide-amber-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-600",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    value:
+      "border-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+  },
+  {
+    label: "divide-amber-700",
+    value: "divide-amber-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-700",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    value:
+      "border-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+  },
+  {
+    label: "divide-amber-800",
+    value: "divide-amber-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-800",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    value:
+      "border-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+  },
+  {
+    label: "divide-amber-900",
+    value: "divide-amber-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-900",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    value:
+      "border-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+  },
+  {
+    label: "divide-amber-950",
+    value: "divide-amber-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to amber-950",
+  },
+  {
+    label:
+      "border-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    value:
+      "border-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+  },
+  {
+    label: "divide-yellow-50",
+    value: "divide-yellow-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    value:
+      "border-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+  },
+  {
+    label: "divide-yellow-100",
+    value: "divide-yellow-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    value:
+      "border-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+  },
+  {
+    label: "divide-yellow-200",
+    value: "divide-yellow-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    value:
+      "border-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+  },
+  {
+    label: "divide-yellow-300",
+    value: "divide-yellow-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    value:
+      "border-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+  },
+  {
+    label: "divide-yellow-400",
+    value: "divide-yellow-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    value:
+      "border-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+  },
+  {
+    label: "divide-yellow-500",
+    value: "divide-yellow-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    value:
+      "border-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+  },
+  {
+    label: "divide-yellow-600",
+    value: "divide-yellow-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    value:
+      "border-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+  },
+  {
+    label: "divide-yellow-700",
+    value: "divide-yellow-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    value:
+      "border-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+  },
+  {
+    label: "divide-yellow-800",
+    value: "divide-yellow-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    value:
+      "border-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+  },
+  {
+    label: "divide-yellow-900",
+    value: "divide-yellow-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    value:
+      "border-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+  },
+  {
+    label: "divide-yellow-950",
+    value: "divide-yellow-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for horizontal dividers between child elements",
+  },
+  {
+    label:
+      "border-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    value:
+      "border-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+  },
+  {
+    label: "divide-lime-50",
+    value: "divide-lime-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-50",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    value:
+      "border-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+  },
+  {
+    label: "divide-lime-100",
+    value: "divide-lime-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-100",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    value:
+      "border-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+  },
+  {
+    label: "divide-lime-200",
+    value: "divide-lime-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-200",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    value:
+      "border-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+  },
+  {
+    label: "divide-lime-300",
+    value: "divide-lime-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-300",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    value:
+      "border-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+  },
+  {
+    label: "divide-lime-400",
+    value: "divide-lime-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-400",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    value:
+      "border-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+  },
+  {
+    label: "divide-lime-500",
+    value: "divide-lime-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-500",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    value:
+      "border-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+  },
+  {
+    label: "divide-lime-600",
+    value: "divide-lime-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-600",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    value:
+      "border-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+  },
+  {
+    label: "divide-lime-700",
+    value: "divide-lime-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-700",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    value:
+      "border-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+  },
+  {
+    label: "divide-lime-800",
+    value: "divide-lime-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-800",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    value:
+      "border-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+  },
+  {
+    label: "divide-lime-900",
+    value: "divide-lime-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-900",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    value:
+      "border-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+  },
+  {
+    label: "divide-lime-950",
+    value: "divide-lime-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to lime-950",
+  },
+  {
+    label:
+      "border-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    value:
+      "border-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+  },
+  {
+    label: "divide-green-50",
+    value: "divide-green-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-50",
+  },
+  {
+    label:
+      "border-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    value:
+      "border-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+  },
+  {
+    label: "divide-green-100",
+    value: "divide-green-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-100",
+  },
+  {
+    label:
+      "border-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    value:
+      "border-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+  },
+  {
+    label: "divide-green-200",
+    value: "divide-green-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-200",
+  },
+  {
+    label:
+      "border-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    value:
+      "border-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+  },
+  {
+    label: "divide-green-300",
+    value: "divide-green-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-300",
+  },
+  {
+    label:
+      "border-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    value:
+      "border-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+  },
+  {
+    label: "divide-green-400",
+    value: "divide-green-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-400",
+  },
+  {
+    label:
+      "border-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    value:
+      "border-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+  },
+  {
+    label: "divide-green-500",
+    value: "divide-green-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-500",
+  },
+  {
+    label:
+      "border-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    value:
+      "border-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+  },
+  {
+    label: "divide-green-600",
+    value: "divide-green-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-600",
+  },
+  {
+    label:
+      "border-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    value:
+      "border-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+  },
+  {
+    label: "divide-green-700",
+    value: "divide-green-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-700",
+  },
+  {
+    label:
+      "border-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    value:
+      "border-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+  },
+  {
+    label: "divide-green-800",
+    value: "divide-green-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-800",
+  },
+  {
+    label:
+      "border-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    value:
+      "border-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+  },
+  {
+    label: "divide-green-900",
+    value: "divide-green-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-900",
+  },
+  {
+    label:
+      "border-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    value:
+      "border-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+  },
+  {
+    label: "divide-green-950",
+    value: "divide-green-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to green-950",
+  },
+  {
+    label:
+      "border-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    value:
+      "border-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+  },
+  {
+    label: "divide-emerald-50",
+    value: "divide-emerald-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-50",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    value:
+      "border-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+  },
+  {
+    label: "divide-emerald-100",
+    value: "divide-emerald-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-100",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    value:
+      "border-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+  },
+  {
+    label: "divide-emerald-200",
+    value: "divide-emerald-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-200",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    value:
+      "border-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+  },
+  {
+    label: "divide-emerald-300",
+    value: "divide-emerald-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-300",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    value:
+      "border-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+  },
+  {
+    label: "divide-emerald-400",
+    value: "divide-emerald-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-400",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    value:
+      "border-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+  },
+  {
+    label: "divide-emerald-500",
+    value: "divide-emerald-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-500",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    value:
+      "border-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+  },
+  {
+    label: "divide-emerald-600",
+    value: "divide-emerald-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-600",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    value:
+      "border-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+  },
+  {
+    label: "divide-emerald-700",
+    value: "divide-emerald-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-700",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    value:
+      "border-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+  },
+  {
+    label: "divide-emerald-800",
+    value: "divide-emerald-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-800",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    value:
+      "border-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+  },
+  {
+    label: "divide-emerald-900",
+    value: "divide-emerald-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-900",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    value:
+      "border-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+  },
+  {
+    label: "divide-emerald-950",
+    value: "divide-emerald-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to emerald-950",
+  },
+  {
+    label:
+      "border-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    value:
+      "border-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+  },
+  {
+    label: "divide-teal-50",
+    value: "divide-teal-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-50",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    value:
+      "border-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+  },
+  {
+    label: "divide-teal-100",
+    value: "divide-teal-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-100",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    value:
+      "border-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+  },
+  {
+    label: "divide-teal-200",
+    value: "divide-teal-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-200",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    value:
+      "border-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+  },
+  {
+    label: "divide-teal-300",
+    value: "divide-teal-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-300",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    value:
+      "border-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+  },
+  {
+    label: "divide-teal-400",
+    value: "divide-teal-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-400",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    value:
+      "border-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+  },
+  {
+    label: "divide-teal-500",
+    value: "divide-teal-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-500",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    value:
+      "border-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+  },
+  {
+    label: "divide-teal-600",
+    value: "divide-teal-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-600",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    value:
+      "border-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+  },
+  {
+    label: "divide-teal-700",
+    value: "divide-teal-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-700",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    value:
+      "border-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+  },
+  {
+    label: "divide-teal-800",
+    value: "divide-teal-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-800",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    value:
+      "border-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+  },
+  {
+    label: "divide-teal-900",
+    value: "divide-teal-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-900",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    value:
+      "border-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+  },
+  {
+    label: "divide-teal-950",
+    value: "divide-teal-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to teal-950",
+  },
+  {
+    label:
+      "border-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    value:
+      "border-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+  },
+  {
+    label: "divide-cyan-50",
+    value: "divide-cyan-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-50",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    value:
+      "border-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+  },
+  {
+    label: "divide-cyan-100",
+    value: "divide-cyan-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-100",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    value:
+      "border-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+  },
+  {
+    label: "divide-cyan-200",
+    value: "divide-cyan-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-200",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    value:
+      "border-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+  },
+  {
+    label: "divide-cyan-300",
+    value: "divide-cyan-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-300",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    value:
+      "border-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+  },
+  {
+    label: "divide-cyan-400",
+    value: "divide-cyan-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-400",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    value:
+      "border-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+  },
+  {
+    label: "divide-cyan-500",
+    value: "divide-cyan-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-500",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    value:
+      "border-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+  },
+  {
+    label: "divide-cyan-600",
+    value: "divide-cyan-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-600",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    value:
+      "border-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+  },
+  {
+    label: "divide-cyan-700",
+    value: "divide-cyan-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-700",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    value:
+      "border-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+  },
+  {
+    label: "divide-cyan-800",
+    value: "divide-cyan-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-800",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    value:
+      "border-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+  },
+  {
+    label: "divide-cyan-900",
+    value: "divide-cyan-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-900",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    value:
+      "border-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+  },
+  {
+    label: "divide-cyan-950",
+    value: "divide-cyan-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to cyan-950",
+  },
+  {
+    label:
+      "border-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    value:
+      "border-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+  },
+  {
+    label: "divide-sky-50",
+    value: "divide-sky-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-50",
+  },
+  {
+    label: "border-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    value: "border-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+  },
+  {
+    label: "divide-sky-100",
+    value: "divide-sky-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-100",
+  },
+  {
+    label:
+      "border-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    value:
+      "border-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+  },
+  {
+    label: "divide-sky-200",
+    value: "divide-sky-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-200",
+  },
+  {
+    label:
+      "border-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    value:
+      "border-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+  },
+  {
+    label: "divide-sky-300",
+    value: "divide-sky-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-300",
+  },
+  {
+    label:
+      "border-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    value:
+      "border-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+  },
+  {
+    label: "divide-sky-400",
+    value: "divide-sky-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-400",
+  },
+  {
+    label:
+      "border-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    value:
+      "border-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+  },
+  {
+    label: "divide-sky-500",
+    value: "divide-sky-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-500",
+  },
+  {
+    label:
+      "border-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    value:
+      "border-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+  },
+  {
+    label: "divide-sky-600",
+    value: "divide-sky-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-600",
+  },
+  {
+    label:
+      "border-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    value:
+      "border-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+  },
+  {
+    label: "divide-sky-700",
+    value: "divide-sky-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-700",
+  },
+  {
+    label: "border-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    value: "border-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+  },
+  {
+    label: "divide-sky-800",
+    value: "divide-sky-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-800",
+  },
+  {
+    label: "border-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    value: "border-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+  },
+  {
+    label: "divide-sky-900",
+    value: "divide-sky-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-900",
+  },
+  {
+    label:
+      "border-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    value:
+      "border-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+  },
+  {
+    label: "divide-sky-950",
+    value: "divide-sky-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to sky-950",
+  },
+  {
+    label:
+      "border-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    value:
+      "border-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+  },
+  {
+    label: "divide-blue-50",
+    value: "divide-blue-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-50",
+  },
+  {
+    label: "border-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    value: "border-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+  },
+  {
+    label: "divide-blue-100",
+    value: "divide-blue-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-100",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    value:
+      "border-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+  },
+  {
+    label: "divide-blue-200",
+    value: "divide-blue-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-200",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    value:
+      "border-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+  },
+  {
+    label: "divide-blue-300",
+    value: "divide-blue-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-300",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    value:
+      "border-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+  },
+  {
+    label: "divide-blue-400",
+    value: "divide-blue-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-400",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    value:
+      "border-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+  },
+  {
+    label: "divide-blue-500",
+    value: "divide-blue-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-500",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    value:
+      "border-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+  },
+  {
+    label: "divide-blue-600",
+    value: "divide-blue-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-600",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    value:
+      "border-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+  },
+  {
+    label: "divide-blue-700",
+    value: "divide-blue-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-700",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    value:
+      "border-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+  },
+  {
+    label: "divide-blue-800",
+    value: "divide-blue-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-800",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    value:
+      "border-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+  },
+  {
+    label: "divide-blue-900",
+    value: "divide-blue-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-900",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    value:
+      "border-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+  },
+  {
+    label: "divide-blue-950",
+    value: "divide-blue-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to blue-950",
+  },
+  {
+    label:
+      "border-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    value:
+      "border-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+  },
+  {
+    label: "divide-indigo-50",
+    value: "divide-indigo-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-50",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    value:
+      "border-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+  },
+  {
+    label: "divide-indigo-100",
+    value: "divide-indigo-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-100",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    value:
+      "border-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+  },
+  {
+    label: "divide-indigo-200",
+    value: "divide-indigo-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-200",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    value:
+      "border-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+  },
+  {
+    label: "divide-indigo-300",
+    value: "divide-indigo-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-300",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    value:
+      "border-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+  },
+  {
+    label: "divide-indigo-400",
+    value: "divide-indigo-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-400",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    value:
+      "border-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+  },
+  {
+    label: "divide-indigo-500",
+    value: "divide-indigo-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-500",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    value:
+      "border-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+  },
+  {
+    label: "divide-indigo-600",
+    value: "divide-indigo-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-600",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    value:
+      "border-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+  },
+  {
+    label: "divide-indigo-700",
+    value: "divide-indigo-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-700",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    value:
+      "border-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+  },
+  {
+    label: "divide-indigo-800",
+    value: "divide-indigo-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-800",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    value:
+      "border-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+  },
+  {
+    label: "divide-indigo-900",
+    value: "divide-indigo-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-900",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    value:
+      "border-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+  },
+  {
+    label: "divide-indigo-950",
+    value: "divide-indigo-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to indigo-950",
+  },
+  {
+    label:
+      "border-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    value:
+      "border-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+  },
+  {
+    label: "divide-violet-50",
+    value: "divide-violet-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-50",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    value:
+      "border-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+  },
+  {
+    label: "divide-violet-100",
+    value: "divide-violet-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-100",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    value:
+      "border-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+  },
+  {
+    label: "divide-violet-200",
+    value: "divide-violet-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-200",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    value:
+      "border-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+  },
+  {
+    label: "divide-violet-300",
+    value: "divide-violet-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-300",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    value:
+      "border-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+  },
+  {
+    label: "divide-violet-400",
+    value: "divide-violet-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-400",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    value:
+      "border-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+  },
+  {
+    label: "divide-violet-500",
+    value: "divide-violet-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-500",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    value:
+      "border-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+  },
+  {
+    label: "divide-violet-600",
+    value: "divide-violet-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-600",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    value:
+      "border-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+  },
+  {
+    label: "divide-violet-700",
+    value: "divide-violet-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-700",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    value:
+      "border-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+  },
+  {
+    label: "divide-violet-800",
+    value: "divide-violet-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-800",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    value:
+      "border-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+  },
+  {
+    label: "divide-violet-900",
+    value: "divide-violet-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-900",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    value:
+      "border-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+  },
+  {
+    label: "divide-violet-950",
+    value: "divide-violet-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to violet-950",
+  },
+  {
+    label:
+      "border-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    value:
+      "border-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+  },
+  {
+    label: "divide-purple-50",
+    value: "divide-purple-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-50",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    value:
+      "border-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+  },
+  {
+    label: "divide-purple-100",
+    value: "divide-purple-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-100",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    value:
+      "border-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+  },
+  {
+    label: "divide-purple-200",
+    value: "divide-purple-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-200",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    value:
+      "border-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+  },
+  {
+    label: "divide-purple-300",
+    value: "divide-purple-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-300",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    value:
+      "border-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+  },
+  {
+    label: "divide-purple-400",
+    value: "divide-purple-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-400",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    value:
+      "border-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+  },
+  {
+    label: "divide-purple-500",
+    value: "divide-purple-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-500",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    value:
+      "border-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+  },
+  {
+    label: "divide-purple-600",
+    value: "divide-purple-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-600",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    value:
+      "border-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+  },
+  {
+    label: "divide-purple-700",
+    value: "divide-purple-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-700",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    value:
+      "border-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+  },
+  {
+    label: "divide-purple-800",
+    value: "divide-purple-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-800",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    value:
+      "border-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+  },
+  {
+    label: "divide-purple-900",
+    value: "divide-purple-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-900",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    value:
+      "border-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+  },
+  {
+    label: "divide-purple-950",
+    value: "divide-purple-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to purple-950",
+  },
+  {
+    label:
+      "border-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    value:
+      "border-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+  },
+  {
+    label: "divide-fuchsia-50",
+    value: "divide-fuchsia-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-50",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    value:
+      "border-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+  },
+  {
+    label: "divide-fuchsia-100",
+    value: "divide-fuchsia-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-100",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    value:
+      "border-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+  },
+  {
+    label: "divide-fuchsia-200",
+    value: "divide-fuchsia-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-200",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    value:
+      "border-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+  },
+  {
+    label: "divide-fuchsia-300",
+    value: "divide-fuchsia-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-300",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    value:
+      "border-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+  },
+  {
+    label: "divide-fuchsia-400",
+    value: "divide-fuchsia-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-400",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    value:
+      "border-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+  },
+  {
+    label: "divide-fuchsia-500",
+    value: "divide-fuchsia-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-500",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    value:
+      "border-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+  },
+  {
+    label: "divide-fuchsia-600",
+    value: "divide-fuchsia-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-600",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    value:
+      "border-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+  },
+  {
+    label: "divide-fuchsia-700",
+    value: "divide-fuchsia-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-700",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    value:
+      "border-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+  },
+  {
+    label: "divide-fuchsia-800",
+    value: "divide-fuchsia-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-800",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    value:
+      "border-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+  },
+  {
+    label: "divide-fuchsia-900",
+    value: "divide-fuchsia-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-900",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    value:
+      "border-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+  },
+  {
+    label: "divide-fuchsia-950",
+    value: "divide-fuchsia-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to fuchsia-950",
+  },
+  {
+    label:
+      "border-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    value:
+      "border-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+  },
+  {
+    label: "divide-pink-50",
+    value: "divide-pink-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-50",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    value:
+      "border-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+  },
+  {
+    label: "divide-pink-100",
+    value: "divide-pink-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-100",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    value:
+      "border-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+  },
+  {
+    label: "divide-pink-200",
+    value: "divide-pink-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-200",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    value:
+      "border-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+  },
+  {
+    label: "divide-pink-300",
+    value: "divide-pink-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-300",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    value:
+      "border-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+  },
+  {
+    label: "divide-pink-400",
+    value: "divide-pink-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-400",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    value:
+      "border-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+  },
+  {
+    label: "divide-pink-500",
+    value: "divide-pink-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-500",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    value:
+      "border-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+  },
+  {
+    label: "divide-pink-600",
+    value: "divide-pink-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-600",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    value:
+      "border-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+  },
+  {
+    label: "divide-pink-700",
+    value: "divide-pink-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-700",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    value:
+      "border-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+  },
+  {
+    label: "divide-pink-800",
+    value: "divide-pink-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-800",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    value:
+      "border-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+  },
+  {
+    label: "divide-pink-900",
+    value: "divide-pink-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-900",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    value:
+      "border-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+  },
+  {
+    label: "divide-pink-950",
+    value: "divide-pink-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to pink-950",
+  },
+  {
+    label:
+      "border-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    value:
+      "border-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+  },
+  {
+    label: "divide-rose-50",
+    value: "divide-rose-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-50",
+  },
+  {
+    label:
+      "border-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    value:
+      "border-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+  },
+  {
+    label: "divide-rose-100",
+    value: "divide-rose-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-100",
+  },
+  {
+    label: "border-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    value: "border-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+  },
+  {
+    label: "divide-rose-200",
+    value: "divide-rose-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-200",
+  },
+  {
+    label:
+      "border-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    value:
+      "border-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+  },
+  {
+    label: "divide-rose-300",
+    value: "divide-rose-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-300",
+  },
+  {
+    label: "border-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    value: "border-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+  },
+  {
+    label: "divide-rose-400",
+    value: "divide-rose-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-400",
+  },
+  {
+    label:
+      "border-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    value:
+      "border-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+  },
+  {
+    label: "divide-rose-500",
+    value: "divide-rose-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-500",
+  },
+  {
+    label:
+      "border-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    value:
+      "border-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+  },
+  {
+    label: "divide-rose-600",
+    value: "divide-rose-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-600",
+  },
+  {
+    label:
+      "border-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    value:
+      "border-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+  },
+  {
+    label: "divide-rose-700",
+    value: "divide-rose-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-700",
+  },
+  {
+    label:
+      "border-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    value:
+      "border-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+  },
+  {
+    label: "divide-rose-800",
+    value: "divide-rose-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-800",
+  },
+  {
+    label:
+      "border-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    value:
+      "border-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+  },
+  {
+    label: "divide-rose-900",
+    value: "divide-rose-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-900",
+  },
+  {
+    label: "border-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    value: "border-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+  },
+  {
+    label: "divide-rose-950",
+    value: "divide-rose-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to rose-950",
+  },
+  {
+    label:
+      "border-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    value:
+      "border-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+  },
+  {
+    label: "divide-slate-50",
+    value: "divide-slate-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-50",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    value:
+      "border-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+  },
+  {
+    label: "divide-slate-100",
+    value: "divide-slate-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-100",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    value:
+      "border-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+  },
+  {
+    label: "divide-slate-200",
+    value: "divide-slate-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-200",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    value:
+      "border-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+  },
+  {
+    label: "divide-slate-300",
+    value: "divide-slate-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-300",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    value:
+      "border-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+  },
+  {
+    label: "divide-slate-400",
+    value: "divide-slate-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-400",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    value:
+      "border-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+  },
+  {
+    label: "divide-slate-500",
+    value: "divide-slate-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-500",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    value:
+      "border-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+  },
+  {
+    label: "divide-slate-600",
+    value: "divide-slate-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-600",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    value:
+      "border-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+  },
+  {
+    label: "divide-slate-700",
+    value: "divide-slate-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-700",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    value:
+      "border-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+  },
+  {
+    label: "divide-slate-800",
+    value: "divide-slate-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-800",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    value:
+      "border-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+  },
+  {
+    label: "divide-slate-900",
+    value: "divide-slate-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-900",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    value:
+      "border-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+  },
+  {
+    label: "divide-slate-950",
+    value: "divide-slate-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to slate-950",
+  },
+  {
+    label:
+      "border-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    value:
+      "border-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+  },
+  {
+    label: "divide-gray-50",
+    value: "divide-gray-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-50",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    value:
+      "border-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+  },
+  {
+    label: "divide-gray-100",
+    value: "divide-gray-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-100",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    value:
+      "border-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+  },
+  {
+    label: "divide-gray-200",
+    value: "divide-gray-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-200",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    value:
+      "border-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+  },
+  {
+    label: "divide-gray-300",
+    value: "divide-gray-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-300",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    value:
+      "border-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+  },
+  {
+    label: "divide-gray-400",
+    value: "divide-gray-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-400",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    value:
+      "border-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+  },
+  {
+    label: "divide-gray-500",
+    value: "divide-gray-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-500",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    value:
+      "border-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+  },
+  {
+    label: "divide-gray-600",
+    value: "divide-gray-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-600",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    value:
+      "border-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+  },
+  {
+    label: "divide-gray-700",
+    value: "divide-gray-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-700",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    value:
+      "border-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+  },
+  {
+    label: "divide-gray-800",
+    value: "divide-gray-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-800",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    value:
+      "border-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+  },
+  {
+    label: "divide-gray-900",
+    value: "divide-gray-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-900",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    value:
+      "border-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+  },
+  {
+    label: "divide-gray-950",
+    value: "divide-gray-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to gray-950",
+  },
+  {
+    label:
+      "border-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    value:
+      "border-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+  },
+  {
+    label: "divide-zinc-50",
+    value: "divide-zinc-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-50",
+  },
+  {
+    label: "border-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    value: "border-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+  },
+  {
+    label: "divide-zinc-100",
+    value: "divide-zinc-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-100",
+  },
+  {
+    label:
+      "border-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    value:
+      "border-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+  },
+  {
+    label: "divide-zinc-200",
+    value: "divide-zinc-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-200",
+  },
+  {
+    label: "border-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    value: "border-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+  },
+  {
+    label: "divide-zinc-300",
+    value: "divide-zinc-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-300",
+  },
+  {
+    label:
+      "border-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    value:
+      "border-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+  },
+  {
+    label: "divide-zinc-400",
+    value: "divide-zinc-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-400",
+  },
+  {
+    label:
+      "border-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    value:
+      "border-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+  },
+  {
+    label: "divide-zinc-500",
+    value: "divide-zinc-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-500",
+  },
+  {
+    label:
+      "border-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    value:
+      "border-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+  },
+  {
+    label: "divide-zinc-600",
+    value: "divide-zinc-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-600",
+  },
+  {
+    label:
+      "border-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    value:
+      "border-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+  },
+  {
+    label: "divide-zinc-700",
+    value: "divide-zinc-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-700",
+  },
+  {
+    label:
+      "border-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    value:
+      "border-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+  },
+  {
+    label: "divide-zinc-800",
+    value: "divide-zinc-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-800",
+  },
+  {
+    label:
+      "border-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    value:
+      "border-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+  },
+  {
+    label: "divide-zinc-900",
+    value: "divide-zinc-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-900",
+  },
+  {
+    label:
+      "border-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    value:
+      "border-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+  },
+  {
+    label: "divide-zinc-950",
+    value: "divide-zinc-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to zinc-950",
+  },
+  {
+    label:
+      "border-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    value:
+      "border-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+  },
+  {
+    label: "divide-neutral-50",
+    value: "divide-neutral-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-50",
+  },
+  {
+    label: "border-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    value: "border-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+  },
+  {
+    label: "divide-neutral-100",
+    value: "divide-neutral-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-100",
+  },
+  {
+    label: "border-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    value: "border-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+  },
+  {
+    label: "divide-neutral-200",
+    value: "divide-neutral-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-200",
+  },
+  {
+    label: "border-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    value: "border-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+  },
+  {
+    label: "divide-neutral-300",
+    value: "divide-neutral-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-300",
+  },
+  {
+    label: "border-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    value: "border-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+  },
+  {
+    label: "divide-neutral-400",
+    value: "divide-neutral-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-400",
+  },
+  {
+    label: "border-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    value: "border-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+  },
+  {
+    label: "divide-neutral-500",
+    value: "divide-neutral-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-500",
+  },
+  {
+    label: "border-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    value: "border-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+  },
+  {
+    label: "divide-neutral-600",
+    value: "divide-neutral-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-600",
+  },
+  {
+    label: "border-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    value: "border-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+  },
+  {
+    label: "divide-neutral-700",
+    value: "divide-neutral-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-700",
+  },
+  {
+    label: "border-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    value: "border-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+  },
+  {
+    label: "divide-neutral-800",
+    value: "divide-neutral-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-800",
+  },
+  {
+    label: "border-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    value: "border-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+  },
+  {
+    label: "divide-neutral-900",
+    value: "divide-neutral-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-900",
+  },
+  {
+    label: "border-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    value: "border-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+  },
+  {
+    label: "divide-neutral-950",
+    value: "divide-neutral-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to neutral-950",
+  },
+  {
+    label: "border-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    value: "border-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+  },
+  {
+    label: "divide-stone-50",
+    value: "divide-stone-50",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-50",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    value:
+      "border-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+  },
+  {
+    label: "divide-stone-100",
+    value: "divide-stone-100",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-100",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    value:
+      "border-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+  },
+  {
+    label: "divide-stone-200",
+    value: "divide-stone-200",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-200",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    value:
+      "border-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+  },
+  {
+    label: "divide-stone-300",
+    value: "divide-stone-300",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-300",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    value:
+      "border-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+  },
+  {
+    label: "divide-stone-400",
+    value: "divide-stone-400",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-400",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    value:
+      "border-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+  },
+  {
+    label: "divide-stone-500",
+    value: "divide-stone-500",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-500",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    value:
+      "border-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+  },
+  {
+    label: "divide-stone-600",
+    value: "divide-stone-600",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-600",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    value:
+      "border-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+  },
+  {
+    label: "divide-stone-700",
+    value: "divide-stone-700",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-700",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    value:
+      "border-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+  },
+  {
+    label: "divide-stone-800",
+    value: "divide-stone-800",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-800",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    value:
+      "border-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+  },
+  {
+    label: "divide-stone-900",
+    value: "divide-stone-900",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-900",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    value:
+      "border-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+  },
+  {
+    label: "divide-stone-950",
+    value: "divide-stone-950",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to stone-950",
+  },
+  {
+    label:
+      "border-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    value:
+      "border-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    styles: "}",
+    description:
+      "Sets border color to color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+  },
+  {
+    label: "divide-(<custom-property>)",
+    value: "divide-(<custom-property>)",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to (<custom-property>)",
+  },
+  {
+    label: "border-color: var(<custom-property>);",
+    value: "border-color: var(<custom-property>);",
+    styles: "}",
+    description: "Sets border color to color: var(<custom-property>);",
+  },
+  {
+    label: "divide-[<value>]",
+    value: "divide-[<value>]",
+    styles: "& > :not(:last-child) {",
+    description:
+      "Sets the border color for dividers between child elements to [<value>]",
+  },
+  {
+    label: "border-color: <value>;",
+    value: "border-color: <value>;",
+    styles: "}",
+    description: "Sets border color to color: <value>;",
+  },
+];
+
+export const borderStyle = [
+  {
+    label: "border-solid",
+    value: "border-solid",
+    styles: "border-style: solid;",
+    description: "Sets border to a solid continuous line",
+  },
+  {
+    label: "border-dashed",
+    value: "border-dashed",
+    styles: "border-style: dashed;",
+    description: "Sets border to a series of short dashes",
+  },
+  {
+    label: "border-dotted",
+    value: "border-dotted",
+    styles: "border-style: dotted;",
+    description: "Sets border to a series of dots",
+  },
+  {
+    label: "border-double",
+    value: "border-double",
+    styles: "border-style: double;",
+    description: "Sets border to two parallel solid lines",
+  },
+  {
+    label: "border-hidden",
+    value: "border-hidden",
+    styles: "border-style: hidden;",
+    description:
+      "Hides the border (similar to none but with different table handling)",
+  },
+  {
+    label: "border-none",
+    value: "border-none",
+    styles: "border-style: none;",
+    description: "Removes the border completely",
+  },
+  {
+    label: "divide-solid",
+    value: "divide-solid",
+    styles: "& > :not(:last-child) {\n  border-style: solid;\n}",
+    description:
+      "Sets solid border style between child elements (excluding the last child)",
+  },
+  {
+    label: "divide-dashed",
+    value: "divide-dashed",
+    styles: "& > :not(:last-child) {\n  border-style: dashed;\n}",
+    description:
+      "Sets dashed border style between child elements (excluding the last child)",
+  },
+  {
+    label: "divide-dotted",
+    value: "divide-dotted",
+    styles: "& > :not(:last-child) {\n  border-style: dotted;\n}",
+    description:
+      "Sets dotted border style between child elements (excluding the last child)",
+  },
+  {
+    label: "divide-double",
+    value: "divide-double",
+    styles: "& > :not(:last-child) {\n  border-style: double;\n}",
+    description:
+      "Sets double border style between child elements (excluding the last child)",
+  },
+  {
+    label: "divide-hidden",
+    value: "divide-hidden",
+    styles: "& > :not(:last-child) {\n  border-style: hidden;\n}",
+    description:
+      "Hides borders between child elements (excluding the last child)",
+  },
+  {
+    label: "divide-none",
+    value: "divide-none",
+    styles: "& > :not(:last-child) {\n  border-style: none;\n}",
+    description:
+      "Removes borders between child elements (excluding the last child)",
+  },
+];
+
+export const outlineWidth = [
+  {
+    label: "outline",
+    value: "outline",
+    styles: "outline-width: 1px;",
+    description: "Sets outline width to 1px (default outline width)",
+  },
+  {
+    label: "outline-<number>",
+    value: "outline-<number>",
+    styles: "outline-width: <number>px;",
+    description:
+      "Sets outline width to a specific pixel value (e.g., outline-2, outline-4)",
+  },
+  {
+    label: "outline-(length:<custom-property>)",
+    value: "outline-(length:<custom-property>)",
+    styles: "outline-width: var(<custom-property>);",
+    description:
+      "Uses a CSS custom property (variable) for the outline width, automatically wrapping it in var()",
+  },
+  {
+    label: "outline-[<value>]",
+    value: "outline-[<value>]",
+    styles: "outline-width: <value>;",
+    description:
+      "Sets an arbitrary outline width value using Tailwind's square bracket notation for one-off custom values",
+  },
+];
+
+export const outlineColor = [
+  {
+    label: "outline-inherit",
+    value: "outline-inherit",
+    styles: "outline-color: inherit;",
+    description: "Inherits outline color from parent element",
+  },
+  {
+    label: "outline-current",
+    value: "outline-current",
+    styles: "outline-color: currentColor;",
+    description: "Sets outline color to the current text color (currentColor)",
+  },
+  {
+    label: "outline-transparent",
+    value: "outline-transparent",
+    styles: "outline-color: transparent;",
+    description: "Sets outline to transparent",
+  },
+  {
+    label: "outline-black",
+    value: "outline-black",
+    styles: "outline-color: var(--color-black); /* #000 */",
+    description: "Sets outline to black (#000)",
+  },
+  {
+    label: "outline-white",
+    value: "outline-white",
+    styles: "outline-color: var(--color-white); /* #fff */",
+    description: "Sets outline to white (#fff)",
+  },
+  {
+    label: "outline-red-50",
+    value: "outline-red-50",
+    styles:
+      "outline-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets outline to Red 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-100",
+    value: "outline-red-100",
+    styles:
+      "outline-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets outline to Red 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-200",
+    value: "outline-red-200",
+    styles:
+      "outline-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets outline to Red 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-300",
+    value: "outline-red-300",
+    styles:
+      "outline-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets outline to Red 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-400",
+    value: "outline-red-400",
+    styles:
+      "outline-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets outline to Red 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-500",
+    value: "outline-red-500",
+    styles:
+      "outline-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets outline to Red 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-600",
+    value: "outline-red-600",
+    styles:
+      "outline-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets outline to Red 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-700",
+    value: "outline-red-700",
+    styles:
+      "outline-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets outline to Red 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-800",
+    value: "outline-red-800",
+    styles:
+      "outline-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets outline to Red 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-900",
+    value: "outline-red-900",
+    styles:
+      "outline-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets outline to Red 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-red-950",
+    value: "outline-red-950",
+    styles:
+      "outline-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets outline to Red 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-50",
+    value: "outline-orange-50",
+    styles:
+      "outline-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description: "Sets outline to Orange 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-100",
+    value: "outline-orange-100",
+    styles:
+      "outline-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets outline to Orange 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-200",
+    value: "outline-orange-200",
+    styles:
+      "outline-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets outline to Orange 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-300",
+    value: "outline-orange-300",
+    styles:
+      "outline-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets outline to Orange 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-400",
+    value: "outline-orange-400",
+    styles:
+      "outline-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets outline to Orange 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-500",
+    value: "outline-orange-500",
+    styles:
+      "outline-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets outline to Orange 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-600",
+    value: "outline-orange-600",
+    styles:
+      "outline-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets outline to Orange 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-700",
+    value: "outline-orange-700",
+    styles:
+      "outline-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets outline to Orange 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-800",
+    value: "outline-orange-800",
+    styles:
+      "outline-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets outline to Orange 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-900",
+    value: "outline-orange-900",
+    styles:
+      "outline-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets outline to Orange 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-orange-950",
+    value: "outline-orange-950",
+    styles:
+      "outline-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets outline to Orange 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-50",
+    value: "outline-amber-50",
+    styles:
+      "outline-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description: "Sets outline to Amber 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-100",
+    value: "outline-amber-100",
+    styles:
+      "outline-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets outline to Amber 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-200",
+    value: "outline-amber-200",
+    styles:
+      "outline-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets outline to Amber 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-300",
+    value: "outline-amber-300",
+    styles:
+      "outline-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets outline to Amber 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-400",
+    value: "outline-amber-400",
+    styles:
+      "outline-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets outline to Amber 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-500",
+    value: "outline-amber-500",
+    styles:
+      "outline-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets outline to Amber 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-600",
+    value: "outline-amber-600",
+    styles:
+      "outline-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets outline to Amber 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-700",
+    value: "outline-amber-700",
+    styles:
+      "outline-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets outline to Amber 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-800",
+    value: "outline-amber-800",
+    styles:
+      "outline-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets outline to Amber 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-900",
+    value: "outline-amber-900",
+    styles:
+      "outline-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets outline to Amber 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-amber-950",
+    value: "outline-amber-950",
+    styles:
+      "outline-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets outline to Amber 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-50",
+    value: "outline-yellow-50",
+    styles:
+      "outline-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description: "Sets outline to Yellow 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-100",
+    value: "outline-yellow-100",
+    styles:
+      "outline-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets outline to Yellow 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-200",
+    value: "outline-yellow-200",
+    styles:
+      "outline-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets outline to Yellow 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-300",
+    value: "outline-yellow-300",
+    styles:
+      "outline-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets outline to Yellow 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-400",
+    value: "outline-yellow-400",
+    styles:
+      "outline-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets outline to Yellow 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-500",
+    value: "outline-yellow-500",
+    styles:
+      "outline-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets outline to Yellow 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-600",
+    value: "outline-yellow-600",
+    styles:
+      "outline-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets outline to Yellow 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-700",
+    value: "outline-yellow-700",
+    styles:
+      "outline-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets outline to Yellow 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-800",
+    value: "outline-yellow-800",
+    styles:
+      "outline-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets outline to Yellow 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-900",
+    value: "outline-yellow-900",
+    styles:
+      "outline-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets outline to Yellow 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-yellow-950",
+    value: "outline-yellow-950",
+    styles:
+      "outline-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description: "Sets outline to Yellow 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-50",
+    value: "outline-lime-50",
+    styles:
+      "outline-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets outline to Lime 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-100",
+    value: "outline-lime-100",
+    styles:
+      "outline-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets outline to Lime 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-200",
+    value: "outline-lime-200",
+    styles:
+      "outline-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets outline to Lime 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-300",
+    value: "outline-lime-300",
+    styles:
+      "outline-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets outline to Lime 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-400",
+    value: "outline-lime-400",
+    styles:
+      "outline-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets outline to Lime 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-500",
+    value: "outline-lime-500",
+    styles:
+      "outline-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets outline to Lime 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-600",
+    value: "outline-lime-600",
+    styles:
+      "outline-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets outline to Lime 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-700",
+    value: "outline-lime-700",
+    styles:
+      "outline-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets outline to Lime 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-800",
+    value: "outline-lime-800",
+    styles:
+      "outline-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets outline to Lime 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-900",
+    value: "outline-lime-900",
+    styles:
+      "outline-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets outline to Lime 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-lime-950",
+    value: "outline-lime-950",
+    styles:
+      "outline-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets outline to Lime 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-50",
+    value: "outline-green-50",
+    styles:
+      "outline-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description: "Sets outline to Green 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-100",
+    value: "outline-green-100",
+    styles:
+      "outline-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets outline to Green 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-200",
+    value: "outline-green-200",
+    styles:
+      "outline-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets outline to Green 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-300",
+    value: "outline-green-300",
+    styles:
+      "outline-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets outline to Green 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-400",
+    value: "outline-green-400",
+    styles:
+      "outline-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets outline to Green 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-500",
+    value: "outline-green-500",
+    styles:
+      "outline-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets outline to Green 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-600",
+    value: "outline-green-600",
+    styles:
+      "outline-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets outline to Green 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-700",
+    value: "outline-green-700",
+    styles:
+      "outline-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets outline to Green 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-800",
+    value: "outline-green-800",
+    styles:
+      "outline-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets outline to Green 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-900",
+    value: "outline-green-900",
+    styles:
+      "outline-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets outline to Green 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-green-950",
+    value: "outline-green-950",
+    styles:
+      "outline-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description: "Sets outline to Green 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-50",
+    value: "outline-emerald-50",
+    styles:
+      "outline-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description: "Sets outline to Emerald 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-100",
+    value: "outline-emerald-100",
+    styles:
+      "outline-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets outline to Emerald 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-200",
+    value: "outline-emerald-200",
+    styles:
+      "outline-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets outline to Emerald 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-300",
+    value: "outline-emerald-300",
+    styles:
+      "outline-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets outline to Emerald 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-400",
+    value: "outline-emerald-400",
+    styles:
+      "outline-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets outline to Emerald 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-500",
+    value: "outline-emerald-500",
+    styles:
+      "outline-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets outline to Emerald 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-600",
+    value: "outline-emerald-600",
+    styles:
+      "outline-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets outline to Emerald 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-700",
+    value: "outline-emerald-700",
+    styles:
+      "outline-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets outline to Emerald 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-800",
+    value: "outline-emerald-800",
+    styles:
+      "outline-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets outline to Emerald 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-900",
+    value: "outline-emerald-900",
+    styles:
+      "outline-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets outline to Emerald 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-emerald-950",
+    value: "outline-emerald-950",
+    styles:
+      "outline-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description: "Sets outline to Emerald 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-50",
+    value: "outline-teal-50",
+    styles:
+      "outline-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets outline to Teal 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-100",
+    value: "outline-teal-100",
+    styles:
+      "outline-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets outline to Teal 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-200",
+    value: "outline-teal-200",
+    styles:
+      "outline-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets outline to Teal 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-300",
+    value: "outline-teal-300",
+    styles:
+      "outline-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets outline to Teal 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-400",
+    value: "outline-teal-400",
+    styles:
+      "outline-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets outline to Teal 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-500",
+    value: "outline-teal-500",
+    styles:
+      "outline-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets outline to Teal 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-600",
+    value: "outline-teal-600",
+    styles:
+      "outline-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets outline to Teal 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-700",
+    value: "outline-teal-700",
+    styles:
+      "outline-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets outline to Teal 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-800",
+    value: "outline-teal-800",
+    styles:
+      "outline-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets outline to Teal 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-900",
+    value: "outline-teal-900",
+    styles:
+      "outline-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets outline to Teal 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-teal-950",
+    value: "outline-teal-950",
+    styles:
+      "outline-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets outline to Teal 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-50",
+    value: "outline-cyan-50",
+    styles:
+      "outline-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets outline to Cyan 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-100",
+    value: "outline-cyan-100",
+    styles:
+      "outline-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets outline to Cyan 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-200",
+    value: "outline-cyan-200",
+    styles:
+      "outline-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets outline to Cyan 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-300",
+    value: "outline-cyan-300",
+    styles:
+      "outline-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets outline to Cyan 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-400",
+    value: "outline-cyan-400",
+    styles:
+      "outline-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets outline to Cyan 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-500",
+    value: "outline-cyan-500",
+    styles:
+      "outline-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets outline to Cyan 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-600",
+    value: "outline-cyan-600",
+    styles:
+      "outline-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets outline to Cyan 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-700",
+    value: "outline-cyan-700",
+    styles:
+      "outline-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets outline to Cyan 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-800",
+    value: "outline-cyan-800",
+    styles:
+      "outline-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets outline to Cyan 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-900",
+    value: "outline-cyan-900",
+    styles:
+      "outline-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets outline to Cyan 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-cyan-950",
+    value: "outline-cyan-950",
+    styles:
+      "outline-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets outline to Cyan 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-50",
+    value: "outline-sky-50",
+    styles:
+      "outline-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description: "Sets outline to Sky 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-100",
+    value: "outline-sky-100",
+    styles:
+      "outline-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets outline to Sky 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-200",
+    value: "outline-sky-200",
+    styles:
+      "outline-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets outline to Sky 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-300",
+    value: "outline-sky-300",
+    styles:
+      "outline-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets outline to Sky 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-400",
+    value: "outline-sky-400",
+    styles:
+      "outline-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets outline to Sky 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-500",
+    value: "outline-sky-500",
+    styles:
+      "outline-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets outline to Sky 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-600",
+    value: "outline-sky-600",
+    styles:
+      "outline-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets outline to Sky 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-700",
+    value: "outline-sky-700",
+    styles:
+      "outline-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets outline to Sky 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-800",
+    value: "outline-sky-800",
+    styles:
+      "outline-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets outline to Sky 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-900",
+    value: "outline-sky-900",
+    styles:
+      "outline-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets outline to Sky 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-sky-950",
+    value: "outline-sky-950",
+    styles:
+      "outline-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description: "Sets outline to Sky 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-50",
+    value: "outline-blue-50",
+    styles:
+      "outline-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets outline to Blue 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-100",
+    value: "outline-blue-100",
+    styles:
+      "outline-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets outline to Blue 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-200",
+    value: "outline-blue-200",
+    styles:
+      "outline-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets outline to Blue 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-300",
+    value: "outline-blue-300",
+    styles:
+      "outline-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets outline to Blue 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-400",
+    value: "outline-blue-400",
+    styles:
+      "outline-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets outline to Blue 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-500",
+    value: "outline-blue-500",
+    styles:
+      "outline-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets outline to Blue 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-600",
+    value: "outline-blue-600",
+    styles:
+      "outline-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets outline to Blue 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-700",
+    value: "outline-blue-700",
+    styles:
+      "outline-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets outline to Blue 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-800",
+    value: "outline-blue-800",
+    styles:
+      "outline-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets outline to Blue 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-900",
+    value: "outline-blue-900",
+    styles:
+      "outline-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets outline to Blue 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-blue-950",
+    value: "outline-blue-950",
+    styles:
+      "outline-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets outline to Blue 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-50",
+    value: "outline-indigo-50",
+    styles:
+      "outline-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description: "Sets outline to Indigo 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-100",
+    value: "outline-indigo-100",
+    styles:
+      "outline-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets outline to Indigo 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-200",
+    value: "outline-indigo-200",
+    styles:
+      "outline-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets outline to Indigo 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-300",
+    value: "outline-indigo-300",
+    styles:
+      "outline-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets outline to Indigo 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-400",
+    value: "outline-indigo-400",
+    styles:
+      "outline-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets outline to Indigo 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-500",
+    value: "outline-indigo-500",
+    styles:
+      "outline-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets outline to Indigo 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-600",
+    value: "outline-indigo-600",
+    styles:
+      "outline-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets outline to Indigo 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-700",
+    value: "outline-indigo-700",
+    styles:
+      "outline-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets outline to Indigo 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-800",
+    value: "outline-indigo-800",
+    styles:
+      "outline-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets outline to Indigo 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-900",
+    value: "outline-indigo-900",
+    styles:
+      "outline-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets outline to Indigo 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-indigo-950",
+    value: "outline-indigo-950",
+    styles:
+      "outline-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description: "Sets outline to Indigo 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-50",
+    value: "outline-violet-50",
+    styles:
+      "outline-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description: "Sets outline to Violet 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-100",
+    value: "outline-violet-100",
+    styles:
+      "outline-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets outline to Violet 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-200",
+    value: "outline-violet-200",
+    styles:
+      "outline-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets outline to Violet 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-300",
+    value: "outline-violet-300",
+    styles:
+      "outline-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets outline to Violet 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-400",
+    value: "outline-violet-400",
+    styles:
+      "outline-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets outline to Violet 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-500",
+    value: "outline-violet-500",
+    styles:
+      "outline-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets outline to Violet 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-600",
+    value: "outline-violet-600",
+    styles:
+      "outline-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets outline to Violet 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-700",
+    value: "outline-violet-700",
+    styles:
+      "outline-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets outline to Violet 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-800",
+    value: "outline-violet-800",
+    styles:
+      "outline-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets outline to Violet 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-900",
+    value: "outline-violet-900",
+    styles:
+      "outline-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets outline to Violet 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-violet-950",
+    value: "outline-violet-950",
+    styles:
+      "outline-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description: "Sets outline to Violet 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-50",
+    value: "outline-purple-50",
+    styles:
+      "outline-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description: "Sets outline to Purple 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-100",
+    value: "outline-purple-100",
+    styles:
+      "outline-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets outline to Purple 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-200",
+    value: "outline-purple-200",
+    styles:
+      "outline-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets outline to Purple 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-300",
+    value: "outline-purple-300",
+    styles:
+      "outline-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets outline to Purple 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-400",
+    value: "outline-purple-400",
+    styles:
+      "outline-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets outline to Purple 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-500",
+    value: "outline-purple-500",
+    styles:
+      "outline-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets outline to Purple 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-600",
+    value: "outline-purple-600",
+    styles:
+      "outline-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets outline to Purple 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-700",
+    value: "outline-purple-700",
+    styles:
+      "outline-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets outline to Purple 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-800",
+    value: "outline-purple-800",
+    styles:
+      "outline-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets outline to Purple 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-900",
+    value: "outline-purple-900",
+    styles:
+      "outline-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets outline to Purple 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-purple-950",
+    value: "outline-purple-950",
+    styles:
+      "outline-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description: "Sets outline to Purple 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-50",
+    value: "outline-fuchsia-50",
+    styles:
+      "outline-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description: "Sets outline to Fuchsia 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-100",
+    value: "outline-fuchsia-100",
+    styles:
+      "outline-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets outline to Fuchsia 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-200",
+    value: "outline-fuchsia-200",
+    styles:
+      "outline-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets outline to Fuchsia 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-300",
+    value: "outline-fuchsia-300",
+    styles:
+      "outline-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets outline to Fuchsia 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-400",
+    value: "outline-fuchsia-400",
+    styles:
+      "outline-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets outline to Fuchsia 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-500",
+    value: "outline-fuchsia-500",
+    styles:
+      "outline-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets outline to Fuchsia 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-600",
+    value: "outline-fuchsia-600",
+    styles:
+      "outline-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets outline to Fuchsia 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-700",
+    value: "outline-fuchsia-700",
+    styles:
+      "outline-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets outline to Fuchsia 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-800",
+    value: "outline-fuchsia-800",
+    styles:
+      "outline-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets outline to Fuchsia 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-900",
+    value: "outline-fuchsia-900",
+    styles:
+      "outline-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets outline to Fuchsia 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-fuchsia-950",
+    value: "outline-fuchsia-950",
+    styles:
+      "outline-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description: "Sets outline to Fuchsia 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-50",
+    value: "outline-pink-50",
+    styles:
+      "outline-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets outline to Pink 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-100",
+    value: "outline-pink-100",
+    styles:
+      "outline-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets outline to Pink 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-200",
+    value: "outline-pink-200",
+    styles:
+      "outline-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets outline to Pink 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-300",
+    value: "outline-pink-300",
+    styles:
+      "outline-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets outline to Pink 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-400",
+    value: "outline-pink-400",
+    styles:
+      "outline-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets outline to Pink 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-500",
+    value: "outline-pink-500",
+    styles:
+      "outline-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets outline to Pink 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-600",
+    value: "outline-pink-600",
+    styles:
+      "outline-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets outline to Pink 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-700",
+    value: "outline-pink-700",
+    styles:
+      "outline-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets outline to Pink 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-800",
+    value: "outline-pink-800",
+    styles:
+      "outline-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets outline to Pink 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-900",
+    value: "outline-pink-900",
+    styles:
+      "outline-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets outline to Pink 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-pink-950",
+    value: "outline-pink-950",
+    styles:
+      "outline-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets outline to Pink 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-50",
+    value: "outline-rose-50",
+    styles:
+      "outline-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets outline to Rose 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-100",
+    value: "outline-rose-100",
+    styles:
+      "outline-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets outline to Rose 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-200",
+    value: "outline-rose-200",
+    styles:
+      "outline-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets outline to Rose 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-300",
+    value: "outline-rose-300",
+    styles:
+      "outline-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets outline to Rose 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-400",
+    value: "outline-rose-400",
+    styles:
+      "outline-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets outline to Rose 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-500",
+    value: "outline-rose-500",
+    styles:
+      "outline-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets outline to Rose 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-600",
+    value: "outline-rose-600",
+    styles:
+      "outline-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets outline to Rose 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-700",
+    value: "outline-rose-700",
+    styles:
+      "outline-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets outline to Rose 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-800",
+    value: "outline-rose-800",
+    styles:
+      "outline-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets outline to Rose 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-900",
+    value: "outline-rose-900",
+    styles:
+      "outline-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets outline to Rose 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-rose-950",
+    value: "outline-rose-950",
+    styles:
+      "outline-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets outline to Rose 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-50",
+    value: "outline-slate-50",
+    styles:
+      "outline-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description: "Sets outline to Slate 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-100",
+    value: "outline-slate-100",
+    styles:
+      "outline-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets outline to Slate 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-200",
+    value: "outline-slate-200",
+    styles:
+      "outline-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets outline to Slate 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-300",
+    value: "outline-slate-300",
+    styles:
+      "outline-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets outline to Slate 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-400",
+    value: "outline-slate-400",
+    styles:
+      "outline-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets outline to Slate 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-500",
+    value: "outline-slate-500",
+    styles:
+      "outline-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets outline to Slate 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-600",
+    value: "outline-slate-600",
+    styles:
+      "outline-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets outline to Slate 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-700",
+    value: "outline-slate-700",
+    styles:
+      "outline-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets outline to Slate 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-800",
+    value: "outline-slate-800",
+    styles:
+      "outline-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets outline to Slate 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-900",
+    value: "outline-slate-900",
+    styles:
+      "outline-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets outline to Slate 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-slate-950",
+    value: "outline-slate-950",
+    styles:
+      "outline-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description: "Sets outline to Slate 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-50",
+    value: "outline-gray-50",
+    styles:
+      "outline-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets outline to Gray 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-100",
+    value: "outline-gray-100",
+    styles:
+      "outline-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets outline to Gray 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-200",
+    value: "outline-gray-200",
+    styles:
+      "outline-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets outline to Gray 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-300",
+    value: "outline-gray-300",
+    styles:
+      "outline-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets outline to Gray 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-400",
+    value: "outline-gray-400",
+    styles:
+      "outline-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets outline to Gray 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-500",
+    value: "outline-gray-500",
+    styles:
+      "outline-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets outline to Gray 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-600",
+    value: "outline-gray-600",
+    styles:
+      "outline-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets outline to Gray 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-700",
+    value: "outline-gray-700",
+    styles:
+      "outline-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets outline to Gray 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-800",
+    value: "outline-gray-800",
+    styles:
+      "outline-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets outline to Gray 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-900",
+    value: "outline-gray-900",
+    styles:
+      "outline-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets outline to Gray 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-gray-950",
+    value: "outline-gray-950",
+    styles:
+      "outline-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets outline to Gray 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-50",
+    value: "outline-zinc-50",
+    styles: "outline-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets outline to Zinc 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-100",
+    value: "outline-zinc-100",
+    styles:
+      "outline-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets outline to Zinc 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-200",
+    value: "outline-zinc-200",
+    styles:
+      "outline-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets outline to Zinc 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-300",
+    value: "outline-zinc-300",
+    styles:
+      "outline-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets outline to Zinc 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-400",
+    value: "outline-zinc-400",
+    styles:
+      "outline-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets outline to Zinc 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-500",
+    value: "outline-zinc-500",
+    styles:
+      "outline-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets outline to Zinc 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-600",
+    value: "outline-zinc-600",
+    styles:
+      "outline-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets outline to Zinc 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-700",
+    value: "outline-zinc-700",
+    styles:
+      "outline-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets outline to Zinc 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-800",
+    value: "outline-zinc-800",
+    styles:
+      "outline-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets outline to Zinc 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-900",
+    value: "outline-zinc-900",
+    styles:
+      "outline-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets outline to Zinc 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-zinc-950",
+    value: "outline-zinc-950",
+    styles:
+      "outline-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets outline to Zinc 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-50",
+    value: "outline-neutral-50",
+    styles: "outline-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description: "Sets outline to Neutral 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-100",
+    value: "outline-neutral-100",
+    styles: "outline-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets outline to Neutral 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-200",
+    value: "outline-neutral-200",
+    styles: "outline-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets outline to Neutral 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-300",
+    value: "outline-neutral-300",
+    styles: "outline-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets outline to Neutral 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-400",
+    value: "outline-neutral-400",
+    styles: "outline-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets outline to Neutral 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-500",
+    value: "outline-neutral-500",
+    styles: "outline-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets outline to Neutral 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-600",
+    value: "outline-neutral-600",
+    styles: "outline-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets outline to Neutral 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-700",
+    value: "outline-neutral-700",
+    styles: "outline-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets outline to Neutral 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-800",
+    value: "outline-neutral-800",
+    styles: "outline-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets outline to Neutral 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-900",
+    value: "outline-neutral-900",
+    styles: "outline-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets outline to Neutral 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-neutral-950",
+    value: "outline-neutral-950",
+    styles: "outline-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description: "Sets outline to Neutral 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-50",
+    value: "outline-stone-50",
+    styles:
+      "outline-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description: "Sets outline to Stone 50 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-100",
+    value: "outline-stone-100",
+    styles:
+      "outline-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets outline to Stone 100 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-200",
+    value: "outline-stone-200",
+    styles:
+      "outline-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets outline to Stone 200 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-300",
+    value: "outline-stone-300",
+    styles:
+      "outline-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets outline to Stone 300 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-400",
+    value: "outline-stone-400",
+    styles:
+      "outline-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets outline to Stone 400 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-500",
+    value: "outline-stone-500",
+    styles:
+      "outline-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets outline to Stone 500 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-600",
+    value: "outline-stone-600",
+    styles:
+      "outline-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets outline to Stone 600 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-700",
+    value: "outline-stone-700",
+    styles:
+      "outline-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets outline to Stone 700 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-800",
+    value: "outline-stone-800",
+    styles:
+      "outline-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets outline to Stone 800 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-900",
+    value: "outline-stone-900",
+    styles:
+      "outline-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets outline to Stone 900 from Tailwind's color palette",
+  },
+  {
+    label: "outline-stone-950",
+    value: "outline-stone-950",
+    styles:
+      "outline-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description: "Sets outline to Stone 950 from Tailwind's color palette",
+  },
+  {
+    label: "outline-(<custom-property>)",
+    value: "outline-(<custom-property>)",
+    styles: "outline-color: var(<custom-property>);",
+    description: "Uses a CSS custom property (variable) for the outline color",
+  },
+  {
+    label: "outline-[<value>]",
+    value: "outline-[<value>]",
+    styles: "outline-color: <value>;",
+    description:
+      "Sets an arbitrary outline color value using Tailwind's square bracket notation",
+  },
+];
+
+export const outlineStyle = [
+  {
+    label: "outline-solid",
+    value: "outline-solid",
+    styles: "outline-style: solid;",
+    description: "Sets outline to a solid continuous line",
+  },
+  {
+    label: "outline-dashed",
+    value: "outline-dashed",
+    styles: "outline-style: dashed;",
+    description: "Sets outline to a series of short dashes",
+  },
+  {
+    label: "outline-dotted",
+    value: "outline-dotted",
+    styles: "outline-style: dotted;",
+    description: "Sets outline to a series of dots",
+  },
+  {
+    label: "outline-double",
+    value: "outline-double",
+    styles: "outline-style: double;",
+    description: "Sets outline to two parallel solid lines",
+  },
+  {
+    label: "outline-none",
+    value: "outline-none",
+    styles: "outline-style: none;",
+    description: "Removes the outline completely",
+  },
+  {
+    label: "outline-hidden",
+    value: "outline-hidden",
+    styles: "outline: 2px solid transparent;\noutline-offset: 2px;",
+    description:
+      "Creates an invisible outline with offset, useful for accessibility focus states",
+  },
+];
+
+export const outlineOffset = [
+  {
+    label: "outline-offset-<number>",
+    value: "outline-offset-<number>",
+    styles: "outline-offset: <number>px;",
+    description:
+      "Sets outline offset to a specific positive pixel value (e.g., outline-offset-2, outline-offset-4)",
+  },
+  {
+    label: "-outline-offset-<number>",
+    value: "-outline-offset-<number>",
+    styles: "outline-offset: calc(<number>px * -1);",
+    description:
+      "Sets outline offset to a specific negative pixel value, moving the outline inward (e.g., -outline-offset-2)",
+  },
+  {
+    label: "outline-offset-(<custom-property>)",
+    value: "outline-offset-(<custom-property>)",
+    styles: "outline-offset: var(<custom-property>);",
+    description:
+      "Uses a CSS custom property (variable) for the outline offset, automatically wrapping it in var()",
+  },
+  {
+    label: "outline-offset-[<value>]",
+    value: "outline-offset-[<value>]",
+    styles: "outline-offset: <value>;",
+    description:
+      "Sets an arbitrary outline offset value using Tailwind's square bracket notation for one-off custom values",
+  },
+];
+
 
 // Group tailwind selectors by section
 const layoutSelectors: TailwindSelectorGroupType[] = [
@@ -4583,13 +27037,13 @@ const backgroundProperties: TailwindSelectorGroupType[] = [
 
 const borderProperties: TailwindSelectorGroupType[] = [
   { section: "Border Radius", selectors: borderRadius },
-//   { section: "Border Width", selectors: borderWidth },
-//   { section: "Border Color", selectors: borderColor },
-//   { section: "Border Style", selectors: borderStyle },
-//   { section: "Outline Width", selectors: outlineWidth },
-//   { section: "Outline Color", selectors: outlineColor },
-//   { section: "Outline Style", selectors: outlineStyle },
-//   { section: "Outline Offset", selectors: outlineOffset },
+  { section: "Border Width", selectors: borderWidth },
+  { section: "Border Color", selectors: borderColor },
+  { section: "Border Style", selectors: borderStyle },
+  { section: "Outline Width", selectors: outlineWidth },
+  { section: "Outline Color", selectors: outlineColor },
+  { section: "Outline Style", selectors: outlineStyle },
+  { section: "Outline Offset", selectors: outlineOffset },
 ];
 
 const effectsProperties: TailwindSelectorGroupType[] = [
