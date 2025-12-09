@@ -2010,242 +2010,2468 @@ export const placeSelf = [
 
 // SPACING
 export const padding = [
-  { label: "p-<number>", value: "p-<number>", styles: "padding: calc(var(--spacing) * <number>);", description: "Sets padding on all sides using the spacing scale" },
-  { label: "p-px", value: "p-px", styles: "padding: 1px;", description: "Sets 1px padding on all sides" },
-  { label: "px-<number>", value: "px-<number>", styles: "padding-inline: calc(var(--spacing) * <number>);", description: "Sets horizontal padding (left and right)" },
-  { label: "py-<number>", value: "py-<number>", styles: "padding-block: calc(var(--spacing) * <number>);", description: "Sets vertical padding (top and bottom)" },
-  { label: "pt-<number>", value: "pt-<number>", styles: "padding-top: calc(var(--spacing) * <number>);", description: "Sets top padding" },
-  { label: "pr-<number>", value: "pr-<number>", styles: "padding-right: calc(var(--spacing) * <number>);", description: "Sets right padding" },
-  { label: "pb-<number>", value: "pb-<number>", styles: "padding-bottom: calc(var(--spacing) * <number>);", description: "Sets bottom padding" },
-  { label: "pl-<number>", value: "pl-<number>", styles: "padding-left: calc(var(--spacing) * <number>);", description: "Sets left padding" },
-  { label: "ps-<number>", value: "ps-<number>", styles: "padding-inline-start: calc(var(--spacing) * <number>);", description: "Sets padding at the inline start (left in LTR, right in RTL)" },
-  { label: "pe-<number>", value: "pe-<number>", styles: "padding-inline-end: calc(var(--spacing) * <number>);", description: "Sets padding at the inline end (right in LTR, left in RTL)" },
-  { label: "p-[<value>]", value: "p-[<value>]", styles: "padding: <value>;", description: "Sets arbitrary padding value" }
+  {
+    label: "p-<number>",
+    value: "p-<number>",
+    styles: "padding: calc(var(--spacing) * <number>);",
+    description: "Sets padding on all sides using the spacing scale",
+  },
+  {
+    label: "p-px",
+    value: "p-px",
+    styles: "padding: 1px;",
+    description: "Sets 1px padding on all sides",
+  },
+  {
+    label: "px-<number>",
+    value: "px-<number>",
+    styles: "padding-inline: calc(var(--spacing) * <number>);",
+    description: "Sets horizontal padding (left and right)",
+  },
+  {
+    label: "py-<number>",
+    value: "py-<number>",
+    styles: "padding-block: calc(var(--spacing) * <number>);",
+    description: "Sets vertical padding (top and bottom)",
+  },
+  {
+    label: "pt-<number>",
+    value: "pt-<number>",
+    styles: "padding-top: calc(var(--spacing) * <number>);",
+    description: "Sets top padding",
+  },
+  {
+    label: "pr-<number>",
+    value: "pr-<number>",
+    styles: "padding-right: calc(var(--spacing) * <number>);",
+    description: "Sets right padding",
+  },
+  {
+    label: "pb-<number>",
+    value: "pb-<number>",
+    styles: "padding-bottom: calc(var(--spacing) * <number>);",
+    description: "Sets bottom padding",
+  },
+  {
+    label: "pl-<number>",
+    value: "pl-<number>",
+    styles: "padding-left: calc(var(--spacing) * <number>);",
+    description: "Sets left padding",
+  },
+  {
+    label: "ps-<number>",
+    value: "ps-<number>",
+    styles: "padding-inline-start: calc(var(--spacing) * <number>);",
+    description: "Sets padding at the inline start (left in LTR, right in RTL)",
+  },
+  {
+    label: "pe-<number>",
+    value: "pe-<number>",
+    styles: "padding-inline-end: calc(var(--spacing) * <number>);",
+    description: "Sets padding at the inline end (right in LTR, left in RTL)",
+  },
+  {
+    label: "p-[<value>]",
+    value: "p-[<value>]",
+    styles: "padding: <value>;",
+    description: "Sets arbitrary padding value",
+  },
 ];
 
 export const margin = [
-  { label: "m-<number>", value: "m-<number>", styles: "margin: calc(var(--spacing) * <number>);", description: "Sets margin on all sides" },
-  { label: "m-auto", value: "m-auto", styles: "margin: auto;", description: "Sets automatic margin on all sides" },
-  { label: "mx-<number>", value: "mx-<number>", styles: "margin-inline: calc(var(--spacing) * <number>);", description: "Sets horizontal margin" },
-  { label: "my-<number>", value: "my-<number>", styles: "margin-block: calc(var(--spacing) * <number>);", description: "Sets vertical margin" },
-  { label: "mt-<number>", value: "mt-<number>", styles: "margin-top: calc(var(--spacing) * <number>);", description: "Sets top margin" },
-  { label: "mr-<number>", value: "mr-<number>", styles: "margin-right: calc(var(--spacing) * <number>);", description: "Sets right margin" },
-  { label: "mb-<number>", value: "mb-<number>", styles: "margin-bottom: calc(var(--spacing) * <number>);", description: "Sets bottom margin" },
-  { label: "ml-<number>", value: "ml-<number>", styles: "margin-left: calc(var(--spacing) * <number>);", description: "Sets left margin" },
-  { label: "ms-<number>", value: "ms-<number>", styles: "margin-inline-start: calc(var(--spacing) * <number>);", description: "Sets margin at inline start" },
-  { label: "me-<number>", value: "me-<number>", styles: "margin-inline-end: calc(var(--spacing) * <number>);", description: "Sets margin at inline end" },
-  { label: "-m-<number>", value: "-m-<number>", styles: "margin: calc(var(--spacing) * -<number>);", description: "Sets negative margin on all sides" },
-  { label: "m-[<value>]", value: "m-[<value>]", styles: "margin: <value>;", description: "Sets arbitrary margin value" }
+  {
+    label: "m-<number>",
+    value: "m-<number>",
+    styles: "margin: calc(var(--spacing) * <number>);",
+    description: "Sets margin on all sides",
+  },
+  {
+    label: "m-auto",
+    value: "m-auto",
+    styles: "margin: auto;",
+    description: "Sets automatic margin on all sides",
+  },
+  {
+    label: "mx-<number>",
+    value: "mx-<number>",
+    styles: "margin-inline: calc(var(--spacing) * <number>);",
+    description: "Sets horizontal margin",
+  },
+  {
+    label: "my-<number>",
+    value: "my-<number>",
+    styles: "margin-block: calc(var(--spacing) * <number>);",
+    description: "Sets vertical margin",
+  },
+  {
+    label: "mt-<number>",
+    value: "mt-<number>",
+    styles: "margin-top: calc(var(--spacing) * <number>);",
+    description: "Sets top margin",
+  },
+  {
+    label: "mr-<number>",
+    value: "mr-<number>",
+    styles: "margin-right: calc(var(--spacing) * <number>);",
+    description: "Sets right margin",
+  },
+  {
+    label: "mb-<number>",
+    value: "mb-<number>",
+    styles: "margin-bottom: calc(var(--spacing) * <number>);",
+    description: "Sets bottom margin",
+  },
+  {
+    label: "ml-<number>",
+    value: "ml-<number>",
+    styles: "margin-left: calc(var(--spacing) * <number>);",
+    description: "Sets left margin",
+  },
+  {
+    label: "ms-<number>",
+    value: "ms-<number>",
+    styles: "margin-inline-start: calc(var(--spacing) * <number>);",
+    description: "Sets margin at inline start",
+  },
+  {
+    label: "me-<number>",
+    value: "me-<number>",
+    styles: "margin-inline-end: calc(var(--spacing) * <number>);",
+    description: "Sets margin at inline end",
+  },
+  {
+    label: "-m-<number>",
+    value: "-m-<number>",
+    styles: "margin: calc(var(--spacing) * -<number>);",
+    description: "Sets negative margin on all sides",
+  },
+  {
+    label: "m-[<value>]",
+    value: "m-[<value>]",
+    styles: "margin: <value>;",
+    description: "Sets arbitrary margin value",
+  },
 ];
 
 // SIZING
 export const width = [
-  { label: "w-<number>", value: "w-<number>", styles: "width: calc(var(--spacing) * <number>);", description: "Sets width using spacing scale" },
-  { label: "w-<fraction>", value: "w-<fraction>", styles: "width: calc(<fraction> * 100%);", description: "Sets width as percentage (e.g., w-1/2, w-2/3)" },
-  { label: "w-full", value: "w-full", styles: "width: 100%;", description: "Sets width to 100%" },
-  { label: "w-screen", value: "w-screen", styles: "width: 100vw;", description: "Sets width to viewport width" },
-  { label: "w-svw", value: "w-svw", styles: "width: 100svw;", description: "Sets width to small viewport width" },
-  { label: "w-lvw", value: "w-lvw", styles: "width: 100lvw;", description: "Sets width to large viewport width" },
-  { label: "w-dvw", value: "w-dvw", styles: "width: 100dvw;", description: "Sets width to dynamic viewport width" },
-  { label: "w-min", value: "w-min", styles: "width: min-content;", description: "Sets width to minimum content size" },
-  { label: "w-max", value: "w-max", styles: "width: max-content;", description: "Sets width to maximum content size" },
-  { label: "w-fit", value: "w-fit", styles: "width: fit-content;", description: "Sets width to fit content" },
-  { label: "w-auto", value: "w-auto", styles: "width: auto;", description: "Sets automatic width" },
-  { label: "w-[<value>]", value: "w-[<value>]", styles: "width: <value>;", description: "Sets arbitrary width value" }
+  {
+    label: "w-<number>",
+    value: "w-<number>",
+    styles: "width: calc(var(--spacing) * <number>);",
+    description: "Sets width using spacing scale",
+  },
+  {
+    label: "w-<fraction>",
+    value: "w-<fraction>",
+    styles: "width: calc(<fraction> * 100%);",
+    description: "Sets width as percentage (e.g., w-1/2, w-2/3)",
+  },
+  {
+    label: "w-full",
+    value: "w-full",
+    styles: "width: 100%;",
+    description: "Sets width to 100%",
+  },
+  {
+    label: "w-screen",
+    value: "w-screen",
+    styles: "width: 100vw;",
+    description: "Sets width to viewport width",
+  },
+  {
+    label: "w-svw",
+    value: "w-svw",
+    styles: "width: 100svw;",
+    description: "Sets width to small viewport width",
+  },
+  {
+    label: "w-lvw",
+    value: "w-lvw",
+    styles: "width: 100lvw;",
+    description: "Sets width to large viewport width",
+  },
+  {
+    label: "w-dvw",
+    value: "w-dvw",
+    styles: "width: 100dvw;",
+    description: "Sets width to dynamic viewport width",
+  },
+  {
+    label: "w-min",
+    value: "w-min",
+    styles: "width: min-content;",
+    description: "Sets width to minimum content size",
+  },
+  {
+    label: "w-max",
+    value: "w-max",
+    styles: "width: max-content;",
+    description: "Sets width to maximum content size",
+  },
+  {
+    label: "w-fit",
+    value: "w-fit",
+    styles: "width: fit-content;",
+    description: "Sets width to fit content",
+  },
+  {
+    label: "w-auto",
+    value: "w-auto",
+    styles: "width: auto;",
+    description: "Sets automatic width",
+  },
+  {
+    label: "w-[<value>]",
+    value: "w-[<value>]",
+    styles: "width: <value>;",
+    description: "Sets arbitrary width value",
+  },
 ];
 
 export const minWidth = [
-  { label: "min-w-<number>", value: "min-w-<number>", styles: "min-width: calc(var(--spacing) * <number>);", description: "Sets minimum width" },
-  { label: "min-w-full", value: "min-w-full", styles: "min-width: 100%;", description: "Sets minimum width to 100%" },
-  { label: "min-w-min", value: "min-w-min", styles: "min-width: min-content;", description: "Sets minimum width to minimum content" },
-  { label: "min-w-max", value: "min-w-max", styles: "min-width: max-content;", description: "Sets minimum width to maximum content" },
-  { label: "min-w-fit", value: "min-w-fit", styles: "min-width: fit-content;", description: "Sets minimum width to fit content" },
-  { label: "min-w-[<value>]", value: "min-w-[<value>]", styles: "min-width: <value>;", description: "Sets arbitrary minimum width" }
+  {
+    label: "min-w-<number>",
+    value: "min-w-<number>",
+    styles: "min-width: calc(var(--spacing) * <number>);",
+    description: "Sets minimum width",
+  },
+  {
+    label: "min-w-full",
+    value: "min-w-full",
+    styles: "min-width: 100%;",
+    description: "Sets minimum width to 100%",
+  },
+  {
+    label: "min-w-min",
+    value: "min-w-min",
+    styles: "min-width: min-content;",
+    description: "Sets minimum width to minimum content",
+  },
+  {
+    label: "min-w-max",
+    value: "min-w-max",
+    styles: "min-width: max-content;",
+    description: "Sets minimum width to maximum content",
+  },
+  {
+    label: "min-w-fit",
+    value: "min-w-fit",
+    styles: "min-width: fit-content;",
+    description: "Sets minimum width to fit content",
+  },
+  {
+    label: "min-w-[<value>]",
+    value: "min-w-[<value>]",
+    styles: "min-width: <value>;",
+    description: "Sets arbitrary minimum width",
+  },
 ];
 
 export const maxWidth = [
-  { label: "max-w-<number>", value: "max-w-<number>", styles: "max-width: calc(var(--spacing) * <number>);", description: "Sets maximum width" },
-  { label: "max-w-none", value: "max-w-none", styles: "max-width: none;", description: "Removes maximum width constraint" },
-  { label: "max-w-xs", value: "max-w-xs", styles: "max-width: 20rem;", description: "Sets max width to 20rem" },
-  { label: "max-w-sm", value: "max-w-sm", styles: "max-width: 24rem;", description: "Sets max width to 24rem" },
-  { label: "max-w-md", value: "max-w-md", styles: "max-width: 28rem;", description: "Sets max width to 28rem" },
-  { label: "max-w-lg", value: "max-w-lg", styles: "max-width: 32rem;", description: "Sets max width to 32rem" },
-  { label: "max-w-xl", value: "max-w-xl", styles: "max-width: 36rem;", description: "Sets max width to 36rem" },
-  { label: "max-w-full", value: "max-w-full", styles: "max-width: 100%;", description: "Sets maximum width to 100%" },
-  { label: "max-w-min", value: "max-w-min", styles: "max-width: min-content;", description: "Sets maximum width to minimum content" },
-  { label: "max-w-max", value: "max-w-max", styles: "max-width: max-content;", description: "Sets maximum width to maximum content" },
-  { label: "max-w-fit", value: "max-w-fit", styles: "max-width: fit-content;", description: "Sets maximum width to fit content" },
-  { label: "max-w-[<value>]", value: "max-w-[<value>]", styles: "max-width: <value>;", description: "Sets arbitrary maximum width" }
+  {
+    label: "max-w-<number>",
+    value: "max-w-<number>",
+    styles: "max-width: calc(var(--spacing) * <number>);",
+    description: "Sets maximum width",
+  },
+  {
+    label: "max-w-none",
+    value: "max-w-none",
+    styles: "max-width: none;",
+    description: "Removes maximum width constraint",
+  },
+  {
+    label: "max-w-xs",
+    value: "max-w-xs",
+    styles: "max-width: 20rem;",
+    description: "Sets max width to 20rem",
+  },
+  {
+    label: "max-w-sm",
+    value: "max-w-sm",
+    styles: "max-width: 24rem;",
+    description: "Sets max width to 24rem",
+  },
+  {
+    label: "max-w-md",
+    value: "max-w-md",
+    styles: "max-width: 28rem;",
+    description: "Sets max width to 28rem",
+  },
+  {
+    label: "max-w-lg",
+    value: "max-w-lg",
+    styles: "max-width: 32rem;",
+    description: "Sets max width to 32rem",
+  },
+  {
+    label: "max-w-xl",
+    value: "max-w-xl",
+    styles: "max-width: 36rem;",
+    description: "Sets max width to 36rem",
+  },
+  {
+    label: "max-w-full",
+    value: "max-w-full",
+    styles: "max-width: 100%;",
+    description: "Sets maximum width to 100%",
+  },
+  {
+    label: "max-w-min",
+    value: "max-w-min",
+    styles: "max-width: min-content;",
+    description: "Sets maximum width to minimum content",
+  },
+  {
+    label: "max-w-max",
+    value: "max-w-max",
+    styles: "max-width: max-content;",
+    description: "Sets maximum width to maximum content",
+  },
+  {
+    label: "max-w-fit",
+    value: "max-w-fit",
+    styles: "max-width: fit-content;",
+    description: "Sets maximum width to fit content",
+  },
+  {
+    label: "max-w-[<value>]",
+    value: "max-w-[<value>]",
+    styles: "max-width: <value>;",
+    description: "Sets arbitrary maximum width",
+  },
 ];
 
 export const height = [
-  { label: "h-<number>", value: "h-<number>", styles: "height: calc(var(--spacing) * <number>);", description: "Sets height using spacing scale" },
-  { label: "h-<fraction>", value: "h-<fraction>", styles: "height: calc(<fraction> * 100%);", description: "Sets height as percentage" },
-  { label: "h-full", value: "h-full", styles: "height: 100%;", description: "Sets height to 100%" },
-  { label: "h-screen", value: "h-screen", styles: "height: 100vh;", description: "Sets height to viewport height" },
-  { label: "h-svh", value: "h-svh", styles: "height: 100svh;", description: "Sets height to small viewport height" },
-  { label: "h-lvh", value: "h-lvh", styles: "height: 100lvh;", description: "Sets height to large viewport height" },
-  { label: "h-dvh", value: "h-dvh", styles: "height: 100dvh;", description: "Sets height to dynamic viewport height" },
-  { label: "h-min", value: "h-min", styles: "height: min-content;", description: "Sets height to minimum content" },
-  { label: "h-max", value: "h-max", styles: "height: max-content;", description: "Sets height to maximum content" },
-  { label: "h-fit", value: "h-fit", styles: "height: fit-content;", description: "Sets height to fit content" },
-  { label: "h-auto", value: "h-auto", styles: "height: auto;", description: "Sets automatic height" },
-  { label: "h-[<value>]", value: "h-[<value>]", styles: "height: <value>;", description: "Sets arbitrary height value" }
+  {
+    label: "h-<number>",
+    value: "h-<number>",
+    styles: "height: calc(var(--spacing) * <number>);",
+    description: "Sets height using spacing scale",
+  },
+  {
+    label: "h-<fraction>",
+    value: "h-<fraction>",
+    styles: "height: calc(<fraction> * 100%);",
+    description: "Sets height as percentage",
+  },
+  {
+    label: "h-full",
+    value: "h-full",
+    styles: "height: 100%;",
+    description: "Sets height to 100%",
+  },
+  {
+    label: "h-screen",
+    value: "h-screen",
+    styles: "height: 100vh;",
+    description: "Sets height to viewport height",
+  },
+  {
+    label: "h-svh",
+    value: "h-svh",
+    styles: "height: 100svh;",
+    description: "Sets height to small viewport height",
+  },
+  {
+    label: "h-lvh",
+    value: "h-lvh",
+    styles: "height: 100lvh;",
+    description: "Sets height to large viewport height",
+  },
+  {
+    label: "h-dvh",
+    value: "h-dvh",
+    styles: "height: 100dvh;",
+    description: "Sets height to dynamic viewport height",
+  },
+  {
+    label: "h-min",
+    value: "h-min",
+    styles: "height: min-content;",
+    description: "Sets height to minimum content",
+  },
+  {
+    label: "h-max",
+    value: "h-max",
+    styles: "height: max-content;",
+    description: "Sets height to maximum content",
+  },
+  {
+    label: "h-fit",
+    value: "h-fit",
+    styles: "height: fit-content;",
+    description: "Sets height to fit content",
+  },
+  {
+    label: "h-auto",
+    value: "h-auto",
+    styles: "height: auto;",
+    description: "Sets automatic height",
+  },
+  {
+    label: "h-[<value>]",
+    value: "h-[<value>]",
+    styles: "height: <value>;",
+    description: "Sets arbitrary height value",
+  },
 ];
 
 export const minHeight = [
-  { label: "min-h-<number>", value: "min-h-<number>", styles: "min-height: calc(var(--spacing) * <number>);", description: "Sets minimum height" },
-  { label: "min-h-full", value: "min-h-full", styles: "min-height: 100%;", description: "Sets minimum height to 100%" },
-  { label: "min-h-screen", value: "min-h-screen", styles: "min-height: 100vh;", description: "Sets minimum height to viewport height" },
-  { label: "min-h-min", value: "min-h-min", styles: "min-height: min-content;", description: "Sets minimum height to minimum content" },
-  { label: "min-h-max", value: "min-h-max", styles: "min-height: max-content;", description: "Sets minimum height to maximum content" },
-  { label: "min-h-fit", value: "min-h-fit", styles: "min-height: fit-content;", description: "Sets minimum height to fit content" },
-  { label: "min-h-[<value>]", value: "min-h-[<value>]", styles: "min-height: <value>;", description: "Sets arbitrary minimum height" }
+  {
+    label: "min-h-<number>",
+    value: "min-h-<number>",
+    styles: "min-height: calc(var(--spacing) * <number>);",
+    description: "Sets minimum height",
+  },
+  {
+    label: "min-h-full",
+    value: "min-h-full",
+    styles: "min-height: 100%;",
+    description: "Sets minimum height to 100%",
+  },
+  {
+    label: "min-h-screen",
+    value: "min-h-screen",
+    styles: "min-height: 100vh;",
+    description: "Sets minimum height to viewport height",
+  },
+  {
+    label: "min-h-min",
+    value: "min-h-min",
+    styles: "min-height: min-content;",
+    description: "Sets minimum height to minimum content",
+  },
+  {
+    label: "min-h-max",
+    value: "min-h-max",
+    styles: "min-height: max-content;",
+    description: "Sets minimum height to maximum content",
+  },
+  {
+    label: "min-h-fit",
+    value: "min-h-fit",
+    styles: "min-height: fit-content;",
+    description: "Sets minimum height to fit content",
+  },
+  {
+    label: "min-h-[<value>]",
+    value: "min-h-[<value>]",
+    styles: "min-height: <value>;",
+    description: "Sets arbitrary minimum height",
+  },
 ];
 
 export const maxHeight = [
-  { label: "max-h-<number>", value: "max-h-<number>", styles: "max-height: calc(var(--spacing) * <number>);", description: "Sets maximum height" },
-  { label: "max-h-none", value: "max-h-none", styles: "max-height: none;", description: "Removes maximum height constraint" },
-  { label: "max-h-full", value: "max-h-full", styles: "max-height: 100%;", description: "Sets maximum height to 100%" },
-  { label: "max-h-screen", value: "max-h-screen", styles: "max-height: 100vh;", description: "Sets maximum height to viewport height" },
-  { label: "max-h-min", value: "max-h-min", styles: "max-height: min-content;", description: "Sets maximum height to minimum content" },
-  { label: "max-h-max", value: "max-h-max", styles: "max-height: max-content;", description: "Sets maximum height to maximum content" },
-  { label: "max-h-fit", value: "max-h-fit", styles: "max-height: fit-content;", description: "Sets maximum height to fit content" },
-  { label: "max-h-[<value>]", value: "max-h-[<value>]", styles: "max-height: <value>;", description: "Sets arbitrary maximum height" }
+  {
+    label: "max-h-<number>",
+    value: "max-h-<number>",
+    styles: "max-height: calc(var(--spacing) * <number>);",
+    description: "Sets maximum height",
+  },
+  {
+    label: "max-h-none",
+    value: "max-h-none",
+    styles: "max-height: none;",
+    description: "Removes maximum height constraint",
+  },
+  {
+    label: "max-h-full",
+    value: "max-h-full",
+    styles: "max-height: 100%;",
+    description: "Sets maximum height to 100%",
+  },
+  {
+    label: "max-h-screen",
+    value: "max-h-screen",
+    styles: "max-height: 100vh;",
+    description: "Sets maximum height to viewport height",
+  },
+  {
+    label: "max-h-min",
+    value: "max-h-min",
+    styles: "max-height: min-content;",
+    description: "Sets maximum height to minimum content",
+  },
+  {
+    label: "max-h-max",
+    value: "max-h-max",
+    styles: "max-height: max-content;",
+    description: "Sets maximum height to maximum content",
+  },
+  {
+    label: "max-h-fit",
+    value: "max-h-fit",
+    styles: "max-height: fit-content;",
+    description: "Sets maximum height to fit content",
+  },
+  {
+    label: "max-h-[<value>]",
+    value: "max-h-[<value>]",
+    styles: "max-height: <value>;",
+    description: "Sets arbitrary maximum height",
+  },
 ];
 
 // TYPOGRAPHY
 export const fontFamily = [
-  { label: "font-sans", value: "font-sans", styles: "font-family: var(--font-sans);", description: "Applies sans-serif font family" },
-  { label: "font-serif", value: "font-serif", styles: "font-family: var(--font-serif);", description: "Applies serif font family" },
-  { label: "font-mono", value: "font-mono", styles: "font-family: var(--font-mono);", description: "Applies monospace font family" },
-  { label: "font-[<value>]", value: "font-[<value>]", styles: "font-family: <value>;", description: "Sets arbitrary font family" }
+  {
+    label: "font-sans",
+    value: "font-sans",
+    styles: "font-family: var(--font-sans);",
+    description:
+      "Applies sans-serif font stack (ui-sans-serif, system-ui, sans-serif)",
+  },
+  {
+    label: "font-serif",
+    value: "font-serif",
+    styles: "font-family: var(--font-serif);",
+    description:
+      "Applies serif font stack (ui-serif, Georgia, Cambria, Times New Roman)",
+  },
+  {
+    label: "font-mono",
+    value: "font-mono",
+    styles: "font-family: var(--font-mono);",
+    description:
+      "Applies monospace font stack (ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas)",
+  },
+  {
+    label: "font-(family-name:<custom-property>)",
+    value: "font-(family-name:<custom-property>)",
+    styles: "font-family: var(<custom-property>);",
+    description: "Uses a CSS custom property for font family",
+  },
+  {
+    label: "font-[<value>]",
+    value: "font-[<value>]",
+    styles: "font-family: <value>;",
+    description: "Sets arbitrary font family",
+  },
 ];
 
 export const fontSize = [
-  { label: "text-xs", value: "text-xs", styles: "font-size: var(--font-size-xs);", description: "Sets extra small font size" },
-  { label: "text-sm", value: "text-sm", styles: "font-size: var(--font-size-sm);", description: "Sets small font size" },
-  { label: "text-base", value: "text-base", styles: "font-size: var(--font-size-base);", description: "Sets base font size" },
-  { label: "text-lg", value: "text-lg", styles: "font-size: var(--font-size-lg);", description: "Sets large font size" },
-  { label: "text-xl", value: "text-xl", styles: "font-size: var(--font-size-xl);", description: "Sets extra large font size" },
-  { label: "text-2xl", value: "text-2xl", styles: "font-size: var(--font-size-2xl);", description: "Sets 2x large font size" },
-  { label: "text-3xl", value: "text-3xl", styles: "font-size: var(--font-size-3xl);", description: "Sets 3x large font size" },
-  { label: "text-4xl", value: "text-4xl", styles: "font-size: var(--font-size-4xl);", description: "Sets 4x large font size" },
-  { label: "text-5xl", value: "text-5xl", styles: "font-size: var(--font-size-5xl);", description: "Sets 5x large font size" },
-  { label: "text-6xl", value: "text-6xl", styles: "font-size: var(--font-size-6xl);", description: "Sets 6x large font size" },
-  { label: "text-7xl", value: "text-7xl", styles: "font-size: var(--font-size-7xl);", description: "Sets 7x large font size" },
-  { label: "text-8xl", value: "text-8xl", styles: "font-size: var(--font-size-8xl);", description: "Sets 8x large font size" },
-  { label: "text-9xl", value: "text-9xl", styles: "font-size: var(--font-size-9xl);", description: "Sets 9x large font size" },
-  { label: "text-[<value>]", value: "text-[<value>]", styles: "font-size: <value>;", description: "Sets arbitrary font size" }
+  {
+    label: "text-xs",
+    value: "text-xs",
+    styles: "font-size: var(--text-xs); /* 0.75rem */",
+    description: "Sets extra small font size (12px)",
+  },
+  {
+    label: "text-sm",
+    value: "text-sm",
+    styles: "font-size: var(--text-sm); /* 0.875rem */",
+    description: "Sets small font size (14px)",
+  },
+  {
+    label: "text-base",
+    value: "text-base",
+    styles: "font-size: var(--text-base); /* 1rem */",
+    description: "Sets base font size (16px)",
+  },
+  {
+    label: "text-lg",
+    value: "text-lg",
+    styles: "font-size: var(--text-lg); /* 1.125rem */",
+    description: "Sets large font size (18px)",
+  },
+  {
+    label: "text-xl",
+    value: "text-xl",
+    styles: "font-size: var(--text-xl); /* 1.25rem */",
+    description: "Sets extra large font size (20px)",
+  },
+  {
+    label: "text-2xl",
+    value: "text-2xl",
+    styles: "font-size: var(--text-2xl); /* 1.5rem */",
+    description: "Sets 2x large font size (24px)",
+  },
+  {
+    label: "text-3xl",
+    value: "text-3xl",
+    styles: "font-size: var(--text-3xl); /* 1.875rem */",
+    description: "Sets 3x large font size (30px)",
+  },
+  {
+    label: "text-4xl",
+    value: "text-4xl",
+    styles: "font-size: var(--text-4xl); /* 2.25rem */",
+    description: "Sets 4x large font size (36px)",
+  },
+  {
+    label: "text-5xl",
+    value: "text-5xl",
+    styles: "font-size: var(--text-5xl); /* 3rem */",
+    description: "Sets 5x large font size (48px)",
+  },
+  {
+    label: "text-6xl",
+    value: "text-6xl",
+    styles: "font-size: var(--text-6xl); /* 3.75rem */",
+    description: "Sets 6x large font size (60px)",
+  },
+  {
+    label: "text-7xl",
+    value: "text-7xl",
+    styles: "font-size: var(--text-7xl); /* 4.5rem */",
+    description: "Sets 7x large font size (72px)",
+  },
+  {
+    label: "text-8xl",
+    value: "text-8xl",
+    styles: "font-size: var(--text-8xl); /* 6rem */",
+    description: "Sets 8x large font size (96px)",
+  },
+  {
+    label: "text-9xl",
+    value: "text-9xl",
+    styles: "font-size: var(--text-9xl); /* 8rem */",
+    description: "Sets 9x large font size (128px)",
+  },
+  {
+    label: "text-[<value>]",
+    value: "text-[<value>]",
+    styles: "font-size: <value>;",
+    description: "Sets arbitrary font size",
+  },
+];
+
+export const fontSmoothing = [
+  {
+    label: "antialiased",
+    value: "antialiased",
+    styles:
+      "-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;",
+    description: "Enables font antialiasing for smoother text rendering",
+  },
+  {
+    label: "subpixel-antialiased",
+    value: "subpixel-antialiased",
+    styles: "-webkit-font-smoothing: auto; -moz-osx-font-smoothing: auto;",
+    description: "Uses subpixel antialiasing (browser default)",
+  },
+];
+
+export const fontStyle = [
+  {
+    label: "italic",
+    value: "italic",
+    styles: "font-style: italic;",
+    description: "Makes text italic",
+  },
+  {
+    label: "not-italic",
+    value: "not-italic",
+    styles: "font-style: normal;",
+    description: "Removes italic styling",
+  },
 ];
 
 export const fontWeight = [
-  { label: "font-thin", value: "font-thin", styles: "font-weight: 100;", description: "Sets thin font weight" },
-  { label: "font-extralight", value: "font-extralight", styles: "font-weight: 200;", description: "Sets extra light font weight" },
-  { label: "font-light", value: "font-light", styles: "font-weight: 300;", description: "Sets light font weight" },
-  { label: "font-normal", value: "font-normal", styles: "font-weight: 400;", description: "Sets normal font weight" },
-  { label: "font-medium", value: "font-medium", styles: "font-weight: 500;", description: "Sets medium font weight" },
-  { label: "font-semibold", value: "font-semibold", styles: "font-weight: 600;", description: "Sets semibold font weight" },
-  { label: "font-bold", value: "font-bold", styles: "font-weight: 700;", description: "Sets bold font weight" },
-  { label: "font-extrabold", value: "font-extrabold", styles: "font-weight: 800;", description: "Sets extra bold font weight" },
-  { label: "font-black", value: "font-black", styles: "font-weight: 900;", description: "Sets black font weight" },
-  { label: "font-[<value>]", value: "font-[<value>]", styles: "font-weight: <value>;", description: "Sets arbitrary font weight" }
+  {
+    label: "font-thin",
+    value: "font-thin",
+    styles: "font-weight: 100;",
+    description: "Sets thin font weight",
+  },
+  {
+    label: "font-extralight",
+    value: "font-extralight",
+    styles: "font-weight: 200;",
+    description: "Sets extra light font weight",
+  },
+  {
+    label: "font-light",
+    value: "font-light",
+    styles: "font-weight: 300;",
+    description: "Sets light font weight",
+  },
+  {
+    label: "font-normal",
+    value: "font-normal",
+    styles: "font-weight: 400;",
+    description: "Sets normal font weight",
+  },
+  {
+    label: "font-medium",
+    value: "font-medium",
+    styles: "font-weight: 500;",
+    description: "Sets medium font weight",
+  },
+  {
+    label: "font-semibold",
+    value: "font-semibold",
+    styles: "font-weight: 600;",
+    description: "Sets semibold font weight",
+  },
+  {
+    label: "font-bold",
+    value: "font-bold",
+    styles: "font-weight: 700;",
+    description: "Sets bold font weight",
+  },
+  {
+    label: "font-extrabold",
+    value: "font-extrabold",
+    styles: "font-weight: 800;",
+    description: "Sets extra bold font weight",
+  },
+  {
+    label: "font-black",
+    value: "font-black",
+    styles: "font-weight: 900;",
+    description: "Sets black font weight (heaviest)",
+  },
+  {
+    label: "font-[<value>]",
+    value: "font-[<value>]",
+    styles: "font-weight: <value>;",
+    description: "Sets arbitrary font weight",
+  },
 ];
 
-export const textAlign = [
-  { label: "text-left", value: "text-left", styles: "text-align: left;", description: "Aligns text to the left" },
-  { label: "text-center", value: "text-center", styles: "text-align: center;", description: "Centers text" },
-  { label: "text-right", value: "text-right", styles: "text-align: right;", description: "Aligns text to the right" },
-  { label: "text-justify", value: "text-justify", styles: "text-align: justify;", description: "Justifies text" },
-  { label: "text-start", value: "text-start", styles: "text-align: start;", description: "Aligns text to the start based on direction" },
-  { label: "text-end", value: "text-end", styles: "text-align: end;", description: "Aligns text to the end based on direction" }
+export const fontStretch = [
+  {
+    label: "font-stretch-ultra-condensed",
+    value: "font-stretch-ultra-condensed",
+    styles: "font-stretch: ultra-condensed;",
+    description: "Sets ultra condensed font width",
+  },
+  {
+    label: "font-stretch-extra-condensed",
+    value: "font-stretch-extra-condensed",
+    styles: "font-stretch: extra-condensed;",
+    description: "Sets extra condensed font width",
+  },
+  {
+    label: "font-stretch-condensed",
+    value: "font-stretch-condensed",
+    styles: "font-stretch: condensed;",
+    description: "Sets condensed font width",
+  },
+  {
+    label: "font-stretch-semi-condensed",
+    value: "font-stretch-semi-condensed",
+    styles: "font-stretch: semi-condensed;",
+    description: "Sets semi condensed font width",
+  },
+  {
+    label: "font-stretch-normal",
+    value: "font-stretch-normal",
+    styles: "font-stretch: normal;",
+    description: "Sets normal font width",
+  },
+  {
+    label: "font-stretch-semi-expanded",
+    value: "font-stretch-semi-expanded",
+    styles: "font-stretch: semi-expanded;",
+    description: "Sets semi expanded font width",
+  },
+  {
+    label: "font-stretch-expanded",
+    value: "font-stretch-expanded",
+    styles: "font-stretch: expanded;",
+    description: "Sets expanded font width",
+  },
+  {
+    label: "font-stretch-extra-expanded",
+    value: "font-stretch-extra-expanded",
+    styles: "font-stretch: extra-expanded;",
+    description: "Sets extra expanded font width",
+  },
+  {
+    label: "font-stretch-ultra-expanded",
+    value: "font-stretch-ultra-expanded",
+    styles: "font-stretch: ultra-expanded;",
+    description: "Sets ultra expanded font width",
+  },
 ];
 
-export const textColor = [
-  { label: "text-<color>", value: "text-<color>", styles: "color: var(--color-<color>);", description: "Sets text color from theme palette" },
-  { label: "text-inherit", value: "text-inherit", styles: "color: inherit;", description: "Inherits text color from parent" },
-  { label: "text-current", value: "text-current", styles: "color: currentColor;", description: "Sets text color to currentColor" },
-  { label: "text-transparent", value: "text-transparent", styles: "color: transparent;", description: "Makes text transparent" },
-  { label: "text-[<value>]", value: "text-[<value>]", styles: "color: <value>;", description: "Sets arbitrary text color" }
-];
-
-export const textDecoration = [
-  { label: "underline", value: "underline", styles: "text-decoration-line: underline;", description: "Underlines text" },
-  { label: "overline", value: "overline", styles: "text-decoration-line: overline;", description: "Adds overline to text" },
-  { label: "line-through", value: "line-through", styles: "text-decoration-line: line-through;", description: "Adds line-through to text" },
-  { label: "no-underline", value: "no-underline", styles: "text-decoration-line: none;", description: "Removes text decoration" }
-];
-
-export const textTransform = [
-  { label: "uppercase", value: "uppercase", styles: "text-transform: uppercase;", description: "Transforms text to uppercase" },
-  { label: "lowercase", value: "lowercase", styles: "text-transform: lowercase;", description: "Transforms text to lowercase" },
-  { label: "capitalize", value: "capitalize", styles: "text-transform: capitalize;", description: "Capitalizes first letter of each word" },
-  { label: "normal-case", value: "normal-case", styles: "text-transform: none;", description: "Removes text transform" }
-];
-
-export const lineHeight = [
-  { label: "leading-<number>", value: "leading-<number>", styles: "line-height: calc(var(--spacing) * <number>);", description: "Sets line height using spacing scale" },
-  { label: "leading-none", value: "leading-none", styles: "line-height: 1;", description: "Sets line height to 1" },
-  { label: "leading-tight", value: "leading-tight", styles: "line-height: 1.25;", description: "Sets tight line height" },
-  { label: "leading-snug", value: "leading-snug", styles: "line-height: 1.375;", description: "Sets snug line height" },
-  { label: "leading-normal", value: "leading-normal", styles: "line-height: 1.5;", description: "Sets normal line height" },
-  { label: "leading-relaxed", value: "leading-relaxed", styles: "line-height: 1.625;", description: "Sets relaxed line height" },
-  { label: "leading-loose", value: "leading-loose", styles: "line-height: 2;", description: "Sets loose line height" },
-  { label: "leading-[<value>]", value: "leading-[<value>]", styles: "line-height: <value>;", description: "Sets arbitrary line height" }
+export const fontVariantNumeric = [
+  {
+    label: "normal-nums",
+    value: "normal-nums",
+    styles: "font-variant-numeric: normal;",
+    description: "Resets numeric variants to default",
+  },
+  {
+    label: "ordinal",
+    value: "ordinal",
+    styles: "font-variant-numeric: ordinal;",
+    description: "Enables ordinal numeric forms (1st, 2nd, 3rd)",
+  },
+  {
+    label: "slashed-zero",
+    value: "slashed-zero",
+    styles: "font-variant-numeric: slashed-zero;",
+    description: "Uses slashed zero glyph",
+  },
+  {
+    label: "lining-nums",
+    value: "lining-nums",
+    styles: "font-variant-numeric: lining-nums;",
+    description: "Uses lining numerals (aligned by baseline)",
+  },
+  {
+    label: "oldstyle-nums",
+    value: "oldstyle-nums",
+    styles: "font-variant-numeric: oldstyle-nums;",
+    description: "Uses old-style numerals (some have descenders)",
+  },
+  {
+    label: "proportional-nums",
+    value: "proportional-nums",
+    styles: "font-variant-numeric: proportional-nums;",
+    description: "Uses proportional-width numerals",
+  },
+  {
+    label: "tabular-nums",
+    value: "tabular-nums",
+    styles: "font-variant-numeric: tabular-nums;",
+    description: "Uses tabular-width numerals (uniform width)",
+  },
+  {
+    label: "diagonal-fractions",
+    value: "diagonal-fractions",
+    styles: "font-variant-numeric: diagonal-fractions;",
+    description: "Uses diagonal fractions (1/2 becomes ½)",
+  },
+  {
+    label: "stacked-fractions",
+    value: "stacked-fractions",
+    styles: "font-variant-numeric: stacked-fractions;",
+    description: "Uses stacked fractions",
+  },
 ];
 
 export const letterSpacing = [
-  { label: "tracking-tighter", value: "tracking-tighter", styles: "letter-spacing: -0.05em;", description: "Sets tighter letter spacing" },
-  { label: "tracking-tight", value: "tracking-tight", styles: "letter-spacing: -0.025em;", description: "Sets tight letter spacing" },
-  { label: "tracking-normal", value: "tracking-normal", styles: "letter-spacing: 0em;", description: "Sets normal letter spacing" },
-  { label: "tracking-wide", value: "tracking-wide", styles: "letter-spacing: 0.025em;", description: "Sets wide letter spacing" },
-  { label: "tracking-wider", value: "tracking-wider", styles: "letter-spacing: 0.05em;", description: "Sets wider letter spacing" },
-  { label: "tracking-widest", value: "tracking-widest", styles: "letter-spacing: 0.1em;", description: "Sets widest letter spacing" },
-  { label: "tracking-[<value>]", value: "tracking-[<value>]", styles: "letter-spacing: <value>;", description: "Sets arbitrary letter spacing" }
+  {
+    label: "tracking-tighter",
+    value: "tracking-tighter",
+    styles: "letter-spacing: -0.05em;",
+    description: "Sets tighter letter spacing",
+  },
+  {
+    label: "tracking-tight",
+    value: "tracking-tight",
+    styles: "letter-spacing: -0.025em;",
+    description: "Sets tight letter spacing",
+  },
+  {
+    label: "tracking-normal",
+    value: "tracking-normal",
+    styles: "letter-spacing: 0em;",
+    description: "Sets normal letter spacing",
+  },
+  {
+    label: "tracking-wide",
+    value: "tracking-wide",
+    styles: "letter-spacing: 0.025em;",
+    description: "Sets wide letter spacing",
+  },
+  {
+    label: "tracking-wider",
+    value: "tracking-wider",
+    styles: "letter-spacing: 0.05em;",
+    description: "Sets wider letter spacing",
+  },
+  {
+    label: "tracking-widest",
+    value: "tracking-widest",
+    styles: "letter-spacing: 0.1em;",
+    description: "Sets widest letter spacing",
+  },
+  {
+    label: "tracking-[<value>]",
+    value: "tracking-[<value>]",
+    styles: "letter-spacing: <value>;",
+    description: "Sets arbitrary letter spacing",
+  },
+];
+
+export const lineClamp = [
+  {
+    label: "line-clamp-<number>",
+    value: "line-clamp-<number>",
+    styles:
+      "overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: <number>;",
+    description: "Limits text to specified number of lines with ellipsis",
+  },
+  {
+    label: "line-clamp-none",
+    value: "line-clamp-none",
+    styles:
+      "overflow: visible; display: block; -webkit-box-orient: horizontal; -webkit-line-clamp: none;",
+    description: "Removes line clamp",
+  },
+  {
+    label: "line-clamp-[<value>]",
+    value: "line-clamp-[<value>]",
+    styles: "-webkit-line-clamp: <value>;",
+    description: "Sets arbitrary line clamp value",
+  },
+];
+
+export const lineHeight = [
+  {
+    label: "leading-<number>",
+    value: "leading-<number>",
+    styles: "line-height: calc(var(--spacing) * <number>);",
+    description: "Sets line height using spacing scale",
+  },
+  {
+    label: "leading-none",
+    value: "leading-none",
+    styles: "line-height: 1;",
+    description: "Sets line height to 1 (no extra space)",
+  },
+  {
+    label: "leading-tight",
+    value: "leading-tight",
+    styles: "line-height: 1.25;",
+    description: "Sets tight line height (125%)",
+  },
+  {
+    label: "leading-snug",
+    value: "leading-snug",
+    styles: "line-height: 1.375;",
+    description: "Sets snug line height (137.5%)",
+  },
+  {
+    label: "leading-normal",
+    value: "leading-normal",
+    styles: "line-height: 1.5;",
+    description: "Sets normal line height (150%)",
+  },
+  {
+    label: "leading-relaxed",
+    value: "leading-relaxed",
+    styles: "line-height: 1.625;",
+    description: "Sets relaxed line height (162.5%)",
+  },
+  {
+    label: "leading-loose",
+    value: "leading-loose",
+    styles: "line-height: 2;",
+    description: "Sets loose line height (200%)",
+  },
+  {
+    label: "leading-[<value>]",
+    value: "leading-[<value>]",
+    styles: "line-height: <value>;",
+    description: "Sets arbitrary line height",
+  },
+];
+
+export const listStyleImage = [
+  {
+    label: "list-image-none",
+    value: "list-image-none",
+    styles: "list-style-image: none;",
+    description: "Removes list item image",
+  },
+  {
+    label: "list-image-[<value>]",
+    value: "list-image-[<value>]",
+    styles: "list-style-image: <value>;",
+    description: "Sets arbitrary list item image",
+  },
+];
+
+export const listStylePosition = [
+  {
+    label: "list-inside",
+    value: "list-inside",
+    styles: "list-style-position: inside;",
+    description: "Positions list marker inside the list item",
+  },
+  {
+    label: "list-outside",
+    value: "list-outside",
+    styles: "list-style-position: outside;",
+    description: "Positions list marker outside the list item (default)",
+  },
+];
+
+export const listStyleType = [
+  {
+    label: "list-none",
+    value: "list-none",
+    styles: "list-style-type: none;",
+    description: "Removes list markers",
+  },
+  {
+    label: "list-disc",
+    value: "list-disc",
+    styles: "list-style-type: disc;",
+    description: "Uses disc markers (•)",
+  },
+  {
+    label: "list-decimal",
+    value: "list-decimal",
+    styles: "list-style-type: decimal;",
+    description: "Uses decimal numbers (1, 2, 3)",
+  },
+  {
+    label: "list-[<value>]",
+    value: "list-[<value>]",
+    styles: "list-style-type: <value>;",
+    description: "Sets arbitrary list style type",
+  },
+];
+
+export const textAlign = [
+  {
+    label: "text-left",
+    value: "text-left",
+    styles: "text-align: left;",
+    description: "Aligns text to the left",
+  },
+  {
+    label: "text-center",
+    value: "text-center",
+    styles: "text-align: center;",
+    description: "Centers text horizontally",
+  },
+  {
+    label: "text-right",
+    value: "text-right",
+    styles: "text-align: right;",
+    description: "Aligns text to the right",
+  },
+  {
+    label: "text-justify",
+    value: "text-justify",
+    styles: "text-align: justify;",
+    description: "Justifies text (adjusts spacing)",
+  },
+  {
+    label: "text-start",
+    value: "text-start",
+    styles: "text-align: start;",
+    description: "Aligns text to the start (left in LTR, right in RTL)",
+  },
+  {
+    label: "text-end",
+    value: "text-end",
+    styles: "text-align: end;",
+    description: "Aligns text to the end (right in LTR, left in RTL)",
+  },
+];
+
+export const textColor = [
+  {
+    label: "text-<color>",
+    value: "text-<color>",
+    styles: "color: var(--color-<color>);",
+    description: "Sets text color from theme palette",
+  },
+  {
+    label: "text-inherit",
+    value: "text-inherit",
+    styles: "color: inherit;",
+    description: "Inherits text color from parent",
+  },
+  {
+    label: "text-current",
+    value: "text-current",
+    styles: "color: currentColor;",
+    description: "Sets text color to currentColor",
+  },
+  {
+    label: "text-transparent",
+    value: "text-transparent",
+    styles: "color: transparent;",
+    description: "Makes text transparent",
+  },
+  {
+    label: "text-[<value>]",
+    value: "text-[<value>]",
+    styles: "color: <value>;",
+    description: "Sets arbitrary text color",
+  },
+];
+
+export const textDecorationLine = [
+  {
+    label: "underline",
+    value: "underline",
+    styles: "text-decoration-line: underline;",
+    description: "Underlines text",
+  },
+  {
+    label: "overline",
+    value: "overline",
+    styles: "text-decoration-line: overline;",
+    description: "Adds overline to text",
+  },
+  {
+    label: "line-through",
+    value: "line-through",
+    styles: "text-decoration-line: line-through;",
+    description: "Strikes through text",
+  },
+  {
+    label: "no-underline",
+    value: "no-underline",
+    styles: "text-decoration-line: none;",
+    description: "Removes text decoration",
+  },
+];
+
+export const textDecorationColor = [
+  {
+    label: "decoration-<color>",
+    value: "decoration-<color>",
+    styles: "text-decoration-color: var(--color-<color>);",
+    description: "Sets text decoration color",
+  },
+  {
+    label: "decoration-inherit",
+    value: "decoration-inherit",
+    styles: "text-decoration-color: inherit;",
+    description: "Inherits decoration color",
+  },
+  {
+    label: "decoration-current",
+    value: "decoration-current",
+    styles: "text-decoration-color: currentColor;",
+    description: "Uses currentColor for decoration",
+  },
+  {
+    label: "decoration-transparent",
+    value: "decoration-transparent",
+    styles: "text-decoration-color: transparent;",
+    description: "Makes decoration transparent",
+  },
+  {
+    label: "decoration-[<value>]",
+    value: "decoration-[<value>]",
+    styles: "text-decoration-color: <value>;",
+    description: "Sets arbitrary decoration color",
+  },
+];
+
+export const textDecorationStyle = [
+  {
+    label: "decoration-solid",
+    value: "decoration-solid",
+    styles: "text-decoration-style: solid;",
+    description: "Sets solid text decoration",
+  },
+  {
+    label: "decoration-double",
+    value: "decoration-double",
+    styles: "text-decoration-style: double;",
+    description: "Sets double text decoration",
+  },
+  {
+    label: "decoration-dotted",
+    value: "decoration-dotted",
+    styles: "text-decoration-style: dotted;",
+    description: "Sets dotted text decoration",
+  },
+  {
+    label: "decoration-dashed",
+    value: "decoration-dashed",
+    styles: "text-decoration-style: dashed;",
+    description: "Sets dashed text decoration",
+  },
+  {
+    label: "decoration-wavy",
+    value: "decoration-wavy",
+    styles: "text-decoration-style: wavy;",
+    description: "Sets wavy text decoration",
+  },
+];
+
+export const textDecorationThickness = [
+  {
+    label: "decoration-auto",
+    value: "decoration-auto",
+    styles: "text-decoration-thickness: auto;",
+    description: "Uses automatic decoration thickness",
+  },
+  {
+    label: "decoration-from-font",
+    value: "decoration-from-font",
+    styles: "text-decoration-thickness: from-font;",
+    description: "Uses font's decoration thickness",
+  },
+  {
+    label: "decoration-<number>",
+    value: "decoration-<number>",
+    styles: "text-decoration-thickness: <number>px;",
+    description: "Sets decoration thickness in pixels",
+  },
+  {
+    label: "decoration-[<value>]",
+    value: "decoration-[<value>]",
+    styles: "text-decoration-thickness: <value>;",
+    description: "Sets arbitrary decoration thickness",
+  },
+];
+
+export const textUnderlineOffset = [
+  {
+    label: "underline-offset-auto",
+    value: "underline-offset-auto",
+    styles: "text-underline-offset: auto;",
+    description: "Uses automatic underline offset",
+  },
+  {
+    label: "underline-offset-<number>",
+    value: "underline-offset-<number>",
+    styles: "text-underline-offset: <number>px;",
+    description: "Sets underline offset in pixels",
+  },
+  {
+    label: "underline-offset-[<value>]",
+    value: "underline-offset-[<value>]",
+    styles: "text-underline-offset: <value>;",
+    description: "Sets arbitrary underline offset",
+  },
+];
+
+export const textTransform = [
+  {
+    label: "uppercase",
+    value: "uppercase",
+    styles: "text-transform: uppercase;",
+    description: "Transforms text to UPPERCASE",
+  },
+  {
+    label: "lowercase",
+    value: "lowercase",
+    styles: "text-transform: lowercase;",
+    description: "Transforms text to lowercase",
+  },
+  {
+    label: "capitalize",
+    value: "capitalize",
+    styles: "text-transform: capitalize;",
+    description: "Capitalizes First Letter Of Each Word",
+  },
+  {
+    label: "normal-case",
+    value: "normal-case",
+    styles: "text-transform: none;",
+    description: "Removes text transform",
+  },
+];
+
+export const textOverflow = [
+  {
+    label: "truncate",
+    value: "truncate",
+    styles: "overflow: hidden; text-overflow: ellipsis; white-space: nowrap;",
+    description: "Truncates text with ellipsis (...)",
+  },
+  {
+    label: "text-ellipsis",
+    value: "text-ellipsis",
+    styles: "text-overflow: ellipsis;",
+    description: "Uses ellipsis for overflowing text",
+  },
+  {
+    label: "text-clip",
+    value: "text-clip",
+    styles: "text-overflow: clip;",
+    description: "Clips overflowing text",
+  },
+];
+
+export const textWrap = [
+  {
+    label: "text-wrap",
+    value: "text-wrap",
+    styles: "text-wrap: wrap;",
+    description: "Allows text to wrap",
+  },
+  {
+    label: "text-nowrap",
+    value: "text-nowrap",
+    styles: "text-wrap: nowrap;",
+    description: "Prevents text from wrapping",
+  },
+  {
+    label: "text-balance",
+    value: "text-balance",
+    styles: "text-wrap: balance;",
+    description: "Balances text wrapping across lines",
+  },
+  {
+    label: "text-pretty",
+    value: "text-pretty",
+    styles: "text-wrap: pretty;",
+    description: "Optimizes text wrapping for readability",
+  },
+];
+
+export const textIndent = [
+  {
+    label: "indent-<number>",
+    value: "indent-<number>",
+    styles: "text-indent: calc(var(--spacing) * <number>);",
+    description: "Indents first line of text",
+  },
+  {
+    label: "indent-[<value>]",
+    value: "indent-[<value>]",
+    styles: "text-indent: <value>;",
+    description: "Sets arbitrary text indent",
+  },
+];
+
+export const verticalAlign = [
+  {
+    label: "align-baseline",
+    value: "align-baseline",
+    styles: "vertical-align: baseline;",
+    description: "Aligns to baseline",
+  },
+  {
+    label: "align-top",
+    value: "align-top",
+    styles: "vertical-align: top;",
+    description: "Aligns to top of line box",
+  },
+  {
+    label: "align-middle",
+    value: "align-middle",
+    styles: "vertical-align: middle;",
+    description: "Aligns to middle of parent",
+  },
+  {
+    label: "align-bottom",
+    value: "align-bottom",
+    styles: "vertical-align: bottom;",
+    description: "Aligns to bottom of line box",
+  },
+  {
+    label: "align-text-top",
+    value: "align-text-top",
+    styles: "vertical-align: text-top;",
+    description: "Aligns to top of parent's font",
+  },
+  {
+    label: "align-text-bottom",
+    value: "align-text-bottom",
+    styles: "vertical-align: text-bottom;",
+    description: "Aligns to bottom of parent's font",
+  },
+  {
+    label: "align-sub",
+    value: "align-sub",
+    styles: "vertical-align: sub;",
+    description: "Aligns as subscript",
+  },
+  {
+    label: "align-super",
+    value: "align-super",
+    styles: "vertical-align: super;",
+    description: "Aligns as superscript",
+  },
+  {
+    label: "align-[<value>]",
+    value: "align-[<value>]",
+    styles: "vertical-align: <value>;",
+    description: "Sets arbitrary vertical alignment",
+  },
+];
+
+export const whiteSpace = [
+  {
+    label: "whitespace-normal",
+    value: "whitespace-normal",
+    styles: "white-space: normal;",
+    description: "Collapses whitespace and wraps text normally",
+  },
+  {
+    label: "whitespace-nowrap",
+    value: "whitespace-nowrap",
+    styles: "white-space: nowrap;",
+    description: "Prevents wrapping, collapses whitespace",
+  },
+  {
+    label: "whitespace-pre",
+    value: "whitespace-pre",
+    styles: "white-space: pre;",
+    description: "Preserves whitespace, prevents wrapping",
+  },
+  {
+    label: "whitespace-pre-line",
+    value: "whitespace-pre-line",
+    styles: "white-space: pre-line;",
+    description: "Preserves line breaks, wraps text",
+  },
+  {
+    label: "whitespace-pre-wrap",
+    value: "whitespace-pre-wrap",
+    styles: "white-space: pre-wrap;",
+    description: "Preserves whitespace, wraps text",
+  },
+  {
+    label: "whitespace-break-spaces",
+    value: "whitespace-break-spaces",
+    styles: "white-space: break-spaces;",
+    description: "Preserves whitespace, wraps text, breaks at spaces",
+  },
+];
+
+export const wordBreak = [
+  {
+    label: "break-normal",
+    value: "break-normal",
+    styles: "overflow-wrap: normal; word-break: normal;",
+    description: "Uses default line break behavior",
+  },
+  {
+    label: "break-words",
+    value: "break-words",
+    styles: "overflow-wrap: break-word;",
+    description: "Breaks words to prevent overflow",
+  },
+  {
+    label: "break-all",
+    value: "break-all",
+    styles: "word-break: break-all;",
+    description: "Breaks words at any character",
+  },
+  {
+    label: "break-keep",
+    value: "break-keep",
+    styles: "word-break: keep-all;",
+    description: "Prevents breaks in CJK text",
+  },
+];
+
+export const overflowWrap = [
+  {
+    label: "wrap-normal",
+    value: "wrap-normal",
+    styles: "overflow-wrap: normal;",
+    description: "Only breaks at natural break points",
+  },
+  {
+    label: "wrap-break-word",
+    value: "wrap-break-word",
+    styles: "overflow-wrap: break-word;",
+    description: "Breaks words if necessary",
+  },
+  {
+    label: "wrap-anywhere",
+    value: "wrap-anywhere",
+    styles: "overflow-wrap: anywhere;",
+    description: "Breaks text at any point if needed",
+  },
+];
+
+export const hyphens = [
+  {
+    label: "hyphens-none",
+    value: "hyphens-none",
+    styles: "hyphens: none;",
+    description: "Prevents hyphenation",
+  },
+  {
+    label: "hyphens-manual",
+    value: "hyphens-manual",
+    styles: "hyphens: manual;",
+    description: "Hyphenates only at manual break points",
+  },
+  {
+    label: "hyphens-auto",
+    value: "hyphens-auto",
+    styles: "hyphens: auto;",
+    description: "Automatically hyphenates text",
+  },
+];
+
+export const content = [
+  {
+    label: "content-none",
+    value: "content-none",
+    styles: "content: none;",
+    description: "Sets content to none",
+  },
+  {
+    label: "content-[<value>]",
+    value: "content-[<value>]",
+    styles: "content: <value>;",
+    description: "Sets arbitrary content value for pseudo-elements",
+  },
 ];
 
 // BACKGROUNDS
+export const backgroundAttachment = [
+  {
+    label: "bg-fixed",
+    value: "bg-fixed",
+    styles: "background-attachment: fixed;",
+    description: "Fixes background image relative to viewport",
+  },
+  {
+    label: "bg-local",
+    value: "bg-local",
+    styles: "background-attachment: local;",
+    description: "Scrolls background with element's content",
+  },
+  {
+    label: "bg-scroll",
+    value: "bg-scroll",
+    styles: "background-attachment: scroll;",
+    description: "Scrolls background with element itself (default)",
+  },
+];
+
+export const backgroundClip = [
+  {
+    label: "bg-clip-border",
+    value: "bg-clip-border",
+    styles: "background-clip: border-box;",
+    description: "Extends background to outer edge of border",
+  },
+  {
+    label: "bg-clip-padding",
+    value: "bg-clip-padding",
+    styles: "background-clip: padding-box;",
+    description: "Clips background to outer edge of padding",
+  },
+  {
+    label: "bg-clip-content",
+    value: "bg-clip-content",
+    styles: "background-clip: content-box;",
+    description: "Clips background to content box",
+  },
+  {
+    label: "bg-clip-text",
+    value: "bg-clip-text",
+    styles: "background-clip: text;",
+    description: "Clips background to text shape (use with text-transparent)",
+  },
+];
+
 export const backgroundColor = [
-  { label: "bg-<color>", value: "bg-<color>", styles: "background-color: var(--color-<color>);", description: "Sets background color from theme" },
-  { label: "bg-inherit", value: "bg-inherit", styles: "background-color: inherit;", description: "Inherits background color" },
-  { label: "bg-current", value: "bg-current", styles: "background-color: currentColor;", description: "Sets background to currentColor" },
-  { label: "bg-transparent", value: "bg-transparent", styles: "background-color: transparent;", description: "Makes background transparent" },
-  { label: "bg-[<value>]", value: "bg-[<value>]", styles: "background-color: <value>;", description: "Sets arbitrary background color" }
+  {
+    label: "bg-<color>",
+    value: "bg-<color>",
+    styles: "background-color: var(--color-<color>);",
+    description: "Sets background color from theme palette",
+  },
+  {
+    label: "bg-inherit",
+    value: "bg-inherit",
+    styles: "background-color: inherit;",
+    description: "Inherits background color from parent",
+  },
+  {
+    label: "bg-current",
+    value: "bg-current",
+    styles: "background-color: currentColor;",
+    description: "Sets background to currentColor",
+  },
+  {
+    label: "bg-transparent",
+    value: "bg-transparent",
+    styles: "background-color: transparent;",
+    description: "Makes background transparent",
+  },
+  {
+    label: "bg-[<value>]",
+    value: "bg-[<value>]",
+    styles: "background-color: <value>;",
+    description: "Sets arbitrary background color",
+  },
 ];
 
 export const backgroundImage = [
-  { label: "bg-none", value: "bg-none", styles: "background-image: none;", description: "Removes background image" },
-  { label: "bg-gradient-to-t", value: "bg-gradient-to-t", styles: "background-image: linear-gradient(to top, var(--tw-gradient-stops));", description: "Gradient to top" },
-  { label: "bg-gradient-to-tr", value: "bg-gradient-to-tr", styles: "background-image: linear-gradient(to top right, var(--tw-gradient-stops));", description: "Gradient to top right" },
-  { label: "bg-gradient-to-r", value: "bg-gradient-to-r", styles: "background-image: linear-gradient(to right, var(--tw-gradient-stops));", description: "Gradient to right" },
-  { label: "bg-gradient-to-br", value: "bg-gradient-to-br", styles: "background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));", description: "Gradient to bottom right" },
-  { label: "bg-gradient-to-b", value: "bg-gradient-to-b", styles: "background-image: linear-gradient(to bottom, var(--tw-gradient-stops));", description: "Gradient to bottom" },
-  { label: "bg-gradient-to-bl", value: "bg-gradient-to-bl", styles: "background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));", description: "Gradient to bottom left" },
-  { label: "bg-gradient-to-l", value: "bg-gradient-to-l", styles: "background-image: linear-gradient(to left, var(--tw-gradient-stops));", description: "Gradient to left" },
-  { label: "bg-gradient-to-tl", value: "bg-gradient-to-tl", styles: "background-image: linear-gradient(to top left, var(--tw-gradient-stops));", description: "Gradient to top left" },
-  { label: "bg-[<value>]", value: "bg-[<value>]", styles: "background-image: <value>;", description: "Sets arbitrary background image" }
+  {
+    label: "bg-none",
+    value: "bg-none",
+    styles: "background-image: none;",
+    description: "Removes background image",
+  },
+  {
+    label: "bg-linear-to-t",
+    value: "bg-linear-to-t",
+    styles:
+      "background-image: linear-gradient(to top, var(--tw-gradient-stops));",
+    description: "Creates linear gradient to top",
+  },
+  {
+    label: "bg-linear-to-tr",
+    value: "bg-linear-to-tr",
+    styles:
+      "background-image: linear-gradient(to top right, var(--tw-gradient-stops));",
+    description: "Creates linear gradient to top right",
+  },
+  {
+    label: "bg-linear-to-r",
+    value: "bg-linear-to-r",
+    styles:
+      "background-image: linear-gradient(to right, var(--tw-gradient-stops));",
+    description: "Creates linear gradient to right",
+  },
+  {
+    label: "bg-linear-to-br",
+    value: "bg-linear-to-br",
+    styles:
+      "background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));",
+    description: "Creates linear gradient to bottom right",
+  },
+  {
+    label: "bg-linear-to-b",
+    value: "bg-linear-to-b",
+    styles:
+      "background-image: linear-gradient(to bottom, var(--tw-gradient-stops));",
+    description: "Creates linear gradient to bottom",
+  },
+  {
+    label: "bg-linear-to-bl",
+    value: "bg-linear-to-bl",
+    styles:
+      "background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));",
+    description: "Creates linear gradient to bottom left",
+  },
+  {
+    label: "bg-linear-to-l",
+    value: "bg-linear-to-l",
+    styles:
+      "background-image: linear-gradient(to left, var(--tw-gradient-stops));",
+    description: "Creates linear gradient to left",
+  },
+  {
+    label: "bg-linear-to-tl",
+    value: "bg-linear-to-tl",
+    styles:
+      "background-image: linear-gradient(to top left, var(--tw-gradient-stops));",
+    description: "Creates linear gradient to top left",
+  },
+  {
+    label: "bg-linear-<angle>",
+    value: "bg-linear-<angle>",
+    styles:
+      "background-image: linear-gradient(<angle>deg, var(--tw-gradient-stops));",
+    description:
+      "Creates linear gradient at specific angle (e.g., bg-linear-45)",
+  },
+  {
+    label: "bg-radial",
+    value: "bg-radial",
+    styles: "background-image: radial-gradient(var(--tw-gradient-stops));",
+    description: "Creates radial gradient from center",
+  },
+  {
+    label: "bg-radial-[<position>]",
+    value: "bg-radial-[<position>]",
+    styles:
+      "background-image: radial-gradient(<position>, var(--tw-gradient-stops));",
+    description: "Creates radial gradient from specific position",
+  },
+  {
+    label: "bg-conic",
+    value: "bg-conic",
+    styles: "background-image: conic-gradient(var(--tw-gradient-stops));",
+    description: "Creates conic gradient from top",
+  },
+  {
+    label: "bg-conic-<angle>",
+    value: "bg-conic-<angle>",
+    styles:
+      "background-image: conic-gradient(from <angle>deg, var(--tw-gradient-stops));",
+    description: "Creates conic gradient from specific angle",
+  },
+  {
+    label: "from-<color>",
+    value: "from-<color>",
+    styles:
+      "--tw-gradient-from: var(--color-<color>); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);",
+    description: "Sets gradient start color",
+  },
+  {
+    label: "from-<percentage>",
+    value: "from-<percentage>",
+    styles: "--tw-gradient-from-position: <percentage>%;",
+    description: "Sets gradient start position",
+  },
+  {
+    label: "via-<color>",
+    value: "via-<color>",
+    styles:
+      "--tw-gradient-via: var(--color-<color>); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to);",
+    description: "Sets gradient middle color",
+  },
+  {
+    label: "via-<percentage>",
+    value: "via-<percentage>",
+    styles: "--tw-gradient-via-position: <percentage>%;",
+    description: "Sets gradient middle position",
+  },
+  {
+    label: "to-<color>",
+    value: "to-<color>",
+    styles: "--tw-gradient-to: var(--color-<color>);",
+    description: "Sets gradient end color",
+  },
+  {
+    label: "to-<percentage>",
+    value: "to-<percentage>",
+    styles: "--tw-gradient-to-position: <percentage>%;",
+    description: "Sets gradient end position",
+  },
+  {
+    label: "bg-[<value>]",
+    value: "bg-[<value>]",
+    styles: "background-image: <value>;",
+    description: "Sets arbitrary background image",
+  },
 ];
 
-export const backgroundSize = [
-  { label: "bg-auto", value: "bg-auto", styles: "background-size: auto;", description: "Sets background size to auto" },
-  { label: "bg-cover", value: "bg-cover", styles: "background-size: cover;", description: "Scales background to cover entire element" },
-  { label: "bg-contain", value: "bg-contain", styles: "background-size: contain;", description: "Scales background to fit within element" },
-  { label: "bg-[<value>]", value: "bg-[<value>]", styles: "background-size: <value>;", description: "Sets arbitrary background size" }
+export const backgroundOrigin = [
+  {
+    label: "bg-origin-border",
+    value: "bg-origin-border",
+    styles: "background-origin: border-box;",
+    description: "Positions background relative to border box",
+  },
+  {
+    label: "bg-origin-padding",
+    value: "bg-origin-padding",
+    styles: "background-origin: padding-box;",
+    description: "Positions background relative to padding box",
+  },
+  {
+    label: "bg-origin-content",
+    value: "bg-origin-content",
+    styles: "background-origin: content-box;",
+    description: "Positions background relative to content box",
+  },
 ];
 
 export const backgroundPosition = [
-  { label: "bg-bottom", value: "bg-bottom", styles: "background-position: bottom;", description: "Positions background at bottom" },
-  { label: "bg-center", value: "bg-center", styles: "background-position: center;", description: "Centers background" },
-  { label: "bg-left", value: "bg-left", styles: "background-position: left;", description: "Positions background at left" },
-  { label: "bg-left-bottom", value: "bg-left-bottom", styles: "background-position: left bottom;", description: "Positions at left bottom" },
-  { label: "bg-left-top", value: "bg-left-top", styles: "background-position: left top;", description: "Positions at left top" },
-  { label: "bg-right", value: "bg-right", styles: "background-position: right;", description: "Positions background at right" },
-  { label: "bg-right-bottom", value: "bg-right-bottom", styles: "background-position: right bottom;", description: "Positions at right bottom" },
-  { label: "bg-right-top", value: "bg-right-top", styles: "background-position: right top;", description: "Positions at right top" },
-  { label: "bg-top", value: "bg-top", styles: "background-position: top;", description: "Positions background at top" },
-  { label: "bg-[<value>]", value: "bg-[<value>]", styles: "background-position: <value>;", description: "Sets arbitrary background position" }
+  {
+    label: "bg-bottom",
+    value: "bg-bottom",
+    styles: "background-position: bottom;",
+    description: "Positions background at bottom",
+  },
+  {
+    label: "bg-center",
+    value: "bg-center",
+    styles: "background-position: center;",
+    description: "Centers background image",
+  },
+  {
+    label: "bg-left",
+    value: "bg-left",
+    styles: "background-position: left;",
+    description: "Positions background at left",
+  },
+  {
+    label: "bg-left-bottom",
+    value: "bg-left-bottom",
+    styles: "background-position: left bottom;",
+    description: "Positions background at left bottom",
+  },
+  {
+    label: "bg-left-top",
+    value: "bg-left-top",
+    styles: "background-position: left top;",
+    description: "Positions background at left top",
+  },
+  {
+    label: "bg-right",
+    value: "bg-right",
+    styles: "background-position: right;",
+    description: "Positions background at right",
+  },
+  {
+    label: "bg-right-bottom",
+    value: "bg-right-bottom",
+    styles: "background-position: right bottom;",
+    description: "Positions background at right bottom",
+  },
+  {
+    label: "bg-right-top",
+    value: "bg-right-top",
+    styles: "background-position: right top;",
+    description: "Positions background at right top",
+  },
+  {
+    label: "bg-top",
+    value: "bg-top",
+    styles: "background-position: top;",
+    description: "Positions background at top",
+  },
+  {
+    label: "bg-[<value>]",
+    value: "bg-[<value>]",
+    styles: "background-position: <value>;",
+    description: "Sets arbitrary background position",
+  },
 ];
 
+export const backgroundRepeat = [
+  {
+    label: "bg-repeat",
+    value: "bg-repeat",
+    styles: "background-repeat: repeat;",
+    description: "Repeats background in both directions",
+  },
+  {
+    label: "bg-no-repeat",
+    value: "bg-no-repeat",
+    styles: "background-repeat: no-repeat;",
+    description: "Prevents background from repeating",
+  },
+  {
+    label: "bg-repeat-x",
+    value: "bg-repeat-x",
+    styles: "background-repeat: repeat-x;",
+    description: "Repeats background horizontally only",
+  },
+  {
+    label: "bg-repeat-y",
+    value: "bg-repeat-y",
+    styles: "background-repeat: repeat-y;",
+    description: "Repeats background vertically only",
+  },
+  {
+    label: "bg-repeat-round",
+    value: "bg-repeat-round",
+    styles: "background-repeat: round;",
+    description: "Repeats and stretches background to avoid clipping",
+  },
+  {
+    label: "bg-repeat-space",
+    value: "bg-repeat-space",
+    styles: "background-repeat: space;",
+    description: "Repeats background with spacing to avoid clipping",
+  },
+];
+
+export const backgroundSize = [
+  {
+    label: "bg-auto",
+    value: "bg-auto",
+    styles: "background-size: auto;",
+    description: "Displays background at original size",
+  },
+  {
+    label: "bg-cover",
+    value: "bg-cover",
+    styles: "background-size: cover;",
+    description: "Scales background to cover entire container",
+  },
+  {
+    label: "bg-contain",
+    value: "bg-contain",
+    styles: "background-size: contain;",
+    description: "Scales background to fit within container",
+  },
+  {
+    label: "bg-size-(<custom-property>)",
+    value: "bg-size-(<custom-property>)",
+    styles: "background-size: var(<custom-property>);",
+    description: "Uses CSS custom property for background size",
+  },
+  {
+    label: "bg-size-[<value>]",
+    value: "bg-size-[<value>]",
+    styles: "background-size: <value>;",
+    description: "Sets arbitrary background size",
+  },
+];
+
+// BORDERS
+export const borderRadius = [
+  {
+    label: "rounded-xs",
+    value: "rounded-xs",
+    styles: "border-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to all corners of an element",
+  },
+  {
+    label: "rounded-sm",
+    value: "rounded-sm",
+    styles: "border-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description:
+      "Applies a small border radius of 4px to all corners of an element",
+  },
+  {
+    label: "rounded-md",
+    value: "rounded-md",
+    styles: "border-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to all corners of an element",
+  },
+  {
+    label: "rounded-lg",
+    value: "rounded-lg",
+    styles: "border-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description:
+      "Applies a large border radius of 8px to all corners of an element",
+  },
+  {
+    label: "rounded-xl",
+    value: "rounded-xl",
+    styles: "border-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to all corners of an element",
+  },
+  {
+    label: "rounded-2xl",
+    value: "rounded-2xl",
+    styles: "border-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to all corners of an element",
+  },
+  {
+    label: "rounded-3xl",
+    value: "rounded-3xl",
+    styles: "border-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to all corners of an element",
+  },
+  {
+    label: "rounded-4xl",
+    value: "rounded-4xl",
+    styles: "border-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to all corners of an element",
+  },
+  {
+    label: "rounded-none",
+    value: "rounded-none",
+    styles: "border-radius: 0;",
+    description: "Removes all border radius, creating sharp 90-degree corners",
+  },
+  {
+    label: "rounded-full",
+    value: "rounded-full",
+    styles: "border-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius, creating circular or pill-shaped elements",
+  },
+  {
+    label: "rounded-(<custom-property>)",
+    value: "rounded-(<custom-property>)",
+    styles: "border-radius: var(<custom-property>);",
+    description: "Applies a border radius using a custom CSS property variable",
+  },
+  {
+    label: "rounded-[<value>]",
+    value: "rounded-[<value>]",
+    styles: "border-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value using Tailwind's bracket notation",
+  },
+  {
+    label: "rounded-s-xs",
+    value: "rounded-s-xs",
+    styles:
+      "border-start-start-radius: var(--radius-xs); /* 0.125rem (2px) */ border-end-start-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-sm",
+    value: "rounded-s-sm",
+    styles:
+      "border-start-start-radius: var(--radius-sm); /* 0.25rem (4px) */ border-end-start-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description:
+      "Applies a small border radius of 4px to the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-md",
+    value: "rounded-s-md",
+    styles:
+      "border-start-start-radius: var(--radius-md); /* 0.375rem (6px) */ border-end-start-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-lg",
+    value: "rounded-s-lg",
+    styles:
+      "border-start-start-radius: var(--radius-lg); /* 0.5rem (8px) */ border-end-start-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description:
+      "Applies a large border radius of 8px to the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-xl",
+    value: "rounded-s-xl",
+    styles:
+      "border-start-start-radius: var(--radius-xl); /* 0.75rem (12px) */ border-end-start-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-2xl",
+    value: "rounded-s-2xl",
+    styles:
+      "border-start-start-radius: var(--radius-2xl); /* 1rem (16px) */ border-end-start-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-3xl",
+    value: "rounded-s-3xl",
+    styles:
+      "border-start-start-radius: var(--radius-3xl); /* 1.5rem (24px) */ border-end-start-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-4xl",
+    value: "rounded-s-4xl",
+    styles:
+      "border-start-start-radius: var(--radius-4xl); /* 2rem (32px) */ border-end-start-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-none",
+    value: "rounded-s-none",
+    styles: "border-start-start-radius: 0; border-end-start-radius: 0;",
+    description:
+      "Removes border radius from the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-full",
+    value: "rounded-s-full",
+    styles:
+      "border-start-start-radius: calc(infinity * 1px); border-end-start-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius to the start side (left in LTR, right in RTL)",
+  },
+  {
+    label: "rounded-s-(<custom-property>)",
+    value: "rounded-s-(<custom-property>)",
+    styles:
+      "border-start-start-radius: var(<custom-property>); border-end-start-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the start side",
+  },
+  {
+    label: "rounded-s-[<value>]",
+    value: "rounded-s-[<value>]",
+    styles:
+      "border-start-start-radius: <value>; border-end-start-radius: <value>;",
+    description: "Applies an arbitrary border radius value to the start side",
+  },
+  {
+    label: "rounded-e-xs",
+    value: "rounded-e-xs",
+    styles:
+      "border-start-end-radius: var(--radius-xs); /* 0.125rem (2px) */ border-end-end-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-sm",
+    value: "rounded-e-sm",
+    styles:
+      "border-start-end-radius: var(--radius-sm); /* 0.25rem (4px) */ border-end-end-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description:
+      "Applies a small border radius of 4px to the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-md",
+    value: "rounded-e-md",
+    styles:
+      "border-start-end-radius: var(--radius-md); /* 0.375rem (6px) */ border-end-end-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description:
+      "Applies a medium border radius of 6px to the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-lg",
+    value: "rounded-e-lg",
+    styles:
+      "border-start-end-radius: var(--radius-lg); /* 0.5rem (8px) */ border-end-end-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description:
+      "Applies a large border radius of 8px to the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-xl",
+    value: "rounded-e-xl",
+    styles:
+      "border-start-end-radius: var(--radius-xl); /* 0.75rem (12px) */ border-end-end-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-2xl",
+    value: "rounded-e-2xl",
+    styles:
+      "border-start-end-radius: var(--radius-2xl); /* 1rem (16px) */ border-end-end-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-3xl",
+    value: "rounded-e-3xl",
+    styles:
+      "border-start-end-radius: var(--radius-3xl); /* 1.5rem (24px) */ border-end-end-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-4xl",
+    value: "rounded-e-4xl",
+    styles:
+      "border-start-end-radius: var(--radius-4xl); /* 2rem (32px) */ border-end-end-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-none",
+    value: "rounded-e-none",
+    styles: "border-start-end-radius: 0; border-end-end-radius: 0;",
+    description:
+      "Removes border radius from the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-full",
+    value: "rounded-e-full",
+    styles:
+      "border-start-end-radius: calc(infinity * 1px); border-end-end-radius: calc(infinity * 1px);",
+    description:
+      "Applies a fully rounded border radius to the end side (right in LTR, left in RTL)",
+  },
+  {
+    label: "rounded-e-(<custom-property>)",
+    value: "rounded-e-(<custom-property>)",
+    styles:
+      "border-start-end-radius: var(<custom-property>); border-end-end-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the end side",
+  },
+  {
+    label: "rounded-e-[<value>]",
+    value: "rounded-e-[<value>]",
+    styles: "border-start-end-radius: <value>; border-end-end-radius: <value>;",
+    description: "Applies an arbitrary border radius value to the end side",
+  },
+  {
+    label: "rounded-t-xs",
+    value: "rounded-t-xs",
+    styles:
+      "border-top-left-radius: var(--radius-xs); /* 0.125rem (2px) */ border-top-right-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the top corners",
+  },
+  {
+    label: "rounded-t-sm",
+    value: "rounded-t-sm",
+    styles:
+      "border-top-left-radius: var(--radius-sm); /* 0.25rem (4px) */ border-top-right-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description: "Applies a small border radius of 4px to the top corners",
+  },
+  {
+    label: "rounded-t-md",
+    value: "rounded-t-md",
+    styles:
+      "border-top-left-radius: var(--radius-md); /* 0.375rem (6px) */ border-top-right-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description: "Applies a medium border radius of 6px to the top corners",
+  },
+  {
+    label: "rounded-t-lg",
+    value: "rounded-t-lg",
+    styles:
+      "border-top-left-radius: var(--radius-lg); /* 0.5rem (8px) */ border-top-right-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description: "Applies a large border radius of 8px to the top corners",
+  },
+  {
+    label: "rounded-t-xl",
+    value: "rounded-t-xl",
+    styles:
+      "border-top-left-radius: var(--radius-xl); /* 0.75rem (12px) */ border-top-right-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the top corners",
+  },
+  {
+    label: "rounded-t-2xl",
+    value: "rounded-t-2xl",
+    styles:
+      "border-top-left-radius: var(--radius-2xl); /* 1rem (16px) */ border-top-right-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the top corners",
+  },
+  {
+    label: "rounded-t-3xl",
+    value: "rounded-t-3xl",
+    styles:
+      "border-top-left-radius: var(--radius-3xl); /* 1.5rem (24px) */ border-top-right-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the top corners",
+  },
+  {
+    label: "rounded-t-4xl",
+    value: "rounded-t-4xl",
+    styles:
+      "border-top-left-radius: var(--radius-4xl); /* 2rem (32px) */ border-top-right-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the top corners",
+  },
+  {
+    label: "rounded-t-none",
+    value: "rounded-t-none",
+    styles: "border-top-left-radius: 0; border-top-right-radius: 0;",
+    description: "Removes border radius from the top corners",
+  },
+  {
+    label: "rounded-t-full",
+    value: "rounded-t-full",
+    styles:
+      "border-top-left-radius: calc(infinity * 1px); border-top-right-radius: calc(infinity * 1px);",
+    description: "Applies a fully rounded border radius to the top corners",
+  },
+  {
+    label: "rounded-t-(<custom-property>)",
+    value: "rounded-t-(<custom-property>)",
+    styles:
+      "border-top-left-radius: var(<custom-property>); border-top-right-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the top corners",
+  },
+  {
+    label: "rounded-t-[<value>]",
+    value: "rounded-t-[<value>]",
+    styles:
+      "border-top-left-radius: <value>; border-top-right-radius: <value>;",
+    description: "Applies an arbitrary border radius value to the top corners",
+  },
+  {
+    label: "rounded-r-xs",
+    value: "rounded-r-xs",
+    styles:
+      "border-top-right-radius: var(--radius-xs); /* 0.125rem (2px) */ border-bottom-right-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the right corners",
+  },
+  {
+    label: "rounded-r-sm",
+    value: "rounded-r-sm",
+    styles:
+      "border-top-right-radius: var(--radius-sm); /* 0.25rem (4px) */ border-bottom-right-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description: "Applies a small border radius of 4px to the right corners",
+  },
+  {
+    label: "rounded-r-md",
+    value: "rounded-r-md",
+    styles:
+      "border-top-right-radius: var(--radius-md); /* 0.375rem (6px) */ border-bottom-right-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description: "Applies a medium border radius of 6px to the right corners",
+  },
+  {
+    label: "rounded-r-lg",
+    value: "rounded-r-lg",
+    styles:
+      "border-top-right-radius: var(--radius-lg); /* 0.5rem (8px) */ border-bottom-right-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description: "Applies a large border radius of 8px to the right corners",
+  },
+  {
+    label: "rounded-r-xl",
+    value: "rounded-r-xl",
+    styles:
+      "border-top-right-radius: var(--radius-xl); /* 0.75rem (12px) */ border-bottom-right-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the right corners",
+  },
+  {
+    label: "rounded-r-2xl",
+    value: "rounded-r-2xl",
+    styles:
+      "border-top-right-radius: var(--radius-2xl); /* 1rem (16px) */ border-bottom-right-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the right corners",
+  },
+  {
+    label: "rounded-r-3xl",
+    value: "rounded-r-3xl",
+    styles:
+      "border-top-right-radius: var(--radius-3xl); /* 1.5rem (24px) */ border-bottom-right-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the right corners",
+  },
+  {
+    label: "rounded-r-4xl",
+    value: "rounded-r-4xl",
+    styles:
+      "border-top-right-radius: var(--radius-4xl); /* 2rem (32px) */ border-bottom-right-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the right corners",
+  },
+  {
+    label: "rounded-r-none",
+    value: "rounded-r-none",
+    styles: "border-top-right-radius: 0; border-bottom-right-radius: 0;",
+    description: "Removes border radius from the right corners",
+  },
+  {
+    label: "rounded-r-full",
+    value: "rounded-r-full",
+    styles:
+      "border-top-right-radius: calc(infinity * 1px); border-bottom-right-radius: calc(infinity * 1px);",
+    description: "Applies a fully rounded border radius to the right corners",
+  },
+  {
+    label: "rounded-r-(<custom-property>)",
+    value: "rounded-r-(<custom-property>)",
+    styles:
+      "border-top-right-radius: var(<custom-property>); border-bottom-right-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the right corners",
+  },
+  {
+    label: "rounded-r-[<value>]",
+    value: "rounded-r-[<value>]",
+    styles:
+      "border-top-right-radius: <value>; border-bottom-right-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the right corners",
+  },
+  {
+    label: "rounded-b-xs",
+    value: "rounded-b-xs",
+    styles:
+      "border-bottom-right-radius: var(--radius-xs); /* 0.125rem (2px) */ border-bottom-left-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the bottom corners",
+  },
+  {
+    label: "rounded-b-sm",
+    value: "rounded-b-sm",
+    styles:
+      "border-bottom-right-radius: var(--radius-sm); /* 0.25rem (4px) */ border-bottom-left-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description: "Applies a small border radius of 4px to the bottom corners",
+  },
+  {
+    label: "rounded-b-md",
+    value: "rounded-b-md",
+    styles:
+      "border-bottom-right-radius: var(--radius-md); /* 0.375rem (6px) */ border-bottom-left-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description: "Applies a medium border radius of 6px to the bottom corners",
+  },
+  {
+    label: "rounded-b-lg",
+    value: "rounded-b-lg",
+    styles:
+      "border-bottom-right-radius: var(--radius-lg); /* 0.5rem (8px) */ border-bottom-left-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description: "Applies a large border radius of 8px to the bottom corners",
+  },
+  {
+    label: "rounded-b-xl",
+    value: "rounded-b-xl",
+    styles:
+      "border-bottom-right-radius: var(--radius-xl); /* 0.75rem (12px) */ border-bottom-left-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the bottom corners",
+  },
+  {
+    label: "rounded-b-2xl",
+    value: "rounded-b-2xl",
+    styles:
+      "border-bottom-right-radius: var(--radius-2xl); /* 1rem (16px) */ border-bottom-left-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the bottom corners",
+  },
+  {
+    label: "rounded-b-3xl",
+    value: "rounded-b-3xl",
+    styles:
+      "border-bottom-right-radius: var(--radius-3xl); /* 1.5rem (24px) */ border-bottom-left-radius: var(--radius-3xl); /* 1.5rem (24px) */",
+    description:
+      "Applies a 3x extra large border radius of 24px to the bottom corners",
+  },
+  {
+    label: "rounded-b-4xl",
+    value: "rounded-b-4xl",
+    styles:
+      "border-bottom-right-radius: var(--radius-4xl); /* 2rem (32px) */ border-bottom-left-radius: var(--radius-4xl); /* 2rem (32px) */",
+    description:
+      "Applies a 4x extra large border radius of 32px to the bottom corners",
+  },
+  {
+    label: "rounded-b-none",
+    value: "rounded-b-none",
+    styles: "border-bottom-right-radius: 0; border-bottom-left-radius: 0;",
+    description: "Removes border radius from the bottom corners",
+  },
+  {
+    label: "rounded-b-full",
+    value: "rounded-b-full",
+    styles:
+      "border-bottom-right-radius: calc(infinity * 1px); border-bottom-left-radius: calc(infinity * 1px);",
+    description: "Applies a fully rounded border radius to the bottom corners",
+  },
+  {
+    label: "rounded-b-(<custom-property>)",
+    value: "rounded-b-(<custom-property>)",
+    styles:
+      "border-bottom-right-radius: var(<custom-property>); border-bottom-left-radius: var(<custom-property>);",
+    description:
+      "Applies a border radius using a custom CSS property to the bottom corners",
+  },
+  {
+    label: "rounded-b-[<value>]",
+    value: "rounded-b-[<value>]",
+    styles:
+      "border-bottom-right-radius: <value>; border-bottom-left-radius: <value>;",
+    description:
+      "Applies an arbitrary border radius value to the bottom corners",
+  },
+  {
+    label: "rounded-l-xs",
+    value: "rounded-l-xs",
+    styles:
+      "border-top-left-radius: var(--radius-xs); /* 0.125rem (2px) */ border-bottom-left-radius: var(--radius-xs); /* 0.125rem (2px) */",
+    description:
+      "Applies an extra small border radius of 2px to the left corners",
+  },
+  {
+    label: "rounded-l-sm",
+    value: "rounded-l-sm",
+    styles:
+      "border-top-left-radius: var(--radius-sm); /* 0.25rem (4px) */ border-bottom-left-radius: var(--radius-sm); /* 0.25rem (4px) */",
+    description: "Applies a small border radius of 4px to the left corners",
+  },
+  {
+    label: "rounded-l-md",
+    value: "rounded-l-md",
+    styles:
+      "border-top-left-radius: var(--radius-md); /* 0.375rem (6px) */ border-bottom-left-radius: var(--radius-md); /* 0.375rem (6px) */",
+    description: "Applies a medium border radius of 6px to the left corners",
+  },
+  {
+    label: "rounded-l-lg",
+    value: "rounded-l-lg",
+    styles:
+      "border-top-left-radius: var(--radius-lg); /* 0.5rem (8px) */ border-bottom-left-radius: var(--radius-lg); /* 0.5rem (8px) */",
+    description: "Applies a large border radius of 8px to the left corners",
+  },
+  {
+    label: "rounded-l-xl",
+    value: "rounded-l-xl",
+    styles:
+      "border-top-left-radius: var(--radius-xl); /* 0.75rem (12px) */ border-bottom-left-radius: var(--radius-xl); /* 0.75rem (12px) */",
+    description:
+      "Applies an extra large border radius of 12px to the left corners",
+  },
+  {
+    label: "rounded-l-2xl",
+    value: "rounded-l-2xl",
+    styles:
+      "border-top-left-radius: var(--radius-2xl); /* 1rem (16px) */ border-bottom-left-radius: var(--radius-2xl); /* 1rem (16px) */",
+    description:
+      "Applies a 2x extra large border radius of 16px to the left corners",
+  },
+];
 
 // Group tailwind selectors by section
 const layoutSelectors: TailwindSelectorGroupType[] = [
@@ -2298,72 +4524,72 @@ const flexboxGridSelectors: TailwindSelectorGroupType[] = [
 ];
 
 const spacingProperties: TailwindSelectorGroupType[] = [
-      {section: "Padding", selectors: padding},
-      {section: "Margin", selectors: margin}
+  { section: "Padding", selectors: padding },
+  { section: "Margin", selectors: margin },
 ];
 
 const sizingProperties: TailwindSelectorGroupType[] = [
-      {section: "Width", selectors: width},
-      {section: "Min Width", selectors: minWidth},
-      {section: "Max Width", selectors: maxWidth},
-      {section: "Height", selectors: height},
-      {section: "Min Height", selectors: minHeight},
-      {section: "Max Height", selectors: maxHeight}
+  { section: "Width", selectors: width },
+  { section: "Min Width", selectors: minWidth },
+  { section: "Max Width", selectors: maxWidth },
+  { section: "Height", selectors: height },
+  { section: "Min Height", selectors: minHeight },
+  { section: "Max Height", selectors: maxHeight },
 ];
 
 const typographyProperties: TailwindSelectorGroupType[] = [
-      {section: "Font Family", selectors: fontFamily},
-      {section: "Font Size", selectors: fontSize},
-    //   {section: "Font Smoothing", selectors: fontSmoothing},
-    //   {section: "Font Style", selectors: fontStyle},
-      {section: "Font Weight", selectors: fontWeight},
-    //   {section: "Font Stretch", selectors: fontStretch},
-    //   {section: "Font Variant Numeric", selectors: fontVariantNumeric},
-      {section: "Letter Spacing", selectors: letterSpacing},
-    //   {section: "Line Clamp", selectors: lineClamp},
-      {section: "Line Height", selectors: lineHeight},
-    //   {section: "List Style Image", selectors: listStyleImage},
-    //   {section: "List Style Position", selectors: listStylePosition},
-    //   {section: "List Style Type", selectors: listStyleType},
-      {section: "Text Align", selectors: textAlign},
-    //   {section: "Color", selectors: color},
-    //   {section: "Text Decoration Line", selectors: textDecorationLine},
-    //   {section: "Text Decoration Color", selectors: textDecorationColor},
-    //   {section: "Text Decoration Style", selectors: textDecorationStyle},
-    //   {section: "Text Decoration Thickness", selectors: textDecorationThickness},
-    //   {section: "Text Underline Offset", selectors: textUnderlineOffset},
-      {section: "Text Transform", selectors: textTransform},
-    //   {section: "Text Overflow", selectors: textOverflow},
-    //   {section: "Text Wrap", selectors: textWrap},
-    //   {section: "Text Indent", selectors: textIndent},
-    //   {section: "Vertical Align", selectors: verticalAlign},
-    //   {section: "White Space", selectors: whiteSpace},
-    //   {section: "Word Break", selectors: wordBreak},
-    //   {section: "Overflow Wrap", selectors: overflowWrap},
-    //   {section: "Hyphens", selectors: hyphens},
-    //   {section: "Content", selectors: content}
+  { section: "Font Family", selectors: fontFamily },
+  { section: "Font Size", selectors: fontSize },
+  { section: "Font Smoothing", selectors: fontSmoothing },
+  { section: "Font Style", selectors: fontStyle },
+  { section: "Font Weight", selectors: fontWeight },
+  { section: "Font Stretch", selectors: fontStretch },
+  { section: "Font Variant Numeric", selectors: fontVariantNumeric },
+  { section: "Letter Spacing", selectors: letterSpacing },
+  { section: "Line Clamp", selectors: lineClamp },
+  { section: "Line Height", selectors: lineHeight },
+  { section: "List Style Image", selectors: listStyleImage },
+  { section: "List Style Position", selectors: listStylePosition },
+  { section: "List Style Type", selectors: listStyleType },
+  { section: "Text Align", selectors: textAlign },
+  { section: "Color", selectors: textColor },
+  { section: "Text Decoration Line", selectors: textDecorationLine },
+  { section: "Text Decoration Color", selectors: textDecorationColor },
+  { section: "Text Decoration Style", selectors: textDecorationStyle },
+  { section: "Text Decoration Thickness", selectors: textDecorationThickness },
+  { section: "Text Underline Offset", selectors: textUnderlineOffset },
+  { section: "Text Transform", selectors: textTransform },
+  { section: "Text Overflow", selectors: textOverflow },
+  { section: "Text Wrap", selectors: textWrap },
+  { section: "Text Indent", selectors: textIndent },
+  { section: "Vertical Align", selectors: verticalAlign },
+  { section: "White Space", selectors: whiteSpace },
+  { section: "Word Break", selectors: wordBreak },
+  { section: "Overflow Wrap", selectors: overflowWrap },
+  { section: "Hyphens", selectors: hyphens },
+  { section: "Content", selectors: content },
 ];
 
 const backgroundProperties: TailwindSelectorGroupType[] = [
-    //   {section: "Background Attachment", selectors: backgroundAttachment},
-    //   {section: "Background Clip", selectors: backgroundClip},
-      {section: "Background Color", selectors: backgroundColor},
-      {section: "Background Image", selectors: backgroundImage},
-    //   {section: "Background Origin", selectors: backgroundOrigin},
-      {section: "Background Position", selectors: backgroundPosition},
-    //   {section: "Background Repeat", selectors: backgroundRepeat},
-      {section: "Background Size", selectors: backgroundSize}
+  { section: "Background Attachment", selectors: backgroundAttachment },
+  { section: "Background Clip", selectors: backgroundClip },
+  { section: "Background Color", selectors: backgroundColor },
+  { section: "Background Image", selectors: backgroundImage },
+  { section: "Background Origin", selectors: backgroundOrigin },
+  { section: "Background Position", selectors: backgroundPosition },
+  { section: "Background Repeat", selectors: backgroundRepeat },
+  { section: "Background Size", selectors: backgroundSize },
 ];
 
 const borderProperties: TailwindSelectorGroupType[] = [
-  //     {section: "Border Radius", selectors: borderRadius},
-  //     {section: "Border Width", selectors: borderWidth},
-  //     {section: "Border Color", selectors: borderColor},
-  //     {section: "Border Style", selectors: borderStyle},
-  //     {section: "Outline Width", selectors: outlineWidth},
-  //     {section: "Outline Color", selectors: outlineColor},
-  //     {section: "Outline Style", selectors: outlineStyle},
-  //     {section: "Outline Offset", selectors: outlineOffset}
+  { section: "Border Radius", selectors: borderRadius },
+//   { section: "Border Width", selectors: borderWidth },
+//   { section: "Border Color", selectors: borderColor },
+//   { section: "Border Style", selectors: borderStyle },
+//   { section: "Outline Width", selectors: outlineWidth },
+//   { section: "Outline Color", selectors: outlineColor },
+//   { section: "Outline Style", selectors: outlineStyle },
+//   { section: "Outline Offset", selectors: outlineOffset },
 ];
 
 const effectsProperties: TailwindSelectorGroupType[] = [
