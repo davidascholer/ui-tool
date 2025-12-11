@@ -4,7 +4,7 @@
  * Handles keyboard operability (focus/enter/delete)
  */
 
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import type { ReactNode } from 'react';
 import type { EntityType, VisualIndicator, ComponentEntity } from '@/utils/types';
 import { DeleteAction } from '../../DeleteAction';
@@ -53,6 +53,9 @@ export const Selectable = memo(function Selectable({
   getLoadingState,
   entity,
 }: SelectableProps) {
+  // Track hover state to prevent parent hover when child is hovered
+  const [isHovered, setIsHovered] = useState(false);
+  
   // Loading indicator state
   const loadingIndicator = useLoadingIndicator(entityId, getLoadingState || (() => null));
   
@@ -82,10 +85,35 @@ export const Selectable = memo(function Selectable({
     onSelect(entityType, entityId);
   };
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Set hover state and stop propagation to parent Selectable components
+    e.stopPropagation();
+    setIsHovered(true);
+    
     // Preload indicator components when user shows interest
     if (component || indicators.length > 0) {
       preloadIndicators();
+    }
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Clear hover state and stop propagation
+    e.stopPropagation();
+    setIsHovered(false);
+  };
+
+  const handleMouseOver = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Check if we're hovering over a nested Selectable (child) or directly on this element
+    const target = e.target as HTMLElement;
+    const targetEntityId = target.closest('[data-entity-id]')?.getAttribute('data-entity-id');
+    
+    if (targetEntityId === entityId) {
+      // We're hovering directly on this element (not a child)
+      setIsHovered(true);
+    } else if (targetEntityId && targetEntityId !== entityId) {
+      // We're hovering over a child element
+      setIsHovered(false);
+      e.stopPropagation();
     }
   };
 
@@ -134,19 +162,23 @@ export const Selectable = memo(function Selectable({
         ${
           isSelected
             ? `border-[rgb(var(--color-selected))] ${getSizeClasses()}`
-            : 'border-[rgb(var(--color-border))] hover:border-[rgb(var(--color-primary))]'
+            : isHovered
+            ? 'border-[rgb(var(--color-primary))]'
+            : 'border-[rgb(var(--color-border))]'
         }
         ${
           isEditing 
             ? 'bg-blue-50 border-blue-400 shadow-[0_0_0_2px_rgba(59,130,246,0.3)] ring-1 ring-blue-200'
             : ''
         }
-        hover:shadow-md focus-visible:outline-none focus-visible:ring-2 
+        ${isHovered ? 'shadow-md' : ''} focus-visible:outline-none focus-visible:ring-2 
         focus-visible:ring-[rgb(var(--color-primary))] focus-visible:ring-offset-2
         ${className}
       `}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onMouseOver={handleMouseOver}
       onKeyDown={handleKeyDown}
       {...getAriaAttributes(isSelected, false, false)}
       aria-label={ariaLabel || `Select ${entityType}: ${entityId}`}

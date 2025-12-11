@@ -130,7 +130,7 @@ export function BuilderView({
       <DropZone
         targetType="root"
         onDrop={onDrop}
-        className={pages.length === 0 ? "" : "space-y-6 bg-blue-200"}
+        className={pages.length === 0 ? "" : "space-y-6 bg-slate-300/30 rounded-lg p-4"}
       >
         {pages.length === 0 ? (
           <EmptyState />
