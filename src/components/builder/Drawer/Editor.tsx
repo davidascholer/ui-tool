@@ -770,6 +770,8 @@ function ComponentEditor({
             <div>
               <label className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
                 Expected Image Resolution
+                <br />
+                (non-styled)
               </label>
               <div className="space-y-4">
                 <div>

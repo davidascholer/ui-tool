@@ -16,12 +16,12 @@ const COMPONENT_CATALOG = {
   ],
   components: {
     basic: [
-      { label: 'View', icon: '📦', type: 'View' as ComponentType },
       { label: 'Text', icon: '📰', type: 'Text' as ComponentType },
       { label: 'Image', icon: '🖼️', type: 'Image' as ComponentType },
-      { label: 'TextInput', icon: '📝', type: 'TextInput' as ComponentType },
-      { label: 'Pressable', icon: '👆', type: 'Pressable' as ComponentType },
-      { label: 'ScrollView', icon: '📜', type: 'ScrollView' as ComponentType }
+      // { label: 'ScrollView', icon: '📜', type: 'ScrollView' as ComponentType },
+      // { label: 'TextInput', icon: '📝', type: 'TextInput' as ComponentType },
+      // { label: 'Pressable', icon: '👆', type: 'Pressable' as ComponentType },
+      // { label: 'View', icon: '📦', type: 'View' as ComponentType },
     ],
     ui: [
       { label: 'Button', icon: '🔘', type: 'Button' as ComponentType },
@@ -86,25 +86,25 @@ export function UISide({ onDragStart }: UISideProps) {
       />
 
       {/* Components Section - UI */}
-      <ComponentSection
+      {/* <ComponentSection
         title="UI Components"
         items={COMPONENT_CATALOG.components.ui}
         onDragStart={(item) => handleDragStart('component', 'type' in item ? item.type : undefined)}
-      />
+      /> */}
 
       {/* Components Section - Lists */}
-      <ComponentSection
+      {/* <ComponentSection
         title="List Components"
         items={COMPONENT_CATALOG.components.lists}
         onDragStart={(item) => handleDragStart('component', 'type' in item ? item.type : undefined)}
-      />
+      /> */}
 
       {/* Components Section - Other */}
-      <ComponentSection
+      {/* <ComponentSection
         title="Other Components"
         items={COMPONENT_CATALOG.components.other}
         onDragStart={(item) => handleDragStart('component', 'type' in item ? item.type : undefined)}
-      />
+      /> */}
     </div>
   );
 }
