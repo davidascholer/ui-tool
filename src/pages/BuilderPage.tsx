@@ -294,17 +294,17 @@ export function BuilderPage() {
     actions.deleteEntity(entityId, entityType);
   };
 
-  const handleLogGlobalState = () => {
-    console.group("🌍 Global Builder State");
-    console.log("Full State:", state);
-    console.log("---");
-    console.log("All Pages:", state.allPages);
-    console.log("All Containers (with parent refs):", state.allContainers);
-    console.log("All Components (with parent refs):", state.allComponents);
-    console.log("---");
-    console.log("Hierarchical Pages:", state.pages);
-    console.groupEnd();
-  };
+  // const handleLogGlobalState = () => {
+  //   console.group("🌍 Global Builder State");
+  //   console.log("Full State:", state);
+  //   console.log("---");
+  //   console.log("All Pages:", state.allPages);
+  //   console.log("All Containers (with parent refs):", state.allContainers);
+  //   console.log("All Components (with parent refs):", state.allComponents);
+  //   console.log("---");
+  //   console.log("Hierarchical Pages:", state.pages);
+  //   console.groupEnd();
+  // };
 
   return (
     <>
@@ -322,7 +322,7 @@ export function BuilderPage() {
       />
 
       {/* Test button for logging global state */}
-      <button
+      {/* <button
         onClick={handleLogGlobalState}
         style={{
           position: "fixed",
@@ -342,7 +342,7 @@ export function BuilderPage() {
         title="Log global state to console"
       >
         🌍 Log State
-      </button>
+      </button> */}
 
       <Layout
         uiSide={<UISide onDragStart={handleDragStart} />}

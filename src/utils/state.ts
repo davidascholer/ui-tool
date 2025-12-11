@@ -174,6 +174,19 @@ export function useBuilderState() {
       name,
       uitType: 'UITPage',
       children: [],
+      tailwindClassList: [
+        'flex',
+        'flex-col',
+        'min-w-[320px]',
+        'max-w-6xl',
+        'mx-auto',
+        'justify-center',
+        'items-center',
+        'gap-4',
+        'p-4',
+        'border-2',
+        'border-slate-600',
+      ]
     };
     setState((prev) => {
       const updatedPages = [...prev.pages, newPage];
@@ -186,7 +199,19 @@ export function useBuilderState() {
     const newContainer: ContainerEntity = {
       id: `container-${Date.now()}`,
       name,
-      tailwindClassList: [],
+      tailwindClassList: [
+        'w-full',
+        'flex',
+        'flex-row',
+        'flex-wrap',
+        'text-center',
+        'justify-evenly',
+        'items-center',
+        'gap-2',
+        'border-2',
+        'border-blue-600',
+        'p-2',
+      ],
       uitType: 'UITContainer',
       children: [],
       parentId: parentId, // Temporary, will be updated by rebuildGlobalMaps
@@ -213,13 +238,27 @@ export function useBuilderState() {
 
   const addComponent = useCallback((containerId: string, type: ComponentType) => {
     // Set default props based on component type
-    const defaultProps: Record<string, unknown> = type === 'Text' ? { text: 'enter text here' } : {};
+    let defaultProps: Record<string, unknown> = {};
+    let defaultClasses: string[] = [];
+    
+    if (type === 'Text') {
+      defaultProps = { text: 'enter text here' };
+      defaultClasses = [];
+    } else if (type === 'Image') {
+      defaultProps = {
+        src: 'https://picsum.photos/200/200',
+        width: 200,
+        height: 200,
+        alt: 'Image'
+      };
+      defaultClasses = ['block'];
+    }
     
     const newComponent: ComponentEntity = {
       id: `component-${Date.now()}`,
       type,
       props: defaultProps,
-      tailwindClassList: [],
+      tailwindClassList: defaultClasses,
       uitType: `UIT${type}`,
       parentId: containerId, // Reference to parent container
     };

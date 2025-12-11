@@ -65,6 +65,27 @@ function PageEditor({
   entity: PageEntity;
   onSave?: (data: unknown) => void;
 }) {
+  const [classList, setClassList] = useState<string[]>(
+    entity.tailwindClassList || []
+  );
+  const isLocalUpdate = useRef(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
+  const [editingClass, setEditingClass] = useState<string | null>(null);
+  const [editValue, setEditValue] = useState<string>("");
+  const [customClassInput, setCustomClassInput] = useState<string>("");
+  const [hoveredSelector, setHoveredSelector] = useState<{
+    value: string;
+    label: string;
+    styles: string;
+    description: string;
+  } | null>(null);
+  const [infoHovered, setInfoHovered] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{
+    x: number;
+    y: number;
+    width: number;
+  } | null>(null);
+
   const {
     register,
     formState: { errors },
@@ -75,6 +96,130 @@ function PageEditor({
       meta: entity.meta || {},
     },
   });
+
+  console.log("PageEditor: entity.tailwindClassList:", entity.tailwindClassList);
+  console.log("PageEditor: classList state:", classList);
+
+  // Sync classList with entity changes (only if change came from outside)
+  useEffect(() => {
+    if (!isLocalUpdate.current) {
+      // eslint-disable-next-line
+      setClassList(entity.tailwindClassList || []);
+    }
+    isLocalUpdate.current = false;
+  }, [entity.tailwindClassList]);
+
+  const toggleClass = (value: string) => {
+    isLocalUpdate.current = true;
+    setClassList((prev) => {
+      const newClassList = prev.includes(value)
+        ? prev.filter((c) => c !== value)
+        : [...prev, value];
+      
+      // When adding a new class with angle brackets (not square brackets), enter edit mode automatically
+      const hasAngleBrackets = value.includes('<') || value.includes('>');
+      const hasSquareBrackets = value.includes('[') || value.includes(']');
+      if (!prev.includes(value) && hasAngleBrackets && !hasSquareBrackets) {
+        setEditingClass(value);
+        setEditValue(value);
+      }
+      
+      // Update global state immediately
+      const updatedData = {
+        name: entity.name,
+        meta: entity.meta || {},
+        tailwindClassList: newClassList,
+      };
+      onSave?.(updatedData);
+      
+      return newClassList;
+    });
+  };
+
+  const removeTailwindClass = (className: string) => {
+    isLocalUpdate.current = true;
+    setClassList((prev) => {
+      const newClassList = prev.filter((c) => c !== className);
+      
+      // Update global state immediately
+      const updatedData = {
+        name: entity.name,
+        meta: entity.meta || {},
+        tailwindClassList: newClassList,
+      };
+      onSave?.(updatedData);
+      
+      return newClassList;
+    });
+    if (editingClass === className) {
+      setEditingClass(null);
+      setEditValue("");
+    }
+  };
+
+  const startEditing = (className: string) => {
+    setEditingClass(className);
+    setEditValue(className);
+  };
+
+  const saveEdit = (oldClassName: string) => {
+    if (editValue.trim() && editValue !== oldClassName) {
+      isLocalUpdate.current = true;
+      const updatedClassList = classList.map((c) =>
+        c === oldClassName ? editValue.trim() : c
+      );
+      setClassList(updatedClassList);
+      
+      // Update global state immediately
+      const updatedData = {
+        name: entity.name,
+        meta: entity.meta || {},
+        tailwindClassList: updatedClassList,
+      };
+      onSave?.(updatedData);
+    }
+    setEditingClass(null);
+    setEditValue("");
+  };
+
+  const cancelEdit = () => {
+    setEditingClass(null);
+    setEditValue("");
+  };
+
+  const addCustomClass = () => {
+    const trimmedClass = customClassInput.trim();
+    if (trimmedClass) {
+      isLocalUpdate.current = true;
+      setClassList((prev) => {
+        // Don't add if already exists
+        if (prev.includes(trimmedClass)) {
+          return prev;
+        }
+        
+        const newClassList = [...prev, trimmedClass];
+        
+        // Update global state immediately
+        const updatedData = {
+          name: entity.name,
+          meta: entity.meta || {},
+          tailwindClassList: newClassList,
+        };
+        onSave?.(updatedData);
+        
+        return newClassList;
+      });
+      
+      setCustomClassInput("");
+    }
+  };
+
+  const handleCustomClassKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      addCustomClass();
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -94,6 +239,7 @@ function PageEditor({
             const updatedData = {
               name: e.target.value,
               meta: entity.meta || {},
+              tailwindClassList: classList,
             };
             onSave?.(updatedData);
           }}
@@ -131,6 +277,7 @@ function PageEditor({
                     ...entity.meta,
                     title: e.target.value,
                   },
+                  tailwindClassList: classList,
                 };
                 onSave?.(updatedData);
               }}
@@ -158,6 +305,7 @@ function PageEditor({
                     ...entity.meta,
                     description: e.target.value,
                   },
+                  tailwindClassList: classList,
                 };
                 onSave?.(updatedData);
               }}
@@ -167,6 +315,232 @@ function PageEditor({
           </div>
         </div>
       </div>
+
+      <div>
+        <label className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
+          Tailwind Classes
+        </label>
+
+        {/* Current classes */}
+        {classList.length > 0 && (
+          <div className="space-y-2 mb-4">
+            <p className="text-sm text-[rgb(var(--color-muted-foreground))]">
+              Current classes:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {classList.map((className) => (
+                <div
+                  key={className}
+                  className="flex items-center space-x-2 rounded-full bg-[rgb(var(--color-muted))] px-3 py-1 text-sm"
+                >
+                  {editingClass === className ? (
+                    <input
+                      type="text"
+                      value={editValue}
+                      onChange={(e) => setEditValue(e.target.value)}
+                      onBlur={() => saveEdit(className)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          saveEdit(className);
+                        } else if (e.key === 'Escape') {
+                          cancelEdit();
+                        }
+                      }}
+                      onFocus={(e) => e.target.select()}
+                      autoFocus
+                      className="bg-transparent text-[rgb(var(--color-foreground))] outline-none border-b border-[rgb(var(--color-border))] focus:border-[rgb(var(--color-primary))] min-w-[100px]"
+                    />
+                  ) : (
+                    <span 
+                      className="text-[rgb(var(--color-foreground))] cursor-pointer hover:underline"
+                      onClick={() => startEditing(className)}
+                    >
+                      {className}
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => removeTailwindClass(className)}
+                    className="text-[rgb(var(--color-muted-foreground))] hover:text-[rgb(var(--color-invalid))]"
+                    aria-label={`Remove ${className}`}
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {classList.length === 0 && (
+          <p className="text-sm text-[rgb(var(--color-muted-foreground))] py-4 mb-4 text-center border border-dashed border-[rgb(var(--color-border))] rounded-lg">
+            No Tailwind classes selected yet
+          </p>
+        )}
+
+        {/* Add custom class input */}
+        <div className="mb-4">
+          <label className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
+            Add Custom Class
+          </label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={customClassInput}
+              onChange={(e) => setCustomClassInput(e.target.value)}
+              onKeyDown={handleCustomClassKeyDown}
+              placeholder="e.g., max-w-[100px], hover:bg-blue-500"
+              className="flex-1 rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
+            />
+            <Button
+              type="button"
+              onClick={addCustomClass}
+              disabled={!customClassInput.trim()}
+              className="px-4"
+            >
+              Add
+            </Button>
+          </div>
+          <p className="mt-1 text-xs text-[rgb(var(--color-muted-foreground))]">
+            Add any Tailwind class, including arbitrary values like [100px]
+          </p>
+        </div>
+
+        <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+          {/* Group comboboxes by category */}
+          {groupedSelectors.map((category) => (
+            <div key={category.category} className="space-y-2">
+              <label className="text-sm font-medium text-[rgb(var(--color-foreground))]">
+                {category.category}
+              </label>
+              {category.groups.map((group) => (
+                <div key={`${category.category}-${group.section}`}>
+                  <Popover
+                    open={openSection === `${category.category}-${group.section}`}
+                    onOpenChange={(isOpen) =>
+                      setOpenSection(isOpen ? `${category.category}-${group.section}` : null)
+                    }
+                  >
+                    <PopoverTrigger asChild>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        role="combobox"
+                        aria-expanded={openSection === `${category.category}-${group.section}`}
+                        className="w-full justify-between text-left"
+                      >
+                        <span className="truncate">
+                          {group.section}
+                        </span>
+                        <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent
+                      className="w-full p-0 animate-fade-in"
+                      sideOffset={4}
+                    >
+                      <Command>
+                        <CommandInput
+                          placeholder={`Search ${group.section}...`}
+                          className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-none focus:shadow-none focus-visible:outline-none"
+                        />
+                        <CommandList className="max-h-[300px] overflow-y-auto">
+                          <CommandEmpty>No class found.</CommandEmpty>
+                          <CommandGroup>
+                            {group.selectors.map((option) => (
+                              <CommandItem
+                                key={option.value}
+                                value={option.value}
+                                onSelect={() => {
+                                  toggleClass(option.value);
+                                  setOpenSection(null);
+                                  setHoveredSelector(null);
+                                  setTooltipPos(null);
+                                }}
+                                onMouseEnter={(e) => {
+                                  const rect =
+                                    e.currentTarget.getBoundingClientRect();
+                                  setHoveredSelector(option);
+                                  setTooltipPos({
+                                    x: rect.left,
+                                    y: rect.top,
+                                    width: rect.width,
+                                  });
+                                }}
+                                onMouseLeave={() => {
+                                  setHoveredSelector(null);
+                                  setTooltipPos(null);
+                                }}
+                                className="justify-between"
+                              >
+                                <div className="flex items-center">
+                                  <Check
+                                    className={cn(
+                                      "mr-2 h-4 w-4",
+                                      classList.includes(option.value)
+                                        ? "opacity-100"
+                                        : "opacity-0"
+                                    )}
+                                  />
+                                  {option.label}
+                                </div>
+                                <button
+                                  type="button"
+                                  onMouseEnter={(e) => {
+                                    setInfoHovered(true);
+                                    const rect = e.currentTarget
+                                      .closest('[role="option"]')
+                                      ?.getBoundingClientRect();
+                                    if (rect) {
+                                      setHoveredSelector(option);
+                                      setTooltipPos({
+                                        x: rect.left,
+                                        y: rect.top,
+                                        width: rect.width,
+                                      });
+                                    }
+                                  }}
+                                  onMouseLeave={() => {
+                                    setInfoHovered(false);
+                                    setHoveredSelector(null);
+                                    setTooltipPos(null);
+                                  }}
+                                  className="ml-2 opacity-50 hover:opacity-100 transition-opacity"
+                                >
+                                  <Info className="h-3 w-3" />
+                                </button>
+                              </CommandItem>
+                            ))}
+                          </CommandGroup>
+                        </CommandList>
+                      </Command>
+                    </PopoverContent>
+                  </Popover>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {hoveredSelector &&
+        tooltipPos &&
+        createPortal(
+          <div
+            className="fixed z-100 rounded-md bg-gray-900 px-3 py-2 text-xs text-white shadow-xl border border-gray-700 pointer-events-none max-w-xs"
+            style={{
+              right: `${window.innerWidth - tooltipPos.x + 8}px`,
+              top: `${tooltipPos.y}px`,
+            }}
+          >
+            {infoHovered ? (
+              <p className="text-gray-300">{hoveredSelector.description}</p>
+            ) : (
+              <p className="text-gray-300">{hoveredSelector.styles}</p>
+            )}
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
@@ -214,15 +588,10 @@ function ContainerEditor({
   console.log("ContainerEditor: classList state:", classList);
 
   // Sync classList with entity changes (only if change came from outside)
-  // Note: This intentional controlled sync uses isLocalUpdate flag to prevent cascading renders
   useEffect(() => {
-    console.log("ContainerEditor useEffect: isLocalUpdate.current =", isLocalUpdate.current);
-    console.log("ContainerEditor useEffect: entity.tailwindClassList =", entity.tailwindClassList);
     if (!isLocalUpdate.current) {
-      console.log("ContainerEditor useEffect: Syncing from entity");
+      // eslint-disable-next-line
       setClassList(entity.tailwindClassList || []);
-    } else {
-      console.log("ContainerEditor useEffect: Skipping sync (local update)");
     }
     isLocalUpdate.current = false;
   }, [entity.tailwindClassList]);
@@ -618,10 +987,6 @@ function ComponentEditor({
   const [editingClass, setEditingClass] = useState<string | null>(null);
   const [editValue, setEditValue] = useState<string>("");
   const [customClassInput, setCustomClassInput] = useState<string>("");
-  const [textInputValue, setTextInputValue] = useState<string>(
-    (entity.props?.text as string) || ""
-  );
-  const textUpdateTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [imageWidth, setImageWidth] = useState<number>(
     Number(entity.props?.width) || 200
   );
@@ -649,20 +1014,11 @@ function ComponentEditor({
   console.log("ComponentEditor: entity.tailwindClassList:", entity.tailwindClassList);
   console.log("ComponentEditor: classList state:", classList);
 
-  // Sync textInputValue with entity changes
-  useEffect(() => {
-    setTextInputValue((entity.props?.text as string) || "");
-  }, [entity.props?.text]);
-
   // Sync classList with entity changes (only if change came from outside)
   useEffect(() => {
-    console.log("ComponentEditor useEffect: isLocalUpdate.current =", isLocalUpdate.current);
-    console.log("ComponentEditor useEffect: entity.tailwindClassList =", entity.tailwindClassList);
     if (!isLocalUpdate.current) {
-      console.log("ComponentEditor useEffect: Syncing from entity");
+       
       setClassList(entity.tailwindClassList || []);
-    } else {
-      console.log("ComponentEditor useEffect: Skipping sync (local update)");
     }
     isLocalUpdate.current = false;
   }, [entity.tailwindClassList]);
@@ -883,27 +1239,15 @@ function ComponentEditor({
               Text Content
             </label>
             <textarea
-              value={textInputValue}
+              value={(entity.props?.text as string) || ""}
               onChange={(e) => {
-                const newValue = e.target.value;
-                setTextInputValue(newValue);
-                
-                // Clear existing timeout
-                if (textUpdateTimeoutRef.current) {
-                  clearTimeout(textUpdateTimeoutRef.current);
-                }
-                
-                // Set new timeout to update after 500ms
-                textUpdateTimeoutRef.current = setTimeout(() => {
-                  const updatedData = {
-                    type: entity.type,
-                    props: { ...entity.props, text: newValue },
-                    tailwindClassList: classList,
-                  };
-                  onSave?.(updatedData);
-                }, 500);
+                const updatedData = {
+                  type: entity.type,
+                  props: { ...entity.props, text: e.target.value },
+                  tailwindClassList: classList,
+                };
+                onSave?.(updatedData);
               }}
-              onFocus={(e) => e.target.select()}
               rows={3}
               placeholder="Enter your text here"
               className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent resize-none"

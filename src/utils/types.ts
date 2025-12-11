@@ -41,6 +41,7 @@ export interface PageEntity {
   id: string;
   name: string;
   uitType: string;
+  tailwindClassList: string[];
   meta?: {
     title?: string;
     description?: string;
