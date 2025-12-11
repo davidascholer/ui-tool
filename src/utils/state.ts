@@ -184,8 +184,6 @@ export function useBuilderState() {
         'items-center',
         'gap-4',
         'p-4',
-        'border-2',
-        'border-slate-600',
       ]
     };
     setState((prev) => {
@@ -208,8 +206,6 @@ export function useBuilderState() {
         'justify-evenly',
         'items-center',
         'gap-2',
-        'border-2',
-        'border-blue-600',
         'p-2',
       ],
       uitType: 'UITContainer',
