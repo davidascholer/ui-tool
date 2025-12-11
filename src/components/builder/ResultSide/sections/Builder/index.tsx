@@ -126,6 +126,7 @@ export function BuilderView({
 }: BuilderViewProps) {
   return (
     <div className="h-full p-8 border-2 border-amber-400/30 rounded-lg cursor-pointer overflow-auto">
+      <label className="block mb-2 text-lg font-semibold text-[rgb(var(--color-foreground))]">Inheritance Tree</label>
       <DropZone
         targetType="root"
         onDrop={onDrop}

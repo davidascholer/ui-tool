@@ -67,7 +67,6 @@ function PageEditor({
 }) {
   const {
     register,
-    handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(pageFormSchema),
@@ -77,13 +76,8 @@ function PageEditor({
     },
   });
 
-  const handleFormSubmit = (data: unknown) => {
-    console.log("PageEditor: Form submitted with data:", data);
-    onSave?.(data);
-  };
-
   return (
-    <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-4">
+    <div className="space-y-6">
       <div>
         <label
           htmlFor="name"
@@ -95,6 +89,14 @@ function PageEditor({
           {...register("name")}
           id="name"
           type="text"
+          onChange={(e) => {
+            register("name").onChange(e);
+            const updatedData = {
+              name: e.target.value,
+              meta: entity.meta || {},
+            };
+            onSave?.(updatedData);
+          }}
           className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
           aria-invalid={!!errors.name}
         />
@@ -106,44 +108,66 @@ function PageEditor({
       </div>
 
       <div>
-        <label
-          htmlFor="meta.title"
-          className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]"
-        >
-          SEO Title
-        </label>
-        <input
-          {...register("meta.title")}
-          id="meta.title"
-          type="text"
-          placeholder="Page title for search engines"
-          className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
-        />
-      </div>
+        <h3 className="mb-3 text-sm font-medium text-[rgb(var(--color-foreground))]">
+          SEO Properties
+        </h3>
+        <div className="space-y-4">
+          <div>
+            <label
+              htmlFor="meta.title"
+              className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]"
+            >
+              SEO Title
+            </label>
+            <input
+              {...register("meta.title")}
+              id="meta.title"
+              type="text"
+              onChange={(e) => {
+                register("meta.title").onChange(e);
+                const updatedData = {
+                  name: entity.name,
+                  meta: {
+                    ...entity.meta,
+                    title: e.target.value,
+                  },
+                };
+                onSave?.(updatedData);
+              }}
+              placeholder="Page title for search engines"
+              className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
+            />
+          </div>
 
-      <div>
-        <label
-          htmlFor="meta.description"
-          className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]"
-        >
-          SEO Description
-        </label>
-        <textarea
-          {...register("meta.description")}
-          id="meta.description"
-          rows={3}
-          placeholder="Brief description for search engines"
-          className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent resize-none"
-        />
+          <div>
+            <label
+              htmlFor="meta.description"
+              className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]"
+            >
+              SEO Description
+            </label>
+            <textarea
+              {...register("meta.description")}
+              id="meta.description"
+              rows={3}
+              onChange={(e) => {
+                register("meta.description").onChange(e);
+                const updatedData = {
+                  name: entity.name,
+                  meta: {
+                    ...entity.meta,
+                    description: e.target.value,
+                  },
+                };
+                onSave?.(updatedData);
+              }}
+              placeholder="Brief description for search engines"
+              className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent resize-none"
+            />
+          </div>
+        </div>
       </div>
-
-      <button
-        type="submit"
-        className="w-full rounded-lg bg-[rgb(var(--color-primary))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:ring-offset-2"
-      >
-        Save Page
-      </button>
-    </form>
+    </div>
   );
 }
 
@@ -157,22 +181,26 @@ function ContainerEditor({
   const [classList, setClassList] = useState<string[]>(
     entity.tailwindClassList || []
   );
-  const [open, setOpen] = useState(false);
+  const isLocalUpdate = useRef(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
+  const [editingClass, setEditingClass] = useState<string | null>(null);
+  const [editValue, setEditValue] = useState<string>("");
+  const [customClassInput, setCustomClassInput] = useState<string>("");
   const [hoveredSelector, setHoveredSelector] = useState<{
     value: string;
     label: string;
     styles: string;
     description: string;
   } | null>(null);
+  const [infoHovered, setInfoHovered] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{
     x: number;
     y: number;
-    width?: number;
+    width: number;
   } | null>(null);
-  const [infoHovered, setInfoHovered] = useState(false);
+
   const {
     register,
-    handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(containerFormSchema),
@@ -182,34 +210,140 @@ function ContainerEditor({
   });
 
   console.log("ContainerEditor: Current form errors:", errors);
+  console.log("ContainerEditor: entity.tailwindClassList:", entity.tailwindClassList);
+  console.log("ContainerEditor: classList state:", classList);
+
+  // Sync classList with entity changes (only if change came from outside)
+  // Note: This intentional controlled sync uses isLocalUpdate flag to prevent cascading renders
+  useEffect(() => {
+    console.log("ContainerEditor useEffect: isLocalUpdate.current =", isLocalUpdate.current);
+    console.log("ContainerEditor useEffect: entity.tailwindClassList =", entity.tailwindClassList);
+    if (!isLocalUpdate.current) {
+      console.log("ContainerEditor useEffect: Syncing from entity");
+      setClassList(entity.tailwindClassList || []);
+    } else {
+      console.log("ContainerEditor useEffect: Skipping sync (local update)");
+    }
+    isLocalUpdate.current = false;
+  }, [entity.tailwindClassList]);
 
   const toggleClass = (value: string) => {
-    setClassList((prev) =>
-      prev.includes(value) ? prev.filter((c) => c !== value) : [...prev, value]
-    );
+    isLocalUpdate.current = true;
+    setClassList((prev) => {
+      const newClassList = prev.includes(value)
+        ? prev.filter((c) => c !== value)
+        : [...prev, value];
+      
+      // When adding a new class with angle brackets (not square brackets), enter edit mode automatically
+      const hasAngleBrackets = value.includes('<') || value.includes('>');
+      const hasSquareBrackets = value.includes('[') || value.includes(']');
+      if (!prev.includes(value) && hasAngleBrackets && !hasSquareBrackets) {
+        setEditingClass(value);
+        setEditValue(value);
+      }
+      
+      // Update global state immediately
+      const updatedData = {
+        name: entity.name,
+        tailwindClassList: newClassList,
+      };
+      onSave?.(updatedData);
+      
+      return newClassList;
+    });
   };
 
   const removeTailwindClass = (className: string) => {
-    setClassList((prev) => prev.filter((c) => c !== className));
+    isLocalUpdate.current = true;
+    setClassList((prev) => {
+      const newClassList = prev.filter((c) => c !== className);
+      
+      // Update global state immediately
+      const updatedData = {
+        name: entity.name,
+        tailwindClassList: newClassList,
+      };
+      onSave?.(updatedData);
+      
+      return newClassList;
+    });
+    if (editingClass === className) {
+      setEditingClass(null);
+      setEditValue("");
+    }
   };
 
-  const handleFormSubmit = (formData: { name: string }) => {
-    console.log("ContainerEditor: Form submitted with data:", formData);
-    console.log("ContainerEditor: Current classList:", classList);
-    const updatedData = {
-      ...formData,
-      tailwindClassList: classList,
-    };
-    console.log("ContainerEditor: Final data to save:", updatedData);
-    onSave?.(updatedData);
+  const startEditing = (className: string) => {
+    setEditingClass(className);
+    setEditValue(className);
   };
 
-  const handleSubmitWithError = handleSubmit(handleFormSubmit, (errors) => {
-    console.log("ContainerEditor: Form submission failed with errors:", errors);
-  });
+  const saveEdit = (oldClassName: string) => {
+    if (editValue.trim() && editValue !== oldClassName) {
+      isLocalUpdate.current = true;
+      const updatedClassList = classList.map((c) =>
+        c === oldClassName ? editValue.trim() : c
+      );
+      setClassList(updatedClassList);
+      
+      // Update global state immediately
+      const updatedData = {
+        name: entity.name,
+        tailwindClassList: updatedClassList,
+      };
+      onSave?.(updatedData);
+    }
+    setEditingClass(null);
+    setEditValue("");
+  };
+
+  const cancelEdit = () => {
+    setEditingClass(null);
+    setEditValue("");
+  };
+
+  const addCustomClass = () => {
+    const trimmedClass = customClassInput.trim();
+    console.log("ContainerEditor: addCustomClass called with:", trimmedClass);
+    console.log("ContainerEditor: current classList:", classList);
+    console.log("ContainerEditor: current entity.tailwindClassList:", entity.tailwindClassList);
+    if (trimmedClass) {
+      isLocalUpdate.current = true;
+      setClassList((prev) => {
+        console.log("ContainerEditor: setClassList callback, prev:", prev);
+        // Don't add if already exists
+        if (prev.includes(trimmedClass)) {
+          console.log("ContainerEditor: Class already exists, skipping");
+          return prev;
+        }
+        
+        const newClassList = [...prev, trimmedClass];
+        console.log("ContainerEditor: newClassList:", newClassList);
+        
+        // Update global state immediately
+        const updatedData = {
+          name: entity.name,
+          tailwindClassList: newClassList,
+        };
+        console.log("ContainerEditor: Adding custom class, saving:", updatedData);
+        onSave?.(updatedData);
+        
+        return newClassList;
+      });
+      
+      setCustomClassInput("");
+    }
+  };
+
+  const handleCustomClassKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      addCustomClass();
+    }
+  };
 
   return (
-    <form onSubmit={handleSubmitWithError} className="space-y-6">
+    <div className="space-y-6">
       <div>
         <label
           htmlFor="name"
@@ -221,6 +355,14 @@ function ContainerEditor({
           {...register("name")}
           id="name"
           type="text"
+          onChange={(e) => {
+            register("name").onChange(e);
+            const updatedData = {
+              name: e.target.value,
+              tailwindClassList: classList,
+            };
+            onSave?.(updatedData);
+          }}
           className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
           aria-invalid={!!errors.name}
         />
@@ -235,153 +377,209 @@ function ContainerEditor({
         <label className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
           Tailwind Classes
         </label>
-        <div className="space-y-3">
-          {/* Combobox for selecting classes */}
-          <Popover open={open} onOpenChange={setOpen}>
-            <PopoverTrigger asChild>
-              <Button
-                variant="outline"
-                role="combobox"
-                aria-expanded={open}
-                className="w-full justify-between"
-              >
-                {classList.length > 0
-                  ? `${classList.length} class${
-                      classList.length === 1 ? "" : "es"
-                    } selected`
-                  : "Select classes..."}
-                <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent
-              className="w-full p-0 animate-fade-in overflow-visible"
-              align="start"
-              sideOffset={4}
+
+        {/* Current classes */}
+        {classList.length > 0 && (
+          <div className="space-y-2 mb-4">
+            <p className="text-sm text-[rgb(var(--color-muted-foreground))]">
+              Current classes:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {classList.map((className) => (
+                <div
+                  key={className}
+                  className="flex items-center space-x-2 rounded-full bg-[rgb(var(--color-muted))] px-3 py-1 text-sm"
+                >
+                  {editingClass === className ? (
+                    <input
+                      type="text"
+                      value={editValue}
+                      onChange={(e) => setEditValue(e.target.value)}
+                      onBlur={() => saveEdit(className)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          saveEdit(className);
+                        } else if (e.key === 'Escape') {
+                          cancelEdit();
+                        }
+                      }}
+                      onFocus={(e) => e.target.select()}
+                      autoFocus
+                      className="bg-transparent text-[rgb(var(--color-foreground))] outline-none border-b border-[rgb(var(--color-border))] focus:border-[rgb(var(--color-primary))] min-w-[100px]"
+                    />
+                  ) : (
+                    <span 
+                      className="text-[rgb(var(--color-foreground))] cursor-pointer hover:underline"
+                      onClick={() => startEditing(className)}
+                    >
+                      {className}
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => removeTailwindClass(className)}
+                    className="text-[rgb(var(--color-muted-foreground))] hover:text-[rgb(var(--color-invalid))]"
+                    aria-label={`Remove ${className}`}
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {classList.length === 0 && (
+          <p className="text-sm text-[rgb(var(--color-muted-foreground))] py-4 mb-4 text-center border border-dashed border-[rgb(var(--color-border))] rounded-lg">
+            No Tailwind classes selected yet
+          </p>
+        )}
+
+        {/* Add custom class input */}
+        <div className="mb-4">
+          <label className="mb-2 block text-sm font-medium text-[rgb(var(--color-foreground))]">
+            Add Custom Class
+          </label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={customClassInput}
+              onChange={(e) => setCustomClassInput(e.target.value)}
+              onKeyDown={handleCustomClassKeyDown}
+              placeholder="e.g., max-w-[100px], hover:bg-blue-500"
+              className="flex-1 rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent"
+            />
+            <Button
+              type="button"
+              onClick={addCustomClass}
+              disabled={!customClassInput.trim()}
+              className="px-4"
             >
-              <Command>
-                <CommandInput
-                  placeholder="Search classes..."
-                  className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-none focus:shadow-none focus-visible:outline-none"
-                />
-                <CommandList className="overflow-scroll">
-                  <CommandEmpty>No class found.</CommandEmpty>
-                  {groupedSelectors.map((category) => (
-                    <React.Fragment key={category.category}>
-                      {category.groups.map((group) => (
-                        <CommandGroup
-                          key={`${category.category}-${group.section}`}
-                          heading={`${category.category} > ${group.section}`}
-                        >
-                          {group.selectors.map((option) => (
-                            <CommandItem
-                              key={option.value}
-                              value={option.value}
-                              onSelect={() => toggleClass(option.value)}
-                              className="justify-between"
-                              onMouseEnter={(e) => {
-                                const rect =
-                                  e.currentTarget.getBoundingClientRect();
-                                setHoveredSelector(option);
-                                setTooltipPos({
-                                  x: rect.left,
-                                  y: rect.top,
-                                });
-                              }}
-                              onMouseLeave={() => {
-                                setHoveredSelector(null);
-                                setTooltipPos(null);
-                              }}
-                            >
-                              <div className="flex items-center">
-                                <Check
-                                  className={cn(
-                                    "mr-2 h-4 w-4",
-                                    classList.includes(option.value)
-                                      ? "opacity-100"
-                                      : "opacity-0"
-                                  )}
-                                />
-                                {option.label}
-                              </div>
-                              <button
-                                type="button"
-                                onMouseEnter={(e) => {
-                                  setInfoHovered(true);
-                                  const rect = e.currentTarget
-                                    .closest('[role="option"]')
-                                    ?.getBoundingClientRect();
-                                  if (rect) {
-                                    setHoveredSelector(option);
-                                    setTooltipPos({
-                                      x: rect.left,
-                                      y: rect.top,
-                                      width: rect.width,
-                                    });
-                                  }
-                                }}
-                                onMouseLeave={() => {
-                                  setInfoHovered(false);
+              Add
+            </Button>
+          </div>
+          <p className="mt-1 text-xs text-[rgb(var(--color-muted-foreground))]">
+            Add any Tailwind class, including arbitrary values like [100px]
+          </p>
+        </div>
+
+        <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+          {/* Group comboboxes by category */}
+          {groupedSelectors.map((category) => (
+            <div key={category.category} className="space-y-2">
+              <label className="text-sm font-medium text-[rgb(var(--color-foreground))]">
+                {category.category}
+              </label>
+              {category.groups.map((group) => (
+                <div key={`${category.category}-${group.section}`}>
+                  <Popover
+                    open={openSection === `${category.category}-${group.section}`}
+                    onOpenChange={(isOpen) =>
+                      setOpenSection(isOpen ? `${category.category}-${group.section}` : null)
+                    }
+                  >
+                    <PopoverTrigger asChild>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        role="combobox"
+                        aria-expanded={openSection === `${category.category}-${group.section}`}
+                        className="w-full justify-between text-left"
+                      >
+                        <span className="truncate">
+                          {group.section}
+                        </span>
+                        <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent
+                      className="w-full p-0 animate-fade-in"
+                      sideOffset={4}
+                    >
+                      <Command>
+                        <CommandInput
+                          placeholder={`Search ${group.section}...`}
+                          className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-none focus:shadow-none focus-visible:outline-none"
+                        />
+                        <CommandList className="max-h-[300px] overflow-y-auto">
+                          <CommandEmpty>No class found.</CommandEmpty>
+                          <CommandGroup>
+                            {group.selectors.map((option) => (
+                              <CommandItem
+                                key={option.value}
+                                value={option.value}
+                                onSelect={() => {
+                                  toggleClass(option.value);
+                                  setOpenSection(null);
                                   setHoveredSelector(null);
                                   setTooltipPos(null);
                                 }}
-                                className="ml-2 opacity-50 hover:opacity-100 transition-opacity"
+                                onMouseEnter={(e) => {
+                                  const rect =
+                                    e.currentTarget.getBoundingClientRect();
+                                  setHoveredSelector(option);
+                                  setTooltipPos({
+                                    x: rect.left,
+                                    y: rect.top,
+                                    width: rect.width,
+                                  });
+                                }}
+                                onMouseLeave={() => {
+                                  setHoveredSelector(null);
+                                  setTooltipPos(null);
+                                }}
+                                className="justify-between"
                               >
-                                <Info className="h-3 w-3" />
-                              </button>
-                            </CommandItem>
-                          ))}
-                        </CommandGroup>
-                      ))}
-                    </React.Fragment>
-                  ))}
-                </CommandList>
-              </Command>
-            </PopoverContent>
-          </Popover>
-
-          {/* Current classes */}
-          {classList.length > 0 && (
-            <div className="space-y-2">
-              <p className="text-sm text-[rgb(var(--color-muted-foreground))]">
-                Current classes:
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {classList.map((className) => (
-                  <div
-                    key={className}
-                    className="flex items-center space-x-2 rounded-full bg-[rgb(var(--color-muted))] px-3 py-1 text-sm"
-                  >
-                    <span className="text-[rgb(var(--color-foreground))]">
-                      {className}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => removeTailwindClass(className)}
-                      className="text-[rgb(var(--color-muted-foreground))] hover:text-[rgb(var(--color-invalid))]"
-                      aria-label={`Remove ${className}`}
-                    >
-                      ×
-                    </button>
-                  </div>
-                ))}
-              </div>
+                                <div className="flex items-center">
+                                  <Check
+                                    className={cn(
+                                      "mr-2 h-4 w-4",
+                                      classList.includes(option.value)
+                                        ? "opacity-100"
+                                        : "opacity-0"
+                                    )}
+                                  />
+                                  {option.label}
+                                </div>
+                                <button
+                                  type="button"
+                                  onMouseEnter={(e) => {
+                                    setInfoHovered(true);
+                                    const rect = e.currentTarget
+                                      .closest('[role="option"]')
+                                      ?.getBoundingClientRect();
+                                    if (rect) {
+                                      setHoveredSelector(option);
+                                      setTooltipPos({
+                                        x: rect.left,
+                                        y: rect.top,
+                                        width: rect.width,
+                                      });
+                                    }
+                                  }}
+                                  onMouseLeave={() => {
+                                    setInfoHovered(false);
+                                    setHoveredSelector(null);
+                                    setTooltipPos(null);
+                                  }}
+                                  className="ml-2 opacity-50 hover:opacity-100 transition-opacity"
+                                >
+                                  <Info className="h-3 w-3" />
+                                </button>
+                              </CommandItem>
+                            ))}
+                          </CommandGroup>
+                        </CommandList>
+                      </Command>
+                    </PopoverContent>
+                  </Popover>
+                </div>
+              ))}
             </div>
-          )}
-
-          {classList.length === 0 && (
-            <p className="text-sm text-[rgb(var(--color-muted-foreground))] py-4 text-center border border-dashed border-[rgb(var(--color-border))] rounded-lg">
-              No Tailwind classes selected yet
-            </p>
-          )}
+          ))}
         </div>
       </div>
 
-      <button
-        type="submit"
-        className="w-full rounded-lg bg-[rgb(var(--color-primary))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:ring-offset-2"
-      >
-        Save Container
-      </button>
       {hoveredSelector &&
         tooltipPos &&
         createPortal(
@@ -397,11 +595,11 @@ function ContainerEditor({
               <p className="text-gray-300">{hoveredSelector.description}</p>
             ) : (
               <p className="text-gray-300">{hoveredSelector.styles}</p>
-            )}{" "}
+            )}
           </div>,
           document.body
         )}
-    </form>
+    </div>
   );
 }
 
@@ -420,6 +618,10 @@ function ComponentEditor({
   const [editingClass, setEditingClass] = useState<string | null>(null);
   const [editValue, setEditValue] = useState<string>("");
   const [customClassInput, setCustomClassInput] = useState<string>("");
+  const [textInputValue, setTextInputValue] = useState<string>(
+    (entity.props?.text as string) || ""
+  );
+  const textUpdateTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [imageWidth, setImageWidth] = useState<number>(
     Number(entity.props?.width) || 200
   );
@@ -446,6 +648,11 @@ function ComponentEditor({
   console.log("ComponentEditor: Component type:", entity.type);
   console.log("ComponentEditor: entity.tailwindClassList:", entity.tailwindClassList);
   console.log("ComponentEditor: classList state:", classList);
+
+  // Sync textInputValue with entity changes
+  useEffect(() => {
+    setTextInputValue((entity.props?.text as string) || "");
+  }, [entity.props?.text]);
 
   // Sync classList with entity changes (only if change came from outside)
   useEffect(() => {
@@ -676,15 +883,27 @@ function ComponentEditor({
               Text Content
             </label>
             <textarea
-              value={(entity.props?.text as string) || ""}
+              value={textInputValue}
               onChange={(e) => {
-                const updatedData = {
-                  type: entity.type,
-                  props: { ...entity.props, text: e.target.value },
-                  tailwindClassList: classList,
-                };
-                onSave?.(updatedData);
+                const newValue = e.target.value;
+                setTextInputValue(newValue);
+                
+                // Clear existing timeout
+                if (textUpdateTimeoutRef.current) {
+                  clearTimeout(textUpdateTimeoutRef.current);
+                }
+                
+                // Set new timeout to update after 500ms
+                textUpdateTimeoutRef.current = setTimeout(() => {
+                  const updatedData = {
+                    type: entity.type,
+                    props: { ...entity.props, text: newValue },
+                    tailwindClassList: classList,
+                  };
+                  onSave?.(updatedData);
+                }, 500);
               }}
+              onFocus={(e) => e.target.select()}
               rows={3}
               placeholder="Enter your text here"
               className="w-full rounded-lg border border-[rgb(var(--color-border))] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))] focus:border-transparent resize-none"

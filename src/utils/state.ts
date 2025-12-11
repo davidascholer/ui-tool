@@ -212,10 +212,13 @@ export function useBuilderState() {
   }, []);
 
   const addComponent = useCallback((containerId: string, type: ComponentType) => {
+    // Set default props based on component type
+    const defaultProps: Record<string, unknown> = type === 'Text' ? { text: 'enter text here' } : {};
+    
     const newComponent: ComponentEntity = {
       id: `component-${Date.now()}`,
       type,
-      props: {},
+      props: defaultProps,
       tailwindClassList: [],
       uitType: `UIT${type}`,
       parentId: containerId, // Reference to parent container

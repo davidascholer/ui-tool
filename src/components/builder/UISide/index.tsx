@@ -117,7 +117,7 @@ interface ComponentSectionProps {
 
 function ComponentSection({ title, items, onDragStart }: ComponentSectionProps) {
   return (
-    <section className="mb-6">
+    <section className="mb-6 rounded-full">
       <h3 className="mb-2 text-sm font-medium text-[rgb(var(--color-muted-foreground))]">
         {title}
       </h3>
@@ -147,7 +147,7 @@ function DraggableItem({ label, icon, onDragStart }: DraggableItemProps) {
       draggable
       onDragStart={onDragStart}
       className="
-        flex cursor-move items-center gap-2 rounded border border-[rgb(var(--color-border))]
+        flex cursor-move items-center gap-2 rounded-lg border border-[rgb(var(--color-border))]
         bg-[rgb(var(--color-background))] px-3 py-2 text-sm
         transition-colors hover:bg-[rgb(var(--color-muted))]
       "

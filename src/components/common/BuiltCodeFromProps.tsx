@@ -91,7 +91,7 @@ export function BuiltCodeFromProps({
       case "UITText": {
         const component = entity as ComponentEntity;
         const textContent = String(
-          component.props?.content || component.props?.text || "Text"
+          component.props?.content ?? component.props?.text ?? ""
         );
         return (
           <p
