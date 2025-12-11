@@ -23,12 +23,55 @@ export function LiveView({ componentList, className = "" }: LiveViewProps) {
     if (!container) return;
 
     let isHovering = false;
+    let pageDimensionLabel: HTMLDivElement | null = null;
+    let resizeObserver: ResizeObserver | null = null;
+
+    const createDimensionLabel = (): HTMLDivElement => {
+      const label = document.createElement('div');
+      label.style.position = 'absolute';
+      label.style.top = '2px';
+      label.style.right = '2px';
+      label.style.padding = '2px 6px';
+      label.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+      label.style.color = 'white';
+      label.style.fontSize = '11px';
+      label.style.fontFamily = 'monospace';
+      label.style.borderRadius = '3px';
+      label.style.pointerEvents = 'none';
+      label.style.zIndex = '1000';
+      label.style.whiteSpace = 'nowrap';
+      
+      return label;
+    };
+
+    const updateDimensionLabel = (element: HTMLElement, label: HTMLDivElement) => {
+      const rect = element.getBoundingClientRect();
+      const width = Math.round(rect.width);
+      const height = Math.round(rect.height);
+      label.textContent = `${width} × ${height}`;
+    };
+
+    // Add permanent dimension label to page
+    const pageElement = container.querySelector('[data-entity-type="page"]') as HTMLElement;
+    if (pageElement) {
+      pageElement.style.position = pageElement.style.position || 'relative';
+      pageDimensionLabel = createDimensionLabel();
+      updateDimensionLabel(pageElement, pageDimensionLabel);
+      pageElement.appendChild(pageDimensionLabel);
+
+      // Set up ResizeObserver to update dimensions when page size changes
+      resizeObserver = new ResizeObserver(() => {
+        if (pageDimensionLabel && pageElement) {
+          updateDimensionLabel(pageElement, pageDimensionLabel);
+        }
+      });
+      resizeObserver.observe(pageElement);
+    }
 
     const handleMouseEnter = () => {
       if (isHovering) return;
       isHovering = true;
 
-      // Find all elements with data-entity-type="component"
       const allPages = container.querySelectorAll(
         '[data-entity-type="page"]'
       ) as NodeListOf<HTMLElement>;
@@ -39,7 +82,7 @@ export function LiveView({ componentList, className = "" }: LiveViewProps) {
         '[data-entity-type="component"]'
       ) as NodeListOf<HTMLElement>;
 
-      // Add border to all components, containers, and pages at once
+      // Add border to all elements
       allComponents.forEach((component) => {
         component.style.outline = "3px solid rgba(59, 130, 246, 0.6)";
         component.style.outlineOffset = "3px";
@@ -58,7 +101,6 @@ export function LiveView({ componentList, className = "" }: LiveViewProps) {
       if (!isHovering) return;
       isHovering = false;
 
-      // Remove border from all components, containers, and pages
       const allComponents = container.querySelectorAll(
         '[data-entity-type="component"]'
       ) as NodeListOf<HTMLElement>;
@@ -69,7 +111,7 @@ export function LiveView({ componentList, className = "" }: LiveViewProps) {
         '[data-entity-type="container"]'
       ) as NodeListOf<HTMLElement>;
 
-      // Remove border from all components, containers, and pages at once
+      // Remove borders from all elements
       allPages.forEach((page) => {
         page.style.outline = "";
         page.style.outlineOffset = "";
@@ -91,28 +133,15 @@ export function LiveView({ componentList, className = "" }: LiveViewProps) {
       container.removeEventListener("mouseenter", handleMouseEnter);
       container.removeEventListener("mouseleave", handleMouseLeave);
 
-      // Cleanup any remaining borders
-      const allPages = container.querySelectorAll(
-        '[data-entity-type="page"]'
-      ) as NodeListOf<HTMLElement>;
-      const allContainers = container.querySelectorAll(
-        '[data-entity-type="container"]'
-      ) as NodeListOf<HTMLElement>;
-      const allComponents = container.querySelectorAll(
-        '[data-entity-type="component"]'
-      ) as NodeListOf<HTMLElement>;
-      allPages.forEach((page) => {
-        page.style.outline = "";
-        page.style.outlineOffset = "";
-      });
-      allContainers.forEach((container) => {
-        container.style.outline = "";
-        container.style.outlineOffset = "";
-      });
-      allComponents.forEach((component) => {
-        component.style.outline = "";
-        component.style.outlineOffset = "";
-      });
+      // Cleanup resize observer
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
+
+      // Cleanup page dimension label
+      if (pageDimensionLabel && pageDimensionLabel.parentNode) {
+        pageDimensionLabel.parentNode.removeChild(pageDimensionLabel);
+      }
     };
   }, [componentList]);
 
