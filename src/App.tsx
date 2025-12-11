@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import { BuilderPage } from './pages/BuilderPage';
-import Test from './pages/Test';
+import PreviewPage from './pages/PreviewPage';
 import './App.css';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<BuilderPage />} />
-      <Route path="/test" element={<Test />} />
+      <Route path="/preview" element={<PreviewPage />} />
     </Routes>
   );
 }

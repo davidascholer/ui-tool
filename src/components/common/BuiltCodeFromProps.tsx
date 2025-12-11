@@ -4,37 +4,40 @@ import type {
   PageEntity,
 } from "@/utils/types";
 import { buildTreeObject, type TreeNode } from "@/utils/codeBuilder";
+import { cn } from "@/lib/utils";
+import { extractArbitraryStyles, filterNonArbitraryClasses } from "@/utils/arbitrary-values";
 
 interface BuiltCodeFromPropsProps {
   componentList: (PageEntity | ContainerEntity | ComponentEntity)[];
   className?: string;
   rootId?: string;
+  enableArbitraryStyles?: boolean; // When true, converts arbitrary values to inline styles for live preview
 }
 
 // Todo: Make "page" be the root of the object and deprecate "allPages";
 
 export function BuiltCodeFromProps({
   componentList,
-  className = "",
   rootId,
+  enableArbitraryStyles = false,
 }: BuiltCodeFromPropsProps) {
   const buildTreeFromObject = (tree: TreeNode): React.ReactNode => {
     // Convert the treeNode structure to a react component where the component matches the entity.uitType
     const { entity, children } = tree;
 
-    if(!entity) {
+    if (!entity) {
       return null;
     }
-    // Convert tailwindClassList array to string
-    const tailwindClassString =
-      "tailwindClassList" in entity ? entity.tailwindClassList.join(" ") : "";
+    // Convert tailwindClassList array to string and separate arbitrary values
+    const tailwindClassList = "tailwindClassList" in entity ? entity.tailwindClassList : [];
+    const arbitraryStyles = enableArbitraryStyles ? extractArbitraryStyles(tailwindClassList) : {};
+    const regularClasses = enableArbitraryStyles ? filterNonArbitraryClasses(tailwindClassList) : tailwindClassList;
+    const tailwindClassString = regularClasses.join(" ");
 
     // Recursively build children components
-    const childComponents = children.map((childNode, idx) => (
-      <div key={childNode.entity.id || idx}>
-        {buildTreeFromObject(childNode)}
-      </div>
-    ));
+    const childComponents = children.map((childNode) =>
+      buildTreeFromObject(childNode)
+    );
 
     // Match component based on uitType
     switch (entity.uitType) {
@@ -42,7 +45,10 @@ export function BuiltCodeFromProps({
         const page = entity as PageEntity;
         return (
           <div
-            className={`flex flex-col min-w-[320px] max-w-6xl mx-auto justify-center items-center gap-4 p-4 ${tailwindClassString}`}
+            className={cn(
+              "flex flex-col min-w-[320px] max-w-6xl mx-auto justify-center items-center gap-4 p-4 border-2 border-slate-600",
+              tailwindClassString
+            )}
             data-entity-type="page"
             data-entity-id={page.id}
           >
@@ -55,7 +61,10 @@ export function BuiltCodeFromProps({
         const container = entity as ContainerEntity;
         return (
           <div
-            className={`flex flex-row flex-1 flex-wrap min-w-[320px] max-w-6xl mx-auto text-center justify-center items-center gap-4 bg-blue-300 p-4 ${tailwindClassString}`}
+            className={cn(
+              "w-full flex flex-row flex-wrap text-center justify-evenly items-center gap-2 border-2 border-blue-600 p-2",
+              tailwindClassString
+            )}
             data-entity-type="container"
             data-entity-id={container.id}
             data-entity-name={container.name}
@@ -69,7 +78,7 @@ export function BuiltCodeFromProps({
         const component = entity as ComponentEntity;
         return (
           <div
-            className={tailwindClassString}
+            className={cn(tailwindClassString)}
             data-entity-type="component"
             data-entity-id={component.id}
             data-component-type={component.type}
@@ -86,7 +95,7 @@ export function BuiltCodeFromProps({
         );
         return (
           <p
-            className={tailwindClassString}
+            className={cn("border-2", tailwindClassString)}
             data-entity-type="component"
             data-entity-id={component.id}
             data-component-type={component.type}
@@ -101,7 +110,7 @@ export function BuiltCodeFromProps({
         const buttonText = String(component.props?.text || "Button");
         return (
           <button
-            className={tailwindClassString}
+            className={cn(tailwindClassString)}
             data-entity-type="component"
             data-entity-id={component.id}
             data-component-type={component.type}
@@ -119,7 +128,7 @@ export function BuiltCodeFromProps({
           <input
             type={type}
             placeholder={placeholder}
-            className={tailwindClassString}
+            className={cn(tailwindClassString)}
             data-entity-type="component"
             data-entity-id={component.id}
             data-component-type={component.type}
@@ -134,11 +143,13 @@ export function BuiltCodeFromProps({
           (component.props?.imageUrl as string) ||
           "";
         const alt = (component.props?.alt as string) || "Image";
+        
         return (
           <img
             src={src}
             alt={alt}
-            className={tailwindClassString}
+            style={arbitraryStyles}
+            className={cn("border-2 border-purple-600 block", tailwindClassString)}
             data-entity-type="component"
             data-entity-id={component.id}
             data-component-type={component.type}
@@ -150,7 +161,7 @@ export function BuiltCodeFromProps({
         const component = entity as ComponentEntity;
         return (
           <button
-            className={tailwindClassString}
+            className={cn(tailwindClassString)}
             data-entity-type="component"
             data-entity-id={component.id}
             data-component-type={component.type}
@@ -164,7 +175,7 @@ export function BuiltCodeFromProps({
         const component = entity as ComponentEntity;
         return (
           <div
-            className={`overflow-auto ${tailwindClassString}`}
+            className={cn("overflow-auto", tailwindClassString)}
             data-entity-type="component"
             data-entity-id={component.id}
             data-component-type={component.type}
@@ -178,7 +189,7 @@ export function BuiltCodeFromProps({
         // Fallback for unknown component types
         return (
           <div
-            className={tailwindClassString}
+            className={cn(tailwindClassString)}
             data-entity-type="unknown"
             data-entity-id={entity.id}
             data-uit-type={entity.uitType}
@@ -196,5 +207,5 @@ export function BuiltCodeFromProps({
   const structuredTree = buildTreeObject(componentList, rootId);
   const structuredTreeNode = buildTreeFromObject(structuredTree as TreeNode);
 
-  return <div className={className}>{structuredTreeNode}</div>;
+  return structuredTreeNode;
 }

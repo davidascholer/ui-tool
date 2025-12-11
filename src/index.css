@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "./styles/theme.css";
 
+/* Scan source files for dynamic/arbitrary classes */
+@source "../src/**/*.{js,jsx,ts,tsx,html}";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {

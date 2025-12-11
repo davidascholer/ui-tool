@@ -18,11 +18,8 @@ interface LiveViewProps {
 
 export function LiveView({ componentList, className = "" }: LiveViewProps) {
   return (
-    <div className={`flex flex-col h-full ${className}`}>
-      {/* Placeholder content */}
-      <div className="flex-1 flex items-start justify-center p-8 bg-gray-50">
-        <BuiltCodeFromProps componentList={componentList} />
-      </div>
+    <div className={`w-full h-full ${className}`}>
+      <BuiltCodeFromProps componentList={componentList} enableArbitraryStyles={true} />
     </div>
   );
 }

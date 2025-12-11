@@ -26926,6 +26926,2132 @@ export const outlineOffset = [
   },
 ];
 
+export const boxShadow = [
+  {
+    label: "shadow-2xs",
+    value: "shadow-2xs",
+    styles: "box-shadow: var(--shadow-2xs); /* 0 1px rgb(0 0 0 / 0.05) */",
+    description: "Applies a 2x extra small box shadow with minimal depth",
+  },
+  {
+    label: "shadow-xs",
+    value: "shadow-xs",
+    styles: "box-shadow: var(--shadow-xs); /* 0 1px 2px 0 rgb(0 0 0 / 0.05) */",
+    description: "Applies an extra small box shadow with subtle depth",
+  },
+  {
+    label: "shadow-sm",
+    value: "shadow-sm",
+    styles:
+      "box-shadow: var(--shadow-sm); /* 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) */",
+    description: "Applies a small box shadow with gentle depth",
+  },
+  {
+    label: "shadow-md",
+    value: "shadow-md",
+    styles:
+      "box-shadow: var(--shadow-md); /* 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) */",
+    description: "Applies a medium box shadow with moderate depth",
+  },
+  {
+    label: "shadow-lg",
+    value: "shadow-lg",
+    styles:
+      "box-shadow: var(--shadow-lg); /* 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) */",
+    description: "Applies a large box shadow with noticeable depth",
+  },
+  {
+    label: "shadow-xl",
+    value: "shadow-xl",
+    styles:
+      "box-shadow: var(--shadow-xl); /* 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) */",
+    description: "Applies an extra large box shadow with significant depth",
+  },
+  {
+    label: "shadow-2xl",
+    value: "shadow-2xl",
+    styles:
+      "box-shadow: var(--shadow-2xl); /* 0 25px 50px -12px rgb(0 0 0 / 0.25) */",
+    description: "Applies a 2x extra large box shadow with dramatic depth",
+  },
+  {
+    label: "shadow-none",
+    value: "shadow-none",
+    styles: "box-shadow: 0 0 #0000;",
+    description: "Removes all box shadows from an element",
+  },
+  {
+    label: "shadow-(<custom-property>)",
+    value: "shadow-(<custom-property>)",
+    styles: "box-shadow: var(<custom-property>);",
+    description: "Applies a box shadow using a custom CSS property",
+  },
+  {
+    label: "shadow-(color:<custom-property>)",
+    value: "shadow-(color:<custom-property>)",
+    styles: "--tw-shadow-color: var(<custom-property>);",
+    description: "Sets the shadow color using a custom CSS property",
+  },
+  {
+    label: "shadow-[<value>]",
+    value: "shadow-[<value>]",
+    styles: "box-shadow: <value>;",
+    description:
+      "Applies an arbitrary box shadow value using Tailwind's bracket notation",
+  },
+  {
+    label: "shadow-inherit",
+    value: "shadow-inherit",
+    styles: "--tw-shadow-color: inherit;",
+    description: "Inherits the shadow color from the parent element",
+  },
+  {
+    label: "shadow-current",
+    value: "shadow-current",
+    styles: "--tw-shadow-color: currentColor;",
+    description: "Sets the shadow color to the current text color",
+  },
+  {
+    label: "shadow-transparent",
+    value: "shadow-transparent",
+    styles: "--tw-shadow-color: transparent;",
+    description:
+      "Sets the shadow color to transparent, effectively hiding the shadow",
+  },
+  {
+    label: "shadow-black",
+    value: "shadow-black",
+    styles: "--tw-shadow-color: var(--color-black); /* #000 */",
+    description: "Sets the shadow color to black",
+  },
+  {
+    label: "shadow-white",
+    value: "shadow-white",
+    styles: "--tw-shadow-color: var(--color-white); /* #fff */",
+    description: "Sets the shadow color to white",
+  },
+  {
+    label: "shadow-red-50",
+    value: "shadow-red-50",
+    styles:
+      "--tw-shadow-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description: "Sets the shadow color to red-50, the lightest shade of red",
+  },
+  {
+    label: "shadow-red-100",
+    value: "shadow-red-100",
+    styles:
+      "--tw-shadow-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets the shadow color to red-100",
+  },
+  {
+    label: "shadow-red-200",
+    value: "shadow-red-200",
+    styles:
+      "--tw-shadow-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets the shadow color to red-200",
+  },
+  {
+    label: "shadow-red-300",
+    value: "shadow-red-300",
+    styles:
+      "--tw-shadow-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets the shadow color to red-300",
+  },
+  {
+    label: "shadow-red-400",
+    value: "shadow-red-400",
+    styles:
+      "--tw-shadow-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets the shadow color to red-400",
+  },
+  {
+    label: "shadow-red-500",
+    value: "shadow-red-500",
+    styles:
+      "--tw-shadow-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets the shadow color to red-500, the base red shade",
+  },
+  {
+    label: "shadow-red-600",
+    value: "shadow-red-600",
+    styles:
+      "--tw-shadow-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets the shadow color to red-600",
+  },
+  {
+    label: "shadow-red-700",
+    value: "shadow-red-700",
+    styles:
+      "--tw-shadow-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets the shadow color to red-700",
+  },
+  {
+    label: "shadow-red-800",
+    value: "shadow-red-800",
+    styles:
+      "--tw-shadow-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets the shadow color to red-800",
+  },
+  {
+    label: "shadow-red-900",
+    value: "shadow-red-900",
+    styles:
+      "--tw-shadow-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets the shadow color to red-900",
+  },
+  {
+    label: "shadow-red-950",
+    value: "shadow-red-950",
+    styles:
+      "--tw-shadow-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets the shadow color to red-950, the darkest shade of red",
+  },
+  {
+    label: "shadow-orange-50",
+    value: "shadow-orange-50",
+    styles:
+      "--tw-shadow-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description:
+      "Sets the shadow color to orange-50, the lightest shade of orange",
+  },
+  {
+    label: "shadow-orange-100",
+    value: "shadow-orange-100",
+    styles:
+      "--tw-shadow-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets the shadow color to orange-100",
+  },
+  {
+    label: "shadow-orange-200",
+    value: "shadow-orange-200",
+    styles:
+      "--tw-shadow-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets the shadow color to orange-200",
+  },
+  {
+    label: "shadow-orange-300",
+    value: "shadow-orange-300",
+    styles:
+      "--tw-shadow-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets the shadow color to orange-300",
+  },
+  {
+    label: "shadow-orange-400",
+    value: "shadow-orange-400",
+    styles:
+      "--tw-shadow-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets the shadow color to orange-400",
+  },
+  {
+    label: "shadow-orange-500",
+    value: "shadow-orange-500",
+    styles:
+      "--tw-shadow-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets the shadow color to orange-500, the base orange shade",
+  },
+  {
+    label: "shadow-orange-600",
+    value: "shadow-orange-600",
+    styles:
+      "--tw-shadow-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets the shadow color to orange-600",
+  },
+  {
+    label: "shadow-orange-700",
+    value: "shadow-orange-700",
+    styles:
+      "--tw-shadow-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets the shadow color to orange-700",
+  },
+  {
+    label: "shadow-orange-800",
+    value: "shadow-orange-800",
+    styles:
+      "--tw-shadow-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets the shadow color to orange-800",
+  },
+  {
+    label: "shadow-orange-900",
+    value: "shadow-orange-900",
+    styles:
+      "--tw-shadow-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets the shadow color to orange-900",
+  },
+  {
+    label: "shadow-orange-950",
+    value: "shadow-orange-950",
+    styles:
+      "--tw-shadow-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description:
+      "Sets the shadow color to orange-950, the darkest shade of orange",
+  },
+  {
+    label: "shadow-amber-50",
+    value: "shadow-amber-50",
+    styles:
+      "--tw-shadow-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description:
+      "Sets the shadow color to amber-50, the lightest shade of amber",
+  },
+  {
+    label: "shadow-amber-100",
+    value: "shadow-amber-100",
+    styles:
+      "--tw-shadow-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets the shadow color to amber-100",
+  },
+  {
+    label: "shadow-amber-200",
+    value: "shadow-amber-200",
+    styles:
+      "--tw-shadow-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets the shadow color to amber-200",
+  },
+  {
+    label: "shadow-amber-300",
+    value: "shadow-amber-300",
+    styles:
+      "--tw-shadow-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets the shadow color to amber-300",
+  },
+  {
+    label: "shadow-amber-400",
+    value: "shadow-amber-400",
+    styles:
+      "--tw-shadow-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets the shadow color to amber-400",
+  },
+  {
+    label: "shadow-amber-500",
+    value: "shadow-amber-500",
+    styles:
+      "--tw-shadow-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets the shadow color to amber-500, the base amber shade",
+  },
+  {
+    label: "shadow-amber-600",
+    value: "shadow-amber-600",
+    styles:
+      "--tw-shadow-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets the shadow color to amber-600",
+  },
+  {
+    label: "shadow-amber-700",
+    value: "shadow-amber-700",
+    styles:
+      "--tw-shadow-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets the shadow color to amber-700",
+  },
+  {
+    label: "shadow-amber-800",
+    value: "shadow-amber-800",
+    styles:
+      "--tw-shadow-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets the shadow color to amber-800",
+  },
+  {
+    label: "shadow-amber-900",
+    value: "shadow-amber-900",
+    styles:
+      "--tw-shadow-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets the shadow color to amber-900",
+  },
+  {
+    label: "shadow-amber-950",
+    value: "shadow-amber-950",
+    styles:
+      "--tw-shadow-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description:
+      "Sets the shadow color to amber-950, the darkest shade of amber",
+  },
+  {
+    label: "shadow-yellow-50",
+    value: "shadow-yellow-50",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-50); /* oklch(98.7% 0.026 102.212) */",
+    description:
+      "Sets the shadow color to yellow-50, the lightest shade of yellow",
+  },
+  {
+    label: "shadow-yellow-100",
+    value: "shadow-yellow-100",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-100); /* oklch(97.3% 0.071 103.193) */",
+    description: "Sets the shadow color to yellow-100",
+  },
+  {
+    label: "shadow-yellow-200",
+    value: "shadow-yellow-200",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-200); /* oklch(94.5% 0.129 101.54) */",
+    description: "Sets the shadow color to yellow-200",
+  },
+  {
+    label: "shadow-yellow-300",
+    value: "shadow-yellow-300",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-300); /* oklch(90.5% 0.182 98.111) */",
+    description: "Sets the shadow color to yellow-300",
+  },
+  {
+    label: "shadow-yellow-400",
+    value: "shadow-yellow-400",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-400); /* oklch(85.2% 0.199 91.936) */",
+    description: "Sets the shadow color to yellow-400",
+  },
+  {
+    label: "shadow-yellow-500",
+    value: "shadow-yellow-500",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-500); /* oklch(79.5% 0.184 86.047) */",
+    description: "Sets the shadow color to yellow-500, the base yellow shade",
+  },
+  {
+    label: "shadow-yellow-600",
+    value: "shadow-yellow-600",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-600); /* oklch(68.1% 0.162 75.834) */",
+    description: "Sets the shadow color to yellow-600",
+  },
+  {
+    label: "shadow-yellow-700",
+    value: "shadow-yellow-700",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-700); /* oklch(55.4% 0.135 66.442) */",
+    description: "Sets the shadow color to yellow-700",
+  },
+  {
+    label: "shadow-yellow-800",
+    value: "shadow-yellow-800",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-800); /* oklch(47.6% 0.114 61.907) */",
+    description: "Sets the shadow color to yellow-800",
+  },
+  {
+    label: "shadow-yellow-900",
+    value: "shadow-yellow-900",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-900); /* oklch(42.1% 0.095 57.708) */",
+    description: "Sets the shadow color to yellow-900",
+  },
+  {
+    label: "shadow-yellow-950",
+    value: "shadow-yellow-950",
+    styles:
+      "--tw-shadow-color: var(--color-yellow-950); /* oklch(28.6% 0.066 53.813) */",
+    description:
+      "Sets the shadow color to yellow-950, the darkest shade of yellow",
+  },
+  {
+    label: "shadow-lime-50",
+    value: "shadow-lime-50",
+    styles:
+      "--tw-shadow-color: var(--color-lime-50); /* oklch(98.6% 0.031 120.757) */",
+    description: "Sets the shadow color to lime-50, the lightest shade of lime",
+  },
+  {
+    label: "shadow-lime-100",
+    value: "shadow-lime-100",
+    styles:
+      "--tw-shadow-color: var(--color-lime-100); /* oklch(96.7% 0.067 122.328) */",
+    description: "Sets the shadow color to lime-100",
+  },
+  {
+    label: "shadow-lime-200",
+    value: "shadow-lime-200",
+    styles:
+      "--tw-shadow-color: var(--color-lime-200); /* oklch(93.8% 0.127 124.321) */",
+    description: "Sets the shadow color to lime-200",
+  },
+  {
+    label: "shadow-lime-300",
+    value: "shadow-lime-300",
+    styles:
+      "--tw-shadow-color: var(--color-lime-300); /* oklch(89.7% 0.196 126.665) */",
+    description: "Sets the shadow color to lime-300",
+  },
+  {
+    label: "shadow-lime-400",
+    value: "shadow-lime-400",
+    styles:
+      "--tw-shadow-color: var(--color-lime-400); /* oklch(84.1% 0.238 128.85) */",
+    description: "Sets the shadow color to lime-400",
+  },
+  {
+    label: "shadow-lime-500",
+    value: "shadow-lime-500",
+    styles:
+      "--tw-shadow-color: var(--color-lime-500); /* oklch(76.8% 0.233 130.85) */",
+    description: "Sets the shadow color to lime-500, the base lime shade",
+  },
+  {
+    label: "shadow-lime-600",
+    value: "shadow-lime-600",
+    styles:
+      "--tw-shadow-color: var(--color-lime-600); /* oklch(64.8% 0.2 131.684) */",
+    description: "Sets the shadow color to lime-600",
+  },
+  {
+    label: "shadow-lime-700",
+    value: "shadow-lime-700",
+    styles:
+      "--tw-shadow-color: var(--color-lime-700); /* oklch(53.2% 0.157 131.589) */",
+    description: "Sets the shadow color to lime-700",
+  },
+  {
+    label: "shadow-lime-800",
+    value: "shadow-lime-800",
+    styles:
+      "--tw-shadow-color: var(--color-lime-800); /* oklch(45.3% 0.124 130.933) */",
+    description: "Sets the shadow color to lime-800",
+  },
+  {
+    label: "shadow-lime-900",
+    value: "shadow-lime-900",
+    styles:
+      "--tw-shadow-color: var(--color-lime-900); /* oklch(40.5% 0.101 131.063) */",
+    description: "Sets the shadow color to lime-900",
+  },
+  {
+    label: "shadow-lime-950",
+    value: "shadow-lime-950",
+    styles:
+      "--tw-shadow-color: var(--color-lime-950); /* oklch(27.4% 0.072 132.109) */",
+    description: "Sets the shadow color to lime-950, the darkest shade of lime",
+  },
+  {
+    label: "shadow-green-50",
+    value: "shadow-green-50",
+    styles:
+      "--tw-shadow-color: var(--color-green-50); /* oklch(98.2% 0.018 155.826) */",
+    description:
+      "Sets the shadow color to green-50, the lightest shade of green",
+  },
+  {
+    label: "shadow-green-100",
+    value: "shadow-green-100",
+    styles:
+      "--tw-shadow-color: var(--color-green-100); /* oklch(96.2% 0.044 156.743) */",
+    description: "Sets the shadow color to green-100",
+  },
+  {
+    label: "shadow-green-200",
+    value: "shadow-green-200",
+    styles:
+      "--tw-shadow-color: var(--color-green-200); /* oklch(92.5% 0.084 155.995) */",
+    description: "Sets the shadow color to green-200",
+  },
+  {
+    label: "shadow-green-300",
+    value: "shadow-green-300",
+    styles:
+      "--tw-shadow-color: var(--color-green-300); /* oklch(87.1% 0.15 154.449) */",
+    description: "Sets the shadow color to green-300",
+  },
+  {
+    label: "shadow-green-400",
+    value: "shadow-green-400",
+    styles:
+      "--tw-shadow-color: var(--color-green-400); /* oklch(79.2% 0.209 151.711) */",
+    description: "Sets the shadow color to green-400",
+  },
+  {
+    label: "shadow-green-500",
+    value: "shadow-green-500",
+    styles:
+      "--tw-shadow-color: var(--color-green-500); /* oklch(72.3% 0.219 149.579) */",
+    description: "Sets the shadow color to green-500, the base green shade",
+  },
+  {
+    label: "shadow-green-600",
+    value: "shadow-green-600",
+    styles:
+      "--tw-shadow-color: var(--color-green-600); /* oklch(62.7% 0.194 149.214) */",
+    description: "Sets the shadow color to green-600",
+  },
+  {
+    label: "shadow-green-700",
+    value: "shadow-green-700",
+    styles:
+      "--tw-shadow-color: var(--color-green-700); /* oklch(52.7% 0.154 150.069) */",
+    description: "Sets the shadow color to green-700",
+  },
+  {
+    label: "shadow-green-800",
+    value: "shadow-green-800",
+    styles:
+      "--tw-shadow-color: var(--color-green-800); /* oklch(44.8% 0.119 151.328) */",
+    description: "Sets the shadow color to green-800",
+  },
+  {
+    label: "shadow-green-900",
+    value: "shadow-green-900",
+    styles:
+      "--tw-shadow-color: var(--color-green-900); /* oklch(39.3% 0.095 152.535) */",
+    description: "Sets the shadow color to green-900",
+  },
+  {
+    label: "shadow-green-950",
+    value: "shadow-green-950",
+    styles:
+      "--tw-shadow-color: var(--color-green-950); /* oklch(26.6% 0.065 152.934) */",
+    description:
+      "Sets the shadow color to green-950, the darkest shade of green",
+  },
+  {
+    label: "shadow-emerald-50",
+    value: "shadow-emerald-50",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-50); /* oklch(97.9% 0.021 166.113) */",
+    description:
+      "Sets the shadow color to emerald-50, the lightest shade of emerald",
+  },
+  {
+    label: "shadow-emerald-100",
+    value: "shadow-emerald-100",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-100); /* oklch(95% 0.052 163.051) */",
+    description: "Sets the shadow color to emerald-100",
+  },
+  {
+    label: "shadow-emerald-200",
+    value: "shadow-emerald-200",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-200); /* oklch(90.5% 0.093 164.15) */",
+    description: "Sets the shadow color to emerald-200",
+  },
+  {
+    label: "shadow-emerald-300",
+    value: "shadow-emerald-300",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-300); /* oklch(84.5% 0.143 164.978) */",
+    description: "Sets the shadow color to emerald-300",
+  },
+  {
+    label: "shadow-emerald-400",
+    value: "shadow-emerald-400",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-400); /* oklch(76.5% 0.177 163.223) */",
+    description: "Sets the shadow color to emerald-400",
+  },
+  {
+    label: "shadow-emerald-500",
+    value: "shadow-emerald-500",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-500); /* oklch(69.6% 0.17 162.48) */",
+    description: "Sets the shadow color to emerald-500, the base emerald shade",
+  },
+  {
+    label: "shadow-emerald-600",
+    value: "shadow-emerald-600",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-600); /* oklch(59.6% 0.145 163.225) */",
+    description: "Sets the shadow color to emerald-600",
+  },
+  {
+    label: "shadow-emerald-700",
+    value: "shadow-emerald-700",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-700); /* oklch(50.8% 0.118 165.612) */",
+    description: "Sets the shadow color to emerald-700",
+  },
+  {
+    label: "shadow-emerald-800",
+    value: "shadow-emerald-800",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-800); /* oklch(43.2% 0.095 166.913) */",
+    description: "Sets the shadow color to emerald-800",
+  },
+  {
+    label: "shadow-emerald-900",
+    value: "shadow-emerald-900",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-900); /* oklch(37.8% 0.077 168.94) */",
+    description: "Sets the shadow color to emerald-900",
+  },
+  {
+    label: "shadow-emerald-950",
+    value: "shadow-emerald-950",
+    styles:
+      "--tw-shadow-color: var(--color-emerald-950); /* oklch(26.2% 0.051 172.552) */",
+    description:
+      "Sets the shadow color to emerald-950, the darkest shade of emerald",
+  },
+  {
+    label: "shadow-teal-50",
+    value: "shadow-teal-50",
+    styles:
+      "--tw-shadow-color: var(--color-teal-50); /* oklch(98.4% 0.014 180.72) */",
+    description: "Sets the shadow color to teal-50, the lightest shade of teal",
+  },
+  {
+    label: "shadow-teal-100",
+    value: "shadow-teal-100",
+    styles:
+      "--tw-shadow-color: var(--color-teal-100); /* oklch(95.3% 0.051 180.801) */",
+    description: "Sets the shadow color to teal-100",
+  },
+  {
+    label: "shadow-teal-200",
+    value: "shadow-teal-200",
+    styles:
+      "--tw-shadow-color: var(--color-teal-200); /* oklch(91% 0.096 180.426) */",
+    description: "Sets the shadow color to teal-200",
+  },
+  {
+    label: "shadow-teal-300",
+    value: "shadow-teal-300",
+    styles:
+      "--tw-shadow-color: var(--color-teal-300); /* oklch(85.5% 0.138 181.071) */",
+    description: "Sets the shadow color to teal-300",
+  },
+  {
+    label: "shadow-teal-400",
+    value: "shadow-teal-400",
+    styles:
+      "--tw-shadow-color: var(--color-teal-400); /* oklch(77.7% 0.152 181.912) */",
+    description: "Sets the shadow color to teal-400",
+  },
+  {
+    label: "shadow-teal-500",
+    value: "shadow-teal-500",
+    styles:
+      "--tw-shadow-color: var(--color-teal-500); /* oklch(70.4% 0.14 182.503) */",
+    description: "Sets the shadow color to teal-500, the base teal shade",
+  },
+  {
+    label: "shadow-teal-600",
+    value: "shadow-teal-600",
+    styles:
+      "--tw-shadow-color: var(--color-teal-600); /* oklch(60% 0.118 184.704) */",
+    description: "Sets the shadow color to teal-600",
+  },
+  {
+    label: "shadow-teal-700",
+    value: "shadow-teal-700",
+    styles:
+      "--tw-shadow-color: var(--color-teal-700); /* oklch(51.1% 0.096 186.391) */",
+    description: "Sets the shadow color to teal-700",
+  },
+  {
+    label: "shadow-teal-800",
+    value: "shadow-teal-800",
+    styles:
+      "--tw-shadow-color: var(--color-teal-800); /* oklch(43.7% 0.078 188.216) */",
+    description: "Sets the shadow color to teal-800",
+  },
+  {
+    label: "shadow-teal-900",
+    value: "shadow-teal-900",
+    styles:
+      "--tw-shadow-color: var(--color-teal-900); /* oklch(38.6% 0.063 188.416) */",
+    description: "Sets the shadow color to teal-900",
+  },
+  {
+    label: "shadow-teal-950",
+    value: "shadow-teal-950",
+    styles:
+      "--tw-shadow-color: var(--color-teal-950); /* oklch(27.7% 0.046 192.524) */",
+    description: "Sets the shadow color to teal-950, the darkest shade of teal",
+  },
+  {
+    label: "shadow-cyan-50",
+    value: "shadow-cyan-50",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-50); /* oklch(98.4% 0.019 200.873) */",
+    description: "Sets the shadow color to cyan-50, the lightest shade of cyan",
+  },
+  {
+    label: "shadow-cyan-100",
+    value: "shadow-cyan-100",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-100); /* oklch(95.6% 0.045 203.388) */",
+    description: "Sets the shadow color to cyan-100",
+  },
+  {
+    label: "shadow-cyan-200",
+    value: "shadow-cyan-200",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-200); /* oklch(91.7% 0.08 205.041) */",
+    description: "Sets the shadow color to cyan-200",
+  },
+  {
+    label: "shadow-cyan-300",
+    value: "shadow-cyan-300",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-300); /* oklch(86.5% 0.127 207.078) */",
+    description: "Sets the shadow color to cyan-300",
+  },
+  {
+    label: "shadow-cyan-400",
+    value: "shadow-cyan-400",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-400); /* oklch(78.9% 0.154 211.53) */",
+    description: "Sets the shadow color to cyan-400",
+  },
+  {
+    label: "shadow-cyan-500",
+    value: "shadow-cyan-500",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-500); /* oklch(71.5% 0.143 215.221) */",
+    description: "Sets the shadow color to cyan-500, the base cyan shade",
+  },
+  {
+    label: "shadow-cyan-600",
+    value: "shadow-cyan-600",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-600); /* oklch(60.9% 0.126 221.723) */",
+    description: "Sets the shadow color to cyan-600",
+  },
+  {
+    label: "shadow-cyan-700",
+    value: "shadow-cyan-700",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-700); /* oklch(52% 0.105 223.128) */",
+    description: "Sets the shadow color to cyan-700",
+  },
+  {
+    label: "shadow-cyan-800",
+    value: "shadow-cyan-800",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-800); /* oklch(45% 0.085 224.283) */",
+    description: "Sets the shadow color to cyan-800",
+  },
+  {
+    label: "shadow-cyan-900",
+    value: "shadow-cyan-900",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-900); /* oklch(39.8% 0.07 227.392) */",
+    description: "Sets the shadow color to cyan-900",
+  },
+  {
+    label: "shadow-cyan-950",
+    value: "shadow-cyan-950",
+    styles:
+      "--tw-shadow-color: var(--color-cyan-950); /* oklch(30.2% 0.056 229.695) */",
+    description: "Sets the shadow color to cyan-950, the darkest shade of cyan",
+  },
+  {
+    label: "shadow-sky-50",
+    value: "shadow-sky-50",
+    styles:
+      "--tw-shadow-color: var(--color-sky-50); /* oklch(97.7% 0.013 236.62) */",
+    description:
+      "Sets the shadow color to sky-50, the lightest shade of sky blue",
+  },
+  {
+    label: "shadow-sky-100",
+    value: "shadow-sky-100",
+    styles:
+      "--tw-shadow-color: var(--color-sky-100); /* oklch(95.1% 0.026 236.824) */",
+    description: "Sets the shadow color to sky-100",
+  },
+  {
+    label: "shadow-sky-200",
+    value: "shadow-sky-200",
+    styles:
+      "--tw-shadow-color: var(--color-sky-200); /* oklch(90.1% 0.058 230.902) */",
+    description: "Sets the shadow color to sky-200",
+  },
+  {
+    label: "shadow-sky-300",
+    value: "shadow-sky-300",
+    styles:
+      "--tw-shadow-color: var(--color-sky-300); /* oklch(82.8% 0.111 230.318) */",
+    description: "Sets the shadow color to sky-300",
+  },
+  {
+    label: "shadow-sky-400",
+    value: "shadow-sky-400",
+    styles:
+      "--tw-shadow-color: var(--color-sky-400); /* oklch(74.6% 0.16 232.661) */",
+    description: "Sets the shadow color to sky-400",
+  },
+  {
+    label: "shadow-sky-500",
+    value: "shadow-sky-500",
+    styles:
+      "--tw-shadow-color: var(--color-sky-500); /* oklch(68.5% 0.169 237.323) */",
+    description: "Sets the shadow color to sky-500, the base sky blue shade",
+  },
+  {
+    label: "shadow-sky-600",
+    value: "shadow-sky-600",
+    styles:
+      "--tw-shadow-color: var(--color-sky-600); /* oklch(58.8% 0.158 241.966) */",
+    description: "Sets the shadow color to sky-600",
+  },
+  {
+    label: "shadow-sky-700",
+    value: "shadow-sky-700",
+    styles:
+      "--tw-shadow-color: var(--color-sky-700); /* oklch(50% 0.134 242.749) */",
+    description: "Sets the shadow color to sky-700",
+  },
+  {
+    label: "shadow-sky-800",
+    value: "shadow-sky-800",
+    styles:
+      "--tw-shadow-color: var(--color-sky-800); /* oklch(44.3% 0.11 240.79) */",
+    description: "Sets the shadow color to sky-800",
+  },
+  {
+    label: "shadow-sky-900",
+    value: "shadow-sky-900",
+    styles:
+      "--tw-shadow-color: var(--color-sky-900); /* oklch(39.1% 0.09 240.876) */",
+    description: "Sets the shadow color to sky-900",
+  },
+  {
+    label: "shadow-sky-950",
+    value: "shadow-sky-950",
+    styles:
+      "--tw-shadow-color: var(--color-sky-950); /* oklch(29.3% 0.066 243.157) */",
+    description:
+      "Sets the shadow color to sky-950, the darkest shade of sky blue",
+  },
+  {
+    label: "shadow-blue-50",
+    value: "shadow-blue-50",
+    styles:
+      "--tw-shadow-color: var(--color-blue-50); /* oklch(97% 0.014 254.604) */",
+    description: "Sets the shadow color to blue-50, the lightest shade of blue",
+  },
+  {
+    label: "shadow-blue-100",
+    value: "shadow-blue-100",
+    styles:
+      "--tw-shadow-color: var(--color-blue-100); /* oklch(93.2% 0.032 255.585) */",
+    description: "Sets the shadow color to blue-100",
+  },
+  {
+    label: "shadow-blue-200",
+    value: "shadow-blue-200",
+    styles:
+      "--tw-shadow-color: var(--color-blue-200); /* oklch(88.2% 0.059 254.128) */",
+    description: "Sets the shadow color to blue-200",
+  },
+  {
+    label: "shadow-blue-300",
+    value: "shadow-blue-300",
+    styles:
+      "--tw-shadow-color: var(--color-blue-300); /* oklch(80.9% 0.105 251.813) */",
+    description: "Sets the shadow color to blue-300",
+  },
+  {
+    label: "shadow-blue-400",
+    value: "shadow-blue-400",
+    styles:
+      "--tw-shadow-color: var(--color-blue-400); /* oklch(70.7% 0.165 254.624) */",
+    description: "Sets the shadow color to blue-400",
+  },
+  {
+    label: "shadow-blue-500",
+    value: "shadow-blue-500",
+    styles:
+      "--tw-shadow-color: var(--color-blue-500); /* oklch(62.3% 0.214 259.815) */",
+    description: "Sets the shadow color to blue-500, the base blue shade",
+  },
+  {
+    label: "shadow-blue-600",
+    value: "shadow-blue-600",
+    styles:
+      "--tw-shadow-color: var(--color-blue-600); /* oklch(54.6% 0.245 262.881) */",
+    description: "Sets the shadow color to blue-600",
+  },
+  {
+    label: "shadow-blue-700",
+    value: "shadow-blue-700",
+    styles:
+      "--tw-shadow-color: var(--color-blue-700); /* oklch(48.8% 0.243 264.376) */",
+    description: "Sets the shadow color to blue-700",
+  },
+  {
+    label: "shadow-blue-800",
+    value: "shadow-blue-800",
+    styles:
+      "--tw-shadow-color: var(--color-blue-800); /* oklch(42.4% 0.199 265.638) */",
+    description: "Sets the shadow color to blue-800",
+  },
+  {
+    label: "shadow-blue-900",
+    value: "shadow-blue-900",
+    styles:
+      "--tw-shadow-color: var(--color-blue-900); /* oklch(37.9% 0.146 265.522) */",
+    description: "Sets the shadow color to blue-900",
+  },
+  {
+    label: "shadow-blue-950",
+    value: "shadow-blue-950",
+    styles:
+      "--tw-shadow-color: var(--color-blue-950); /* oklch(28.2% 0.091 267.935) */",
+    description: "Sets the shadow color to blue-950, the darkest shade of blue",
+  },
+  {
+    label: "shadow-indigo-50",
+    value: "shadow-indigo-50",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-50); /* oklch(96.2% 0.018 272.314) */",
+    description:
+      "Sets the shadow color to indigo-50, the lightest shade of indigo",
+  },
+  {
+    label: "shadow-indigo-100",
+    value: "shadow-indigo-100",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-100); /* oklch(93% 0.034 272.788) */",
+    description: "Sets the shadow color to indigo-100",
+  },
+  {
+    label: "shadow-indigo-200",
+    value: "shadow-indigo-200",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-200); /* oklch(87% 0.065 274.039) */",
+    description: "Sets the shadow color to indigo-200",
+  },
+  {
+    label: "shadow-indigo-300",
+    value: "shadow-indigo-300",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-300); /* oklch(78.5% 0.115 274.713) */",
+    description: "Sets the shadow color to indigo-300",
+  },
+  {
+    label: "shadow-indigo-400",
+    value: "shadow-indigo-400",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-400); /* oklch(67.3% 0.182 276.935) */",
+    description: "Sets the shadow color to indigo-400",
+  },
+  {
+    label: "shadow-indigo-500",
+    value: "shadow-indigo-500",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-500); /* oklch(58.5% 0.233 277.117) */",
+    description: "Sets the shadow color to indigo-500, the base indigo shade",
+  },
+  {
+    label: "shadow-indigo-600",
+    value: "shadow-indigo-600",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-600); /* oklch(51.1% 0.262 276.966) */",
+    description: "Sets the shadow color to indigo-600",
+  },
+  {
+    label: "shadow-indigo-700",
+    value: "shadow-indigo-700",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-700); /* oklch(45.7% 0.24 277.023) */",
+    description: "Sets the shadow color to indigo-700",
+  },
+  {
+    label: "shadow-indigo-800",
+    value: "shadow-indigo-800",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-800); /* oklch(39.8% 0.195 277.366) */",
+    description: "Sets the shadow color to indigo-800",
+  },
+  {
+    label: "shadow-indigo-900",
+    value: "shadow-indigo-900",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-900); /* oklch(35.9% 0.144 278.697) */",
+    description: "Sets the shadow color to indigo-900",
+  },
+  {
+    label: "shadow-indigo-950",
+    value: "shadow-indigo-950",
+    styles:
+      "--tw-shadow-color: var(--color-indigo-950); /* oklch(25.7% 0.09 281.288) */",
+    description:
+      "Sets the shadow color to indigo-950, the darkest shade of indigo",
+  },
+  {
+    label: "shadow-violet-50",
+    value: "shadow-violet-50",
+    styles:
+      "--tw-shadow-color: var(--color-violet-50); /* oklch(96.9% 0.016 293.756) */",
+    description:
+      "Sets the shadow color to violet-50, the lightest shade of violet",
+  },
+  {
+    label: "shadow-violet-100",
+    value: "shadow-violet-100",
+    styles:
+      "--tw-shadow-color: var(--color-violet-100); /* oklch(94.3% 0.029 294.588) */",
+    description: "Sets the shadow color to violet-100",
+  },
+  {
+    label: "shadow-violet-200",
+    value: "shadow-violet-200",
+    styles:
+      "--tw-shadow-color: var(--color-violet-200); /* oklch(89.4% 0.057 293.283) */",
+    description: "Sets the shadow color to violet-200",
+  },
+  {
+    label: "shadow-violet-300",
+    value: "shadow-violet-300",
+    styles:
+      "--tw-shadow-color: var(--color-violet-300); /* oklch(81.1% 0.111 293.571) */",
+    description: "Sets the shadow color to violet-300",
+  },
+  {
+    label: "shadow-violet-400",
+    value: "shadow-violet-400",
+    styles:
+      "--tw-shadow-color: var(--color-violet-400); /* oklch(70.2% 0.183 293.541) */",
+    description: "Sets the shadow color to violet-400",
+  },
+  {
+    label: "shadow-violet-500",
+    value: "shadow-violet-500",
+    styles:
+      "--tw-shadow-color: var(--color-violet-500); /* oklch(60.6% 0.25 292.717) */",
+    description: "Sets the shadow color to violet-500, the base violet shade",
+  },
+  {
+    label: "shadow-violet-600",
+    value: "shadow-violet-600",
+    styles:
+      "--tw-shadow-color: var(--color-violet-600); /* oklch(54.1% 0.281 293.009) */",
+    description: "Sets the shadow color to violet-600",
+  },
+  {
+    label: "shadow-violet-700",
+    value: "shadow-violet-700",
+    styles:
+      "--tw-shadow-color: var(--color-violet-700); /* oklch(49.1% 0.27 292.581) */",
+    description: "Sets the shadow color to violet-700",
+  },
+  {
+    label: "shadow-violet-800",
+    value: "shadow-violet-800",
+    styles:
+      "--tw-shadow-color: var(--color-violet-800); /* oklch(43.2% 0.232 292.759) */",
+    description: "Sets the shadow color to violet-800",
+  },
+  {
+    label: "shadow-violet-900",
+    value: "shadow-violet-900",
+    styles:
+      "--tw-shadow-color: var(--color-violet-900); /* oklch(38% 0.189 293.745) */",
+    description: "Sets the shadow color to violet-900",
+  },
+  {
+    label: "shadow-violet-950",
+    value: "shadow-violet-950",
+    styles:
+      "--tw-shadow-color: var(--color-violet-950); /* oklch(28.3% 0.141 291.089) */",
+    description:
+      "Sets the shadow color to violet-950, the darkest shade of violet",
+  },
+  {
+    label: "shadow-purple-50",
+    value: "shadow-purple-50",
+    styles:
+      "--tw-shadow-color: var(--color-purple-50); /* oklch(97.7% 0.014 308.299) */",
+    description:
+      "Sets the shadow color to purple-50, the lightest shade of purple",
+  },
+  {
+    label: "shadow-purple-100",
+    value: "shadow-purple-100",
+    styles:
+      "--tw-shadow-color: var(--color-purple-100); /* oklch(94.6% 0.033 307.174) */",
+    description: "Sets the shadow color to purple-100",
+  },
+  {
+    label: "shadow-purple-200",
+    value: "shadow-purple-200",
+    styles:
+      "--tw-shadow-color: var(--color-purple-200); /* oklch(90.2% 0.063 306.703) */",
+    description: "Sets the shadow color to purple-200",
+  },
+  {
+    label: "shadow-purple-300",
+    value: "shadow-purple-300",
+    styles:
+      "--tw-shadow-color: var(--color-purple-300); /* oklch(82.7% 0.119 306.383) */",
+    description: "Sets the shadow color to purple-300",
+  },
+  {
+    label: "shadow-purple-400",
+    value: "shadow-purple-400",
+    styles:
+      "--tw-shadow-color: var(--color-purple-400); /* oklch(71.4% 0.203 305.504) */",
+    description: "Sets the shadow color to purple-400",
+  },
+  {
+    label: "shadow-purple-500",
+    value: "shadow-purple-500",
+    styles:
+      "--tw-shadow-color: var(--color-purple-500); /* oklch(62.7% 0.265 303.9) */",
+    description: "Sets the shadow color to purple-500, the base purple shade",
+  },
+  {
+    label: "shadow-purple-600",
+    value: "shadow-purple-600",
+    styles:
+      "--tw-shadow-color: var(--color-purple-600); /* oklch(55.8% 0.288 302.321) */",
+    description: "Sets the shadow color to purple-600",
+  },
+  {
+    label: "shadow-purple-700",
+    value: "shadow-purple-700",
+    styles:
+      "--tw-shadow-color: var(--color-purple-700); /* oklch(49.6% 0.265 301.924) */",
+    description: "Sets the shadow color to purple-700",
+  },
+  {
+    label: "shadow-purple-800",
+    value: "shadow-purple-800",
+    styles:
+      "--tw-shadow-color: var(--color-purple-800); /* oklch(43.8% 0.218 303.724) */",
+    description: "Sets the shadow color to purple-800",
+  },
+  {
+    label: "shadow-purple-900",
+    value: "shadow-purple-900",
+    styles:
+      "--tw-shadow-color: var(--color-purple-900); /* oklch(38.1% 0.176 304.987) */",
+    description: "Sets the shadow color to purple-900",
+  },
+  {
+    label: "shadow-purple-950",
+    value: "shadow-purple-950",
+    styles:
+      "--tw-shadow-color: var(--color-purple-950); /* oklch(29.1% 0.149 302.717) */",
+    description:
+      "Sets the shadow color to purple-950, the darkest shade of purple",
+  },
+  {
+    label: "shadow-fuchsia-50",
+    value: "shadow-fuchsia-50",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-50); /* oklch(97.7% 0.017 320.058) */",
+    description:
+      "Sets the shadow color to fuchsia-50, the lightest shade of fuchsia",
+  },
+  {
+    label: "shadow-fuchsia-100",
+    value: "shadow-fuchsia-100",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-100); /* oklch(95.2% 0.037 318.852) */",
+    description: "Sets the shadow color to fuchsia-100",
+  },
+  {
+    label: "shadow-fuchsia-200",
+    value: "shadow-fuchsia-200",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-200); /* oklch(90.3% 0.076 319.62) */",
+    description: "Sets the shadow color to fuchsia-200",
+  },
+  {
+    label: "shadow-fuchsia-300",
+    value: "shadow-fuchsia-300",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-300); /* oklch(83.3% 0.145 321.434) */",
+    description: "Sets the shadow color to fuchsia-300",
+  },
+  {
+    label: "shadow-fuchsia-400",
+    value: "shadow-fuchsia-400",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-400); /* oklch(74% 0.238 322.16) */",
+    description: "Sets the shadow color to fuchsia-400",
+  },
+  {
+    label: "shadow-fuchsia-500",
+    value: "shadow-fuchsia-500",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-500); /* oklch(66.7% 0.295 322.15) */",
+    description: "Sets the shadow color to fuchsia-500, the base fuchsia shade",
+  },
+  {
+    label: "shadow-fuchsia-600",
+    value: "shadow-fuchsia-600",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-600); /* oklch(59.1% 0.293 322.896) */",
+    description: "Sets the shadow color to fuchsia-600",
+  },
+  {
+    label: "shadow-fuchsia-700",
+    value: "shadow-fuchsia-700",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-700); /* oklch(51.8% 0.253 323.949) */",
+    description: "Sets the shadow color to fuchsia-700",
+  },
+  {
+    label: "shadow-fuchsia-800",
+    value: "shadow-fuchsia-800",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-800); /* oklch(45.2% 0.211 324.591) */",
+    description: "Sets the shadow color to fuchsia-800",
+  },
+  {
+    label: "shadow-fuchsia-900",
+    value: "shadow-fuchsia-900",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-900); /* oklch(40.1% 0.17 325.612) */",
+    description: "Sets the shadow color to fuchsia-900",
+  },
+  {
+    label: "shadow-fuchsia-950",
+    value: "shadow-fuchsia-950",
+    styles:
+      "--tw-shadow-color: var(--color-fuchsia-950); /* oklch(29.3% 0.136 325.661) */",
+    description:
+      "Sets the shadow color to fuchsia-950, the darkest shade of fuchsia",
+  },
+  {
+    label: "shadow-pink-50",
+    value: "shadow-pink-50",
+    styles:
+      "--tw-shadow-color: var(--color-pink-50); /* oklch(97.1% 0.014 343.198) */",
+    description: "Sets the shadow color to pink-50, the lightest shade of pink",
+  },
+  {
+    label: "shadow-pink-100",
+    value: "shadow-pink-100",
+    styles:
+      "--tw-shadow-color: var(--color-pink-100); /* oklch(94.8% 0.028 342.258) */",
+    description: "Sets the shadow color to pink-100",
+  },
+  {
+    label: "shadow-pink-200",
+    value: "shadow-pink-200",
+    styles:
+      "--tw-shadow-color: var(--color-pink-200); /* oklch(89.9% 0.061 343.231) */",
+    description: "Sets the shadow color to pink-200",
+  },
+  {
+    label: "shadow-pink-300",
+    value: "shadow-pink-300",
+    styles:
+      "--tw-shadow-color: var(--color-pink-300); /* oklch(82.3% 0.12 346.018) */",
+    description: "Sets the shadow color to pink-300",
+  },
+  {
+    label: "shadow-pink-400",
+    value: "shadow-pink-400",
+    styles:
+      "--tw-shadow-color: var(--color-pink-400); /* oklch(71.8% 0.202 349.761) */",
+    description: "Sets the shadow color to pink-400",
+  },
+  {
+    label: "shadow-pink-500",
+    value: "shadow-pink-500",
+    styles:
+      "--tw-shadow-color: var(--color-pink-500); /* oklch(65.6% 0.241 354.308) */",
+    description: "Sets the shadow color to pink-500, the base pink shade",
+  },
+  {
+    label: "shadow-pink-600",
+    value: "shadow-pink-600",
+    styles:
+      "--tw-shadow-color: var(--color-pink-600); /* oklch(59.2% 0.249 0.584) */",
+    description: "Sets the shadow color to pink-600",
+  },
+  {
+    label: "shadow-pink-700",
+    value: "shadow-pink-700",
+    styles:
+      "--tw-shadow-color: var(--color-pink-700); /* oklch(52.5% 0.223 3.958) */",
+    description: "Sets the shadow color to pink-700",
+  },
+  {
+    label: "shadow-pink-800",
+    value: "shadow-pink-800",
+    styles:
+      "--tw-shadow-color: var(--color-pink-800); /* oklch(45.9% 0.187 3.815) */",
+    description: "Sets the shadow color to pink-800",
+  },
+  {
+    label: "shadow-pink-900",
+    value: "shadow-pink-900",
+    styles:
+      "--tw-shadow-color: var(--color-pink-900); /* oklch(40.8% 0.153 2.432) */",
+    description: "Sets the shadow color to pink-900",
+  },
+  {
+    label: "shadow-pink-950",
+    value: "shadow-pink-950",
+    styles:
+      "--tw-shadow-color: var(--color-pink-950); /* oklch(28.4% 0.109 3.907) */",
+    description: "Sets the shadow color to pink-950, the darkest shade of pink",
+  },
+  {
+    label: "shadow-rose-50",
+    value: "shadow-rose-50",
+    styles:
+      "--tw-shadow-color: var(--color-rose-50); /* oklch(96.9% 0.015 12.422) */",
+    description: "Sets the shadow color to rose-50, the lightest shade of rose",
+  },
+  {
+    label: "shadow-rose-100",
+    value: "shadow-rose-100",
+    styles:
+      "--tw-shadow-color: var(--color-rose-100); /* oklch(94.1% 0.03 12.58) */",
+    description: "Sets the shadow color to rose-100",
+  },
+  {
+    label: "shadow-rose-200",
+    value: "shadow-rose-200",
+    styles:
+      "--tw-shadow-color: var(--color-rose-200); /* oklch(89.2% 0.058 10.001) */",
+    description: "Sets the shadow color to rose-200",
+  },
+  {
+    label: "shadow-rose-300",
+    value: "shadow-rose-300",
+    styles:
+      "--tw-shadow-color: var(--color-rose-300); /* oklch(81% 0.117 11.638) */",
+    description: "Sets the shadow color to rose-300",
+  },
+  {
+    label: "shadow-rose-400",
+    value: "shadow-rose-400",
+    styles:
+      "--tw-shadow-color: var(--color-rose-400); /* oklch(71.2% 0.194 13.428) */",
+    description: "Sets the shadow color to rose-400",
+  },
+  {
+    label: "shadow-rose-500",
+    value: "shadow-rose-500",
+    styles:
+      "--tw-shadow-color: var(--color-rose-500); /* oklch(64.5% 0.246 16.439) */",
+    description: "Sets the shadow color to rose-500, the base rose shade",
+  },
+  {
+    label: "shadow-rose-600",
+    value: "shadow-rose-600",
+    styles:
+      "--tw-shadow-color: var(--color-rose-600); /* oklch(58.6% 0.253 17.585) */",
+    description: "Sets the shadow color to rose-600",
+  },
+  {
+    label: "shadow-rose-700",
+    value: "shadow-rose-700",
+    styles:
+      "--tw-shadow-color: var(--color-rose-700); /* oklch(51.4% 0.222 16.935) */",
+    description: "Sets the shadow color to rose-700",
+  },
+  {
+    label: "shadow-rose-800",
+    value: "shadow-rose-800",
+    styles:
+      "--tw-shadow-color: var(--color-rose-800); /* oklch(45.5% 0.188 13.697) */",
+    description: "Sets the shadow color to rose-800",
+  },
+  {
+    label: "shadow-rose-900",
+    value: "shadow-rose-900",
+    styles:
+      "--tw-shadow-color: var(--color-rose-900); /* oklch(41% 0.159 10.272) */",
+    description: "Sets the shadow color to rose-900",
+  },
+  {
+    label: "shadow-rose-950",
+    value: "shadow-rose-950",
+    styles:
+      "--tw-shadow-color: var(--color-rose-950); /* oklch(27.1% 0.105 12.094) */",
+    description: "Sets the shadow color to rose-950, the darkest shade of rose",
+  },
+  {
+    label: "shadow-slate-50",
+    value: "shadow-slate-50",
+    styles:
+      "--tw-shadow-color: var(--color-slate-50); /* oklch(98.4% 0.003 247.858) */",
+    description:
+      "Sets the shadow color to slate-50, the lightest shade of slate",
+  },
+  {
+    label: "shadow-slate-100",
+    value: "shadow-slate-100",
+    styles:
+      "--tw-shadow-color: var(--color-slate-100); /* oklch(96.8% 0.007 247.896) */",
+    description: "Sets the shadow color to slate-100",
+  },
+  {
+    label: "shadow-slate-200",
+    value: "shadow-slate-200",
+    styles:
+      "--tw-shadow-color: var(--color-slate-200); /* oklch(92.9% 0.013 255.508) */",
+    description: "Sets the shadow color to slate-200",
+  },
+  {
+    label: "shadow-slate-300",
+    value: "shadow-slate-300",
+    styles:
+      "--tw-shadow-color: var(--color-slate-300); /* oklch(86.9% 0.022 252.894) */",
+    description: "Sets the shadow color to slate-300",
+  },
+  {
+    label: "shadow-slate-400",
+    value: "shadow-slate-400",
+    styles:
+      "--tw-shadow-color: var(--color-slate-400); /* oklch(70.4% 0.04 256.788) */",
+    description: "Sets the shadow color to slate-400",
+  },
+  {
+    label: "shadow-slate-500",
+    value: "shadow-slate-500",
+    styles:
+      "--tw-shadow-color: var(--color-slate-500); /* oklch(55.4% 0.046 257.417) */",
+    description: "Sets the shadow color to slate-500, the base slate shade",
+  },
+  {
+    label: "shadow-slate-600",
+    value: "shadow-slate-600",
+    styles:
+      "--tw-shadow-color: var(--color-slate-600); /* oklch(44.6% 0.043 257.281) */",
+    description: "Sets the shadow color to slate-600",
+  },
+  {
+    label: "shadow-slate-700",
+    value: "shadow-slate-700",
+    styles:
+      "--tw-shadow-color: var(--color-slate-700); /* oklch(37.2% 0.044 257.287) */",
+    description: "Sets the shadow color to slate-700",
+  },
+  {
+    label: "shadow-slate-800",
+    value: "shadow-slate-800",
+    styles:
+      "--tw-shadow-color: var(--color-slate-800); /* oklch(27.9% 0.041 260.031) */",
+    description: "Sets the shadow color to slate-800",
+  },
+  {
+    label: "shadow-slate-900",
+    value: "shadow-slate-900",
+    styles:
+      "--tw-shadow-color: var(--color-slate-900); /* oklch(20.8% 0.042 265.755) */",
+    description: "Sets the shadow color to slate-900",
+  },
+  {
+    label: "shadow-slate-950",
+    value: "shadow-slate-950",
+    styles:
+      "--tw-shadow-color: var(--color-slate-950); /* oklch(12.9% 0.042 264.695) */",
+    description:
+      "Sets the shadow color to slate-950, the darkest shade of slate",
+  },
+  {
+    label: "shadow-gray-50",
+    value: "shadow-gray-50",
+    styles:
+      "--tw-shadow-color: var(--color-gray-50); /* oklch(98.5% 0.002 247.839) */",
+    description: "Sets the shadow color to gray-50, the lightest shade of gray",
+  },
+  {
+    label: "shadow-gray-100",
+    value: "shadow-gray-100",
+    styles:
+      "--tw-shadow-color: var(--color-gray-100); /* oklch(96.7% 0.003 264.542) */",
+    description: "Sets the shadow color to gray-100",
+  },
+  {
+    label: "shadow-gray-200",
+    value: "shadow-gray-200",
+    styles:
+      "--tw-shadow-color: var(--color-gray-200); /* oklch(92.8% 0.006 264.531) */",
+    description: "Sets the shadow color to gray-200",
+  },
+  {
+    label: "shadow-gray-300",
+    value: "shadow-gray-300",
+    styles:
+      "--tw-shadow-color: var(--color-gray-300); /* oklch(87.2% 0.01 258.338) */",
+    description: "Sets the shadow color to gray-300",
+  },
+  {
+    label: "shadow-gray-400",
+    value: "shadow-gray-400",
+    styles:
+      "--tw-shadow-color: var(--color-gray-400); /* oklch(70.7% 0.022 261.325) */",
+    description: "Sets the shadow color to gray-400",
+  },
+  {
+    label: "shadow-gray-500",
+    value: "shadow-gray-500",
+    styles:
+      "--tw-shadow-color: var(--color-gray-500); /* oklch(55.1% 0.027 264.364) */",
+    description: "Sets the shadow color to gray-500, the base gray shade",
+  },
+  {
+    label: "shadow-gray-600",
+    value: "shadow-gray-600",
+    styles:
+      "--tw-shadow-color: var(--color-gray-600); /* oklch(44.6% 0.03 256.802) */",
+    description: "Sets the shadow color to gray-600",
+  },
+  {
+    label: "shadow-gray-700",
+    value: "shadow-gray-700",
+    styles:
+      "--tw-shadow-color: var(--color-gray-700); /* oklch(37.3% 0.034 259.733) */",
+    description: "Sets the shadow color to gray-700",
+  },
+  {
+    label: "shadow-gray-800",
+    value: "shadow-gray-800",
+    styles:
+      "--tw-shadow-color: var(--color-gray-800); /* oklch(27.8% 0.033 256.848) */",
+    description: "Sets the shadow color to gray-800",
+  },
+  {
+    label: "shadow-gray-900",
+    value: "shadow-gray-900",
+    styles:
+      "--tw-shadow-color: var(--color-gray-900); /* oklch(21% 0.034 264.665) */",
+    description: "Sets the shadow color to gray-900",
+  },
+  {
+    label: "shadow-gray-950",
+    value: "shadow-gray-950",
+    styles:
+      "--tw-shadow-color: var(--color-gray-950); /* oklch(13% 0.028 261.692) */",
+    description: "Sets the shadow color to gray-950, the darkest shade of gray",
+  },
+  {
+    label: "shadow-zinc-50",
+    value: "shadow-zinc-50",
+    styles: "--tw-shadow-color: var(--color-zinc-50); /* oklch(98.5% 0 0) */",
+    description: "Sets the shadow color to zinc-50, the lightest shade of zinc",
+  },
+  {
+    label: "shadow-zinc-100",
+    value: "shadow-zinc-100",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-100); /* oklch(96.7% 0.001 286.375) */",
+    description: "Sets the shadow color to zinc-100",
+  },
+  {
+    label: "shadow-zinc-200",
+    value: "shadow-zinc-200",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-200); /* oklch(92% 0.004 286.32) */",
+    description: "Sets the shadow color to zinc-200",
+  },
+  {
+    label: "shadow-zinc-300",
+    value: "shadow-zinc-300",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-300); /* oklch(87.1% 0.006 286.286) */",
+    description: "Sets the shadow color to zinc-300",
+  },
+  {
+    label: "shadow-zinc-400",
+    value: "shadow-zinc-400",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-400); /* oklch(70.5% 0.015 286.067) */",
+    description: "Sets the shadow color to zinc-400",
+  },
+  {
+    label: "shadow-zinc-500",
+    value: "shadow-zinc-500",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-500); /* oklch(55.2% 0.016 285.938) */",
+    description: "Sets the shadow color to zinc-500, the base zinc shade",
+  },
+  {
+    label: "shadow-zinc-600",
+    value: "shadow-zinc-600",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-600); /* oklch(44.2% 0.017 285.786) */",
+    description: "Sets the shadow color to zinc-600",
+  },
+  {
+    label: "shadow-zinc-700",
+    value: "shadow-zinc-700",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-700); /* oklch(37% 0.013 285.805) */",
+    description: "Sets the shadow color to zinc-700",
+  },
+  {
+    label: "shadow-zinc-800",
+    value: "shadow-zinc-800",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-800); /* oklch(27.4% 0.006 286.033) */",
+    description: "Sets the shadow color to zinc-800",
+  },
+  {
+    label: "shadow-zinc-900",
+    value: "shadow-zinc-900",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-900); /* oklch(21% 0.006 285.885) */",
+    description: "Sets the shadow color to zinc-900",
+  },
+  {
+    label: "shadow-zinc-950",
+    value: "shadow-zinc-950",
+    styles:
+      "--tw-shadow-color: var(--color-zinc-950); /* oklch(14.1% 0.005 285.823) */",
+    description: "Sets the shadow color to zinc-950, the darkest shade of zinc",
+  },
+  {
+    label: "shadow-neutral-50",
+    value: "shadow-neutral-50",
+    styles:
+      "--tw-shadow-color: var(--color-neutral-50); /* oklch(98.5% 0 0) */",
+    description:
+      "Sets the shadow color to neutral-50, the lightest shade of neutral",
+  },
+  {
+    label: "shadow-neutral-100",
+    value: "shadow-neutral-100",
+    styles: "--tw-shadow-color: var(--color-neutral-100); /* oklch(97% 0 0) */",
+    description: "Sets the shadow color to neutral-100",
+  },
+  {
+    label: "shadow-neutral-200",
+    value: "shadow-neutral-200",
+    styles:
+      "--tw-shadow-color: var(--color-neutral-200); /* oklch(92.2% 0 0) */",
+    description: "Sets the shadow color to neutral-200",
+  },
+  {
+    label: "shadow-neutral-300",
+    value: "shadow-neutral-300",
+    styles: "--tw-shadow-color: var(--color-neutral-300); /* oklch(87% 0 0) */",
+    description: "Sets the shadow color to neutral-300",
+  },
+  {
+    label: "shadow-neutral-400",
+    value: "shadow-neutral-400",
+    styles:
+      "--tw-shadow-color: var(--color-neutral-400); /* oklch(70.8% 0 0) */",
+    description: "Sets the shadow color to neutral-400",
+  },
+  {
+    label: "shadow-neutral-500",
+    value: "shadow-neutral-500",
+    styles:
+      "--tw-shadow-color: var(--color-neutral-500); /* oklch(55.6% 0 0) */",
+    description: "Sets the shadow color to neutral-500, the base neutral shade",
+  },
+  {
+    label: "shadow-neutral-600",
+    value: "shadow-neutral-600",
+    styles:
+      "--tw-shadow-color: var(--color-neutral-600); /* oklch(43.9% 0 0) */",
+    description: "Sets the shadow color to neutral-600",
+  },
+  {
+    label: "shadow-neutral-700",
+    value: "shadow-neutral-700",
+    styles:
+      "--tw-shadow-color: var(--color-neutral-700); /* oklch(37.1% 0 0) */",
+    description: "Sets the shadow color to neutral-700",
+  },
+  {
+    label: "shadow-neutral-800",
+    value: "shadow-neutral-800",
+    styles:
+      "--tw-shadow-color: var(--color-neutral-800); /* oklch(26.9% 0 0) */",
+    description: "Sets the shadow color to neutral-800",
+  },
+  {
+    label: "shadow-neutral-900",
+    value: "shadow-neutral-900",
+    styles:
+      "--tw-shadow-color: var(--color-neutral-900); /* oklch(20.5% 0 0) */",
+    description: "Sets the shadow color to neutral-900",
+  },
+  {
+    label: "shadow-neutral-950",
+    value: "shadow-neutral-950",
+    styles:
+      "--tw-shadow-color: var(--color-neutral-950); /* oklch(14.5% 0 0) */",
+    description:
+      "Sets the shadow color to neutral-950, the darkest shade of neutral",
+  },
+  {
+    label: "shadow-stone-50",
+    value: "shadow-stone-50",
+    styles:
+      "--tw-shadow-color: var(--color-stone-50); /* oklch(98.5% 0.001 106.423) */",
+    description:
+      "Sets the shadow color to stone-50, the lightest shade of stone",
+  },
+  {
+    label: "shadow-stone-100",
+    value: "shadow-stone-100",
+    styles:
+      "--tw-shadow-color: var(--color-stone-100); /* oklch(97% 0.001 106.424) */",
+    description: "Sets the shadow color to stone-100",
+  },
+  {
+    label: "shadow-stone-200",
+    value: "shadow-stone-200",
+    styles:
+      "--tw-shadow-color: var(--color-stone-200); /* oklch(92.3% 0.003 48.717) */",
+    description: "Sets the shadow color to stone-200",
+  },
+  {
+    label: "shadow-stone-300",
+    value: "shadow-stone-300",
+    styles:
+      "--tw-shadow-color: var(--color-stone-300); /* oklch(86.9% 0.005 56.366) */",
+    description: "Sets the shadow color to stone-300",
+  },
+  {
+    label: "shadow-stone-400",
+    value: "shadow-stone-400",
+    styles:
+      "--tw-shadow-color: var(--color-stone-400); /* oklch(70.9% 0.01 56.259) */",
+    description: "Sets the shadow color to stone-400",
+  },
+  {
+    label: "shadow-stone-500",
+    value: "shadow-stone-500",
+    styles:
+      "--tw-shadow-color: var(--color-stone-500); /* oklch(55.3% 0.013 58.071) */",
+    description: "Sets the shadow color to stone-500, the base stone shade",
+  },
+  {
+    label: "shadow-stone-600",
+    value: "shadow-stone-600",
+    styles:
+      "--tw-shadow-color: var(--color-stone-600); /* oklch(44.4% 0.011 73.639) */",
+    description: "Sets the shadow color to stone-600",
+  },
+  {
+    label: "shadow-stone-700",
+    value: "shadow-stone-700",
+    styles:
+      "--tw-shadow-color: var(--color-stone-700); /* oklch(37.4% 0.01 67.558) */",
+    description: "Sets the shadow color to stone-700",
+  },
+  {
+    label: "shadow-stone-800",
+    value: "shadow-stone-800",
+    styles:
+      "--tw-shadow-color: var(--color-stone-800); /* oklch(26.8% 0.007 34.298) */",
+    description: "Sets the shadow color to stone-800",
+  },
+  {
+    label: "shadow-stone-900",
+    value: "shadow-stone-900",
+    styles:
+      "--tw-shadow-color: var(--color-stone-900); /* oklch(21.6% 0.006 56.043) */",
+    description: "Sets the shadow color to stone-900",
+  },
+  {
+    label: "shadow-stone-950",
+    value: "shadow-stone-950",
+    styles:
+      "--tw-shadow-color: var(--color-stone-950); /* oklch(14.7% 0.004 49.25) */",
+    description:
+      "Sets the shadow color to stone-950, the darkest shade of stone",
+  },
+  {
+    label: "inset-shadow-2xs",
+    value: "inset-shadow-2xs",
+    styles:
+      "box-shadow: var(--inset-shadow-2xs); /* inset 0 1px rgb(0 0 0 / 0.05) */",
+    description: "Applies a 2x extra small inset box shadow",
+  },
+  {
+    label: "inset-shadow-xs",
+    value: "inset-shadow-xs",
+    styles:
+      "box-shadow: var(--inset-shadow-xs); /* inset 0 1px 1px rgb(0 0 0 / 0.05) */",
+    description: "Applies an extra small inset box shadow",
+  },
+  {
+    label: "inset-shadow-sm",
+    value: "inset-shadow-sm",
+    styles:
+      "box-shadow: var(--inset-shadow-sm); /* inset 0 2px 4px rgb(0 0 0 / 0.05) */",
+    description: "Applies a small inset box shadow",
+  },
+  {
+    label: "inset-shadow-none",
+    value: "inset-shadow-none",
+    styles: "box-shadow: inset 0 0 #0000;",
+    description: "Removes all inset box shadows from an element",
+  },
+  {
+    label: "inset-shadow-(<custom-property>)",
+    value: "inset-shadow-(<custom-property>)",
+    styles: "box-shadow: var(<custom-property>);",
+    description: "Applies an inset box shadow using a custom CSS property",
+  },
+  {
+    label: "inset-shadow-[<value>]",
+    value: "inset-shadow-[<value>]",
+    styles: "box-shadow: <value>;",
+    description:
+      "Applies an arbitrary inset box shadow value using Tailwind's bracket notation",
+  },
+  {
+    label: "inset-shadow-inherit",
+    value: "inset-shadow-inherit",
+    styles: "--tw-inset-shadow-color: inherit;",
+    description: "Inherits the inset shadow color from the parent element",
+  },
+  {
+    label: "inset-shadow-current",
+    value: "inset-shadow-current",
+    styles: "--tw-inset-shadow-color: currentColor;",
+    description: "Sets the inset shadow color to the current text color",
+  },
+  {
+    label: "inset-shadow-transparent",
+    value: "inset-shadow-transparent",
+    styles: "--tw-inset-shadow-color: transparent;",
+    description: "Sets the inset shadow color to transparent",
+  },
+  {
+    label: "inset-shadow-black",
+    value: "inset-shadow-black",
+    styles: "--tw-inset-shadow-color: var(--color-black); /* #000 */",
+    description: "Sets the inset shadow color to black",
+  },
+  {
+    label: "inset-shadow-white",
+    value: "inset-shadow-white",
+    styles: "--tw-inset-shadow-color: var(--color-white); /* #fff */",
+    description: "Sets the inset shadow color to white",
+  },
+  {
+    label: "inset-shadow-red-50",
+    value: "inset-shadow-red-50",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-50); /* oklch(97.1% 0.013 17.38) */",
+    description:
+      "Sets the inset shadow color to red-50, the lightest shade of red",
+  },
+  {
+    label: "inset-shadow-red-100",
+    value: "inset-shadow-red-100",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-100); /* oklch(93.6% 0.032 17.717) */",
+    description: "Sets the inset shadow color to red-100",
+  },
+  {
+    label: "inset-shadow-red-200",
+    value: "inset-shadow-red-200",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-200); /* oklch(88.5% 0.062 18.334) */",
+    description: "Sets the inset shadow color to red-200",
+  },
+  {
+    label: "inset-shadow-red-300",
+    value: "inset-shadow-red-300",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-300); /* oklch(80.8% 0.114 19.571) */",
+    description: "Sets the inset shadow color to red-300",
+  },
+  {
+    label: "inset-shadow-red-400",
+    value: "inset-shadow-red-400",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-400); /* oklch(70.4% 0.191 22.216) */",
+    description: "Sets the inset shadow color to red-400",
+  },
+  {
+    label: "inset-shadow-red-500",
+    value: "inset-shadow-red-500",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-500); /* oklch(63.7% 0.237 25.331) */",
+    description: "Sets the inset shadow color to red-500",
+  },
+  {
+    label: "inset-shadow-red-600",
+    value: "inset-shadow-red-600",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-600); /* oklch(57.7% 0.245 27.325) */",
+    description: "Sets the inset shadow color to red-600",
+  },
+  {
+    label: "inset-shadow-red-700",
+    value: "inset-shadow-red-700",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-700); /* oklch(50.5% 0.213 27.518) */",
+    description: "Sets the inset shadow color to red-700",
+  },
+  {
+    label: "inset-shadow-red-800",
+    value: "inset-shadow-red-800",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-800); /* oklch(44.4% 0.177 26.899) */",
+    description: "Sets the inset shadow color to red-800",
+  },
+  {
+    label: "inset-shadow-red-900",
+    value: "inset-shadow-red-900",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-900); /* oklch(39.6% 0.141 25.723) */",
+    description: "Sets the inset shadow color to red-900",
+  },
+  {
+    label: "inset-shadow-red-950",
+    value: "inset-shadow-red-950",
+    styles:
+      "--tw-inset-shadow-color: var(--color-red-950); /* oklch(25.8% 0.092 26.042) */",
+    description: "Sets the inset shadow color to red-950",
+  },
+  {
+    label: "inset-shadow-orange-50",
+    value: "inset-shadow-orange-50",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-50); /* oklch(98% 0.016 73.684) */",
+    description:
+      "Sets the inset shadow color to orange-50, the lightest shade of orange",
+  },
+  {
+    label: "inset-shadow-orange-100",
+    value: "inset-shadow-orange-100",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-100); /* oklch(95.4% 0.038 75.164) */",
+    description: "Sets the inset shadow color to orange-100",
+  },
+  {
+    label: "inset-shadow-orange-200",
+    value: "inset-shadow-orange-200",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-200); /* oklch(90.1% 0.076 70.697) */",
+    description: "Sets the inset shadow color to orange-200",
+  },
+  {
+    label: "inset-shadow-orange-300",
+    value: "inset-shadow-orange-300",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-300); /* oklch(83.7% 0.128 66.29) */",
+    description: "Sets the inset shadow color to orange-300",
+  },
+  {
+    label: "inset-shadow-orange-400",
+    value: "inset-shadow-orange-400",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-400); /* oklch(75% 0.183 55.934) */",
+    description: "Sets the inset shadow color to orange-400",
+  },
+  {
+    label: "inset-shadow-orange-500",
+    value: "inset-shadow-orange-500",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-500); /* oklch(70.5% 0.213 47.604) */",
+    description: "Sets the inset shadow color to orange-500",
+  },
+  {
+    label: "inset-shadow-orange-600",
+    value: "inset-shadow-orange-600",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-600); /* oklch(64.6% 0.222 41.116) */",
+    description: "Sets the inset shadow color to orange-600",
+  },
+  {
+    label: "inset-shadow-orange-700",
+    value: "inset-shadow-orange-700",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-700); /* oklch(55.3% 0.195 38.402) */",
+    description: "Sets the inset shadow color to orange-700",
+  },
+  {
+    label: "inset-shadow-orange-800",
+    value: "inset-shadow-orange-800",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-800); /* oklch(47% 0.157 37.304) */",
+    description: "Sets the inset shadow color to orange-800",
+  },
+  {
+    label: "inset-shadow-orange-900",
+    value: "inset-shadow-orange-900",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-900); /* oklch(40.8% 0.123 38.172) */",
+    description: "Sets the inset shadow color to orange-900",
+  },
+  {
+    label: "inset-shadow-orange-950",
+    value: "inset-shadow-orange-950",
+    styles:
+      "--tw-inset-shadow-color: var(--color-orange-950); /* oklch(26.6% 0.079 36.259) */",
+    description: "Sets the inset shadow color to orange-950",
+  },
+  {
+    label: "inset-shadow-amber-50",
+    value: "inset-shadow-amber-50",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-50); /* oklch(98.7% 0.022 95.277) */",
+    description:
+      "Sets the inset shadow color to amber-50, the lightest shade of amber",
+  },
+  {
+    label: "inset-shadow-amber-100",
+    value: "inset-shadow-amber-100",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-100); /* oklch(96.2% 0.059 95.617) */",
+    description: "Sets the inset shadow color to amber-100",
+  },
+  {
+    label: "inset-shadow-amber-200",
+    value: "inset-shadow-amber-200",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-200); /* oklch(92.4% 0.12 95.746) */",
+    description: "Sets the inset shadow color to amber-200",
+  },
+  {
+    label: "inset-shadow-amber-300",
+    value: "inset-shadow-amber-300",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-300); /* oklch(87.9% 0.169 91.605) */",
+    description: "Sets the inset shadow color to amber-300",
+  },
+  {
+    label: "inset-shadow-amber-400",
+    value: "inset-shadow-amber-400",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-400); /* oklch(82.8% 0.189 84.429) */",
+    description: "Sets the inset shadow color to amber-400",
+  },
+  {
+    label: "inset-shadow-amber-500",
+    value: "inset-shadow-amber-500",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-500); /* oklch(76.9% 0.188 70.08) */",
+    description: "Sets the inset shadow color to amber-500",
+  },
+  {
+    label: "inset-shadow-amber-600",
+    value: "inset-shadow-amber-600",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-600); /* oklch(66.6% 0.179 58.318) */",
+    description: "Sets the inset shadow color to amber-600",
+  },
+  {
+    label: "inset-shadow-amber-700",
+    value: "inset-shadow-amber-700",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-700); /* oklch(55.5% 0.163 48.998) */",
+    description: "Sets the inset shadow color to amber-700",
+  },
+  {
+    label: "inset-shadow-amber-800",
+    value: "inset-shadow-amber-800",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-800); /* oklch(47.3% 0.137 46.201) */",
+    description: "Sets the inset shadow color to amber-800",
+  },
+  {
+    label: "inset-shadow-amber-900",
+    value: "inset-shadow-amber-900",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-900); /* oklch(41.4% 0.112 45.904) */",
+    description: "Sets the inset shadow color to amber-900",
+  },
+  {
+    label: "inset-shadow-amber-950",
+    value: "inset-shadow-amber-950",
+    styles:
+      "--tw-inset-shadow-color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) */",
+    description: "Sets the inset shadow color to amber-950",
+  },
+];
 
 // Group tailwind selectors by section
 const layoutSelectors: TailwindSelectorGroupType[] = [

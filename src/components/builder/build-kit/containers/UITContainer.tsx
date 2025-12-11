@@ -6,7 +6,7 @@ import { cn } from "@/utils/styles";
 import type { TailwindDivInterface } from "../../interface/tailwind-interfaces/TailwindDivInterface";
 
 const tailwindClassesLocal =
-  "flex flex-row flex-1 flex-wrap min-w-[320px] max-w-6xl mx-auto text-center justify-center items-center gap-4 bg-blue-300 p-4";
+  "flex flex-row flex-1 flex-wrap min-w-[320px] max-w-6xl mx-auto text-center justify-center items-center gap-4 p-4 border-2 border-blue-500";
 
 export function UITContainer({
   tailwindClasses,

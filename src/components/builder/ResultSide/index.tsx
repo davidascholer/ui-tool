@@ -58,7 +58,7 @@ export const ResultSide = memo(function ResultSide({
   );
 
   return (
-    <div className="flex flex-col h-full bg-green-500">
+    <div className="flex flex-col h-full">
       <ViewModeToggle viewMode={viewMode} onViewModeChange={setViewMode} />
 
       {/* Content Area */}

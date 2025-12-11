@@ -270,7 +270,7 @@ export function PerformanceMonitoringDashboard({
               <h3 className="text-sm font-semibold text-gray-900">Performance Monitor</h3>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" aria-hidden="true" />
+              <div className="w-2 h-2 s rounded-full animate-pulse" aria-hidden="true" />
               <button
                 onClick={() => setIsMinimized(true)}
                 className="p-1 hover:bg-gray-100 rounded transition-colors"
