@@ -71,7 +71,10 @@ export function BuilderPage() {
       // Handle container being dropped into another container
       const parentContainer = state.allContainers[targetId];
       if (parentContainer) {
-        actions.addContainer(targetId, `Container ${parentContainer.children.length + 1}`);
+        actions.addContainer(
+          targetId,
+          `Container ${parentContainer.children.length + 1}`
+        );
       }
     } else if (
       type === "component" &&
@@ -307,7 +310,7 @@ export function BuilderPage() {
   // };
 
   return (
-    <>
+    <div className="w-screen h-screen p-0 m-0 overflow-x-hidden">
       <SEO
         title="UI Builder - Create React & React Native Components"
         description="Build beautiful, responsive UIs with drag-and-drop. Create Pages, Containers, and Components, then export clean React or React Native code."
@@ -371,7 +374,7 @@ export function BuilderPage() {
         }
         drawerOpen={drawerOpen}
       />
-    </>
+    </div>
   );
 }
 

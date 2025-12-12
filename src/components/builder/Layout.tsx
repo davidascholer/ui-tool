@@ -26,7 +26,7 @@ export function Layout({
 }: Omit<LayoutProps, 'liveView'>) {
   
   return (
-    <div className="flex h-screen w-screen flex-col overflow-hidden bg-[rgb(var(--color-background))]">
+    <div className="flex h-screen w-full flex-col overflow-x-hidden bg-[rgb(var(--color-background))]">
       {/* Header Bar */}
       <header className="flex items-center justify-between border-b border-[rgb(var(--color-border))] bg-[rgb(var(--color-background))] px-6 py-3">
         <div className="flex items-center space-x-4">
@@ -43,7 +43,7 @@ export function Layout({
       </header>
 
       {/* Mobile/Portrait: Stack vertically */}
-      <div className="flex flex-1 flex-col lg:hidden overflow-scroll">
+      <div className="flex flex-1 flex-col lg:hidden overflow-y-auto overflow-x-hidden">
         {/* UI Side - collapsed on mobile */}
         <div className="border-b border-[rgb(var(--color-border))] bg-[rgb(var(--color-muted))]">
           {uiSide}
@@ -66,34 +66,27 @@ export function Layout({
 
       {/* Desktop/Landscape: Three columns with CSS Grid */}
       <div
-        className={`
-          hidden flex-1 lg:grid transition-all duration-300 overflow-scroll
-          ${
-            drawerOpen
-              ? "grid-cols-[256px_minmax(320px,1fr)_320px]"
-              : "grid-cols-[256px_minmax(320px,1fr)_0px]"
-          }
-        `}
+        className="hidden flex-1 lg:grid transition-all duration-300 overflow-hidden w-full grid-cols-[256px_1fr_auto]"
       >
         {/* UI Side - fixed width */}
         <aside
-          className="overflow-auto border-r border-[rgb(var(--color-border))] bg-[rgb(var(--color-muted))]"
+          className="min-w-0 w-64 overflow-y-auto overflow-x-hidden border-r border-[rgb(var(--color-border))] bg-[rgb(var(--color-muted))]"
           aria-label="Component palette"
         >
           {uiSide}
         </aside>
 
         {/* Result Side - includes internal tabs */}
-        <main className="overflow-auto" aria-label="Builder canvas">
+        <main className="min-w-0 overflow-y-auto overflow-x-hidden" aria-label="Builder canvas">
           {resultSide}
         </main>
 
-        {/* Drawer - slides in/out with grid column width */}
+        {/* Drawer - slides in/out with width transition */}
         <aside
           className={`
-            overflow-auto border-l border-[rgb(var(--color-border))] 
+            min-w-0 overflow-y-auto overflow-x-hidden border-l border-[rgb(var(--color-border))] 
             bg-[rgb(var(--color-background))] transition-all duration-300
-            ${drawerOpen ? "opacity-100" : "opacity-0 overflow-hidden"}
+            ${drawerOpen ? "w-80 opacity-100" : "w-0 opacity-0 border-0"}
           `}
           aria-label="Property editor"
           aria-hidden={!drawerOpen}
